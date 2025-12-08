@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="ssh v5.3.4">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/ssh/ssh_sftp.html" />
     <title>ssh_sftp — ssh v5.3.4</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-8DF6FD17.js"></script>
+    <script defer src="dist/sidebar_items-57D42F4F.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ ssh
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of ssh</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ ssh
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L27" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L27" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -136,11 +154,11 @@ file transfer service available for SSH.</p>
 
       </div>
 
-        <div class="summary-synopsis"><p>The initial <a><code class="inline">crypto_state/0</code></a> returned from the <a><code class="inline">init_fun/0</code></a> is folded into
-repeated applications of the <a><code class="inline">crypto_fun/0</code></a> in the
-<a>tar_crypto_spec</a>. The binary returned from that fun is
-sent to the remote SFTP server and the new <a><code class="inline">crypto_state/0</code></a> is used in the
-next call of the <a><code class="inline">crypto_fun/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>The initial <a href="#t:crypto_state/0"><code class="inline">crypto_state/0</code></a> returned from the <a href="#t:init_fun/0"><code class="inline">init_fun/0</code></a> is folded into
+repeated applications of the <a href="#t:crypto_fun/0"><code class="inline">crypto_fun/0</code></a> in the
+<a href="#t:tar_crypto_spec/0">tar_crypto_spec</a>. The binary returned from that fun is
+sent to the remote SFTP server and the new <a href="#t:crypto_state/0"><code class="inline">crypto_state/0</code></a> is used in the
+next call of the <a href="#t:crypto_fun/0"><code class="inline">crypto_fun/0</code></a>.</p></div>
 
     </div>
 
@@ -150,10 +168,10 @@ next call of the <a><code class="inline">crypto_fun/0</code></a>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>The <a><code class="inline">init_fun/0</code></a> in the <a>tar_crypto_spec</a> is applied
+        <div class="summary-synopsis"><p>The <a href="#t:init_fun/0"><code class="inline">init_fun/0</code></a> in the <a href="#t:tar_crypto_spec/0">tar_crypto_spec</a> is applied
 once prior to any other <code class="inline">crypto</code> operation. The intention is that this function
 initiates the encryption or decryption for example by calling
-<a><code class="inline">crypto:crypto_init/4</code></a> or similar. The <a><code class="inline">crypto_state/0</code></a> is the state such a
+<a href="../../apps/crypto/crypto.html#crypto_init/4"><code class="inline">crypto:crypto_init/4</code></a> or similar. The <a href="#t:crypto_state/0"><code class="inline">crypto_state/0</code></a> is the state such a
 function may return.</p></div>
 
     </div>
@@ -165,7 +183,7 @@ function may return.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Specifies the encryption or decryption applied to tar files when using
-<a><code class="inline">open_tar/3</code></a> or <a><code class="inline">open_tar/4</code></a>.</p></div>
+<a href="#open_tar/3"><code class="inline">open_tar/3</code></a> or <a href="#open_tar/4"><code class="inline">open_tar/4</code></a>.</p></div>
 
     </div>
 
@@ -183,9 +201,9 @@ function may return.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>If doing encryption, the <a><code class="inline">final_fun/0</code></a> in the
-<a>tar_crypto_spec</a> is applied to the last piece of data.
-The <a><code class="inline">final_fun/0</code></a> is responsible for padding (if needed) and encryption of
+        <div class="summary-synopsis"><p>If doing encryption, the <a href="#t:final_fun/0"><code class="inline">final_fun/0</code></a> in the
+<a href="#t:tar_crypto_spec/0">tar_crypto_spec</a> is applied to the last piece of data.
+The <a href="#t:final_fun/0"><code class="inline">final_fun/0</code></a> is responsible for padding (if needed) and encryption of
 that last piece.</p></div>
 
     </div>
@@ -244,8 +262,8 @@ that last piece.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>The <a><code class="inline">apread/4</code></a> function reads from a specified position, combining
-the <a><code class="inline">position/3</code></a> and <a><code class="inline">aread/3</code></a> functions.</p></div>
+        <div class="summary-synopsis"><p>The <a href="#apread/4"><code class="inline">apread/4</code></a> function reads from a specified position, combining
+the <a href="#position/3"><code class="inline">position/3</code></a> and <a href="#aread/3"><code class="inline">aread/3</code></a> functions.</p></div>
 
     </div>
 
@@ -255,8 +273,8 @@ the <a><code class="inline">position/3</code></a> and <a><code class="inline">ar
 
       </div>
 
-        <div class="summary-synopsis"><p>The <a><code class="inline">apwrite/4</code></a> function writes to a specified position,
-combining the <a><code class="inline">position/3</code></a> and <a><code class="inline">awrite/3</code></a> functions.</p></div>
+        <div class="summary-synopsis"><p>The <a href="#apwrite/4"><code class="inline">apwrite/4</code></a> function writes to a specified position,
+combining the <a href="#position/3"><code class="inline">position/3</code></a> and <a href="#awrite/3"><code class="inline">awrite/3</code></a> functions.</p></div>
 
     </div>
 
@@ -295,7 +313,7 @@ message to the calling process. This message has the form
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">close/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#close/3"><code class="inline">close/3</code></a>.</p></div>
 
     </div>
 
@@ -315,7 +333,7 @@ message to the calling process. This message has the form
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">del_dir/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#del_dir/3"><code class="inline">del_dir/3</code></a>.</p></div>
 
     </div>
 
@@ -336,7 +354,7 @@ can be successfully deleted.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">delete/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#delete/3"><code class="inline">delete/3</code></a>.</p></div>
 
     </div>
 
@@ -356,7 +374,7 @@ can be successfully deleted.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">list_dir/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#list_dir/3"><code class="inline">list_dir/3</code></a>.</p></div>
 
     </div>
 
@@ -377,7 +395,7 @@ strings.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">make_dir/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#make_dir/3"><code class="inline">make_dir/3</code></a>.</p></div>
 
     </div>
 
@@ -398,7 +416,7 @@ directory. The directory can only be created in an existing directory.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">make_symlink/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#make_symlink/4"><code class="inline">make_symlink/4</code></a>.</p></div>
 
     </div>
 
@@ -418,7 +436,7 @@ directory. The directory can only be created in an existing directory.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">open/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#open/4"><code class="inline">open/4</code></a>.</p></div>
 
     </div>
 
@@ -439,7 +457,7 @@ or writing.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">open_tar/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#open_tar/4"><code class="inline">open_tar/4</code></a>.</p></div>
 
     </div>
 
@@ -451,8 +469,8 @@ or writing.</p></div>
 
         <div class="summary-synopsis"><p>Opens a handle to a tar file on the server, associated with <code class="inline">ChannelPid</code>. The
 handle can be used for remote tar creation and extraction. The actual writing
-and reading is performed by calls to <a>erl_tar:add/3,4</a> and
-<a><code class="inline">erl_tar:extract/2</code></a>. Note: The <a><code class="inline">erl_tar:init/3</code></a> function should not be called,
+and reading is performed by calls to <a href="../../apps/stdlib/erl_tar.html#add/3">erl_tar:add/3,4</a> and
+<a href="../../apps/stdlib/erl_tar.html#extract/2"><code class="inline">erl_tar:extract/2</code></a>. Note: The <a href="../../apps/stdlib/erl_tar.html#init/3"><code class="inline">erl_tar:init/3</code></a> function should not be called,
 that one is called by this open_tar function.</p></div>
 
     </div>
@@ -463,7 +481,7 @@ that one is called by this open_tar function.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">opendir/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#opendir/3"><code class="inline">opendir/3</code></a>.</p></div>
 
     </div>
 
@@ -484,7 +502,7 @@ directory contents.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">position/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#position/4"><code class="inline">position/4</code></a>.</p></div>
 
     </div>
 
@@ -506,7 +524,7 @@ directory contents.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">pread/5</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#pread/5"><code class="inline">pread/5</code></a>.</p></div>
 
     </div>
 
@@ -517,7 +535,7 @@ directory contents.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>The <code class="inline">pread/3,4</code> function reads from a specified position, combining the
-<a><code class="inline">position/3</code></a> and <a><code class="inline">read/3,4</code></a> functions.</p></div>
+<a href="#position/3"><code class="inline">position/3</code></a> and <a href="#read/3"><code class="inline">read/3,4</code></a> functions.</p></div>
 
     </div>
 
@@ -527,7 +545,7 @@ directory contents.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">pwrite/5</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#pwrite/5"><code class="inline">pwrite/5</code></a>.</p></div>
 
     </div>
 
@@ -538,7 +556,7 @@ directory contents.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>The <code class="inline">pwrite/3,4</code> function writes to a specified position, combining the
-<a><code class="inline">position/3</code></a> and <a><code class="inline">write/3,4</code></a> functions.</p></div>
+<a href="#position/3"><code class="inline">position/3</code></a> and <a href="#write/3"><code class="inline">write/3,4</code></a> functions.</p></div>
 
     </div>
 
@@ -548,7 +566,7 @@ directory contents.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">read/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#read/4"><code class="inline">read/4</code></a>.</p></div>
 
     </div>
 
@@ -570,7 +588,7 @@ binary, otherwise it is a string.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">read_file/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#read_file/3"><code class="inline">read_file/3</code></a>.</p></div>
 
     </div>
 
@@ -590,7 +608,7 @@ binary, otherwise it is a string.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">read_file_info/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#read_file_info/3"><code class="inline">read_file_info/3</code></a>.</p></div>
 
     </div>
 
@@ -601,7 +619,7 @@ binary, otherwise it is a string.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Returns a <code class="inline">file_info</code> record from the file system object specified by <code class="inline">Name</code> or
-<code class="inline">Handle</code>. See <a><code class="inline">file:read_file_info/2</code></a> for information about the record.</p></div>
+<code class="inline">Handle</code>. See <a href="../../apps/kernel/file.html#read_file_info/2"><code class="inline">file:read_file_info/2</code></a> for information about the record.</p></div>
 
     </div>
 
@@ -611,7 +629,7 @@ binary, otherwise it is a string.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">read_link/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#read_link/3"><code class="inline">read_link/3</code></a>.</p></div>
 
     </div>
 
@@ -631,7 +649,7 @@ binary, otherwise it is a string.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">read_link_info/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#read_link_info/3"><code class="inline">read_link_info/3</code></a>.</p></div>
 
     </div>
 
@@ -642,7 +660,7 @@ binary, otherwise it is a string.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Returns a <code class="inline">file_info</code> record from the symbolic link specified by <code class="inline">Name</code> or
-<code class="inline">Handle</code>. See <a><code class="inline">file:read_link_info/2</code></a> for information about the record.</p></div>
+<code class="inline">Handle</code>. See <a href="../../apps/kernel/file.html#read_link_info/2"><code class="inline">file:read_link_info/2</code></a> for information about the record.</p></div>
 
     </div>
 
@@ -652,7 +670,7 @@ binary, otherwise it is a string.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">rename/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#rename/4"><code class="inline">rename/4</code></a>.</p></div>
 
     </div>
 
@@ -672,7 +690,7 @@ binary, otherwise it is a string.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">start_channel/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#start_channel/2"><code class="inline">start_channel/2</code></a>.</p></div>
 
     </div>
 
@@ -702,7 +720,7 @@ binary, otherwise it is a string.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Stops an SFTP channel. Does not close the SSH connection. Use <a><code class="inline">ssh:close/1</code></a> to
+        <div class="summary-synopsis"><p>Stops an SFTP channel. Does not close the SSH connection. Use <a href="ssh.html#close/1"><code class="inline">ssh:close/1</code></a> to
 close it.</p></div>
 
     </div>
@@ -713,7 +731,7 @@ close it.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">write/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#write/4"><code class="inline">write/4</code></a>.</p></div>
 
     </div>
 
@@ -735,7 +753,7 @@ otherwise.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">write_file/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#write_file/4"><code class="inline">write_file/4</code></a>.</p></div>
 
     </div>
 
@@ -756,7 +774,7 @@ overwritten if it exists.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">write_file_info/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#write_file_info/4"><code class="inline">write_file_info/4</code></a>.</p></div>
 
     </div>
 
@@ -767,7 +785,7 @@ overwritten if it exists.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Writes file information from a <code class="inline">file_info</code> record to the file specified by
-<code class="inline">Name</code>. See <a>file:write_file_info/2,3</a> for
+<code class="inline">Name</code>. See <a href="../../apps/kernel/file.html#write_file_info/2">file:write_file_info/2,3</a> for
 information about the record.</p></div>
 
     </div>
@@ -784,6 +802,7 @@ information about the record.</p></div>
       </a>
       <span class="text">Types: Crypto open_tar</span>
     </h1>
+
     <div class="types-crypto-open_tar-list">
 <section class="detail" id="t:chunk_size/0">
 
@@ -795,7 +814,7 @@ information about the record.</p></div>
       <h1 class="signature" translate="no">chunk_size()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L367" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L367" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -823,7 +842,7 @@ information about the record.</p></div>
       <h1 class="signature" translate="no">crypto_fun()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L342" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L342" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -851,7 +870,7 @@ information about the record.</p></div>
       <h1 class="signature" translate="no">crypto_result()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L354" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L354" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -886,7 +905,7 @@ for further blocks in calls to <a href="#t:crypto_fun/0"><code class="inline">cr
       <h1 class="signature" translate="no">crypto_state()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L384" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L384" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -924,7 +943,7 @@ value can be changed between <a href="../../apps/erts/erlang.html#t:pos_integer/
       <h1 class="signature" translate="no">decrypt_spec()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L335" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L335" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -956,7 +975,7 @@ Guide.</p>
       <h1 class="signature" translate="no">encrypt_spec()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L322" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L322" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -984,7 +1003,7 @@ Guide.</p>
       <h1 class="signature" translate="no">final_fun()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L364" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L364" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1015,7 +1034,7 @@ that last piece.</p>
       <h1 class="signature" translate="no">init_fun()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L338" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L338" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1043,7 +1062,7 @@ that last piece.</p>
       <h1 class="signature" translate="no">tar_crypto_spec()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L319" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L319" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1072,6 +1091,7 @@ that last piece.</p>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:reason/0">
 
@@ -1083,7 +1103,7 @@ that last piece.</p>
       <h1 class="signature" translate="no">reason()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L130" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L130" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1117,7 +1137,7 @@ exit-signal. If that information is empty, the reason is the exit signal name.</
       <h1 class="signature" translate="no">sftp_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L107" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L107" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1150,6 +1170,7 @@ exit-signal. If that information is empty, the reason is the exit signal name.</
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="apread/4">
 
@@ -1161,7 +1182,7 @@ exit-signal. If that information is empty, the reason is the exit signal name.</
       <h1 class="signature" translate="no">apread(ChannelPid, Handle, Position, Len)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L603" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L603" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1197,7 +1218,7 @@ the <a href="#position/3"><code class="inline">position/3</code></a> and <a href
       <h1 class="signature" translate="no">apwrite(ChannelPid, Handle, Position, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L685" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L685" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1233,7 +1254,7 @@ combining the <a href="#position/3"><code class="inline">position/3</code></a> a
       <h1 class="signature" translate="no">aread(ChannelPid, Handle, Len)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L620" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L620" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1271,7 +1292,7 @@ the result from the read, either <code class="inline">{ok, Data}</code>, <code c
       <h1 class="signature" translate="no">awrite(ChannelPid, Handle, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L704" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L704" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1310,7 +1331,7 @@ message to the calling process. This message has the form
       <h1 class="signature" translate="no">close(ChannelPid, Handle)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L516" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L516" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1339,7 +1360,7 @@ message to the calling process. This message has the form
       <h1 class="signature" translate="no">close(ChannelPid, Handle, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L524" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L524" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1372,7 +1393,7 @@ message to the calling process. This message has the form
       <h1 class="signature" translate="no">del_dir(ChannelPid, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L935" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L935" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1401,7 +1422,7 @@ message to the calling process. This message has the form
       <h1 class="signature" translate="no">del_dir(ChannelPid, Name, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L946" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L946" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1435,7 +1456,7 @@ can be successfully deleted.</p>
       <h1 class="signature" translate="no">delete(ChannelPid, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L900" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L900" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1464,7 +1485,7 @@ can be successfully deleted.</p>
       <h1 class="signature" translate="no">delete(ChannelPid, Name, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L908" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L908" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1497,7 +1518,7 @@ can be successfully deleted.</p>
       <h1 class="signature" translate="no">list_dir(ChannelPid, Path)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L973" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L973" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1531,7 +1552,7 @@ can be successfully deleted.</p>
       <h1 class="signature" translate="no">list_dir(ChannelPid, Path, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L986" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L986" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1567,7 +1588,7 @@ strings.</p>
       <h1 class="signature" translate="no">make_dir(ChannelPid, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L916" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L916" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1596,7 +1617,7 @@ strings.</p>
       <h1 class="signature" translate="no">make_dir(ChannelPid, Name, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L927" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L927" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1630,7 +1651,7 @@ directory. The directory can only be created in an existing directory.</p>
       <h1 class="signature" translate="no">make_symlink(ChannelPid, Name, Target)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L863" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L863" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1663,7 +1684,7 @@ directory. The directory can only be created in an existing directory.</p>
       <h1 class="signature" translate="no">make_symlink(ChannelPid, Name, Target, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L872" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L872" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1697,7 +1718,7 @@ directory. The directory can only be created in an existing directory.</p>
       <h1 class="signature" translate="no">open(ChannelPid, Name, Mode)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L301" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L301" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1731,7 +1752,7 @@ directory. The directory can only be created in an existing directory.</p>
       <h1 class="signature" translate="no">open(ChannelPid, Name, Mode, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L314" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L314" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1769,7 +1790,7 @@ or writing.</p>
         <span class="note">(since OTP 17.4)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L395" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L395" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1805,7 +1826,7 @@ or writing.</p>
         <span class="note">(since OTP 17.4)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L421" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L421" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1849,7 +1870,7 @@ Encryption is assumed if the <code class="inline">Mode</code> contains <code cla
       <h1 class="signature" translate="no">opendir(ChannelPid, Path)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L496" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L496" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1879,7 +1900,7 @@ Encryption is assumed if the <code class="inline">Mode</code> contains <code cla
       <h1 class="signature" translate="no">opendir(ChannelPid, Path, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L508" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L508" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1914,7 +1935,7 @@ directory contents.</p>
       <h1 class="signature" translate="no">position(ChannelPid, Handle, Location)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L715" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L715" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1950,7 +1971,7 @@ directory contents.</p>
       <h1 class="signature" translate="no">position(ChannelPid, Handle, Location, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L741" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L741" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1989,7 +2010,7 @@ directory contents.</p>
       <h1 class="signature" translate="no">pread(ChannelPid, Handle, Position, Len)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L542" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L542" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2024,7 +2045,7 @@ directory contents.</p>
       <h1 class="signature" translate="no">pread(ChannelPid, Handle, Position, Len, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L557" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L557" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2061,7 +2082,7 @@ directory contents.</p>
       <h1 class="signature" translate="no">pwrite(ChannelPid, Handle, Position, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L631" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L631" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2095,7 +2116,7 @@ directory contents.</p>
       <h1 class="signature" translate="no">pwrite(ChannelPid, Handle, Position, Data, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L645" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L645" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2131,7 +2152,7 @@ directory contents.</p>
       <h1 class="signature" translate="no">read(ChannelPid, Handle, Len)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L568" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L568" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2165,7 +2186,7 @@ directory contents.</p>
       <h1 class="signature" translate="no">read(ChannelPid, Handle, Len, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L586" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L586" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2203,7 +2224,7 @@ If no bytes are read, <code class="inline">eof</code> is returned.</p>
       <h1 class="signature" translate="no">read_file(ChannelPid, File)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L1022" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L1022" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2236,7 +2257,7 @@ If no bytes are read, <code class="inline">eof</code> is returned.</p>
       <h1 class="signature" translate="no">read_file(ChannelPid, File, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L1032" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L1032" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2270,7 +2291,7 @@ If no bytes are read, <code class="inline">eof</code> is returned.</p>
       <h1 class="signature" translate="no">read_file_info(ChannelPid, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L758" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L758" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2303,7 +2324,7 @@ If no bytes are read, <code class="inline">eof</code> is returned.</p>
       <h1 class="signature" translate="no">read_file_info(ChannelPid, Name, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L775" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L775" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2340,7 +2361,7 @@ information on links instead.</p>
       <h1 class="signature" translate="no">read_link(ChannelPid, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L839" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L839" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2373,7 +2394,7 @@ information on links instead.</p>
       <h1 class="signature" translate="no">read_link(ChannelPid, Name, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L849" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L849" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2407,7 +2428,7 @@ information on links instead.</p>
       <h1 class="signature" translate="no">read_link_info(ChannelPid, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L816" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L816" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2440,7 +2461,7 @@ information on links instead.</p>
       <h1 class="signature" translate="no">read_link_info(ChannelPid, Name, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L829" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L829" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2475,7 +2496,7 @@ information on links instead.</p>
       <h1 class="signature" translate="no">rename(ChannelPid, OldName, NewName)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L882" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L882" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2508,7 +2529,7 @@ information on links instead.</p>
       <h1 class="signature" translate="no">rename(ChannelPid, OldName, NewName, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L892" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L892" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2542,7 +2563,7 @@ information on links instead.</p>
       <h1 class="signature" translate="no">start_channel(Dest)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L138" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L138" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2571,7 +2592,7 @@ information on links instead.</p>
       <h1 class="signature" translate="no">start_channel/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L167" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L167" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2608,7 +2629,7 @@ functions in this module.</p><p>See also (<a href="#start_channel/3"><code class
       <h1 class="signature" translate="no">start_channel(Host, Port, UserOptions0)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L245" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L245" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2645,7 +2666,7 @@ a connection is already provided.</p>
       <h1 class="signature" translate="no">stop_channel(ChannelPid)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L276" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L276" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2674,7 +2695,7 @@ close it.</p>
       <h1 class="signature" translate="no">write(ChannelPid, Handle, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L655" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L655" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2703,7 +2724,7 @@ close it.</p>
       <h1 class="signature" translate="no">write(ChannelPid, Handle, Data, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L669" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L669" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2739,7 +2760,7 @@ otherwise.</p>
       <h1 class="signature" translate="no">write_file(ChannelPid, File, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L1057" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L1057" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2772,7 +2793,7 @@ otherwise.</p>
       <h1 class="signature" translate="no">write_file(ChannelPid, File, Data, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L1070" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L1070" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2807,7 +2828,7 @@ overwritten if it exists.</p>
       <h1 class="signature" translate="no">write_file_info(ChannelPid, Name, FileInfo)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L792" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L792" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2840,7 +2861,7 @@ overwritten if it exists.</p>
       <h1 class="signature" translate="no">write_file_info(ChannelPid, Name, FileInfo, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_sftp.erl#L806" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_sftp.erl#L806" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2874,8 +2895,8 @@ information about the record.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="ssh.epub" title="ePub version">
@@ -2887,7 +2908,7 @@ information about the record.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

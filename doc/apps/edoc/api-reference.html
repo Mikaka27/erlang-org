@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="edoc v1.4.1">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/edoc/api-reference.html" />
     <title>API Reference — edoc v1.4.1</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-0FCC6507.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ edoc
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of edoc</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -112,7 +130,7 @@ edoc
 
   </div>
 
-    <div class="summary-synopsis"><p>Doclet generating standalone <a>EEP-48</a> doc chunk files.</p></div>
+    <div class="summary-synopsis"><p>Doclet generating standalone <a href="https://www.erlang.org/erlang-enhancement-proposals/eep-0048.html">EEP-48</a> doc chunk files.</p></div>
 
 </div>
 <div class="summary-row">
@@ -121,7 +139,7 @@ edoc
 
   </div>
 
-    <div class="summary-synopsis"><p>Doclet converting an edoc application to use <a>EEP-59</a> and Markdown.</p></div>
+    <div class="summary-synopsis"><p>Doclet converting an edoc application to use <a href="https://www.erlang.org/eeps/eep-0059">EEP-59</a> and Markdown.</p></div>
 
 </div>
 <div class="summary-row">
@@ -148,7 +166,7 @@ edoc
 
   </div>
 
-    <div class="summary-synopsis"><p>The standard HTML layout module for EDoc. See the <a><code>edoc</code></a> module for details on usage.</p></div>
+    <div class="summary-synopsis"><p>The standard HTML layout module for EDoc. See the <a href="edoc.html"><code>edoc</code></a> module for details on usage.</p></div>
 
 </div>
 <div class="summary-row">
@@ -157,7 +175,7 @@ edoc
 
   </div>
 
-    <div class="summary-synopsis"><p>Convert EDoc module documentation to an <a>EEP-48</a><code>docs_v1</code> chunk.</p></div>
+    <div class="summary-synopsis"><p>Convert EDoc module documentation to an <a href="https://www.erlang.org/erlang-enhancement-proposals/eep-0048.html">EEP-48</a><code>docs_v1</code> chunk.</p></div>
 
 </div>
 <div class="summary-row">
@@ -188,8 +206,8 @@ edoc
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
         </span>
@@ -197,7 +215,7 @@ edoc
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

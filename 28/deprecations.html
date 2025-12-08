@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="Erlang/OTP v28.2">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/deprecations.html" />
     <title>Deprecations — Erlang/OTP v28.2</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-81569FB4.js"></script>
+    <script defer src="dist/sidebar_items-D3D1BF2B.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ Erlang/OTP
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of Erlang/OTP</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -84,7 +102,7 @@ Erlang/OTP
     <h1>Deprecations</h1>
 
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/system/doc/top//buildroot/otp/system/doc/general_info/deprecations.md#L1" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/system/doc/top//buildroot/otp/system/doc/general_info/deprecations.md#L1" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -145,7 +163,7 @@ to be changed.</p><p>In the wake of this the function <a href="apps/stdlib/sys.h
 undocumented and internal format (and therefore is practically useless) has been
 deprecated, and a new function <a href="apps/stdlib/sys.html#get_log/1"><code class="inline">sys:get_log/1</code></a> has been added, that hopefully
 does what the deprecated function was intended for.</p><h3 id="functions-deprecated-in-otp-22" class="section-heading"><a href="#functions-deprecated-in-otp-22" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Functions Deprecated in OTP 22</span></h3><ul><li>  <code class="inline">net:broadcast/3</code> (use rpc:eval_everywhere/3 instead)</li><li>  <code class="inline">net:call/4</code> (use rpc:call/4 instead)</li><li>  <code class="inline">net:cast/4</code> (use rpc:cast/4 instead)</li><li>  <code class="inline">net:ping/1</code> (use net_adm:ping/1 instead)</li><li>  <code class="inline">net:sleep/1</code> (use 'receive after T -&gt; ok end' instead)</li><li>  <a href="apps/stdlib/sys.html#get_debug/3"><code class="inline">sys:get_debug/3</code></a> (incorrectly documented and only for internal use. Can
-often be replaced with sys:get_log/1)</li></ul><h3 id="functions-deprecated-in-otp-22-1" class="section-heading"><a href="#functions-deprecated-in-otp-22-1" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Functions Deprecated in OTP 22</span></h3><ul><li>  <code class="inline">net:broadcast/3</code>  (use rpc:eval_everywhere/3 instead)</li><li>  <code class="inline">net:call/4</code>  (use rpc:call/4 instead)</li><li>  <code class="inline">net:cast/4</code>  (use rpc:cast/4 instead)</li><li>  <code class="inline">net:ping/1</code>  (use net_adm:ping/1 instead)</li><li>  <code class="inline">net:sleep/1</code>  (use 'receive after T -&gt; ok end' instead)</li><li>  <a href="apps/stdlib/sys.html#get_debug/3"><code class="inline">sys:get_debug/3</code></a>  (incorrectly documented and only for internal use. Can often be replaced with sys:get_log/1)</li></ul><h2 id="otp-20" class="section-heading"><a href="#otp-20" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">OTP 20</span></h2><h3 id="functions-deprecated-in-otp-20" class="section-heading"><a href="#functions-deprecated-in-otp-20" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Functions Deprecated in OTP 20</span></h3><ul><li>  <a href="apps/crypto/crypto.html#rand_uniform/2"><code class="inline">crypto:rand_uniform/2</code></a>  (use rand:uniform/1 instead)</li><li>  <code class="inline">gen_fsm:_/_</code>  (use the 'gen_statem' module instead)</li></ul><h2 id="otp-19" class="section-heading"><a href="#otp-19" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">OTP 19</span></h2><!--%% %CopyrightBegin%%%%% SPDX-License-Identifier: Apache-2.0%%%% Copyright Ericsson AB 2023-2025. All Rights Reserved.%%%% Licensed under the Apache License, Version 2.0 (the "License");%% you may not use this file except in compliance with the License.%% You may obtain a copy of the License at%%%%     http://www.apache.org/licenses/LICENSE-2.0%%%% Unless required by applicable law or agreed to in writing, software%% distributed under the License is distributed on an "AS IS" BASIS,%% WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.%% See the License for the specific language governing permissions and%% limitations under the License.%%%% %CopyrightEnd%--><h3 id="ssl-tls" class="section-heading"><a href="#ssl-tls" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">SSL/TLS</span></h3><p>For security reasons SSL-3.0 is no longer supported by default, but can be
+often be replaced with sys:get_log/1)</li></ul><h3 id="functions-deprecated-in-otp-22-1" class="section-heading"><a href="#functions-deprecated-in-otp-22-1" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Functions Deprecated in OTP 22</span></h3><ul><li>  <code class="inline">net:broadcast/3</code>  (use rpc:eval_everywhere/3 instead)</li><li>  <code class="inline">net:call/4</code>  (use rpc:call/4 instead)</li><li>  <code class="inline">net:cast/4</code>  (use rpc:cast/4 instead)</li><li>  <code class="inline">net:ping/1</code>  (use net_adm:ping/1 instead)</li><li>  <code class="inline">net:sleep/1</code>  (use 'receive after T -&gt; ok end' instead)</li><li>  <a href="apps/stdlib/sys.html#get_debug/3"><code class="inline">sys:get_debug/3</code></a>  (incorrectly documented and only for internal use. Can often be replaced with sys:get_log/1)</li></ul><h2 id="otp-20" class="section-heading"><a href="#otp-20" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">OTP 20</span></h2><h3 id="functions-deprecated-in-otp-20" class="section-heading"><a href="#functions-deprecated-in-otp-20" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Functions Deprecated in OTP 20</span></h3><ul><li>  <a href="apps/crypto/crypto.html#rand_uniform/2"><code class="inline">crypto:rand_uniform/2</code></a>  (use strong_rand_range/1 instead)</li><li>  <code class="inline">gen_fsm:_/_</code>  (use the 'gen_statem' module instead)</li></ul><h2 id="otp-19" class="section-heading"><a href="#otp-19" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">OTP 19</span></h2><!--%% %CopyrightBegin%%%%% SPDX-License-Identifier: Apache-2.0%%%% Copyright Ericsson AB 2023-2025. All Rights Reserved.%%%% Licensed under the Apache License, Version 2.0 (the "License");%% you may not use this file except in compliance with the License.%% You may obtain a copy of the License at%%%%     http://www.apache.org/licenses/LICENSE-2.0%%%% Unless required by applicable law or agreed to in writing, software%% distributed under the License is distributed on an "AS IS" BASIS,%% WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.%% See the License for the specific language governing permissions and%% limitations under the License.%%%% %CopyrightEnd%--><h3 id="ssl-tls" class="section-heading"><a href="#ssl-tls" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">SSL/TLS</span></h3><p>For security reasons SSL-3.0 is no longer supported by default, but can be
 configured.</p><h3 id="functions-deprecated-in-otp-19" class="section-heading"><a href="#functions-deprecated-in-otp-19" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Functions Deprecated in OTP 19</span></h3><ul><li>  <a href="apps/stdlib/queue.html#lait/1"><code class="inline">queue:lait/1</code></a>  (use queue:liat/1 instead)</li><li>  <code class="inline">random:_/_</code>  (use the 'rand' module instead)</li></ul><h2 id="otp-18" class="section-heading"><a href="#otp-18" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">OTP 18</span></h2><!--%% %CopyrightBegin%%%%% SPDX-License-Identifier: Apache-2.0%%%% Copyright Ericsson AB 2023-2025. All Rights Reserved.%%%% Licensed under the Apache License, Version 2.0 (the "License");%% you may not use this file except in compliance with the License.%% You may obtain a copy of the License at%%%%     http://www.apache.org/licenses/LICENSE-2.0%%%% Unless required by applicable law or agreed to in writing, software%% distributed under the License is distributed on an "AS IS" BASIS,%% WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.%% See the License for the specific language governing permissions and%% limitations under the License.%%%% %CopyrightEnd%--><h3 id="erlang-now-0" class="section-heading"><a href="#erlang-now-0" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">erlang:now/0</span></h3><p>New time functionality and a new time API was introduced. For more information
 see the <a href="apps/erts/time_correction.html">Time and Time Correction</a> chapter in the
 ERTS User's guide and specifically the
@@ -185,8 +203,8 @@ Removed Functionality
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
         </span>
@@ -194,7 +212,7 @@ Removed Functionality
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

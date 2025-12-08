@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="inets v9.4.2">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/inets/mod_auth.html" />
     <title>mod_auth — inets v9.4.2</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-C5195644.js"></script>
+    <script defer src="dist/sidebar_items-395DC6BD.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ inets
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of inets</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ inets
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L23" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L23" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -142,7 +160,7 @@ databases, or Mnesia databases.</p><h3 id="module-see-also" class="section-headi
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">add_group_member/5</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#add_group_member/5"><code class="inline">add_group_member/5</code></a>.</p></div>
 
     </div>
 
@@ -152,7 +170,7 @@ databases, or Mnesia databases.</p><h3 id="module-see-also" class="section-headi
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">add_group_member/5</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#add_group_member/5"><code class="inline">add_group_member/5</code></a>.</p></div>
 
     </div>
 
@@ -162,7 +180,7 @@ databases, or Mnesia databases.</p><h3 id="module-see-also" class="section-headi
 
       </div>
 
-        <div class="summary-synopsis"><p><a><code class="inline">add_group_member/3</code></a>, <a><code class="inline">add_group_member/4</code></a>, and <a><code class="inline">add_group_member/5</code></a> each adds
+        <div class="summary-synopsis"><p><a href="#add_group_member/3"><code class="inline">add_group_member/3</code></a>, <a href="#add_group_member/4"><code class="inline">add_group_member/4</code></a>, and <a href="#add_group_member/5"><code class="inline">add_group_member/5</code></a> each adds
 a user to a group. If the group does not exist, it is created and the user is
 added to the group. Upon successful operation, this function returns <code class="inline">true</code>.
 When <code class="inline">add_group_members/3</code> is called, options <code class="inline">Port</code> and <code class="inline">Dir</code> are mandatory.</p></div>
@@ -175,7 +193,7 @@ When <code class="inline">add_group_members/3</code> is called, options <code cl
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">add_user/6</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#add_user/6"><code class="inline">add_user/6</code></a>.</p></div>
 
     </div>
 
@@ -185,7 +203,7 @@ When <code class="inline">add_group_members/3</code> is called, options <code cl
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">add_user/6</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#add_user/6"><code class="inline">add_user/6</code></a>.</p></div>
 
     </div>
 
@@ -206,7 +224,7 @@ Reason}</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">delete_group/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#delete_group/4"><code class="inline">delete_group/4</code></a>.</p></div>
 
     </div>
 
@@ -216,7 +234,7 @@ Reason}</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">delete_group(GroupName, undefined, Port, Dir)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#delete_group/4"><code class="inline">delete_group(GroupName, undefined, Port, Dir)</code></a>.</p></div>
 
     </div>
 
@@ -226,9 +244,9 @@ Reason}</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p><a><code class="inline">delete_group/2</code></a>, <a><code class="inline">delete_group/3</code></a>, and <a><code class="inline">delete_group/4</code></a> each deletes the group
+        <div class="summary-synopsis"><p><a href="#delete_group/2"><code class="inline">delete_group/2</code></a>, <a href="#delete_group/3"><code class="inline">delete_group/3</code></a>, and <a href="#delete_group/4"><code class="inline">delete_group/4</code></a> each deletes the group
 specified and returns <code class="inline">true</code>. If there is an error, <code class="inline">{error, Reason}</code> is
-returned. When <a><code class="inline">delete_group/2</code></a> is called, option <code class="inline">Port</code> and <code class="inline">Dir</code> are
+returned. When <a href="#delete_group/2"><code class="inline">delete_group/2</code></a> is called, option <code class="inline">Port</code> and <code class="inline">Dir</code> are
 mandatory.</p></div>
 
     </div>
@@ -239,7 +257,7 @@ mandatory.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">delete_group_member/5</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#delete_group_member/5"><code class="inline">delete_group_member/5</code></a>.</p></div>
 
     </div>
 
@@ -249,7 +267,7 @@ mandatory.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">delete_group_member/5</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#delete_group_member/5"><code class="inline">delete_group_member/5</code></a>.</p></div>
 
     </div>
 
@@ -259,9 +277,9 @@ mandatory.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p><a><code class="inline">delete_group_member/3</code></a>, <a><code class="inline">delete_group_member/4</code></a>, and <a><code class="inline">delete_group_member/5</code></a>
+        <div class="summary-synopsis"><p><a href="#delete_group_member/3"><code class="inline">delete_group_member/3</code></a>, <a href="#delete_group_member/4"><code class="inline">delete_group_member/4</code></a>, and <a href="#delete_group_member/5"><code class="inline">delete_group_member/5</code></a>
 each deletes a user from a group. If the group or the user does not exist, this
-function returns an error, otherwise <code class="inline">true</code>. When <a><code class="inline">delete_group_member/3</code></a> is
+function returns an error, otherwise <code class="inline">true</code>. When <a href="#delete_group_member/3"><code class="inline">delete_group_member/3</code></a> is
 called, the options <code class="inline">Port</code> and <code class="inline">Dir</code> are mandatory.</p></div>
 
     </div>
@@ -272,7 +290,7 @@ called, the options <code class="inline">Port</code> and <code class="inline">Di
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">delete_user/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#delete_user/4"><code class="inline">delete_user/4</code></a>.</p></div>
 
     </div>
 
@@ -282,7 +300,7 @@ called, the options <code class="inline">Port</code> and <code class="inline">Di
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">delete_user/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#delete_user/4"><code class="inline">delete_user/4</code></a>.</p></div>
 
     </div>
 
@@ -292,10 +310,10 @@ called, the options <code class="inline">Port</code> and <code class="inline">Di
 
       </div>
 
-        <div class="summary-synopsis"><p><a><code class="inline">delete_user/2</code></a>, <a><code class="inline">delete_user/3</code></a>, and <a><code class="inline">delete_user/4</code></a> each
+        <div class="summary-synopsis"><p><a href="#delete_user/2"><code class="inline">delete_user/2</code></a>, <a href="#delete_user/3"><code class="inline">delete_user/3</code></a>, and <a href="#delete_user/4"><code class="inline">delete_user/4</code></a> each
 deletes a user from the user database. If the operation is successful, this
 function returns <code class="inline">true</code>. If an error occurs, <code class="inline">{error, Reason}</code> is returned. When
-<a><code class="inline">delete_user/2</code></a> is called, options <code class="inline">Port</code> and <code class="inline">Dir</code> are
+<a href="#delete_user/2"><code class="inline">delete_user/2</code></a> is called, options <code class="inline">Port</code> and <code class="inline">Dir</code> are
 mandatory.</p></div>
 
     </div>
@@ -306,7 +324,7 @@ mandatory.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">get_user/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#get_user/4"><code class="inline">get_user/4</code></a>.</p></div>
 
     </div>
 
@@ -316,7 +334,7 @@ mandatory.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">get_user/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#get_user/4"><code class="inline">get_user/4</code></a>.</p></div>
 
     </div>
 
@@ -326,9 +344,9 @@ mandatory.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p><a><code class="inline">get_user/2</code></a>, <a><code class="inline">get_user/3</code></a>, and <a><code class="inline">get_user/4</code></a> each returns an <a><code class="inline">httpd_user/0</code></a>
+        <div class="summary-synopsis"><p><a href="#get_user/2"><code class="inline">get_user/2</code></a>, <a href="#get_user/3"><code class="inline">get_user/3</code></a>, and <a href="#get_user/4"><code class="inline">get_user/4</code></a> each returns an <a href="#t:httpd_user/0"><code class="inline">httpd_user/0</code></a>
 record containing the userdata for a specific user. If the user cannot be
-found, <code class="inline">{error, Reason}</code> is returned. When <a><code class="inline">get_user/2</code></a> is called, options
+found, <code class="inline">{error, Reason}</code> is returned. When <a href="#get_user/2"><code class="inline">get_user/2</code></a> is called, options
 <code class="inline">Port</code> and <code class="inline">Dir</code> are mandatory.</p></div>
 
     </div>
@@ -339,7 +357,7 @@ found, <code class="inline">{error, Reason}</code> is returned. When <a><code cl
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">list_group_members/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#list_group_members/4"><code class="inline">list_group_members/4</code></a>.</p></div>
 
     </div>
 
@@ -349,7 +367,7 @@ found, <code class="inline">{error, Reason}</code> is returned. When <a><code cl
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">list_group_members/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#list_group_members/4"><code class="inline">list_group_members/4</code></a>.</p></div>
 
     </div>
 
@@ -359,9 +377,9 @@ found, <code class="inline">{error, Reason}</code> is returned. When <a><code cl
 
       </div>
 
-        <div class="summary-synopsis"><p><a><code class="inline">list_group_members/2</code></a>, <a><code class="inline">list_group_members/3</code></a>, and <a><code class="inline">list_group_members/4</code></a> each
+        <div class="summary-synopsis"><p><a href="#list_group_members/2"><code class="inline">list_group_members/2</code></a>, <a href="#list_group_members/3"><code class="inline">list_group_members/3</code></a>, and <a href="#list_group_members/4"><code class="inline">list_group_members/4</code></a> each
 lists the members of a specified group. If the group does not exist or there is
-an error, <code class="inline">{error, Reason}</code> is returned. When <a><code class="inline">list_group_members/2</code></a> is called,
+an error, <code class="inline">{error, Reason}</code> is returned. When <a href="#list_group_members/2"><code class="inline">list_group_members/2</code></a> is called,
 options <code class="inline">Port</code> and <code class="inline">Dir</code> are mandatory.</p></div>
 
     </div>
@@ -372,7 +390,7 @@ options <code class="inline">Port</code> and <code class="inline">Dir</code> are
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">list_groups/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#list_groups/3"><code class="inline">list_groups/3</code></a>.</p></div>
 
     </div>
 
@@ -382,7 +400,7 @@ options <code class="inline">Port</code> and <code class="inline">Dir</code> are
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">list_groups/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#list_groups/3"><code class="inline">list_groups/3</code></a>.</p></div>
 
     </div>
 
@@ -392,9 +410,9 @@ options <code class="inline">Port</code> and <code class="inline">Dir</code> are
 
       </div>
 
-        <div class="summary-synopsis"><p><a><code class="inline">list_groups/1</code></a>, <a><code class="inline">list_groups/2</code></a>, and <a><code class="inline">list_groups/3</code></a> each lists all the groups
+        <div class="summary-synopsis"><p><a href="#list_groups/1"><code class="inline">list_groups/1</code></a>, <a href="#list_groups/2"><code class="inline">list_groups/2</code></a>, and <a href="#list_groups/3"><code class="inline">list_groups/3</code></a> each lists all the groups
 available. If there is an error, <code class="inline">{error, Reason}</code> is returned. When
-<a><code class="inline">list_groups/1</code></a> is called, options <code class="inline">Port</code> and <code class="inline">Dir</code> are mandatory.</p></div>
+<a href="#list_groups/1"><code class="inline">list_groups/1</code></a> is called, options <code class="inline">Port</code> and <code class="inline">Dir</code> are mandatory.</p></div>
 
     </div>
 
@@ -404,7 +422,7 @@ available. If there is an error, <code class="inline">{error, Reason}</code> is 
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">list_users/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#list_users/3"><code class="inline">list_users/3</code></a>.</p></div>
 
     </div>
 
@@ -414,7 +432,7 @@ available. If there is an error, <code class="inline">{error, Reason}</code> is 
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">list_users/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#list_users/3"><code class="inline">list_users/3</code></a>.</p></div>
 
     </div>
 
@@ -424,8 +442,8 @@ available. If there is an error, <code class="inline">{error, Reason}</code> is 
 
       </div>
 
-        <div class="summary-synopsis"><p><a><code class="inline">list_users/1</code></a>, <a><code class="inline">list_users/2</code></a>, and <a><code class="inline">list_users/3</code></a> each returns a list of users
-in the user database for a specific <code class="inline">Port/Dir</code>. When <a><code class="inline">list_users/1</code></a> is called,
+        <div class="summary-synopsis"><p><a href="#list_users/1"><code class="inline">list_users/1</code></a>, <a href="#list_users/2"><code class="inline">list_users/2</code></a>, and <a href="#list_users/3"><code class="inline">list_users/3</code></a> each returns a list of users
+in the user database for a specific <code class="inline">Port/Dir</code>. When <a href="#list_users/1"><code class="inline">list_users/1</code></a> is called,
 options <code class="inline">Port</code> and <code class="inline">Dir</code> are mandatory.</p></div>
 
     </div>
@@ -436,7 +454,7 @@ options <code class="inline">Port</code> and <code class="inline">Dir</code> are
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">update_password/6</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#update_password/6"><code class="inline">update_password/6</code></a>.</p></div>
 
     </div>
 
@@ -446,7 +464,7 @@ options <code class="inline">Port</code> and <code class="inline">Dir</code> are
 
       </div>
 
-        <div class="summary-synopsis"><p><a><code class="inline">update_password/5</code></a> and <a><code class="inline">update_password/6</code></a> each updates <code class="inline">AuthAccessPassword</code>
+        <div class="summary-synopsis"><p><a href="#update_password/5"><code class="inline">update_password/5</code></a> and <a href="#update_password/6"><code class="inline">update_password/6</code></a> each updates <code class="inline">AuthAccessPassword</code>
 for the specified directory. If <code class="inline">NewPassword</code> is equal to &quot;NoPassword&quot;, no
 password is required to change authorisation data. If <code class="inline">NewPassword</code> is equal to
 &quot;DummyPassword&quot;, no changes can be done without changing the password first.</p></div>
@@ -465,6 +483,7 @@ password is required to change authorisation data. If <code class="inline">NewPa
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:httpd_group/0">
 
@@ -478,7 +497,7 @@ password is required to change authorisation data. If <code class="inline">NewPa
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L60" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L60" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -508,7 +527,7 @@ password is required to change authorisation data. If <code class="inline">NewPa
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L59" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L59" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -537,6 +556,7 @@ password is required to change authorisation data. If <code class="inline">NewPa
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="add_group_member/3">
 
@@ -548,7 +568,7 @@ password is required to change authorisation data. If <code class="inline">NewPa
       <h1 class="signature" translate="no">add_group_member(GroupName, UserName, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L287" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L287" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -589,7 +609,7 @@ password is required to change authorisation data. If <code class="inline">NewPa
       <h1 class="signature" translate="no">add_group_member(GroupName, UserName, Port, Directory)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L303" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L303" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -623,7 +643,7 @@ password is required to change authorisation data. If <code class="inline">NewPa
       <h1 class="signature" translate="no">add_group_member(GroupName, UserName, Address, Port, Directory)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L319" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L319" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -661,7 +681,7 @@ When <code class="inline">add_group_members/3</code> is called, options <code cl
       <h1 class="signature" translate="no">add_user(UserName, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L184" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L184" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -705,7 +725,7 @@ When <code class="inline">add_group_members/3</code> is called, options <code cl
       <h1 class="signature" translate="no">add_user(UserName, Password, UserData, Port, Directory)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L207" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L207" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -740,7 +760,7 @@ When <code class="inline">add_group_members/3</code> is called, options <code cl
       <h1 class="signature" translate="no">add_user(UserName, Password, UserData, Address, Port, Directory)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L227" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L227" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -781,7 +801,7 @@ and <code class="inline">Dir</code> are mandatory.</p>
       <h1 class="signature" translate="no">delete_group(GroupName, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L462" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L462" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -821,7 +841,7 @@ and <code class="inline">Dir</code> are mandatory.</p>
       <h1 class="signature" translate="no">delete_group(GroupName, Port, Directory)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L476" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L476" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -854,7 +874,7 @@ and <code class="inline">Dir</code> are mandatory.</p>
       <h1 class="signature" translate="no">delete_group(GroupName, Address, Port, Directory)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L490" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L490" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -891,7 +911,7 @@ mandatory.</p>
       <h1 class="signature" translate="no">delete_group_member(GroupName, UserName, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L333" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L333" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -933,7 +953,7 @@ mandatory.</p>
       <h1 class="signature" translate="no">delete_group_member(GroupName, UserName, Port, Directory)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L350" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L350" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -967,7 +987,7 @@ mandatory.</p>
       <h1 class="signature" translate="no">delete_group_member(GroupName, UserName, Address, Port, Directory)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L366" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L366" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1006,7 +1026,7 @@ called, the options <code class="inline">Port</code> and <code class="inline">Di
       <h1 class="signature" translate="no">delete_user(UserName, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L421" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L421" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1046,7 +1066,7 @@ called, the options <code class="inline">Port</code> and <code class="inline">Di
       <h1 class="signature" translate="no">delete_user(UserName, Port, Directory)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L435" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L435" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1079,7 +1099,7 @@ called, the options <code class="inline">Port</code> and <code class="inline">Di
       <h1 class="signature" translate="no">delete_user(UserName, Address, Port, Directory)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L450" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L450" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1117,7 +1137,7 @@ mandatory.</p>
       <h1 class="signature" translate="no">get_user(UserName, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L243" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L243" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1158,7 +1178,7 @@ mandatory.</p>
       <h1 class="signature" translate="no">get_user(UserName, Port, Directory)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L258" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L258" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1192,7 +1212,7 @@ mandatory.</p>
       <h1 class="signature" translate="no">get_user(UserName, Address, Port, Directory)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L273" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L273" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1230,7 +1250,7 @@ found, <code class="inline">{error, Reason}</code> is returned. When <a href="#g
       <h1 class="signature" translate="no">list_group_members(GroupName, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L543" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L543" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1272,7 +1292,7 @@ found, <code class="inline">{error, Reason}</code> is returned. When <a href="#g
       <h1 class="signature" translate="no">list_group_members(GroupName, Port, Directory)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L559" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L559" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1306,7 +1326,7 @@ found, <code class="inline">{error, Reason}</code> is returned. When <a href="#g
       <h1 class="signature" translate="no">list_group_members(GroupName, Address, Port, Directory)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L574" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L574" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1345,7 +1365,7 @@ options <code class="inline">Port</code> and <code class="inline">Dir</code> are
       <h1 class="signature" translate="no">list_groups(Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L502" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L502" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1385,7 +1405,7 @@ options <code class="inline">Port</code> and <code class="inline">Dir</code> are
       <h1 class="signature" translate="no">list_groups(Port, Directory)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L516" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L516" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1418,7 +1438,7 @@ options <code class="inline">Port</code> and <code class="inline">Dir</code> are
       <h1 class="signature" translate="no">list_groups(Address, Port, Directory)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L529" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L529" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1454,7 +1474,7 @@ available. If there is an error, <code class="inline">{error, Reason}</code> is 
       <h1 class="signature" translate="no">list_users(Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L380" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L380" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1496,7 +1516,7 @@ available. If there is an error, <code class="inline">{error, Reason}</code> is 
         <span class="note">(since OTP R14B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L395" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L395" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1529,7 +1549,7 @@ available. If there is an error, <code class="inline">{error, Reason}</code> is 
       <h1 class="signature" translate="no">list_users(Address, Port, Directory)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L409" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L409" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1565,7 +1585,7 @@ options <code class="inline">Port</code> and <code class="inline">Dir</code> are
       <h1 class="signature" translate="no">update_password(Port, Dir, OldPassword, NewPassword, NewPassword)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L585" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L585" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1599,7 +1619,7 @@ options <code class="inline">Port</code> and <code class="inline">Dir</code> are
       <h1 class="signature" translate="no">update_password(Address, Port, Dir, OldPassword, NewPassword, NewPassword)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/inets/src/http_server/mod_auth.erl#L601" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/inets/src/http_server/mod_auth.erl#L601" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1635,8 +1655,8 @@ password is required to change authorisation data. If <code class="inline">NewPa
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="inets.epub" title="ePub version">
@@ -1648,7 +1668,7 @@ password is required to change authorisation data. If <code class="inline">NewPa
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

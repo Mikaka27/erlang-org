@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="xmerl v2.1.7">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/xmerl/xmerl_scan.html" />
     <title>xmerl_scan — xmerl v2.1.7</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-CB494AA4.js"></script>
+    <script defer src="dist/sidebar_items-B52CE520.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ xmerl
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of xmerl</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ xmerl
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_scan.erl#L23" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_scan.erl#L23" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -101,7 +119,7 @@ The XML parser is activated through
 <a href="#string/1"><code class="inline">xmerl_scan:string/[1,2]</code></a> or
 <a href="#file/1"><code class="inline">xmerl_scan:file/[1,2]</code></a>. It returns records
 of the type defined in <code class="inline">xmerl.hrl</code>.</p><p>See also the
-<a href="../../apps/xmerl/xmerl_examples.html"">&quot;Customization functions&quot; tutorial</a>.</p>
+<a href="../../apps/xmerl/xmerl_examples.html">&quot;Customization functions&quot; tutorial</a>.</p>
     </section>
 
 </div>
@@ -145,7 +163,7 @@ of the type defined in <code class="inline">xmerl.hrl</code>.</p><p>See also the
       </div>
 
         <div class="summary-synopsis"><p>Options allow to customize the behaviour of the scanner.  See also the
-<a>&quot;Customization functions&quot; tutorial</a>.</p></div>
+<a href="../../apps/xmerl/xmerl_examples.html">&quot;Customization functions&quot; tutorial</a>.</p></div>
 
     </div>
 
@@ -251,7 +269,7 @@ of the type defined in <code class="inline">xmerl.hrl</code>.</p><p>See also the
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">file(Filename, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#file/2"><code class="inline">file(Filename, [])</code></a>.</p></div>
 
     </div>
 
@@ -311,7 +329,7 @@ of the type defined in <code class="inline">xmerl.hrl</code>.</p><p>See also the
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">string(Text, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#string/2"><code class="inline">string(Text, [])</code></a>.</p></div>
 
     </div>
 
@@ -357,6 +375,7 @@ of the type defined in <code class="inline">xmerl.hrl</code>.</p><p>See also the
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:document/0">
 
@@ -368,7 +387,7 @@ of the type defined in <code class="inline">xmerl.hrl</code>.</p><p>See also the
       <h1 class="signature" translate="no">document()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_scan.erl#L186" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_scan.erl#L186" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -401,7 +420,7 @@ passed to the function.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_scan.erl#L67" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_scan.erl#L67" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -431,7 +450,7 @@ passed to the function.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_scan.erl#L158" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_scan.erl#L158" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -447,7 +466,7 @@ passed to the function.</p>
       </div>
 
 <p>Options allow to customize the behaviour of the scanner.  See also the
-<a href="../../apps/xmerl/xmerl_examples.html"">&quot;Customization functions&quot; tutorial</a>.</p><p>Possible options are:</p><dl> <dt><code>{acc_fun, Fun}</code></dt>
+<a href="../../apps/xmerl/xmerl_examples.html">&quot;Customization functions&quot; tutorial</a>.</p><p>Possible options are:</p><dl> <dt><code>{acc_fun, Fun}</code></dt>
    <dd>Call back function to accumulate contents of entity.</dd>
  <dt><code>{continuation_fun, Fun} |
            {continuation_fun, Fun, ContinuationState}</code></dt>
@@ -541,7 +560,7 @@ passed to the function.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_scan.erl#L175" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_scan.erl#L175" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -569,7 +588,7 @@ passed to the function.</p>
       <h1 class="signature" translate="no">xmlElement()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_scan.erl#L168" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_scan.erl#L168" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -598,6 +617,7 @@ passed to the function.</p>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="accumulate_whitespace/4">
 
@@ -609,7 +629,7 @@ passed to the function.</p>
       <h1 class="signature" translate="no">accumulate_whitespace/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_scan.erl#L4132" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_scan.erl#L4132" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -643,7 +663,7 @@ passed to the function.</p>
       <h1 class="signature" translate="no">cont_state/1</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_scan.erl#L256" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_scan.erl#L256" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -658,7 +678,7 @@ passed to the function.</p>
 
       </div>
 
-<p>Fetch the <code class="inline">ContinuationState</code>.</p><p>See the <a href="../../apps/xmerl/xmerl_examples.html"">&quot;Customization functions&quot; tutorial</a>.</p>
+<p>Fetch the <code class="inline">ContinuationState</code>.</p><p>See the <a href="../../apps/xmerl/xmerl_examples.html">&quot;Customization functions&quot; tutorial</a>.</p>
   </section>
 </section>
 <section class="detail" id="cont_state/2">
@@ -671,7 +691,7 @@ passed to the function.</p>
       <h1 class="signature" translate="no">cont_state/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_scan.erl#L330" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_scan.erl#L330" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -688,7 +708,7 @@ passed to the function.</p>
 
 <p>Set the ContinuationState, to be used in a continuation function.</p><p>The continuation function is called when the parser encounters
 the end of the byte stream. See the
-<a href="../../apps/xmerl/xmerl_examples.html"">&quot;Customization functions&quot; tutorial</a>.</p>
+<a href="../../apps/xmerl/xmerl_examples.html">&quot;Customization functions&quot; tutorial</a>.</p>
   </section>
 </section>
 <section class="detail" id="event_state/1">
@@ -701,7 +721,7 @@ the end of the byte stream. See the
       <h1 class="signature" translate="no">event_state/1</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_scan.erl#L220" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_scan.erl#L220" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -716,7 +736,7 @@ the end of the byte stream. See the
 
       </div>
 
-<p>Fetch the <code class="inline">EventState</code>.</p><p>See the <a href="../../apps/xmerl/xmerl_examples.html"">&quot;Customization functions&quot; tutorial</a>.</p>
+<p>Fetch the <code class="inline">EventState</code>.</p><p>See the <a href="../../apps/xmerl/xmerl_examples.html">&quot;Customization functions&quot; tutorial</a>.</p>
   </section>
 </section>
 <section class="detail" id="event_state/2">
@@ -729,7 +749,7 @@ the end of the byte stream. See the
       <h1 class="signature" translate="no">event_state/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_scan.erl#L278" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_scan.erl#L278" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -746,7 +766,7 @@ the end of the byte stream. See the
 
 <p>Set the EventState, to be used in an event function.</p><p>The event function is called at the beginning and at the end
 of a parsed entity. See the
-<a href="../../apps/xmerl/xmerl_examples.html"">&quot;Customization functions&quot; tutorial</a>.</p>
+<a href="../../apps/xmerl/xmerl_examples.html">&quot;Customization functions&quot; tutorial</a>.</p>
   </section>
 </section>
 <section class="detail" id="fetch_state/1">
@@ -759,7 +779,7 @@ of a parsed entity. See the
       <h1 class="signature" translate="no">fetch_state/1</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_scan.erl#L247" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_scan.erl#L247" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -774,7 +794,7 @@ of a parsed entity. See the
 
       </div>
 
-<p>Fetch the <code class="inline">FetchState</code>.</p><p>See the <a href="../../apps/xmerl/xmerl_examples.html"">&quot;Customization functions&quot; tutorial</a>.</p>
+<p>Fetch the <code class="inline">FetchState</code>.</p><p>See the <a href="../../apps/xmerl/xmerl_examples.html">&quot;Customization functions&quot; tutorial</a>.</p>
   </section>
 </section>
 <section class="detail" id="fetch_state/2">
@@ -787,7 +807,7 @@ of a parsed entity. See the
       <h1 class="signature" translate="no">fetch_state/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_scan.erl#L318" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_scan.erl#L318" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -804,7 +824,7 @@ of a parsed entity. See the
 
 <p>Set the FetchState, to be used in a fetch function.</p><p>The fetch function is and called when the parser fetches
 an external resource (eg. a DTD). See the
-<a href="../../apps/xmerl/xmerl_examples.html"">&quot;Customization functions&quot; tutorial</a>.</p>
+<a href="../../apps/xmerl/xmerl_examples.html">&quot;Customization functions&quot; tutorial</a>.</p>
   </section>
 </section>
 <section class="detail" id="file/1">
@@ -817,7 +837,7 @@ an external resource (eg. a DTD). See the
       <h1 class="signature" translate="no">file(Filename)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_scan.erl#L340" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_scan.erl#L340" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -846,7 +866,7 @@ an external resource (eg. a DTD). See the
       <h1 class="signature" translate="no">file(F, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_scan.erl#L348" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_scan.erl#L348" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -875,7 +895,7 @@ an external resource (eg. a DTD). See the
       <h1 class="signature" translate="no">hook_state/1</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_scan.erl#L229" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_scan.erl#L229" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -890,7 +910,7 @@ an external resource (eg. a DTD). See the
 
       </div>
 
-<p>Fetch the <code class="inline">HookState</code>.</p><p>See the <a href="../../apps/xmerl/xmerl_examples.html"">&quot;Customization functions&quot; tutorial</a>.</p>
+<p>Fetch the <code class="inline">HookState</code>.</p><p>See the <a href="../../apps/xmerl/xmerl_examples.html">&quot;Customization functions&quot; tutorial</a>.</p>
   </section>
 </section>
 <section class="detail" id="hook_state/2">
@@ -903,7 +923,7 @@ an external resource (eg. a DTD). See the
       <h1 class="signature" translate="no">hook_state/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_scan.erl#L290" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_scan.erl#L290" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -920,7 +940,7 @@ an external resource (eg. a DTD). See the
 
 <p>Set the HookState, to be used in a hook function.</p><p>The hook function is and called when the parser has parsed
 a complete entity.  See the
-<a href="../../apps/xmerl/xmerl_examples.html"">&quot;Customization functions&quot; tutorial</a>.</p>
+<a href="../../apps/xmerl/xmerl_examples.html">&quot;Customization functions&quot; tutorial</a>.</p>
   </section>
 </section>
 <section class="detail" id="rules_state/1">
@@ -933,7 +953,7 @@ a complete entity.  See the
       <h1 class="signature" translate="no">rules_state/1</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_scan.erl#L238" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_scan.erl#L238" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -948,7 +968,7 @@ a complete entity.  See the
 
       </div>
 
-<p>Fetch the <code class="inline">RulesState</code>.</p><p>See the <a href="../../apps/xmerl/xmerl_examples.html"">&quot;Customization functions&quot; tutorial</a>.</p>
+<p>Fetch the <code class="inline">RulesState</code>.</p><p>See the <a href="../../apps/xmerl/xmerl_examples.html">&quot;Customization functions&quot; tutorial</a>.</p>
   </section>
 </section>
 <section class="detail" id="rules_state/2">
@@ -961,7 +981,7 @@ a complete entity.  See the
       <h1 class="signature" translate="no">rules_state/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_scan.erl#L302" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_scan.erl#L302" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -978,7 +998,7 @@ a complete entity.  See the
 
 <p>Set the RulesState, to be used in a rules function.</p><p>The rules function is and called when the parser store scanner information
 in a rules database. See the
-<a href="../../apps/xmerl/xmerl_examples.html"">&quot;Customization functions&quot; tutorial</a>.</p>
+<a href="../../apps/xmerl/xmerl_examples.html">&quot;Customization functions&quot; tutorial</a>.</p>
   </section>
 </section>
 <section class="detail" id="string/1">
@@ -991,7 +1011,7 @@ in a rules database. See the
       <h1 class="signature" translate="no">string(Text)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_scan.erl#L383" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_scan.erl#L383" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1019,7 +1039,7 @@ in a rules database. See the
       <h1 class="signature" translate="no">string(Str, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_scan.erl#L390" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_scan.erl#L390" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1047,7 +1067,7 @@ in a rules database. See the
       <h1 class="signature" translate="no">user_state/1</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_scan.erl#L211" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_scan.erl#L211" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1062,7 +1082,7 @@ in a rules database. See the
 
       </div>
 
-<p>Fetch the <code class="inline">UserState</code>.</p><p>See the <a href="../../apps/xmerl/xmerl_examples.html"">&quot;Customization functions&quot; tutorial</a>.</p>
+<p>Fetch the <code class="inline">UserState</code>.</p><p>See the <a href="../../apps/xmerl/xmerl_examples.html">&quot;Customization functions&quot; tutorial</a>.</p>
   </section>
 </section>
 <section class="detail" id="user_state/2">
@@ -1075,7 +1095,7 @@ in a rules database. See the
       <h1 class="signature" translate="no">user_state(UserState, G)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_scan.erl#L267" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_scan.erl#L267" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1090,7 +1110,7 @@ in a rules database. See the
 
       </div>
 
-<p>Set the <code class="inline">UserState</code>, to be used in a user function.</p><p>See the <a href="../../apps/xmerl/xmerl_examples.html"">&quot;Customization functions&quot; tutorial</a>.</p>
+<p>Set the <code class="inline">UserState</code>, to be used in a user function.</p><p>See the <a href="../../apps/xmerl/xmerl_examples.html">&quot;Customization functions&quot; tutorial</a>.</p>
   </section>
 </section>
 
@@ -1101,8 +1121,8 @@ in a rules database. See the
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
         </span>
@@ -1110,7 +1130,7 @@ in a rules database. See the
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

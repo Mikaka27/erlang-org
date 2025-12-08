@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="wx v2.5.2">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/wx/wxMenuItem.html" />
     <title>wxMenuItem — wx v2.5.2</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-B3665BE0.js"></script>
+    <script defer src="dist/sidebar_items-E2170433.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ wx
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of wx</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ wx
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L58" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L58" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -135,7 +153,7 @@ implemented for Windows, Mac and GTK+.</p><p>See:</p><ul><li><p><a href="wxMenuB
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">check(This, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#check/2"><code class="inline">check(This, [])</code></a>.</p></div>
 
     </div>
 
@@ -165,7 +183,7 @@ implemented for Windows, Mac and GTK+.</p><p>See:</p><ul><li><p><a href="wxMenuB
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">enable(This, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#enable/2"><code class="inline">enable(This, [])</code></a>.</p></div>
 
     </div>
 
@@ -216,7 +234,7 @@ implemented for Windows, Mac and GTK+.</p><p>See:</p><ul><li><p><a href="wxMenuB
       </div>
 
         <div class="summary-synopsis"><p>Returns the text associated with the menu item including any accelerator characters that
-were passed to the constructor or <a><code class="inline">setItemLabel/2</code></a>.</p></div>
+were passed to the constructor or <a href="#setItemLabel/2"><code class="inline">setItemLabel/2</code></a>.</p></div>
 
     </div>
 
@@ -246,7 +264,7 @@ were passed to the constructor or <a><code class="inline">setItemLabel/2</code><
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to: <a><code class="inline">getItemLabelText/1</code></a></p></div>
+        <div class="summary-synopsis"><p>Equivalent to: <a href="#getItemLabelText/1"><code class="inline">getItemLabelText/1</code></a></p></div>
 
     </div>
 
@@ -256,7 +274,7 @@ were passed to the constructor or <a><code class="inline">setItemLabel/2</code><
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to: <a><code class="inline">getLabelText/1</code></a></p></div>
+        <div class="summary-synopsis"><p>Equivalent to: <a href="#getLabelText/1"><code class="inline">getLabelText/1</code></a></p></div>
 
     </div>
 
@@ -296,7 +314,7 @@ were passed to the constructor or <a><code class="inline">setItemLabel/2</code><
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to: <a><code class="inline">getItemLabel/1</code></a></p></div>
+        <div class="summary-synopsis"><p>Equivalent to: <a href="#getItemLabel/1"><code class="inline">getItemLabel/1</code></a></p></div>
 
     </div>
 
@@ -356,7 +374,7 @@ were passed to the constructor or <a><code class="inline">setItemLabel/2</code><
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">new([])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#new/1"><code class="inline">new([])</code></a>.</p></div>
 
     </div>
 
@@ -366,7 +384,7 @@ were passed to the constructor or <a><code class="inline">setItemLabel/2</code><
 
       </div>
 
-        <div class="summary-synopsis"><p>Constructs a <a><code class="inline">wxMenuItem</code></a> object.</p></div>
+        <div class="summary-synopsis"><p>Constructs a <a href="wxMenuItem.html"><code class="inline">wxMenuItem</code></a> object.</p></div>
 
     </div>
 
@@ -426,7 +444,7 @@ were passed to the constructor or <a><code class="inline">setItemLabel/2</code><
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to: <a><code class="inline">setItemLabel/2</code></a></p></div>
+        <div class="summary-synopsis"><p>Equivalent to: <a href="#setItemLabel/2"><code class="inline">setItemLabel/2</code></a></p></div>
 
     </div>
 
@@ -442,6 +460,7 @@ were passed to the constructor or <a><code class="inline">setItemLabel/2</code><
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:wxMenuItem/0">
 
@@ -453,7 +472,7 @@ were passed to the constructor or <a><code class="inline">setItemLabel/2</code><
       <h1 class="signature" translate="no">wxMenuItem()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L95" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L95" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -482,6 +501,7 @@ were passed to the constructor or <a><code class="inline">setItemLabel/2</code><
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="check/1">
 
@@ -493,7 +513,7 @@ were passed to the constructor or <a><code class="inline">setItemLabel/2</code><
       <h1 class="signature" translate="no">check(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L152" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L152" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -521,7 +541,7 @@ were passed to the constructor or <a><code class="inline">setItemLabel/2</code><
       <h1 class="signature" translate="no">check/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L164" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L164" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -549,7 +569,7 @@ were passed to the constructor or <a><code class="inline">setItemLabel/2</code><
       <h1 class="signature" translate="no">destroy(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L624" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L624" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -577,7 +597,7 @@ were passed to the constructor or <a><code class="inline">setItemLabel/2</code><
       <h1 class="signature" translate="no">enable(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L176" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L176" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -605,7 +625,7 @@ were passed to the constructor or <a><code class="inline">setItemLabel/2</code><
       <h1 class="signature" translate="no">enable/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L184" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L184" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -633,7 +653,7 @@ were passed to the constructor or <a><code class="inline">setItemLabel/2</code><
       <h1 class="signature" translate="no">getBitmap(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L199" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L199" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -661,7 +681,7 @@ were passed to the constructor or <a><code class="inline">setItemLabel/2</code><
       <h1 class="signature" translate="no">getHelp(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L207" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L207" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -689,7 +709,7 @@ were passed to the constructor or <a><code class="inline">setItemLabel/2</code><
       <h1 class="signature" translate="no">getId(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L215" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L215" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -717,7 +737,7 @@ were passed to the constructor or <a><code class="inline">setItemLabel/2</code><
       <h1 class="signature" translate="no">getItemLabel(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L276" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L276" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -746,7 +766,7 @@ were passed to the constructor or <a href="#setItemLabel/2"><code class="inline"
       <h1 class="signature" translate="no">getItemLabelText(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L299" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L299" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -774,7 +794,7 @@ were passed to the constructor or <a href="#setItemLabel/2"><code class="inline"
       <h1 class="signature" translate="no">getKind(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L224" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L224" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -802,7 +822,7 @@ were passed to the constructor or <a href="#setItemLabel/2"><code class="inline"
       <h1 class="signature" translate="no">getLabel(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L285" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L285" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -830,7 +850,7 @@ were passed to the constructor or <a href="#setItemLabel/2"><code class="inline"
       <h1 class="signature" translate="no">getLabelFromText(Text)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L233" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L233" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -858,7 +878,7 @@ were passed to the constructor or <a href="#setItemLabel/2"><code class="inline"
       <h1 class="signature" translate="no">getLabelText(Text)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L251" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L251" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -886,7 +906,7 @@ were passed to the constructor or <a href="#setItemLabel/2"><code class="inline"
       <h1 class="signature" translate="no">getMenu(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L307" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L307" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -914,7 +934,7 @@ were passed to the constructor or <a href="#setItemLabel/2"><code class="inline"
       <h1 class="signature" translate="no">getSubMenu(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L315" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L315" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -942,7 +962,7 @@ were passed to the constructor or <a href="#setItemLabel/2"><code class="inline"
       <h1 class="signature" translate="no">getText(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L261" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L261" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -970,7 +990,7 @@ were passed to the constructor or <a href="#setItemLabel/2"><code class="inline"
       <h1 class="signature" translate="no">isCheckable(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L329" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L329" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1000,7 +1020,7 @@ the check items only.</p>
       <h1 class="signature" translate="no">isChecked(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L337" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L337" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1028,7 +1048,7 @@ the check items only.</p>
       <h1 class="signature" translate="no">isEnabled(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L345" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L345" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1056,7 +1076,7 @@ the check items only.</p>
       <h1 class="signature" translate="no">isSeparator(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L353" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L353" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1084,7 +1104,7 @@ the check items only.</p>
       <h1 class="signature" translate="no">isSubMenu(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L361" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L361" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1112,7 +1132,7 @@ the check items only.</p>
       <h1 class="signature" translate="no">new()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L103" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L103" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1140,7 +1160,7 @@ the check items only.</p>
       <h1 class="signature" translate="no">new(Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L135" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L135" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1184,7 +1204,7 @@ shown by the library in the status bar when the menu item is selected) in this p
       <h1 class="signature" translate="no">setBitmap(This, Bmp)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L384" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L384" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1217,7 +1237,7 @@ images should be shown in the menus at all. If it is off (which is the case in e
       <h1 class="signature" translate="no">setHelp(This, HelpString)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L392" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L392" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1245,7 +1265,7 @@ images should be shown in the menus at all. If it is off (which is the case in e
       <h1 class="signature" translate="no">setItemLabel(This, Label)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L616" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L616" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1293,7 +1313,7 @@ supported as menu accelerator keys:</p><ul><li><p>WXK_COMMAND/WXK_CONTROL</p></l
       <h1 class="signature" translate="no">setMenu(This, Menu)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L401" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L401" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1321,7 +1341,7 @@ supported as menu accelerator keys:</p><ul><li><p>WXK_COMMAND/WXK_CONTROL</p></l
       <h1 class="signature" translate="no">setSubMenu(This, Menu)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L409" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L409" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1349,7 +1369,7 @@ supported as menu accelerator keys:</p><ul><li><p>WXK_COMMAND/WXK_CONTROL</p></l
       <h1 class="signature" translate="no">setText(This, Label)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxMenuItem.erl#L418" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxMenuItem.erl#L418" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1375,8 +1395,8 @@ supported as menu accelerator keys:</p><ul><li><p>WXK_COMMAND/WXK_CONTROL</p></l
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="wx.epub" title="ePub version">
@@ -1388,7 +1408,7 @@ supported as menu accelerator keys:</p><ul><li><p>WXK_COMMAND/WXK_CONTROL</p></l
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

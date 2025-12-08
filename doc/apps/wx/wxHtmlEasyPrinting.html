@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="wx v2.5.2">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/wx/wxHtmlEasyPrinting.html" />
     <title>wxHtmlEasyPrinting — wx v2.5.2</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-B3665BE0.js"></script>
+    <script defer src="dist/sidebar_items-E2170433.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ wx
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of wx</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ wx
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L58" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L58" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -145,7 +163,7 @@ stores various settings in it.</p><p>wxWidgets docs: <a href="https://docs.wxwid
 
       </div>
 
-        <div class="summary-synopsis"><p>Returns a pointer to <a><code class="inline">wxPageSetupDialogData</code></a> instance used by this class.</p></div>
+        <div class="summary-synopsis"><p>Returns a pointer to <a href="wxPageSetupDialogData.html"><code class="inline">wxPageSetupDialogData</code></a> instance used by this class.</p></div>
 
     </div>
 
@@ -155,7 +173,7 @@ stores various settings in it.</p><p>wxWidgets docs: <a href="https://docs.wxwid
 
       </div>
 
-        <div class="summary-synopsis"><p>Returns pointer to <a><code class="inline">wxPrintData</code></a> instance used by this class.</p></div>
+        <div class="summary-synopsis"><p>Returns pointer to <a href="wxPrintData.html"><code class="inline">wxPrintData</code></a> instance used by this class.</p></div>
 
     </div>
 
@@ -165,7 +183,7 @@ stores various settings in it.</p><p>wxWidgets docs: <a href="https://docs.wxwid
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">new([])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#new/1"><code class="inline">new([])</code></a>.</p></div>
 
     </div>
 
@@ -205,7 +223,7 @@ stores various settings in it.</p><p>wxWidgets docs: <a href="https://docs.wxwid
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">previewText(This, Htmltext, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#previewText/3"><code class="inline">previewText(This, Htmltext, [])</code></a>.</p></div>
 
     </div>
 
@@ -235,7 +253,7 @@ stores various settings in it.</p><p>wxWidgets docs: <a href="https://docs.wxwid
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">printText(This, Htmltext, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#printText/3"><code class="inline">printText(This, Htmltext, [])</code></a>.</p></div>
 
     </div>
 
@@ -255,7 +273,7 @@ stores various settings in it.</p><p>wxWidgets docs: <a href="https://docs.wxwid
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">setFonts(This, Normal_face, Fixed_face, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#setFonts/4"><code class="inline">setFonts(This, Normal_face, Fixed_face, [])</code></a>.</p></div>
 
     </div>
 
@@ -275,7 +293,7 @@ stores various settings in it.</p><p>wxWidgets docs: <a href="https://docs.wxwid
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">setFooter(This, Footer, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#setFooter/3"><code class="inline">setFooter(This, Footer, [])</code></a>.</p></div>
 
     </div>
 
@@ -295,7 +313,7 @@ stores various settings in it.</p><p>wxWidgets docs: <a href="https://docs.wxwid
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">setHeader(This, Header, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#setHeader/3"><code class="inline">setHeader(This, Header, [])</code></a>.</p></div>
 
     </div>
 
@@ -321,6 +339,7 @@ stores various settings in it.</p><p>wxWidgets docs: <a href="https://docs.wxwid
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:wxHtmlEasyPrinting/0">
 
@@ -332,7 +351,7 @@ stores various settings in it.</p><p>wxWidgets docs: <a href="https://docs.wxwid
       <h1 class="signature" translate="no">wxHtmlEasyPrinting()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L79" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L79" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -361,6 +380,7 @@ stores various settings in it.</p><p>wxWidgets docs: <a href="https://docs.wxwid
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="destroy/1">
 
@@ -372,7 +392,7 @@ stores various settings in it.</p><p>wxWidgets docs: <a href="https://docs.wxwid
       <h1 class="signature" translate="no">destroy(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L307" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L307" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -400,7 +420,7 @@ stores various settings in it.</p><p>wxWidgets docs: <a href="https://docs.wxwid
       <h1 class="signature" translate="no">getPageSetupData(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L122" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L122" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -429,7 +449,7 @@ stores various settings in it.</p><p>wxWidgets docs: <a href="https://docs.wxwid
       <h1 class="signature" translate="no">getPrintData(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L110" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L110" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -457,7 +477,7 @@ stores various settings in it.</p><p>wxWidgets docs: <a href="https://docs.wxwid
       <h1 class="signature" translate="no">new()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L87" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L87" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -485,7 +505,7 @@ stores various settings in it.</p><p>wxWidgets docs: <a href="https://docs.wxwid
       <h1 class="signature" translate="no">new(Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L94" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L94" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -514,7 +534,7 @@ stores various settings in it.</p><p>wxWidgets docs: <a href="https://docs.wxwid
       <h1 class="signature" translate="no">pageSetup(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L212" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L212" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -542,7 +562,7 @@ stores various settings in it.</p><p>wxWidgets docs: <a href="https://docs.wxwid
       <h1 class="signature" translate="no">previewFile(This, Htmlfile)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L135" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L135" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -572,7 +592,7 @@ error.</p>
       <h1 class="signature" translate="no">previewText(This, Htmltext)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L146" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L146" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -601,7 +621,7 @@ error.</p>
       <h1 class="signature" translate="no">previewText/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L158" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L158" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -633,7 +653,7 @@ error.</p>
       <h1 class="signature" translate="no">printFile(This, Htmlfile)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L176" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L176" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -663,7 +683,7 @@ error.</p>
       <h1 class="signature" translate="no">printText(This, Htmltext)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L187" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L187" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -692,7 +712,7 @@ error.</p>
       <h1 class="signature" translate="no">printText/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L199" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L199" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -724,7 +744,7 @@ error.</p>
       <h1 class="signature" translate="no">setFonts(This, Normal_face, Fixed_face)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L220" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L220" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -756,7 +776,7 @@ error.</p>
       <h1 class="signature" translate="no">setFonts/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L232" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L232" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -789,7 +809,7 @@ error.</p>
       <h1 class="signature" translate="no">setFooter(This, Footer)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L281" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L281" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -817,7 +837,7 @@ error.</p>
       <h1 class="signature" translate="no">setFooter/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L296" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L296" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -852,7 +872,7 @@ the title of the document</p>
       <h1 class="signature" translate="no">setHeader(This, Header)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L246" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L246" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -880,7 +900,7 @@ the title of the document</p>
       <h1 class="signature" translate="no">setHeader/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L268" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxHtmlEasyPrinting.erl#L268" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -910,8 +930,8 @@ the title of the document</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="wx.epub" title="ePub version">
@@ -923,7 +943,7 @@ the title of the document</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

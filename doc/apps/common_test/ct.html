@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="common_test v1.29">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/common_test/ct.html" />
     <title>ct — common_test v1.29</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-3DCB9B8F.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ common_test
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of common_test</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ common_test
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L23" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L23" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -153,8 +171,8 @@ instead.</p></section>
       </div>
 
         <div class="summary-synopsis"><p>Options that can be given to the <code class="inline">cth_conn_log</code> hook, which is used for logging
-of NETCONF and Telnet connections. See <a>ct_netconfc</a> or
-<a>ct_telnet</a> for description and examples of how to use
+of NETCONF and Telnet connections. See <a href="ct_netconfc.html#Logging">ct_netconfc</a> or
+<a href="ct_telnet.html#module-logging">ct_telnet</a> for description and examples of how to use
 this hook.</p></div>
 
     </div>
@@ -192,7 +210,7 @@ this hook.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>A name and association to configuration data introduced through a require
-statement, or a call to <a><code class="inline">ct:require/2</code></a>, for example,
+statement, or a call to <a href="#require/2"><code class="inline">ct:require/2</code></a>, for example,
 <code class="inline">ct:require(mynodename,{node,[telnet]})</code>.</p></div>
 
     </div>
@@ -225,7 +243,7 @@ case.</p></div>
         <div class="summary-synopsis"><p>Loads configuration variables using the specified callback module and
 configuration string. The callback module is to be either loaded or present in
 the code path. Loaded configuration variables can later be removed using
-function <a><code class="inline">ct:remove_config/2</code></a>.</p></div>
+function <a href="#remove_config/2"><code class="inline">ct:remove_config/2</code></a>.</p></div>
 
     </div>
 
@@ -236,10 +254,10 @@ function <a><code class="inline">ct:remove_config/2</code></a>.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Cancels any active timetrap and pauses the execution of the current test case
-until the user calls function <a><code class="inline">continue/0</code></a>. The user can then interact with the
+until the user calls function <a href="#continue/0"><code class="inline">continue/0</code></a>. The user can then interact with the
 Erlang node running the tests, for example, for debugging purposes or for
 manually executing a part of the test case. If a parallel group is executing,
-<a><code class="inline">ct:break/2</code></a> is to be called instead.</p></div>
+<a href="#break/2"><code class="inline">ct:break/2</code></a> is to be called instead.</p></div>
 
     </div>
 
@@ -249,9 +267,9 @@ manually executing a part of the test case. If a parallel group is executing,
 
       </div>
 
-        <div class="summary-synopsis"><p>Works the same way as <a><code class="inline">ct:break/1</code></a>, only argument <code class="inline">TestCase</code> makes
+        <div class="summary-synopsis"><p>Works the same way as <a href="#break/1"><code class="inline">ct:break/1</code></a>, only argument <code class="inline">TestCase</code> makes
 it possible to pause a test case executing in a parallel group. Function
-<a><code class="inline">ct:continue/1</code></a> is to be used to resume execution of <code class="inline">TestCase</code>.</p></div>
+<a href="#continue/1"><code class="inline">ct:continue/1</code></a> is to be used to resume execution of <code class="inline">TestCase</code>.</p></div>
 
     </div>
 
@@ -261,7 +279,7 @@ it possible to pause a test case executing in a parallel group. Function
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">capture_get([default])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#capture_get/1"><code class="inline">capture_get([default])</code></a>.</p></div>
 
     </div>
 
@@ -295,7 +313,7 @@ test case.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Stops capturing text strings (a session started with <a><code class="inline">capture_start/0</code></a>).</p></div>
+        <div class="summary-synopsis"><p>Stops capturing text strings (a session started with <a href="#capture_start/0"><code class="inline">capture_start/0</code></a>).</p></div>
 
     </div>
 
@@ -328,7 +346,7 @@ result page.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>This function must be called to continue after a test case (not executing in a
-parallel group) has called function <a><code class="inline">ct:break/1</code></a>.</p></div>
+parallel group) has called function <a href="#break/1"><code class="inline">ct:break/1</code></a>.</p></div>
 
     </div>
 
@@ -339,8 +357,8 @@ parallel group) has called function <a><code class="inline">ct:break/1</code></a
       </div>
 
         <div class="summary-synopsis"><p>This function must be called to continue after a test case has called
-<a><code class="inline">ct:break/2</code></a>. If the paused test case, <code class="inline">TestCase</code>, executes in a
-parallel group, this function, rather than <a><code class="inline">continue/0</code></a>, must be used to let the
+<a href="#break/2"><code class="inline">ct:break/2</code></a>. If the paused test case, <code class="inline">TestCase</code>, executes in a
+parallel group, this function, rather than <a href="#continue/0"><code class="inline">continue/0</code></a>, must be used to let the
 test case proceed.</p></div>
 
     </div>
@@ -352,7 +370,7 @@ test case proceed.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Decrypts <code class="inline">EncryptFileName</code>, previously generated with
-<a><code class="inline">ct:encrypt_config_file/2,3</code></a>. The original file
+<a href="#encrypt_config_file/2"><code class="inline">ct:encrypt_config_file/2,3</code></a>. The original file
 contents is saved in the target file. The encryption key, a string, must be
 available in a text file named <code class="inline">.ct_config.crypt</code>, either in the current
 directory, or the home directory of the user (it is searched for in that order).</p></div>
@@ -366,7 +384,7 @@ directory, or the home directory of the user (it is searched for in that order).
       </div>
 
         <div class="summary-synopsis"><p>Decrypts <code class="inline">EncryptFileName</code>, previously generated with
-<a><code class="inline">ct:encrypt_config_file/2,3</code></a>. The original file
+<a href="#encrypt_config_file/2"><code class="inline">ct:encrypt_config_file/2,3</code></a>. The original file
 contents is saved in the target file. The key must have the same value as that
 used for encryption.</p></div>
 
@@ -414,7 +432,7 @@ target file <code class="inline">EncryptFileName</code>. The encryption key to u
       </div>
 
         <div class="summary-synopsis"><p>Terminates a test case with an error message specified by a format string and a
-list of values (used as arguments to <a><code class="inline">io_lib:format/2</code></a>).</p></div>
+list of values (used as arguments to <a href="../../apps/stdlib/io_lib.html#format/2"><code class="inline">io_lib:format/2</code></a>).</p></div>
 
     </div>
 
@@ -424,7 +442,7 @@ list of values (used as arguments to <a><code class="inline">io_lib:format/2</co
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">get_config(Required, undefined, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#get_config/3"><code class="inline">get_config(Required, undefined, [])</code></a>.</p></div>
 
     </div>
 
@@ -434,7 +452,7 @@ list of values (used as arguments to <a><code class="inline">io_lib:format/2</co
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">get_config(Required, Default, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#get_config/3"><code class="inline">get_config(Required, Default, [])</code></a>.</p></div>
 
     </div>
 
@@ -537,7 +555,7 @@ Note the <code class="inline">Time</code> is not the scaled result.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>This function returns the verbosity level for the specified logging category.
-See the <a>User's Guide</a> for details. Use the value
+See the <a href="write_test_chapter.html#logging">User's Guide</a> for details. Use the value
 <code class="inline">default</code> to read the general verbosity level.</p></div>
 
     </div>
@@ -569,7 +587,7 @@ result as a list of key-value pairs.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">log(default, ?STD_IMPORTANCE, Format, [], [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#log/5"><code class="inline">log(default, ?STD_IMPORTANCE, Format, [], [])</code></a>.</p></div>
 
     </div>
 
@@ -579,7 +597,7 @@ result as a list of key-value pairs.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">log(Category, Importance, Format, FormatArgs, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#log/5"><code class="inline">log(Category, Importance, Format, FormatArgs, [])</code></a>.</p></div>
 
     </div>
 
@@ -589,7 +607,7 @@ result as a list of key-value pairs.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">log(Category, Importance, Format, FormatArgs, Opts)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#log/5"><code class="inline">log(Category, Importance, Format, FormatArgs, Opts)</code></a>.</p></div>
 
     </div>
 
@@ -599,7 +617,7 @@ result as a list of key-value pairs.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">log(Category, Importance, Format, FormatArgs, Opts)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#log/5"><code class="inline">log(Category, Importance, Format, FormatArgs, Opts)</code></a>.</p></div>
 
     </div>
 
@@ -642,7 +660,7 @@ event manager. This can later be caught by any installed event manager.</p></div
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">pal(default, ?STD_IMPORTANCE, Format, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#pal/4"><code class="inline">pal(default, ?STD_IMPORTANCE, Format, [])</code></a>.</p></div>
 
     </div>
 
@@ -652,7 +670,7 @@ event manager. This can later be caught by any installed event manager.</p></div
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">pal(Category, Importance, Format, FormatArgs, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#pal/5"><code class="inline">pal(Category, Importance, Format, FormatArgs, [])</code></a>.</p></div>
 
     </div>
 
@@ -662,7 +680,7 @@ event manager. This can later be caught by any installed event manager.</p></div
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">pal(Category, Importance, Format, FormatArgs, Opts)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#pal/5"><code class="inline">pal(Category, Importance, Format, FormatArgs, Opts)</code></a>.</p></div>
 
     </div>
 
@@ -672,7 +690,7 @@ event manager. This can later be caught by any installed event manager.</p></div
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">pal(Category, Importance, Format, FormatArgs, Opts)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#pal/5"><code class="inline">pal(Category, Importance, Format, FormatArgs, Opts)</code></a>.</p></div>
 
     </div>
 
@@ -702,7 +720,7 @@ event manager. This can later be caught by any installed event manager.</p></div
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">print(default, ?STD_IMPORTANCE, Format, [], [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#print/5"><code class="inline">print(default, ?STD_IMPORTANCE, Format, [], [])</code></a>.</p></div>
 
     </div>
 
@@ -712,7 +730,7 @@ event manager. This can later be caught by any installed event manager.</p></div
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">print(Category, Importance, Format, FormatArgs, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#print/5"><code class="inline">print(Category, Importance, Format, FormatArgs, [])</code></a>.</p></div>
 
     </div>
 
@@ -722,7 +740,7 @@ event manager. This can later be caught by any installed event manager.</p></div
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">print(Category, Importance, Format, FormatArgs, Opts)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#print/5"><code class="inline">print(Category, Importance, Format, FormatArgs, Opts)</code></a>.</p></div>
 
     </div>
 
@@ -732,7 +750,7 @@ event manager. This can later be caught by any installed event manager.</p></div
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">print(Category, Importance, Format, FormatArgs, Opts)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#print/5"><code class="inline">print(Category, Importance, Format, FormatArgs, Opts)</code></a>.</p></div>
 
     </div>
 
@@ -802,7 +820,7 @@ be specified as <code class="inline">Required</code>. Only the last element of t
       </div>
 
         <div class="summary-synopsis"><p>Checks if the required configuration is available and gives it a name. The
-semantics for <code class="inline">Required</code> is the same as in <a><code class="inline">ct:require/1</code></a> except
+semantics for <code class="inline">Required</code> is the same as in <a href="#require/1"><code class="inline">ct:require/1</code></a> except
 that a list of <code class="inline">SubKey</code>s cannot be specified.</p></div>
 
     </div>
@@ -845,7 +863,7 @@ that a list of <code class="inline">SubKey</code>s cannot be specified.</p></div
 
         <div class="summary-synopsis"><p>Runs tests as specified by the combination of options in <code class="inline">Opts</code>. The options are
 the same as those used with program <code class="inline">ct_run</code>, see
-<a>Run Tests from Command Line</a> in the <code class="inline">ct_run</code> manual page.</p></div>
+<a href="ct_run_cmd.html#ct_run">Run Tests from Command Line</a> in the <code class="inline">ct_run</code> manual page.</p></div>
 
     </div>
 
@@ -867,7 +885,7 @@ specification files.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Use this function to set, or modify, the verbosity level for a logging category.
-See the <a>User's Guide</a> for details. Use the value
+See the <a href="write_test_chapter.html#logging">User's Guide</a> for details. Use the value
 <code class="inline">default</code> to set the general verbosity level.</p></div>
 
     </div>
@@ -878,7 +896,7 @@ See the <a>User's Guide</a> for details. Use the value
 
       </div>
 
-        <div class="summary-synopsis"><p>This function, similar to <a><code class="inline">timer:sleep/1</code></a> in STDLIB, suspends the test case for
+        <div class="summary-synopsis"><p>This function, similar to <a href="../../apps/stdlib/timer.html#sleep/1"><code class="inline">timer:sleep/1</code></a> in STDLIB, suspends the test case for
 a specified time. However, this function also multiplies <code class="inline">Time</code> with the
 <code class="inline">multiply_timetraps</code> value (if set) and under certain circumstances also scales
 up the time automatically if <code class="inline">scale_timetraps</code> is set to <code class="inline">true</code> (default is
@@ -965,7 +983,7 @@ event manager. This can later be caught by any installed event manager.</p></div
       </div>
 
         <div class="summary-synopsis"><p>Returns any data specified with tag <code class="inline">userdata</code> in the list of tuples returned
-from <a><code class="inline">suite/0</code></a>.</p></div>
+from <a href="ct_suite.html#c:suite/0"><code class="inline">suite/0</code></a>.</p></div>
 
     </div>
 
@@ -992,6 +1010,7 @@ from <code class="inline">Suite:group(GroupName)</code> or <code class="inline">
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:config_key/0">
 
@@ -1003,7 +1022,7 @@ from <code class="inline">Suite:group(GroupName)</code> or <code class="inline">
       <h1 class="signature" translate="no">config_key()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L108" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L108" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1031,7 +1050,7 @@ from <code class="inline">Suite:group(GroupName)</code> or <code class="inline">
       <h1 class="signature" translate="no">conn_log_mod()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L130" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L130" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1059,7 +1078,7 @@ from <code class="inline">Suite:group(GroupName)</code> or <code class="inline">
       <h1 class="signature" translate="no">conn_log_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L127" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L127" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1087,7 +1106,7 @@ from <code class="inline">Suite:group(GroupName)</code> or <code class="inline">
       <h1 class="signature" translate="no">conn_log_options()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L126" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L126" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1118,7 +1137,7 @@ this hook.</p>
       <h1 class="signature" translate="no">conn_log_type()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L129" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L129" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1146,7 +1165,7 @@ this hook.</p>
       <h1 class="signature" translate="no">handle()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L117" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L117" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1174,7 +1193,7 @@ this hook.</p>
       <h1 class="signature" translate="no">key_or_name()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L115" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L115" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1202,7 +1221,7 @@ this hook.</p>
       <h1 class="signature" translate="no">target_name()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L114" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L114" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1233,6 +1252,7 @@ statement, or a call to <a href="#require/2"><code class="inline">ct:require/2</
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="abort_current_testcase/1">
 
@@ -1244,7 +1264,7 @@ statement, or a call to <a href="#require/2"><code class="inline">ct:require/2</
       <h1 class="signature" translate="no">abort_current_testcase(Reason)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1329" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1329" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1281,7 +1301,7 @@ log.</p>
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1429" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1429" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1315,7 +1335,7 @@ function <a href="#remove_config/2"><code class="inline">ct:remove_config/2</cod
         <span class="note">(since OTP R15B02)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1549" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1549" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1359,7 +1379,7 @@ in the User's Guide.</p>
         <span class="note">(since OTP R15B02)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1583" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1583" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1395,7 +1415,7 @@ it possible to pause a test case executing in a parallel group. Function
         <span class="note">(since OTP R15B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L976" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L976" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1425,7 +1445,7 @@ it possible to pause a test case executing in a parallel group. Function
         <span class="note">(since OTP R15B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L993" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L993" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1460,7 +1480,7 @@ of capturing printouts to <code class="inline">stdout</code>. Log categories tha
         <span class="note">(since OTP R15B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L959" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L959" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1492,7 +1512,7 @@ test case.</p><p>See also <a href="#capture_get/1"><code class="inline">ct:captu
         <span class="note">(since OTP R15B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L970" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L970" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1521,7 +1541,7 @@ test case.</p><p>See also <a href="#capture_get/1"><code class="inline">ct:captu
       <h1 class="signature" translate="no">comment(Comment)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1061" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1061" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1553,7 +1573,7 @@ value <code class="inline">{comment,Comment}</code> overwrites the string set by
         <span class="note">(since OTP R15B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1086" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1086" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1586,7 +1606,7 @@ same as function <a href="#comment/1"><code class="inline">ct:comment/1</code></
         <span class="note">(since OTP R15B02)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1615" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1615" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1617,7 +1637,7 @@ parallel group) has called function <a href="#break/1"><code class="inline">ct:b
         <span class="note">(since OTP R15B02)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1627" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1627" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1648,7 +1668,7 @@ test case proceed.</p>
       <h1 class="signature" translate="no">decrypt_config_file(EncryptFileName, TargetFileName)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1401" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1401" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1684,7 +1704,7 @@ directory, or the home directory of the user (it is searched for in that order).
       <h1 class="signature" translate="no">decrypt_config_file(EncryptFileName, TargetFileName, KeyOrFile)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1415" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1415" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1720,7 +1740,7 @@ used for encryption.</p>
       <h1 class="signature" translate="no">encrypt_config_file(SrcFileName, EncryptFileName)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1366" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1366" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1756,7 +1776,7 @@ in the User's Guide.</p><p>For details on DES3 encryption/decryption, see applic
       <h1 class="signature" translate="no">encrypt_config_file(SrcFileName, EncryptFileName, KeyOrFile)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1387" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1387" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1795,7 +1815,7 @@ in the User's Guide.</p><p>For details on DES3 encryption/decryption, see applic
       <h1 class="signature" translate="no">fail(Reason)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1013" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1013" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1825,7 +1845,7 @@ in the User's Guide.</p><p>For details on DES3 encryption/decryption, see applic
         <span class="note">(since OTP R15B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1034" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1034" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1854,7 +1874,7 @@ list of values (used as arguments to <a href="../../apps/stdlib/io_lib.html#form
       <h1 class="signature" translate="no">get_config(Required)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L512" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L512" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1887,7 +1907,7 @@ list of values (used as arguments to <a href="../../apps/stdlib/io_lib.html#form
       <h1 class="signature" translate="no">get_config(Required, Default)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L522" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L522" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1921,7 +1941,7 @@ list of values (used as arguments to <a href="../../apps/stdlib/io_lib.html#form
       <h1 class="signature" translate="no">get_config(Required, Default, Opts)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L583" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L583" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1946,17 +1966,17 @@ list of values (used as arguments to <a href="../../apps/stdlib/io_lib.html#form
 
 <p>Reads configuration data values.</p><p>Returns the matching values or configuration elements, given a configuration
 variable key or its associated name (if one has been specified with
-<a href="#require/2"><code class="inline">ct:require/2</code></a> or a <code class="inline">require</code> statement).</p><p><em>Example:</em></p><p>Given the following configuration file:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="0484845628-1">{</span><span class="ss">unix</span><span class="p">,</span><span class="p" data-group-id="0484845628-2">[</span><span class="p" data-group-id="0484845628-3">{</span><span class="ss">telnet</span><span class="p">,</span><span class="n">IpAddr</span><span class="p" data-group-id="0484845628-3">}</span><span class="p">,</span><span class="w">
-       </span><span class="p" data-group-id="0484845628-4">{</span><span class="ss">user</span><span class="p">,</span><span class="p" data-group-id="0484845628-5">[</span><span class="p" data-group-id="0484845628-6">{</span><span class="ss">username</span><span class="p">,</span><span class="n">Username</span><span class="p" data-group-id="0484845628-6">}</span><span class="p">,</span><span class="w">
-              </span><span class="p" data-group-id="0484845628-7">{</span><span class="ss">password</span><span class="p">,</span><span class="n">Password</span><span class="p" data-group-id="0484845628-7">}</span><span class="p" data-group-id="0484845628-5">]</span><span class="p" data-group-id="0484845628-4">}</span><span class="p" data-group-id="0484845628-2">]</span><span class="p" data-group-id="0484845628-1">}</span><span class="p">.</span></code></pre><p>Then:</p><pre><code class="makeup erlang" translate="no"><span class="nc">ct</span><span class="p">:</span><span class="nf">get_config</span><span class="p" data-group-id="6907770972-1">(</span><span class="ss">unix</span><span class="p">,</span><span class="n">Default</span><span class="p" data-group-id="6907770972-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="6907770972-2">[</span><span class="p" data-group-id="6907770972-3">{</span><span class="ss">telnet</span><span class="p">,</span><span class="n">IpAddr</span><span class="p" data-group-id="6907770972-3">}</span><span class="p">,</span><span class="w">
- </span><span class="p" data-group-id="6907770972-4">{</span><span class="ss">user</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6907770972-5">[</span><span class="p" data-group-id="6907770972-6">{</span><span class="ss">username</span><span class="p">,</span><span class="n">Username</span><span class="p" data-group-id="6907770972-6">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6907770972-7">{</span><span class="ss">password</span><span class="p">,</span><span class="n">Password</span><span class="p" data-group-id="6907770972-7">}</span><span class="p" data-group-id="6907770972-5">]</span><span class="p" data-group-id="6907770972-4">}</span><span class="p" data-group-id="6907770972-2">]</span><span class="w">
-</span><span class="nc">ct</span><span class="p">:</span><span class="nf">get_config</span><span class="p" data-group-id="6907770972-8">(</span><span class="p" data-group-id="6907770972-9">{</span><span class="ss">unix</span><span class="p">,</span><span class="ss">telnet</span><span class="p" data-group-id="6907770972-9">}</span><span class="p">,</span><span class="n">Default</span><span class="p" data-group-id="6907770972-8">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">IpAddr</span><span class="w">
-</span><span class="nc">ct</span><span class="p">:</span><span class="nf">get_config</span><span class="p" data-group-id="6907770972-10">(</span><span class="p" data-group-id="6907770972-11">{</span><span class="ss">unix</span><span class="p">,</span><span class="ss">user</span><span class="p">,</span><span class="ss">username</span><span class="p" data-group-id="6907770972-11">}</span><span class="p">,</span><span class="n">Default</span><span class="p" data-group-id="6907770972-10">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">Username</span><span class="w">
-</span><span class="nc">ct</span><span class="p">:</span><span class="nf">get_config</span><span class="p" data-group-id="6907770972-12">(</span><span class="p" data-group-id="6907770972-13">{</span><span class="ss">unix</span><span class="p">,</span><span class="ss">ftp</span><span class="p" data-group-id="6907770972-13">}</span><span class="p">,</span><span class="n">Default</span><span class="p" data-group-id="6907770972-12">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">Default</span><span class="w">
-</span><span class="nc">ct</span><span class="p">:</span><span class="nf">get_config</span><span class="p" data-group-id="6907770972-14">(</span><span class="ss">unknownkey</span><span class="p">,</span><span class="n">Default</span><span class="p" data-group-id="6907770972-14">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">Default</span></code></pre><p>If a configuration variable key has been associated with a name (by
+<a href="#require/2"><code class="inline">ct:require/2</code></a> or a <code class="inline">require</code> statement).</p><p><em>Example:</em></p><p>Given the following configuration file:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="6023290566-1">{</span><span class="ss">unix</span><span class="p">,</span><span class="p" data-group-id="6023290566-2">[</span><span class="p" data-group-id="6023290566-3">{</span><span class="ss">telnet</span><span class="p">,</span><span class="n">IpAddr</span><span class="p" data-group-id="6023290566-3">}</span><span class="p">,</span><span class="w">
+       </span><span class="p" data-group-id="6023290566-4">{</span><span class="ss">user</span><span class="p">,</span><span class="p" data-group-id="6023290566-5">[</span><span class="p" data-group-id="6023290566-6">{</span><span class="ss">username</span><span class="p">,</span><span class="n">Username</span><span class="p" data-group-id="6023290566-6">}</span><span class="p">,</span><span class="w">
+              </span><span class="p" data-group-id="6023290566-7">{</span><span class="ss">password</span><span class="p">,</span><span class="n">Password</span><span class="p" data-group-id="6023290566-7">}</span><span class="p" data-group-id="6023290566-5">]</span><span class="p" data-group-id="6023290566-4">}</span><span class="p" data-group-id="6023290566-2">]</span><span class="p" data-group-id="6023290566-1">}</span><span class="p">.</span></code></pre><p>Then:</p><pre><code class="makeup erlang" translate="no"><span class="nc">ct</span><span class="p">:</span><span class="nf">get_config</span><span class="p" data-group-id="6874441970-1">(</span><span class="ss">unix</span><span class="p">,</span><span class="n">Default</span><span class="p" data-group-id="6874441970-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="6874441970-2">[</span><span class="p" data-group-id="6874441970-3">{</span><span class="ss">telnet</span><span class="p">,</span><span class="n">IpAddr</span><span class="p" data-group-id="6874441970-3">}</span><span class="p">,</span><span class="w">
+ </span><span class="p" data-group-id="6874441970-4">{</span><span class="ss">user</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6874441970-5">[</span><span class="p" data-group-id="6874441970-6">{</span><span class="ss">username</span><span class="p">,</span><span class="n">Username</span><span class="p" data-group-id="6874441970-6">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6874441970-7">{</span><span class="ss">password</span><span class="p">,</span><span class="n">Password</span><span class="p" data-group-id="6874441970-7">}</span><span class="p" data-group-id="6874441970-5">]</span><span class="p" data-group-id="6874441970-4">}</span><span class="p" data-group-id="6874441970-2">]</span><span class="w">
+</span><span class="nc">ct</span><span class="p">:</span><span class="nf">get_config</span><span class="p" data-group-id="6874441970-8">(</span><span class="p" data-group-id="6874441970-9">{</span><span class="ss">unix</span><span class="p">,</span><span class="ss">telnet</span><span class="p" data-group-id="6874441970-9">}</span><span class="p">,</span><span class="n">Default</span><span class="p" data-group-id="6874441970-8">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">IpAddr</span><span class="w">
+</span><span class="nc">ct</span><span class="p">:</span><span class="nf">get_config</span><span class="p" data-group-id="6874441970-10">(</span><span class="p" data-group-id="6874441970-11">{</span><span class="ss">unix</span><span class="p">,</span><span class="ss">user</span><span class="p">,</span><span class="ss">username</span><span class="p" data-group-id="6874441970-11">}</span><span class="p">,</span><span class="n">Default</span><span class="p" data-group-id="6874441970-10">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">Username</span><span class="w">
+</span><span class="nc">ct</span><span class="p">:</span><span class="nf">get_config</span><span class="p" data-group-id="6874441970-12">(</span><span class="p" data-group-id="6874441970-13">{</span><span class="ss">unix</span><span class="p">,</span><span class="ss">ftp</span><span class="p" data-group-id="6874441970-13">}</span><span class="p">,</span><span class="n">Default</span><span class="p" data-group-id="6874441970-12">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">Default</span><span class="w">
+</span><span class="nc">ct</span><span class="p">:</span><span class="nf">get_config</span><span class="p" data-group-id="6874441970-14">(</span><span class="ss">unknownkey</span><span class="p">,</span><span class="n">Default</span><span class="p" data-group-id="6874441970-14">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">Default</span></code></pre><p>If a configuration variable key has been associated with a name (by
 <a href="#require/2"><code class="inline">ct:require/2</code></a> or a <code class="inline">require</code> statement), the name can be used
-instead of the key to read the value:</p><pre><code class="makeup erlang" translate="no"><span class="nc">ct</span><span class="p">:</span><span class="nf">require</span><span class="p" data-group-id="5429532010-1">(</span><span class="ss">myuser</span><span class="p">,</span><span class="p" data-group-id="5429532010-2">{</span><span class="ss">unix</span><span class="p">,</span><span class="ss">user</span><span class="p" data-group-id="5429532010-2">}</span><span class="p" data-group-id="5429532010-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="ss">ok</span><span class="p">.</span><span class="w">
-</span><span class="nc">ct</span><span class="p">:</span><span class="nf">get_config</span><span class="p" data-group-id="5429532010-3">(</span><span class="ss">myuser</span><span class="p">,</span><span class="n">Default</span><span class="p" data-group-id="5429532010-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="5429532010-4">[</span><span class="p" data-group-id="5429532010-5">{</span><span class="ss">username</span><span class="p">,</span><span class="n">Username</span><span class="p" data-group-id="5429532010-5">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5429532010-6">{</span><span class="ss">password</span><span class="p">,</span><span class="n">Password</span><span class="p" data-group-id="5429532010-6">}</span><span class="p" data-group-id="5429532010-4">]</span></code></pre><p>If a configuration variable is defined in multiple files, use option <code class="inline">all</code> to
+instead of the key to read the value:</p><pre><code class="makeup erlang" translate="no"><span class="nc">ct</span><span class="p">:</span><span class="nf">require</span><span class="p" data-group-id="7854378507-1">(</span><span class="ss">myuser</span><span class="p">,</span><span class="p" data-group-id="7854378507-2">{</span><span class="ss">unix</span><span class="p">,</span><span class="ss">user</span><span class="p" data-group-id="7854378507-2">}</span><span class="p" data-group-id="7854378507-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="ss">ok</span><span class="p">.</span><span class="w">
+</span><span class="nc">ct</span><span class="p">:</span><span class="nf">get_config</span><span class="p" data-group-id="7854378507-3">(</span><span class="ss">myuser</span><span class="p">,</span><span class="n">Default</span><span class="p" data-group-id="7854378507-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="7854378507-4">[</span><span class="p" data-group-id="7854378507-5">{</span><span class="ss">username</span><span class="p">,</span><span class="n">Username</span><span class="p" data-group-id="7854378507-5">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7854378507-6">{</span><span class="ss">password</span><span class="p">,</span><span class="n">Password</span><span class="p" data-group-id="7854378507-6">}</span><span class="p" data-group-id="7854378507-4">]</span></code></pre><p>If a configuration variable is defined in multiple files, use option <code class="inline">all</code> to
 access all possible values. The values are returned in a list. The order of the
 elements corresponds to the order that the configuration files were specified at
 startup.</p><p>If configuration elements (key-value tuples) are to be returned as result
@@ -1978,7 +1998,7 @@ form <code class="inline">{Required,Value}</code>.</p><p>See also <a href="#get_
         <span class="note">(since OTP 17.5)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1345" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1345" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1994,7 +2014,7 @@ form <code class="inline">{Required,Value}</code>.</p><p>See also <a href="#get_
       </div>
 
 <p>Gets a reference to the <code class="inline">Common Test</code> event manager. The reference can be used
-to, for example, add a user-specific event handler while tests are running.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="nc">gen_event</span><span class="p">:</span><span class="nf">add_handler</span><span class="p" data-group-id="9821156075-1">(</span><span class="nc">ct</span><span class="p">:</span><span class="nf">get_event_mgr_ref</span><span class="p" data-group-id="9821156075-2">(</span><span class="p" data-group-id="9821156075-2">)</span><span class="p">,</span><span class="w"> </span><span class="ss">my_ev_h</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9821156075-3">[</span><span class="p" data-group-id="9821156075-3">]</span><span class="p" data-group-id="9821156075-1">)</span></code></pre>
+to, for example, add a user-specific event handler while tests are running.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="nc">gen_event</span><span class="p">:</span><span class="nf">add_handler</span><span class="p" data-group-id="5472127352-1">(</span><span class="nc">ct</span><span class="p">:</span><span class="nf">get_event_mgr_ref</span><span class="p" data-group-id="5472127352-2">(</span><span class="p" data-group-id="5472127352-2">)</span><span class="p">,</span><span class="w"> </span><span class="ss">my_ev_h</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5472127352-3">[</span><span class="p" data-group-id="5472127352-3">]</span><span class="p" data-group-id="5472127352-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="get_progname/0">
@@ -2009,7 +2029,7 @@ to, for example, add a user-specific event handler while tests are running.</p><
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1126" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1126" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2038,7 +2058,7 @@ could not be found, the string <code class="inline">&quot;no_prog_name&quot;</co
       <h1 class="signature" translate="no">get_status()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1286" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1286" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2087,7 +2107,7 @@ cases so far.</p>
       <h1 class="signature" translate="no">get_target_name(Handle)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1117" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1117" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2118,7 +2138,7 @@ cases so far.</p>
         <span class="note">(since OTP 18.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L613" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L613" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2149,7 +2169,7 @@ cases so far.</p>
         <span class="note">(since OTP 18.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L642" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L642" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2192,7 +2212,7 @@ element.</p><p>To read test terms, use <code class="inline">Tag = tests</code> (
         <span class="note">(since OTP R15B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1476" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1476" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2227,7 +2247,7 @@ Note the <code class="inline">Time</code> is not the scaled result.</p>
         <span class="note">(since OTP 19.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L947" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L947" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2257,7 +2277,7 @@ See the <a href="write_test_chapter.html#logging">User's Guide</a> for details. 
       <h1 class="signature" translate="no">install(Opts)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L157" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L157" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2282,7 +2302,7 @@ See the <a href="write_test_chapter.html#logging">User's Guide</a> for details. 
 
       </div>
 
-<p>Installs configuration files and event handlers.</p><p>Run this function once before the first test.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="nf">install</span><span class="p" data-group-id="5069465259-1">(</span><span class="p" data-group-id="5069465259-2">[</span><span class="p" data-group-id="5069465259-3">{</span><span class="ss">config</span><span class="p">,</span><span class="p" data-group-id="5069465259-4">[</span><span class="s">&quot;config_node.ctc&quot;</span><span class="p">,</span><span class="s">&quot;config_user.ctc&quot;</span><span class="p" data-group-id="5069465259-4">]</span><span class="p" data-group-id="5069465259-3">}</span><span class="p" data-group-id="5069465259-2">]</span><span class="p" data-group-id="5069465259-1">)</span></code></pre><p>This function is automatically run by program <code class="inline">ct_run</code>.</p>
+<p>Installs configuration files and event handlers.</p><p>Run this function once before the first test.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="nf">install</span><span class="p" data-group-id="6704356033-1">(</span><span class="p" data-group-id="6704356033-2">[</span><span class="p" data-group-id="6704356033-3">{</span><span class="ss">config</span><span class="p">,</span><span class="p" data-group-id="6704356033-4">[</span><span class="s">&quot;config_node.ctc&quot;</span><span class="p">,</span><span class="s">&quot;config_user.ctc&quot;</span><span class="p" data-group-id="6704356033-4">]</span><span class="p" data-group-id="6704356033-3">}</span><span class="p" data-group-id="6704356033-2">]</span><span class="p" data-group-id="6704356033-1">)</span></code></pre><p>This function is automatically run by program <code class="inline">ct_run</code>.</p>
   </section>
 </section>
 <section class="detail" id="listenv/1">
@@ -2295,7 +2315,7 @@ See the <a href="write_test_chapter.html#logging">User's Guide</a> for details. 
       <h1 class="signature" translate="no">listenv(Telnet)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1160" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1160" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2330,7 +2350,7 @@ result as a list of key-value pairs.</p>
       <h1 class="signature" translate="no">log(Format)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L667" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L667" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2358,7 +2378,7 @@ result as a list of key-value pairs.</p>
       <h1 class="signature" translate="no">log(X1, X2)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L678" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L678" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2393,7 +2413,7 @@ result as a list of key-value pairs.</p>
       <h1 class="signature" translate="no">log(X1, X2, X3)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L697" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L697" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2433,7 +2453,7 @@ result as a list of key-value pairs.</p>
         <span class="note">(since OTP R15B02)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L718" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L718" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2474,7 +2494,7 @@ result as a list of key-value pairs.</p>
         <span class="note">(since OTP 18.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L750" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L750" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2516,7 +2536,7 @@ printed with this function, unless the <code class="inline">esc_chars</code> opt
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1109" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1109" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2548,7 +2568,7 @@ calling this function.</p>
         <span class="note">(since OTP R15B02)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1512" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1512" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2577,7 +2597,7 @@ event manager. This can later be caught by any installed event manager.</p><p>Se
       <h1 class="signature" translate="no">pal(Format)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L841" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L841" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2605,7 +2625,7 @@ event manager. This can later be caught by any installed event manager.</p><p>Se
       <h1 class="signature" translate="no">pal(X1, X2)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L852" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L852" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2640,7 +2660,7 @@ event manager. This can later be caught by any installed event manager.</p><p>Se
       <h1 class="signature" translate="no">pal(X1, X2, X3)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L870" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L870" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2679,7 +2699,7 @@ event manager. This can later be caught by any installed event manager.</p><p>Se
         <span class="note">(since OTP R15B02)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L891" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L891" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2720,7 +2740,7 @@ event manager. This can later be caught by any installed event manager.</p><p>Se
         <span class="note">(since OTP 19.2)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L923" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L923" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2760,7 +2780,7 @@ Test before the text is printed to the log file.</p>
       <h1 class="signature" translate="no">parse_table(Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1147" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1147" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2791,7 +2811,7 @@ table.</p>
       <h1 class="signature" translate="no">print(Format)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L756" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L756" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2821,7 +2841,7 @@ table.</p>
         <span class="note">(since OTP R15B02)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L767" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L767" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2856,7 +2876,7 @@ table.</p>
       <h1 class="signature" translate="no">print(X1, X2, X3)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L786" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L786" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2896,7 +2916,7 @@ table.</p>
         <span class="note">(since OTP R15B02)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L807" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L807" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2937,7 +2957,7 @@ table.</p>
         <span class="note">(since OTP 19.2)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L835" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L835" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2977,7 +2997,7 @@ the User's Guide.</p>
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L604" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L604" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3017,7 +3037,7 @@ aliases.</p>
         <span class="note">(since OTP 20.2)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1661" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1661" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3067,7 +3087,7 @@ functions.</p>
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1440" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1440" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3096,7 +3116,7 @@ with specified callback module and configuration string.</p>
       <h1 class="signature" translate="no">require(Required)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L450" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L450" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3119,7 +3139,7 @@ with specified callback module and configuration string.</p>
 
 <p>Checks if the required configuration is available. Arbitrarily deep tuples can
 be specified as <code class="inline">Required</code>. Only the last element of the tuple can be a list of
-<code class="inline">SubKey</code>s.</p><p><em>Example 1.</em> Require the variable <code class="inline">myvar</code>:</p><pre><code class="makeup erlang" translate="no"><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ct</span><span class="p">:</span><span class="nf">require</span><span class="p" data-group-id="3711443993-1">(</span><span class="ss">myvar</span><span class="p" data-group-id="3711443993-1">)</span><span class="p">.</span></code></pre><p>In this case the configuration file must at least contain:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="2161531162-1">{</span><span class="ss">myvar</span><span class="p">,</span><span class="n">Value</span><span class="p" data-group-id="2161531162-1">}</span><span class="p">.</span></code></pre><p><em>Example 2.</em> Require key <code class="inline">myvar</code> with subkeys <code class="inline">sub1</code> and <code class="inline">sub2</code>:</p><pre><code class="makeup erlang" translate="no"><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ct</span><span class="p">:</span><span class="nf">require</span><span class="p" data-group-id="3061765843-1">(</span><span class="p" data-group-id="3061765843-2">{</span><span class="ss">myvar</span><span class="p">,</span><span class="p" data-group-id="3061765843-3">[</span><span class="ss">sub1</span><span class="p">,</span><span class="ss">sub2</span><span class="p" data-group-id="3061765843-3">]</span><span class="p" data-group-id="3061765843-2">}</span><span class="p" data-group-id="3061765843-1">)</span><span class="p">.</span></code></pre><p>In this case the configuration file must at least contain:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="5220324915-1">{</span><span class="ss">myvar</span><span class="p">,</span><span class="p" data-group-id="5220324915-2">[</span><span class="p" data-group-id="5220324915-3">{</span><span class="ss">sub1</span><span class="p">,</span><span class="n">Value</span><span class="p" data-group-id="5220324915-3">}</span><span class="p">,</span><span class="p" data-group-id="5220324915-4">{</span><span class="ss">sub2</span><span class="p">,</span><span class="n">Value</span><span class="p" data-group-id="5220324915-4">}</span><span class="p" data-group-id="5220324915-2">]</span><span class="p" data-group-id="5220324915-1">}</span><span class="p">.</span></code></pre><p><em>Example 3.</em> Require key <code class="inline">myvar</code> with subkey <code class="inline">sub1</code> with <code class="inline">subsub1</code>:</p><pre><code class="makeup erlang" translate="no"><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ct</span><span class="p">:</span><span class="nf">require</span><span class="p" data-group-id="8140503293-1">(</span><span class="p" data-group-id="8140503293-2">{</span><span class="ss">myvar</span><span class="p">,</span><span class="ss">sub1</span><span class="p">,</span><span class="ss">sub2</span><span class="p" data-group-id="8140503293-2">}</span><span class="p" data-group-id="8140503293-1">)</span><span class="p">.</span></code></pre><p>In this case the configuration file must at least contain:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="7202885053-1">{</span><span class="ss">myvar</span><span class="p">,</span><span class="p" data-group-id="7202885053-2">[</span><span class="p" data-group-id="7202885053-3">{</span><span class="ss">sub1</span><span class="p">,</span><span class="p" data-group-id="7202885053-4">[</span><span class="p" data-group-id="7202885053-5">{</span><span class="ss">sub2</span><span class="p">,</span><span class="n">Value</span><span class="p" data-group-id="7202885053-5">}</span><span class="p" data-group-id="7202885053-4">]</span><span class="p" data-group-id="7202885053-3">}</span><span class="p" data-group-id="7202885053-2">]</span><span class="p" data-group-id="7202885053-1">}</span><span class="p">.</span></code></pre><p>See also <a href="#get_config/1"><code class="inline">ct:get_config/1</code></a>,
+<code class="inline">SubKey</code>s.</p><p><em>Example 1.</em> Require the variable <code class="inline">myvar</code>:</p><pre><code class="makeup erlang" translate="no"><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ct</span><span class="p">:</span><span class="nf">require</span><span class="p" data-group-id="9883208997-1">(</span><span class="ss">myvar</span><span class="p" data-group-id="9883208997-1">)</span><span class="p">.</span></code></pre><p>In this case the configuration file must at least contain:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="7803532847-1">{</span><span class="ss">myvar</span><span class="p">,</span><span class="n">Value</span><span class="p" data-group-id="7803532847-1">}</span><span class="p">.</span></code></pre><p><em>Example 2.</em> Require key <code class="inline">myvar</code> with subkeys <code class="inline">sub1</code> and <code class="inline">sub2</code>:</p><pre><code class="makeup erlang" translate="no"><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ct</span><span class="p">:</span><span class="nf">require</span><span class="p" data-group-id="2875135385-1">(</span><span class="p" data-group-id="2875135385-2">{</span><span class="ss">myvar</span><span class="p">,</span><span class="p" data-group-id="2875135385-3">[</span><span class="ss">sub1</span><span class="p">,</span><span class="ss">sub2</span><span class="p" data-group-id="2875135385-3">]</span><span class="p" data-group-id="2875135385-2">}</span><span class="p" data-group-id="2875135385-1">)</span><span class="p">.</span></code></pre><p>In this case the configuration file must at least contain:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="8709625615-1">{</span><span class="ss">myvar</span><span class="p">,</span><span class="p" data-group-id="8709625615-2">[</span><span class="p" data-group-id="8709625615-3">{</span><span class="ss">sub1</span><span class="p">,</span><span class="n">Value</span><span class="p" data-group-id="8709625615-3">}</span><span class="p">,</span><span class="p" data-group-id="8709625615-4">{</span><span class="ss">sub2</span><span class="p">,</span><span class="n">Value</span><span class="p" data-group-id="8709625615-4">}</span><span class="p" data-group-id="8709625615-2">]</span><span class="p" data-group-id="8709625615-1">}</span><span class="p">.</span></code></pre><p><em>Example 3.</em> Require key <code class="inline">myvar</code> with subkey <code class="inline">sub1</code> with <code class="inline">subsub1</code>:</p><pre><code class="makeup erlang" translate="no"><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ct</span><span class="p">:</span><span class="nf">require</span><span class="p" data-group-id="7000833165-1">(</span><span class="p" data-group-id="7000833165-2">{</span><span class="ss">myvar</span><span class="p">,</span><span class="ss">sub1</span><span class="p">,</span><span class="ss">sub2</span><span class="p" data-group-id="7000833165-2">}</span><span class="p" data-group-id="7000833165-1">)</span><span class="p">.</span></code></pre><p>In this case the configuration file must at least contain:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="7516784220-1">{</span><span class="ss">myvar</span><span class="p">,</span><span class="p" data-group-id="7516784220-2">[</span><span class="p" data-group-id="7516784220-3">{</span><span class="ss">sub1</span><span class="p">,</span><span class="p" data-group-id="7516784220-4">[</span><span class="p" data-group-id="7516784220-5">{</span><span class="ss">sub2</span><span class="p">,</span><span class="n">Value</span><span class="p" data-group-id="7516784220-5">}</span><span class="p" data-group-id="7516784220-4">]</span><span class="p" data-group-id="7516784220-3">}</span><span class="p" data-group-id="7516784220-2">]</span><span class="p" data-group-id="7516784220-1">}</span><span class="p">.</span></code></pre><p>See also <a href="#get_config/1"><code class="inline">ct:get_config/1</code></a>,
 <a href="#get_config/2"><code class="inline">ct:get_config/2</code></a>, <a href="#get_config/3"><code class="inline">ct:get_config/3</code></a>,
 <a href="#require/2"><code class="inline">ct:require/2</code></a>.</p>
   </section>
@@ -3134,7 +3154,7 @@ be specified as <code class="inline">Required</code>. Only the last element of t
       <h1 class="signature" translate="no">require(Name, Required)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L503" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L503" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3161,8 +3181,8 @@ that a list of <code class="inline">SubKey</code>s cannot be specified.</p><p>If
 that the value of the element can be read with
 <a href="#get_config/1"><code class="inline">ct:get_config/1,2</code></a> provided <code class="inline">Name</code> is used instead of the
 whole <code class="inline">Required</code> term.</p><p><em>Example:</em></p><p>Require one node with a Telnet connection and an FTP connection. Name the node
-<code class="inline">a</code>:</p><pre><code class="makeup erlang" translate="no"><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ct</span><span class="p">:</span><span class="nf">require</span><span class="p" data-group-id="5121542219-1">(</span><span class="ss">a</span><span class="p">,</span><span class="p" data-group-id="5121542219-2">{</span><span class="ss">machine</span><span class="p">,</span><span class="nb">node</span><span class="p" data-group-id="5121542219-2">}</span><span class="p" data-group-id="5121542219-1">)</span><span class="p">.</span></code></pre><p>All references to this node can then use the node name. For example, a file over
-FTP is fetched like follows:</p><pre><code class="makeup erlang" translate="no"><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ct</span><span class="p">:</span><span class="nf">ftp_get</span><span class="p" data-group-id="7076104368-1">(</span><span class="ss">a</span><span class="p">,</span><span class="n">RemoteFile</span><span class="p">,</span><span class="n">LocalFile</span><span class="p" data-group-id="7076104368-1">)</span><span class="p">.</span></code></pre><p>For this to work, the configuration file must at least contain:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="2202941077-1">{</span><span class="ss">machine</span><span class="p">,</span><span class="p" data-group-id="2202941077-2">[</span><span class="p" data-group-id="2202941077-3">{</span><span class="nb">node</span><span class="p">,</span><span class="p" data-group-id="2202941077-4">[</span><span class="p" data-group-id="2202941077-5">{</span><span class="ss">telnet</span><span class="p">,</span><span class="n">IpAddr</span><span class="p" data-group-id="2202941077-5">}</span><span class="p">,</span><span class="p" data-group-id="2202941077-6">{</span><span class="ss">ftp</span><span class="p">,</span><span class="n">IpAddr</span><span class="p" data-group-id="2202941077-6">}</span><span class="p" data-group-id="2202941077-4">]</span><span class="p" data-group-id="2202941077-3">}</span><span class="p" data-group-id="2202941077-2">]</span><span class="p" data-group-id="2202941077-1">}</span><span class="p">.</span></code></pre><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>The behavior of this function changed radically in <code class="inline">Common Test</code> 1.6.2. To
+<code class="inline">a</code>:</p><pre><code class="makeup erlang" translate="no"><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ct</span><span class="p">:</span><span class="nf">require</span><span class="p" data-group-id="3727218472-1">(</span><span class="ss">a</span><span class="p">,</span><span class="p" data-group-id="3727218472-2">{</span><span class="ss">machine</span><span class="p">,</span><span class="nb">node</span><span class="p" data-group-id="3727218472-2">}</span><span class="p" data-group-id="3727218472-1">)</span><span class="p">.</span></code></pre><p>All references to this node can then use the node name. For example, a file over
+FTP is fetched like follows:</p><pre><code class="makeup erlang" translate="no"><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ct</span><span class="p">:</span><span class="nf">ftp_get</span><span class="p" data-group-id="9023325136-1">(</span><span class="ss">a</span><span class="p">,</span><span class="n">RemoteFile</span><span class="p">,</span><span class="n">LocalFile</span><span class="p" data-group-id="9023325136-1">)</span><span class="p">.</span></code></pre><p>For this to work, the configuration file must at least contain:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="0543079440-1">{</span><span class="ss">machine</span><span class="p">,</span><span class="p" data-group-id="0543079440-2">[</span><span class="p" data-group-id="0543079440-3">{</span><span class="nb">node</span><span class="p">,</span><span class="p" data-group-id="0543079440-4">[</span><span class="p" data-group-id="0543079440-5">{</span><span class="ss">telnet</span><span class="p">,</span><span class="n">IpAddr</span><span class="p" data-group-id="0543079440-5">}</span><span class="p">,</span><span class="p" data-group-id="0543079440-6">{</span><span class="ss">ftp</span><span class="p">,</span><span class="n">IpAddr</span><span class="p" data-group-id="0543079440-6">}</span><span class="p" data-group-id="0543079440-4">]</span><span class="p" data-group-id="0543079440-3">}</span><span class="p" data-group-id="0543079440-2">]</span><span class="p" data-group-id="0543079440-1">}</span><span class="p">.</span></code></pre><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>The behavior of this function changed radically in <code class="inline">Common Test</code> 1.6.2. To
 keep some backwards compatibility, it is still possible to do:
 <code class="inline">ct:require(a,{node,[telnet,ftp]}).</code> This associates the name <code class="inline">a</code> with the
 top-level <code class="inline">node</code> entry. For this to work, the configuration file must at least
@@ -3181,7 +3201,7 @@ contain: <code class="inline">{node,[{telnet,IpAddr},{ftp,IpAddr}]}.</code></p><
       <h1 class="signature" translate="no">run(TestDirs)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L203" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L203" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3215,7 +3235,7 @@ contain: <code class="inline">{node,[{telnet,IpAddr},{ftp,IpAddr}]}.</code></p><
       <h1 class="signature" translate="no">run(TestDir, Suite)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L189" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L189" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3249,7 +3269,7 @@ contain: <code class="inline">{node,[{telnet,IpAddr},{ftp,IpAddr}]}.</code></p><
       <h1 class="signature" translate="no">run(TestDir, Suite, Cases)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L175" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L175" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3285,7 +3305,7 @@ suites are compiled when the test is run.</p>
       <h1 class="signature" translate="no">run_test(Opts)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L309" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L309" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3409,7 +3429,7 @@ files specified in <code class="inline">Opts</code> are installed automatically 
       <h1 class="signature" translate="no">run_testspec(TestSpec)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L326" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L326" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3448,7 +3468,7 @@ specification files.</p><p><code class="inline">Reason</code> indicates the type
         <span class="note">(since OTP 19.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L935" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L935" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3480,7 +3500,7 @@ See the <a href="write_test_chapter.html#logging">User's Guide</a> for details. 
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1493" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1493" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3518,7 +3538,7 @@ up the time automatically if <code class="inline">scale_timetraps</code> is set 
       <h1 class="signature" translate="no">start_interactive()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L381" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L381" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3537,12 +3557,12 @@ up the time automatically if <code class="inline">scale_timetraps</code> is set 
 the Erlang shell. The interactive mode can also be started from the OS command
 line with <code class="inline">ct_run -shell [-config File...]</code>.</p><p>If any functions (for example, Telnet or FTP) using &quot;required configuration
 data&quot; are to be called from the Erlang shell, configuration data must first be
-required with <a href="#require/2"><code class="inline">ct:require/2</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nc">ct</span><span class="p">:</span><span class="nf">require</span><span class="p" data-group-id="9358268791-1">(</span><span class="ss">unix_telnet</span><span class="p">,</span><span class="w"> </span><span class="ss">unix</span><span class="p" data-group-id="9358268791-1">)</span><span class="p">.</span><span class="w">
+required with <a href="#require/2"><code class="inline">ct:require/2</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nc">ct</span><span class="p">:</span><span class="nf">require</span><span class="p" data-group-id="4174700009-1">(</span><span class="ss">unix_telnet</span><span class="p">,</span><span class="w"> </span><span class="ss">unix</span><span class="p" data-group-id="4174700009-1">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">ok</span><span class="gp unselectable">
-&gt; </span><span class="nc">ct_telnet</span><span class="p">:</span><span class="nf">open</span><span class="p" data-group-id="9358268791-2">(</span><span class="ss">unix_telnet</span><span class="p" data-group-id="9358268791-2">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="9358268791-3">{</span><span class="ss">ok</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.105</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="9358268791-3">}</span><span class="gp unselectable">
-&gt; </span><span class="nc">ct_telnet</span><span class="p">:</span><span class="nf">cmd</span><span class="p" data-group-id="9358268791-4">(</span><span class="ss">unix_telnet</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ls .&quot;</span><span class="p" data-group-id="9358268791-4">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="9358268791-5">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="9358268791-6">[</span><span class="s">&quot;ls&quot;</span><span class="p">,</span><span class="s">&quot;file1  ...&quot;</span><span class="p">,</span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p" data-group-id="9358268791-6">]</span><span class="p" data-group-id="9358268791-5">}</span></code></pre>
+&gt; </span><span class="nc">ct_telnet</span><span class="p">:</span><span class="nf">open</span><span class="p" data-group-id="4174700009-2">(</span><span class="ss">unix_telnet</span><span class="p" data-group-id="4174700009-2">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4174700009-3">{</span><span class="ss">ok</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.105</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="4174700009-3">}</span><span class="gp unselectable">
+&gt; </span><span class="nc">ct_telnet</span><span class="p">:</span><span class="nf">cmd</span><span class="p" data-group-id="4174700009-4">(</span><span class="ss">unix_telnet</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ls .&quot;</span><span class="p" data-group-id="4174700009-4">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4174700009-5">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="4174700009-6">[</span><span class="s">&quot;ls&quot;</span><span class="p">,</span><span class="s">&quot;file1  ...&quot;</span><span class="p">,</span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p" data-group-id="4174700009-6">]</span><span class="p" data-group-id="4174700009-5">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="step/3">
@@ -3555,7 +3575,7 @@ required with <a href="#require/2"><code class="inline">ct:require/2</code></a>.
       <h1 class="signature" translate="no">step(TestDir, Suite, Case)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L339" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L339" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3584,7 +3604,7 @@ required with <a href="#require/2"><code class="inline">ct:require/2</code></a>.
       <h1 class="signature" translate="no">step(TestDir, Suite, Case, Opts)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L355" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L355" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3620,7 +3640,7 @@ specified, breakpoints are also set on the configuration functions in <code clas
       <h1 class="signature" translate="no">stop_interactive()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L391" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L391" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3650,7 +3670,7 @@ specified, breakpoints are also set on the configuration functions in <code clas
         <span class="note">(since OTP R15B02)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1525" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1525" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3679,7 +3699,7 @@ event manager. This can later be caught by any installed event manager.</p><p>Se
       <h1 class="signature" translate="no">testcases(TestDir, Suite)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1169" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1169" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3710,7 +3730,7 @@ event manager. This can later be caught by any installed event manager.</p><p>Se
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1460" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1460" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3749,7 +3769,7 @@ the new timetrap.</p>
       <h1 class="signature" translate="no">userdata(TestDir, Suite)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1213" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1213" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3779,7 +3799,7 @@ from <a href="ct_suite.html#c:suite/0"><code class="inline">suite/0</code></a>.<
       <h1 class="signature" translate="no">userdata(TestDir, Suite, Case)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct.erl#L1249" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct.erl#L1249" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3813,8 +3833,8 @@ from <code class="inline">Suite:group(GroupName)</code> or <code class="inline">
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="common_test.epub" title="ePub version">
@@ -3826,7 +3846,7 @@ from <code class="inline">Suite:group(GroupName)</code> or <code class="inline">
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

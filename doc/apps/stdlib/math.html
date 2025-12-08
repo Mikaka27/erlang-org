@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="stdlib v7.1">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/math.html" />
     <title>math — stdlib v7.1</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-296BF65E.js"></script>
+    <script defer src="dist/sidebar_items-E5A5C6F9.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ stdlib
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of stdlib</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ stdlib
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -230,7 +248,7 @@ arguments to determine the quadrant of the return value.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Returns <code class="inline">1.0</code> - <a><code class="inline">erf(X)</code></a>, computed using methods
+        <div class="summary-synopsis"><p>Returns <code class="inline">1.0</code> - <a href="#erf/1"><code class="inline">erf(X)</code></a>, computed using methods
 that avoid cancellation for large <code class="inline">X</code>.</p></div>
 
     </div>
@@ -387,6 +405,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p></div>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="acos/1">
 
@@ -398,7 +417,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p></div>
       <h1 class="signature" translate="no">acos(X)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L51" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L51" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -413,7 +432,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p></div>
 
       </div>
 
-<p>Returns the arc cosine of <code class="inline">X</code> in radians.</p><h2 id="acos/1-examples" class="section-heading"><a href="#acos/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">acos</span><span class="p" data-group-id="4285281787-1">(</span><span class="mf">1.0</span><span class="p" data-group-id="4285281787-1">)</span><span class="p">.</span><span class="w">
+<p>Returns the arc cosine of <code class="inline">X</code> in radians.</p><h2 id="acos/1-examples" class="section-heading"><a href="#acos/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">acos</span><span class="p" data-group-id="0515760467-1">(</span><span class="mf">1.0</span><span class="p" data-group-id="0515760467-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">0.0</span></code></pre>
   </section>
 </section>
@@ -427,7 +446,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p></div>
       <h1 class="signature" translate="no">acosh(X)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L66" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L66" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -442,7 +461,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p></div>
 
       </div>
 
-<p>Returns the inverse hyperbolic cosine of <code class="inline">X</code>.</p><h2 id="acosh/1-examples" class="section-heading"><a href="#acosh/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">acosh</span><span class="p" data-group-id="7039645747-1">(</span><span class="mf">1.0</span><span class="p" data-group-id="7039645747-1">)</span><span class="p">.</span><span class="w">
+<p>Returns the inverse hyperbolic cosine of <code class="inline">X</code>.</p><h2 id="acosh/1-examples" class="section-heading"><a href="#acosh/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">acosh</span><span class="p" data-group-id="4422698673-1">(</span><span class="mf">1.0</span><span class="p" data-group-id="4422698673-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">0.0</span></code></pre>
   </section>
 </section>
@@ -456,7 +475,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p></div>
       <h1 class="signature" translate="no">asin(X)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L81" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L81" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -471,7 +490,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p></div>
 
       </div>
 
-<p>Returns the arc cosine of <code class="inline">X</code> in radians.</p><h2 id="asin/1-examples" class="section-heading"><a href="#asin/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">asin</span><span class="p" data-group-id="3176374366-1">(</span><span class="mf">0.0</span><span class="p" data-group-id="3176374366-1">)</span><span class="p">.</span><span class="w">
+<p>Returns the arc cosine of <code class="inline">X</code> in radians.</p><h2 id="asin/1-examples" class="section-heading"><a href="#asin/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">asin</span><span class="p" data-group-id="0249889004-1">(</span><span class="mf">0.0</span><span class="p" data-group-id="0249889004-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">0.0</span></code></pre>
   </section>
 </section>
@@ -485,7 +504,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p></div>
       <h1 class="signature" translate="no">asinh(X)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L96" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L96" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -500,7 +519,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p></div>
 
       </div>
 
-<p>Returns the inverse hyperbolic sine of <code class="inline">X</code>.</p><h2 id="asinh/1-examples" class="section-heading"><a href="#asinh/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">asinh</span><span class="p" data-group-id="5598643703-1">(</span><span class="mf">0.0</span><span class="p" data-group-id="5598643703-1">)</span><span class="p">.</span><span class="w">
+<p>Returns the inverse hyperbolic sine of <code class="inline">X</code>.</p><h2 id="asinh/1-examples" class="section-heading"><a href="#asinh/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">asinh</span><span class="p" data-group-id="9426027012-1">(</span><span class="mf">0.0</span><span class="p" data-group-id="9426027012-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">0.0</span></code></pre>
   </section>
 </section>
@@ -514,7 +533,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p></div>
       <h1 class="signature" translate="no">atan2(Y, X)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L128" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L128" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -530,7 +549,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p></div>
       </div>
 
 <p>Returns the arc tangent of <code class="inline">Y</code>/<code class="inline">X</code> in radians, using the signs of both
-arguments to determine the quadrant of the return value.</p><h2 id="atan2/2-examples" class="section-heading"><a href="#atan2/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">atan2</span><span class="p" data-group-id="5642948755-1">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">10.0</span><span class="p" data-group-id="5642948755-1">)</span><span class="p">.</span><span class="w">
+arguments to determine the quadrant of the return value.</p><h2 id="atan2/2-examples" class="section-heading"><a href="#atan2/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">atan2</span><span class="p" data-group-id="7899630837-1">(</span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mf">10.0</span><span class="p" data-group-id="7899630837-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">3.141592653589793</span></code></pre>
   </section>
 </section>
@@ -544,7 +563,7 @@ arguments to determine the quadrant of the return value.</p><h2 id="atan2/2-exam
       <h1 class="signature" translate="no">atan(X)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L111" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L111" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -559,7 +578,7 @@ arguments to determine the quadrant of the return value.</p><h2 id="atan2/2-exam
 
       </div>
 
-<p>Returns the arc tangent of <code class="inline">X</code> in radians.</p><h2 id="atan/1-examples" class="section-heading"><a href="#atan/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">atan</span><span class="p" data-group-id="0638042365-1">(</span><span class="mf">0.0</span><span class="p" data-group-id="0638042365-1">)</span><span class="p">.</span><span class="w">
+<p>Returns the arc tangent of <code class="inline">X</code> in radians.</p><h2 id="atan/1-examples" class="section-heading"><a href="#atan/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">atan</span><span class="p" data-group-id="3161909708-1">(</span><span class="mf">0.0</span><span class="p" data-group-id="3161909708-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">0.0</span></code></pre>
   </section>
 </section>
@@ -573,7 +592,7 @@ arguments to determine the quadrant of the return value.</p><h2 id="atan2/2-exam
       <h1 class="signature" translate="no">atanh(X)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L143" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L143" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -588,7 +607,7 @@ arguments to determine the quadrant of the return value.</p><h2 id="atan2/2-exam
 
       </div>
 
-<p>Returns the inverse hyperbolic tangent of <code class="inline">X</code>.</p><h2 id="atanh/1-examples" class="section-heading"><a href="#atanh/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">atanh</span><span class="p" data-group-id="9464329895-1">(</span><span class="mf">0.0</span><span class="p" data-group-id="9464329895-1">)</span><span class="p">.</span><span class="w">
+<p>Returns the inverse hyperbolic tangent of <code class="inline">X</code>.</p><h2 id="atanh/1-examples" class="section-heading"><a href="#atanh/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">atanh</span><span class="p" data-group-id="9838922006-1">(</span><span class="mf">0.0</span><span class="p" data-group-id="9838922006-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">0.0</span></code></pre>
   </section>
 </section>
@@ -604,7 +623,7 @@ arguments to determine the quadrant of the return value.</p><h2 id="atan2/2-exam
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L163" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L163" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -619,11 +638,11 @@ arguments to determine the quadrant of the return value.</p><h2 id="atan2/2-exam
 
       </div>
 
-<p>Returns the ceiling of <code class="inline">X</code>.</p><h2 id="ceil/1-examples" class="section-heading"><a href="#ceil/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">ceil</span><span class="p" data-group-id="2861057914-1">(</span><span class="mf">7.5</span><span class="p" data-group-id="2861057914-1">)</span><span class="p">.</span><span class="w">
+<p>Returns the ceiling of <code class="inline">X</code>.</p><h2 id="ceil/1-examples" class="section-heading"><a href="#ceil/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">ceil</span><span class="p" data-group-id="3682587938-1">(</span><span class="mf">7.5</span><span class="p" data-group-id="3682587938-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">8.0</span><span class="gp unselectable">
-2&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">ceil</span><span class="p" data-group-id="2861057914-2">(</span><span class="o">-</span><span class="mf">5.5</span><span class="p" data-group-id="2861057914-2">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">ceil</span><span class="p" data-group-id="3682587938-2">(</span><span class="o">-</span><span class="mf">5.5</span><span class="p" data-group-id="3682587938-2">)</span><span class="p">.</span><span class="w">
 </span><span class="o">-</span><span class="mf">5.0</span><span class="gp unselectable">
-3&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">ceil</span><span class="p" data-group-id="2861057914-3">(</span><span class="mf">1.0</span><span class="p" data-group-id="2861057914-3">)</span><span class="p">.</span><span class="w">
+3&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">ceil</span><span class="p" data-group-id="3682587938-3">(</span><span class="mf">1.0</span><span class="p" data-group-id="3682587938-3">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">1.0</span></code></pre>
   </section>
 </section>
@@ -637,7 +656,7 @@ arguments to determine the quadrant of the return value.</p><h2 id="atan2/2-exam
       <h1 class="signature" translate="no">cos(X)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L178" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L178" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -652,7 +671,7 @@ arguments to determine the quadrant of the return value.</p><h2 id="atan2/2-exam
 
       </div>
 
-<p>Returns the cosine of <code class="inline">X</code> in radians.</p><h2 id="cos/1-examples" class="section-heading"><a href="#cos/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">cos</span><span class="p" data-group-id="5045274515-1">(</span><span class="mf">0.0</span><span class="p" data-group-id="5045274515-1">)</span><span class="w">
+<p>Returns the cosine of <code class="inline">X</code> in radians.</p><h2 id="cos/1-examples" class="section-heading"><a href="#cos/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">cos</span><span class="p" data-group-id="7753499973-1">(</span><span class="mf">0.0</span><span class="p" data-group-id="7753499973-1">)</span><span class="w">
 </span><span class="mf">1.0</span></code></pre>
   </section>
 </section>
@@ -666,7 +685,7 @@ arguments to determine the quadrant of the return value.</p><h2 id="atan2/2-exam
       <h1 class="signature" translate="no">cosh(X)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L193" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L193" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -681,7 +700,7 @@ arguments to determine the quadrant of the return value.</p><h2 id="atan2/2-exam
 
       </div>
 
-<p>Returns the hyperbolic cosine of <code class="inline">X</code>.</p><h2 id="cosh/1-examples" class="section-heading"><a href="#cosh/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">cosh</span><span class="p" data-group-id="1494191460-1">(</span><span class="mf">0.0</span><span class="p" data-group-id="1494191460-1">)</span><span class="w">
+<p>Returns the hyperbolic cosine of <code class="inline">X</code>.</p><h2 id="cosh/1-examples" class="section-heading"><a href="#cosh/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">cosh</span><span class="p" data-group-id="3106405828-1">(</span><span class="mf">0.0</span><span class="p" data-group-id="3106405828-1">)</span><span class="w">
 </span><span class="mf">1.0</span></code></pre>
   </section>
 </section>
@@ -695,7 +714,7 @@ arguments to determine the quadrant of the return value.</p><h2 id="atan2/2-exam
       <h1 class="signature" translate="no">erf(X)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L212" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L212" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -710,9 +729,9 @@ arguments to determine the quadrant of the return value.</p><h2 id="atan2/2-exam
 
       </div>
 
-<p>Returns the error function of <code class="inline">X</code>.</p><p>See <a href="https://en.wikipedia.org/wiki/Error_function">Error function</a> (Wikipedia).</p><h2 id="erf/1-examples" class="section-heading"><a href="#erf/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">erf</span><span class="p" data-group-id="1289437690-1">(</span><span class="mf">0.0</span><span class="p" data-group-id="1289437690-1">)</span><span class="p">.</span><span class="w">
+<p>Returns the error function of <code class="inline">X</code>.</p><p>See <a href="https://en.wikipedia.org/wiki/Error_function">Error function</a> (Wikipedia).</p><h2 id="erf/1-examples" class="section-heading"><a href="#erf/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">erf</span><span class="p" data-group-id="0589969961-1">(</span><span class="mf">0.0</span><span class="p" data-group-id="0589969961-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">0.0</span><span class="gp unselectable">
-2&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">erf</span><span class="p" data-group-id="1289437690-2">(</span><span class="mf">10.0</span><span class="p" data-group-id="1289437690-2">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">erf</span><span class="p" data-group-id="0589969961-2">(</span><span class="mf">10.0</span><span class="p" data-group-id="0589969961-2">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">1.0</span></code></pre>
   </section>
 </section>
@@ -726,7 +745,7 @@ arguments to determine the quadrant of the return value.</p><h2 id="atan2/2-exam
       <h1 class="signature" translate="no">erfc(X)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L228" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L228" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -742,7 +761,7 @@ arguments to determine the quadrant of the return value.</p><h2 id="atan2/2-exam
       </div>
 
 <p>Returns <code class="inline">1.0</code> - <a href="#erf/1"><code class="inline">erf(X)</code></a>, computed using methods
-that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc/1-examples" class="section-heading"><a href="#erfc/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">erfc</span><span class="p" data-group-id="5915574324-1">(</span><span class="mf">0.0</span><span class="p" data-group-id="5915574324-1">)</span><span class="p">.</span><span class="w">
+that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc/1-examples" class="section-heading"><a href="#erfc/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">erfc</span><span class="p" data-group-id="1946160131-1">(</span><span class="mf">0.0</span><span class="p" data-group-id="1946160131-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">1.0</span></code></pre>
   </section>
 </section>
@@ -756,7 +775,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
       <h1 class="signature" translate="no">exp(X)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L245" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L245" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -771,9 +790,9 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
 
       </div>
 
-<p>Returns <em>e</em> raised to the power of <code class="inline">X</code>.</p><h2 id="exp/1-examples" class="section-heading"><a href="#exp/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">exp</span><span class="p" data-group-id="9701878696-1">(</span><span class="mi">0</span><span class="p" data-group-id="9701878696-1">)</span><span class="p">.</span><span class="w">
+<p>Returns <em>e</em> raised to the power of <code class="inline">X</code>.</p><h2 id="exp/1-examples" class="section-heading"><a href="#exp/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">exp</span><span class="p" data-group-id="4885116376-1">(</span><span class="mi">0</span><span class="p" data-group-id="4885116376-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">1.0</span><span class="gp unselectable">
-2&gt; </span><span class="nf">trunc</span><span class="p" data-group-id="9701878696-2">(</span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nc">math</span><span class="p">:</span><span class="nf">exp</span><span class="p" data-group-id="9701878696-3">(</span><span class="mi">1</span><span class="p" data-group-id="9701878696-3">)</span><span class="p" data-group-id="9701878696-2">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nf">trunc</span><span class="p" data-group-id="4885116376-2">(</span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nc">math</span><span class="p">:</span><span class="nf">exp</span><span class="p" data-group-id="4885116376-3">(</span><span class="mi">1</span><span class="p" data-group-id="4885116376-3">)</span><span class="p" data-group-id="4885116376-2">)</span><span class="p">.</span><span class="w">
 </span><span class="mi">271</span></code></pre>
   </section>
 </section>
@@ -789,7 +808,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L265" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L265" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -804,11 +823,11 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
 
       </div>
 
-<p>Returns the floor of <code class="inline">X</code>.</p><h2 id="floor/1-examples" class="section-heading"><a href="#floor/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">floor</span><span class="p" data-group-id="8760280005-1">(</span><span class="mf">9.1</span><span class="p" data-group-id="8760280005-1">)</span><span class="p">.</span><span class="w">
+<p>Returns the floor of <code class="inline">X</code>.</p><h2 id="floor/1-examples" class="section-heading"><a href="#floor/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">floor</span><span class="p" data-group-id="9577681172-1">(</span><span class="mf">9.1</span><span class="p" data-group-id="9577681172-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">9.0</span><span class="gp unselectable">
-2&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">floor</span><span class="p" data-group-id="8760280005-2">(</span><span class="o">-</span><span class="mf">1.5</span><span class="p" data-group-id="8760280005-2">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">floor</span><span class="p" data-group-id="9577681172-2">(</span><span class="o">-</span><span class="mf">1.5</span><span class="p" data-group-id="9577681172-2">)</span><span class="p">.</span><span class="w">
 </span><span class="o">-</span><span class="mf">2.0</span><span class="gp unselectable">
-3&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">floor</span><span class="p" data-group-id="8760280005-3">(</span><span class="mf">1.0</span><span class="p" data-group-id="8760280005-3">)</span><span class="w">
+3&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">floor</span><span class="p" data-group-id="9577681172-3">(</span><span class="mf">1.0</span><span class="p" data-group-id="9577681172-3">)</span><span class="w">
 </span><span class="mf">1.0</span></code></pre>
   </section>
 </section>
@@ -824,7 +843,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L281" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L281" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -839,7 +858,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
 
       </div>
 
-<p>Returns the floating point remainder <code class="inline">X</code> divided by <code class="inline">Y</code>.</p><h2 id="fmod/2-examples" class="section-heading"><a href="#fmod/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">fmod</span><span class="p" data-group-id="6792674734-1">(</span><span class="mf">10.5</span><span class="p">,</span><span class="w"> </span><span class="mf">8.0</span><span class="p" data-group-id="6792674734-1">)</span><span class="p">.</span><span class="w">
+<p>Returns the floating point remainder <code class="inline">X</code> divided by <code class="inline">Y</code>.</p><h2 id="fmod/2-examples" class="section-heading"><a href="#fmod/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">fmod</span><span class="p" data-group-id="8161404626-1">(</span><span class="mf">10.5</span><span class="p">,</span><span class="w"> </span><span class="mf">8.0</span><span class="p" data-group-id="8161404626-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">2.5</span></code></pre>
   </section>
 </section>
@@ -855,7 +874,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
         <span class="note">(since OTP 18.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L318" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L318" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -870,11 +889,11 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
 
       </div>
 
-<p>Returns logarithm of <code class="inline">X</code> to base 2.</p><h2 id="log2/1-examples" class="section-heading"><a href="#log2/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">log2</span><span class="p" data-group-id="1401326589-1">(</span><span class="mf">1.0</span><span class="p" data-group-id="1401326589-1">)</span><span class="p">.</span><span class="w">
+<p>Returns logarithm of <code class="inline">X</code> to base 2.</p><h2 id="log2/1-examples" class="section-heading"><a href="#log2/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">log2</span><span class="p" data-group-id="2603597413-1">(</span><span class="mf">1.0</span><span class="p" data-group-id="2603597413-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">0.0</span><span class="gp unselectable">
-2&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">log2</span><span class="p" data-group-id="1401326589-2">(</span><span class="mf">2.0</span><span class="p" data-group-id="1401326589-2">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">log2</span><span class="p" data-group-id="2603597413-2">(</span><span class="mf">2.0</span><span class="p" data-group-id="2603597413-2">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">1.0</span><span class="gp unselectable">
-3&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">log2</span><span class="p" data-group-id="1401326589-3">(</span><span class="mi">64</span><span class="p" data-group-id="1401326589-3">)</span><span class="p">.</span><span class="w">
+3&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">log2</span><span class="p" data-group-id="2603597413-3">(</span><span class="mi">64</span><span class="p" data-group-id="2603597413-3">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">6.0</span></code></pre>
   </section>
 </section>
@@ -888,7 +907,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
       <h1 class="signature" translate="no">log10(X)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L337" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L337" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -903,11 +922,11 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
 
       </div>
 
-<p>Returns logarithm of <code class="inline">X</code> to base 10.</p><h2 id="log10/1-examples" class="section-heading"><a href="#log10/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">log10</span><span class="p" data-group-id="5582274730-1">(</span><span class="mf">1.0</span><span class="p" data-group-id="5582274730-1">)</span><span class="p">.</span><span class="w">
+<p>Returns logarithm of <code class="inline">X</code> to base 10.</p><h2 id="log10/1-examples" class="section-heading"><a href="#log10/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">log10</span><span class="p" data-group-id="2750230517-1">(</span><span class="mf">1.0</span><span class="p" data-group-id="2750230517-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">0.0</span><span class="gp unselectable">
-2&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">log10</span><span class="p" data-group-id="5582274730-2">(</span><span class="mf">10.0</span><span class="p" data-group-id="5582274730-2">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">log10</span><span class="p" data-group-id="2750230517-2">(</span><span class="mf">10.0</span><span class="p" data-group-id="2750230517-2">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">1.0</span><span class="gp unselectable">
-3&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">log10</span><span class="p" data-group-id="5582274730-3">(</span><span class="mi">100</span><span class="p" data-group-id="5582274730-3">)</span><span class="p">.</span><span class="w">
+3&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">log10</span><span class="p" data-group-id="2750230517-3">(</span><span class="mi">100</span><span class="p" data-group-id="2750230517-3">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">2.0</span></code></pre>
   </section>
 </section>
@@ -921,7 +940,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
       <h1 class="signature" translate="no">log(X)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L298" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L298" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -936,9 +955,9 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
 
       </div>
 
-<p>Returns the natural logarithm of <code class="inline">X</code>.</p><h2 id="log/1-examples" class="section-heading"><a href="#log/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">log</span><span class="p" data-group-id="4641796252-1">(</span><span class="mf">1.0</span><span class="p" data-group-id="4641796252-1">)</span><span class="p">.</span><span class="w">
+<p>Returns the natural logarithm of <code class="inline">X</code>.</p><h2 id="log/1-examples" class="section-heading"><a href="#log/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">log</span><span class="p" data-group-id="7676922665-1">(</span><span class="mf">1.0</span><span class="p" data-group-id="7676922665-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">0.0</span><span class="gp unselectable">
-2&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">log</span><span class="p" data-group-id="4641796252-2">(</span><span class="mf">2.718281828459045</span><span class="p" data-group-id="4641796252-2">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">log</span><span class="p" data-group-id="7676922665-2">(</span><span class="mf">2.718281828459045</span><span class="p" data-group-id="7676922665-2">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">1.0</span></code></pre>
   </section>
 </section>
@@ -952,7 +971,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
       <h1 class="signature" translate="no">pi()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L448" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L448" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -967,7 +986,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
 
       </div>
 
-<p>Returns the ratio of the circumference of a circle to its diameter.</p><h2 id="pi/0-examples" class="section-heading"><a href="#pi/0-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">pi</span><span class="p" data-group-id="1241254729-1">(</span><span class="p" data-group-id="1241254729-1">)</span><span class="p">.</span><span class="w">
+<p>Returns the ratio of the circumference of a circle to its diameter.</p><h2 id="pi/0-examples" class="section-heading"><a href="#pi/0-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">pi</span><span class="p" data-group-id="5342069418-1">(</span><span class="p" data-group-id="5342069418-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">3.141592653589793</span></code></pre>
   </section>
 </section>
@@ -981,7 +1000,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
       <h1 class="signature" translate="no">pow(X, N)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L355" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L355" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -996,9 +1015,9 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
 
       </div>
 
-<p>Raise <code class="inline">X</code> to the power <code class="inline">N</code>.</p><h2 id="pow/2-examples" class="section-heading"><a href="#pow/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">pow</span><span class="p" data-group-id="2641955137-1">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p" data-group-id="2641955137-1">)</span><span class="p">.</span><span class="w">
+<p>Raise <code class="inline">X</code> to the power <code class="inline">N</code>.</p><h2 id="pow/2-examples" class="section-heading"><a href="#pow/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">pow</span><span class="p" data-group-id="6056618529-1">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p" data-group-id="6056618529-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">64.0</span><span class="gp unselectable">
-2&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">pow</span><span class="p" data-group-id="2641955137-2">(</span><span class="mf">10.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p" data-group-id="2641955137-2">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">pow</span><span class="p" data-group-id="6056618529-2">(</span><span class="mf">10.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p" data-group-id="6056618529-2">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">1000.0</span></code></pre>
   </section>
 </section>
@@ -1012,7 +1031,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
       <h1 class="signature" translate="no">sin(X)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L370" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L370" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1027,7 +1046,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
 
       </div>
 
-<p>Returns the sine of <code class="inline">X</code> in radians.</p><h2 id="sin/1-examples" class="section-heading"><a href="#sin/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">sin</span><span class="p" data-group-id="9592885226-1">(</span><span class="mf">0.0</span><span class="p" data-group-id="9592885226-1">)</span><span class="w">
+<p>Returns the sine of <code class="inline">X</code> in radians.</p><h2 id="sin/1-examples" class="section-heading"><a href="#sin/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">sin</span><span class="p" data-group-id="3019700068-1">(</span><span class="mf">0.0</span><span class="p" data-group-id="3019700068-1">)</span><span class="w">
 </span><span class="mf">0.0</span></code></pre>
   </section>
 </section>
@@ -1041,7 +1060,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
       <h1 class="signature" translate="no">sinh(X)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L385" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L385" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1056,7 +1075,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
 
       </div>
 
-<p>Returns the hyperbolic sine of <code class="inline">X</code>.</p><h2 id="sinh/1-examples" class="section-heading"><a href="#sinh/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">sinh</span><span class="p" data-group-id="7049915582-1">(</span><span class="mf">0.0</span><span class="p" data-group-id="7049915582-1">)</span><span class="w">
+<p>Returns the hyperbolic sine of <code class="inline">X</code>.</p><h2 id="sinh/1-examples" class="section-heading"><a href="#sinh/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">sinh</span><span class="p" data-group-id="0051260950-1">(</span><span class="mf">0.0</span><span class="p" data-group-id="0051260950-1">)</span><span class="w">
 </span><span class="mf">0.0</span></code></pre>
   </section>
 </section>
@@ -1070,7 +1089,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
       <h1 class="signature" translate="no">sqrt(X)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L402" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L402" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1085,9 +1104,9 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
 
       </div>
 
-<p>Returns the non-negative square root of <code class="inline">X</code>.</p><h2 id="sqrt/1-examples" class="section-heading"><a href="#sqrt/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">sqrt</span><span class="p" data-group-id="5873521474-1">(</span><span class="mi">2</span><span class="p" data-group-id="5873521474-1">)</span><span class="p">.</span><span class="w">
+<p>Returns the non-negative square root of <code class="inline">X</code>.</p><h2 id="sqrt/1-examples" class="section-heading"><a href="#sqrt/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">sqrt</span><span class="p" data-group-id="8241496395-1">(</span><span class="mi">2</span><span class="p" data-group-id="8241496395-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">1.4142135623730951</span><span class="gp unselectable">
-2&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">sqrt</span><span class="p" data-group-id="5873521474-2">(</span><span class="mf">100.0</span><span class="p" data-group-id="5873521474-2">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">sqrt</span><span class="p" data-group-id="8241496395-2">(</span><span class="mf">100.0</span><span class="p" data-group-id="8241496395-2">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">10.0</span></code></pre>
   </section>
 </section>
@@ -1101,7 +1120,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
       <h1 class="signature" translate="no">tan(X)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L417" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L417" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1116,7 +1135,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
 
       </div>
 
-<p>Returns the tangent of <code class="inline">X</code> in radians.</p><h2 id="tan/1-examples" class="section-heading"><a href="#tan/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">tan</span><span class="p" data-group-id="4187325091-1">(</span><span class="mf">0.0</span><span class="p" data-group-id="4187325091-1">)</span><span class="w">
+<p>Returns the tangent of <code class="inline">X</code> in radians.</p><h2 id="tan/1-examples" class="section-heading"><a href="#tan/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">tan</span><span class="p" data-group-id="2230643096-1">(</span><span class="mf">0.0</span><span class="p" data-group-id="2230643096-1">)</span><span class="w">
 </span><span class="mf">0.0</span></code></pre>
   </section>
 </section>
@@ -1130,7 +1149,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
       <h1 class="signature" translate="no">tanh(X)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L432" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L432" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1145,7 +1164,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
 
       </div>
 
-<p>Returns the hyperbolic tangent of <code class="inline">X</code>.</p><h2 id="tanh/1-examples" class="section-heading"><a href="#tanh/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">tan</span><span class="p" data-group-id="0095502268-1">(</span><span class="mf">0.0</span><span class="p" data-group-id="0095502268-1">)</span><span class="w">
+<p>Returns the hyperbolic tangent of <code class="inline">X</code>.</p><h2 id="tanh/1-examples" class="section-heading"><a href="#tanh/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">tan</span><span class="p" data-group-id="9949891766-1">(</span><span class="mf">0.0</span><span class="p" data-group-id="9949891766-1">)</span><span class="w">
 </span><span class="mf">0.0</span></code></pre>
   </section>
 </section>
@@ -1161,7 +1180,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
         <span class="note">(since OTP 26.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/math.erl#L466" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/math.erl#L466" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1176,9 +1195,9 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
 
       </div>
 
-<p>Returns the ratio of the circumference of a circle to its radius.</p><p>This constant is equivalent to a full turn when described in radians.</p><h2 id="tau/0-examples" class="section-heading"><a href="#tau/0-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">tau</span><span class="p" data-group-id="0633322274-1">(</span><span class="p" data-group-id="0633322274-1">)</span><span class="p">.</span><span class="w">
+<p>Returns the ratio of the circumference of a circle to its radius.</p><p>This constant is equivalent to a full turn when described in radians.</p><h2 id="tau/0-examples" class="section-heading"><a href="#tau/0-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">tau</span><span class="p" data-group-id="8926439399-1">(</span><span class="p" data-group-id="8926439399-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">6.283185307179586</span><span class="gp unselectable">
-2&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">tau</span><span class="p" data-group-id="0633322274-2">(</span><span class="p" data-group-id="0633322274-2">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nc">math</span><span class="p">:</span><span class="nf">pi</span><span class="p" data-group-id="0633322274-3">(</span><span class="p" data-group-id="0633322274-3">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">math</span><span class="p">:</span><span class="nf">tau</span><span class="p" data-group-id="8926439399-2">(</span><span class="p" data-group-id="8926439399-2">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nc">math</span><span class="p">:</span><span class="nf">pi</span><span class="p" data-group-id="8926439399-3">(</span><span class="p" data-group-id="8926439399-3">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">true</span></code></pre>
   </section>
 </section>
@@ -1190,8 +1209,8 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="stdlib.epub" title="ePub version">
@@ -1203,7 +1222,7 @@ that avoid cancellation for large <code class="inline">X</code>.</p><h2 id="erfc
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

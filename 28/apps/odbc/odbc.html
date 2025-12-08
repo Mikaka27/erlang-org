@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="odbc v2.16">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/odbc/odbc.html" />
     <title>odbc — odbc v2.16</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-6B6C5447.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ odbc
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of odbc</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ odbc
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L25" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L25" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -186,7 +204,7 @@ query types the value is driver defined, and hence should be ignored.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Data type used by ODBC, to learn which Erlang data type corresponds to an ODBC
-data type see the Erlang to ODBC data type <a>mapping</a> in the
+data type see the Erlang to ODBC data type <a href="databases.html#type">mapping</a> in the
 User's Guide.</p></div>
 
     </div>
@@ -244,7 +262,7 @@ containg the values of the columns such as <code class="inline">{value(), value(
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">commit/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#commit/3"><code class="inline">commit/3</code></a>.</p></div>
 
     </div>
 
@@ -278,7 +296,7 @@ the process that created the connection dies or if you call disconnect/1.</p></d
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">describe_table/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#describe_table/3"><code class="inline">describe_table/3</code></a>.</p></div>
 
     </div>
 
@@ -313,7 +331,7 @@ disconnect a connection started by another process.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">first/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#first/2"><code class="inline">first/2</code></a>.</p></div>
 
     </div>
 
@@ -333,7 +351,7 @@ disconnect a connection started by another process.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">last/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#last/2"><code class="inline">last/2</code></a>.</p></div>
 
     </div>
 
@@ -353,7 +371,7 @@ disconnect a connection started by another process.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">next/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#next/2"><code class="inline">next/2</code></a>.</p></div>
 
     </div>
 
@@ -377,7 +395,7 @@ there is no more data to fetch.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">param_query/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#param_query/4"><code class="inline">param_query/4</code></a>.</p></div>
 
     </div>
 
@@ -388,7 +406,7 @@ there is no more data to fetch.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Executes a parameterized SQL query. For an example see the
-<a>&quot;Using the Erlang API&quot;</a> in the Erlang ODBC
+<a href="getting_started.html#param_query">&quot;Using the Erlang API&quot;</a> in the Erlang ODBC
 User's Guide.</p></div>
 
     </div>
@@ -399,7 +417,7 @@ User's Guide.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">prev/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#prev/2"><code class="inline">prev/2</code></a>.</p></div>
 
     </div>
 
@@ -420,7 +438,7 @@ and positions the cursor at this row.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">select/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#select/4"><code class="inline">select/4</code></a>.</p></div>
 
     </div>
 
@@ -449,7 +467,7 @@ list of row values is empty indicating that there is no more data to fetch.</p><
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">select_count/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#select_count/3"><code class="inline">select_count/3</code></a>.</p></div>
 
     </div>
 
@@ -471,7 +489,7 @@ cursor is positioned before the first row in the result set and the tuple
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">sql_query/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#sql_query/3"><code class="inline">sql_query/3</code></a>.</p></div>
 
     </div>
 
@@ -495,7 +513,7 @@ tuples.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">start/1</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#start/1"><code class="inline">start/1</code></a>.</p></div>
 
     </div>
 
@@ -506,7 +524,7 @@ tuples.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Starts the odbc application. Default type is temporary.
-<a>See application(3)</a></p></div>
+<a href="../../apps/kernel/application.html">See application(3)</a></p></div>
 
     </div>
 
@@ -516,7 +534,7 @@ tuples.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Stops the odbc application. <a>See application(3)</a></p></div>
+        <div class="summary-synopsis"><p>Stops the odbc application. <a href="../../apps/kernel/application.html">See application(3)</a></p></div>
 
     </div>
 
@@ -532,6 +550,7 @@ tuples.</p></div>
       </a>
       <span class="text">Types: Types used in ODBC application</span>
     </h1>
+
     <div class="types-types-used-in-odbc-application-list">
 <section class="detail" id="t:col_name/0">
 
@@ -543,7 +562,7 @@ tuples.</p></div>
       <h1 class="signature" translate="no">col_name()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L88" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L88" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -571,7 +590,7 @@ tuples.</p></div>
       <h1 class="signature" translate="no">common_reason()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L132" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L132" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -600,7 +619,7 @@ decriptions.</p>
       <h1 class="signature" translate="no">connection_reference()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L85" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L85" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -628,7 +647,7 @@ decriptions.</p>
       <h1 class="signature" translate="no">extended_error()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L138" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L138" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -657,7 +676,7 @@ base reason that would have been returned had extended_errors not been enabled.<
       <h1 class="signature" translate="no">n_rows()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L109" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L109" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -686,7 +705,7 @@ query types the value is driver defined, and hence should be ignored.</p>
       <h1 class="signature" translate="no">odbc_data_type()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L116" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L116" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -728,7 +747,7 @@ User's Guide.</p>
       <h1 class="signature" translate="no">row()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L94" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L94" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -757,7 +776,7 @@ containg the values of the columns such as <code class="inline">{value(), value(
       <h1 class="signature" translate="no">selected()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L100" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L100" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -785,7 +804,7 @@ containg the values of the columns such as <code class="inline">{value(), value(
       <h1 class="signature" translate="no">updated()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L103" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L103" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -815,7 +834,7 @@ containg the values of the columns such as <code class="inline">{value(), value(
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L97" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L97" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -844,6 +863,7 @@ containg the values of the columns such as <code class="inline">{value(), value(
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="commit/2">
 
@@ -855,7 +875,7 @@ containg the values of the columns such as <code class="inline">{value(), value(
       <h1 class="signature" translate="no">commit(ConnectionReference, CommitMode)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L350" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L350" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -889,7 +909,7 @@ containg the values of the columns such as <code class="inline">{value(), value(
       <h1 class="signature" translate="no">commit(ConnectionReference, CommitMode, TimeOut)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L365" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L365" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -925,7 +945,7 @@ is turned off.</p>
       <h1 class="signature" translate="no">connect(ConnectionStr, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L295" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L295" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -998,7 +1018,7 @@ the number of milliseconds for the ODBC application. E.g.: [{odbc,
       <h1 class="signature" translate="no">describe_table(ConnectionReference, Table)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L760" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L760" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1031,7 +1051,7 @@ the number of milliseconds for the ODBC application. E.g.: [{odbc,
       <h1 class="signature" translate="no">describe_table(ConnectionReference, Table, TimeOut)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L777" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L777" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1066,7 +1086,7 @@ the number of milliseconds for the ODBC application. E.g.: [{odbc,
       <h1 class="signature" translate="no">disconnect(ConnectionReferense)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L323" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L323" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1101,7 +1121,7 @@ disconnect a connection started by another process.</p>
       <h1 class="signature" translate="no">first(ConnectionReference)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L483" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L483" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1136,7 +1156,7 @@ disconnect a connection started by another process.</p>
       <h1 class="signature" translate="no">first(ConnectionReference, TimeOut)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L496" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L496" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1172,7 +1192,7 @@ disconnect a connection started by another process.</p>
       <h1 class="signature" translate="no">last(ConnectionReference)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L514" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L514" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1207,7 +1227,7 @@ disconnect a connection started by another process.</p>
       <h1 class="signature" translate="no">last(ConnectionReference, TimeOut)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L527" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L527" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1243,7 +1263,7 @@ disconnect a connection started by another process.</p>
       <h1 class="signature" translate="no">next(ConnectionReference)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L545" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L545" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1278,7 +1298,7 @@ disconnect a connection started by another process.</p>
       <h1 class="signature" translate="no">next(ConnectionReference, TimeOut)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L564" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L564" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1318,7 +1338,7 @@ there is no more data to fetch.</p>
       <h1 class="signature" translate="no">param_query(ConnectionReference, SQLQuery, Params)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L702" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L702" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1356,7 +1376,7 @@ there is no more data to fetch.</p>
       <h1 class="signature" translate="no">param_query(ConnectionReference, SQLQuery, Params, TimeOut)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L731" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L731" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1402,7 +1422,7 @@ User's Guide.</p></section>
       <h1 class="signature" translate="no">prev(ConnectionReference)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L582" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L582" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1437,7 +1457,7 @@ User's Guide.</p></section>
       <h1 class="signature" translate="no">prev(ConnectionReference, TimeOut)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L598" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L598" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1474,7 +1494,7 @@ and positions the cursor at this row.</p>
       <h1 class="signature" translate="no">select(ConnectionReference, Position, N)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L618" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L618" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1511,7 +1531,7 @@ and positions the cursor at this row.</p>
       <h1 class="signature" translate="no">select(ConnectionReference, Position, N, TimeOut)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L644" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L644" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1558,7 +1578,7 @@ list of row values is empty indicating that there is no more data to fetch.</p>
       <h1 class="signature" translate="no">select_count(ConnectionReference, SQLQuery)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L441" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L441" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1591,7 +1611,7 @@ list of row values is empty indicating that there is no more data to fetch.</p>
       <h1 class="signature" translate="no">select_count(ConnectionReference, SQLQuery, TimeOut)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L464" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L464" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1628,7 +1648,7 @@ set, then <code class="inline">NrRows</code> will have the value <code class="in
       <h1 class="signature" translate="no">sql_query(ConnectionReference, SQLQuery)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L394" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L394" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1661,7 +1681,7 @@ set, then <code class="inline">NrRows</code> will have the value <code class="in
       <h1 class="signature" translate="no">sql_query(ConnectionReference, SQLQuery, TimeOut)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L421" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L421" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1701,7 +1721,7 @@ row, e.g. the first <code class="inline">ColName</code> is associated with the f
       <h1 class="signature" translate="no">start()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L184" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L184" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1729,7 +1749,7 @@ row, e.g. the first <code class="inline">ColName</code> is associated with the f
       <h1 class="signature" translate="no">start(Type)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L199" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L199" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1759,7 +1779,7 @@ row, e.g. the first <code class="inline">ColName</code> is associated with the f
       <h1 class="signature" translate="no">stop()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/odbc/src/odbc.erl#L208" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/odbc/src/odbc.erl#L208" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1785,8 +1805,8 @@ row, e.g. the first <code class="inline">ColName</code> is associated with the f
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="odbc.epub" title="ePub version">
@@ -1798,7 +1818,7 @@ row, e.g. the first <code class="inline">ColName</code> is associated with the f
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

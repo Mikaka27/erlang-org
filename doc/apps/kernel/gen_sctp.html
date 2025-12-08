@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="kernel v10.4.2">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/kernel/gen_sctp.html" />
     <title>gen_sctp — kernel v10.4.2</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-87F8FB49.js"></script>
+    <script defer src="dist/sidebar_items-D3B3E40C.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ kernel
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of kernel</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ kernel
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L23" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L23" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -104,7 +122,7 @@ through the user-level
 lksctp-tools-1.0.6</li><li>Briefly on Solaris 10</li><li>SUSE Linux Enterprise Server 10 Service Pack 1 (x86_64) kernel
 2.6.16.54-0.2.3-smp with lksctp-tools-1.0.7</li><li>FreeBSD 8.2</li></ul><p>This module was written for one-to-many style sockets (type <code class="inline">seqpacket</code>).
 With the addition of <a href="#peeloff/2"><code class="inline">peeloff/2</code></a>, one-to-one style sockets (type <code class="inline">stream</code>)
-were introduced.</p><p>Record definitions for this module can be found using:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="2433933442-1">(</span><span class="s">&quot;kernel/include/inet_sctp.hrl&quot;</span><span class="p" data-group-id="2433933442-1">)</span><span class="p">.</span></code></pre><p>These record definitions use the &quot;new&quot; spelling 'adaptation',
+were introduced.</p><p>Record definitions for this module can be found using:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="1804910553-1">(</span><span class="s">&quot;kernel/include/inet_sctp.hrl&quot;</span><span class="p" data-group-id="1804910553-1">)</span><span class="p">.</span></code></pre><p>These record definitions use the &quot;new&quot; spelling 'adaptation',
 not the deprecated 'adaption', regardless of which spelling
 the underlying C API uses.</p><h2 id="module-sctp-socket-options" class="section-heading"><a href="#module-sctp-socket-options" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text"><a href="" id="options"></a> SCTP Socket Options</span></h2><p>The set of admissible SCTP socket options is by construction orthogonal
 to the sets of TCP, UDP, and generic <code class="inline">inet</code> options. Here are only
@@ -146,31 +164,31 @@ of the driver buffer (see <code class="inline">buffer</code> above).</p></li></u
 will instead immediately return with e.g. <code class="inline">{error, eagain}</code>
 <em>if</em> this option has been set to <code class="inline">true</code>.
 Defaults to <code class="inline">false</code>.</p></li><li><p><strong><code class="inline">{sctp_module, module()}</code></strong> - Overrides which callback module is used.
-Defaults to <code class="inline">inet_sctp</code> for IPv4 and <code class="inline">inet6_sctp</code> for IPv6.</p></li><li><p><strong><code class="inline">{sctp_rtoinfo, #sctp_rtoinfo{}}</code></strong></p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_rtoinfo</span><span class="p" data-group-id="0914505845-1">{</span><span class="w">
-      </span><span class="ss">assoc_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="0914505845-2">(</span><span class="p" data-group-id="0914505845-2">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">initial</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="0914505845-3">(</span><span class="p" data-group-id="0914505845-3">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">max</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="0914505845-4">(</span><span class="p" data-group-id="0914505845-4">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">min</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="0914505845-5">(</span><span class="p" data-group-id="0914505845-5">)</span><span class="w">
-</span><span class="p" data-group-id="0914505845-1">}</span></code></pre><p>Determines retransmission time-out parameters, in milliseconds, for the
+Defaults to <code class="inline">inet_sctp</code> for IPv4 and <code class="inline">inet6_sctp</code> for IPv6.</p></li><li><p><strong><code class="inline">{sctp_rtoinfo, #sctp_rtoinfo{}}</code></strong></p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_rtoinfo</span><span class="p" data-group-id="7456777414-1">{</span><span class="w">
+      </span><span class="ss">assoc_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="7456777414-2">(</span><span class="p" data-group-id="7456777414-2">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">initial</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="7456777414-3">(</span><span class="p" data-group-id="7456777414-3">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">max</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="7456777414-4">(</span><span class="p" data-group-id="7456777414-4">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">min</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="7456777414-5">(</span><span class="p" data-group-id="7456777414-5">)</span><span class="w">
+</span><span class="p" data-group-id="7456777414-1">}</span></code></pre><p>Determines retransmission time-out parameters, in milliseconds, for the
 association(s) specified by <code class="inline">assoc_id</code>.</p><p><code class="inline">assoc_id = 0</code> (default) indicates the whole endpoint. See
 <a href="http://www.rfc-archive.org/getrfc.php?rfc=2960">RFC 2960</a> and
 <a href="http://tools.ietf.org/html/draft-ietf-tsvwg-sctpsocket-13">Sockets API Extensions for SCTP</a>
-for the exact semantics of the field values.</p></li><li><p><strong><code class="inline">{sctp_associnfo, #sctp_assocparams{}}</code></strong></p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_assocparams</span><span class="p" data-group-id="6443127023-1">{</span><span class="w">
-      </span><span class="ss">assoc_id</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="6443127023-2">(</span><span class="p" data-group-id="6443127023-2">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">asocmaxrxt</span><span class="w">               </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="6443127023-3">(</span><span class="p" data-group-id="6443127023-3">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">number_peer_destinations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="6443127023-4">(</span><span class="p" data-group-id="6443127023-4">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">peer_rwnd</span><span class="w">                </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="6443127023-5">(</span><span class="p" data-group-id="6443127023-5">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">local_rwnd</span><span class="w">               </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="6443127023-6">(</span><span class="p" data-group-id="6443127023-6">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">cookie_life</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="6443127023-7">(</span><span class="p" data-group-id="6443127023-7">)</span><span class="w">
-</span><span class="p" data-group-id="6443127023-1">}</span></code></pre><p>Determines association parameters for the association(s) specified by
+for the exact semantics of the field values.</p></li><li><p><strong><code class="inline">{sctp_associnfo, #sctp_assocparams{}}</code></strong></p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_assocparams</span><span class="p" data-group-id="8964637080-1">{</span><span class="w">
+      </span><span class="ss">assoc_id</span><span class="w">                 </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="8964637080-2">(</span><span class="p" data-group-id="8964637080-2">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">asocmaxrxt</span><span class="w">               </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="8964637080-3">(</span><span class="p" data-group-id="8964637080-3">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">number_peer_destinations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="8964637080-4">(</span><span class="p" data-group-id="8964637080-4">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">peer_rwnd</span><span class="w">                </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="8964637080-5">(</span><span class="p" data-group-id="8964637080-5">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">local_rwnd</span><span class="w">               </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="8964637080-6">(</span><span class="p" data-group-id="8964637080-6">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">cookie_life</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="8964637080-7">(</span><span class="p" data-group-id="8964637080-7">)</span><span class="w">
+</span><span class="p" data-group-id="8964637080-1">}</span></code></pre><p>Determines association parameters for the association(s) specified by
 <code class="inline">assoc_id</code>.</p><p><code class="inline">assoc_id = 0</code> (default) indicates the whole endpoint. See
 <a href="http://tools.ietf.org/html/draft-ietf-tsvwg-sctpsocket-13">Sockets API Extensions for SCTP</a>
-for the discussion of their semantics. Rarely used.</p></li><li><p><strong><code class="inline">{sctp_initmsg, #sctp_initmsg{}}</code></strong></p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_initmsg</span><span class="p" data-group-id="2646925054-1">{</span><span class="w">
-     </span><span class="ss">num_ostreams</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="2646925054-2">(</span><span class="p" data-group-id="2646925054-2">)</span><span class="p">,</span><span class="w">
-     </span><span class="ss">max_instreams</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="2646925054-3">(</span><span class="p" data-group-id="2646925054-3">)</span><span class="p">,</span><span class="w">
-     </span><span class="ss">max_attempts</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="2646925054-4">(</span><span class="p" data-group-id="2646925054-4">)</span><span class="p">,</span><span class="w">
-     </span><span class="ss">max_init_timeo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="2646925054-5">(</span><span class="p" data-group-id="2646925054-5">)</span><span class="w">
-</span><span class="p" data-group-id="2646925054-1">}</span></code></pre><p>Determines the default parameters that this socket tries to negotiate
+for the discussion of their semantics. Rarely used.</p></li><li><p><strong><code class="inline">{sctp_initmsg, #sctp_initmsg{}}</code></strong></p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_initmsg</span><span class="p" data-group-id="8053321998-1">{</span><span class="w">
+     </span><span class="ss">num_ostreams</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="8053321998-2">(</span><span class="p" data-group-id="8053321998-2">)</span><span class="p">,</span><span class="w">
+     </span><span class="ss">max_instreams</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="8053321998-3">(</span><span class="p" data-group-id="8053321998-3">)</span><span class="p">,</span><span class="w">
+     </span><span class="ss">max_attempts</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="8053321998-4">(</span><span class="p" data-group-id="8053321998-4">)</span><span class="p">,</span><span class="w">
+     </span><span class="ss">max_init_timeo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="8053321998-5">(</span><span class="p" data-group-id="8053321998-5">)</span><span class="w">
+</span><span class="p" data-group-id="8053321998-1">}</span></code></pre><p>Determines the default parameters that this socket tries to negotiate
 with its peer while establishing an association with it. Is to be set after
 <a href="#open/1"><code class="inline">open/*</code></a> but before the first <a href="#connect/4"><code class="inline">connect/*</code></a>.
 <code class="inline">#sctp_initmsg{}</code> can also be used as ancillary data with the first call of
@@ -187,52 +205,52 @@ not affect the logical atomicity of its delivery; this option is provided for
 performance reasons only.</p></li><li><p><strong><code class="inline">{sctp_i_want_mapped_v4_addr, true|false}</code></strong> - Turns on|off automatic
 mapping of IPv4 addresses into IPv6 ones (if the socket address family is
 <code class="inline">AF_INET6</code>).</p></li><li><p><strong><code class="inline">{sctp_maxseg, integer()}</code></strong> - Determines the maximum chunk size if message
-fragmentation is used. If <code class="inline">0</code>, the chunk size is limited by the Path MTU only.</p></li><li><p><strong><code class="inline">{sctp_primary_addr, #sctp_prim{}}</code></strong></p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_prim</span><span class="p" data-group-id="7526922474-1">{</span><span class="w">
-      </span><span class="ss">assoc_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="7526922474-2">(</span><span class="p" data-group-id="7526922474-2">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">addr</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="7526922474-3">{</span><span class="n">IP</span><span class="p">,</span><span class="w"> </span><span class="n">Port</span><span class="p" data-group-id="7526922474-3">}</span><span class="w">
-</span><span class="p" data-group-id="7526922474-1">}</span><span class="w">
- </span><span class="n">IP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">ip_address</span><span class="p" data-group-id="7526922474-4">(</span><span class="p" data-group-id="7526922474-4">)</span><span class="w">
- </span><span class="n">Port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">port_number</span><span class="p" data-group-id="7526922474-5">(</span><span class="p" data-group-id="7526922474-5">)</span></code></pre><p>For the association specified by <code class="inline">assoc_id</code>, <code class="inline">{IP,Port}</code> must be one of the
+fragmentation is used. If <code class="inline">0</code>, the chunk size is limited by the Path MTU only.</p></li><li><p><strong><code class="inline">{sctp_primary_addr, #sctp_prim{}}</code></strong></p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_prim</span><span class="p" data-group-id="2198813623-1">{</span><span class="w">
+      </span><span class="ss">assoc_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="2198813623-2">(</span><span class="p" data-group-id="2198813623-2">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">addr</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="2198813623-3">{</span><span class="n">IP</span><span class="p">,</span><span class="w"> </span><span class="n">Port</span><span class="p" data-group-id="2198813623-3">}</span><span class="w">
+</span><span class="p" data-group-id="2198813623-1">}</span><span class="w">
+ </span><span class="n">IP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">ip_address</span><span class="p" data-group-id="2198813623-4">(</span><span class="p" data-group-id="2198813623-4">)</span><span class="w">
+ </span><span class="n">Port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">port_number</span><span class="p" data-group-id="2198813623-5">(</span><span class="p" data-group-id="2198813623-5">)</span></code></pre><p>For the association specified by <code class="inline">assoc_id</code>, <code class="inline">{IP,Port}</code> must be one of the
 peer addresses. This option determines that the specified address is treated
-by the local SCTP stack as the primary address of the peer.</p></li><li><p><strong><code class="inline">{sctp_set_peer_primary_addr, #sctp_setpeerprim{}}</code></strong></p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_setpeerprim</span><span class="p" data-group-id="2041736062-1">{</span><span class="w">
-      </span><span class="ss">assoc_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="2041736062-2">(</span><span class="p" data-group-id="2041736062-2">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">addr</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="2041736062-3">{</span><span class="n">IP</span><span class="p">,</span><span class="w"> </span><span class="n">Port</span><span class="p" data-group-id="2041736062-3">}</span><span class="w">
-</span><span class="p" data-group-id="2041736062-1">}</span><span class="w">
- </span><span class="n">IP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">ip_address</span><span class="p" data-group-id="2041736062-4">(</span><span class="p" data-group-id="2041736062-4">)</span><span class="w">
- </span><span class="n">Port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">port_number</span><span class="p" data-group-id="2041736062-5">(</span><span class="p" data-group-id="2041736062-5">)</span></code></pre><p>When set, informs the peer to use <code class="inline">{IP, Port}</code> as the primary address of the
-local endpoint for the association specified by <code class="inline">assoc_id</code>.</p></li><li><p><strong><code class="inline">{sctp_adaptation_layer, #sctp_setadaptation{}}</code></strong> <a href="" id="option-sctp_adaptation_layer"></a></p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_setadaptation</span><span class="p" data-group-id="8259530015-1">{</span><span class="w">
-      </span><span class="ss">adaptation_ind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="8259530015-2">(</span><span class="p" data-group-id="8259530015-2">)</span><span class="w">
-</span><span class="p" data-group-id="8259530015-1">}</span></code></pre><p>When set, requests that the local endpoint uses the value specified by
+by the local SCTP stack as the primary address of the peer.</p></li><li><p><strong><code class="inline">{sctp_set_peer_primary_addr, #sctp_setpeerprim{}}</code></strong></p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_setpeerprim</span><span class="p" data-group-id="4231571746-1">{</span><span class="w">
+      </span><span class="ss">assoc_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="4231571746-2">(</span><span class="p" data-group-id="4231571746-2">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">addr</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="4231571746-3">{</span><span class="n">IP</span><span class="p">,</span><span class="w"> </span><span class="n">Port</span><span class="p" data-group-id="4231571746-3">}</span><span class="w">
+</span><span class="p" data-group-id="4231571746-1">}</span><span class="w">
+ </span><span class="n">IP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">ip_address</span><span class="p" data-group-id="4231571746-4">(</span><span class="p" data-group-id="4231571746-4">)</span><span class="w">
+ </span><span class="n">Port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">port_number</span><span class="p" data-group-id="4231571746-5">(</span><span class="p" data-group-id="4231571746-5">)</span></code></pre><p>When set, informs the peer to use <code class="inline">{IP, Port}</code> as the primary address of the
+local endpoint for the association specified by <code class="inline">assoc_id</code>.</p></li><li><p><strong><code class="inline">{sctp_adaptation_layer, #sctp_setadaptation{}}</code></strong> <a href="" id="option-sctp_adaptation_layer"></a></p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_setadaptation</span><span class="p" data-group-id="5684104588-1">{</span><span class="w">
+      </span><span class="ss">adaptation_ind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="5684104588-2">(</span><span class="p" data-group-id="5684104588-2">)</span><span class="w">
+</span><span class="p" data-group-id="5684104588-1">}</span></code></pre><p>When set, requests that the local endpoint uses the value specified by
 <code class="inline">adaptation_ind</code> as the Adaptation Indication parameter for establishing
 new associations. For details, see
 <a href="http://www.rfc-archive.org/getrfc.php?rfc=2960">RFC 2960</a> and
-<a href="http://tools.ietf.org/html/draft-ietf-tsvwg-sctpsocket-13">Sockets API Extensions for SCTP</a>.</p></li><li><p><strong><code class="inline">{sctp_peer_addr_params, #sctp_paddrparams{}}</code></strong></p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_paddrparams</span><span class="p" data-group-id="4253034658-1">{</span><span class="w">
-      </span><span class="ss">assoc_id</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="4253034658-2">(</span><span class="p" data-group-id="4253034658-2">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">address</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="4253034658-3">{</span><span class="n">IP</span><span class="p">,</span><span class="w"> </span><span class="n">Port</span><span class="p" data-group-id="4253034658-3">}</span><span class="p">,</span><span class="w">
-      </span><span class="ss">hbinterval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="4253034658-4">(</span><span class="p" data-group-id="4253034658-4">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">pathmaxrxt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="4253034658-5">(</span><span class="p" data-group-id="4253034658-5">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">pathmtu</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="4253034658-6">(</span><span class="p" data-group-id="4253034658-6">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">sackdelay</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="4253034658-7">(</span><span class="p" data-group-id="4253034658-7">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">flags</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p" data-group-id="4253034658-8">(</span><span class="p" data-group-id="4253034658-8">)</span><span class="w">
-</span><span class="p" data-group-id="4253034658-1">}</span><span class="w">
-</span><span class="n">IP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">ip_address</span><span class="p" data-group-id="4253034658-9">(</span><span class="p" data-group-id="4253034658-9">)</span><span class="w">
-</span><span class="n">Port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">port_number</span><span class="p" data-group-id="4253034658-10">(</span><span class="p" data-group-id="4253034658-10">)</span></code></pre><p>Determines various per-address parameters for the association specified by
+<a href="http://tools.ietf.org/html/draft-ietf-tsvwg-sctpsocket-13">Sockets API Extensions for SCTP</a>.</p></li><li><p><strong><code class="inline">{sctp_peer_addr_params, #sctp_paddrparams{}}</code></strong></p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_paddrparams</span><span class="p" data-group-id="3818144472-1">{</span><span class="w">
+      </span><span class="ss">assoc_id</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="3818144472-2">(</span><span class="p" data-group-id="3818144472-2">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">address</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="3818144472-3">{</span><span class="n">IP</span><span class="p">,</span><span class="w"> </span><span class="n">Port</span><span class="p" data-group-id="3818144472-3">}</span><span class="p">,</span><span class="w">
+      </span><span class="ss">hbinterval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="3818144472-4">(</span><span class="p" data-group-id="3818144472-4">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">pathmaxrxt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="3818144472-5">(</span><span class="p" data-group-id="3818144472-5">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">pathmtu</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="3818144472-6">(</span><span class="p" data-group-id="3818144472-6">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">sackdelay</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="3818144472-7">(</span><span class="p" data-group-id="3818144472-7">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">flags</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p" data-group-id="3818144472-8">(</span><span class="p" data-group-id="3818144472-8">)</span><span class="w">
+</span><span class="p" data-group-id="3818144472-1">}</span><span class="w">
+</span><span class="n">IP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">ip_address</span><span class="p" data-group-id="3818144472-9">(</span><span class="p" data-group-id="3818144472-9">)</span><span class="w">
+</span><span class="n">Port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">port_number</span><span class="p" data-group-id="3818144472-10">(</span><span class="p" data-group-id="3818144472-10">)</span></code></pre><p>Determines various per-address parameters for the association specified by
 <code class="inline">assoc_id</code> and the peer address <code class="inline">address</code> (the SCTP protocol supports
 multi-homing, so more than one address can correspond to a specified
 association).</p><ul><li><p><strong><code class="inline">hbinterval</code></strong> - Heartbeat interval, in milliseconds</p></li><li><p><strong><code class="inline">pathmaxrxt</code></strong> - Maximum number of retransmissions before this address is
 considered unreachable (and an alternative address is selected)</p></li><li><p><strong><code class="inline">pathmtu</code></strong> - Fixed Path MTU, if automatic discovery is disabled (see
 <code class="inline">flags</code> below)</p></li><li><p><strong><code class="inline">sackdelay</code></strong> - Delay, in milliseconds, for SAC messages (if the delay is
-enabled, see <code class="inline">flags</code> below)</p></li><li><p><strong><code class="inline">flags</code></strong> - The following flags are available:</p><ul><li><p><strong><code class="inline">hb_enable</code></strong> - Enables heartbeat</p></li><li><p><strong><code class="inline">hb_disable</code></strong> - Disables heartbeat</p></li><li><p><strong><code class="inline">hb_demand</code></strong> - Initiates heartbeat immediately</p></li><li><p><strong><code class="inline">pmtud_enable</code></strong> - Enables automatic Path MTU discovery</p></li><li><p><strong><code class="inline">pmtud_disable</code></strong> - Disables automatic Path MTU discovery</p></li><li><p><strong><code class="inline">sackdelay_enable</code></strong> - Enables SAC delay</p></li><li><p><strong><code class="inline">sackdelay_disable</code></strong> - Disables SAC delay</p></li></ul></li></ul></li><li><p><strong><code class="inline">{sctp_default_send_param, #sctp_sndrcvinfo{}}</code></strong></p><p><a href="" id="record-sctp_sndrcvinfo"></a></p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_sndrcvinfo</span><span class="p" data-group-id="0432964699-1">{</span><span class="w">
-      </span><span class="ss">stream</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="0432964699-2">(</span><span class="p" data-group-id="0432964699-2">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">ssn</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="0432964699-3">(</span><span class="p" data-group-id="0432964699-3">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">flags</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p" data-group-id="0432964699-4">(</span><span class="p" data-group-id="0432964699-4">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">ppid</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="0432964699-5">(</span><span class="p" data-group-id="0432964699-5">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">context</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="0432964699-6">(</span><span class="p" data-group-id="0432964699-6">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">timetolive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="0432964699-7">(</span><span class="p" data-group-id="0432964699-7">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">tsn</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="0432964699-8">(</span><span class="p" data-group-id="0432964699-8">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">cumtsn</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="0432964699-9">(</span><span class="p" data-group-id="0432964699-9">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">assoc_id</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="0432964699-10">(</span><span class="p" data-group-id="0432964699-10">)</span><span class="w">
-</span><span class="p" data-group-id="0432964699-1">}</span></code></pre><p><code class="inline">#sctp_sndrcvinfo{}</code> is used both in this socket option, and as
+enabled, see <code class="inline">flags</code> below)</p></li><li><p><strong><code class="inline">flags</code></strong> - The following flags are available:</p><ul><li><p><strong><code class="inline">hb_enable</code></strong> - Enables heartbeat</p></li><li><p><strong><code class="inline">hb_disable</code></strong> - Disables heartbeat</p></li><li><p><strong><code class="inline">hb_demand</code></strong> - Initiates heartbeat immediately</p></li><li><p><strong><code class="inline">pmtud_enable</code></strong> - Enables automatic Path MTU discovery</p></li><li><p><strong><code class="inline">pmtud_disable</code></strong> - Disables automatic Path MTU discovery</p></li><li><p><strong><code class="inline">sackdelay_enable</code></strong> - Enables SAC delay</p></li><li><p><strong><code class="inline">sackdelay_disable</code></strong> - Disables SAC delay</p></li></ul></li></ul></li><li><p><strong><code class="inline">{sctp_default_send_param, #sctp_sndrcvinfo{}}</code></strong></p><p><a href="" id="record-sctp_sndrcvinfo"></a></p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_sndrcvinfo</span><span class="p" data-group-id="5633178797-1">{</span><span class="w">
+      </span><span class="ss">stream</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="5633178797-2">(</span><span class="p" data-group-id="5633178797-2">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">ssn</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="5633178797-3">(</span><span class="p" data-group-id="5633178797-3">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">flags</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p" data-group-id="5633178797-4">(</span><span class="p" data-group-id="5633178797-4">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">ppid</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="5633178797-5">(</span><span class="p" data-group-id="5633178797-5">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">context</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="5633178797-6">(</span><span class="p" data-group-id="5633178797-6">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">timetolive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="5633178797-7">(</span><span class="p" data-group-id="5633178797-7">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">tsn</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="5633178797-8">(</span><span class="p" data-group-id="5633178797-8">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">cumtsn</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="5633178797-9">(</span><span class="p" data-group-id="5633178797-9">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">assoc_id</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="5633178797-10">(</span><span class="p" data-group-id="5633178797-10">)</span><span class="w">
+</span><span class="p" data-group-id="5633178797-1">}</span></code></pre><p><code class="inline">#sctp_sndrcvinfo{}</code> is used both in this socket option, and as
 ancillary data while sending or receiving SCTP messages. When set
 as an option, it provides default values for subsequent
 <a href="#send/3"><code class="inline">send</code></a> calls on the association specified by <code class="inline">assoc_id</code>.</p><p><code class="inline">assoc_id = 0</code> (default) indicates the whole endpoint.</p><p>The following fields typically must be specified by the sender:</p><ul><li><p><strong><code class="inline">sinfo_stream</code></strong> - Stream number (0-base) within the association to send
@@ -241,7 +259,7 @@ the primary peer address</p></li><li><p><strong><code class="inline">abort</code
 data</p></li><li><p><strong><code class="inline">eof</code></strong> - Gracefully shuts down the current association, with flushing
 of unsent data</p></li></ul><p>Other fields are rarely used. For complete information, see
 <a href="http://www.rfc-archive.org/getrfc.php?rfc=2960">RFC 2960</a> and
-<a href="http://tools.ietf.org/html/draft-ietf-tsvwg-sctpsocket-13">Sockets API Extensions for SCTP</a>.</p></li></ul></li><li><p><strong><code class="inline">{sctp_events, #sctp_event_subscribe{}}</code></strong> <a href="" id="option-sctp_events"></a></p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_event_subscribe</span><span class="p" data-group-id="0967531987-1">{</span><span class="w">
+<a href="http://tools.ietf.org/html/draft-ietf-tsvwg-sctpsocket-13">Sockets API Extensions for SCTP</a>.</p></li></ul></li><li><p><strong><code class="inline">{sctp_events, #sctp_event_subscribe{}}</code></strong> <a href="" id="option-sctp_events"></a></p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_event_subscribe</span><span class="p" data-group-id="4631462027-1">{</span><span class="w">
         </span><span class="ss">data_io_event</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="ss">true</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="ss">false</span><span class="p">,</span><span class="w">
         </span><span class="ss">association_event</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="ss">true</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="ss">false</span><span class="p">,</span><span class="w">
         </span><span class="ss">address_event</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="ss">true</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="ss">false</span><span class="p">,</span><span class="w">
@@ -250,42 +268,42 @@ of unsent data</p></li></ul><p>Other fields are rarely used. For complete inform
         </span><span class="ss">shutdown_event</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="ss">true</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="ss">false</span><span class="p">,</span><span class="w">
         </span><span class="ss">partial_delivery_event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">true</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="ss">false</span><span class="p">,</span><span class="w">
         </span><span class="ss">adaptation_layer_event</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">true</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="ss">false</span><span class="w">
-</span><span class="p" data-group-id="0967531987-1">}</span></code></pre><p>This option determines which <a href="#sctp-events">SCTP Events</a> that are to be
+</span><span class="p" data-group-id="4631462027-1">}</span></code></pre><p>This option determines which <a href="#sctp-events">SCTP Events</a> that are to be
 received (through <a href="#recv/1"><code class="inline">recv/*</code></a>) along with the data. The only
 exception is <code class="inline">data_io_event</code>, which enables or disables receiving of
 <a href="#record-sctp_sndrcvinfo"><code class="inline">#sctp_sndrcvinfo{}</code></a> ancillary data,
 not events. By default, all flags except <code class="inline">adaptation_layer_event</code> are enabled,
 although <code class="inline">sctp_data_io_event</code> and <code class="inline">association_event</code> are used by the driver
-itself and not exported to the user level.</p></li><li><p><strong><code class="inline">{sctp_delayed_ack_time, #sctp_assoc_value{}}</code></strong></p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_assoc_value</span><span class="p" data-group-id="7880246013-1">{</span><span class="w">
-      </span><span class="ss">assoc_id</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="7880246013-2">(</span><span class="p" data-group-id="7880246013-2">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">assoc_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="7880246013-3">(</span><span class="p" data-group-id="7880246013-3">)</span><span class="w">
-</span><span class="p" data-group-id="7880246013-1">}</span></code></pre><p>Rarely used. Determines the ACK time (specified by <code class="inline">assoc_value</code>, in
+itself and not exported to the user level.</p></li><li><p><strong><code class="inline">{sctp_delayed_ack_time, #sctp_assoc_value{}}</code></strong></p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_assoc_value</span><span class="p" data-group-id="5219454236-1">{</span><span class="w">
+      </span><span class="ss">assoc_id</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="5219454236-2">(</span><span class="p" data-group-id="5219454236-2">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">assoc_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="5219454236-3">(</span><span class="p" data-group-id="5219454236-3">)</span><span class="w">
+</span><span class="p" data-group-id="5219454236-1">}</span></code></pre><p>Rarely used. Determines the ACK time (specified by <code class="inline">assoc_value</code>, in
 milliseconds) for the specified association or the whole endpoint if
-<code class="inline">assoc_value = 0</code> (default).</p></li><li><p><strong><code class="inline">{sctp_status, #sctp_status{}}</code></strong></p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_status</span><span class="p" data-group-id="3387026978-1">{</span><span class="w">
-      </span><span class="ss">assoc_id</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="3387026978-2">(</span><span class="p" data-group-id="3387026978-2">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">state</span><span class="w">               </span><span class="o">=</span><span class="w"> </span><span class="nf">atom</span><span class="p" data-group-id="3387026978-3">(</span><span class="p" data-group-id="3387026978-3">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">rwnd</span><span class="w">                </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="3387026978-4">(</span><span class="p" data-group-id="3387026978-4">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">unackdata</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="3387026978-5">(</span><span class="p" data-group-id="3387026978-5">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">penddata</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="3387026978-6">(</span><span class="p" data-group-id="3387026978-6">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">instrms</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="3387026978-7">(</span><span class="p" data-group-id="3387026978-7">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">outstrms</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="3387026978-8">(</span><span class="p" data-group-id="3387026978-8">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">fragmentation_point</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="3387026978-9">(</span><span class="p" data-group-id="3387026978-9">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">primary</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="o">#</span><span class="ss">sctp_paddrinfo</span><span class="p" data-group-id="3387026978-10">{</span><span class="p" data-group-id="3387026978-10">}</span><span class="w">
-</span><span class="p" data-group-id="3387026978-1">}</span></code></pre><p>This option is read-only. It determines the status of the SCTP association
+<code class="inline">assoc_value = 0</code> (default).</p></li><li><p><strong><code class="inline">{sctp_status, #sctp_status{}}</code></strong></p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_status</span><span class="p" data-group-id="1583491712-1">{</span><span class="w">
+      </span><span class="ss">assoc_id</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="1583491712-2">(</span><span class="p" data-group-id="1583491712-2">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">state</span><span class="w">               </span><span class="o">=</span><span class="w"> </span><span class="nf">atom</span><span class="p" data-group-id="1583491712-3">(</span><span class="p" data-group-id="1583491712-3">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">rwnd</span><span class="w">                </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="1583491712-4">(</span><span class="p" data-group-id="1583491712-4">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">unackdata</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="1583491712-5">(</span><span class="p" data-group-id="1583491712-5">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">penddata</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="1583491712-6">(</span><span class="p" data-group-id="1583491712-6">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">instrms</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="1583491712-7">(</span><span class="p" data-group-id="1583491712-7">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">outstrms</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="1583491712-8">(</span><span class="p" data-group-id="1583491712-8">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">fragmentation_point</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="1583491712-9">(</span><span class="p" data-group-id="1583491712-9">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">primary</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="o">#</span><span class="ss">sctp_paddrinfo</span><span class="p" data-group-id="1583491712-10">{</span><span class="p" data-group-id="1583491712-10">}</span><span class="w">
+</span><span class="p" data-group-id="1583491712-1">}</span></code></pre><p>This option is read-only. It determines the status of the SCTP association
 specified by <code class="inline">assoc_id</code>. The following are the possible values of <code class="inline">state</code>
 (the state designations are mostly self-explanatory):</p><ul><li><p><strong><code class="inline">sctp_state_empty</code></strong> - Default. Means that no other state is active.</p></li><li><p><strong><code class="inline">sctp_state_closed</code></strong></p></li><li><p><strong><code class="inline">sctp_state_cookie_wait</code></strong></p></li><li><p><strong><code class="inline">sctp_state_cookie_echoed</code></strong></p></li><li><p><strong><code class="inline">sctp_state_established</code></strong></p></li><li><p><strong><code class="inline">sctp_state_shutdown_pending</code></strong></p></li><li><p><strong><code class="inline">sctp_state_shutdown_sent</code></strong></p></li><li><p><strong><code class="inline">sctp_state_shutdown_received</code></strong></p></li><li><p><strong><code class="inline">sctp_state_shutdown_ack_sent</code></strong></p></li></ul><p>Semantics of the other fields:</p><ul><li><p><strong><code class="inline">sstat_rwnd</code></strong> - Current receiver window size of the association</p></li><li><p><strong><code class="inline">sstat_unackdata</code></strong> - Number of unacked data chunks</p></li><li><p><strong><code class="inline">sstat_penddata</code></strong> - Number of data chunks pending receipt</p></li><li><p><strong><code class="inline">sstat_instrms</code></strong> - Number of inbound streams</p></li><li><p><strong><code class="inline">sstat_outstrms</code></strong> - Number of outbound streams</p></li><li><p><strong><code class="inline">sstat_fragmentation_point</code></strong> - Message size at which SCTP fragmentation
 occurs</p></li><li><p><strong><code class="inline">sstat_primary</code></strong> - Information on the current primary peer address (see
-below for the format of <code class="inline">#sctp_paddrinfo{}</code>)</p></li></ul></li><li><p><strong><code class="inline">{sctp_get_peer_addr_info, #sctp_paddrinfo{}}</code></strong> <a href="" id="option-sctp_get_peer_addr_info"></a></p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_paddrinfo</span><span class="p" data-group-id="6481095953-1">{</span><span class="w">
-      </span><span class="ss">assoc_id</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="6481095953-2">(</span><span class="p" data-group-id="6481095953-2">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">address</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="6481095953-3">{</span><span class="n">IP</span><span class="p">,</span><span class="w"> </span><span class="n">Port</span><span class="p" data-group-id="6481095953-3">}</span><span class="p">,</span><span class="w">
+below for the format of <code class="inline">#sctp_paddrinfo{}</code>)</p></li></ul></li><li><p><strong><code class="inline">{sctp_get_peer_addr_info, #sctp_paddrinfo{}}</code></strong> <a href="" id="option-sctp_get_peer_addr_info"></a></p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_paddrinfo</span><span class="p" data-group-id="1859597262-1">{</span><span class="w">
+      </span><span class="ss">assoc_id</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="1859597262-2">(</span><span class="p" data-group-id="1859597262-2">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">address</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="1859597262-3">{</span><span class="n">IP</span><span class="p">,</span><span class="w"> </span><span class="n">Port</span><span class="p" data-group-id="1859597262-3">}</span><span class="p">,</span><span class="w">
       </span><span class="ss">state</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="ss">inactive</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="ss">active</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="ss">unconfirmed</span><span class="p">,</span><span class="w">
-      </span><span class="ss">cwnd</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="6481095953-4">(</span><span class="p" data-group-id="6481095953-4">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">srtt</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="6481095953-5">(</span><span class="p" data-group-id="6481095953-5">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">rto</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="6481095953-6">(</span><span class="p" data-group-id="6481095953-6">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">mtu</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="6481095953-7">(</span><span class="p" data-group-id="6481095953-7">)</span><span class="w">
-</span><span class="p" data-group-id="6481095953-1">}</span><span class="w">
-</span><span class="n">IP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">ip_address</span><span class="p" data-group-id="6481095953-8">(</span><span class="p" data-group-id="6481095953-8">)</span><span class="w">
-</span><span class="n">Port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">port_number</span><span class="p" data-group-id="6481095953-9">(</span><span class="p" data-group-id="6481095953-9">)</span></code></pre><p>This option is read-only. It determines the parameters specific to
+      </span><span class="ss">cwnd</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="1859597262-4">(</span><span class="p" data-group-id="1859597262-4">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">srtt</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="1859597262-5">(</span><span class="p" data-group-id="1859597262-5">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">rto</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="1859597262-6">(</span><span class="p" data-group-id="1859597262-6">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">mtu</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="1859597262-7">(</span><span class="p" data-group-id="1859597262-7">)</span><span class="w">
+</span><span class="p" data-group-id="1859597262-1">}</span><span class="w">
+</span><span class="n">IP</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">ip_address</span><span class="p" data-group-id="1859597262-8">(</span><span class="p" data-group-id="1859597262-8">)</span><span class="w">
+</span><span class="n">Port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">port_number</span><span class="p" data-group-id="1859597262-9">(</span><span class="p" data-group-id="1859597262-9">)</span></code></pre><p>This option is read-only. It determines the parameters specific to
 the peer address specified by <code class="inline">address</code> within the association specified
 by <code class="inline">assoc_id</code>.  Field <code class="inline">address</code> fmust be set by the caller; all other fields
 are filled in on return. If <code class="inline">assoc_id = 0</code> (default), the <code class="inline">address</code>
@@ -293,119 +311,119 @@ is automatically translated into the corresponding association ID.
 This option is rarely used. For the semantics of all fields, see
 <a href="http://www.rfc-archive.org/getrfc.php?rfc=2960">RFC 2960</a> and
 <a href="http://tools.ietf.org/html/draft-ietf-tsvwg-sctpsocket-13">Sockets API Extensions for SCTP</a>.</p></li></ul><h2 id="module-sctp-examples" class="section-heading"><a href="#module-sctp-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text"><a href="" id="examples"></a> SCTP Examples</span></h2><p>Example of an Erlang SCTP server that receives SCTP messages
-and prints them on the standard output:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="2298087964-1">(</span><span class="ss">sctp_server</span><span class="p" data-group-id="2298087964-1">)</span><span class="p">.</span><span class="w">
+and prints them on the standard output:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="0310202732-1">(</span><span class="ss">sctp_server</span><span class="p" data-group-id="0310202732-1">)</span><span class="p">.</span><span class="w">
 </span><span class="w">
-</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="2298087964-2">(</span><span class="p" data-group-id="2298087964-3">[</span><span class="ss">server</span><span class="p">/</span><span class="mi">0</span><span class="p">,</span><span class="ss">server</span><span class="p">/</span><span class="mi">1</span><span class="p">,</span><span class="ss">server</span><span class="p">/</span><span class="mi">2</span><span class="p" data-group-id="2298087964-3">]</span><span class="p" data-group-id="2298087964-2">)</span><span class="p">.</span><span class="w">
-</span><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="2298087964-4">(</span><span class="s">&quot;kernel/include/inet.hrl&quot;</span><span class="p" data-group-id="2298087964-4">)</span><span class="p">.</span><span class="w">
-</span><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="2298087964-5">(</span><span class="s">&quot;kernel/include/inet_sctp.hrl&quot;</span><span class="p" data-group-id="2298087964-5">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="0310202732-2">(</span><span class="p" data-group-id="0310202732-3">[</span><span class="ss">server</span><span class="p">/</span><span class="mi">0</span><span class="p">,</span><span class="ss">server</span><span class="p">/</span><span class="mi">1</span><span class="p">,</span><span class="ss">server</span><span class="p">/</span><span class="mi">2</span><span class="p" data-group-id="0310202732-3">]</span><span class="p" data-group-id="0310202732-2">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="0310202732-4">(</span><span class="s">&quot;kernel/include/inet.hrl&quot;</span><span class="p" data-group-id="0310202732-4">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="0310202732-5">(</span><span class="s">&quot;kernel/include/inet_sctp.hrl&quot;</span><span class="p" data-group-id="0310202732-5">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">server</span><span class="p" data-group-id="2298087964-6">(</span><span class="p" data-group-id="2298087964-6">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="nf">server</span><span class="p" data-group-id="2298087964-7">(</span><span class="ss">any</span><span class="p">,</span><span class="w"> </span><span class="mi">2006</span><span class="p" data-group-id="2298087964-7">)</span><span class="p">.</span><span class="w">
+</span><span class="nf">server</span><span class="p" data-group-id="0310202732-6">(</span><span class="p" data-group-id="0310202732-6">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="nf">server</span><span class="p" data-group-id="0310202732-7">(</span><span class="ss">any</span><span class="p">,</span><span class="w"> </span><span class="mi">2006</span><span class="p" data-group-id="0310202732-7">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">server</span><span class="p" data-group-id="2298087964-8">(</span><span class="p" data-group-id="2298087964-9">[</span><span class="n">Host</span><span class="p">,</span><span class="n">Port</span><span class="p" data-group-id="2298087964-9">]</span><span class="p" data-group-id="2298087964-8">)</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="nf">is_list</span><span class="p" data-group-id="2298087964-10">(</span><span class="n">Host</span><span class="p" data-group-id="2298087964-10">)</span><span class="p">,</span><span class="w"> </span><span class="nf">is_list</span><span class="p" data-group-id="2298087964-11">(</span><span class="n">Port</span><span class="p" data-group-id="2298087964-11">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="p" data-group-id="2298087964-12">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="o">#</span><span class="ss">hostent</span><span class="p" data-group-id="2298087964-13">{</span><span class="ss">h_addr_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="2298087964-14">[</span><span class="n">IP</span><span class="p">|</span><span class="p">_</span><span class="p" data-group-id="2298087964-14">]</span><span class="p" data-group-id="2298087964-13">}</span><span class="p" data-group-id="2298087964-12">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">inet</span><span class="p">:</span><span class="nf">gethostbyname</span><span class="p" data-group-id="2298087964-15">(</span><span class="n">Host</span><span class="p" data-group-id="2298087964-15">)</span><span class="p">,</span><span class="w">
-    </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="2298087964-16">(</span><span class="s">&quot;</span><span class="si">~w</span><span class="s"> -&gt; </span><span class="si">~w</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2298087964-17">[</span><span class="n">Host</span><span class="p">,</span><span class="w"> </span><span class="n">IP</span><span class="p" data-group-id="2298087964-17">]</span><span class="p" data-group-id="2298087964-16">)</span><span class="p">,</span><span class="w">
-    </span><span class="nf">server</span><span class="p" data-group-id="2298087964-18">(</span><span class="p" data-group-id="2298087964-19">[</span><span class="n">IP</span><span class="p">,</span><span class="w"> </span><span class="nf">list_to_integer</span><span class="p" data-group-id="2298087964-20">(</span><span class="n">Port</span><span class="p" data-group-id="2298087964-20">)</span><span class="p" data-group-id="2298087964-19">]</span><span class="p" data-group-id="2298087964-18">)</span><span class="p">.</span><span class="w">
+</span><span class="nf">server</span><span class="p" data-group-id="0310202732-8">(</span><span class="p" data-group-id="0310202732-9">[</span><span class="n">Host</span><span class="p">,</span><span class="n">Port</span><span class="p" data-group-id="0310202732-9">]</span><span class="p" data-group-id="0310202732-8">)</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="nf">is_list</span><span class="p" data-group-id="0310202732-10">(</span><span class="n">Host</span><span class="p" data-group-id="0310202732-10">)</span><span class="p">,</span><span class="w"> </span><span class="nf">is_list</span><span class="p" data-group-id="0310202732-11">(</span><span class="n">Port</span><span class="p" data-group-id="0310202732-11">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="p" data-group-id="0310202732-12">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="o">#</span><span class="ss">hostent</span><span class="p" data-group-id="0310202732-13">{</span><span class="ss">h_addr_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="0310202732-14">[</span><span class="n">IP</span><span class="p">|</span><span class="p">_</span><span class="p" data-group-id="0310202732-14">]</span><span class="p" data-group-id="0310202732-13">}</span><span class="p" data-group-id="0310202732-12">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">inet</span><span class="p">:</span><span class="nf">gethostbyname</span><span class="p" data-group-id="0310202732-15">(</span><span class="n">Host</span><span class="p" data-group-id="0310202732-15">)</span><span class="p">,</span><span class="w">
+    </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="0310202732-16">(</span><span class="s">&quot;</span><span class="si">~w</span><span class="s"> -&gt; </span><span class="si">~w</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0310202732-17">[</span><span class="n">Host</span><span class="p">,</span><span class="w"> </span><span class="n">IP</span><span class="p" data-group-id="0310202732-17">]</span><span class="p" data-group-id="0310202732-16">)</span><span class="p">,</span><span class="w">
+    </span><span class="nf">server</span><span class="p" data-group-id="0310202732-18">(</span><span class="p" data-group-id="0310202732-19">[</span><span class="n">IP</span><span class="p">,</span><span class="w"> </span><span class="nf">list_to_integer</span><span class="p" data-group-id="0310202732-20">(</span><span class="n">Port</span><span class="p" data-group-id="0310202732-20">)</span><span class="p" data-group-id="0310202732-19">]</span><span class="p" data-group-id="0310202732-18">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">server</span><span class="p" data-group-id="2298087964-21">(</span><span class="n">IP</span><span class="p">,</span><span class="w"> </span><span class="n">Port</span><span class="p" data-group-id="2298087964-21">)</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="nf">is_tuple</span><span class="p" data-group-id="2298087964-22">(</span><span class="n">IP</span><span class="p" data-group-id="2298087964-22">)</span><span class="w"> </span><span class="ow">orelse</span><span class="w"> </span><span class="n">IP</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">any</span><span class="w"> </span><span class="ow">orelse</span><span class="w"> </span><span class="n">IP</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">loopback</span><span class="p">,</span><span class="w">
-                      </span><span class="nf">is_integer</span><span class="p" data-group-id="2298087964-23">(</span><span class="n">Port</span><span class="p" data-group-id="2298087964-23">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="p" data-group-id="2298087964-24">{</span><span class="ss">ok</span><span class="p">,</span><span class="n">S</span><span class="p" data-group-id="2298087964-24">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">gen_sctp</span><span class="p">:</span><span class="nf">open</span><span class="p" data-group-id="2298087964-25">(</span><span class="n">Port</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2298087964-26">[</span><span class="p" data-group-id="2298087964-27">{</span><span class="ss">recbuf</span><span class="p">,</span><span class="mi">65536</span><span class="p" data-group-id="2298087964-27">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2298087964-28">{</span><span class="ss">ip</span><span class="p">,</span><span class="n">IP</span><span class="p" data-group-id="2298087964-28">}</span><span class="p" data-group-id="2298087964-26">]</span><span class="p" data-group-id="2298087964-25">)</span><span class="p">,</span><span class="w">
-    </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="2298087964-29">(</span><span class="s">&quot;Listening on </span><span class="si">~w</span><span class="s">:</span><span class="si">~w</span><span class="s">. </span><span class="si">~w</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2298087964-30">[</span><span class="n">IP</span><span class="p">,</span><span class="n">Port</span><span class="p">,</span><span class="n">S</span><span class="p" data-group-id="2298087964-30">]</span><span class="p" data-group-id="2298087964-29">)</span><span class="p">,</span><span class="w">
-    </span><span class="ss">ok</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nc">gen_sctp</span><span class="p">:</span><span class="nf">listen</span><span class="p" data-group-id="2298087964-31">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="ss">true</span><span class="p" data-group-id="2298087964-31">)</span><span class="p">,</span><span class="w">
-    </span><span class="nf">server_loop</span><span class="p" data-group-id="2298087964-32">(</span><span class="n">S</span><span class="p" data-group-id="2298087964-32">)</span><span class="p">.</span><span class="w">
+</span><span class="nf">server</span><span class="p" data-group-id="0310202732-21">(</span><span class="n">IP</span><span class="p">,</span><span class="w"> </span><span class="n">Port</span><span class="p" data-group-id="0310202732-21">)</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="nf">is_tuple</span><span class="p" data-group-id="0310202732-22">(</span><span class="n">IP</span><span class="p" data-group-id="0310202732-22">)</span><span class="w"> </span><span class="ow">orelse</span><span class="w"> </span><span class="n">IP</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">any</span><span class="w"> </span><span class="ow">orelse</span><span class="w"> </span><span class="n">IP</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">loopback</span><span class="p">,</span><span class="w">
+                      </span><span class="nf">is_integer</span><span class="p" data-group-id="0310202732-23">(</span><span class="n">Port</span><span class="p" data-group-id="0310202732-23">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="p" data-group-id="0310202732-24">{</span><span class="ss">ok</span><span class="p">,</span><span class="n">S</span><span class="p" data-group-id="0310202732-24">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">gen_sctp</span><span class="p">:</span><span class="nf">open</span><span class="p" data-group-id="0310202732-25">(</span><span class="n">Port</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0310202732-26">[</span><span class="p" data-group-id="0310202732-27">{</span><span class="ss">recbuf</span><span class="p">,</span><span class="mi">65536</span><span class="p" data-group-id="0310202732-27">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0310202732-28">{</span><span class="ss">ip</span><span class="p">,</span><span class="n">IP</span><span class="p" data-group-id="0310202732-28">}</span><span class="p" data-group-id="0310202732-26">]</span><span class="p" data-group-id="0310202732-25">)</span><span class="p">,</span><span class="w">
+    </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="0310202732-29">(</span><span class="s">&quot;Listening on </span><span class="si">~w</span><span class="s">:</span><span class="si">~w</span><span class="s">. </span><span class="si">~w</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0310202732-30">[</span><span class="n">IP</span><span class="p">,</span><span class="n">Port</span><span class="p">,</span><span class="n">S</span><span class="p" data-group-id="0310202732-30">]</span><span class="p" data-group-id="0310202732-29">)</span><span class="p">,</span><span class="w">
+    </span><span class="ss">ok</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nc">gen_sctp</span><span class="p">:</span><span class="nf">listen</span><span class="p" data-group-id="0310202732-31">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="ss">true</span><span class="p" data-group-id="0310202732-31">)</span><span class="p">,</span><span class="w">
+    </span><span class="nf">server_loop</span><span class="p" data-group-id="0310202732-32">(</span><span class="n">S</span><span class="p" data-group-id="0310202732-32">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">server_loop</span><span class="p" data-group-id="2298087964-33">(</span><span class="n">S</span><span class="p" data-group-id="2298087964-33">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="k">case</span><span class="w"> </span><span class="nc">gen_sctp</span><span class="p">:</span><span class="nf">recv</span><span class="p" data-group-id="2298087964-34">(</span><span class="n">S</span><span class="p" data-group-id="2298087964-34">)</span><span class="w"> </span><span class="k">of</span><span class="w">
-    </span><span class="p" data-group-id="2298087964-35">{</span><span class="ss">error</span><span class="p">,</span><span class="w"> </span><span class="n">Error</span><span class="p" data-group-id="2298087964-35">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-        </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="2298087964-36">(</span><span class="s">&quot;SCTP RECV ERROR: </span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2298087964-37">[</span><span class="n">Error</span><span class="p" data-group-id="2298087964-37">]</span><span class="p" data-group-id="2298087964-36">)</span><span class="p">;</span><span class="w">
+</span><span class="nf">server_loop</span><span class="p" data-group-id="0310202732-33">(</span><span class="n">S</span><span class="p" data-group-id="0310202732-33">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="k">case</span><span class="w"> </span><span class="nc">gen_sctp</span><span class="p">:</span><span class="nf">recv</span><span class="p" data-group-id="0310202732-34">(</span><span class="n">S</span><span class="p" data-group-id="0310202732-34">)</span><span class="w"> </span><span class="k">of</span><span class="w">
+    </span><span class="p" data-group-id="0310202732-35">{</span><span class="ss">error</span><span class="p">,</span><span class="w"> </span><span class="n">Error</span><span class="p" data-group-id="0310202732-35">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+        </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="0310202732-36">(</span><span class="s">&quot;SCTP RECV ERROR: </span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0310202732-37">[</span><span class="n">Error</span><span class="p" data-group-id="0310202732-37">]</span><span class="p" data-group-id="0310202732-36">)</span><span class="p">;</span><span class="w">
     </span><span class="n">Data</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-        </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="2298087964-38">(</span><span class="s">&quot;Received: </span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2298087964-39">[</span><span class="n">Data</span><span class="p" data-group-id="2298087964-39">]</span><span class="p" data-group-id="2298087964-38">)</span><span class="w">
+        </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="0310202732-38">(</span><span class="s">&quot;Received: </span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0310202732-39">[</span><span class="n">Data</span><span class="p" data-group-id="0310202732-39">]</span><span class="p" data-group-id="0310202732-38">)</span><span class="w">
     </span><span class="k">end</span><span class="p">,</span><span class="w">
-    </span><span class="nf">server_loop</span><span class="p" data-group-id="2298087964-40">(</span><span class="n">S</span><span class="p" data-group-id="2298087964-40">)</span><span class="p">.</span></code></pre><p>Example of an Erlang SCTP client interacting with the above server.
+    </span><span class="nf">server_loop</span><span class="p" data-group-id="0310202732-40">(</span><span class="n">S</span><span class="p" data-group-id="0310202732-40">)</span><span class="p">.</span></code></pre><p>Example of an Erlang SCTP client interacting with the above server.
 Note that in this example the client creates an association with
 the server with 5 outbound streams. Therefore, sending of <code class="inline">&quot;Test 0&quot;</code>
 over stream 0 succeeds, but sending of <code class="inline">&quot;Test 5&quot;</code> over stream 5 fails.
 The client then <code class="inline">abort</code>s the association, which results in that
-the corresponding event is received on the server side.</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="8144406745-1">(</span><span class="ss">sctp_client</span><span class="p" data-group-id="8144406745-1">)</span><span class="p">.</span><span class="w">
+the corresponding event is received on the server side.</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="2224160986-1">(</span><span class="ss">sctp_client</span><span class="p" data-group-id="2224160986-1">)</span><span class="p">.</span><span class="w">
 </span><span class="w">
-</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="8144406745-2">(</span><span class="p" data-group-id="8144406745-3">[</span><span class="ss">client</span><span class="p">/</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="ss">client</span><span class="p">/</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">client</span><span class="p">/</span><span class="mi">2</span><span class="p" data-group-id="8144406745-3">]</span><span class="p" data-group-id="8144406745-2">)</span><span class="p">.</span><span class="w">
-</span><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="8144406745-4">(</span><span class="s">&quot;kernel/include/inet.hrl&quot;</span><span class="p" data-group-id="8144406745-4">)</span><span class="p">.</span><span class="w">
-</span><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="8144406745-5">(</span><span class="s">&quot;kernel/include/inet_sctp.hrl&quot;</span><span class="p" data-group-id="8144406745-5">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="2224160986-2">(</span><span class="p" data-group-id="2224160986-3">[</span><span class="ss">client</span><span class="p">/</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="ss">client</span><span class="p">/</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">client</span><span class="p">/</span><span class="mi">2</span><span class="p" data-group-id="2224160986-3">]</span><span class="p" data-group-id="2224160986-2">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="2224160986-4">(</span><span class="s">&quot;kernel/include/inet.hrl&quot;</span><span class="p" data-group-id="2224160986-4">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="2224160986-5">(</span><span class="s">&quot;kernel/include/inet_sctp.hrl&quot;</span><span class="p" data-group-id="2224160986-5">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">client</span><span class="p" data-group-id="8144406745-6">(</span><span class="p" data-group-id="8144406745-6">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="nf">client</span><span class="p" data-group-id="8144406745-7">(</span><span class="p" data-group-id="8144406745-8">[</span><span class="ss">localhost</span><span class="p" data-group-id="8144406745-8">]</span><span class="p" data-group-id="8144406745-7">)</span><span class="p">.</span><span class="w">
+</span><span class="nf">client</span><span class="p" data-group-id="2224160986-6">(</span><span class="p" data-group-id="2224160986-6">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="nf">client</span><span class="p" data-group-id="2224160986-7">(</span><span class="p" data-group-id="2224160986-8">[</span><span class="ss">localhost</span><span class="p" data-group-id="2224160986-8">]</span><span class="p" data-group-id="2224160986-7">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">client</span><span class="p" data-group-id="8144406745-9">(</span><span class="p" data-group-id="8144406745-10">[</span><span class="n">Host</span><span class="p" data-group-id="8144406745-10">]</span><span class="p" data-group-id="8144406745-9">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="nf">client</span><span class="p" data-group-id="8144406745-11">(</span><span class="n">Host</span><span class="p">,</span><span class="w"> </span><span class="mi">2006</span><span class="p" data-group-id="8144406745-11">)</span><span class="p">;</span><span class="w">
+</span><span class="nf">client</span><span class="p" data-group-id="2224160986-9">(</span><span class="p" data-group-id="2224160986-10">[</span><span class="n">Host</span><span class="p" data-group-id="2224160986-10">]</span><span class="p" data-group-id="2224160986-9">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="nf">client</span><span class="p" data-group-id="2224160986-11">(</span><span class="n">Host</span><span class="p">,</span><span class="w"> </span><span class="mi">2006</span><span class="p" data-group-id="2224160986-11">)</span><span class="p">;</span><span class="w">
 
-</span><span class="nf">client</span><span class="p" data-group-id="8144406745-12">(</span><span class="p" data-group-id="8144406745-13">[</span><span class="n">Host</span><span class="p">,</span><span class="w"> </span><span class="n">Port</span><span class="p" data-group-id="8144406745-13">]</span><span class="p" data-group-id="8144406745-12">)</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="nf">is_list</span><span class="p" data-group-id="8144406745-14">(</span><span class="n">Host</span><span class="p" data-group-id="8144406745-14">)</span><span class="p">,</span><span class="w"> </span><span class="nf">is_list</span><span class="p" data-group-id="8144406745-15">(</span><span class="n">Port</span><span class="p" data-group-id="8144406745-15">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="nf">client</span><span class="p" data-group-id="8144406745-16">(</span><span class="n">Host</span><span class="p">,</span><span class="nf">list_to_integer</span><span class="p" data-group-id="8144406745-17">(</span><span class="n">Port</span><span class="p" data-group-id="8144406745-17">)</span><span class="p" data-group-id="8144406745-16">)</span><span class="p">,</span><span class="w">
-    </span><span class="nc">init</span><span class="p">:</span><span class="nf">stop</span><span class="p" data-group-id="8144406745-18">(</span><span class="p" data-group-id="8144406745-18">)</span><span class="p">.</span><span class="w">
+</span><span class="nf">client</span><span class="p" data-group-id="2224160986-12">(</span><span class="p" data-group-id="2224160986-13">[</span><span class="n">Host</span><span class="p">,</span><span class="w"> </span><span class="n">Port</span><span class="p" data-group-id="2224160986-13">]</span><span class="p" data-group-id="2224160986-12">)</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="nf">is_list</span><span class="p" data-group-id="2224160986-14">(</span><span class="n">Host</span><span class="p" data-group-id="2224160986-14">)</span><span class="p">,</span><span class="w"> </span><span class="nf">is_list</span><span class="p" data-group-id="2224160986-15">(</span><span class="n">Port</span><span class="p" data-group-id="2224160986-15">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="nf">client</span><span class="p" data-group-id="2224160986-16">(</span><span class="n">Host</span><span class="p">,</span><span class="nf">list_to_integer</span><span class="p" data-group-id="2224160986-17">(</span><span class="n">Port</span><span class="p" data-group-id="2224160986-17">)</span><span class="p" data-group-id="2224160986-16">)</span><span class="p">,</span><span class="w">
+    </span><span class="nc">init</span><span class="p">:</span><span class="nf">stop</span><span class="p" data-group-id="2224160986-18">(</span><span class="p" data-group-id="2224160986-18">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">client</span><span class="p" data-group-id="8144406745-19">(</span><span class="n">Host</span><span class="p">,</span><span class="w"> </span><span class="n">Port</span><span class="p" data-group-id="8144406745-19">)</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="nf">is_integer</span><span class="p" data-group-id="8144406745-20">(</span><span class="n">Port</span><span class="p" data-group-id="8144406745-20">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="p" data-group-id="8144406745-21">{</span><span class="ss">ok</span><span class="p">,</span><span class="n">S</span><span class="p" data-group-id="8144406745-21">}</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nc">gen_sctp</span><span class="p">:</span><span class="nf">open</span><span class="p" data-group-id="8144406745-22">(</span><span class="p" data-group-id="8144406745-22">)</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="8144406745-23">{</span><span class="ss">ok</span><span class="p">,</span><span class="n">Assoc</span><span class="p" data-group-id="8144406745-23">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">gen_sctp</span><span class="p">:</span><span class="nf">connect</span><span class="w">
-        </span><span class="p" data-group-id="8144406745-24">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Host</span><span class="p">,</span><span class="w"> </span><span class="n">Port</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8144406745-25">[</span><span class="p" data-group-id="8144406745-26">{</span><span class="ss">sctp_initmsg</span><span class="p">,</span><span class="o">#</span><span class="ss">sctp_initmsg</span><span class="p" data-group-id="8144406745-27">{</span><span class="ss">num_ostreams</span><span class="o">=</span><span class="mi">5</span><span class="p" data-group-id="8144406745-27">}</span><span class="p" data-group-id="8144406745-26">}</span><span class="p" data-group-id="8144406745-25">]</span><span class="p" data-group-id="8144406745-24">)</span><span class="p">,</span><span class="w">
-    </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="8144406745-28">(</span><span class="s">&quot;Connection Successful, Assoc=</span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8144406745-29">[</span><span class="n">Assoc</span><span class="p" data-group-id="8144406745-29">]</span><span class="p" data-group-id="8144406745-28">)</span><span class="p">,</span><span class="w">
+</span><span class="nf">client</span><span class="p" data-group-id="2224160986-19">(</span><span class="n">Host</span><span class="p">,</span><span class="w"> </span><span class="n">Port</span><span class="p" data-group-id="2224160986-19">)</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="nf">is_integer</span><span class="p" data-group-id="2224160986-20">(</span><span class="n">Port</span><span class="p" data-group-id="2224160986-20">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="p" data-group-id="2224160986-21">{</span><span class="ss">ok</span><span class="p">,</span><span class="n">S</span><span class="p" data-group-id="2224160986-21">}</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nc">gen_sctp</span><span class="p">:</span><span class="nf">open</span><span class="p" data-group-id="2224160986-22">(</span><span class="p" data-group-id="2224160986-22">)</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="2224160986-23">{</span><span class="ss">ok</span><span class="p">,</span><span class="n">Assoc</span><span class="p" data-group-id="2224160986-23">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">gen_sctp</span><span class="p">:</span><span class="nf">connect</span><span class="w">
+        </span><span class="p" data-group-id="2224160986-24">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Host</span><span class="p">,</span><span class="w"> </span><span class="n">Port</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2224160986-25">[</span><span class="p" data-group-id="2224160986-26">{</span><span class="ss">sctp_initmsg</span><span class="p">,</span><span class="o">#</span><span class="ss">sctp_initmsg</span><span class="p" data-group-id="2224160986-27">{</span><span class="ss">num_ostreams</span><span class="o">=</span><span class="mi">5</span><span class="p" data-group-id="2224160986-27">}</span><span class="p" data-group-id="2224160986-26">}</span><span class="p" data-group-id="2224160986-25">]</span><span class="p" data-group-id="2224160986-24">)</span><span class="p">,</span><span class="w">
+    </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="2224160986-28">(</span><span class="s">&quot;Connection Successful, Assoc=</span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2224160986-29">[</span><span class="n">Assoc</span><span class="p" data-group-id="2224160986-29">]</span><span class="p" data-group-id="2224160986-28">)</span><span class="p">,</span><span class="w">
 
-    </span><span class="nc">io</span><span class="p">:</span><span class="nf">write</span><span class="p" data-group-id="8144406745-30">(</span><span class="nc">gen_sctp</span><span class="p">:</span><span class="nf">send</span><span class="p" data-group-id="8144406745-31">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Assoc</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8144406745-32">&lt;&lt;</span><span class="s">&quot;Test 0&quot;</span><span class="p" data-group-id="8144406745-32">&gt;&gt;</span><span class="p" data-group-id="8144406745-31">)</span><span class="p" data-group-id="8144406745-30">)</span><span class="p">,</span><span class="w">
-    </span><span class="nc">io</span><span class="p">:</span><span class="nf">nl</span><span class="p" data-group-id="8144406745-33">(</span><span class="p" data-group-id="8144406745-33">)</span><span class="p">,</span><span class="w">
-    </span><span class="nc">timer</span><span class="p">:</span><span class="nf">sleep</span><span class="p" data-group-id="8144406745-34">(</span><span class="mi">10000</span><span class="p" data-group-id="8144406745-34">)</span><span class="p">,</span><span class="w">
-    </span><span class="nc">io</span><span class="p">:</span><span class="nf">write</span><span class="p" data-group-id="8144406745-35">(</span><span class="nc">gen_sctp</span><span class="p">:</span><span class="nf">send</span><span class="p" data-group-id="8144406745-36">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Assoc</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8144406745-37">&lt;&lt;</span><span class="s">&quot;Test 5&quot;</span><span class="p" data-group-id="8144406745-37">&gt;&gt;</span><span class="p" data-group-id="8144406745-36">)</span><span class="p" data-group-id="8144406745-35">)</span><span class="p">,</span><span class="w">
-    </span><span class="nc">io</span><span class="p">:</span><span class="nf">nl</span><span class="p" data-group-id="8144406745-38">(</span><span class="p" data-group-id="8144406745-38">)</span><span class="p">,</span><span class="w">
-    </span><span class="nc">timer</span><span class="p">:</span><span class="nf">sleep</span><span class="p" data-group-id="8144406745-39">(</span><span class="mi">10000</span><span class="p" data-group-id="8144406745-39">)</span><span class="p">,</span><span class="w">
-    </span><span class="nc">io</span><span class="p">:</span><span class="nf">write</span><span class="p" data-group-id="8144406745-40">(</span><span class="nc">gen_sctp</span><span class="p">:</span><span class="nf">abort</span><span class="p" data-group-id="8144406745-41">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Assoc</span><span class="p" data-group-id="8144406745-41">)</span><span class="p" data-group-id="8144406745-40">)</span><span class="p">,</span><span class="w">
-    </span><span class="nc">io</span><span class="p">:</span><span class="nf">nl</span><span class="p" data-group-id="8144406745-42">(</span><span class="p" data-group-id="8144406745-42">)</span><span class="p">,</span><span class="w">
+    </span><span class="nc">io</span><span class="p">:</span><span class="nf">write</span><span class="p" data-group-id="2224160986-30">(</span><span class="nc">gen_sctp</span><span class="p">:</span><span class="nf">send</span><span class="p" data-group-id="2224160986-31">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Assoc</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2224160986-32">&lt;&lt;</span><span class="s">&quot;Test 0&quot;</span><span class="p" data-group-id="2224160986-32">&gt;&gt;</span><span class="p" data-group-id="2224160986-31">)</span><span class="p" data-group-id="2224160986-30">)</span><span class="p">,</span><span class="w">
+    </span><span class="nc">io</span><span class="p">:</span><span class="nf">nl</span><span class="p" data-group-id="2224160986-33">(</span><span class="p" data-group-id="2224160986-33">)</span><span class="p">,</span><span class="w">
+    </span><span class="nc">timer</span><span class="p">:</span><span class="nf">sleep</span><span class="p" data-group-id="2224160986-34">(</span><span class="mi">10000</span><span class="p" data-group-id="2224160986-34">)</span><span class="p">,</span><span class="w">
+    </span><span class="nc">io</span><span class="p">:</span><span class="nf">write</span><span class="p" data-group-id="2224160986-35">(</span><span class="nc">gen_sctp</span><span class="p">:</span><span class="nf">send</span><span class="p" data-group-id="2224160986-36">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Assoc</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2224160986-37">&lt;&lt;</span><span class="s">&quot;Test 5&quot;</span><span class="p" data-group-id="2224160986-37">&gt;&gt;</span><span class="p" data-group-id="2224160986-36">)</span><span class="p" data-group-id="2224160986-35">)</span><span class="p">,</span><span class="w">
+    </span><span class="nc">io</span><span class="p">:</span><span class="nf">nl</span><span class="p" data-group-id="2224160986-38">(</span><span class="p" data-group-id="2224160986-38">)</span><span class="p">,</span><span class="w">
+    </span><span class="nc">timer</span><span class="p">:</span><span class="nf">sleep</span><span class="p" data-group-id="2224160986-39">(</span><span class="mi">10000</span><span class="p" data-group-id="2224160986-39">)</span><span class="p">,</span><span class="w">
+    </span><span class="nc">io</span><span class="p">:</span><span class="nf">write</span><span class="p" data-group-id="2224160986-40">(</span><span class="nc">gen_sctp</span><span class="p">:</span><span class="nf">abort</span><span class="p" data-group-id="2224160986-41">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Assoc</span><span class="p" data-group-id="2224160986-41">)</span><span class="p" data-group-id="2224160986-40">)</span><span class="p">,</span><span class="w">
+    </span><span class="nc">io</span><span class="p">:</span><span class="nf">nl</span><span class="p" data-group-id="2224160986-42">(</span><span class="p" data-group-id="2224160986-42">)</span><span class="p">,</span><span class="w">
 
-    </span><span class="nc">timer</span><span class="p">:</span><span class="nf">sleep</span><span class="p" data-group-id="8144406745-43">(</span><span class="mi">1000</span><span class="p" data-group-id="8144406745-43">)</span><span class="p">,</span><span class="w">
-    </span><span class="nc">gen_sctp</span><span class="p">:</span><span class="nf">close</span><span class="p" data-group-id="8144406745-44">(</span><span class="n">S</span><span class="p" data-group-id="8144406745-44">)</span><span class="p">.</span></code></pre><p>A simple Erlang SCTP client that uses the <code class="inline">connect_init</code> API:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="0089168754-1">(</span><span class="ss">ex3</span><span class="p" data-group-id="0089168754-1">)</span><span class="p">.</span><span class="w">
+    </span><span class="nc">timer</span><span class="p">:</span><span class="nf">sleep</span><span class="p" data-group-id="2224160986-43">(</span><span class="mi">1000</span><span class="p" data-group-id="2224160986-43">)</span><span class="p">,</span><span class="w">
+    </span><span class="nc">gen_sctp</span><span class="p">:</span><span class="nf">close</span><span class="p" data-group-id="2224160986-44">(</span><span class="n">S</span><span class="p" data-group-id="2224160986-44">)</span><span class="p">.</span></code></pre><p>A simple Erlang SCTP client that uses the <code class="inline">connect_init</code> API:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="1669127083-1">(</span><span class="ss">ex3</span><span class="p" data-group-id="1669127083-1">)</span><span class="p">.</span><span class="w">
 </span><span class="w">
-</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="0089168754-2">(</span><span class="p" data-group-id="0089168754-3">[</span><span class="ss">client</span><span class="p">/</span><span class="mi">4</span><span class="p" data-group-id="0089168754-3">]</span><span class="p" data-group-id="0089168754-2">)</span><span class="p">.</span><span class="w">
-</span><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="0089168754-4">(</span><span class="s">&quot;kernel/include/inet.hrl&quot;</span><span class="p" data-group-id="0089168754-4">)</span><span class="p">.</span><span class="w">
-</span><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="0089168754-5">(</span><span class="s">&quot;kernel/include/inet_sctp.hrl&quot;</span><span class="p" data-group-id="0089168754-5">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="1669127083-2">(</span><span class="p" data-group-id="1669127083-3">[</span><span class="ss">client</span><span class="p">/</span><span class="mi">4</span><span class="p" data-group-id="1669127083-3">]</span><span class="p" data-group-id="1669127083-2">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="1669127083-4">(</span><span class="s">&quot;kernel/include/inet.hrl&quot;</span><span class="p" data-group-id="1669127083-4">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="1669127083-5">(</span><span class="s">&quot;kernel/include/inet_sctp.hrl&quot;</span><span class="p" data-group-id="1669127083-5">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">client</span><span class="p" data-group-id="0089168754-6">(</span><span class="n">Peer1</span><span class="p">,</span><span class="w"> </span><span class="n">Port1</span><span class="p">,</span><span class="w"> </span><span class="n">Peer2</span><span class="p">,</span><span class="w"> </span><span class="n">Port2</span><span class="p" data-group-id="0089168754-6">)</span><span class="w">
-  </span><span class="k">when</span><span class="w"> </span><span class="nf">is_tuple</span><span class="p" data-group-id="0089168754-7">(</span><span class="n">Peer1</span><span class="p" data-group-id="0089168754-7">)</span><span class="p">,</span><span class="w"> </span><span class="nf">is_integer</span><span class="p" data-group-id="0089168754-8">(</span><span class="n">Port1</span><span class="p" data-group-id="0089168754-8">)</span><span class="p">,</span><span class="w"> </span><span class="nf">is_tuple</span><span class="p" data-group-id="0089168754-9">(</span><span class="n">Peer2</span><span class="p" data-group-id="0089168754-9">)</span><span class="p">,</span><span class="w"> </span><span class="nf">is_integer</span><span class="p" data-group-id="0089168754-10">(</span><span class="n">Port2</span><span class="p" data-group-id="0089168754-10">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="p" data-group-id="0089168754-11">{</span><span class="ss">ok</span><span class="p">,</span><span class="n">S</span><span class="p" data-group-id="0089168754-11">}</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nc">gen_sctp</span><span class="p">:</span><span class="nf">open</span><span class="p" data-group-id="0089168754-12">(</span><span class="p" data-group-id="0089168754-12">)</span><span class="p">,</span><span class="w">
-    </span><span class="n">SctpInitMsgOpt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="0089168754-13">{</span><span class="ss">sctp_initmsg</span><span class="p">,</span><span class="o">#</span><span class="ss">sctp_initmsg</span><span class="p" data-group-id="0089168754-14">{</span><span class="ss">num_ostreams</span><span class="o">=</span><span class="mi">5</span><span class="p" data-group-id="0089168754-14">}</span><span class="p" data-group-id="0089168754-13">}</span><span class="p">,</span><span class="w">
-    </span><span class="n">ActiveOpt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="0089168754-15">{</span><span class="ss">active</span><span class="p">,</span><span class="w"> </span><span class="ss">true</span><span class="p" data-group-id="0089168754-15">}</span><span class="p">,</span><span class="w">
-    </span><span class="n">Opts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="0089168754-16">[</span><span class="n">SctpInitMsgOpt</span><span class="p">,</span><span class="w"> </span><span class="n">ActiveOpt</span><span class="p" data-group-id="0089168754-16">]</span><span class="p">,</span><span class="w">
-    </span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">gen_sctp</span><span class="p">:</span><span class="nf">connect</span><span class="p" data-group-id="0089168754-17">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Peer1</span><span class="p">,</span><span class="w"> </span><span class="n">Port1</span><span class="p">,</span><span class="w"> </span><span class="n">Opts</span><span class="p" data-group-id="0089168754-17">)</span><span class="p">,</span><span class="w">
-    </span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">gen_sctp</span><span class="p">:</span><span class="nf">connect</span><span class="p" data-group-id="0089168754-18">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Peer2</span><span class="p">,</span><span class="w"> </span><span class="n">Port2</span><span class="p">,</span><span class="w"> </span><span class="n">Opts</span><span class="p" data-group-id="0089168754-18">)</span><span class="p">,</span><span class="w">
-    </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="0089168754-19">(</span><span class="s">&quot;Connections initiated</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0089168754-20">[</span><span class="p" data-group-id="0089168754-20">]</span><span class="p" data-group-id="0089168754-19">)</span><span class="p">,</span><span class="w">
-    </span><span class="nf">client_loop</span><span class="p" data-group-id="0089168754-21">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Peer1</span><span class="p">,</span><span class="w"> </span><span class="n">Port1</span><span class="p">,</span><span class="w"> </span><span class="ss">undefined</span><span class="p">,</span><span class="w"> </span><span class="n">Peer2</span><span class="p">,</span><span class="w"> </span><span class="n">Port2</span><span class="p">,</span><span class="w"> </span><span class="ss">undefined</span><span class="p" data-group-id="0089168754-21">)</span><span class="p">.</span><span class="w">
+</span><span class="nf">client</span><span class="p" data-group-id="1669127083-6">(</span><span class="n">Peer1</span><span class="p">,</span><span class="w"> </span><span class="n">Port1</span><span class="p">,</span><span class="w"> </span><span class="n">Peer2</span><span class="p">,</span><span class="w"> </span><span class="n">Port2</span><span class="p" data-group-id="1669127083-6">)</span><span class="w">
+  </span><span class="k">when</span><span class="w"> </span><span class="nf">is_tuple</span><span class="p" data-group-id="1669127083-7">(</span><span class="n">Peer1</span><span class="p" data-group-id="1669127083-7">)</span><span class="p">,</span><span class="w"> </span><span class="nf">is_integer</span><span class="p" data-group-id="1669127083-8">(</span><span class="n">Port1</span><span class="p" data-group-id="1669127083-8">)</span><span class="p">,</span><span class="w"> </span><span class="nf">is_tuple</span><span class="p" data-group-id="1669127083-9">(</span><span class="n">Peer2</span><span class="p" data-group-id="1669127083-9">)</span><span class="p">,</span><span class="w"> </span><span class="nf">is_integer</span><span class="p" data-group-id="1669127083-10">(</span><span class="n">Port2</span><span class="p" data-group-id="1669127083-10">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="p" data-group-id="1669127083-11">{</span><span class="ss">ok</span><span class="p">,</span><span class="n">S</span><span class="p" data-group-id="1669127083-11">}</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nc">gen_sctp</span><span class="p">:</span><span class="nf">open</span><span class="p" data-group-id="1669127083-12">(</span><span class="p" data-group-id="1669127083-12">)</span><span class="p">,</span><span class="w">
+    </span><span class="n">SctpInitMsgOpt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="1669127083-13">{</span><span class="ss">sctp_initmsg</span><span class="p">,</span><span class="o">#</span><span class="ss">sctp_initmsg</span><span class="p" data-group-id="1669127083-14">{</span><span class="ss">num_ostreams</span><span class="o">=</span><span class="mi">5</span><span class="p" data-group-id="1669127083-14">}</span><span class="p" data-group-id="1669127083-13">}</span><span class="p">,</span><span class="w">
+    </span><span class="n">ActiveOpt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="1669127083-15">{</span><span class="ss">active</span><span class="p">,</span><span class="w"> </span><span class="ss">true</span><span class="p" data-group-id="1669127083-15">}</span><span class="p">,</span><span class="w">
+    </span><span class="n">Opts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="1669127083-16">[</span><span class="n">SctpInitMsgOpt</span><span class="p">,</span><span class="w"> </span><span class="n">ActiveOpt</span><span class="p" data-group-id="1669127083-16">]</span><span class="p">,</span><span class="w">
+    </span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">gen_sctp</span><span class="p">:</span><span class="nf">connect</span><span class="p" data-group-id="1669127083-17">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Peer1</span><span class="p">,</span><span class="w"> </span><span class="n">Port1</span><span class="p">,</span><span class="w"> </span><span class="n">Opts</span><span class="p" data-group-id="1669127083-17">)</span><span class="p">,</span><span class="w">
+    </span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">gen_sctp</span><span class="p">:</span><span class="nf">connect</span><span class="p" data-group-id="1669127083-18">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Peer2</span><span class="p">,</span><span class="w"> </span><span class="n">Port2</span><span class="p">,</span><span class="w"> </span><span class="n">Opts</span><span class="p" data-group-id="1669127083-18">)</span><span class="p">,</span><span class="w">
+    </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="1669127083-19">(</span><span class="s">&quot;Connections initiated</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1669127083-20">[</span><span class="p" data-group-id="1669127083-20">]</span><span class="p" data-group-id="1669127083-19">)</span><span class="p">,</span><span class="w">
+    </span><span class="nf">client_loop</span><span class="p" data-group-id="1669127083-21">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Peer1</span><span class="p">,</span><span class="w"> </span><span class="n">Port1</span><span class="p">,</span><span class="w"> </span><span class="ss">undefined</span><span class="p">,</span><span class="w"> </span><span class="n">Peer2</span><span class="p">,</span><span class="w"> </span><span class="n">Port2</span><span class="p">,</span><span class="w"> </span><span class="ss">undefined</span><span class="p" data-group-id="1669127083-21">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">client_loop</span><span class="p" data-group-id="0089168754-22">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Peer1</span><span class="p">,</span><span class="w"> </span><span class="n">Port1</span><span class="p">,</span><span class="w"> </span><span class="n">AssocId1</span><span class="p">,</span><span class="w"> </span><span class="n">Peer2</span><span class="p">,</span><span class="w"> </span><span class="n">Port2</span><span class="p">,</span><span class="w"> </span><span class="n">AssocId2</span><span class="p" data-group-id="0089168754-22">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+</span><span class="nf">client_loop</span><span class="p" data-group-id="1669127083-22">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Peer1</span><span class="p">,</span><span class="w"> </span><span class="n">Port1</span><span class="p">,</span><span class="w"> </span><span class="n">AssocId1</span><span class="p">,</span><span class="w"> </span><span class="n">Peer2</span><span class="p">,</span><span class="w"> </span><span class="n">Port2</span><span class="p">,</span><span class="w"> </span><span class="n">AssocId2</span><span class="p" data-group-id="1669127083-22">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
     </span><span class="k">receive</span><span class="w">
-        </span><span class="p" data-group-id="0089168754-23">{</span><span class="ss">sctp</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Peer1</span><span class="p">,</span><span class="w"> </span><span class="n">Port1</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0089168754-24">{</span><span class="p">_</span><span class="n">Anc</span><span class="p">,</span><span class="w"> </span><span class="n">SAC</span><span class="p" data-group-id="0089168754-24">}</span><span class="p" data-group-id="0089168754-23">}</span><span class="w">
-          </span><span class="k">when</span><span class="w"> </span><span class="nf">is_record</span><span class="p" data-group-id="0089168754-25">(</span><span class="n">SAC</span><span class="p">,</span><span class="w"> </span><span class="ss">sctp_assoc_change</span><span class="p" data-group-id="0089168754-25">)</span><span class="p">,</span><span class="w"> </span><span class="n">AssocId1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">undefined</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-            </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="0089168754-26">(</span><span class="s">&quot;Association 1 connect result: </span><span class="si">~p</span><span class="s">. AssocId: </span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w">
-                      </span><span class="p" data-group-id="0089168754-27">[</span><span class="n">SAC</span><span class="o">#</span><span class="ss">sctp_assoc_change</span><span class="p">.</span><span class="ss">state</span><span class="p">,</span><span class="w">
-                       </span><span class="n">SAC</span><span class="o">#</span><span class="ss">sctp_assoc_change</span><span class="p">.</span><span class="ss">assoc_id</span><span class="p" data-group-id="0089168754-27">]</span><span class="p" data-group-id="0089168754-26">)</span><span class="p">,</span><span class="w">
-            </span><span class="nf">client_loop</span><span class="p" data-group-id="0089168754-28">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Peer1</span><span class="p">,</span><span class="w"> </span><span class="n">Port1</span><span class="p">,</span><span class="w"> </span><span class="n">SAC</span><span class="o">#</span><span class="ss">sctp_assoc_change</span><span class="p">.</span><span class="ss">assoc_id</span><span class="p">,</span><span class="w">
-                        </span><span class="n">Peer2</span><span class="p">,</span><span class="w"> </span><span class="n">Port2</span><span class="p">,</span><span class="w"> </span><span class="n">AssocId2</span><span class="p" data-group-id="0089168754-28">)</span><span class="p">;</span><span class="w">
+        </span><span class="p" data-group-id="1669127083-23">{</span><span class="ss">sctp</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Peer1</span><span class="p">,</span><span class="w"> </span><span class="n">Port1</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1669127083-24">{</span><span class="p">_</span><span class="n">Anc</span><span class="p">,</span><span class="w"> </span><span class="n">SAC</span><span class="p" data-group-id="1669127083-24">}</span><span class="p" data-group-id="1669127083-23">}</span><span class="w">
+          </span><span class="k">when</span><span class="w"> </span><span class="nf">is_record</span><span class="p" data-group-id="1669127083-25">(</span><span class="n">SAC</span><span class="p">,</span><span class="w"> </span><span class="ss">sctp_assoc_change</span><span class="p" data-group-id="1669127083-25">)</span><span class="p">,</span><span class="w"> </span><span class="n">AssocId1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">undefined</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+            </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="1669127083-26">(</span><span class="s">&quot;Association 1 connect result: </span><span class="si">~p</span><span class="s">. AssocId: </span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w">
+                      </span><span class="p" data-group-id="1669127083-27">[</span><span class="n">SAC</span><span class="o">#</span><span class="ss">sctp_assoc_change</span><span class="p">.</span><span class="ss">state</span><span class="p">,</span><span class="w">
+                       </span><span class="n">SAC</span><span class="o">#</span><span class="ss">sctp_assoc_change</span><span class="p">.</span><span class="ss">assoc_id</span><span class="p" data-group-id="1669127083-27">]</span><span class="p" data-group-id="1669127083-26">)</span><span class="p">,</span><span class="w">
+            </span><span class="nf">client_loop</span><span class="p" data-group-id="1669127083-28">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Peer1</span><span class="p">,</span><span class="w"> </span><span class="n">Port1</span><span class="p">,</span><span class="w"> </span><span class="n">SAC</span><span class="o">#</span><span class="ss">sctp_assoc_change</span><span class="p">.</span><span class="ss">assoc_id</span><span class="p">,</span><span class="w">
+                        </span><span class="n">Peer2</span><span class="p">,</span><span class="w"> </span><span class="n">Port2</span><span class="p">,</span><span class="w"> </span><span class="n">AssocId2</span><span class="p" data-group-id="1669127083-28">)</span><span class="p">;</span><span class="w">
 
-        </span><span class="p" data-group-id="0089168754-29">{</span><span class="ss">sctp</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Peer2</span><span class="p">,</span><span class="w"> </span><span class="n">Port2</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0089168754-30">{</span><span class="p">_</span><span class="n">Anc</span><span class="p">,</span><span class="w"> </span><span class="n">SAC</span><span class="p" data-group-id="0089168754-30">}</span><span class="p" data-group-id="0089168754-29">}</span><span class="w">
-          </span><span class="k">when</span><span class="w"> </span><span class="nf">is_record</span><span class="p" data-group-id="0089168754-31">(</span><span class="n">SAC</span><span class="p">,</span><span class="w"> </span><span class="ss">sctp_assoc_change</span><span class="p" data-group-id="0089168754-31">)</span><span class="p">,</span><span class="w"> </span><span class="n">AssocId2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">undefined</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-            </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="0089168754-32">(</span><span class="s">&quot;Association 2 connect result: </span><span class="si">~p</span><span class="s">. AssocId: </span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w">
-                      </span><span class="p" data-group-id="0089168754-33">[</span><span class="n">SAC</span><span class="o">#</span><span class="ss">sctp_assoc_change</span><span class="p">.</span><span class="ss">state</span><span class="p">,</span><span class="w"> </span><span class="n">SAC</span><span class="o">#</span><span class="ss">sctp_assoc_change</span><span class="p">.</span><span class="ss">assoc_id</span><span class="p" data-group-id="0089168754-33">]</span><span class="p" data-group-id="0089168754-32">)</span><span class="p">,</span><span class="w">
-            </span><span class="nf">client_loop</span><span class="p" data-group-id="0089168754-34">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Peer1</span><span class="p">,</span><span class="w"> </span><span class="n">Port1</span><span class="p">,</span><span class="w"> </span><span class="n">AssocId1</span><span class="p">,</span><span class="w"> </span><span class="n">Peer2</span><span class="p">,</span><span class="w"> </span><span class="n">Port2</span><span class="p">,</span><span class="w">
-                       </span><span class="n">SAC</span><span class="o">#</span><span class="ss">sctp_assoc_change</span><span class="p">.</span><span class="ss">assoc_id</span><span class="p" data-group-id="0089168754-34">)</span><span class="p">;</span><span class="w">
+        </span><span class="p" data-group-id="1669127083-29">{</span><span class="ss">sctp</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Peer2</span><span class="p">,</span><span class="w"> </span><span class="n">Port2</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1669127083-30">{</span><span class="p">_</span><span class="n">Anc</span><span class="p">,</span><span class="w"> </span><span class="n">SAC</span><span class="p" data-group-id="1669127083-30">}</span><span class="p" data-group-id="1669127083-29">}</span><span class="w">
+          </span><span class="k">when</span><span class="w"> </span><span class="nf">is_record</span><span class="p" data-group-id="1669127083-31">(</span><span class="n">SAC</span><span class="p">,</span><span class="w"> </span><span class="ss">sctp_assoc_change</span><span class="p" data-group-id="1669127083-31">)</span><span class="p">,</span><span class="w"> </span><span class="n">AssocId2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="ss">undefined</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+            </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="1669127083-32">(</span><span class="s">&quot;Association 2 connect result: </span><span class="si">~p</span><span class="s">. AssocId: </span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w">
+                      </span><span class="p" data-group-id="1669127083-33">[</span><span class="n">SAC</span><span class="o">#</span><span class="ss">sctp_assoc_change</span><span class="p">.</span><span class="ss">state</span><span class="p">,</span><span class="w"> </span><span class="n">SAC</span><span class="o">#</span><span class="ss">sctp_assoc_change</span><span class="p">.</span><span class="ss">assoc_id</span><span class="p" data-group-id="1669127083-33">]</span><span class="p" data-group-id="1669127083-32">)</span><span class="p">,</span><span class="w">
+            </span><span class="nf">client_loop</span><span class="p" data-group-id="1669127083-34">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Peer1</span><span class="p">,</span><span class="w"> </span><span class="n">Port1</span><span class="p">,</span><span class="w"> </span><span class="n">AssocId1</span><span class="p">,</span><span class="w"> </span><span class="n">Peer2</span><span class="p">,</span><span class="w"> </span><span class="n">Port2</span><span class="p">,</span><span class="w">
+                       </span><span class="n">SAC</span><span class="o">#</span><span class="ss">sctp_assoc_change</span><span class="p">.</span><span class="ss">assoc_id</span><span class="p" data-group-id="1669127083-34">)</span><span class="p">;</span><span class="w">
 
-        </span><span class="p" data-group-id="0089168754-35">{</span><span class="ss">sctp</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Peer1</span><span class="p">,</span><span class="w"> </span><span class="n">Port1</span><span class="p">,</span><span class="w"> </span><span class="n">Data</span><span class="p" data-group-id="0089168754-35">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-            </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="0089168754-36">(</span><span class="s">&quot;Association 1: received </span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0089168754-37">[</span><span class="n">Data</span><span class="p" data-group-id="0089168754-37">]</span><span class="p" data-group-id="0089168754-36">)</span><span class="p">,</span><span class="w">
-            </span><span class="nf">client_loop</span><span class="p" data-group-id="0089168754-38">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Peer1</span><span class="p">,</span><span class="w"> </span><span class="n">Port1</span><span class="p">,</span><span class="w"> </span><span class="n">AssocId1</span><span class="p">,</span><span class="w">
-                        </span><span class="n">Peer2</span><span class="p">,</span><span class="w"> </span><span class="n">Port2</span><span class="p">,</span><span class="w"> </span><span class="n">AssocId2</span><span class="p" data-group-id="0089168754-38">)</span><span class="p">;</span><span class="w">
+        </span><span class="p" data-group-id="1669127083-35">{</span><span class="ss">sctp</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Peer1</span><span class="p">,</span><span class="w"> </span><span class="n">Port1</span><span class="p">,</span><span class="w"> </span><span class="n">Data</span><span class="p" data-group-id="1669127083-35">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+            </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="1669127083-36">(</span><span class="s">&quot;Association 1: received </span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1669127083-37">[</span><span class="n">Data</span><span class="p" data-group-id="1669127083-37">]</span><span class="p" data-group-id="1669127083-36">)</span><span class="p">,</span><span class="w">
+            </span><span class="nf">client_loop</span><span class="p" data-group-id="1669127083-38">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Peer1</span><span class="p">,</span><span class="w"> </span><span class="n">Port1</span><span class="p">,</span><span class="w"> </span><span class="n">AssocId1</span><span class="p">,</span><span class="w">
+                        </span><span class="n">Peer2</span><span class="p">,</span><span class="w"> </span><span class="n">Port2</span><span class="p">,</span><span class="w"> </span><span class="n">AssocId2</span><span class="p" data-group-id="1669127083-38">)</span><span class="p">;</span><span class="w">
 
-        </span><span class="p" data-group-id="0089168754-39">{</span><span class="ss">sctp</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Peer2</span><span class="p">,</span><span class="w"> </span><span class="n">Port2</span><span class="p">,</span><span class="w"> </span><span class="n">Data</span><span class="p" data-group-id="0089168754-39">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-            </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="0089168754-40">(</span><span class="s">&quot;Association 2: received </span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0089168754-41">[</span><span class="n">Data</span><span class="p" data-group-id="0089168754-41">]</span><span class="p" data-group-id="0089168754-40">)</span><span class="p">,</span><span class="w">
-            </span><span class="nf">client_loop</span><span class="p" data-group-id="0089168754-42">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Peer1</span><span class="p">,</span><span class="w"> </span><span class="n">Port1</span><span class="p">,</span><span class="w"> </span><span class="n">AssocId1</span><span class="p">,</span><span class="w">
-                        </span><span class="n">Peer2</span><span class="p">,</span><span class="w"> </span><span class="n">Port2</span><span class="p">,</span><span class="w"> </span><span class="n">AssocId2</span><span class="p" data-group-id="0089168754-42">)</span><span class="p">;</span><span class="w">
+        </span><span class="p" data-group-id="1669127083-39">{</span><span class="ss">sctp</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Peer2</span><span class="p">,</span><span class="w"> </span><span class="n">Port2</span><span class="p">,</span><span class="w"> </span><span class="n">Data</span><span class="p" data-group-id="1669127083-39">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+            </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="1669127083-40">(</span><span class="s">&quot;Association 2: received </span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1669127083-41">[</span><span class="n">Data</span><span class="p" data-group-id="1669127083-41">]</span><span class="p" data-group-id="1669127083-40">)</span><span class="p">,</span><span class="w">
+            </span><span class="nf">client_loop</span><span class="p" data-group-id="1669127083-42">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Peer1</span><span class="p">,</span><span class="w"> </span><span class="n">Port1</span><span class="p">,</span><span class="w"> </span><span class="n">AssocId1</span><span class="p">,</span><span class="w">
+                        </span><span class="n">Peer2</span><span class="p">,</span><span class="w"> </span><span class="n">Port2</span><span class="p">,</span><span class="w"> </span><span class="n">AssocId2</span><span class="p" data-group-id="1669127083-42">)</span><span class="p">;</span><span class="w">
 
         </span><span class="n">Other</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-            </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="0089168754-43">(</span><span class="s">&quot;Other </span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0089168754-44">[</span><span class="n">Other</span><span class="p" data-group-id="0089168754-44">]</span><span class="p" data-group-id="0089168754-43">)</span><span class="p">,</span><span class="w">
-            </span><span class="nf">client_loop</span><span class="p" data-group-id="0089168754-45">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Peer1</span><span class="p">,</span><span class="w"> </span><span class="n">Port1</span><span class="p">,</span><span class="w"> </span><span class="n">AssocId1</span><span class="p">,</span><span class="w">
-                        </span><span class="n">Peer2</span><span class="p">,</span><span class="w"> </span><span class="n">Port2</span><span class="p">,</span><span class="w"> </span><span class="n">AssocId2</span><span class="p" data-group-id="0089168754-45">)</span><span class="w">
+            </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="1669127083-43">(</span><span class="s">&quot;Other </span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1669127083-44">[</span><span class="n">Other</span><span class="p" data-group-id="1669127083-44">]</span><span class="p" data-group-id="1669127083-43">)</span><span class="p">,</span><span class="w">
+            </span><span class="nf">client_loop</span><span class="p" data-group-id="1669127083-45">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Peer1</span><span class="p">,</span><span class="w"> </span><span class="n">Port1</span><span class="p">,</span><span class="w"> </span><span class="n">AssocId1</span><span class="p">,</span><span class="w">
+                        </span><span class="n">Peer2</span><span class="p">,</span><span class="w"> </span><span class="n">Port2</span><span class="p">,</span><span class="w"> </span><span class="n">AssocId2</span><span class="p" data-group-id="1669127083-45">)</span><span class="w">
 
     </span><span class="k">after</span><span class="w"> </span><span class="mi">5000</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
             </span><span class="ss">ok</span><span class="w">
@@ -445,7 +463,7 @@ Transmission Protocol),
 
       </div>
 
-        <div class="summary-synopsis"><p><a>SCTP Socket Option</a> name and value, to set.</p></div>
+        <div class="summary-synopsis"><p><a href="#options">SCTP Socket Option</a> name and value, to set.</p></div>
 
     </div>
 
@@ -455,7 +473,7 @@ Transmission Protocol),
 
       </div>
 
-        <div class="summary-synopsis"><p><a>SCTP Socket Option</a> name, to get.</p></div>
+        <div class="summary-synopsis"><p><a href="#options">SCTP Socket Option</a> name, to get.</p></div>
 
     </div>
 
@@ -465,7 +483,7 @@ Transmission Protocol),
 
       </div>
 
-        <div class="summary-synopsis"><p><a>SCTP Socket Option</a> name and value, what you get.</p></div>
+        <div class="summary-synopsis"><p><a href="#options">SCTP Socket Option</a> name and value, what you get.</p></div>
 
     </div>
 
@@ -475,7 +493,7 @@ Transmission Protocol),
 
       </div>
 
-        <div class="summary-synopsis"><p>Socket identifier returned from <a><code class="inline">open/*</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Socket identifier returned from <a href="#open/0"><code class="inline">open/*</code></a>.</p></div>
 
     </div>
 
@@ -549,7 +567,7 @@ Transmission Protocol),
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">connect(Socket, SockAddr, Opts, infinity)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#connect/4"><code class="inline">connect(Socket, SockAddr, Opts, infinity)</code></a>.</p></div>
 
     </div>
 
@@ -579,7 +597,7 @@ Transmission Protocol),
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">connect_init(Socket, SockAddr, Opts, infinity)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#connect_init/4"><code class="inline">connect_init(Socket, SockAddr, Opts, infinity)</code></a>.</p></div>
 
     </div>
 
@@ -619,7 +637,7 @@ Transmission Protocol),
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">connectx_init(Socket, Addrs, Port, Opts, infinity)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#connectx_init/5"><code class="inline">connectx_init(Socket, Addrs, Port, Opts, infinity)</code></a>.</p></div>
 
     </div>
 
@@ -679,7 +697,7 @@ Transmission Protocol),
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">open([])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#open/1"><code class="inline">open([])</code></a>.</p></div>
 
     </div>
 
@@ -699,7 +717,7 @@ Transmission Protocol),
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">open([{port, Port} | Opts])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#open/1"><code class="inline">open([{port, Port} | Opts])</code></a>.</p></div>
 
     </div>
 
@@ -719,7 +737,7 @@ Transmission Protocol),
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">recv(Socket, infinity)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#recv/2"><code class="inline">recv(Socket, infinity)</code></a>.</p></div>
 
     </div>
 
@@ -765,6 +783,7 @@ Transmission Protocol),
       </a>
       <span class="text">Types: Exported data types</span>
     </h1>
+
     <div class="types-exported-data-types-list">
 <section class="detail" id="t:assoc_id/0">
 
@@ -776,7 +795,7 @@ Transmission Protocol),
       <h1 class="signature" translate="no">assoc_id()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L664" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L664" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -807,7 +826,7 @@ future associations&quot;.</p>
       <h1 class="signature" translate="no">option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L668" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L668" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -835,7 +854,7 @@ future associations&quot;.</p>
       <h1 class="signature" translate="no">option_name()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L674" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L674" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -863,7 +882,7 @@ future associations&quot;.</p>
       <h1 class="signature" translate="no">option_value()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L683" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L683" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -891,7 +910,7 @@ future associations&quot;.</p>
       <h1 class="signature" translate="no">sctp_socket()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L770" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L770" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -920,6 +939,7 @@ future associations&quot;.</p>
       </a>
       <span class="text">Types: Internal data types</span>
     </h1>
+
     <div class="types-internal-data-types-list">
 <section class="detail" id="t:elementary_option/0">
 
@@ -933,7 +953,7 @@ future associations&quot;.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L689" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L689" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -992,7 +1012,7 @@ future associations&quot;.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L720" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L720" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1027,7 +1047,7 @@ future associations&quot;.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L751" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L751" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1103,7 +1123,7 @@ future associations&quot;.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L764" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L764" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1150,6 +1170,7 @@ future associations&quot;.</p>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="abort/2">
 
@@ -1161,7 +1182,7 @@ future associations&quot;.</p>
       <h1 class="signature" translate="no">abort(Socket, Assoc)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L1487" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L1487" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1200,7 +1221,7 @@ and the socket can be used in new associations.</p>
       <h1 class="signature" translate="no">close(Socket)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L882" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L882" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1234,7 +1255,7 @@ the call returns and unsent data is flushed in the background.</p>
         <span class="note">(since OTP 24.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L970" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L970" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1279,7 +1300,7 @@ the call returns and unsent data is flushed in the background.</p>
       <h1 class="signature" translate="no">connect/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L1002" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L1002" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1347,7 +1368,7 @@ where <code class="inline">Addr</code> and <code class="inline">Port</code> are 
       <h1 class="signature" translate="no">connect(Socket, Addr, Port, Opts, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L1102" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L1102" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1394,16 +1415,16 @@ the controlling process blocks until <code class="inline">connect/*</code> retur
 <a href="#connect_init/4"><code class="inline">connect_init/*</code></a> provides an alternative without this
 limitation.</p></section><h3 id="connect/5-sctp_assoc_change" class="section-heading"><a href="#connect/5-sctp_assoc_change" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text"><a href="" id="record-sctp_assoc_change"></a> <code class="inline">#sctp_assoc_change{}</code></span></h3><p>The result of <code class="inline">connect/*</code> is an <code class="inline">#sctp_assoc_change{}</code> event that contains,
 in particular, the new <a href="#t:assoc_id/0">Association ID</a>:
-l</p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_assoc_change</span><span class="p" data-group-id="7269175940-1">{</span><span class="w">
-      </span><span class="ss">state</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="nf">atom</span><span class="p" data-group-id="7269175940-2">(</span><span class="p" data-group-id="7269175940-2">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">error</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="7269175940-3">(</span><span class="p" data-group-id="7269175940-3">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">outbound_streams</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="7269175940-4">(</span><span class="p" data-group-id="7269175940-4">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">inbound_streams</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="7269175940-5">(</span><span class="p" data-group-id="7269175940-5">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">assoc_id</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="7269175940-6">(</span><span class="p" data-group-id="7269175940-6">)</span><span class="w">
-</span><span class="p" data-group-id="7269175940-1">}</span></code></pre><p>The number of outbound and inbound streams for the association
-can be set by giving an <code class="inline">sctp_initmsg</code> option to <code class="inline">connect</code> as in:</p><pre><code class="makeup erlang" translate="no"><span class="nf">connect</span><span class="p" data-group-id="0043806111-1">(</span><span class="n">Socket</span><span class="p">,</span><span class="w"> </span><span class="n">Ip</span><span class="p">,</span><span class="w"> </span><span class="n">Port</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
-      </span><span class="p" data-group-id="0043806111-2">[</span><span class="p" data-group-id="0043806111-3">{</span><span class="ss">sctp_initmsg</span><span class="p">,</span><span class="o">#</span><span class="ss">sctp_initmsg</span><span class="p" data-group-id="0043806111-4">{</span><span class="ss">num_ostreams</span><span class="o">=</span><span class="n">OutStreams</span><span class="p">,</span><span class="w">
-                                   </span><span class="ss">max_instreams</span><span class="o">=</span><span class="n">MaxInStreams</span><span class="p" data-group-id="0043806111-4">}</span><span class="p" data-group-id="0043806111-3">}</span><span class="p" data-group-id="0043806111-2">]</span><span class="p" data-group-id="0043806111-1">)</span></code></pre><p>All options <code class="inline">Opt</code> are set on the socket before the association is attempted.
+l</p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_assoc_change</span><span class="p" data-group-id="7438570908-1">{</span><span class="w">
+      </span><span class="ss">state</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="nf">atom</span><span class="p" data-group-id="7438570908-2">(</span><span class="p" data-group-id="7438570908-2">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">error</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="7438570908-3">(</span><span class="p" data-group-id="7438570908-3">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">outbound_streams</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="7438570908-4">(</span><span class="p" data-group-id="7438570908-4">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">inbound_streams</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="7438570908-5">(</span><span class="p" data-group-id="7438570908-5">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">assoc_id</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="7438570908-6">(</span><span class="p" data-group-id="7438570908-6">)</span><span class="w">
+</span><span class="p" data-group-id="7438570908-1">}</span></code></pre><p>The number of outbound and inbound streams for the association
+can be set by giving an <code class="inline">sctp_initmsg</code> option to <code class="inline">connect</code> as in:</p><pre><code class="makeup erlang" translate="no"><span class="nf">connect</span><span class="p" data-group-id="4772904140-1">(</span><span class="n">Socket</span><span class="p">,</span><span class="w"> </span><span class="n">Ip</span><span class="p">,</span><span class="w"> </span><span class="n">Port</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
+      </span><span class="p" data-group-id="4772904140-2">[</span><span class="p" data-group-id="4772904140-3">{</span><span class="ss">sctp_initmsg</span><span class="p">,</span><span class="o">#</span><span class="ss">sctp_initmsg</span><span class="p" data-group-id="4772904140-4">{</span><span class="ss">num_ostreams</span><span class="o">=</span><span class="n">OutStreams</span><span class="p">,</span><span class="w">
+                                   </span><span class="ss">max_instreams</span><span class="o">=</span><span class="n">MaxInStreams</span><span class="p" data-group-id="4772904140-4">}</span><span class="p" data-group-id="4772904140-3">}</span><span class="p" data-group-id="4772904140-2">]</span><span class="p" data-group-id="4772904140-1">)</span></code></pre><p>All options <code class="inline">Opt</code> are set on the socket before the association is attempted.
 If an option record has undefined field values, the options record
 is first read from the socket for those values. In effect,
 <code class="inline">Opt</code> option records only need to define field values to change
@@ -1432,7 +1453,7 @@ can be converted into a string using <a href="#error_string/1"><code class="inli
         <span class="note">(since OTP 24.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L1120" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L1120" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1466,7 +1487,7 @@ can be converted into a string using <a href="#error_string/1"><code class="inli
         <span class="note">(since OTP R13B04)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L1147" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L1147" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1510,7 +1531,7 @@ where <code class="inline">Addr</code> and <code class="inline">Port</code> are 
         <span class="note">(since OTP R13B04)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L1186" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L1186" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1557,7 +1578,7 @@ applies to the name resolving of <code class="inline">Addr</code> when it is a <
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L1269" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L1269" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1598,7 +1619,7 @@ At least one socket address must have a non-zero <code class="inline">port</code
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L1286" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L1286" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1633,7 +1654,7 @@ At least one socket address must have a non-zero <code class="inline">port</code
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L1319" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L1319" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1674,7 +1695,7 @@ the user may want to rotate the order of addresses for a subsequent call.</p></s
       <h1 class="signature" translate="no">controlling_process(Socket, Pid)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L1797" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L1797" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1707,7 +1728,7 @@ See <a href="gen_udp.html#controlling_process/2"><code class="inline">gen_udp:co
       <h1 class="signature" translate="no">eof(Socket, Assoc)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L1468" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L1468" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1747,7 +1768,7 @@ in new associations.</p>
       <h1 class="signature" translate="no">error_string(ErrorNumber)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L1751" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L1751" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1778,7 +1799,7 @@ for an unrecognized integer.</p>
       <h1 class="signature" translate="no">listen/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L915" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L915" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1813,7 +1834,7 @@ the backlog queue length just like for TCP.</p>
       <h1 class="signature" translate="no">open()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L780" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L780" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1841,7 +1862,7 @@ the backlog queue length just like for TCP.</p>
       <h1 class="signature" translate="no">open/1</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L847" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L847" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1887,7 +1908,7 @@ and <a href="#option-active">passive</a> mode, with SockType <code class="inline
 and with reasonably large <a href="inet.html#option-sndbuf">kernel</a> and driver
 <a href="inet.html#option-buffer">buffers</a>.</p><p>When the socket is in <a href="#option-active">passive</a> mode,
 data can be received through the <a href="#recv/1"><code class="inline">recv/1,2</code></a> calls.</p><p>When the socket is in <a href="#option-active">active</a> mode,
-data received data is delivered to the controlling process as messages:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="6289621805-1">{</span><span class="ss">sctp</span><span class="p">,</span><span class="w"> </span><span class="n">Socket</span><span class="p">,</span><span class="w"> </span><span class="n">FromIP</span><span class="p">,</span><span class="w"> </span><span class="n">FromPort</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6289621805-2">{</span><span class="n">AncData</span><span class="p">,</span><span class="w"> </span><span class="n">Data</span><span class="p" data-group-id="6289621805-2">}</span><span class="p" data-group-id="6289621805-1">}</span></code></pre><p>See <a href="#recv/1"><code class="inline">recv/1,2</code></a> for a description of the message fields.</p><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>This message format unfortunately differs slightly from the
+data received data is delivered to the controlling process as messages:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="2956395947-1">{</span><span class="ss">sctp</span><span class="p">,</span><span class="w"> </span><span class="n">Socket</span><span class="p">,</span><span class="w"> </span><span class="n">FromIP</span><span class="p">,</span><span class="w"> </span><span class="n">FromPort</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2956395947-2">{</span><span class="n">AncData</span><span class="p">,</span><span class="w"> </span><span class="n">Data</span><span class="p" data-group-id="2956395947-2">}</span><span class="p" data-group-id="2956395947-1">}</span></code></pre><p>See <a href="#recv/1"><code class="inline">recv/1,2</code></a> for a description of the message fields.</p><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>This message format unfortunately differs slightly from the
 <a href="gen_udp.html#open/1"><code class="inline">gen_udp</code></a> message format with ancillary data,
 and from the <a href="#recv/1"><code class="inline">recv/1,2</code></a> return tuple format.</p></section>
   </section>
@@ -1902,7 +1923,7 @@ and from the <a href="#recv/1"><code class="inline">recv/1,2</code></a> return t
       <h1 class="signature" translate="no">open(Port, Opts)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L863" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L863" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1932,7 +1953,7 @@ and from the <a href="#recv/1"><code class="inline">recv/1,2</code></a> return t
         <span class="note">(since OTP R15B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L948" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L948" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1977,7 +1998,7 @@ It can also be just the field <code class="inline">assoc_id</code> <a href="../.
       <h1 class="signature" translate="no">recv(Socket)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L1596" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L1596" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2056,7 +2077,7 @@ It can also be just the field <code class="inline">assoc_id</code> <a href="../.
       <h1 class="signature" translate="no">recv(Socket, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L1730" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L1730" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2143,39 +2164,39 @@ from the socket <a href="#options">options</a>
 <a href="inet.html#option-recvttl"><code class="inline">recvttl</code></a>, if that is supported for the socket
 by the platform.</p><p>The <code class="inline">Data</code> received can, depending on the socket <a href="#option-binary">mode</a>
 be a <a href="../../apps/erts/erlang.html#t:binary/0"><code class="inline">binary/0</code></a> or a <a href="../../apps/erts/erlang.html#t:list/0"><code class="inline">list/0</code></a> of bytes (integers in the range
-<code class="inline">0</code> through <code class="inline">255</code>), or it can be an SCTP event.</p><h3 id="recv/2-possible-sctp-events" class="section-heading"><a href="#recv/2-possible-sctp-events" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text"><a href="" id="sctp-events"></a> Possible SCTP events</span></h3><ul><li><p><a href="#record-sctp_sndrcvinfo"><code class="inline">#sctp_sndrcvinfo{}</code></a></p></li><li><p><a href="#record-sctp_assoc_change"><code class="inline">#sctp_assoc_change{}</code></a></p></li><li><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_paddr_change</span><span class="p" data-group-id="1628829600-1">{</span><span class="w">
-      </span><span class="ss">addr</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="1628829600-2">{</span><span class="nf">ip_address</span><span class="p" data-group-id="1628829600-3">(</span><span class="p" data-group-id="1628829600-3">)</span><span class="p">,</span><span class="nf">port</span><span class="p" data-group-id="1628829600-4">(</span><span class="p" data-group-id="1628829600-4">)</span><span class="p" data-group-id="1628829600-2">}</span><span class="p">,</span><span class="w">
-      </span><span class="ss">state</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nf">atom</span><span class="p" data-group-id="1628829600-5">(</span><span class="p" data-group-id="1628829600-5">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">error</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="1628829600-6">(</span><span class="p" data-group-id="1628829600-6">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">assoc_id</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="1628829600-7">(</span><span class="p" data-group-id="1628829600-7">)</span><span class="w">
-</span><span class="p" data-group-id="1628829600-1">}</span></code></pre><p>Indicates change of the status of the IP address of the peer specified by
+<code class="inline">0</code> through <code class="inline">255</code>), or it can be an SCTP event.</p><h3 id="recv/2-possible-sctp-events" class="section-heading"><a href="#recv/2-possible-sctp-events" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text"><a href="" id="sctp-events"></a> Possible SCTP events</span></h3><ul><li><p><a href="#record-sctp_sndrcvinfo"><code class="inline">#sctp_sndrcvinfo{}</code></a></p></li><li><p><a href="#record-sctp_assoc_change"><code class="inline">#sctp_assoc_change{}</code></a></p></li><li><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_paddr_change</span><span class="p" data-group-id="3416813033-1">{</span><span class="w">
+      </span><span class="ss">addr</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="3416813033-2">{</span><span class="nf">ip_address</span><span class="p" data-group-id="3416813033-3">(</span><span class="p" data-group-id="3416813033-3">)</span><span class="p">,</span><span class="nf">port</span><span class="p" data-group-id="3416813033-4">(</span><span class="p" data-group-id="3416813033-4">)</span><span class="p" data-group-id="3416813033-2">}</span><span class="p">,</span><span class="w">
+      </span><span class="ss">state</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nf">atom</span><span class="p" data-group-id="3416813033-5">(</span><span class="p" data-group-id="3416813033-5">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">error</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="3416813033-6">(</span><span class="p" data-group-id="3416813033-6">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">assoc_id</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="3416813033-7">(</span><span class="p" data-group-id="3416813033-7">)</span><span class="w">
+</span><span class="p" data-group-id="3416813033-1">}</span></code></pre><p>Indicates change of the status of the IP address of the peer specified by
 <code class="inline">addr</code> within association <code class="inline">assoc_id</code>. Possible values of <code class="inline">state</code> (mostly
 self-explanatory) include:</p><ul><li><p><strong><code class="inline">addr_unreachable</code></strong></p></li><li><p><strong><code class="inline">addr_available</code></strong></p></li><li><p><strong><code class="inline">addr_removed</code></strong></p></li><li><p><strong><code class="inline">addr_added</code></strong></p></li><li><p><strong><code class="inline">addr_made_prim</code></strong></p></li><li><p><strong><code class="inline">addr_confirmed</code></strong></p></li></ul><p>In case of an error (for example, <code class="inline">addr_unreachable</code>), the field <code class="inline">error</code>
 provides more diagnostics. In such cases, event <code class="inline">#sctp_paddr_change{}</code>
 is automatically converted into an <code class="inline">error</code> term returned by
 <a href="#recv/1"><code class="inline">recv</code></a>. The <code class="inline">error</code> field value can be converted
-into a string using <a href="#error_string/1"><code class="inline">error_string/1</code></a>.</p></li><li><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_send_failed</span><span class="p" data-group-id="6504329662-1">{</span><span class="w">
+into a string using <a href="#error_string/1"><code class="inline">error_string/1</code></a>.</p></li><li><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_send_failed</span><span class="p" data-group-id="4661847437-1">{</span><span class="w">
       </span><span class="ss">flags</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="ss">true</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="ss">false</span><span class="p">,</span><span class="w">
-      </span><span class="ss">error</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="6504329662-2">(</span><span class="p" data-group-id="6504329662-2">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">info</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="o">#</span><span class="ss">sctp_sndrcvinfo</span><span class="p" data-group-id="6504329662-3">{</span><span class="p" data-group-id="6504329662-3">}</span><span class="p">,</span><span class="w">
-      </span><span class="ss">assoc_id</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="6504329662-4">(</span><span class="p" data-group-id="6504329662-4">)</span><span class="w">
-      </span><span class="ss">data</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nf">binary</span><span class="p" data-group-id="6504329662-5">(</span><span class="p" data-group-id="6504329662-5">)</span><span class="w">
-</span><span class="p" data-group-id="6504329662-1">}</span></code></pre><p>The sender can receive this event if a send operation fails.</p><ul><li><p><strong><code class="inline">flags</code></strong> - A Boolean specifying if the data has been transmitted
+      </span><span class="ss">error</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="4661847437-2">(</span><span class="p" data-group-id="4661847437-2">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">info</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="o">#</span><span class="ss">sctp_sndrcvinfo</span><span class="p" data-group-id="4661847437-3">{</span><span class="p" data-group-id="4661847437-3">}</span><span class="p">,</span><span class="w">
+      </span><span class="ss">assoc_id</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="4661847437-4">(</span><span class="p" data-group-id="4661847437-4">)</span><span class="w">
+      </span><span class="ss">data</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nf">binary</span><span class="p" data-group-id="4661847437-5">(</span><span class="p" data-group-id="4661847437-5">)</span><span class="w">
+</span><span class="p" data-group-id="4661847437-1">}</span></code></pre><p>The sender can receive this event if a send operation fails.</p><ul><li><p><strong><code class="inline">flags</code></strong> - A Boolean specifying if the data has been transmitted
 over the wire.</p></li><li><p><strong><code class="inline">error</code></strong> - Provides extended diagnostics, use
 <a href="#error_string/1"><code class="inline">error_string/1</code>.</a></p></li><li><p><strong><code class="inline">info</code></strong> - The original
 <a href="#record-sctp_sndrcvinfo"><code class="inline">#sctp_sndrcvinfo{}</code></a> record
 used in the failed <a href="#send/3"><code class="inline">send/*</code>.</a></p></li><li><p><strong><code class="inline">data</code></strong> - The whole original data chunk attempted to be sent.</p></li></ul><p>In the current implementation of the Erlang/SCTP binding, this event is
-internally converted into an <code class="inline">error</code> term returned by <a href="#recv/1"><code class="inline">recv/*</code></a>.</p></li><li><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_adaptation_event</span><span class="p" data-group-id="6389353173-1">{</span><span class="w">
-      </span><span class="ss">adaptation_ind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="6389353173-2">(</span><span class="p" data-group-id="6389353173-2">)</span><span class="p">,</span><span class="w">
-      </span><span class="ss">assoc_id</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="6389353173-3">(</span><span class="p" data-group-id="6389353173-3">)</span><span class="w">
-</span><span class="p" data-group-id="6389353173-1">}</span></code></pre><p>Delivered when a peer sends an adaptation layer indication parameter
+internally converted into an <code class="inline">error</code> term returned by <a href="#recv/1"><code class="inline">recv/*</code></a>.</p></li><li><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_adaptation_event</span><span class="p" data-group-id="7370745005-1">{</span><span class="w">
+      </span><span class="ss">adaptation_ind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="7370745005-2">(</span><span class="p" data-group-id="7370745005-2">)</span><span class="p">,</span><span class="w">
+      </span><span class="ss">assoc_id</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="7370745005-3">(</span><span class="p" data-group-id="7370745005-3">)</span><span class="w">
+</span><span class="p" data-group-id="7370745005-1">}</span></code></pre><p>Delivered when a peer sends an adaptation layer indication parameter
 (configured through option
 <a href="#option-sctp_adaptation_layer"><code class="inline">sctp_adaptation_layer</code></a>).
 Notie that with the current implementation of the Erlang/SCTP binding,
-this event is disabled by default.</p></li><li><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_pdapi_event</span><span class="p" data-group-id="9850535204-1">{</span><span class="w">
+this event is disabled by default.</p></li><li><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">sctp_pdapi_event</span><span class="p" data-group-id="5034635243-1">{</span><span class="w">
       </span><span class="ss">indication</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">sctp_partial_delivery_aborted</span><span class="p">,</span><span class="w">
-      </span><span class="ss">assoc_id</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="9850535204-2">(</span><span class="p" data-group-id="9850535204-2">)</span><span class="w">
-</span><span class="p" data-group-id="9850535204-1">}</span></code></pre><p>A partial delivery failure. In the current implementation
+      </span><span class="ss">assoc_id</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nf">assoc_id</span><span class="p" data-group-id="5034635243-2">(</span><span class="p" data-group-id="5034635243-2">)</span><span class="w">
+</span><span class="p" data-group-id="5034635243-1">}</span></code></pre><p>A partial delivery failure. In the current implementation
 of the Erlang/SCTP binding, this event is internally converted
 into an <code class="inline">error</code> term returned by <a href="#recv/1"><code class="inline">recv/*</code></a>.</p></li></ul>
   </section>
@@ -2190,7 +2211,7 @@ into an <code class="inline">error</code> term returned by <a href="#recv/1"><co
       <h1 class="signature" translate="no">send(Socket, SndRcvInfo, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L1529" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L1529" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2242,7 +2263,7 @@ It is then up to the user to try again later.</p></section>
       <h1 class="signature" translate="no">send(Socket, Assoc, Stream, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/gen_sctp.erl#L1563" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/gen_sctp.erl#L1563" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2287,8 +2308,8 @@ It is then up to the user to try again later.</p></section>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="kernel.epub" title="ePub version">
@@ -2300,7 +2321,7 @@ It is then up to the user to try again later.</p></section>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="dialyzer v5.4">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/dialyzer/dialyzer_chapter.html" />
     <title>Dialyzer — dialyzer v5.4</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-E6243A87.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ dialyzer
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of dialyzer</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -84,7 +102,7 @@ dialyzer
     <h1>Dialyzer</h1>
 
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/dialyzer/doc/guides/dialyzer_chapter.md#L1" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/dialyzer/doc/guides/dialyzer_chapter.md#L1" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -134,29 +152,29 @@ rationale being that the user may know something that Dialyzer itself cannot
 deduce). One implication of this is that if the user gives a spec for a function
 which overlaps with Dialyzer's inferred type, but is more restrictive, Dialyzer
 will trust those restrictions. This may then generate an error elsewhere that
-follows from the erroneously restricted spec.</p><p><em>Examples:</em></p><p>Non-overlapping argument:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">spec</span><span class="w"> </span><span class="nf">foo</span><span class="p" data-group-id="2697347133-1">(</span><span class="nf">boolean</span><span class="p" data-group-id="2697347133-2">(</span><span class="p" data-group-id="2697347133-2">)</span><span class="p" data-group-id="2697347133-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nf">string</span><span class="p" data-group-id="2697347133-3">(</span><span class="p" data-group-id="2697347133-3">)</span><span class="p">.</span><span class="w">
+follows from the erroneously restricted spec.</p><p><em>Examples:</em></p><p>Non-overlapping argument:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">spec</span><span class="w"> </span><span class="nf">foo</span><span class="p" data-group-id="9049262418-1">(</span><span class="nf">boolean</span><span class="p" data-group-id="9049262418-2">(</span><span class="p" data-group-id="9049262418-2">)</span><span class="p" data-group-id="9049262418-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nf">string</span><span class="p" data-group-id="9049262418-3">(</span><span class="p" data-group-id="9049262418-3">)</span><span class="p">.</span><span class="w">
 </span><span class="c1">%% Dialyzer will infer: foo(integer()) -&gt; string().</span><span class="w">
-</span><span class="nf">foo</span><span class="p" data-group-id="2697347133-4">(</span><span class="n">N</span><span class="p" data-group-id="2697347133-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="nf">integer_to_list</span><span class="p" data-group-id="2697347133-5">(</span><span class="n">N</span><span class="p" data-group-id="2697347133-5">)</span><span class="p">.</span></code></pre><p>Since the type of the argument in the spec is different from the type that
+</span><span class="nf">foo</span><span class="p" data-group-id="9049262418-4">(</span><span class="n">N</span><span class="p" data-group-id="9049262418-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="nf">integer_to_list</span><span class="p" data-group-id="9049262418-5">(</span><span class="n">N</span><span class="p" data-group-id="9049262418-5">)</span><span class="p">.</span></code></pre><p>Since the type of the argument in the spec is different from the type that
 Dialyzer inferred, Dialyzer will generate the following warning:</p><pre><code class="makeup erlang" translate="no"><span class="ss">some_module</span><span class="p">.</span><span class="nc">erl</span><span class="p">:</span><span class="mi">7</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="w"> </span><span class="n">Invalid</span><span class="w"> </span><span class="ss">type</span><span class="w"> </span><span class="ss">specification</span><span class="w"> </span><span class="ss">for</span><span class="w"> </span><span class="ss">function</span><span class="w"> </span><span class="nc">some_module</span><span class="p">:</span><span class="ss">foo</span><span class="p">/</span><span class="mi">1</span><span class="p">.</span><span class="w">
  </span><span class="n">The</span><span class="w"> </span><span class="ss">success</span><span class="w"> </span><span class="ss">typing</span><span class="w"> </span><span class="ss">is</span><span class="w"> </span><span class="nc">some_module</span><span class="p">:</span><span class="nf">foo</span><span class="w">
-          </span><span class="p" data-group-id="4876389862-1">(</span><span class="nf">integer</span><span class="p" data-group-id="4876389862-2">(</span><span class="p" data-group-id="4876389862-2">)</span><span class="p" data-group-id="4876389862-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nf">string</span><span class="p" data-group-id="4876389862-3">(</span><span class="p" data-group-id="4876389862-3">)</span><span class="w">
+          </span><span class="p" data-group-id="4509314110-1">(</span><span class="nf">integer</span><span class="p" data-group-id="4509314110-2">(</span><span class="p" data-group-id="4509314110-2">)</span><span class="p" data-group-id="4509314110-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nf">string</span><span class="p" data-group-id="4509314110-3">(</span><span class="p" data-group-id="4509314110-3">)</span><span class="w">
  </span><span class="n">But</span><span class="w"> </span><span class="ss">the</span><span class="w"> </span><span class="ss">spec</span><span class="w"> </span><span class="ss">is</span><span class="w"> </span><span class="nc">some_module</span><span class="p">:</span><span class="nf">foo</span><span class="w">
-          </span><span class="p" data-group-id="4876389862-4">(</span><span class="nf">boolean</span><span class="p" data-group-id="4876389862-5">(</span><span class="p" data-group-id="4876389862-5">)</span><span class="p" data-group-id="4876389862-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nf">string</span><span class="p" data-group-id="4876389862-6">(</span><span class="p" data-group-id="4876389862-6">)</span><span class="w">
- </span><span class="n">They</span><span class="w"> </span><span class="ss">do</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="ss">overlap</span><span class="w"> </span><span class="ss">in</span><span class="w"> </span><span class="ss">the</span><span class="w"> </span><span class="mi">1</span><span class="ss">st</span><span class="w"> </span><span class="ss">argument</span></code></pre><p>Non-overlapping return:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">spec</span><span class="w"> </span><span class="nf">bar</span><span class="p" data-group-id="3855387289-1">(</span><span class="ss">a</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="ss">b</span><span class="p" data-group-id="3855387289-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nf">atom</span><span class="p" data-group-id="3855387289-2">(</span><span class="p" data-group-id="3855387289-2">)</span><span class="p">.</span><span class="w">
+          </span><span class="p" data-group-id="4509314110-4">(</span><span class="nf">boolean</span><span class="p" data-group-id="4509314110-5">(</span><span class="p" data-group-id="4509314110-5">)</span><span class="p" data-group-id="4509314110-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nf">string</span><span class="p" data-group-id="4509314110-6">(</span><span class="p" data-group-id="4509314110-6">)</span><span class="w">
+ </span><span class="n">They</span><span class="w"> </span><span class="ss">do</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="ss">overlap</span><span class="w"> </span><span class="ss">in</span><span class="w"> </span><span class="ss">the</span><span class="w"> </span><span class="mi">1</span><span class="ss">st</span><span class="w"> </span><span class="ss">argument</span></code></pre><p>Non-overlapping return:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">spec</span><span class="w"> </span><span class="nf">bar</span><span class="p" data-group-id="2079114720-1">(</span><span class="ss">a</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="ss">b</span><span class="p" data-group-id="2079114720-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nf">atom</span><span class="p" data-group-id="2079114720-2">(</span><span class="p" data-group-id="2079114720-2">)</span><span class="p">.</span><span class="w">
 </span><span class="c1">%% Dialyzer will infer: bar(a | b) -&gt; binary().</span><span class="w">
-</span><span class="nf">bar</span><span class="p" data-group-id="3855387289-3">(</span><span class="ss">a</span><span class="p" data-group-id="3855387289-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="3855387289-4">&lt;&lt;</span><span class="s">&quot;a&quot;</span><span class="p" data-group-id="3855387289-4">&gt;&gt;</span><span class="p">;</span><span class="w">
-</span><span class="nf">bar</span><span class="p" data-group-id="3855387289-5">(</span><span class="ss">b</span><span class="p" data-group-id="3855387289-5">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="3855387289-6">&lt;&lt;</span><span class="s">&quot;b&quot;</span><span class="p" data-group-id="3855387289-6">&gt;&gt;</span><span class="p">.</span></code></pre><p>Since the return value in the spec and the return value inferred by Dialyzer are
+</span><span class="nf">bar</span><span class="p" data-group-id="2079114720-3">(</span><span class="ss">a</span><span class="p" data-group-id="2079114720-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="2079114720-4">&lt;&lt;</span><span class="s">&quot;a&quot;</span><span class="p" data-group-id="2079114720-4">&gt;&gt;</span><span class="p">;</span><span class="w">
+</span><span class="nf">bar</span><span class="p" data-group-id="2079114720-5">(</span><span class="ss">b</span><span class="p" data-group-id="2079114720-5">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="2079114720-6">&lt;&lt;</span><span class="s">&quot;b&quot;</span><span class="p" data-group-id="2079114720-6">&gt;&gt;</span><span class="p">.</span></code></pre><p>Since the return value in the spec and the return value inferred by Dialyzer are
 different, Dialyzer will generate the following warning:</p><pre><code class="makeup erlang" translate="no"><span class="ss">some_module</span><span class="p">.</span><span class="nc">erl</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="w"> </span><span class="n">Invalid</span><span class="w"> </span><span class="ss">type</span><span class="w"> </span><span class="ss">specification</span><span class="w"> </span><span class="ss">for</span><span class="w"> </span><span class="ss">function</span><span class="w"> </span><span class="nc">some_module</span><span class="p">:</span><span class="ss">bar</span><span class="p">/</span><span class="mi">1</span><span class="p">.</span><span class="w">
  </span><span class="n">The</span><span class="w"> </span><span class="ss">success</span><span class="w"> </span><span class="ss">typing</span><span class="w"> </span><span class="ss">is</span><span class="w"> </span><span class="nc">some_module</span><span class="p">:</span><span class="nf">bar</span><span class="w">
-          </span><span class="p" data-group-id="6161295798-1">(</span><span class="ss">&#39;a&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="ss">&#39;b&#39;</span><span class="p" data-group-id="6161295798-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="6161295798-2">&lt;&lt;</span><span class="p">_</span><span class="p">:</span><span class="mi">8</span><span class="p" data-group-id="6161295798-2">&gt;&gt;</span><span class="w">
+          </span><span class="p" data-group-id="6079767323-1">(</span><span class="ss">&#39;a&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="ss">&#39;b&#39;</span><span class="p" data-group-id="6079767323-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="6079767323-2">&lt;&lt;</span><span class="p">_</span><span class="p">:</span><span class="mi">8</span><span class="p" data-group-id="6079767323-2">&gt;&gt;</span><span class="w">
  </span><span class="n">But</span><span class="w"> </span><span class="ss">the</span><span class="w"> </span><span class="ss">spec</span><span class="w"> </span><span class="ss">is</span><span class="w"> </span><span class="nc">some_module</span><span class="p">:</span><span class="nf">bar</span><span class="w">
-          </span><span class="p" data-group-id="6161295798-3">(</span><span class="ss">&#39;a&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="ss">&#39;b&#39;</span><span class="p" data-group-id="6161295798-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nf">atom</span><span class="p" data-group-id="6161295798-4">(</span><span class="p" data-group-id="6161295798-4">)</span><span class="w">
- </span><span class="n">The</span><span class="w"> </span><span class="ss">return</span><span class="w"> </span><span class="ss">types</span><span class="w"> </span><span class="ss">do</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="ss">overlap</span></code></pre><p>Overlapping spec and inferred type:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">spec</span><span class="w"> </span><span class="nf">baz</span><span class="p" data-group-id="8254649871-1">(</span><span class="ss">a</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="ss">b</span><span class="p" data-group-id="8254649871-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nf">non_neg_integer</span><span class="p" data-group-id="8254649871-2">(</span><span class="p" data-group-id="8254649871-2">)</span><span class="p">.</span><span class="w">
+          </span><span class="p" data-group-id="6079767323-3">(</span><span class="ss">&#39;a&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="ss">&#39;b&#39;</span><span class="p" data-group-id="6079767323-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nf">atom</span><span class="p" data-group-id="6079767323-4">(</span><span class="p" data-group-id="6079767323-4">)</span><span class="w">
+ </span><span class="n">The</span><span class="w"> </span><span class="ss">return</span><span class="w"> </span><span class="ss">types</span><span class="w"> </span><span class="ss">do</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="ss">overlap</span></code></pre><p>Overlapping spec and inferred type:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">spec</span><span class="w"> </span><span class="nf">baz</span><span class="p" data-group-id="8551536603-1">(</span><span class="ss">a</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="ss">b</span><span class="p" data-group-id="8551536603-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nf">non_neg_integer</span><span class="p" data-group-id="8551536603-2">(</span><span class="p" data-group-id="8551536603-2">)</span><span class="p">.</span><span class="w">
 </span><span class="c1">%% Dialyzer will infer: baz(b | c | d) -&gt; -1 | 0 | 1.</span><span class="w">
-</span><span class="nf">baz</span><span class="p" data-group-id="8254649871-3">(</span><span class="ss">b</span><span class="p" data-group-id="8254649871-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="w">
-</span><span class="nf">baz</span><span class="p" data-group-id="8254649871-4">(</span><span class="ss">c</span><span class="p" data-group-id="8254649871-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">
-</span><span class="nf">baz</span><span class="p" data-group-id="8254649871-5">(</span><span class="ss">d</span><span class="p" data-group-id="8254649871-5">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span></code></pre><p>Dialyzer will &quot;trust&quot; the spec and using the intersection of the spec and
+</span><span class="nf">baz</span><span class="p" data-group-id="8551536603-3">(</span><span class="ss">b</span><span class="p" data-group-id="8551536603-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="w">
+</span><span class="nf">baz</span><span class="p" data-group-id="8551536603-4">(</span><span class="ss">c</span><span class="p" data-group-id="8551536603-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">
+</span><span class="nf">baz</span><span class="p" data-group-id="8551536603-5">(</span><span class="ss">d</span><span class="p" data-group-id="8551536603-5">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span></code></pre><p>Dialyzer will &quot;trust&quot; the spec and using the intersection of the spec and
 inferred type:</p><pre><code class="text">baz(b) -&gt; 0 | 1.</code></pre><p>Notice how the <code class="inline">c</code> and <code class="inline">d</code> from the argument to <code class="inline">baz/1</code> and the <code class="inline">-1</code> in the
 return from the inferred type were dropped once the spec and inferred type were
 intersected. This could result in warnings being emitted for later functions.</p><p>For example, if <code class="inline">baz/1</code> is called like this:</p><pre><code class="text">call_baz1(A) -&gt;
@@ -208,8 +226,8 @@ typer
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="dialyzer.epub" title="ePub version">
@@ -221,7 +239,7 @@ typer
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="sasl v4.3">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/sasl/release_handler.html" />
     <title>release_handler — sasl v4.3</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-9352BC19.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ sasl
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of sasl</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ sasl
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/release_handler.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/release_handler.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -216,7 +234,7 @@ inconsistent state.</p></section><h2 id="module-see-also" class="section-heading
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">downgrade_app/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#downgrade_app/3"><code class="inline">downgrade_app/3</code></a>.</p></div>
 
     </div>
 
@@ -249,8 +267,8 @@ to a previous version <code class="inline">OldVsn</code> located in <code class=
       </div>
 
         <div class="summary-synopsis"><p>Evaluates an application upgrade or downgrade script <code class="inline">Script</code>, the result from
-calling <a><code class="inline">upgrade_script/2</code></a> or <a><code class="inline">downgrade_script/3</code></a>, exactly in the same way as
-<a><code class="inline">install_release/1,2</code></a> does.</p></div>
+calling <a href="#upgrade_script/2"><code class="inline">upgrade_script/2</code></a> or <a href="#downgrade_script/3"><code class="inline">downgrade_script/3</code></a>, exactly in the same way as
+<a href="#install_release/1"><code class="inline">install_release/1,2</code></a> does.</p></div>
 
     </div>
 
@@ -288,7 +306,7 @@ to a new version located in <code class="inline">Dir</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">check_install_release(Vsn, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#check_install_release/2"><code class="inline">check_install_release(Vsn, [])</code></a>.</p></div>
 
     </div>
 
@@ -308,7 +326,7 @@ to a new version located in <code class="inline">Dir</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">create_RELEASES(&quot;&quot;, RelDir, RelFile, Appdirs)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#create_RELEASES/4"><code class="inline">create_RELEASES(&quot;&quot;, RelDir, RelFile, Appdirs)</code></a>.</p></div>
 
     </div>
 
@@ -338,7 +356,7 @@ to a new version located in <code class="inline">Dir</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">install_release(Vsn, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#install_release/2"><code class="inline">install_release(Vsn, [])</code></a>.</p></div>
 
     </div>
 
@@ -369,7 +387,7 @@ to a new version located in <code class="inline">Dir</code>.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Reboots the system by making the old release permanent, and calls
-<a><code class="inline">init:reboot()</code></a> directly.</p></div>
+<a href="../../apps/erts/init.html#reboot/0"><code class="inline">init:reboot()</code></a> directly.</p></div>
 
     </div>
 
@@ -445,6 +463,7 @@ to a new version located in <code class="inline">Dir</code>.</p></div>
       </a>
       <span class="text">Application Upgrade/Downgrade</span>
     </h1>
+
     <div class="application-upgrade-downgrade-list">
 <section class="detail" id="downgrade_app/2">
 
@@ -456,7 +475,7 @@ to a new version located in <code class="inline">Dir</code>.</p></div>
       <h1 class="signature" translate="no">downgrade_app(App, Dir)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/release_handler.erl#L979" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/release_handler.erl#L979" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -490,7 +509,7 @@ to a new version located in <code class="inline">Dir</code>.</p></div>
       <h1 class="signature" translate="no">downgrade_app(App, OldVsn, Dir)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/release_handler.erl#L1019" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/release_handler.erl#L1019" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -536,7 +555,7 @@ list of unpurged modules</li><li><code class="inline">restart_emulator</code> if
       <h1 class="signature" translate="no">downgrade_script(App, OldVsn, Dir)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/release_handler.erl#L1109" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/release_handler.erl#L1109" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -581,7 +600,7 @@ error reason.</p>
       <h1 class="signature" translate="no">eval_appup_script(App, ToVsn, ToDir, Script)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/release_handler.erl#L1160" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/release_handler.erl#L1160" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -627,7 +646,7 @@ be done by <a href="#install_release/1"><code class="inline">install_release/1,2
       <h1 class="signature" translate="no">upgrade_app(App, Dir)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/release_handler.erl#L948" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/release_handler.erl#L948" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -672,7 +691,7 @@ be done by <a href="#install_release/1"><code class="inline">install_release/1,2
       <h1 class="signature" translate="no">upgrade_script(App, Dir)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/release_handler.erl#L1060" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/release_handler.erl#L1060" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -716,6 +735,7 @@ error reason.</p>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="check_install_release/1">
 
@@ -727,7 +747,7 @@ error reason.</p>
       <h1 class="signature" translate="no">check_install_release(Vsn)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/release_handler.erl#L398" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/release_handler.erl#L398" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -762,7 +782,7 @@ error reason.</p>
         <span class="note">(since OTP R14B04)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/release_handler.erl#L429" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/release_handler.erl#L429" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -807,7 +827,7 @@ the time needed by <a href="#install_release/1"><code class="inline">install_rel
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/release_handler.erl#L861" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/release_handler.erl#L861" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -843,7 +863,7 @@ the time needed by <a href="#install_release/1"><code class="inline">install_rel
       <h1 class="signature" translate="no">create_RELEASES(Root, RelDir, RelFile, AppDirs)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/release_handler.erl#L895" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/release_handler.erl#L895" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -893,7 +913,7 @@ located in <code class="inline">$ROOT/lib</code>.</p>
       <h1 class="signature" translate="no">install_file(Vsn, File)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/release_handler.erl#L779" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/release_handler.erl#L779" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -924,7 +944,7 @@ target. The function is to be called after <a href="#set_unpacked/2"><code class
       <h1 class="signature" translate="no">install_release(Vsn)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/release_handler.erl#L471" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/release_handler.erl#L471" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -963,7 +983,7 @@ target. The function is to be called after <a href="#set_unpacked/2"><code class
       <h1 class="signature" translate="no">install_release(Vsn, [Opt])</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/release_handler.erl#L585" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/release_handler.erl#L585" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1033,8 +1053,8 @@ application directories specified in argument <code class="inline">AppDirs</code
 <a href="#create_RELEASES/4"><code class="inline">create_RELEASES/4</code></a> or <a href="#set_unpacked/2"><code class="inline">set_unpacked/2</code></a>.</p><p><em>Example:</em></p><p>In the current version <code class="inline">CurVsn</code> of a release, the application directory of
 <code class="inline">myapp</code> is <code class="inline">$ROOT/lib/myapp-1.0</code>. A new version <code class="inline">NewVsn</code> is unpacked outside
 the release handler and the release handler is informed about this with a call
-as follows:</p><pre><code class="makeup erlang" translate="no"><span class="nc">release_handler</span><span class="p">:</span><span class="nf">set_unpacked</span><span class="p" data-group-id="6617265240-1">(</span><span class="n">RelFile</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6617265240-2">[</span><span class="p" data-group-id="6617265240-3">{</span><span class="ss">myapp</span><span class="p">,</span><span class="s">&quot;1.0&quot;</span><span class="p">,</span><span class="s">&quot;/home/user&quot;</span><span class="p" data-group-id="6617265240-3">}</span><span class="p">,</span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p" data-group-id="6617265240-2">]</span><span class="p" data-group-id="6617265240-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="6617265240-4">{</span><span class="ss">ok</span><span class="p">,</span><span class="n">NewVsn</span><span class="p" data-group-id="6617265240-4">}</span></code></pre><p>If <code class="inline">NewVsn</code> is installed with option <code class="inline">{update_paths,true}</code>, then
+as follows:</p><pre><code class="makeup erlang" translate="no"><span class="nc">release_handler</span><span class="p">:</span><span class="nf">set_unpacked</span><span class="p" data-group-id="8561273102-1">(</span><span class="n">RelFile</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8561273102-2">[</span><span class="p" data-group-id="8561273102-3">{</span><span class="ss">myapp</span><span class="p">,</span><span class="s">&quot;1.0&quot;</span><span class="p">,</span><span class="s">&quot;/home/user&quot;</span><span class="p" data-group-id="8561273102-3">}</span><span class="p">,</span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p" data-group-id="8561273102-2">]</span><span class="p" data-group-id="8561273102-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="8561273102-4">{</span><span class="ss">ok</span><span class="p">,</span><span class="n">NewVsn</span><span class="p" data-group-id="8561273102-4">}</span></code></pre><p>If <code class="inline">NewVsn</code> is installed with option <code class="inline">{update_paths,true}</code>, then
 <a href="../../apps/kernel/code.html#lib_dir/1"><code class="inline">code:lib_dir(myapp)</code></a> returns <code class="inline">/home/user/myapp-1.0</code>.</p></li></ul><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>Installing a new release can be time consuming if there are many processes in
 the system. The reason is that each process must be checked for references to
 old code before a module can be purged. This check can lead to garbage
@@ -1062,7 +1082,7 @@ about emulator upgrade from pre OTP R15 versions, see
       <h1 class="signature" translate="no">make_permanent(Vsn)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/release_handler.erl#L654" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/release_handler.erl#L654" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1091,7 +1111,7 @@ about emulator upgrade from pre OTP R15 versions, see
       <h1 class="signature" translate="no">reboot_old_release(Vsn)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/release_handler.erl#L674" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/release_handler.erl#L674" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1121,7 +1141,7 @@ about emulator upgrade from pre OTP R15 versions, see
       <h1 class="signature" translate="no">remove_release(Vsn)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/release_handler.erl#L694" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/release_handler.erl#L694" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1151,7 +1171,7 @@ and directories not in use by another release.</p>
       <h1 class="signature" translate="no">set_removed(Vsn)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/release_handler.erl#L754" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/release_handler.erl#L754" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1180,7 +1200,7 @@ function does not delete any files.</p>
       <h1 class="signature" translate="no">set_unpacked(RelFile, AppDirs)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/release_handler.erl#L734" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/release_handler.erl#L734" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1221,7 +1241,7 @@ located in <code class="inline">$ROOT/lib</code>.</p>
       <h1 class="signature" translate="no">unpack_release(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/release_handler.erl#L375" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/release_handler.erl#L375" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1251,7 +1271,7 @@ files are present, and extracts its contents.</p>
       <h1 class="signature" translate="no">which_releases()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/release_handler.erl#L793" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/release_handler.erl#L793" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1286,7 +1306,7 @@ files are present, and extracts its contents.</p>
         <span class="note">(since OTP R15B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/release_handler.erl#L810" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/release_handler.erl#L810" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1317,8 +1337,8 @@ files are present, and extracts its contents.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="sasl.epub" title="ePub version">
@@ -1330,7 +1350,7 @@ files are present, and extracts its contents.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

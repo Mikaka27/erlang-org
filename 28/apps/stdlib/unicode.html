@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="stdlib v7.1">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/unicode.html" />
     <title>unicode — stdlib v7.1</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-296BF65E.js"></script>
+    <script defer src="dist/sidebar_items-E5A5C6F9.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ stdlib
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of stdlib</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ stdlib
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -192,7 +210,7 @@ normalization can be found in the
 
       </div>
 
-        <div class="summary-synopsis"><p>A <a><code class="inline">binary/0</code></a> with characters coded in a user-specified Unicode encoding other
+        <div class="summary-synopsis"><p>A <a href="../../apps/erts/erlang.html#t:binary/0"><code class="inline">binary/0</code></a> with characters coded in a user-specified Unicode encoding other
 than UTF-8 (that is, UTF-16 or UTF-32).</p></div>
 
     </div>
@@ -203,7 +221,7 @@ than UTF-8 (that is, UTF-16 or UTF-32).</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>A <a><code class="inline">binary/0</code></a> with characters coded in ISO Latin-1.</p></div>
+        <div class="summary-synopsis"><p>A <a href="../../apps/erts/erlang.html#t:binary/0"><code class="inline">binary/0</code></a> with characters coded in ISO Latin-1.</p></div>
 
     </div>
 
@@ -213,7 +231,7 @@ than UTF-8 (that is, UTF-16 or UTF-32).</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>An <a><code class="inline">integer/0</code></a> representing a valid ISO Latin-1 character (0-255).</p></div>
+        <div class="summary-synopsis"><p>An <a href="../../apps/erts/erlang.html#t:integer/0"><code class="inline">integer/0</code></a> representing a valid ISO Latin-1 character (0-255).</p></div>
 
     </div>
 
@@ -223,7 +241,7 @@ than UTF-8 (that is, UTF-16 or UTF-32).</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">iodata/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="../../apps/erts/erlang.html#t:iodata/0"><code class="inline">iodata/0</code></a>.</p></div>
 
     </div>
 
@@ -233,7 +251,7 @@ than UTF-8 (that is, UTF-16 or UTF-32).</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">iolist/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="../../apps/erts/erlang.html#t:iolist/0"><code class="inline">iolist/0</code></a>.</p></div>
 
     </div>
 
@@ -243,7 +261,7 @@ than UTF-8 (that is, UTF-16 or UTF-32).</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>A <a><code class="inline">binary/0</code></a> with characters encoded in the UTF-8 coding standard.</p></div>
+        <div class="summary-synopsis"><p>A <a href="../../apps/erts/erlang.html#t:binary/0"><code class="inline">binary/0</code></a> with characters encoded in the UTF-8 coding standard.</p></div>
 
     </div>
 
@@ -269,7 +287,7 @@ than UTF-8 (that is, UTF-16 or UTF-32).</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">characters_to_binary(Data, unicode, unicode)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#characters_to_binary/3"><code class="inline">characters_to_binary(Data, unicode, unicode)</code></a>.</p></div>
 
     </div>
 
@@ -279,7 +297,7 @@ than UTF-8 (that is, UTF-16 or UTF-32).</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">characters_to_binary(Data, InEncoding, unicode)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#characters_to_binary/3"><code class="inline">characters_to_binary(Data, InEncoding, unicode)</code></a>.</p></div>
 
     </div>
 
@@ -289,7 +307,7 @@ than UTF-8 (that is, UTF-16 or UTF-32).</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Behaves as <a><code class="inline">characters_to_list/2</code></a>, but produces a binary instead of a Unicode
+        <div class="summary-synopsis"><p>Behaves as <a href="#characters_to_list/2"><code class="inline">characters_to_list/2</code></a>, but produces a binary instead of a Unicode
 list.</p></div>
 
     </div>
@@ -300,7 +318,7 @@ list.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">characters_to_list(Data, unicode)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#characters_to_list/2"><code class="inline">characters_to_list(Data, unicode)</code></a>.</p></div>
 
     </div>
 
@@ -428,6 +446,7 @@ standard.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:chardata/0">
 
@@ -439,7 +458,7 @@ standard.</p></div>
       <h1 class="signature" translate="no">chardata()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L87" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L87" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -467,7 +486,7 @@ standard.</p></div>
       <h1 class="signature" translate="no">charlist()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L84" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L84" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -495,7 +514,7 @@ standard.</p></div>
       <h1 class="signature" translate="no">encoding()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L78" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L78" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -525,7 +544,7 @@ standard.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L81" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L81" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -553,7 +572,7 @@ standard.</p></div>
       <h1 class="signature" translate="no">external_chardata()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L93" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L93" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -581,7 +600,7 @@ standard.</p></div>
       <h1 class="signature" translate="no">external_charlist()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L94" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L94" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -613,7 +632,7 @@ standard.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L92" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L92" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -642,7 +661,7 @@ than UTF-8 (that is, UTF-16 or UTF-32).</p>
       <h1 class="signature" translate="no">latin1_binary()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L100" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L100" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -670,7 +689,7 @@ than UTF-8 (that is, UTF-16 or UTF-32).</p>
       <h1 class="signature" translate="no">latin1_char()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L102" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L102" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -698,7 +717,7 @@ than UTF-8 (that is, UTF-16 or UTF-32).</p>
       <h1 class="signature" translate="no">latin1_chardata()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L104" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L104" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -726,7 +745,7 @@ than UTF-8 (that is, UTF-16 or UTF-32).</p>
       <h1 class="signature" translate="no">latin1_charlist()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L106" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L106" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -755,7 +774,7 @@ than UTF-8 (that is, UTF-16 or UTF-32).</p>
       <h1 class="signature" translate="no">unicode_binary()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L83" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L83" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -784,6 +803,7 @@ than UTF-8 (that is, UTF-16 or UTF-32).</p>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="bom_to_encoding/1">
 
@@ -795,7 +815,7 @@ than UTF-8 (that is, UTF-16 or UTF-32).</p>
       <h1 class="signature" translate="no">bom_to_encoding(Bin)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L374" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L374" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -829,7 +849,7 @@ in bytes.</p><p>If no BOM is found, the function returns <code class="inline">{l
       <h1 class="signature" translate="no">characters_to_binary(Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L293" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L293" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -864,7 +884,7 @@ in bytes.</p><p>If no BOM is found, the function returns <code class="inline">{l
       <h1 class="signature" translate="no">characters_to_binary(Data, InEncoding)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L141" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L141" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -900,7 +920,7 @@ in bytes.</p><p>If no BOM is found, the function returns <code class="inline">{l
       <h1 class="signature" translate="no">characters_to_binary(Data, InEncoding, OutEncoding)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L333" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L333" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -941,7 +961,7 @@ in tuple <code class="inline">error</code> or <code class="inline">incomplete</c
       <h1 class="signature" translate="no">characters_to_list(Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L277" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L277" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -976,7 +996,7 @@ in tuple <code class="inline">error</code> or <code class="inline">incomplete</c
       <h1 class="signature" translate="no">characters_to_list(Data, InEncoding)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L264" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L264" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1039,13 +1059,13 @@ the same parts as the <code class="inline">error</code> tuple, but the tag is <c
 the first part of a (so far) valid UTF character.</p><p>If one UTF character is split over two consecutive binaries in the <code class="inline">Data</code>, the
 conversion succeeds. This means that a character can be decoded from a range of
 binaries as long as the whole range is specified as input without errors
-occurring.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="nf">decode_data</span><span class="p" data-group-id="6884972934-1">(</span><span class="n">Data</span><span class="p" data-group-id="6884972934-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-   </span><span class="k">case</span><span class="w"> </span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_list</span><span class="p" data-group-id="6884972934-2">(</span><span class="n">Data</span><span class="p">,</span><span class="ss">unicode</span><span class="p" data-group-id="6884972934-2">)</span><span class="w"> </span><span class="k">of</span><span class="w">
-      </span><span class="p" data-group-id="6884972934-3">{</span><span class="ss">incomplete</span><span class="p">,</span><span class="n">Encoded</span><span class="p">,</span><span class="w"> </span><span class="n">Rest</span><span class="p" data-group-id="6884972934-3">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-            </span><span class="n">More</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">get_some_more_data</span><span class="p" data-group-id="6884972934-4">(</span><span class="p" data-group-id="6884972934-4">)</span><span class="p">,</span><span class="w">
-            </span><span class="n">Encoded</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="nf">decode_data</span><span class="p" data-group-id="6884972934-5">(</span><span class="p" data-group-id="6884972934-6">[</span><span class="n">Rest</span><span class="p">,</span><span class="w"> </span><span class="n">More</span><span class="p" data-group-id="6884972934-6">]</span><span class="p" data-group-id="6884972934-5">)</span><span class="p">;</span><span class="w">
-      </span><span class="p" data-group-id="6884972934-7">{</span><span class="ss">error</span><span class="p">,</span><span class="n">Encoded</span><span class="p">,</span><span class="n">Rest</span><span class="p" data-group-id="6884972934-7">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-            </span><span class="nf">handle_error</span><span class="p" data-group-id="6884972934-8">(</span><span class="n">Encoded</span><span class="p">,</span><span class="n">Rest</span><span class="p" data-group-id="6884972934-8">)</span><span class="p">;</span><span class="w">
+occurring.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="nf">decode_data</span><span class="p" data-group-id="6533884741-1">(</span><span class="n">Data</span><span class="p" data-group-id="6533884741-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+   </span><span class="k">case</span><span class="w"> </span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_list</span><span class="p" data-group-id="6533884741-2">(</span><span class="n">Data</span><span class="p">,</span><span class="ss">unicode</span><span class="p" data-group-id="6533884741-2">)</span><span class="w"> </span><span class="k">of</span><span class="w">
+      </span><span class="p" data-group-id="6533884741-3">{</span><span class="ss">incomplete</span><span class="p">,</span><span class="n">Encoded</span><span class="p">,</span><span class="w"> </span><span class="n">Rest</span><span class="p" data-group-id="6533884741-3">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+            </span><span class="n">More</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">get_some_more_data</span><span class="p" data-group-id="6533884741-4">(</span><span class="p" data-group-id="6533884741-4">)</span><span class="p">,</span><span class="w">
+            </span><span class="n">Encoded</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="nf">decode_data</span><span class="p" data-group-id="6533884741-5">(</span><span class="p" data-group-id="6533884741-6">[</span><span class="n">Rest</span><span class="p">,</span><span class="w"> </span><span class="n">More</span><span class="p" data-group-id="6533884741-6">]</span><span class="p" data-group-id="6533884741-5">)</span><span class="p">;</span><span class="w">
+      </span><span class="p" data-group-id="6533884741-7">{</span><span class="ss">error</span><span class="p">,</span><span class="n">Encoded</span><span class="p">,</span><span class="n">Rest</span><span class="p" data-group-id="6533884741-7">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+            </span><span class="nf">handle_error</span><span class="p" data-group-id="6533884741-8">(</span><span class="n">Encoded</span><span class="p">,</span><span class="n">Rest</span><span class="p" data-group-id="6533884741-8">)</span><span class="p">;</span><span class="w">
       </span><span class="n">List</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
             </span><span class="n">List</span><span class="w">
    </span><span class="k">end</span><span class="p">.</span></code></pre><p>However, bit strings that are not whole bytes are not allowed, so a UTF
@@ -1064,7 +1084,7 @@ character must be split along 8-bit boundaries to ever be decoded.</p><p>A <code
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L603" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L603" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1080,8 +1100,8 @@ character must be split along 8-bit boundaries to ever be decoded.</p><p>A <code
       </div>
 
 <p>Converts a possibly deep list of characters and binaries into a Normalized Form
-of canonical equivalent Composed characters according to the Unicode standard.</p><p>Any binaries in the input must be encoded with utf8 encoding.</p><p>The result is an utf8 encoded binary.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">4&gt; </span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_nfc_binary</span><span class="p" data-group-id="7072470958-1">(</span><span class="p" data-group-id="7072470958-2">[</span><span class="p" data-group-id="7072470958-3">&lt;&lt;</span><span class="s">&quot;abc..a&quot;</span><span class="p" data-group-id="7072470958-3">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="7072470958-4">[</span><span class="mi">778</span><span class="p" data-group-id="7072470958-4">]</span><span class="p">,</span><span class="sc">$a</span><span class="p">,</span><span class="p" data-group-id="7072470958-5">[</span><span class="mi">776</span><span class="p" data-group-id="7072470958-5">]</span><span class="p">,</span><span class="sc">$o</span><span class="p">,</span><span class="p" data-group-id="7072470958-6">[</span><span class="mi">776</span><span class="p" data-group-id="7072470958-6">]</span><span class="p" data-group-id="7072470958-2">]</span><span class="p" data-group-id="7072470958-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="7072470958-7">&lt;&lt;</span><span class="s">&quot;abc..åäö&quot;</span><span class="o">/</span><span class="ss">utf8</span><span class="p" data-group-id="7072470958-7">&gt;&gt;</span></code></pre>
+of canonical equivalent Composed characters according to the Unicode standard.</p><p>Any binaries in the input must be encoded with utf8 encoding.</p><p>The result is an utf8 encoded binary.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">4&gt; </span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_nfc_binary</span><span class="p" data-group-id="2991572169-1">(</span><span class="p" data-group-id="2991572169-2">[</span><span class="p" data-group-id="2991572169-3">&lt;&lt;</span><span class="s">&quot;abc..a&quot;</span><span class="p" data-group-id="2991572169-3">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="2991572169-4">[</span><span class="mi">778</span><span class="p" data-group-id="2991572169-4">]</span><span class="p">,</span><span class="sc">$a</span><span class="p">,</span><span class="p" data-group-id="2991572169-5">[</span><span class="mi">776</span><span class="p" data-group-id="2991572169-5">]</span><span class="p">,</span><span class="sc">$o</span><span class="p">,</span><span class="p" data-group-id="2991572169-6">[</span><span class="mi">776</span><span class="p" data-group-id="2991572169-6">]</span><span class="p" data-group-id="2991572169-2">]</span><span class="p" data-group-id="2991572169-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="2991572169-7">&lt;&lt;</span><span class="s">&quot;abc..åäö&quot;</span><span class="o">/</span><span class="ss">utf8</span><span class="p" data-group-id="2991572169-7">&gt;&gt;</span></code></pre>
   </section>
 </section>
 <section class="detail" id="characters_to_nfc_list/1">
@@ -1096,7 +1116,7 @@ of canonical equivalent Composed characters according to the Unicode standard.</
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L572" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L572" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1112,7 +1132,7 @@ of canonical equivalent Composed characters according to the Unicode standard.</
       </div>
 
 <p>Converts a possibly deep list of characters and binaries into a Normalized Form
-of canonical equivalent Composed characters according to the Unicode standard.</p><p>Any binaries in the input must be encoded with utf8 encoding.</p><p>The result is a list of characters.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">3&gt; </span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_nfc_list</span><span class="p" data-group-id="2693593826-1">(</span><span class="p" data-group-id="2693593826-2">[</span><span class="p" data-group-id="2693593826-3">&lt;&lt;</span><span class="s">&quot;abc..a&quot;</span><span class="p" data-group-id="2693593826-3">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="2693593826-4">[</span><span class="mi">778</span><span class="p" data-group-id="2693593826-4">]</span><span class="p">,</span><span class="sc">$a</span><span class="p">,</span><span class="p" data-group-id="2693593826-5">[</span><span class="mi">776</span><span class="p" data-group-id="2693593826-5">]</span><span class="p">,</span><span class="sc">$o</span><span class="p">,</span><span class="p" data-group-id="2693593826-6">[</span><span class="mi">776</span><span class="p" data-group-id="2693593826-6">]</span><span class="p" data-group-id="2693593826-2">]</span><span class="p" data-group-id="2693593826-1">)</span><span class="p">.</span><span class="w">
+of canonical equivalent Composed characters according to the Unicode standard.</p><p>Any binaries in the input must be encoded with utf8 encoding.</p><p>The result is a list of characters.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">3&gt; </span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_nfc_list</span><span class="p" data-group-id="9855513628-1">(</span><span class="p" data-group-id="9855513628-2">[</span><span class="p" data-group-id="9855513628-3">&lt;&lt;</span><span class="s">&quot;abc..a&quot;</span><span class="p" data-group-id="9855513628-3">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="9855513628-4">[</span><span class="mi">778</span><span class="p" data-group-id="9855513628-4">]</span><span class="p">,</span><span class="sc">$a</span><span class="p">,</span><span class="p" data-group-id="9855513628-5">[</span><span class="mi">776</span><span class="p" data-group-id="9855513628-5">]</span><span class="p">,</span><span class="sc">$o</span><span class="p">,</span><span class="p" data-group-id="9855513628-6">[</span><span class="mi">776</span><span class="p" data-group-id="9855513628-6">]</span><span class="p" data-group-id="9855513628-2">]</span><span class="p" data-group-id="9855513628-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;abc..åäö&quot;</span></code></pre>
   </section>
 </section>
@@ -1128,7 +1148,7 @@ of canonical equivalent Composed characters according to the Unicode standard.</
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L472" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L472" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1144,8 +1164,8 @@ of canonical equivalent Composed characters according to the Unicode standard.</
       </div>
 
 <p>Converts a possibly deep list of characters and binaries into a Normalized Form
-of canonical equivalent Decomposed characters according to the Unicode standard.</p><p>Any binaries in the input must be encoded with utf8 encoding.</p><p>The result is an utf8 encoded binary.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">2&gt; </span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_nfd_binary</span><span class="p" data-group-id="6891537447-1">(</span><span class="s">&quot;abc..åäö&quot;</span><span class="p" data-group-id="6891537447-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="6891537447-2">&lt;&lt;</span><span class="mi">97</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">138</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">136</span><span class="p">,</span><span class="mi">111</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">136</span><span class="p" data-group-id="6891537447-2">&gt;&gt;</span></code></pre>
+of canonical equivalent Decomposed characters according to the Unicode standard.</p><p>Any binaries in the input must be encoded with utf8 encoding.</p><p>The result is an utf8 encoded binary.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">2&gt; </span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_nfd_binary</span><span class="p" data-group-id="1879204644-1">(</span><span class="s">&quot;abc..åäö&quot;</span><span class="p" data-group-id="1879204644-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="1879204644-2">&lt;&lt;</span><span class="mi">97</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">138</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">136</span><span class="p">,</span><span class="mi">111</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">136</span><span class="p" data-group-id="1879204644-2">&gt;&gt;</span></code></pre>
   </section>
 </section>
 <section class="detail" id="characters_to_nfd_list/1">
@@ -1160,7 +1180,7 @@ of canonical equivalent Decomposed characters according to the Unicode standard.
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L441" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L441" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1176,8 +1196,8 @@ of canonical equivalent Decomposed characters according to the Unicode standard.
       </div>
 
 <p>Converts a possibly deep list of characters and binaries into a Normalized Form
-of canonical equivalent Decomposed characters according to the Unicode standard.</p><p>Any binaries in the input must be encoded with utf8 encoding.</p><p>The result is a list of characters.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_nfd_list</span><span class="p" data-group-id="6038184602-1">(</span><span class="s">&quot;abc..åäö&quot;</span><span class="p" data-group-id="6038184602-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="6038184602-2">[</span><span class="mi">97</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">778</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">776</span><span class="p">,</span><span class="mi">111</span><span class="p">,</span><span class="mi">776</span><span class="p" data-group-id="6038184602-2">]</span></code></pre>
+of canonical equivalent Decomposed characters according to the Unicode standard.</p><p>Any binaries in the input must be encoded with utf8 encoding.</p><p>The result is a list of characters.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_nfd_list</span><span class="p" data-group-id="2992262238-1">(</span><span class="s">&quot;abc..åäö&quot;</span><span class="p" data-group-id="2992262238-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="2992262238-2">[</span><span class="mi">97</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">778</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">776</span><span class="p">,</span><span class="mi">111</span><span class="p">,</span><span class="mi">776</span><span class="p" data-group-id="2992262238-2">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="characters_to_nfkc_binary/1">
@@ -1192,7 +1212,7 @@ of canonical equivalent Decomposed characters according to the Unicode standard.
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L667" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L667" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1208,8 +1228,8 @@ of canonical equivalent Decomposed characters according to the Unicode standard.
       </div>
 
 <p>Converts a possibly deep list of characters and binaries into a Normalized Form
-of compatibly equivalent Composed characters according to the Unicode standard.</p><p>Any binaries in the input must be encoded with utf8 encoding.</p><p>The result is an utf8 encoded binary.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">4&gt; </span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_nfkc_binary</span><span class="p" data-group-id="6256217968-1">(</span><span class="p" data-group-id="6256217968-2">[</span><span class="p" data-group-id="6256217968-3">&lt;&lt;</span><span class="s">&quot;abc..a&quot;</span><span class="p" data-group-id="6256217968-3">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="6256217968-4">[</span><span class="mi">778</span><span class="p" data-group-id="6256217968-4">]</span><span class="p">,</span><span class="sc">$a</span><span class="p">,</span><span class="p" data-group-id="6256217968-5">[</span><span class="mi">776</span><span class="p" data-group-id="6256217968-5">]</span><span class="p">,</span><span class="sc">$o</span><span class="p">,</span><span class="p" data-group-id="6256217968-6">[</span><span class="mi">776</span><span class="p" data-group-id="6256217968-6">]</span><span class="p">,</span><span class="p" data-group-id="6256217968-7">[</span><span class="mi">65299</span><span class="p">,</span><span class="mi">65298</span><span class="p" data-group-id="6256217968-7">]</span><span class="p" data-group-id="6256217968-2">]</span><span class="p" data-group-id="6256217968-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="6256217968-8">&lt;&lt;</span><span class="s">&quot;abc..åäö32&quot;</span><span class="o">/</span><span class="ss">utf8</span><span class="p" data-group-id="6256217968-8">&gt;&gt;</span></code></pre>
+of compatibly equivalent Composed characters according to the Unicode standard.</p><p>Any binaries in the input must be encoded with utf8 encoding.</p><p>The result is an utf8 encoded binary.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">4&gt; </span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_nfkc_binary</span><span class="p" data-group-id="0878711832-1">(</span><span class="p" data-group-id="0878711832-2">[</span><span class="p" data-group-id="0878711832-3">&lt;&lt;</span><span class="s">&quot;abc..a&quot;</span><span class="p" data-group-id="0878711832-3">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="0878711832-4">[</span><span class="mi">778</span><span class="p" data-group-id="0878711832-4">]</span><span class="p">,</span><span class="sc">$a</span><span class="p">,</span><span class="p" data-group-id="0878711832-5">[</span><span class="mi">776</span><span class="p" data-group-id="0878711832-5">]</span><span class="p">,</span><span class="sc">$o</span><span class="p">,</span><span class="p" data-group-id="0878711832-6">[</span><span class="mi">776</span><span class="p" data-group-id="0878711832-6">]</span><span class="p">,</span><span class="p" data-group-id="0878711832-7">[</span><span class="mi">65299</span><span class="p">,</span><span class="mi">65298</span><span class="p" data-group-id="0878711832-7">]</span><span class="p" data-group-id="0878711832-2">]</span><span class="p" data-group-id="0878711832-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="0878711832-8">&lt;&lt;</span><span class="s">&quot;abc..åäö32&quot;</span><span class="o">/</span><span class="ss">utf8</span><span class="p" data-group-id="0878711832-8">&gt;&gt;</span></code></pre>
   </section>
 </section>
 <section class="detail" id="characters_to_nfkc_list/1">
@@ -1224,7 +1244,7 @@ of compatibly equivalent Composed characters according to the Unicode standard.<
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L636" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L636" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1240,7 +1260,7 @@ of compatibly equivalent Composed characters according to the Unicode standard.<
       </div>
 
 <p>Converts a possibly deep list of characters and binaries into a Normalized Form
-of compatibly equivalent Composed characters according to the Unicode standard.</p><p>Any binaries in the input must be encoded with utf8 encoding.</p><p>The result is a list of characters.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">3&gt; </span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_nfkc_list</span><span class="p" data-group-id="7954402619-1">(</span><span class="p" data-group-id="7954402619-2">[</span><span class="p" data-group-id="7954402619-3">&lt;&lt;</span><span class="s">&quot;abc..a&quot;</span><span class="p" data-group-id="7954402619-3">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="7954402619-4">[</span><span class="mi">778</span><span class="p" data-group-id="7954402619-4">]</span><span class="p">,</span><span class="sc">$a</span><span class="p">,</span><span class="p" data-group-id="7954402619-5">[</span><span class="mi">776</span><span class="p" data-group-id="7954402619-5">]</span><span class="p">,</span><span class="sc">$o</span><span class="p">,</span><span class="p" data-group-id="7954402619-6">[</span><span class="mi">776</span><span class="p" data-group-id="7954402619-6">]</span><span class="p">,</span><span class="p" data-group-id="7954402619-7">[</span><span class="mi">65299</span><span class="p">,</span><span class="mi">65298</span><span class="p" data-group-id="7954402619-7">]</span><span class="p" data-group-id="7954402619-2">]</span><span class="p" data-group-id="7954402619-1">)</span><span class="p">.</span><span class="w">
+of compatibly equivalent Composed characters according to the Unicode standard.</p><p>Any binaries in the input must be encoded with utf8 encoding.</p><p>The result is a list of characters.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">3&gt; </span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_nfkc_list</span><span class="p" data-group-id="0290040420-1">(</span><span class="p" data-group-id="0290040420-2">[</span><span class="p" data-group-id="0290040420-3">&lt;&lt;</span><span class="s">&quot;abc..a&quot;</span><span class="p" data-group-id="0290040420-3">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="0290040420-4">[</span><span class="mi">778</span><span class="p" data-group-id="0290040420-4">]</span><span class="p">,</span><span class="sc">$a</span><span class="p">,</span><span class="p" data-group-id="0290040420-5">[</span><span class="mi">776</span><span class="p" data-group-id="0290040420-5">]</span><span class="p">,</span><span class="sc">$o</span><span class="p">,</span><span class="p" data-group-id="0290040420-6">[</span><span class="mi">776</span><span class="p" data-group-id="0290040420-6">]</span><span class="p">,</span><span class="p" data-group-id="0290040420-7">[</span><span class="mi">65299</span><span class="p">,</span><span class="mi">65298</span><span class="p" data-group-id="0290040420-7">]</span><span class="p" data-group-id="0290040420-2">]</span><span class="p" data-group-id="0290040420-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;abc..åäö32&quot;</span></code></pre>
   </section>
 </section>
@@ -1256,7 +1276,7 @@ of compatibly equivalent Composed characters according to the Unicode standard.<
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L538" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L538" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1273,8 +1293,8 @@ of compatibly equivalent Composed characters according to the Unicode standard.<
 
 <p>Converts a possibly deep list of characters and binaries into a Normalized Form
 of compatibly equivalent Decomposed characters according to the Unicode
-standard.</p><p>Any binaries in the input must be encoded with utf8 encoding.</p><p>The result is an utf8 encoded binary.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">2&gt; </span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_nfkd_binary</span><span class="p" data-group-id="9990140640-1">(</span><span class="p" data-group-id="9990140640-2">[</span><span class="s">&quot;abc..åäö&quot;</span><span class="p">,</span><span class="p" data-group-id="9990140640-3">[</span><span class="mi">65299</span><span class="p">,</span><span class="mi">65298</span><span class="p" data-group-id="9990140640-3">]</span><span class="p" data-group-id="9990140640-2">]</span><span class="p" data-group-id="9990140640-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="9990140640-4">&lt;&lt;</span><span class="mi">97</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">138</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">136</span><span class="p">,</span><span class="mi">111</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">136</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">50</span><span class="p" data-group-id="9990140640-4">&gt;&gt;</span></code></pre>
+standard.</p><p>Any binaries in the input must be encoded with utf8 encoding.</p><p>The result is an utf8 encoded binary.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">2&gt; </span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_nfkd_binary</span><span class="p" data-group-id="6098086229-1">(</span><span class="p" data-group-id="6098086229-2">[</span><span class="s">&quot;abc..åäö&quot;</span><span class="p">,</span><span class="p" data-group-id="6098086229-3">[</span><span class="mi">65299</span><span class="p">,</span><span class="mi">65298</span><span class="p" data-group-id="6098086229-3">]</span><span class="p" data-group-id="6098086229-2">]</span><span class="p" data-group-id="6098086229-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="6098086229-4">&lt;&lt;</span><span class="mi">97</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">138</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">136</span><span class="p">,</span><span class="mi">111</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">136</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">50</span><span class="p" data-group-id="6098086229-4">&gt;&gt;</span></code></pre>
   </section>
 </section>
 <section class="detail" id="characters_to_nfkd_list/1">
@@ -1289,7 +1309,7 @@ standard.</p><p>Any binaries in the input must be encoded with utf8 encoding.</p
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L506" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L506" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1306,8 +1326,8 @@ standard.</p><p>Any binaries in the input must be encoded with utf8 encoding.</p
 
 <p>Converts a possibly deep list of characters and binaries into a Normalized Form
 of compatibly equivalent Decomposed characters according to the Unicode
-standard.</p><p>Any binaries in the input must be encoded with utf8 encoding.</p><p>The result is a list of characters.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_nfkd_list</span><span class="p" data-group-id="2589803253-1">(</span><span class="p" data-group-id="2589803253-2">[</span><span class="s">&quot;abc..åäö&quot;</span><span class="p">,</span><span class="p" data-group-id="2589803253-3">[</span><span class="mi">65299</span><span class="p">,</span><span class="mi">65298</span><span class="p" data-group-id="2589803253-3">]</span><span class="p" data-group-id="2589803253-2">]</span><span class="p" data-group-id="2589803253-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="2589803253-4">[</span><span class="mi">97</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">778</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">776</span><span class="p">,</span><span class="mi">111</span><span class="p">,</span><span class="mi">776</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">50</span><span class="p" data-group-id="2589803253-4">]</span></code></pre>
+standard.</p><p>Any binaries in the input must be encoded with utf8 encoding.</p><p>The result is a list of characters.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_nfkd_list</span><span class="p" data-group-id="9046457952-1">(</span><span class="p" data-group-id="9046457952-2">[</span><span class="s">&quot;abc..åäö&quot;</span><span class="p">,</span><span class="p" data-group-id="9046457952-3">[</span><span class="mi">65299</span><span class="p">,</span><span class="mi">65298</span><span class="p" data-group-id="9046457952-3">]</span><span class="p" data-group-id="9046457952-2">]</span><span class="p" data-group-id="9046457952-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="9046457952-4">[</span><span class="mi">97</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">778</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">776</span><span class="p">,</span><span class="mi">111</span><span class="p">,</span><span class="mi">776</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">50</span><span class="p" data-group-id="9046457952-4">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="encoding_to_bom/1">
@@ -1320,7 +1340,7 @@ standard.</p><p>Any binaries in the input must be encoded with utf8 encoding.</p
       <h1 class="signature" translate="no">encoding_to_bom(InEncoding)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/unicode.erl#L404" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/unicode.erl#L404" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1350,8 +1370,8 @@ only there to differentiate UTF-8 encoding from other UTF formats.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="stdlib.epub" title="ePub version">
@@ -1363,7 +1383,7 @@ only there to differentiate UTF-8 encoding from other UTF formats.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

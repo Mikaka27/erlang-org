@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="sasl v4.3">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/sasl/rb.html" />
     <title>rb — sasl v4.3</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-9352BC19.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ sasl
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of sasl</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ sasl
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/rb.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/rb.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -158,7 +176,7 @@ by the error logger handler <a href="../../apps/stdlib/log_mf_h.html"><code clas
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">filter/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#filter/2"><code class="inline">filter/2</code></a>.</p></div>
 
     </div>
 
@@ -189,7 +207,7 @@ be any of the following</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">help()</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#help/0"><code class="inline">help()</code></a>.</p></div>
 
     </div>
 
@@ -209,7 +227,7 @@ be any of the following</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">list(all)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#list/1"><code class="inline">list(all)</code></a>.</p></div>
 
     </div>
 
@@ -220,7 +238,7 @@ be any of the following</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Lists all reports loaded in <code class="inline">rb_server</code>. Each report is given a unique number
-that can be used as a reference to the report in function <a><code class="inline">show/1</code></a>.</p></div>
+that can be used as a reference to the report in function <a href="#show/1"><code class="inline">show/1</code></a>.</p></div>
 
     </div>
 
@@ -230,7 +248,7 @@ that can be used as a reference to the report in function <a><code class="inline
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">log_list(all)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#log_list/1"><code class="inline">log_list(all)</code></a>.</p></div>
 
     </div>
 
@@ -240,7 +258,7 @@ that can be used as a reference to the report in function <a><code class="inline
 
       </div>
 
-        <div class="summary-synopsis"><p>Same as functions <a><code class="inline">list/0</code></a> or <a><code class="inline">list/1</code></a>, but the result is printed to a log file,
+        <div class="summary-synopsis"><p>Same as functions <a href="#list/0"><code class="inline">list/0</code></a> or <a href="#list/1"><code class="inline">list/1</code></a>, but the result is printed to a log file,
 if set; otherwise to <code class="inline">standard_io</code>.</p></div>
 
     </div>
@@ -251,7 +269,7 @@ if set; otherwise to <code class="inline">standard_io</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">rescan([])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#rescan/1"><code class="inline">rescan([])</code></a>.</p></div>
 
     </div>
 
@@ -261,7 +279,7 @@ if set; otherwise to <code class="inline">standard_io</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Rescans the report directory. <code class="inline">Options</code> is the same as for function <a><code class="inline">start/1</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Rescans the report directory. <code class="inline">Options</code> is the same as for function <a href="#start/1"><code class="inline">start/1</code></a>.</p></div>
 
     </div>
 
@@ -282,7 +300,7 @@ if set; otherwise to <code class="inline">standard_io</code>.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>If argument <code class="inline">Report</code> is specified as one of the values of
-<a><code class="inline">type()</code></a>, all loaded reports of that type are
+<a href="#t:type/0"><code class="inline">type()</code></a>, all loaded reports of that type are
 displayed. If <code class="inline">Report</code> is specified as an integer, the report with
 this reference number is displayed.</p></div>
 
@@ -294,7 +312,7 @@ this reference number is displayed.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">start([])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#start/1"><code class="inline">start([])</code></a>.</p></div>
 
     </div>
 
@@ -304,8 +322,8 @@ this reference number is displayed.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Function <a><code class="inline">start/1</code></a> starts <code class="inline">rb_server</code> with the specified options,
-whereas function <a><code class="inline">start/0</code></a> starts with default options.</p></div>
+        <div class="summary-synopsis"><p>Function <a href="#start/1"><code class="inline">start/1</code></a> starts <code class="inline">rb_server</code> with the specified options,
+whereas function <a href="#start/0"><code class="inline">start/0</code></a> starts with default options.</p></div>
 
     </div>
 
@@ -352,6 +370,7 @@ name, or <code class="inline">io_device</code>.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:filter/0">
 
@@ -365,7 +384,7 @@ name, or <code class="inline">io_device</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/rb.erl#L216" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/rb.erl#L216" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -399,7 +418,7 @@ name, or <code class="inline">io_device</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/rb.erl#L47" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/rb.erl#L47" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -434,7 +453,7 @@ name, or <code class="inline">io_device</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/rb.erl#L194" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/rb.erl#L194" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -468,7 +487,7 @@ name, or <code class="inline">io_device</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/rb.erl#L44" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/rb.erl#L44" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -499,6 +518,7 @@ name, or <code class="inline">io_device</code>.</p></div>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="filter/1">
 
@@ -512,7 +532,7 @@ name, or <code class="inline">io_device</code>.</p></div>
         <span class="note">(since OTP R13B04)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/rb.erl#L225" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/rb.erl#L225" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -542,7 +562,7 @@ name, or <code class="inline">io_device</code>.</p></div>
         <span class="note">(since OTP R13B04)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/rb.erl#L267" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/rb.erl#L267" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -583,7 +603,7 @@ returned.</p><p>To filter only by dates, specify the empty list as the <code cla
       <h1 class="signature" translate="no">grep(RegExp)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/rb.erl#L214" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/rb.erl#L214" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -613,7 +633,7 @@ in STDLIB and in particular function <a href="../../apps/stdlib/re.html#run/3"><
       <h1 class="signature" translate="no">h()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/rb.erl#L289" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/rb.erl#L289" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -641,7 +661,7 @@ in STDLIB and in particular function <a href="../../apps/stdlib/re.html#run/3"><
       <h1 class="signature" translate="no">help()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/rb.erl#L296" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/rb.erl#L296" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -669,7 +689,7 @@ in STDLIB and in particular function <a href="../../apps/stdlib/re.html#run/3"><
       <h1 class="signature" translate="no">list()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/rb.erl#L145" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/rb.erl#L145" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -697,7 +717,7 @@ in STDLIB and in particular function <a href="../../apps/stdlib/re.html#run/3"><
       <h1 class="signature" translate="no">list(Type)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/rb.erl#L155" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/rb.erl#L155" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -728,7 +748,7 @@ that can be used as a reference to the report in function <a href="#show/1"><cod
         <span class="note">(since OTP R16B02)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/rb.erl#L160" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/rb.erl#L160" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -758,7 +778,7 @@ that can be used as a reference to the report in function <a href="#show/1"><cod
         <span class="note">(since OTP R16B02)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/rb.erl#L171" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/rb.erl#L171" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -787,7 +807,7 @@ if set; otherwise to <code class="inline">standard_io</code>.</p><p>If no <code 
       <h1 class="signature" translate="no">rescan()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/rb.erl#L133" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/rb.erl#L133" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -815,7 +835,7 @@ if set; otherwise to <code class="inline">standard_io</code>.</p><p>If no <code 
       <h1 class="signature" translate="no">rescan(Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/rb.erl#L140" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/rb.erl#L140" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -843,7 +863,7 @@ if set; otherwise to <code class="inline">standard_io</code>.</p><p>If no <code 
       <h1 class="signature" translate="no">show()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/rb.erl#L177" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/rb.erl#L177" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -871,7 +891,7 @@ if set; otherwise to <code class="inline">standard_io</code>.</p><p>If no <code 
       <h1 class="signature" translate="no">show(Report)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/rb.erl#L189" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/rb.erl#L189" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -902,7 +922,7 @@ this reference number is displayed.</p>
       <h1 class="signature" translate="no">start()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/rb.erl#L66" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/rb.erl#L66" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -930,7 +950,7 @@ this reference number is displayed.</p>
       <h1 class="signature" translate="no">start(Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/rb.erl#L113" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/rb.erl#L113" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -980,7 +1000,7 @@ location of an unprintable report.</li></ul></li></ul>
       <h1 class="signature" translate="no">start_log(FileName)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/rb.erl#L277" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/rb.erl#L277" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1009,7 +1029,7 @@ name, or <code class="inline">io_device</code>.</p>
       <h1 class="signature" translate="no">stop()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/rb.erl#L128" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/rb.erl#L128" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1037,7 +1057,7 @@ name, or <code class="inline">io_device</code>.</p>
       <h1 class="signature" translate="no">stop_log()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/sasl/src/rb.erl#L285" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/sasl/src/rb.erl#L285" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1063,8 +1083,8 @@ name, or <code class="inline">io_device</code>.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="sasl.epub" title="ePub version">
@@ -1076,7 +1096,7 @@ name, or <code class="inline">io_device</code>.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

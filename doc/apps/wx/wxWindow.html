@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="wx v2.5.2">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/wx/wxWindow.html" />
     <title>wxWindow — wx v2.5.2</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-B3665BE0.js"></script>
+    <script defer src="dist/sidebar_items-E2170433.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ wx
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of wx</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ wx
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L58" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L58" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -195,7 +213,7 @@ the mode set by <a href="wxUpdateUIEvent.html#setMode/1"><code class="inline">wx
 
       </div>
 
-        <div class="summary-synopsis"><p>Returns true if the system supports transparent windows and calling <a><code class="inline">setTransparent/2</code></a>
+        <div class="summary-synopsis"><p>Returns true if the system supports transparent windows and calling <a href="#setTransparent/2"><code class="inline">setTransparent/2</code></a>
 may succeed.</p></div>
 
     </div>
@@ -216,7 +234,7 @@ may succeed.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">center(This, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#center/2"><code class="inline">center(This, [])</code></a>.</p></div>
 
     </div>
 
@@ -226,7 +244,7 @@ may succeed.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to: <a><code class="inline">centre/2</code></a></p></div>
+        <div class="summary-synopsis"><p>Equivalent to: <a href="#centre/2"><code class="inline">centre/2</code></a></p></div>
 
     </div>
 
@@ -236,7 +254,7 @@ may succeed.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">centerOnParent(This, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#centerOnParent/2"><code class="inline">centerOnParent(This, [])</code></a>.</p></div>
 
     </div>
 
@@ -246,7 +264,7 @@ may succeed.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to: <a><code class="inline">centreOnParent/2</code></a></p></div>
+        <div class="summary-synopsis"><p>Equivalent to: <a href="#centreOnParent/2"><code class="inline">centreOnParent/2</code></a></p></div>
 
     </div>
 
@@ -256,7 +274,7 @@ may succeed.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">centre(This, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#centre/2"><code class="inline">centre(This, [])</code></a>.</p></div>
 
     </div>
 
@@ -276,7 +294,7 @@ may succeed.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">centreOnParent(This, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#centreOnParent/2"><code class="inline">centreOnParent(This, [])</code></a>.</p></div>
 
     </div>
 
@@ -326,7 +344,7 @@ may succeed.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">close(This, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#close/2"><code class="inline">close(This, [])</code></a>.</p></div>
 
     </div>
 
@@ -336,7 +354,7 @@ may succeed.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>This function simply generates a <a><code class="inline">wxCloseEvent</code></a> whose handler usually tries to close
+        <div class="summary-synopsis"><p>This function simply generates a <a href="wxCloseEvent.html"><code class="inline">wxCloseEvent</code></a> whose handler usually tries to close
 the window.</p></div>
 
     </div>
@@ -369,7 +387,7 @@ above function only in what argument(s) it accepts.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">create(This, Parent, Id, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#create/4"><code class="inline">create(This, Parent, Id, [])</code></a>.</p></div>
 
     </div>
 
@@ -439,7 +457,7 @@ above function only in what argument(s) it accepts.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">enable(This, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#enable/2"><code class="inline">enable(This, [])</code></a>.</p></div>
 
     </div>
 
@@ -479,7 +497,7 @@ above function only in what argument(s) it accepts.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">findWindowById(Id, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#findWindowById/2"><code class="inline">findWindowById(Id, [])</code></a>.</p></div>
 
     </div>
 
@@ -499,7 +517,7 @@ above function only in what argument(s) it accepts.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">findWindowByLabel(Label, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#findWindowByLabel/2"><code class="inline">findWindowByLabel(Label, [])</code></a>.</p></div>
 
     </div>
 
@@ -519,7 +537,7 @@ above function only in what argument(s) it accepts.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">findWindowByName(Name, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#findWindowByName/2"><code class="inline">findWindowByName(Name, [])</code></a>.</p></div>
 
     </div>
 
@@ -529,7 +547,7 @@ above function only in what argument(s) it accepts.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Find a window by its name (as given in a window constructor or <a><code class="inline">create/4</code></a> function call).</p></div>
+        <div class="summary-synopsis"><p>Find a window by its name (as given in a window constructor or <a href="#create/4"><code class="inline">create/4</code></a> function call).</p></div>
 
     </div>
 
@@ -549,7 +567,7 @@ above function only in what argument(s) it accepts.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Similar to <a><code class="inline">fit/1</code></a>, but sizes the interior (virtual) size of a window.</p></div>
+        <div class="summary-synopsis"><p>Similar to <a href="#fit/1"><code class="inline">fit/1</code></a>, but sizes the interior (virtual) size of a window.</p></div>
 
     </div>
 
@@ -945,7 +963,7 @@ or a top level one.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Returns the sizer associated with the window by a previous call to <a><code class="inline">setSizer/3</code></a>, or NULL.</p></div>
+        <div class="summary-synopsis"><p>Returns the sizer associated with the window by a previous call to <a href="#setSizer/3"><code class="inline">setSizer/3</code></a>, or NULL.</p></div>
 
     </div>
 
@@ -955,7 +973,7 @@ or a top level one.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">getTextExtent(This, String, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#getTextExtent/3"><code class="inline">getTextExtent(This, String, [])</code></a>.</p></div>
 
     </div>
 
@@ -1017,7 +1035,7 @@ selected font.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Gets the window style that was passed to the constructor or <a><code class="inline">create/4</code></a> method.</p></div>
+        <div class="summary-synopsis"><p>Gets the window style that was passed to the constructor or <a href="#create/4"><code class="inline">create/4</code></a> method.</p></div>
 
     </div>
 
@@ -1027,7 +1045,7 @@ selected font.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Returns the value previously passed to <a><code class="inline">setWindowVariant/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Returns the value previously passed to <a href="#setWindowVariant/2"><code class="inline">setWindowVariant/2</code></a>.</p></div>
 
     </div>
 
@@ -1057,7 +1075,7 @@ selected font.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Returns true if this window background is transparent (as, for example, for <a><code class="inline">wxStaticText</code></a>)
+        <div class="summary-synopsis"><p>Returns true if this window background is transparent (as, for example, for <a href="wxStaticText.html"><code class="inline">wxStaticText</code></a>)
 and should show the parent window background.</p></div>
 
     </div>
@@ -1068,7 +1086,7 @@ and should show the parent window background.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to calling <a><code class="inline">show/2</code></a>(false).</p></div>
+        <div class="summary-synopsis"><p>Equivalent to calling <a href="#show/2"><code class="inline">show/2</code></a>(false).</p></div>
 
     </div>
 
@@ -1166,7 +1184,7 @@ above function only in what argument(s) it accepts.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Returns true if the window is currently frozen by a call to <a><code class="inline">freeze/1</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Returns true if the window is currently frozen by a call to <a href="#freeze/1"><code class="inline">freeze/1</code></a>.</p></div>
 
     </div>
 
@@ -1227,7 +1245,7 @@ its parents up to the toplevel window are shown as well.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Same as <a><code class="inline">scrollLines/2</code></a> (1).</p></div>
+        <div class="summary-synopsis"><p>Same as <a href="#scrollLines/2"><code class="inline">scrollLines/2</code></a> (1).</p></div>
 
     </div>
 
@@ -1237,7 +1255,7 @@ its parents up to the toplevel window are shown as well.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Same as <a><code class="inline">scrollLines/2</code></a> (-1).</p></div>
+        <div class="summary-synopsis"><p>Same as <a href="#scrollLines/2"><code class="inline">scrollLines/2</code></a> (-1).</p></div>
 
     </div>
 
@@ -1257,7 +1275,7 @@ its parents up to the toplevel window are shown as well.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">move(This, Pt, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#move/3"><code class="inline">move(This, Pt, [])</code></a>.</p></div>
 
     </div>
 
@@ -1297,7 +1315,7 @@ its parents up to the toplevel window are shown as well.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Same as <a><code class="inline">moveAfterInTabOrder/2</code></a> except that it inserts this window just before <code class="inline">win</code>
+        <div class="summary-synopsis"><p>Same as <a href="#moveAfterInTabOrder/2"><code class="inline">moveAfterInTabOrder/2</code></a> except that it inserts this window just before <code class="inline">win</code>
 instead of putting it right after it.</p></div>
 
     </div>
@@ -1308,7 +1326,7 @@ instead of putting it right after it.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">navigate(This, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#navigate/2"><code class="inline">navigate(This, [])</code></a>.</p></div>
 
     </div>
 
@@ -1338,7 +1356,7 @@ instead of putting it right after it.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">new(Parent, Id, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#new/3"><code class="inline">new(Parent, Id, [])</code></a>.</p></div>
 
     </div>
 
@@ -1359,7 +1377,7 @@ window.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Same as <a><code class="inline">scrollPages/2</code></a> (1).</p></div>
+        <div class="summary-synopsis"><p>Same as <a href="#scrollPages/2"><code class="inline">scrollPages/2</code></a> (1).</p></div>
 
     </div>
 
@@ -1369,7 +1387,7 @@ window.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Same as <a><code class="inline">scrollPages/2</code></a> (-1).</p></div>
+        <div class="summary-synopsis"><p>Same as <a href="#scrollPages/2"><code class="inline">scrollPages/2</code></a> (-1).</p></div>
 
     </div>
 
@@ -1379,7 +1397,7 @@ window.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">popupMenu(This, Menu, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#popupMenu/3"><code class="inline">popupMenu(This, Menu, [])</code></a>.</p></div>
 
     </div>
 
@@ -1421,7 +1439,7 @@ above function only in what argument(s) it accepts.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">refresh(This, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#refresh/2"><code class="inline">refresh(This, [])</code></a>.</p></div>
 
     </div>
 
@@ -1442,7 +1460,7 @@ is not implemented), to be repainted.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">refreshRect(This, Rect, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#refreshRect/3"><code class="inline">refreshRect(This, Rect, [])</code></a>.</p></div>
 
     </div>
 
@@ -1462,7 +1480,7 @@ is not implemented), to be repainted.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Releases mouse input captured with <a><code class="inline">captureMouse/1</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Releases mouse input captured with <a href="#captureMouse/1"><code class="inline">captureMouse/1</code></a>.</p></div>
 
     </div>
 
@@ -1533,7 +1551,7 @@ is not implemented), to be repainted.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">scrollWindow(This, Dx, Dy, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#scrollWindow/4"><code class="inline">scrollWindow(This, Dx, Dy, [])</code></a>.</p></div>
 
     </div>
 
@@ -1563,7 +1581,7 @@ is not implemented), to be repainted.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Determines whether the <a><code class="inline">layout/1</code></a> function will be called automatically when the window
+        <div class="summary-synopsis"><p>Determines whether the <a href="#layout/1"><code class="inline">layout/1</code></a> function will be called automatically when the window
 is resized.</p></div>
 
     </div>
@@ -1625,7 +1643,7 @@ above function only in what argument(s) it accepts.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Used by <a><code class="inline">wxSizer</code></a> internally to notify the window about being managed by the given
+        <div class="summary-synopsis"><p>Used by <a href="wxSizer.html"><code class="inline">wxSizer</code></a> internally to notify the window about being managed by the given
 sizer.</p></div>
 
     </div>
@@ -1822,7 +1840,7 @@ children of this window.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">setScrollbar(This, Orientation, Position, ThumbSize, Range, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#setScrollbar/6"><code class="inline">setScrollbar(This, Orientation, Position, ThumbSize, Range, [])</code></a>.</p></div>
 
     </div>
 
@@ -1842,7 +1860,7 @@ children of this window.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">setScrollPos(This, Orientation, Pos, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#setScrollPos/4"><code class="inline">setScrollPos(This, Orientation, Pos, [])</code></a>.</p></div>
 
     </div>
 
@@ -1883,7 +1901,7 @@ above function only in what argument(s) it accepts.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">setSize(This, X, Y, Width, Height, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#setSize/6"><code class="inline">setSize(This, X, Y, Width, Height, [])</code></a>.</p></div>
 
     </div>
 
@@ -1903,7 +1921,7 @@ above function only in what argument(s) it accepts.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">setSizeHints(This, MinSize, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#setSizeHints/3"><code class="inline">setSizeHints(This, MinSize, [])</code></a>.</p></div>
 
     </div>
 
@@ -1913,7 +1931,7 @@ above function only in what argument(s) it accepts.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Use of this function for windows which are not toplevel windows (such as <a><code class="inline">wxDialog</code></a> or <a><code class="inline">wxFrame</code></a>)
+        <div class="summary-synopsis"><p>Use of this function for windows which are not toplevel windows (such as <a href="wxDialog.html"><code class="inline">wxDialog</code></a> or <a href="wxFrame.html"><code class="inline">wxFrame</code></a>)
 is discouraged.</p></div>
 
     </div>
@@ -1935,7 +1953,7 @@ above function only in what argument(s) it accepts.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">setSizer(This, Sizer, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#setSizer/3"><code class="inline">setSizer(This, Sizer, [])</code></a>.</p></div>
 
     </div>
 
@@ -1955,7 +1973,7 @@ above function only in what argument(s) it accepts.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">setSizerAndFit(This, Sizer, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#setSizerAndFit/3"><code class="inline">setSizerAndFit(This, Sizer, [])</code></a>.</p></div>
 
     </div>
 
@@ -2028,7 +2046,7 @@ above function only in what argument(s) it accepts.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>See <a><code class="inline">setWindowStyleFlag/2</code></a> for more info.</p></div>
+        <div class="summary-synopsis"><p>See <a href="#setWindowStyleFlag/2"><code class="inline">setWindowStyleFlag/2</code></a> for more info.</p></div>
 
     </div>
 
@@ -2058,7 +2076,7 @@ above function only in what argument(s) it accepts.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Return true from here to allow the colours of this window to be changed by <a><code class="inline">inheritAttributes/1</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Return true from here to allow the colours of this window to be changed by <a href="#inheritAttributes/1"><code class="inline">inheritAttributes/1</code></a>.</p></div>
 
     </div>
 
@@ -2068,7 +2086,7 @@ above function only in what argument(s) it accepts.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">show(This, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#show/2"><code class="inline">show(This, [])</code></a>.</p></div>
 
     </div>
 
@@ -2088,7 +2106,7 @@ above function only in what argument(s) it accepts.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Re-enables window updating after a previous call to <a><code class="inline">freeze/1</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Re-enables window updating after a previous call to <a href="#freeze/1"><code class="inline">freeze/1</code></a>.</p></div>
 
     </div>
 
@@ -2140,7 +2158,7 @@ the event loop).</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">updateWindowUI(This, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#updateWindowUI/2"><code class="inline">updateWindowUI(This, [])</code></a>.</p></div>
 
     </div>
 
@@ -2150,7 +2168,7 @@ the event loop).</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>This function sends one or more <a><code class="inline">wxUpdateUIEvent</code></a> to the window.</p></div>
+        <div class="summary-synopsis"><p>This function sends one or more <a href="wxUpdateUIEvent.html"><code class="inline">wxUpdateUIEvent</code></a> to the window.</p></div>
 
     </div>
 
@@ -2186,6 +2204,7 @@ the event loop).</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:wxWindow/0">
 
@@ -2197,7 +2216,7 @@ the event loop).</p></div>
       <h1 class="signature" translate="no">wxWindow()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L331" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L331" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2226,6 +2245,7 @@ the event loop).</p></div>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="cacheBestSize/2">
 
@@ -2237,7 +2257,7 @@ the event loop).</p></div>
       <h1 class="signature" translate="no">cacheBestSize(This, Size)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L428" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L428" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2265,7 +2285,7 @@ the event loop).</p></div>
       <h1 class="signature" translate="no">canSetTransparent(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L3246" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L3246" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2295,7 +2315,7 @@ current system.</p>
       <h1 class="signature" translate="no">captureMouse(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L455" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L455" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2329,7 +2349,7 @@ recapture mouse.</p><p>See:</p><ul><li><p><a href="#releaseMouse/1"><code class=
       <h1 class="signature" translate="no">center(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L463" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L463" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2357,7 +2377,7 @@ recapture mouse.</p><p>See:</p><ul><li><p><a href="#releaseMouse/1"><code class=
       <h1 class="signature" translate="no">center(This, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L480" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L480" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2385,7 +2405,7 @@ recapture mouse.</p><p>See:</p><ul><li><p><a href="#releaseMouse/1"><code class=
       <h1 class="signature" translate="no">centerOnParent(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L507" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L507" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2413,7 +2433,7 @@ recapture mouse.</p><p>See:</p><ul><li><p><a href="#releaseMouse/1"><code class=
       <h1 class="signature" translate="no">centerOnParent(This, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L524" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L524" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2441,7 +2461,7 @@ recapture mouse.</p><p>See:</p><ul><li><p><a href="#releaseMouse/1"><code class=
       <h1 class="signature" translate="no">centre(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L471" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L471" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2469,7 +2489,7 @@ recapture mouse.</p><p>See:</p><ul><li><p><a href="#releaseMouse/1"><code class=
       <h1 class="signature" translate="no">centre/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L495" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L495" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2498,7 +2518,7 @@ relative to the screen anyhow.</p><p>See: <a href="#center/2"><code class="inlin
       <h1 class="signature" translate="no">centreOnParent(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L515" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L515" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2526,7 +2546,7 @@ relative to the screen anyhow.</p><p>See: <a href="#center/2"><code class="inlin
       <h1 class="signature" translate="no">centreOnParent/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L542" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L542" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2556,7 +2576,7 @@ window, then behaviour is the same as <a href="#centre/2"><code class="inline">c
       <h1 class="signature" translate="no">clearBackground(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L562" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L562" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2587,7 +2607,7 @@ there instead.</p>
       <h1 class="signature" translate="no">clientToScreen(This, Pt)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L569" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L569" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2616,7 +2636,7 @@ there instead.</p>
       <h1 class="signature" translate="no">clientToScreen(This, X, Y)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L578" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L578" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2645,7 +2665,7 @@ there instead.</p>
       <h1 class="signature" translate="no">close(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L588" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L588" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2673,7 +2693,7 @@ there instead.</p>
       <h1 class="signature" translate="no">close/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L620" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L620" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2712,7 +2732,7 @@ window will be destroyed, call <a href="#Destroy/1"><code class="inline">'Destro
       <h1 class="signature" translate="no">convertDialogToPixels(This, Sz)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L635" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L635" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2742,7 +2762,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">convertPixelsToDialog(This, Sz)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L647" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L647" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2772,7 +2792,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">create(This, Parent, Id)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L375" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L375" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2801,7 +2821,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">create/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L409" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L409" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2847,7 +2867,7 @@ constructor parameters, please refer to them for their description.</p><p>Return
       <h1 class="signature" translate="no">'Destroy'(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L667" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L667" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2880,7 +2900,7 @@ the list of windows pending real deletion.</p>
       <h1 class="signature" translate="no">destroy(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L3421" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L3421" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2908,7 +2928,7 @@ the list of windows pending real deletion.</p>
       <h1 class="signature" translate="no">destroyChildren(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L679" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L679" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2936,7 +2956,7 @@ the list of windows pending real deletion.</p>
       <h1 class="signature" translate="no">disable(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L694" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L694" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2965,7 +2985,7 @@ disabled before the call to this function.</p>
       <h1 class="signature" translate="no">dragAcceptFiles(This, Accept)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L709" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L709" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2994,7 +3014,7 @@ be used together with <a href="#setDropTarget/2"><code class="inline">setDropTar
       <h1 class="signature" translate="no">enable(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L718" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L718" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3022,7 +3042,7 @@ be used together with <a href="#setDropTarget/2"><code class="inline">setDropTar
       <h1 class="signature" translate="no">enable/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L744" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L744" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3053,7 +3073,7 @@ done, i.e. if the window had already been in the specified state.</p><p>See:</p>
       <h1 class="signature" translate="no">findFocus()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L762" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L762" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3082,7 +3102,7 @@ pointer.</p><p>See: <a href="#setFocus/1"><code class="inline">setFocus/1</code>
       <h1 class="signature" translate="no">findWindow/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L778" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L778" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3112,7 +3132,7 @@ searched by this function.</p>
       <h1 class="signature" translate="no">findWindowById(Id)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L794" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L794" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3140,7 +3160,7 @@ searched by this function.</p>
       <h1 class="signature" translate="no">findWindowById(Id, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L812" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L812" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3170,7 +3190,7 @@ recursive in both cases.</p><p>See: <a href="#findWindow/2"><code class="inline"
       <h1 class="signature" translate="no">findWindowByLabel(Label)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L859" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L859" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3198,7 +3218,7 @@ recursive in both cases.</p><p>See: <a href="#findWindow/2"><code class="inline"
       <h1 class="signature" translate="no">findWindowByLabel(Label, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L880" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L880" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3230,7 +3250,7 @@ windows too.</p><p>See: <a href="#findWindow/2"><code class="inline">findWindow/
       <h1 class="signature" translate="no">findWindowByName(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L824" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L824" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3258,7 +3278,7 @@ windows too.</p><p>See: <a href="#findWindow/2"><code class="inline">findWindow/
       <h1 class="signature" translate="no">findWindowByName(Name, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L846" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L846" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3291,7 +3311,7 @@ name or <a href="#findWindowByLabel/2"><code class="inline">findWindowByLabel/2<
       <h1 class="signature" translate="no">fit(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L901" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L901" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3320,7 +3340,7 @@ its minimal size.</p><p>See: <a href="https://docs.wxwidgets.org/3.2/overview_wi
       <h1 class="signature" translate="no">fitInside(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L914" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L914" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3350,7 +3370,7 @@ similarly won't do anything if there are no subwindows.</p>
       <h1 class="signature" translate="no">freeze(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L940" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L940" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3384,7 +3404,7 @@ hint to wxWidgets and not a mandatory directive.</p><p>See:</p><ul><li><p><a hre
       <h1 class="signature" translate="no">fromDIP/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L3353" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L3353" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3430,7 +3450,7 @@ wxWidgets API (it is often used to mean &quot;unspecified&quot;).</p><p>Since: 3
       <h1 class="signature" translate="no">getAcceleratorTable(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L951" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L951" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3458,7 +3478,7 @@ wxWidgets API (it is often used to mean &quot;unspecified&quot;).</p><p>Since: 3
       <h1 class="signature" translate="no">getBackgroundColour(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L968" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L968" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3486,7 +3506,7 @@ wxWidgets API (it is often used to mean &quot;unspecified&quot;).</p><p>Since: 3
       <h1 class="signature" translate="no">getBackgroundStyle(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L988" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L988" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3514,7 +3534,7 @@ wxWidgets API (it is often used to mean &quot;unspecified&quot;).</p><p>Since: 3
       <h1 class="signature" translate="no">getBestSize(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1016" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1016" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3549,7 +3569,7 @@ calling <a href="#setMaxSize/2"><code class="inline">setMaxSize/2</code></a> wit
       <h1 class="signature" translate="no">getCapture()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1044" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1044" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3577,7 +3597,7 @@ calling <a href="#setMaxSize/2"><code class="inline">setMaxSize/2</code></a> wit
       <h1 class="signature" translate="no">getCaret(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1024" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1024" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3605,7 +3625,7 @@ calling <a href="#setMaxSize/2"><code class="inline">setMaxSize/2</code></a> wit
       <h1 class="signature" translate="no">getCharHeight(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1051" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1051" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3633,7 +3653,7 @@ calling <a href="#setMaxSize/2"><code class="inline">setMaxSize/2</code></a> wit
       <h1 class="signature" translate="no">getCharWidth(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1059" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1059" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3661,7 +3681,7 @@ calling <a href="#setMaxSize/2"><code class="inline">setMaxSize/2</code></a> wit
       <h1 class="signature" translate="no">getChildren(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1071" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1071" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3689,7 +3709,7 @@ calling <a href="#setMaxSize/2"><code class="inline">setMaxSize/2</code></a> wit
       <h1 class="signature" translate="no">getClientSize(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1082" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1082" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3718,7 +3738,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">getContainingSizer(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1090" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1090" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3746,7 +3766,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">getContentScaleFactor(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L3297" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L3297" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3785,7 +3805,7 @@ for the platforms without <code class="inline">wxHAVE_DPI_INDEPENDENT_PIXELS</co
       <h1 class="signature" translate="no">getCursor(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1102" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1102" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3813,7 +3833,7 @@ for the platforms without <code class="inline">wxHAVE_DPI_INDEPENDENT_PIXELS</co
       <h1 class="signature" translate="no">getDPI(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L3316" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L3316" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3842,7 +3862,7 @@ per-monitor DPI values, such as Microsoft Windows 10.</p><p>If the DPI is not av
       <h1 class="signature" translate="no">getDPIScaleFactor(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1142" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1142" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3875,7 +3895,7 @@ for anything window-related instead.</p><p>Since: 3.1.4</p>
       <h1 class="signature" translate="no">getDropTarget(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1117" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1117" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3903,7 +3923,7 @@ for anything window-related instead.</p><p>Since: 3.1.4</p>
       <h1 class="signature" translate="no">getExtraStyle(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1150" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1150" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3931,7 +3951,7 @@ for anything window-related instead.</p><p>Since: 3.1.4</p>
       <h1 class="signature" translate="no">getFont(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1162" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1162" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3959,7 +3979,7 @@ for anything window-related instead.</p><p>Since: 3.1.4</p>
       <h1 class="signature" translate="no">getForegroundColour(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1182" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1182" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3988,7 +4008,7 @@ the text colour or other colour, or it may not be used at all.</p><p>See:</p><ul
       <h1 class="signature" translate="no">getGrandParent(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1190" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1190" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4016,7 +4036,7 @@ the text colour or other colour, or it may not be used at all.</p><p>See:</p><ul
       <h1 class="signature" translate="no">getHandle(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1203" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1203" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4045,7 +4065,7 @@ for GTK.</p>
       <h1 class="signature" translate="no">getHelpText(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1218" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1218" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4074,7 +4094,7 @@ wx) implementation, and not in the window object itself.</p><p>See: <a href="#se
       <h1 class="signature" translate="no">getId(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1236" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1236" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4103,7 +4123,7 @@ wx) implementation, and not in the window object itself.</p><p>See: <a href="#se
       <h1 class="signature" translate="no">getLabel(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1251" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1251" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4134,7 +4154,7 @@ special-needs access programs) which need to identify windows by name.</p>
       <h1 class="signature" translate="no">getMaxSize(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1266" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1266" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4163,7 +4183,7 @@ size as well as the upper bound on window's size settable using <a href="#setSiz
       <h1 class="signature" translate="no">getMinSize(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1282" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1282" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4193,7 +4213,7 @@ calculation on demand.</p><p>See: <a href="https://docs.wxwidgets.org/3.2/overvi
       <h1 class="signature" translate="no">getName(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1297" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1297" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4222,7 +4242,7 @@ appropriate name in the window constructor or via <a href="#setName/2"><code cla
       <h1 class="signature" translate="no">getParent(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1305" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1305" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4250,7 +4270,7 @@ appropriate name in the window constructor or via <a href="#setName/2"><code cla
       <h1 class="signature" translate="no">getPosition(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1318" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1318" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4279,7 +4299,7 @@ child windows or relative to the display origin for the top level windows.</p><p
       <h1 class="signature" translate="no">getRect(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1330" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1330" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4308,7 +4328,7 @@ child windows or relative to the display origin for the top level windows.</p><p
       <h1 class="signature" translate="no">getScreenPosition(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1343" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1343" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4337,7 +4357,7 @@ or a top level one.</p><p>See: <a href="#getPosition/1"><code class="inline">get
       <h1 class="signature" translate="no">getScreenRect(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1355" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1355" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4366,7 +4386,7 @@ or a top level one.</p><p>See: <a href="#getPosition/1"><code class="inline">get
       <h1 class="signature" translate="no">getScrollPos(This, Orientation)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1367" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1367" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4394,7 +4414,7 @@ or a top level one.</p><p>See: <a href="#getPosition/1"><code class="inline">get
       <h1 class="signature" translate="no">getScrollRange(This, Orientation)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1380" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1380" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4422,7 +4442,7 @@ or a top level one.</p><p>See: <a href="#getPosition/1"><code class="inline">get
       <h1 class="signature" translate="no">getScrollThumb(This, Orientation)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1393" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1393" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4450,7 +4470,7 @@ or a top level one.</p><p>See: <a href="#getPosition/1"><code class="inline">get
       <h1 class="signature" translate="no">getSize(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1402" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1402" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4478,7 +4498,7 @@ or a top level one.</p><p>See: <a href="#getPosition/1"><code class="inline">get
       <h1 class="signature" translate="no">getSizer(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1410" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1410" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4506,7 +4526,7 @@ or a top level one.</p><p>See: <a href="#getPosition/1"><code class="inline">get
       <h1 class="signature" translate="no">getTextExtent(This, String)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1420" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1420" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4542,7 +4562,7 @@ or a top level one.</p><p>See: <a href="#getPosition/1"><code class="inline">get
       <h1 class="signature" translate="no">getTextExtent/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1434" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1434" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4580,7 +4600,7 @@ selected font.</p><p>The text extent is returned in the <code class="inline">w</
       <h1 class="signature" translate="no">getThemeEnabled(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1451" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1451" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4608,7 +4628,7 @@ selected font.</p><p>The text extent is returned in the <code class="inline">w</
       <h1 class="signature" translate="no">getToolTip(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1459" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1459" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4636,7 +4656,7 @@ selected font.</p><p>The text extent is returned in the <code class="inline">w</
       <h1 class="signature" translate="no">getUpdateRegion(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1475" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1475" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4666,7 +4686,7 @@ called within an <a href="wxPaintEvent.html"><code class="inline">wxPaintEvent</
       <h1 class="signature" translate="no">getVirtualSize(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1490" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1490" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4695,7 +4715,7 @@ the size set with that method.</p><p>See: <a href="https://docs.wxwidgets.org/3.
       <h1 class="signature" translate="no">getWindowStyleFlag(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1502" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1502" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4723,7 +4743,7 @@ the size set with that method.</p><p>See: <a href="https://docs.wxwidgets.org/3.
       <h1 class="signature" translate="no">getWindowVariant(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1511" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1511" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4751,7 +4771,7 @@ the size set with that method.</p><p>See: <a href="https://docs.wxwidgets.org/3.
       <h1 class="signature" translate="no">hasCapture(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1530" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1530" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4779,7 +4799,7 @@ the size set with that method.</p><p>See: <a href="https://docs.wxwidgets.org/3.
       <h1 class="signature" translate="no">hasScrollbar(This, Orient)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1544" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1544" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4809,7 +4829,7 @@ scrolling in this direction is not enabled at all, <a href="#hasScrollbar/2"><co
       <h1 class="signature" translate="no">hasTransparentBackground(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1560" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1560" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4840,7 +4860,7 @@ ensure that background is painted correctly.</p>
       <h1 class="signature" translate="no">hide(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1568" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1568" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4868,7 +4888,7 @@ ensure that background is painted correctly.</p>
       <h1 class="signature" translate="no">inheritAttributes(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1595" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1595" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4909,7 +4929,7 @@ inherit the parents attributes.</p>
       <h1 class="signature" translate="no">initDialog(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1605" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1605" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4938,7 +4958,7 @@ via validators.</p>
       <h1 class="signature" translate="no">invalidateBestSize(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1616" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1616" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4966,7 +4986,7 @@ via validators.</p>
       <h1 class="signature" translate="no">isDoubleBuffered(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L3260" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L3260" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4996,7 +5016,7 @@ screen all at once later.</p><p>See: <a href="wxBufferedDC.html"><code class="in
       <h1 class="signature" translate="no">isEnabled(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1646" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1646" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5026,7 +5046,7 @@ status of this window, use <code class="inline">IsThisEnabled()</code> (not impl
       <h1 class="signature" translate="no">isExposed/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1659" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1659" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5059,7 +5079,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">isExposed(This, X, Y)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1679" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1679" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5089,7 +5109,7 @@ which have been exposed.</p>
       <h1 class="signature" translate="no">isExposed(This, X, Y, W, H)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1691" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1691" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5124,7 +5144,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">isFrozen(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1630" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1630" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5152,7 +5172,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">isRetained(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1704" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1704" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5180,7 +5200,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">isShown(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1716" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1716" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5208,7 +5228,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">isShownOnScreen(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1742" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1742" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5237,7 +5257,7 @@ its parents up to the toplevel window are shown as well.</p><p>See: <a href="#is
       <h1 class="signature" translate="no">isTopLevel(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1729" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1729" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5266,7 +5286,7 @@ have a parent window).</p>
       <h1 class="signature" translate="no">layout(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1763" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1763" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5297,7 +5317,7 @@ is always laid out correctly.</p><p>See: <a href="https://docs.wxwidgets.org/3.2
       <h1 class="signature" translate="no">lineDown(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1771" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1771" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5325,7 +5345,7 @@ is always laid out correctly.</p><p>See: <a href="https://docs.wxwidgets.org/3.2
       <h1 class="signature" translate="no">lineUp(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1779" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1779" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5353,7 +5373,7 @@ is always laid out correctly.</p><p>See: <a href="https://docs.wxwidgets.org/3.2
       <h1 class="signature" translate="no">lower(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1793" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1793" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5381,7 +5401,7 @@ is always laid out correctly.</p><p>See: <a href="https://docs.wxwidgets.org/3.2
       <h1 class="signature" translate="no">move(This, Pt)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1801" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1801" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5409,7 +5429,7 @@ is always laid out correctly.</p><p>See: <a href="https://docs.wxwidgets.org/3.2
       <h1 class="signature" translate="no">move/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1819" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1819" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5443,7 +5463,7 @@ in the base <a href="wxWindow.html"><code class="inline">wxWindow</code></a> cla
       <h1 class="signature" translate="no">move/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1841" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1841" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5473,7 +5493,7 @@ defined in the base <a href="wxWindow.html"><code class="inline">wxWindow</code>
       <h1 class="signature" translate="no">moveAfterInTabOrder(This, Win)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1860" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1860" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5503,7 +5523,7 @@ after creating all the windows.</p>
       <h1 class="signature" translate="no">moveBeforeInTabOrder(This, Win)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1871" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1871" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5532,7 +5552,7 @@ instead of putting it right after it.</p>
       <h1 class="signature" translate="no">navigate(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1880" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1880" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5560,7 +5580,7 @@ instead of putting it right after it.</p>
       <h1 class="signature" translate="no">navigate/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1900" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1900" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5592,7 +5612,7 @@ to the next control. See also <a href="wxNavigationKeyEvent.html"><code class="i
       <h1 class="signature" translate="no">new()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L339" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L339" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5620,7 +5640,7 @@ to the next control. See also <a href="wxNavigationKeyEvent.html"><code class="i
       <h1 class="signature" translate="no">new(Parent, Id)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L347" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L347" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5648,7 +5668,7 @@ to the next control. See also <a href="wxNavigationKeyEvent.html"><code class="i
       <h1 class="signature" translate="no">new/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L360" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L360" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5684,7 +5704,7 @@ window.</p>
       <h1 class="signature" translate="no">pageDown(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1912" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1912" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5712,7 +5732,7 @@ window.</p>
       <h1 class="signature" translate="no">pageUp(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1920" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1920" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5740,7 +5760,7 @@ window.</p>
       <h1 class="signature" translate="no">popupMenu(This, Menu)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1929" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1929" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5768,7 +5788,7 @@ window.</p>
       <h1 class="signature" translate="no">popupMenu/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1958" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1958" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5807,7 +5827,7 @@ can do a better job of positioning the menu in that case.</p><p>See: <a href="wx
       <h1 class="signature" translate="no">popupMenu(This, Menu, X, Y)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1974" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1974" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5837,7 +5857,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">raise(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L1995" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L1995" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5868,7 +5888,7 @@ by flashing its icon if it is minimized.</p><p>Remark: This function only works 
       <h1 class="signature" translate="no">refresh(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2003" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2003" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5896,7 +5916,7 @@ by flashing its icon if it is minimized.</p><p>Remark: This function only works 
       <h1 class="signature" translate="no">refresh/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2020" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2020" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5931,7 +5951,7 @@ iteration, if you need to update the window immediately you should use <a href="
       <h1 class="signature" translate="no">refreshRect(This, Rect)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2033" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2033" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5962,7 +5982,7 @@ iteration, if you need to update the window immediately you should use <a href="
       <h1 class="signature" translate="no">refreshRect/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2046" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2046" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5995,7 +6015,7 @@ iteration, if you need to update the window immediately you should use <a href="
       <h1 class="signature" translate="no">releaseMouse(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2070" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2070" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6023,7 +6043,7 @@ iteration, if you need to update the window immediately you should use <a href="
       <h1 class="signature" translate="no">removeChild(This, Child)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2083" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2083" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6053,7 +6073,7 @@ shouldn't be called by the user code.</p>
       <h1 class="signature" translate="no">reparent(This, NewParent)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2098" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2098" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6082,7 +6102,7 @@ shouldn't be called by the user code.</p>
       <h1 class="signature" translate="no">screenToClient(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2107" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2107" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6110,7 +6130,7 @@ shouldn't be called by the user code.</p>
       <h1 class="signature" translate="no">screenToClient(This, Pt)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2115" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2115" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6139,7 +6159,7 @@ shouldn't be called by the user code.</p>
       <h1 class="signature" translate="no">scrollLines(This, Lines)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2134" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2134" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6169,7 +6189,7 @@ wxGTK (it also works for <code class="inline">wxScrolled</code> (not implemented
       <h1 class="signature" translate="no">scrollPages(This, Pages)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2152" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2152" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6198,7 +6218,7 @@ and nothing was done.</p><p>Remark: This function is currently only implemented 
       <h1 class="signature" translate="no">scrollWindow(This, Dx, Dy)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2162" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2162" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6226,7 +6246,7 @@ and nothing was done.</p><p>Remark: This function is currently only implemented 
       <h1 class="signature" translate="no">scrollWindow/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2175" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2175" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6261,7 +6281,7 @@ this function directly.</p>
       <h1 class="signature" translate="no">setAcceleratorTable(This, Accel)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2190" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2190" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6290,7 +6310,7 @@ this function directly.</p>
       <h1 class="signature" translate="no">setAutoLayout(This, AutoLayout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2207" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2207" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6321,7 +6341,7 @@ updated when its size changes.</p><p>See: <a href="#setSizer/3"><code class="inl
       <h1 class="signature" translate="no">setBackgroundColour(This, Colour)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2247" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2247" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6356,7 +6376,7 @@ and nothing was done.</p><p>See:</p><ul><li><p><a href="#getBackgroundColour/1">
       <h1 class="signature" translate="no">setBackgroundStyle(This, Style)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2292" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2292" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6402,7 +6422,7 @@ in the following way:</p><p>See:</p><ul><li><p><a href="#setBackgroundColour/2">
       <h1 class="signature" translate="no">setCaret(This, Caret)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2301" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2301" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6430,7 +6450,7 @@ in the following way:</p><p>See:</p><ul><li><p><a href="#setBackgroundColour/2">
       <h1 class="signature" translate="no">setClientSize/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2314" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2314" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6463,7 +6483,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">setClientSize(This, Width, Height)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2334" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2334" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6494,7 +6514,7 @@ to fit the window around panel items, for example.</p><p>See: <a href="https://d
       <h1 class="signature" translate="no">setContainingSizer(This, Sizer)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2350" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2350" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6526,7 +6546,7 @@ is removed from it.</p>
       <h1 class="signature" translate="no">setCursor(This, Cursor)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2369" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2369" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6554,7 +6574,7 @@ is removed from it.</p>
       <h1 class="signature" translate="no">setDoubleBuffered(This, On)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L3268" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L3268" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6582,7 +6602,7 @@ is removed from it.</p>
       <h1 class="signature" translate="no">setDropTarget(This, Target)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2468" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2468" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6610,7 +6630,7 @@ is removed from it.</p>
       <h1 class="signature" translate="no">setExtraStyle(This, ExStyle)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2480" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2480" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6638,7 +6658,7 @@ is removed from it.</p>
       <h1 class="signature" translate="no">setFocus(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2497" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2497" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6666,7 +6686,7 @@ is removed from it.</p>
       <h1 class="signature" translate="no">setFocusFromKbd(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2510" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2510" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6696,7 +6716,7 @@ this in the derived classes.</p>
       <h1 class="signature" translate="no">setFont(This, Font)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2534" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2534" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6728,7 +6748,7 @@ nothing was done.</p><p>See:</p><ul><li><p><a href="#getFont/1"><code class="inl
       <h1 class="signature" translate="no">setForegroundColour(This, Colour)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2564" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2564" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6760,7 +6780,7 @@ and nothing was done.</p><p>See:</p><ul><li><p><a href="#getForegroundColour/1">
       <h1 class="signature" translate="no">setHelpText(This, HelpText)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2580" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2580" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6789,7 +6809,7 @@ wx) implementation, and not in the window object itself.</p><p>See: <a href="#ge
       <h1 class="signature" translate="no">setId(This, Winid)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2600" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2600" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6819,7 +6839,7 @@ and should not be modified subsequently.</p><p>See:</p><ul><li><p><a href="#getI
       <h1 class="signature" translate="no">setLabel(This, Label)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2612" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2612" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6847,7 +6867,7 @@ and should not be modified subsequently.</p><p>See:</p><ul><li><p><a href="#getI
       <h1 class="signature" translate="no">setMaxSize(This, Size)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2383" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2383" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6876,7 +6896,7 @@ is the maximum possible size.</p><p>See: <a href="https://docs.wxwidgets.org/3.2
       <h1 class="signature" translate="no">setMinSize(This, Size)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2403" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2403" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6908,7 +6928,7 @@ become smaller than this size during the automatic layout.</p><p>See: <a href="h
       <h1 class="signature" translate="no">setName(This, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2625" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2625" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6936,7 +6956,7 @@ become smaller than this size during the automatic layout.</p><p>See: <a href="h
       <h1 class="signature" translate="no">setOwnBackgroundColour(This, Colour)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2419" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2419" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6965,7 +6985,7 @@ children of this window.</p><p>See:</p><ul><li><p><a href="#setBackgroundColour/
       <h1 class="signature" translate="no">setOwnFont(This, Font)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2435" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2435" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6994,7 +7014,7 @@ window.</p><p>See:</p><ul><li><p><a href="#setFont/2"><code class="inline">setFo
       <h1 class="signature" translate="no">setOwnForegroundColour(This, Colour)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2451" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2451" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7023,7 +7043,7 @@ children of this window.</p><p>See:</p><ul><li><p><a href="#setForegroundColour/
       <h1 class="signature" translate="no">setPalette(This, Pal)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2638" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2638" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7051,7 +7071,7 @@ children of this window.</p><p>See:</p><ul><li><p><a href="#setForegroundColour/
       <h1 class="signature" translate="no">setScrollbar(This, Orientation, Position, ThumbSize, Range)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2647" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2647" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7085,7 +7105,7 @@ children of this window.</p><p>See:</p><ul><li><p><a href="#setForegroundColour/
       <h1 class="signature" translate="no">setScrollbar/6</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2673" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2673" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7127,7 +7147,7 @@ AdjustScrollbars, which can be called initially and also from your <a href="wxSi
       <h1 class="signature" translate="no">setScrollPos(This, Orientation, Pos)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2685" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2685" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7156,7 +7176,7 @@ AdjustScrollbars, which can be called initially and also from your <a href="wxSi
       <h1 class="signature" translate="no">setScrollPos/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2707" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2707" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7190,7 +7210,7 @@ the application to take note of scrollbar attributes and redraw contents accordi
       <h1 class="signature" translate="no">setSize/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2724" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2724" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7223,7 +7243,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">setSize/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2749" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2749" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7257,7 +7277,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">setSize(This, X, Y, Width, Height)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2765" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2765" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7291,7 +7311,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">setSize/6</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2784" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2784" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7328,7 +7348,7 @@ or that the current value of the dimension should be used.</p><p>See:</p><ul><li
       <h1 class="signature" translate="no">setSizeHints(This, MinSize)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2796" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2796" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7357,7 +7377,7 @@ or that the current value of the dimension should be used.</p><p>See:</p><ul><li
       <h1 class="signature" translate="no">setSizeHints/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2818" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2818" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7393,7 +7413,7 @@ is discouraged.</p><p>Please use <a href="#setMinSize/2"><code class="inline">se
       <h1 class="signature" translate="no">setSizeHints/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2840" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2840" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7431,7 +7451,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">setSizer(This, Sizer)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2855" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2855" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7459,7 +7479,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">setSizer/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2875" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2875" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7492,7 +7512,7 @@ window children whenever it is resized.</p><p>Remark: SetSizer enables and disab
       <h1 class="signature" translate="no">setSizerAndFit(This, Sizer)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2888" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2888" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7520,7 +7540,7 @@ window children whenever it is resized.</p><p>Remark: SetSizer enables and disab
       <h1 class="signature" translate="no">setSizerAndFit/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2903" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2903" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7555,7 +7575,7 @@ window which can be directly resized by the user).</p>
       <h1 class="signature" translate="no">setThemeEnabled(This, Enable)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2927" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2927" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7587,7 +7607,7 @@ the default look and feel is simulated best.</p><p>See: <a href="#getThemeEnable
       <h1 class="signature" translate="no">setToolTip/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2940" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2940" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7617,7 +7637,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">setTransparent(This, Alpha)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L3231" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L3231" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7648,7 +7668,7 @@ can be used.</p>
       <h1 class="signature" translate="no">setVirtualSize(This, Size)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2956" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2956" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7677,7 +7697,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">setVirtualSize(This, Width, Height)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2968" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2968" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7706,7 +7726,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">setWindowStyle(This, Style)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2976" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2976" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7734,7 +7754,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">setWindowStyleFlag(This, Style)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L2993" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L2993" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7763,7 +7783,7 @@ need to be called after changing the others for the change to take place immedia
       <h1 class="signature" translate="no">setWindowVariant(This, Variant)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L3013" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L3013" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7796,7 +7816,7 @@ the font size.</p><p>By default the controls naturally use the normal variant.</
       <h1 class="signature" translate="no">shouldInheritColours(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L3028" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L3028" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7825,7 +7845,7 @@ where it returns true.</p>
       <h1 class="signature" translate="no">show(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L3037" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L3037" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7853,7 +7873,7 @@ where it returns true.</p>
       <h1 class="signature" translate="no">show/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L3066" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L3066" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7885,7 +7905,7 @@ it already was in the requested state.</p><p>See:</p><ul><li><p><a href="#isShow
       <h1 class="signature" translate="no">thaw(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L3089" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L3089" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7913,7 +7933,7 @@ it already was in the requested state.</p><p>See:</p><ul><li><p><a href="#isShow
       <h1 class="signature" translate="no">toDIP/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L3398" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L3398" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7953,7 +7973,7 @@ wxWidgets API (it is often used to mean &quot;unspecified&quot;).</p><p>Since: 3
       <h1 class="signature" translate="no">transferDataFromWindow(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L3107" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L3107" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -7981,7 +8001,7 @@ wxWidgets API (it is often used to mean &quot;unspecified&quot;).</p><p>Since: 3
       <h1 class="signature" translate="no">transferDataToWindow(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L3126" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L3126" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -8009,7 +8029,7 @@ wxWidgets API (it is often used to mean &quot;unspecified&quot;).</p><p>Since: 3
       <h1 class="signature" translate="no">update(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L3142" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L3142" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -8041,7 +8061,7 @@ to immediately redraw the window unconditionally.</p>
       <h1 class="signature" translate="no">updateWindowUI(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L3150" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L3150" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -8069,7 +8089,7 @@ to immediately redraw the window unconditionally.</p>
       <h1 class="signature" translate="no">updateWindowUI/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L3178" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L3178" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -8107,7 +8127,7 @@ of how to call UpdateWindowUI from an idle function.</p><p>See: <a href="wxUpdat
       <h1 class="signature" translate="no">validate(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L3200" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L3200" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -8135,7 +8155,7 @@ of how to call UpdateWindowUI from an idle function.</p><p>See: <a href="wxUpdat
       <h1 class="signature" translate="no">warpPointer(This, X, Y)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxWindow.erl#L3214" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxWindow.erl#L3214" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -8163,8 +8183,8 @@ under the other platforms without good reason as well).</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="wx.epub" title="ePub version">
@@ -8176,7 +8196,7 @@ under the other platforms without good reason as well).</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

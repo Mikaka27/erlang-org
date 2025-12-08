@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="kernel v10.4.2">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/kernel/global.html" />
     <title>global — kernel v10.4.2</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-87F8FB49.js"></script>
+    <script defer src="dist/sidebar_items-D3B3E40C.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ kernel
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of kernel</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ kernel
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/global.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/global.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -210,7 +228,7 @@ the value of <code class="inline">net_setuptime</code>.</p></section><h2 id="mod
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">del_lock(Id, [node() | nodes()])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#del_lock/2"><code class="inline">del_lock(Id, [node() | nodes()])</code></a>.</p></div>
 
     </div>
 
@@ -273,7 +291,7 @@ message <code class="inline">{global_name_conflict, Name}</code> to the other pi
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">re_register_name(Name, Pid, fun random_exit_name/3)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#re_register_name/3"><code class="inline">re_register_name(Name, Pid, fun random_exit_name/3)</code></a>.</p></div>
 
     </div>
 
@@ -293,7 +311,7 @@ message <code class="inline">{global_name_conflict, Name}</code> to the other pi
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">register_name(Name, Pid, fun random_exit_name/3)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#register_name/3"><code class="inline">register_name(Name, Pid, fun random_exit_name/3)</code></a>.</p></div>
 
     </div>
 
@@ -334,7 +352,7 @@ of a new global name in a network of Erlang nodes.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">set_lock(Id, [node() | nodes()], infinity)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#set_lock/3"><code class="inline">set_lock(Id, [node() | nodes()], infinity)</code></a>.</p></div>
 
     </div>
 
@@ -344,7 +362,7 @@ of a new global name in a network of Erlang nodes.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">set_lock(Id, Nodes, infinity)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#set_lock/3"><code class="inline">set_lock(Id, Nodes, infinity)</code></a>.</p></div>
 
     </div>
 
@@ -354,7 +372,7 @@ of a new global name in a network of Erlang nodes.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Sets a lock on the specified nodes on using <a><code class="inline">id/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Sets a lock on the specified nodes on using <a href="#t:id/0"><code class="inline">id/0</code></a>.</p></div>
 
     </div>
 
@@ -374,7 +392,7 @@ of a new global name in a network of Erlang nodes.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">trans(Id, Fun, [node() | nodes()], infinity)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#trans/4"><code class="inline">trans(Id, Fun, [node() | nodes()], infinity)</code></a>.</p></div>
 
     </div>
 
@@ -384,7 +402,7 @@ of a new global name in a network of Erlang nodes.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">trans(Id, Fun, Nodes, infinity)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#trans/4"><code class="inline">trans(Id, Fun, Nodes, infinity)</code></a>.</p></div>
 
     </div>
 
@@ -394,7 +412,7 @@ of a new global name in a network of Erlang nodes.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Sets a lock on <code class="inline">Id</code> (using <a><code class="inline">set_lock/3</code></a>).</p></div>
+        <div class="summary-synopsis"><p>Sets a lock on <code class="inline">Id</code> (using <a href="#set_lock/3"><code class="inline">set_lock/3</code></a>).</p></div>
 
     </div>
 
@@ -431,6 +449,7 @@ the name is not globally registered.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:id/0">
 
@@ -444,7 +463,7 @@ the name is not globally registered.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/global.erl#L577" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/global.erl#L577" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -474,7 +493,7 @@ the name is not globally registered.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/global.erl#L405" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/global.erl#L405" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -504,7 +523,7 @@ the name is not globally registered.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/global.erl#L585" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/global.erl#L585" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -534,7 +553,7 @@ the name is not globally registered.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/global.erl#L666" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/global.erl#L666" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -563,6 +582,7 @@ the name is not globally registered.</p></div>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="del_lock/1">
 
@@ -574,7 +594,7 @@ the name is not globally registered.</p></div>
       <h1 class="signature" translate="no">del_lock(Id)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/global.erl#L654" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/global.erl#L654" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -602,7 +622,7 @@ the name is not globally registered.</p></div>
       <h1 class="signature" translate="no">del_lock(Id, Nodes)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/global.erl#L661" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/global.erl#L661" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -632,7 +652,7 @@ the name is not globally registered.</p></div>
         <span class="note">(since OTP 25.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/global.erl#L763" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/global.erl#L763" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -688,7 +708,7 @@ These are in this case completely harmless and can be ignored.</p>
       <h1 class="signature" translate="no">notify_all_name(Name, Pid1, Pid2)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/global.erl#L2938" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/global.erl#L2938" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -718,7 +738,7 @@ These are in this case completely harmless and can be ignored.</p>
       <h1 class="signature" translate="no">random_exit_name(Name, Pid1, Pid2)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/global.erl#L2904" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/global.erl#L2904" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -748,7 +768,7 @@ other one.</p><p>Can be used as a name resolving function for <a href="#register
       <h1 class="signature" translate="no">random_notify_name(Name, Pid1, Pid2)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/global.erl#L2922" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/global.erl#L2922" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -778,7 +798,7 @@ message <code class="inline">{global_name_conflict, Name}</code> to the other pi
       <h1 class="signature" translate="no">re_register_name(Name, Pid)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/global.erl#L506" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/global.erl#L506" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -806,7 +826,7 @@ message <code class="inline">{global_name_conflict, Name}</code> to the other pi
       <h1 class="signature" translate="no">re_register_name(Name, Pid, Resolve)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/global.erl#L519" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/global.erl#L519" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -835,7 +855,7 @@ message <code class="inline">{global_name_conflict, Name}</code> to the other pi
       <h1 class="signature" translate="no">register_name(Name, Pid)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/global.erl#L402" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/global.erl#L402" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -863,7 +883,7 @@ message <code class="inline">{global_name_conflict, Name}</code> to the other pi
       <h1 class="signature" translate="no">register_name(Name, Pid, Resolve)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/global.erl#L452" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/global.erl#L452" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -911,7 +931,7 @@ unregistered on all nodes.</p>
       <h1 class="signature" translate="no">registered_names()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/global.erl#L533" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/global.erl#L533" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -939,7 +959,7 @@ unregistered on all nodes.</p>
       <h1 class="signature" translate="no">send(Name, Msg)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/global.erl#L366" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/global.erl#L366" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -968,7 +988,7 @@ reason <code class="inline">{badarg, {Name, Msg}}</code>.</p>
       <h1 class="signature" translate="no">set_lock(Id)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/global.erl#L582" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/global.erl#L582" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -996,7 +1016,7 @@ reason <code class="inline">{badarg, {Name, Msg}}</code>.</p>
       <h1 class="signature" translate="no">set_lock(Id, Nodes)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/global.erl#L591" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/global.erl#L591" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1024,7 +1044,7 @@ reason <code class="inline">{badarg, {Name, Msg}}</code>.</p>
       <h1 class="signature" translate="no">set_lock(Id, Nodes, Retries)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/global.erl#L630" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/global.erl#L630" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1062,7 +1082,7 @@ properly:</p><ul><li><code class="inline">dist_ac</code></li><li><code class="in
       <h1 class="signature" translate="no">sync()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/global.erl#L338" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/global.erl#L338" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1093,7 +1113,7 @@ all nodes. This function can be called when new nodes are added to the network.<
       <h1 class="signature" translate="no">trans(Id, Fun)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/global.erl#L673" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/global.erl#L673" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1121,7 +1141,7 @@ all nodes. This function can be called when new nodes are added to the network.<
       <h1 class="signature" translate="no">trans(Id, Fun, Nodes)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/global.erl#L681" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/global.erl#L681" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1150,7 +1170,7 @@ all nodes. This function can be called when new nodes are added to the network.<
       <h1 class="signature" translate="no">trans(Id, Fun, Nodes, Retries)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/global.erl#L699" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/global.erl#L699" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1187,7 +1207,7 @@ the transaction does not abort.</p><p><code class="inline">infinity</code> is th
       <h1 class="signature" translate="no">unregister_name(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/global.erl#L487" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/global.erl#L487" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1215,7 +1235,7 @@ the transaction does not abort.</p><p><code class="inline">infinity</code> is th
       <h1 class="signature" translate="no">whereis_name(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/global.erl#L382" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/global.erl#L382" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1242,8 +1262,8 @@ the name is not globally registered.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="kernel.epub" title="ePub version">
@@ -1255,7 +1275,7 @@ the name is not globally registered.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

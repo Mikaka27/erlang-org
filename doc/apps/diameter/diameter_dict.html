@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="diameter v2.5.2">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/diameter/diameter_dict.html" />
     <title>diameter_dict — diameter v2.5.2</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-24C2EAB1.js"></script>
+    <script defer src="dist/sidebar_items-1ACE508A.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ diameter
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of diameter</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -84,7 +102,7 @@ diameter
     <h1>diameter_dict</h1>
 
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/diameter/doc/references/diameter_dict.md#L1" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/diameter/doc/references/diameter_dict.md#L1" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -156,7 +174,25 @@ inherited dictionary. In particular, <code class="inline">@avp_vendor_id</code> 
 dictionary is ignored. Inheriting from a dictionary that specifies the
 required <code class="inline">@vendor</code> is equivalent to using <code class="inline">@avp_vendor_id</code> with a copy of the
 dictionary's definitions but the former makes for easier reuse.</p><p>All dictionaries should typically inherit RFC 6733 AVPs from
-<code class="inline">diameter_gen_base_rfc6733</code>.</p><p>Example:</p><pre><code class="text">@inherits diameter_gen_base_rfc6733</code></pre></li><li><p><strong><code class="inline" id="avp_types">@avp_types</code></strong> - Defines the name, code, type and flags of
+<code class="inline">diameter_gen_base_rfc6733</code>.</p><p>Example:</p><pre><code class="text">@inherits diameter_gen_base_rfc6733</code></pre><p>When using the <code class="inline">indirect_inherits</code> option from <a href="diameter_make.html#codec/2">codec/2</a>, 
+only <code class="inline">@vendor</code> from the dictionary that defined the AVPs and <code class="inline">@avp_vendor_id</code>
+in the currently compiled dictionary is used. All other dictionaries along the
+chain are ignored, so for example:</p><p><code class="inline">a.dia</code>:</p><pre><code class="text">@vendor 1 A
+@avp_types
+    AAA 111 Unsigned32 V
+    BBB 222 Unsigned32 V</code></pre><p><code class="inline">a.dia</code> will see:</p><ul><li>AAA vendor_id = 1</li><li>BBB vendor_id = 1</li></ul><p><code class="inline">b.dia</code>:</p><pre><code class="text">@vendor 2 B
+@avp_types
+    CCC 333 Unsigned32 V
+@inherits diameter_a
+@avp_vendor_id 4
+    AAA</code></pre><p><code class="inline">b.dia</code> will see:</p><ul><li>AAA vendor_id = 4</li><li>BBB vendor_id = 1</li><li>CCC vendor_id = 2</li></ul><p><code class="inline">c.dia</code>:</p><pre><code class="text">@vendor 3 C
+@avp_types
+    DDD 444 Unsigned32 V
+@inherits diameter_b
+@avp_vendor_id 5
+    BBB
+    CCC</code></pre><p><code class="inline">c.dia</code> will see:</p><ul><li>AAA vendor_id = 1</li><li>BBB vendor_id = 5</li><li>CCC vendor_id = 5</li><li>DDD vendor_id = 3</li></ul><p>In particular <code class="inline">b.dia</code>'s override of <code class="inline">AAA</code> to vendor_id = 4 is ignored by <code class="inline">c.dia</code> and <code class="inline">AAA</code> is
+back to having vendor_id = 1.</p></li><li><p><strong><code class="inline" id="avp_types">@avp_types</code></strong> - Defines the name, code, type and flags of
 individual AVPs. The section consists of definitions of the form</p><p><code class="inline">Name Code Type Flags</code></p><p>where Code is the integer AVP code, Type identifies an AVP Data Format as
 defined in section <a href="diameter_dict.html#DATA_TYPES">DATA TYPES</a> below, and Flags
 is a string of V, M and P characters indicating the flags to be set on an
@@ -226,7 +262,20 @@ another dictionary.</p><p>Example:</p><pre><code class="text">@enum SIP-Reason-C
 PERMANENT_TERMINATION    0
 NEW_SIP_SERVER_ASSIGNED  1
 SIP_SERVER_CHANGE        2
-REMOVE_SIP_SERVER        3</code></pre></li><li><p><strong><code class="inline" id="end">@end</code></strong> - Causes parsing of the dictionary to terminate: any
+REMOVE_SIP_SERVER        3</code></pre><p>If <code class="inline">indirect_inherits</code> option from <a href="diameter_make.html#codec/2">codec/2</a> is used,
+new enum values can also be added in each <code class="inline">.dia</code> file along the inheritance chain,
+example:</p><p><code class="inline">a.dia</code>:</p><pre><code class="text">@avp_types
+    AAA 111 Enumerated V
+@enum AAA
+    A 0
+    B 1</code></pre><p><code class="inline">a.dia</code> will see following enum values:</p><ul><li>A 0</li><li>B 1</li></ul><p><code class="inline">b.dia</code>:</p><pre><code class="text">@inherits diameter_a
+@enum AAA
+    C 2
+    D 3</code></pre><p><code class="inline">b.dia</code> will see following enum values:</p><ul><li>A 0</li><li>B 1</li><li>C 2</li><li>D 3</li></ul><p><code class="inline">c.dia</code>:</p><pre><code class="text">@inherits diameter_b
+@enum AAA
+    E 4
+    F 5</code></pre><p><code class="inline">c.dia</code> will see:</p><ul><li>A 0</li><li>B 1</li><li>C 2</li><li>D 3</li><li>E 4</li><li>F 5</li></ul><p>Warning: messages are not shown in this example, but it is required to add
+enum AVPs to messages in order for the code to encode/decode them to be generated!</p></li><li><p><strong><code class="inline" id="end">@end</code></strong> - Causes parsing of the dictionary to terminate: any
 remaining content is ignored.</p></li></ul><p>Comments can be included in a dictionary file using semicolon: characters from a
 semicolon to end of line are ignored.</p><p><a href="" id="MESSAGE_RECORDS"></a></p><h2 id="message-records" class="section-heading"><a href="#message-records" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">MESSAGE RECORDS</span></h2><p>The hrl generated from a dictionary specification defines records for the
 messages and grouped AVPs defined in <code class="inline">@messages</code> and <code class="inline">@grouped</code> sections. For
@@ -252,14 +301,14 @@ sending a request, returned in a resulting answer record and passed to a
 an incoming request.</p><p>In cases in which there is a choice between string() and binary() types for
 OctetString() and derived types, the representation is determined by the value
 of <a href="diameter.html#service_opt">diameter:service_opt()</a>
-<a href="diameter.html#string_decode">string_decode</a>.</p><p><em>Basic AVP Data Formats</em></p><pre><code class="makeup erlang" translate="no"><span class="n">OctetString</span><span class="p" data-group-id="1915164263-1">(</span><span class="p" data-group-id="1915164263-1">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">string</span><span class="p" data-group-id="1915164263-2">(</span><span class="p" data-group-id="1915164263-2">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">binary</span><span class="p" data-group-id="1915164263-3">(</span><span class="p" data-group-id="1915164263-3">)</span><span class="w">
-</span><span class="n">Integer32</span><span class="p" data-group-id="1915164263-4">(</span><span class="p" data-group-id="1915164263-4">)</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">2147483647</span><span class="p">.</span><span class="p">.</span><span class="mi">2147483647</span><span class="w">
-</span><span class="n">Integer64</span><span class="p" data-group-id="1915164263-5">(</span><span class="p" data-group-id="1915164263-5">)</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">9223372036854775807</span><span class="p">.</span><span class="p">.</span><span class="mi">9223372036854775807</span><span class="w">
-</span><span class="n">Unsigned32</span><span class="p" data-group-id="1915164263-6">(</span><span class="p" data-group-id="1915164263-6">)</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="p">.</span><span class="mi">4294967295</span><span class="w">
-</span><span class="n">Unsigned64</span><span class="p" data-group-id="1915164263-7">(</span><span class="p" data-group-id="1915164263-7">)</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="p">.</span><span class="mi">18446744073709551615</span><span class="w">
-</span><span class="n">Float32</span><span class="p" data-group-id="1915164263-8">(</span><span class="p" data-group-id="1915164263-8">)</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="ss">&#39;-infinity&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">float</span><span class="p" data-group-id="1915164263-9">(</span><span class="p" data-group-id="1915164263-9">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="ss">infinity</span><span class="w">
-</span><span class="n">Float64</span><span class="p" data-group-id="1915164263-10">(</span><span class="p" data-group-id="1915164263-10">)</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="ss">&#39;-infinity&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">float</span><span class="p" data-group-id="1915164263-11">(</span><span class="p" data-group-id="1915164263-11">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="ss">infinity</span><span class="w">
-</span><span class="n">Grouped</span><span class="p" data-group-id="1915164263-12">(</span><span class="p" data-group-id="1915164263-12">)</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nf">record</span><span class="p" data-group-id="1915164263-13">(</span><span class="p" data-group-id="1915164263-13">)</span></code></pre><p>On encode, an OctetString() can be specified as an iolist(), excessively large
+<a href="diameter.html#string_decode">string_decode</a>.</p><p><em>Basic AVP Data Formats</em></p><pre><code class="makeup erlang" translate="no"><span class="n">OctetString</span><span class="p" data-group-id="1906454501-1">(</span><span class="p" data-group-id="1906454501-1">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">string</span><span class="p" data-group-id="1906454501-2">(</span><span class="p" data-group-id="1906454501-2">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">binary</span><span class="p" data-group-id="1906454501-3">(</span><span class="p" data-group-id="1906454501-3">)</span><span class="w">
+</span><span class="n">Integer32</span><span class="p" data-group-id="1906454501-4">(</span><span class="p" data-group-id="1906454501-4">)</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">2147483647</span><span class="p">.</span><span class="p">.</span><span class="mi">2147483647</span><span class="w">
+</span><span class="n">Integer64</span><span class="p" data-group-id="1906454501-5">(</span><span class="p" data-group-id="1906454501-5">)</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">9223372036854775807</span><span class="p">.</span><span class="p">.</span><span class="mi">9223372036854775807</span><span class="w">
+</span><span class="n">Unsigned32</span><span class="p" data-group-id="1906454501-6">(</span><span class="p" data-group-id="1906454501-6">)</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="p">.</span><span class="mi">4294967295</span><span class="w">
+</span><span class="n">Unsigned64</span><span class="p" data-group-id="1906454501-7">(</span><span class="p" data-group-id="1906454501-7">)</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="p">.</span><span class="mi">18446744073709551615</span><span class="w">
+</span><span class="n">Float32</span><span class="p" data-group-id="1906454501-8">(</span><span class="p" data-group-id="1906454501-8">)</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="ss">&#39;-infinity&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">float</span><span class="p" data-group-id="1906454501-9">(</span><span class="p" data-group-id="1906454501-9">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="ss">infinity</span><span class="w">
+</span><span class="n">Float64</span><span class="p" data-group-id="1906454501-10">(</span><span class="p" data-group-id="1906454501-10">)</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="ss">&#39;-infinity&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">float</span><span class="p" data-group-id="1906454501-11">(</span><span class="p" data-group-id="1906454501-11">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="ss">infinity</span><span class="w">
+</span><span class="n">Grouped</span><span class="p" data-group-id="1906454501-12">(</span><span class="p" data-group-id="1906454501-12">)</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nf">record</span><span class="p" data-group-id="1906454501-13">(</span><span class="p" data-group-id="1906454501-13">)</span></code></pre><p>On encode, an OctetString() can be specified as an iolist(), excessively large
 floats (in absolute value) are equivalent to <code class="inline">infinity</code> or <code class="inline">'-infinity'</code> and
 excessively large integers result in encode failure. The records for grouped
 AVPs are as discussed in the previous section.</p><p><em>Derived AVP Data Formats</em></p><p><a href="" id="Address"></a></p><pre><code class="text">Address() = OctetString()
@@ -267,14 +316,14 @@ AVPs are as discussed in the previous section.</p><p><em>Derived AVP Data Format
 while an IPv6 address is parsed in any of the formats specified by section 2.2
 of RFC 2373, &quot;Text Representation of Addresses&quot;. An IPv4 tuple() has length 4
 and contains values of type 0..255. An IPv6 tuple() has length 8 and contains
-values of type 0..65535. The tuple representation is used on decode.</p><p><a href="" id="Time"></a></p><pre><code class="makeup erlang" translate="no"><span class="n">Time</span><span class="p" data-group-id="3631450617-1">(</span><span class="p" data-group-id="3631450617-1">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="3631450617-2">{</span><span class="nf">date</span><span class="p" data-group-id="3631450617-3">(</span><span class="p" data-group-id="3631450617-3">)</span><span class="p">,</span><span class="w"> </span><span class="nf">time</span><span class="p" data-group-id="3631450617-4">(</span><span class="p" data-group-id="3631450617-4">)</span><span class="p" data-group-id="3631450617-2">}</span><span class="w">
+values of type 0..65535. The tuple representation is used on decode.</p><p><a href="" id="Time"></a></p><pre><code class="makeup erlang" translate="no"><span class="n">Time</span><span class="p" data-group-id="7497394061-1">(</span><span class="p" data-group-id="7497394061-1">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="7497394061-2">{</span><span class="nf">date</span><span class="p" data-group-id="7497394061-3">(</span><span class="p" data-group-id="7497394061-3">)</span><span class="p">,</span><span class="w"> </span><span class="nf">time</span><span class="p" data-group-id="7497394061-4">(</span><span class="p" data-group-id="7497394061-4">)</span><span class="p" data-group-id="7497394061-2">}</span><span class="w">
 
 </span><span class="ss">where</span><span class="w">
 
-  </span><span class="nf">date</span><span class="p" data-group-id="3631450617-5">(</span><span class="p" data-group-id="3631450617-5">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="3631450617-6">{</span><span class="n">Year</span><span class="p">,</span><span class="w"> </span><span class="n">Month</span><span class="p">,</span><span class="w"> </span><span class="n">Day</span><span class="p" data-group-id="3631450617-6">}</span><span class="w">
-  </span><span class="nf">time</span><span class="p" data-group-id="3631450617-7">(</span><span class="p" data-group-id="3631450617-7">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="3631450617-8">{</span><span class="n">Hour</span><span class="p">,</span><span class="w"> </span><span class="n">Minute</span><span class="p">,</span><span class="w"> </span><span class="n">Second</span><span class="p" data-group-id="3631450617-8">}</span><span class="w">
+  </span><span class="nf">date</span><span class="p" data-group-id="7497394061-5">(</span><span class="p" data-group-id="7497394061-5">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="7497394061-6">{</span><span class="n">Year</span><span class="p">,</span><span class="w"> </span><span class="n">Month</span><span class="p">,</span><span class="w"> </span><span class="n">Day</span><span class="p" data-group-id="7497394061-6">}</span><span class="w">
+  </span><span class="nf">time</span><span class="p" data-group-id="7497394061-7">(</span><span class="p" data-group-id="7497394061-7">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="7497394061-8">{</span><span class="n">Hour</span><span class="p">,</span><span class="w"> </span><span class="n">Minute</span><span class="p">,</span><span class="w"> </span><span class="n">Second</span><span class="p" data-group-id="7497394061-8">}</span><span class="w">
 
-  </span><span class="n">Year</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="3631450617-9">(</span><span class="p" data-group-id="3631450617-9">)</span><span class="w">
+  </span><span class="n">Year</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nf">integer</span><span class="p" data-group-id="7497394061-9">(</span><span class="p" data-group-id="7497394061-9">)</span><span class="w">
   </span><span class="n">Month</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="p">.</span><span class="mi">12</span><span class="w">
   </span><span class="n">Day</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">.</span><span class="p">.</span><span class="mi">31</span><span class="w">
   </span><span class="n">Hour</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">.</span><span class="p">.</span><span class="mi">23</span><span class="w">
@@ -302,8 +351,8 @@ where
 diameter respectively. The grammar of an OctetString-valued DiameterURI() is as
 specified in section 4.3 of RFC 6733. The record representation is used on
 decode.</p><p><a href="" id="Enumerated"></a></p><pre><code class="text">Enumerated() = Integer32()</code></pre><p>On encode, values can be specified using the macros defined in a dictionary's
-hrl file.</p><p><a href="" id="IPFilterRule"></a> <a href="" id="QoSFilterRule"></a></p><pre><code class="makeup erlang" translate="no"><span class="n">IPFilterRule</span><span class="p" data-group-id="6944189863-1">(</span><span class="p" data-group-id="6944189863-1">)</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">OctetString</span><span class="p" data-group-id="6944189863-2">(</span><span class="p" data-group-id="6944189863-2">)</span><span class="w">
-</span><span class="n">QoSFilterRule</span><span class="p" data-group-id="6944189863-3">(</span><span class="p" data-group-id="6944189863-3">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OctetString</span><span class="p" data-group-id="6944189863-4">(</span><span class="p" data-group-id="6944189863-4">)</span></code></pre><p>Values of these types are not currently parsed by diameter.</p><h2 id="see-also" class="section-heading"><a href="#see-also" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">SEE ALSO</span></h2><p><a href="diameterc_cmd.html">diameterc(1)</a>, <a href="diameter.html"><code class="inline">diameter</code></a>, <a href="diameter_app.html"><code class="inline">diameter_app</code></a>,
+hrl file.</p><p><a href="" id="IPFilterRule"></a> <a href="" id="QoSFilterRule"></a></p><pre><code class="makeup erlang" translate="no"><span class="n">IPFilterRule</span><span class="p" data-group-id="8967026361-1">(</span><span class="p" data-group-id="8967026361-1">)</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">OctetString</span><span class="p" data-group-id="8967026361-2">(</span><span class="p" data-group-id="8967026361-2">)</span><span class="w">
+</span><span class="n">QoSFilterRule</span><span class="p" data-group-id="8967026361-3">(</span><span class="p" data-group-id="8967026361-3">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OctetString</span><span class="p" data-group-id="8967026361-4">(</span><span class="p" data-group-id="8967026361-4">)</span></code></pre><p>Values of these types are not currently parsed by diameter.</p><h2 id="see-also" class="section-heading"><a href="#see-also" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">SEE ALSO</span></h2><p><a href="diameterc_cmd.html">diameterc(1)</a>, <a href="diameter.html"><code class="inline">diameter</code></a>, <a href="diameter_app.html"><code class="inline">diameter_app</code></a>,
 <a href="diameter_codec.html"><code class="inline">diameter_codec</code></a>, <a href="diameter_make.html"><code class="inline">diameter_make</code></a></p>
 
 </div>
@@ -329,8 +378,8 @@ diameterc
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="diameter.epub" title="ePub version">
@@ -342,7 +391,7 @@ diameterc
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="wx v2.5.2">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/wx/wxXmlResource.html" />
     <title>wxXmlResource — wx v2.5.2</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-B3665BE0.js"></script>
+    <script defer src="dist/sidebar_items-E2170433.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ wx
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of wx</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ wx
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L58" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L58" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -134,7 +152,7 @@ static <a href="#get/0"><code class="inline">get/0</code></a> getter.</p><p>See:
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">attachUnknownControl(This, Name, Control, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#attachUnknownControl/4"><code class="inline">attachUnknownControl(This, Name, Control, [])</code></a>.</p></div>
 
     </div>
 
@@ -215,7 +233,7 @@ static <a href="#get/0"><code class="inline">get/0</code></a> getter.</p><p>See:
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">getXRCID(Str_id, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#getXRCID/2"><code class="inline">getXRCID(Str_id, [])</code></a>.</p></div>
 
     </div>
 
@@ -295,7 +313,7 @@ static <a href="#get/0"><code class="inline">get/0</code></a> getter.</p><p>See:
 
       </div>
 
-        <div class="summary-synopsis"><p>Loads the contents of a frame onto an existing <a><code class="inline">wxFrame</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Loads the contents of a frame onto an existing <a href="wxFrame.html"><code class="inline">wxFrame</code></a>.</p></div>
 
     </div>
 
@@ -375,7 +393,7 @@ static <a href="#get/0"><code class="inline">get/0</code></a> getter.</p><p>See:
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">new([])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#new/1"><code class="inline">new([])</code></a>.</p></div>
 
     </div>
 
@@ -425,7 +443,7 @@ static <a href="#get/0"><code class="inline">get/0</code></a> getter.</p><p>See:
 
       </div>
 
-        <div class="summary-synopsis"><p>This function unloads a resource previously loaded by <a><code class="inline">load/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>This function unloads a resource previously loaded by <a href="#load/2"><code class="inline">load/2</code></a>.</p></div>
 
     </div>
 
@@ -449,6 +467,7 @@ static <a href="#get/0"><code class="inline">get/0</code></a> getter.</p><p>See:
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:wxXmlResource/0">
 
@@ -460,7 +479,7 @@ static <a href="#get/0"><code class="inline">get/0</code></a> getter.</p><p>See:
       <h1 class="signature" translate="no">wxXmlResource()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L85" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L85" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -489,6 +508,7 @@ static <a href="#get/0"><code class="inline">get/0</code></a> getter.</p><p>See:
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="attachUnknownControl/3">
 
@@ -500,7 +520,7 @@ static <a href="#get/0"><code class="inline">get/0</code></a> getter.</p><p>See:
       <h1 class="signature" translate="no">attachUnknownControl(This, Name, Control)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L128" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L128" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -532,7 +552,7 @@ static <a href="#get/0"><code class="inline">get/0</code></a> getter.</p><p>See:
       <h1 class="signature" translate="no">attachUnknownControl/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L140" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L140" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -565,7 +585,7 @@ static <a href="#get/0"><code class="inline">get/0</code></a> getter.</p><p>See:
       <h1 class="signature" translate="no">clearHandlers(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L157" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L157" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -594,7 +614,7 @@ static <a href="#get/0"><code class="inline">get/0</code></a> getter.</p><p>See:
       <h1 class="signature" translate="no">compareVersion(This, Major, Minor, Release, Revision)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L169" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L169" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -629,7 +649,7 @@ equal.</p>
       <h1 class="signature" translate="no">destroy(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L476" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L476" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -657,7 +677,7 @@ equal.</p>
       <h1 class="signature" translate="no">get()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L177" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L177" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -685,7 +705,7 @@ equal.</p>
       <h1 class="signature" translate="no">getFlags(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L184" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L184" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -713,7 +733,7 @@ equal.</p>
       <h1 class="signature" translate="no">getVersion(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L192" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L192" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -741,7 +761,7 @@ equal.</p>
       <h1 class="signature" translate="no">getXRCID(Str_id)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L201" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L201" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -769,7 +789,7 @@ equal.</p>
       <h1 class="signature" translate="no">getXRCID(Str_id, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L222" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L222" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -801,7 +821,7 @@ order in which they are assigned to symbolic <code class="inline">name</code> va
       <h1 class="signature" translate="no">initAllHandlers(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L239" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L239" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -830,7 +850,7 @@ wxWidgets library.</p>
       <h1 class="signature" translate="no">load(This, Filemask)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L256" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L256" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -860,7 +880,7 @@ a wildcard), use <code class="inline">LoadFile()</code> (not implemented in wx) 
       <h1 class="signature" translate="no">loadBitmap(This, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L266" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L266" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -889,7 +909,7 @@ a wildcard), use <code class="inline">LoadFile()</code> (not implemented in wx) 
       <h1 class="signature" translate="no">loadDialog(This, Parent, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L280" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L280" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -921,7 +941,7 @@ a wildcard), use <code class="inline">LoadFile()</code> (not implemented in wx) 
       <h1 class="signature" translate="no">loadDialog(This, Dlg, Parent, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L298" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L298" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -955,7 +975,7 @@ this is that you may want to use derived class with a new event table). Example:
       <h1 class="signature" translate="no">loadFrame(This, Parent, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L314" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L314" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -987,7 +1007,7 @@ this is that you may want to use derived class with a new event table). Example:
       <h1 class="signature" translate="no">loadFrame(This, Frame, Parent, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L330" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L330" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1021,7 +1041,7 @@ this is that you may want to use derived class with a new event table).</p>
       <h1 class="signature" translate="no">loadIcon(This, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L342" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L342" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1049,7 +1069,7 @@ this is that you may want to use derived class with a new event table).</p>
       <h1 class="signature" translate="no">loadMenu(This, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L356" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L356" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1077,7 +1097,7 @@ this is that you may want to use derived class with a new event table).</p>
       <h1 class="signature" translate="no">loadMenuBar(This, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L366" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L366" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1106,7 +1126,7 @@ this is that you may want to use derived class with a new event table).</p>
       <h1 class="signature" translate="no">loadMenuBar(This, Parent, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L380" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L380" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1138,7 +1158,7 @@ this is that you may want to use derived class with a new event table).</p>
       <h1 class="signature" translate="no">loadPanel(This, Parent, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L395" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L395" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1170,7 +1190,7 @@ this is that you may want to use derived class with a new event table).</p>
       <h1 class="signature" translate="no">loadPanel(This, Panel, Parent, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L411" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L411" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1204,7 +1224,7 @@ existing instance.</p>
       <h1 class="signature" translate="no">loadToolBar(This, Parent, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L423" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L423" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1236,7 +1256,7 @@ existing instance.</p>
       <h1 class="signature" translate="no">new()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L93" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L93" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1264,7 +1284,7 @@ existing instance.</p>
       <h1 class="signature" translate="no">new(Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L100" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L100" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1292,7 +1312,7 @@ existing instance.</p>
       <h1 class="signature" translate="no">new(Filemask, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L114" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L114" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1323,7 +1343,7 @@ existing instance.</p>
       <h1 class="signature" translate="no">set(Res)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L434" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L434" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1351,7 +1371,7 @@ existing instance.</p>
       <h1 class="signature" translate="no">setFlags(This, Flags)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L442" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L442" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1379,7 +1399,7 @@ existing instance.</p>
       <h1 class="signature" translate="no">unload(This, Filename)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L455" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L455" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1408,7 +1428,7 @@ in the list of loaded resources.</p>
       <h1 class="signature" translate="no">xrcctrl(Window, Name, Type)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxXmlResource.erl#L468" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxXmlResource.erl#L468" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1435,8 +1455,8 @@ in the list of loaded resources.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="wx.epub" title="ePub version">
@@ -1448,7 +1468,7 @@ in the list of loaded resources.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

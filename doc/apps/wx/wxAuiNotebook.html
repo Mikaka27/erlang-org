@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="wx v2.5.2">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/wx/wxAuiNotebook.html" />
     <title>wxAuiNotebook — wx v2.5.2</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-B3665BE0.js"></script>
+    <script defer src="dist/sidebar_items-E2170433.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ wx
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of wx</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ wx
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L58" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L58" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -141,7 +159,7 @@ tab.</p></li><li><p>wxAUI_NB_CLOSE_ON_ALL_TABS: With this style, the close butto
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">addPage(This, Page, Caption, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#addPage/4"><code class="inline">addPage(This, Page, Caption, [])</code></a>.</p></div>
 
     </div>
 
@@ -171,7 +189,7 @@ tab.</p></li><li><p>wxAUI_NB_CLOSE_ON_ALL_TABS: With this style, the close butto
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">create(This, Parent, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#create/3"><code class="inline">create(This, Parent, [])</code></a>.</p></div>
 
     </div>
 
@@ -291,7 +309,7 @@ tab.</p></li><li><p>wxAUI_NB_CLOSE_ON_ALL_TABS: With this style, the close butto
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">insertPage(This, Page_idx, Page, Caption, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#insertPage/5"><code class="inline">insertPage(This, Page_idx, Page, Caption, [])</code></a>.</p></div>
 
     </div>
 
@@ -301,7 +319,7 @@ tab.</p></li><li><p>wxAUI_NB_CLOSE_ON_ALL_TABS: With this style, the close butto
 
       </div>
 
-        <div class="summary-synopsis"><p><a><code class="inline">insertPage/6</code></a> is similar to AddPage, but allows the ability to specify the insert
+        <div class="summary-synopsis"><p><a href="#insertPage/6"><code class="inline">insertPage/6</code></a> is similar to AddPage, but allows the ability to specify the insert
 location.</p></div>
 
     </div>
@@ -332,7 +350,7 @@ location.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">new(Parent, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#new/2"><code class="inline">new(Parent, [])</code></a>.</p></div>
 
     </div>
 
@@ -439,6 +457,7 @@ tab labels.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:wxAuiNotebook/0">
 
@@ -450,7 +469,7 @@ tab labels.</p></div>
       <h1 class="signature" translate="no">wxAuiNotebook()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L197" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L197" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -479,6 +498,7 @@ tab labels.</p></div>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="addPage/3">
 
@@ -490,7 +510,7 @@ tab labels.</p></div>
       <h1 class="signature" translate="no">addPage(This, Page, Caption)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L246" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L246" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -520,7 +540,7 @@ tab labels.</p></div>
       <h1 class="signature" translate="no">addPage/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L259" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L259" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -553,7 +573,7 @@ tab labels.</p></div>
       <h1 class="signature" translate="no">addPage(This, Page, Text, Select, ImageId)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L289" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L289" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -588,7 +608,7 @@ this control previously.</p><p>The call to this function may generate the page c
       <h1 class="signature" translate="no">create(This, Parent)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L301" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L301" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -616,7 +636,7 @@ this control previously.</p><p>The call to this function may generate the page c
       <h1 class="signature" translate="no">create/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L315" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L315" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -654,7 +674,7 @@ this control previously.</p><p>The call to this function may generate the page c
       <h1 class="signature" translate="no">create/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L337" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L337" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -690,7 +710,7 @@ this control previously.</p><p>The call to this function may generate the page c
       <h1 class="signature" translate="no">deletePage(This, Page)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L356" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L356" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -718,7 +738,7 @@ this control previously.</p><p>The call to this function may generate the page c
       <h1 class="signature" translate="no">destroy(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L575" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L575" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -746,7 +766,7 @@ this control previously.</p><p>The call to this function may generate the page c
       <h1 class="signature" translate="no">getArtProvider(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L365" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L365" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -774,7 +794,7 @@ this control previously.</p><p>The call to this function may generate the page c
       <h1 class="signature" translate="no">getPage(This, Page_idx)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L373" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L373" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -802,7 +822,7 @@ this control previously.</p><p>The call to this function may generate the page c
       <h1 class="signature" translate="no">getPageBitmap(This, Page)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L382" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L382" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -830,7 +850,7 @@ this control previously.</p><p>The call to this function may generate the page c
       <h1 class="signature" translate="no">getPageCount(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L391" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L391" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -858,7 +878,7 @@ this control previously.</p><p>The call to this function may generate the page c
       <h1 class="signature" translate="no">getPageIndex(This, Page_wnd)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L403" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L403" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -887,7 +907,7 @@ this control previously.</p><p>The call to this function may generate the page c
       <h1 class="signature" translate="no">getPageText(This, Page)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L412" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L412" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -915,7 +935,7 @@ this control previously.</p><p>The call to this function may generate the page c
       <h1 class="signature" translate="no">getSelection(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L421" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L421" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -943,7 +963,7 @@ this control previously.</p><p>The call to this function may generate the page c
       <h1 class="signature" translate="no">insertPage(This, Page_idx, Page, Caption)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L430" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L430" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -976,7 +996,7 @@ this control previously.</p><p>The call to this function may generate the page c
       <h1 class="signature" translate="no">insertPage/5</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L444" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L444" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1011,7 +1031,7 @@ location.</p><p>If the <code class="inline">select</code> parameter is true, cal
       <h1 class="signature" translate="no">insertPage(This, Index, Page, Text, Select, ImageId)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L469" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L469" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1046,7 +1066,7 @@ location.</p><p>If the <code class="inline">select</code> parameter is true, cal
       <h1 class="signature" translate="no">new()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L207" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L207" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1074,7 +1094,7 @@ location.</p><p>If the <code class="inline">select</code> parameter is true, cal
       <h1 class="signature" translate="no">new(Parent)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L215" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L215" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1102,7 +1122,7 @@ location.</p><p>If the <code class="inline">select</code> parameter is true, cal
       <h1 class="signature" translate="no">new/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L230" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L230" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1137,7 +1157,7 @@ location.</p><p>If the <code class="inline">select</code> parameter is true, cal
       <h1 class="signature" translate="no">removePage(This, Page)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L480" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L480" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1165,7 +1185,7 @@ location.</p><p>If the <code class="inline">select</code> parameter is true, cal
       <h1 class="signature" translate="no">setArtProvider(This, Art)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L489" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L489" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1193,7 +1213,7 @@ location.</p><p>If the <code class="inline">select</code> parameter is true, cal
       <h1 class="signature" translate="no">setFont(This, Font)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L500" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L500" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1222,7 +1242,7 @@ tab labels.</p>
       <h1 class="signature" translate="no">setPageBitmap(This, Page, Bitmap)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L513" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L513" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1251,7 +1271,7 @@ tab labels.</p>
       <h1 class="signature" translate="no">setPageText(This, Page, Text)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L523" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L523" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1280,7 +1300,7 @@ tab labels.</p>
       <h1 class="signature" translate="no">setSelection(This, New_page)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L537" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L537" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1308,7 +1328,7 @@ tab labels.</p>
       <h1 class="signature" translate="no">setTabCtrlHeight(This, Height)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L555" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L555" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1339,7 +1359,7 @@ call to <a href="#setUniformBitmapSize/2"><code class="inline">setUniformBitmapS
       <h1 class="signature" translate="no">setUniformBitmapSize(This, Size)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiNotebook.erl#L568" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiNotebook.erl#L568" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1367,8 +1387,8 @@ and instructs the control to use dynamic tab height.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="wx.epub" title="ePub version">
@@ -1380,7 +1400,7 @@ and instructs the control to use dynamic tab height.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

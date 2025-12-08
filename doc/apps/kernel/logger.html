@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="kernel v10.4.2">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/kernel/logger.html" />
     <title>logger — kernel v10.4.2</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-87F8FB49.js"></script>
+    <script defer src="dist/sidebar_items-D3B3E40C.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ kernel
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of kernel</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ kernel
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -98,20 +116,20 @@ kernel
     <section id="moduledoc">
 <p>API module for Logger, the standard logging facility in Erlang/OTP.</p><p>This module implements the main API for logging in Erlang/OTP. To create a log
 event, use the <a href="#logging-api-functions">API functions</a> or the log
-<a href="#module-macros">macros</a>, for example:</p><pre><code class="makeup erlang" translate="no"><span class="o">?</span><span class="n">LOG_ERROR</span><span class="p" data-group-id="3050458699-1">(</span><span class="s">&quot;error happened because: </span><span class="si">~p</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3050458699-2">[</span><span class="n">Reason</span><span class="p" data-group-id="3050458699-2">]</span><span class="p" data-group-id="3050458699-1">)</span><span class="p">.</span><span class="w">   </span><span class="c1">% With macro</span><span class="w">
-</span><span class="nc">logger</span><span class="p">:</span><span class="nf">error</span><span class="p" data-group-id="3050458699-3">(</span><span class="s">&quot;error happened because: </span><span class="si">~p</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3050458699-4">[</span><span class="n">Reason</span><span class="p" data-group-id="3050458699-4">]</span><span class="p" data-group-id="3050458699-3">)</span><span class="p">.</span><span class="w"> </span><span class="c1">% Without macro</span></code></pre><p>To configure the Logger backend, use
+<a href="#module-macros">macros</a>, for example:</p><pre><code class="makeup erlang" translate="no"><span class="o">?</span><span class="n">LOG_ERROR</span><span class="p" data-group-id="4015010612-1">(</span><span class="s">&quot;error happened because: </span><span class="si">~p</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4015010612-2">[</span><span class="n">Reason</span><span class="p" data-group-id="4015010612-2">]</span><span class="p" data-group-id="4015010612-1">)</span><span class="p">.</span><span class="w">   </span><span class="c1">% With macro</span><span class="w">
+</span><span class="nc">logger</span><span class="p">:</span><span class="nf">error</span><span class="p" data-group-id="4015010612-3">(</span><span class="s">&quot;error happened because: </span><span class="si">~p</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4015010612-4">[</span><span class="n">Reason</span><span class="p" data-group-id="4015010612-4">]</span><span class="p" data-group-id="4015010612-3">)</span><span class="p">.</span><span class="w"> </span><span class="c1">% Without macro</span></code></pre><p>To configure the Logger backend, use
 <a href="kernel_app.html#logger">Kernel configuration parameters</a> or
 <a href="#configuration-api-functions">configuration functions</a> in the Logger API.</p><p>By default, the Kernel application installs one log handler at system start.
 This handler is named <code class="inline">default</code>. It receives and processes standard log events
 produced by the Erlang runtime system, standard behaviours and different
 Erlang/OTP applications. The log events are by default printed to the terminal.</p><p>If you want your systems logs to be printed to a file instead, you must
 configure the default handler to do so. The simplest way is to include the
-following in your <a href="config.html"><code class="inline">sys.config</code></a>:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="6802439454-1">[</span><span class="p" data-group-id="6802439454-2">{</span><span class="ss">kernel</span><span class="p">,</span><span class="w">
-  </span><span class="p" data-group-id="6802439454-3">[</span><span class="p" data-group-id="6802439454-4">{</span><span class="ss">logger</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="6802439454-5">[</span><span class="p" data-group-id="6802439454-6">{</span><span class="ss">handler</span><span class="p">,</span><span class="w"> </span><span class="ss">default</span><span class="p">,</span><span class="w"> </span><span class="ss">logger_std_h</span><span class="p">,</span><span class="w">
-      </span><span class="p" data-group-id="6802439454-7">#{</span><span class="ss">config</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="6802439454-8">#{</span><span class="ss">file</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;path/to/file.log&quot;</span><span class="p" data-group-id="6802439454-8">}</span><span class="p" data-group-id="6802439454-7">}</span><span class="p" data-group-id="6802439454-6">}</span><span class="p" data-group-id="6802439454-5">]</span><span class="p" data-group-id="6802439454-4">}</span><span class="p" data-group-id="6802439454-3">]</span><span class="p" data-group-id="6802439454-2">}</span><span class="p" data-group-id="6802439454-1">]</span><span class="p">.</span></code></pre><p>For more information about:</p><ul><li>the Logger facility in general, see the <a href="logger_chapter.html">User's Guide</a>.</li><li>how to configure Logger, see the
+following in your <a href="config.html"><code class="inline">sys.config</code></a>:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="7244546058-1">[</span><span class="p" data-group-id="7244546058-2">{</span><span class="ss">kernel</span><span class="p">,</span><span class="w">
+  </span><span class="p" data-group-id="7244546058-3">[</span><span class="p" data-group-id="7244546058-4">{</span><span class="ss">logger</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="7244546058-5">[</span><span class="p" data-group-id="7244546058-6">{</span><span class="ss">handler</span><span class="p">,</span><span class="w"> </span><span class="ss">default</span><span class="p">,</span><span class="w"> </span><span class="ss">logger_std_h</span><span class="p">,</span><span class="w">
+      </span><span class="p" data-group-id="7244546058-7">#{</span><span class="ss">config</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="7244546058-8">#{</span><span class="ss">file</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;path/to/file.log&quot;</span><span class="p" data-group-id="7244546058-8">}</span><span class="p" data-group-id="7244546058-7">}</span><span class="p" data-group-id="7244546058-6">}</span><span class="p" data-group-id="7244546058-5">]</span><span class="p" data-group-id="7244546058-4">}</span><span class="p" data-group-id="7244546058-3">]</span><span class="p" data-group-id="7244546058-2">}</span><span class="p" data-group-id="7244546058-1">]</span><span class="p">.</span></code></pre><p>For more information about:</p><ul><li>the Logger facility in general, see the <a href="logger_chapter.html">User's Guide</a>.</li><li>how to configure Logger, see the
 <a href="logger_chapter.html#configuration">Configuration</a> section in the User's Guide.</li><li>the built-in handlers, see <a href="logger_std_h.html"><code class="inline">logger_std_h</code></a> and <a href="logger_disk_log_h.html"><code class="inline">logger_disk_log_h</code></a>.</li><li>the built-in formatter, see <a href="logger_formatter.html"><code class="inline">logger_formatter</code></a>.</li><li>built-in filters, see <a href="logger_filters.html"><code class="inline">logger_filters</code></a>.</li></ul><h2 id="module-macros" class="section-heading"><a href="#module-macros" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Macros</span></h2><p>The following macros are defined in <code class="inline">logger.hrl</code>, which is included in a module
-with the directive</p><pre><code class="makeup erlang" translate="no"><span class="w">    </span><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="5546638833-1">(</span><span class="s">&quot;kernel/include/logger.hrl&quot;</span><span class="p" data-group-id="5546638833-1">)</span><span class="p">.</span></code></pre><ul><li><code class="inline">?LOG_EMERGENCY(StringOrReport[,Metadata])</code></li><li><code class="inline">?LOG_EMERGENCY(FunOrFormat,Args[,Metadata])</code></li><li><code class="inline">?LOG_ALERT(StringOrReport[,Metadata])</code></li><li><code class="inline">?LOG_ALERT(FunOrFormat,Args[,Metadata])</code></li><li><code class="inline">?LOG_CRITICAL(StringOrReport[,Metadata])</code></li><li><code class="inline">?LOG_CRITICAL(FunOrFormat,Args[,Metadata])</code></li><li><code class="inline">?LOG_ERROR(StringOrReport[,Metadata])</code></li><li><code class="inline">?LOG_ERROR(FunOrFormat,Args[,Metadata])</code></li><li><code class="inline">?LOG_WARNING(StringOrReport[,Metadata])</code></li><li><code class="inline">?LOG_WARNING(FunOrFormat,Args[,Metadata])</code></li><li><code class="inline">?LOG_NOTICE(StringOrReport[,Metadata])</code></li><li><code class="inline">?LOG_NOTICE(FunOrFormat,Args[,Metadata])</code></li><li><code class="inline">?LOG_INFO(StringOrReport[,Metadata])</code></li><li><code class="inline">?LOG_INFO(FunOrFormat,Args[,Metadata])</code></li><li><code class="inline">?LOG_DEBUG(StringOrReport[,Metadata])</code></li><li><code class="inline">?LOG_DEBUG(FunOrFormat,Args[,Metadata])</code></li><li><code class="inline">?LOG(Level,StringOrReport[,Metadata])</code></li><li><code class="inline">?LOG(Level,FunOrFormat,Args[,Metadata])</code></li></ul><p>All macros expand to a call to Logger, where <code class="inline">Level</code> is taken from the macro
+with the directive</p><pre><code class="makeup erlang" translate="no"><span class="w">    </span><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="3886405386-1">(</span><span class="s">&quot;kernel/include/logger.hrl&quot;</span><span class="p" data-group-id="3886405386-1">)</span><span class="p">.</span></code></pre><ul><li><code class="inline">?LOG_EMERGENCY(StringOrReport[,Metadata])</code></li><li><code class="inline">?LOG_EMERGENCY(FunOrFormat,Args[,Metadata])</code></li><li><code class="inline">?LOG_ALERT(StringOrReport[,Metadata])</code></li><li><code class="inline">?LOG_ALERT(FunOrFormat,Args[,Metadata])</code></li><li><code class="inline">?LOG_CRITICAL(StringOrReport[,Metadata])</code></li><li><code class="inline">?LOG_CRITICAL(FunOrFormat,Args[,Metadata])</code></li><li><code class="inline">?LOG_ERROR(StringOrReport[,Metadata])</code></li><li><code class="inline">?LOG_ERROR(FunOrFormat,Args[,Metadata])</code></li><li><code class="inline">?LOG_WARNING(StringOrReport[,Metadata])</code></li><li><code class="inline">?LOG_WARNING(FunOrFormat,Args[,Metadata])</code></li><li><code class="inline">?LOG_NOTICE(StringOrReport[,Metadata])</code></li><li><code class="inline">?LOG_NOTICE(FunOrFormat,Args[,Metadata])</code></li><li><code class="inline">?LOG_INFO(StringOrReport[,Metadata])</code></li><li><code class="inline">?LOG_INFO(FunOrFormat,Args[,Metadata])</code></li><li><code class="inline">?LOG_DEBUG(StringOrReport[,Metadata])</code></li><li><code class="inline">?LOG_DEBUG(FunOrFormat,Args[,Metadata])</code></li><li><code class="inline">?LOG(Level,StringOrReport[,Metadata])</code></li><li><code class="inline">?LOG(Level,FunOrFormat,Args[,Metadata])</code></li></ul><p>All macros expand to a call to Logger, where <code class="inline">Level</code> is taken from the macro
 name, or from the first argument in the case of the <code class="inline">?LOG</code> macro. Location data
 is added to the metadata as described under the <a href="#t:metadata/0"><code class="inline">metadata/0</code></a> type definition.</p><p>The call is wrapped in a case statement and will be evaluated only if <code class="inline">Level</code> is
 equal to or below the configured log level.</p><h2 id="module-see-also" class="section-heading"><a href="#module-see-also" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">See Also</span></h2><p><a href="config.html"><code class="inline">config</code></a>, <a href="../../apps/erts/erlang.html"><code class="inline">erlang</code></a>, <a href="../../apps/stdlib/io.html"><code class="inline">io</code></a>, <a href="logger_disk_log_h.html"><code class="inline">logger_disk_log_h</code></a>,
@@ -190,7 +208,7 @@ Logger.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Configuration data for the formatter. See <a><code class="inline">logger_formatter</code></a> for an example of
+        <div class="summary-synopsis"><p>Configuration data for the formatter. See <a href="logger_formatter.html"><code class="inline">logger_formatter</code></a> for an example of
 a formatter implementation.</p></div>
 
     </div>
@@ -301,7 +319,7 @@ a formatter implementation.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>A fun which converts a <a><code class="inline">report()</code></a> to a format string and
+        <div class="summary-synopsis"><p>A fun which converts a <a href="#t:report/0"><code class="inline">report()</code></a> to a format string and
 arguments, or directly to a string.</p></div>
 
     </div>
@@ -322,7 +340,7 @@ arguments, or directly to a string.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>A timestamp produced with <a><code class="inline">logger:timestamp()</code></a>.</p></div>
+        <div class="summary-synopsis"><p>A timestamp produced with <a href="#timestamp/0"><code class="inline">logger:timestamp()</code></a>.</p></div>
 
     </div>
 
@@ -359,7 +377,7 @@ arguments, or directly to a string.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Reads the application configuration parameter <code class="inline">logger</code> and calls
-<a><code class="inline">add_handlers/1</code></a> with its contents.</p></div>
+<a href="#add_handlers/1"><code class="inline">add_handlers/1</code></a> with its contents.</p></div>
 
     </div>
 
@@ -422,7 +440,7 @@ configuration, and module level settings.</p></div>
 
         <div class="summary-synopsis"><p>Look up all current module levels. Returns a list containing one
 <code class="inline">{Module,Level}</code> element for each module for which the module level was
-previously set with <a><code class="inline">set_module_level/2</code></a>.</p></div>
+previously set with <a href="#set_module_level/2"><code class="inline">set_module_level/2</code></a>.</p></div>
 
     </div>
 
@@ -434,7 +452,7 @@ previously set with <a><code class="inline">set_module_level/2</code></a>.</p></
 
         <div class="summary-synopsis"><p>Look up the current level for the given modules. Returns a list containing one
 <code class="inline">{Module,Level}</code> element for each of the given modules for which the module
-level was previously set with <a><code class="inline">set_module_level/2</code></a>.</p></div>
+level was previously set with <a href="#set_module_level/2"><code class="inline">set_module_level/2</code></a>.</p></div>
 
     </div>
 
@@ -454,7 +472,7 @@ level was previously set with <a><code class="inline">set_module_level/2</code><
 
       </div>
 
-        <div class="summary-synopsis"><p>Retrieve data set with <a><code class="inline">set_process_metadata/1</code></a> or <a><code class="inline">update_process_metadata/1</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Retrieve data set with <a href="#set_process_metadata/1"><code class="inline">set_process_metadata/1</code></a> or <a href="#update_process_metadata/1"><code class="inline">update_process_metadata/1</code></a>.</p></div>
 
     </div>
 
@@ -646,7 +664,7 @@ for the specified modules.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Delete data set with <a><code class="inline">set_process_metadata/1</code></a> or <a><code class="inline">update_process_metadata/1</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Delete data set with <a href="#set_process_metadata/1"><code class="inline">set_process_metadata/1</code></a> or <a href="#update_process_metadata/1"><code class="inline">update_process_metadata/1</code></a>.</p></div>
 
     </div>
 
@@ -666,7 +684,7 @@ for the specified modules.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">update_formatter_config(HandlerId, #{Key =&gt; Value})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#update_formatter_config/2"><code class="inline">update_formatter_config(HandlerId, #{Key =&gt; Value})</code></a>.</p></div>
 
     </div>
 
@@ -737,7 +755,7 @@ was implemented as follows</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">alert(StringOrReport, #{})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#alert/2"><code class="inline">alert(StringOrReport, #{})</code></a>.</p></div>
 
     </div>
 
@@ -757,7 +775,7 @@ was implemented as follows</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">log(alert, FormatOrFun, Args, Metadata)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#log/4"><code class="inline">log(alert, FormatOrFun, Args, Metadata)</code></a>.</p></div>
 
     </div>
 
@@ -767,7 +785,7 @@ was implemented as follows</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">critical(StringOrReport, #{})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#critical/2"><code class="inline">critical(StringOrReport, #{})</code></a>.</p></div>
 
     </div>
 
@@ -787,7 +805,7 @@ was implemented as follows</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">log(critical, FormatOrFun, Args, Metadata)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#log/4"><code class="inline">log(critical, FormatOrFun, Args, Metadata)</code></a>.</p></div>
 
     </div>
 
@@ -797,7 +815,7 @@ was implemented as follows</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">debug(StringOrReport, #{})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#debug/2"><code class="inline">debug(StringOrReport, #{})</code></a>.</p></div>
 
     </div>
 
@@ -817,7 +835,7 @@ was implemented as follows</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">log(debug, FormatOrFun, Args, Metadata)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#log/4"><code class="inline">log(debug, FormatOrFun, Args, Metadata)</code></a>.</p></div>
 
     </div>
 
@@ -827,7 +845,7 @@ was implemented as follows</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">emergency(StringOrReport, #{})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#emergency/2"><code class="inline">emergency(StringOrReport, #{})</code></a>.</p></div>
 
     </div>
 
@@ -847,7 +865,7 @@ was implemented as follows</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">log(emergency, FormatOrFun, Args, Metadata)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#log/4"><code class="inline">log(emergency, FormatOrFun, Args, Metadata)</code></a>.</p></div>
 
     </div>
 
@@ -857,7 +875,7 @@ was implemented as follows</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">error(StringOrReport, #{})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#error/2"><code class="inline">error(StringOrReport, #{})</code></a>.</p></div>
 
     </div>
 
@@ -877,7 +895,7 @@ was implemented as follows</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">log(error, FormatOrFun, Args, Metadata)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#log/4"><code class="inline">log(error, FormatOrFun, Args, Metadata)</code></a>.</p></div>
 
     </div>
 
@@ -887,7 +905,7 @@ was implemented as follows</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">info(StringOrReport, #{})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#info/2"><code class="inline">info(StringOrReport, #{})</code></a>.</p></div>
 
     </div>
 
@@ -907,7 +925,7 @@ was implemented as follows</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">log(info, FormatOrFun, Args, Metadata)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#log/4"><code class="inline">log(info, FormatOrFun, Args, Metadata)</code></a>.</p></div>
 
     </div>
 
@@ -917,7 +935,7 @@ was implemented as follows</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">log(Level, StringOrReport, #{})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#log/3"><code class="inline">log(Level, StringOrReport, #{})</code></a>.</p></div>
 
     </div>
 
@@ -927,9 +945,9 @@ was implemented as follows</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Create a log event at the given <a>log level</a>, with
-the given <a>message</a> to be logged and
-<a><em>metadata</em></a>.</p></div>
+        <div class="summary-synopsis"><p>Create a log event at the given <a href="logger_chapter.html#log-level">log level</a>, with
+the given <a href="logger_chapter.html#log-message">message</a> to be logged and
+<a href="logger_chapter.html#metadata"><em>metadata</em></a>.</p></div>
 
     </div>
 
@@ -939,9 +957,9 @@ the given <a>message</a> to be logged and
 
       </div>
 
-        <div class="summary-synopsis"><p>Create a log event at the given <a>log level</a>, with
-the given <a>message</a> to be logged and
-<a><em>metadata</em></a>.</p></div>
+        <div class="summary-synopsis"><p>Create a log event at the given <a href="logger_chapter.html#log-level">log level</a>, with
+the given <a href="logger_chapter.html#log-message">message</a> to be logged and
+<a href="logger_chapter.html#metadata"><em>metadata</em></a>.</p></div>
 
     </div>
 
@@ -951,7 +969,7 @@ the given <a>message</a> to be logged and
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">notice(StringOrReport, #{})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#notice/2"><code class="inline">notice(StringOrReport, #{})</code></a>.</p></div>
 
     </div>
 
@@ -971,7 +989,7 @@ the given <a>message</a> to be logged and
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">log(notice, FormatOrFun, Args, Metadata)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#log/4"><code class="inline">log(notice, FormatOrFun, Args, Metadata)</code></a>.</p></div>
 
     </div>
 
@@ -981,7 +999,7 @@ the given <a>message</a> to be logged and
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">warning(StringOrReport, #{})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#warning/2"><code class="inline">warning(StringOrReport, #{})</code></a>.</p></div>
 
     </div>
 
@@ -1001,7 +1019,7 @@ the given <a>message</a> to be logged and
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">log(warning, FormatOrFun, Args, Metadata)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#log/4"><code class="inline">log(warning, FormatOrFun, Args, Metadata)</code></a>.</p></div>
 
     </div>
 
@@ -1030,8 +1048,8 @@ equal.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Convert a log message on report form to <code class="inline">{Format, Args}</code>. This is the default
-report callback used by <a><code class="inline">logger_formatter</code></a> when no custom report callback is
-found. See section <a>Log Message</a> in the Kernel
+report callback used by <a href="logger_formatter.html"><code class="inline">logger_formatter</code></a> when no custom report callback is
+found. See section <a href="logger_chapter.html#log-message">Log Message</a> in the Kernel
 User's Guide for information about report callbacks and valid forms of log
 messages.</p></div>
 
@@ -1056,7 +1074,7 @@ messages.</p></div>
 
         <div class="summary-synopsis"><p>Return a timestamp that can be inserted as the <code class="inline">time</code> field in the meta data for
 a log event. It is produced with
-<a><code class="inline">os:system_time(microsecond)</code></a>.</p></div>
+<a href="os.html#system_time/1"><code class="inline">os:system_time(microsecond)</code></a>.</p></div>
 
     </div>
 
@@ -1072,6 +1090,7 @@ a log event. It is produced with
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:config_handler/0">
 
@@ -1085,7 +1104,7 @@ a log event. It is produced with
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L285" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L285" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1115,7 +1134,7 @@ a log event. It is produced with
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L257" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L257" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1146,7 +1165,7 @@ Logger.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L260" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L260" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1176,7 +1195,7 @@ Logger.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L252" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L252" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1206,7 +1225,7 @@ Logger.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L262" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L262" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1236,7 +1255,7 @@ Logger.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L280" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L280" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1267,7 +1286,7 @@ a formatter implementation.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L316" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L316" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1297,7 +1316,7 @@ a formatter implementation.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L308" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L308" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1327,7 +1346,7 @@ a formatter implementation.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L168" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L168" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1357,7 +1376,7 @@ a formatter implementation.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L162" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L162" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1390,7 +1409,7 @@ a formatter implementation.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L239" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L239" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1443,7 +1462,7 @@ information about report callbacks.</p></li></ul>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L186" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L186" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1475,7 +1494,7 @@ information about report callbacks.</p></li></ul>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L188" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L188" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1505,7 +1524,7 @@ information about report callbacks.</p></li></ul>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L298" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L298" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1535,7 +1554,7 @@ information about report callbacks.</p></li></ul>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L270" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L270" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1569,7 +1588,7 @@ information about report callbacks.</p></li></ul>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L171" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L171" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1599,7 +1618,7 @@ information about report callbacks.</p></li></ul>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L179" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L179" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1633,7 +1652,7 @@ for more information.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L182" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L182" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1666,7 +1685,7 @@ for more information.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L275" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L275" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1695,6 +1714,7 @@ for more information.</p>
       </a>
       <span class="text">Configuration API functions</span>
     </h1>
+
     <div class="configuration-api-functions-list">
 <section class="detail" id="add_handler/3">
 
@@ -1708,7 +1728,7 @@ for more information.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L831" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L831" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1743,7 +1763,7 @@ referring to this handler.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L798" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L798" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1787,7 +1807,7 @@ information about filters.</p><p>Some built-in filters exist. These are defined 
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1670" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1672" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1808,26 +1828,26 @@ information about filters.</p><p>Some built-in filters exist. These are defined 
 consistent no matter which handler the system uses. Normal usage is to add a
 call to <a href="#add_handlers/1"><code class="inline">logger:add_handlers/1</code></a> just after the processes that the handler needs
 are started, and pass the application's <code class="inline">logger</code> configuration as the argument.
-For example:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">behaviour</span><span class="p" data-group-id="0837726943-1">(</span><span class="ss">application</span><span class="p" data-group-id="0837726943-1">)</span><span class="p">.</span><span class="w">
-</span><span class="nf">start</span><span class="p" data-group-id="0837726943-2">(</span><span class="p">_</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0837726943-3">[</span><span class="p" data-group-id="0837726943-3">]</span><span class="p" data-group-id="0837726943-2">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="k">case</span><span class="w"> </span><span class="nc">supervisor</span><span class="p">:</span><span class="nf">start_link</span><span class="p" data-group-id="0837726943-4">(</span><span class="p" data-group-id="0837726943-5">{</span><span class="ss">local</span><span class="p">,</span><span class="w"> </span><span class="ss">my_sup</span><span class="p" data-group-id="0837726943-5">}</span><span class="p">,</span><span class="w"> </span><span class="ss">my_sup</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0837726943-6">[</span><span class="p" data-group-id="0837726943-6">]</span><span class="p" data-group-id="0837726943-4">)</span><span class="w"> </span><span class="k">of</span><span class="w">
-        </span><span class="p" data-group-id="0837726943-7">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">Pid</span><span class="p" data-group-id="0837726943-7">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-            </span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">logger</span><span class="p">:</span><span class="nf">add_handlers</span><span class="p" data-group-id="0837726943-8">(</span><span class="ss">my_app</span><span class="p" data-group-id="0837726943-8">)</span><span class="p">,</span><span class="w">
-            </span><span class="p" data-group-id="0837726943-9">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">Pid</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0837726943-10">[</span><span class="p" data-group-id="0837726943-10">]</span><span class="p" data-group-id="0837726943-9">}</span><span class="p">;</span><span class="w">
+For example:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">behaviour</span><span class="p" data-group-id="5967218456-1">(</span><span class="ss">application</span><span class="p" data-group-id="5967218456-1">)</span><span class="p">.</span><span class="w">
+</span><span class="nf">start</span><span class="p" data-group-id="5967218456-2">(</span><span class="p">_</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5967218456-3">[</span><span class="p" data-group-id="5967218456-3">]</span><span class="p" data-group-id="5967218456-2">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="k">case</span><span class="w"> </span><span class="nc">supervisor</span><span class="p">:</span><span class="nf">start_link</span><span class="p" data-group-id="5967218456-4">(</span><span class="p" data-group-id="5967218456-5">{</span><span class="ss">local</span><span class="p">,</span><span class="w"> </span><span class="ss">my_sup</span><span class="p" data-group-id="5967218456-5">}</span><span class="p">,</span><span class="w"> </span><span class="ss">my_sup</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5967218456-6">[</span><span class="p" data-group-id="5967218456-6">]</span><span class="p" data-group-id="5967218456-4">)</span><span class="w"> </span><span class="k">of</span><span class="w">
+        </span><span class="p" data-group-id="5967218456-7">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">Pid</span><span class="p" data-group-id="5967218456-7">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+            </span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">logger</span><span class="p">:</span><span class="nf">add_handlers</span><span class="p" data-group-id="5967218456-8">(</span><span class="ss">my_app</span><span class="p" data-group-id="5967218456-8">)</span><span class="p">,</span><span class="w">
+            </span><span class="p" data-group-id="5967218456-9">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">Pid</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5967218456-10">[</span><span class="p" data-group-id="5967218456-10">]</span><span class="p" data-group-id="5967218456-9">}</span><span class="p">;</span><span class="w">
         </span><span class="n">Error</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">Error</span><span class="w">
      </span><span class="k">end</span><span class="p">.</span></code></pre><p>This reads the <code class="inline">logger</code> configuration parameter from the <code class="inline">my_app</code> application
 and starts the configured handlers. The contents of the configuration use the
 same rules as the
 <a href="logger_chapter.html#handler-configuration">logger handler configuration</a>.</p><p>If the handler is meant to replace the default handler, the Kernel's default
 handler have to be disabled before the new handler is added. A <code class="inline">sys.config</code> file
-that disables the Kernel handler and adds a custom handler could look like this:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="5464147301-1">[</span><span class="p" data-group-id="5464147301-2">{</span><span class="ss">kernel</span><span class="p">,</span><span class="w">
-  </span><span class="p" data-group-id="5464147301-3">[</span><span class="p" data-group-id="5464147301-4">{</span><span class="ss">logger</span><span class="p">,</span><span class="w">
+that disables the Kernel handler and adds a custom handler could look like this:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="2178491889-1">[</span><span class="p" data-group-id="2178491889-2">{</span><span class="ss">kernel</span><span class="p">,</span><span class="w">
+  </span><span class="p" data-group-id="2178491889-3">[</span><span class="p" data-group-id="2178491889-4">{</span><span class="ss">logger</span><span class="p">,</span><span class="w">
     </span><span class="c1">%% Disable the default Kernel handler</span><span class="w">
-    </span><span class="p" data-group-id="5464147301-5">[</span><span class="p" data-group-id="5464147301-6">{</span><span class="ss">handler</span><span class="p">,</span><span class="w"> </span><span class="ss">default</span><span class="p">,</span><span class="w"> </span><span class="ss">undefined</span><span class="p" data-group-id="5464147301-6">}</span><span class="p" data-group-id="5464147301-5">]</span><span class="p" data-group-id="5464147301-4">}</span><span class="p" data-group-id="5464147301-3">]</span><span class="p" data-group-id="5464147301-2">}</span><span class="p">,</span><span class="w">
- </span><span class="p" data-group-id="5464147301-7">{</span><span class="ss">my_app</span><span class="p">,</span><span class="w">
-  </span><span class="p" data-group-id="5464147301-8">[</span><span class="p" data-group-id="5464147301-9">{</span><span class="ss">logger</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="2178491889-5">[</span><span class="p" data-group-id="2178491889-6">{</span><span class="ss">handler</span><span class="p">,</span><span class="w"> </span><span class="ss">default</span><span class="p">,</span><span class="w"> </span><span class="ss">undefined</span><span class="p" data-group-id="2178491889-6">}</span><span class="p" data-group-id="2178491889-5">]</span><span class="p" data-group-id="2178491889-4">}</span><span class="p" data-group-id="2178491889-3">]</span><span class="p" data-group-id="2178491889-2">}</span><span class="p">,</span><span class="w">
+ </span><span class="p" data-group-id="2178491889-7">{</span><span class="ss">my_app</span><span class="p">,</span><span class="w">
+  </span><span class="p" data-group-id="2178491889-8">[</span><span class="p" data-group-id="2178491889-9">{</span><span class="ss">logger</span><span class="p">,</span><span class="w">
     </span><span class="c1">%% Enable this handler as the default</span><span class="w">
-    </span><span class="p" data-group-id="5464147301-10">[</span><span class="p" data-group-id="5464147301-11">{</span><span class="ss">handler</span><span class="p">,</span><span class="w"> </span><span class="ss">default</span><span class="p">,</span><span class="w"> </span><span class="ss">my_handler</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5464147301-12">#{</span><span class="p" data-group-id="5464147301-12">}</span><span class="p" data-group-id="5464147301-11">}</span><span class="p" data-group-id="5464147301-10">]</span><span class="p" data-group-id="5464147301-9">}</span><span class="p" data-group-id="5464147301-8">]</span><span class="p" data-group-id="5464147301-7">}</span><span class="p" data-group-id="5464147301-1">]</span><span class="p">.</span></code></pre>
+    </span><span class="p" data-group-id="2178491889-10">[</span><span class="p" data-group-id="2178491889-11">{</span><span class="ss">handler</span><span class="p">,</span><span class="w"> </span><span class="ss">default</span><span class="p">,</span><span class="w"> </span><span class="ss">my_handler</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2178491889-12">#{</span><span class="p" data-group-id="2178491889-12">}</span><span class="p" data-group-id="2178491889-11">}</span><span class="p" data-group-id="2178491889-10">]</span><span class="p" data-group-id="2178491889-9">}</span><span class="p" data-group-id="2178491889-8">]</span><span class="p" data-group-id="2178491889-7">}</span><span class="p" data-group-id="2178491889-1">]</span><span class="p">.</span></code></pre>
   </section>
 </section>
 <section class="detail" id="add_primary_filter/2">
@@ -1842,7 +1862,7 @@ that disables the Kernel handler and adds a custom handler could look like this:
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L763" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L763" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1882,7 +1902,7 @@ information about filters.</p><p>Some built-in filters exist. These are defined 
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1379" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1381" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1917,7 +1937,7 @@ configuration, and module level settings.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1099" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1102" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1947,7 +1967,7 @@ configuration, and module level settings.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1085" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1085" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1978,7 +1998,7 @@ configuration, and module level settings.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1109" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1111" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2008,7 +2028,7 @@ configuration, and module level settings.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1282" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1284" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2040,7 +2060,7 @@ previously set with <a href="#set_module_level/2"><code class="inline">set_modul
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1267" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1269" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2076,7 +2096,7 @@ level was previously set with <a href="#set_module_level/2"><code class="inline"
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1076" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1076" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2106,7 +2126,7 @@ level was previously set with <a href="#set_module_level/2"><code class="inline"
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1360" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1362" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2136,7 +2156,7 @@ level was previously set with <a href="#set_module_level/2"><code class="inline"
         <span class="note">(since OTP 21.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1122" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1124" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2167,7 +2187,7 @@ level was previously set with <a href="#set_module_level/2"><code class="inline"
         <span class="note">(since OTP 21.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1388" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1390" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2197,7 +2217,7 @@ level was previously set with <a href="#set_module_level/2"><code class="inline"
         <span class="note">(since OTP 21.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1403" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1405" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2227,7 +2247,7 @@ level was previously set with <a href="#set_module_level/2"><code class="inline"
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L856" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L856" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2257,7 +2277,7 @@ level was previously set with <a href="#set_module_level/2"><code class="inline"
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L817" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L817" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2289,7 +2309,7 @@ level was previously set with <a href="#set_module_level/2"><code class="inline"
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L806" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L806" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2319,7 +2339,7 @@ level was previously set with <a href="#set_module_level/2"><code class="inline"
         <span class="note">(since OTP 21.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1231" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1233" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2352,7 +2372,7 @@ with an application.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L954" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L954" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2390,7 +2410,7 @@ inserted.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L933" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L933" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2451,7 +2471,7 @@ about the different parameters.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1194" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1196" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2495,7 +2515,7 @@ have any effect.</p></section>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L894" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L894" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2530,7 +2550,7 @@ used.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L876" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L876" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2567,7 +2587,7 @@ exist, it will be added.</p><p>The <code class="inline">metadata</code> key was 
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1323" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1325" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2603,7 +2623,7 @@ existing data instead of overwriting it, see <a href="#update_process_metadata/1
         <span class="note">(since OTP 21.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L973" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L973" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2639,7 +2659,7 @@ the new configuration back with this function.</p><p>For more information about 
         <span class="note">(since OTP 21.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1249" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1251" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2672,7 +2692,7 @@ with an application.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1217" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1219" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2703,7 +2723,7 @@ for all modules.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1206" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1208" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2734,7 +2754,7 @@ for the specified modules.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1366" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1368" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2764,7 +2784,7 @@ for the specified modules.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1143" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1145" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2782,8 +2802,8 @@ for the specified modules.</p>
 
       </div>
 
-<p>Update the formatter configuration for the specified handler.</p><p>The new configuration is merged with the existing formatter configuration.</p><p>To overwrite the existing configuration without any merge, use</p><pre><code class="makeup erlang" translate="no"><span class="nf">set_handler_config</span><span class="p" data-group-id="1466728891-1">(</span><span class="n">HandlerId</span><span class="p">,</span><span class="w"> </span><span class="ss">formatter</span><span class="p">,</span><span class="w">
-	      </span><span class="p" data-group-id="1466728891-2">{</span><span class="n">FormatterModule</span><span class="p">,</span><span class="w"> </span><span class="n">FormatterConfig</span><span class="p" data-group-id="1466728891-2">}</span><span class="p" data-group-id="1466728891-1">)</span><span class="p">.</span></code></pre>
+<p>Update the formatter configuration for the specified handler.</p><p>The new configuration is merged with the existing formatter configuration.</p><p>To overwrite the existing configuration without any merge, use</p><pre><code class="makeup erlang" translate="no"><span class="nf">set_handler_config</span><span class="p" data-group-id="4007612570-1">(</span><span class="n">HandlerId</span><span class="p">,</span><span class="w"> </span><span class="ss">formatter</span><span class="p">,</span><span class="w">
+	      </span><span class="p" data-group-id="4007612570-2">{</span><span class="n">FormatterModule</span><span class="p">,</span><span class="w"> </span><span class="n">FormatterConfig</span><span class="p" data-group-id="4007612570-2">}</span><span class="p" data-group-id="4007612570-1">)</span><span class="p">.</span></code></pre>
   </section>
 </section>
 <section class="detail" id="update_formatter_config/3">
@@ -2798,7 +2818,7 @@ for the specified modules.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1153" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1155" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2829,7 +2849,7 @@ for the specified modules.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1048" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1048" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2846,8 +2866,8 @@ for the specified modules.</p>
       </div>
 
 <p>Update configuration data for the specified handler. This function behaves as if
-it was implemented as follows:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="4818447588-1">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4818447588-2">{</span><span class="p">_</span><span class="p">,</span><span class="w"> </span><span class="n">Old</span><span class="p" data-group-id="4818447588-2">}</span><span class="p" data-group-id="4818447588-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">logger</span><span class="p">:</span><span class="nf">get_handler_config</span><span class="p" data-group-id="4818447588-3">(</span><span class="n">HandlerId</span><span class="p" data-group-id="4818447588-3">)</span><span class="p">,</span><span class="w">
-</span><span class="nc">logger</span><span class="p">:</span><span class="nf">set_handler_config</span><span class="p" data-group-id="4818447588-4">(</span><span class="n">HandlerId</span><span class="p">,</span><span class="w"> </span><span class="nc">maps</span><span class="p">:</span><span class="nf">merge</span><span class="p" data-group-id="4818447588-5">(</span><span class="n">Old</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="4818447588-5">)</span><span class="p" data-group-id="4818447588-4">)</span><span class="p">.</span></code></pre><p>To overwrite the existing configuration without any merge, use
+it was implemented as follows:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="7742587276-1">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7742587276-2">{</span><span class="p">_</span><span class="p">,</span><span class="w"> </span><span class="n">Old</span><span class="p" data-group-id="7742587276-2">}</span><span class="p" data-group-id="7742587276-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">logger</span><span class="p">:</span><span class="nf">get_handler_config</span><span class="p" data-group-id="7742587276-3">(</span><span class="n">HandlerId</span><span class="p" data-group-id="7742587276-3">)</span><span class="p">,</span><span class="w">
+</span><span class="nc">logger</span><span class="p">:</span><span class="nf">set_handler_config</span><span class="p" data-group-id="7742587276-4">(</span><span class="n">HandlerId</span><span class="p">,</span><span class="w"> </span><span class="nc">maps</span><span class="p">:</span><span class="nf">merge</span><span class="p" data-group-id="7742587276-5">(</span><span class="n">Old</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="7742587276-5">)</span><span class="p" data-group-id="7742587276-4">)</span><span class="p">.</span></code></pre><p>To overwrite the existing configuration without any merge, use
 <a href="#set_handler_config/2"><code class="inline">set_handler_config/2</code> </a>.</p>
   </section>
 </section>
@@ -2863,7 +2883,7 @@ it was implemented as follows:</p><pre><code class="makeup erlang" translate="no
         <span class="note">(since OTP 21.2)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1029" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1029" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2924,7 +2944,7 @@ about the different parameters.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L991" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L991" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2940,8 +2960,8 @@ about the different parameters.</p>
       </div>
 
 <p>Update primary configuration data for Logger. This function behaves as if it was
-implemented as follows:</p><pre><code class="makeup erlang" translate="no"><span class="n">Old</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">logger</span><span class="p">:</span><span class="nf">get_primary_config</span><span class="p" data-group-id="5130220516-1">(</span><span class="p" data-group-id="5130220516-1">)</span><span class="p">,</span><span class="w">
-</span><span class="nc">logger</span><span class="p">:</span><span class="nf">set_primary_config</span><span class="p" data-group-id="5130220516-2">(</span><span class="nc">maps</span><span class="p">:</span><span class="nf">merge</span><span class="p" data-group-id="5130220516-3">(</span><span class="n">Old</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="5130220516-3">)</span><span class="p" data-group-id="5130220516-2">)</span><span class="p">.</span></code></pre><p>To overwrite the existing configuration without any merge, use
+implemented as follows:</p><pre><code class="makeup erlang" translate="no"><span class="n">Old</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">logger</span><span class="p">:</span><span class="nf">get_primary_config</span><span class="p" data-group-id="5247515276-1">(</span><span class="p" data-group-id="5247515276-1">)</span><span class="p">,</span><span class="w">
+</span><span class="nc">logger</span><span class="p">:</span><span class="nf">set_primary_config</span><span class="p" data-group-id="5247515276-2">(</span><span class="nc">maps</span><span class="p">:</span><span class="nf">merge</span><span class="p" data-group-id="5247515276-3">(</span><span class="n">Old</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="5247515276-3">)</span><span class="p" data-group-id="5247515276-2">)</span><span class="p">.</span></code></pre><p>To overwrite the existing configuration without any merge, use
 <a href="#set_primary_config/1"><code class="inline">set_primary_config/1</code> </a>.</p>
   </section>
 </section>
@@ -2957,7 +2977,7 @@ implemented as follows:</p><pre><code class="makeup erlang" translate="no"><span
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1345" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1347" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2973,7 +2993,7 @@ implemented as follows:</p><pre><code class="makeup erlang" translate="no"><span
       </div>
 
 <p>Set or update metadata to use when logging from current process</p><p>If process metadata exists for the current process, this function behaves as if
-it was implemented as follows:</p><pre><code class="makeup erlang" translate="no"><span class="nc">logger</span><span class="p">:</span><span class="nf">set_process_metadata</span><span class="p" data-group-id="1583422139-1">(</span><span class="nc">maps</span><span class="p">:</span><span class="nf">merge</span><span class="p" data-group-id="1583422139-2">(</span><span class="nc">logger</span><span class="p">:</span><span class="nf">get_process_metadata</span><span class="p" data-group-id="1583422139-3">(</span><span class="p" data-group-id="1583422139-3">)</span><span class="p">,</span><span class="w"> </span><span class="n">Meta</span><span class="p" data-group-id="1583422139-2">)</span><span class="p" data-group-id="1583422139-1">)</span><span class="p">.</span></code></pre><p>If no process metadata exists, the function behaves as
+it was implemented as follows:</p><pre><code class="makeup erlang" translate="no"><span class="nc">logger</span><span class="p">:</span><span class="nf">set_process_metadata</span><span class="p" data-group-id="1194474227-1">(</span><span class="nc">maps</span><span class="p">:</span><span class="nf">merge</span><span class="p" data-group-id="1194474227-2">(</span><span class="nc">logger</span><span class="p">:</span><span class="nf">get_process_metadata</span><span class="p" data-group-id="1194474227-3">(</span><span class="p" data-group-id="1194474227-3">)</span><span class="p">,</span><span class="w"> </span><span class="n">Meta</span><span class="p" data-group-id="1194474227-2">)</span><span class="p" data-group-id="1194474227-1">)</span><span class="p">.</span></code></pre><p>If no process metadata exists, the function behaves as
 <a href="#set_process_metadata/1"><code class="inline">set_process_metadata/1</code> </a>.</p>
   </section>
 </section>
@@ -2989,7 +3009,7 @@ it was implemented as follows:</p><pre><code class="makeup erlang" translate="no
         <span class="note">(since OTP 21.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1069" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1069" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3005,8 +3025,8 @@ it was implemented as follows:</p><pre><code class="makeup erlang" translate="no
       </div>
 
 <p>Update configuration data for the Logger proxy. This function behaves as if it
-was implemented as follows:</p><pre><code class="makeup erlang" translate="no"><span class="n">Old</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">logger</span><span class="p">:</span><span class="nf">get_proxy_config</span><span class="p" data-group-id="3658835620-1">(</span><span class="p" data-group-id="3658835620-1">)</span><span class="p">,</span><span class="w">
-</span><span class="nc">logger</span><span class="p">:</span><span class="nf">set_proxy_config</span><span class="p" data-group-id="3658835620-2">(</span><span class="nc">maps</span><span class="p">:</span><span class="nf">merge</span><span class="p" data-group-id="3658835620-3">(</span><span class="n">Old</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="3658835620-3">)</span><span class="p" data-group-id="3658835620-2">)</span><span class="p">.</span></code></pre><p>To overwrite the existing configuration without any merge, use
+was implemented as follows:</p><pre><code class="makeup erlang" translate="no"><span class="n">Old</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">logger</span><span class="p">:</span><span class="nf">get_proxy_config</span><span class="p" data-group-id="4839874872-1">(</span><span class="p" data-group-id="4839874872-1">)</span><span class="p">,</span><span class="w">
+</span><span class="nc">logger</span><span class="p">:</span><span class="nf">set_proxy_config</span><span class="p" data-group-id="4839874872-2">(</span><span class="nc">maps</span><span class="p">:</span><span class="nf">merge</span><span class="p" data-group-id="4839874872-3">(</span><span class="n">Old</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="4839874872-3">)</span><span class="p" data-group-id="4839874872-2">)</span><span class="p">.</span></code></pre><p>To overwrite the existing configuration without any merge, use
 <a href="#set_proxy_config/1"><code class="inline">set_proxy_config/1</code> </a>.</p><p>For more information about the proxy, see section
 <a href="logger_chapter.html#logger-proxy">Logger Proxy</a> in the Kernel User's Guide.</p>
   </section>
@@ -3022,6 +3042,7 @@ was implemented as follows:</p><pre><code class="makeup erlang" translate="no"><
       </a>
       <span class="text">Logging API functions</span>
     </h1>
+
     <div class="logging-api-functions-list">
 <section class="detail" id="alert/1">
 
@@ -3035,7 +3056,7 @@ was implemented as follows:</p><pre><code class="makeup erlang" translate="no"><
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L379" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L379" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3066,7 +3087,7 @@ was implemented as follows:</p><pre><code class="makeup erlang" translate="no"><
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L387" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L387" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3101,7 +3122,7 @@ as <a href="#alert/2"><code class="inline">alert(StringOrReport, Metadata)</code
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L393" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L393" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3132,7 +3153,7 @@ as <a href="#alert/2"><code class="inline">alert(StringOrReport, Metadata)</code
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L400" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L400" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3163,7 +3184,7 @@ as <a href="#alert/2"><code class="inline">alert(StringOrReport, Metadata)</code
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L408" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L408" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3198,7 +3219,7 @@ as <a href="#critical/2"><code class="inline">critical(StringOrReport, Metadata)
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L414" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L414" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3229,7 +3250,7 @@ as <a href="#critical/2"><code class="inline">critical(StringOrReport, Metadata)
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L505" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L505" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3260,7 +3281,7 @@ as <a href="#critical/2"><code class="inline">critical(StringOrReport, Metadata)
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L513" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L513" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3295,7 +3316,7 @@ as <a href="#debug/2"><code class="inline">debug(StringOrReport, Metadata)</code
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L519" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L519" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3326,7 +3347,7 @@ as <a href="#debug/2"><code class="inline">debug(StringOrReport, Metadata)</code
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L356" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L356" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3357,7 +3378,7 @@ as <a href="#debug/2"><code class="inline">debug(StringOrReport, Metadata)</code
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L365" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L365" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3392,7 +3413,7 @@ as <a href="#emergency/2"><code class="inline">emergency(StringOrReport, Metadat
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L372" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L372" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3423,7 +3444,7 @@ as <a href="#emergency/2"><code class="inline">emergency(StringOrReport, Metadat
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L421" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L421" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3454,7 +3475,7 @@ as <a href="#emergency/2"><code class="inline">emergency(StringOrReport, Metadat
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L429" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L429" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3489,7 +3510,7 @@ as <a href="#error/2"><code class="inline">error(StringOrReport, Metadata)</code
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L435" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L435" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3520,7 +3541,7 @@ as <a href="#error/2"><code class="inline">error(StringOrReport, Metadata)</code
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L484" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L484" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3551,7 +3572,7 @@ as <a href="#error/2"><code class="inline">error(StringOrReport, Metadata)</code
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L492" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L492" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3586,7 +3607,7 @@ as <a href="#info/2"><code class="inline">info(StringOrReport, Metadata)</code><
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L498" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L498" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3617,7 +3638,7 @@ as <a href="#info/2"><code class="inline">info(StringOrReport, Metadata)</code><
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L526" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L526" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3648,7 +3669,7 @@ as <a href="#info/2"><code class="inline">info(StringOrReport, Metadata)</code><
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L555" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L555" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3669,13 +3690,13 @@ as <a href="#info/2"><code class="inline">info(StringOrReport, Metadata)</code><
 <p>Create a log event at the given <a href="logger_chapter.html#log-level">log level</a>, with
 the given <a href="logger_chapter.html#log-message">message</a> to be logged and
 <a href="logger_chapter.html#metadata"><em>metadata</em></a>.</p><p><em>Example</em>:</p><pre><code class="makeup erlang" translate="no"><span class="c1">%% A plain string</span><span class="gp unselectable">
-1&gt; </span><span class="nc">logger</span><span class="p">:</span><span class="nf">log</span><span class="p" data-group-id="5963125679-1">(</span><span class="ss">info</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p" data-group-id="5963125679-1">)</span><span class="p">.</span><span class="w">
+1&gt; </span><span class="nc">logger</span><span class="p">:</span><span class="nf">log</span><span class="p" data-group-id="0551759944-1">(</span><span class="ss">info</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p" data-group-id="0551759944-1">)</span><span class="p">.</span><span class="w">
 </span><span class="c1">%% A plain string with metadata</span><span class="gp unselectable">
-2&gt; </span><span class="nc">logger</span><span class="p">:</span><span class="nf">log</span><span class="p" data-group-id="5963125679-2">(</span><span class="ss">debug</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5963125679-3">#{</span><span class="w"> </span><span class="ss">meta</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">data</span><span class="w"> </span><span class="p" data-group-id="5963125679-3">}</span><span class="p" data-group-id="5963125679-2">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">logger</span><span class="p">:</span><span class="nf">log</span><span class="p" data-group-id="0551759944-2">(</span><span class="ss">debug</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0551759944-3">#{</span><span class="w"> </span><span class="ss">meta</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">data</span><span class="w"> </span><span class="p" data-group-id="0551759944-3">}</span><span class="p" data-group-id="0551759944-2">)</span><span class="p">.</span><span class="w">
 </span><span class="c1">%% A format string with arguments</span><span class="gp unselectable">
-3&gt; </span><span class="nc">logger</span><span class="p">:</span><span class="nf">log</span><span class="p" data-group-id="5963125679-4">(</span><span class="ss">warning</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The roof is on ~ts&quot;</span><span class="p">,</span><span class="p" data-group-id="5963125679-5">[</span><span class="n">Cause</span><span class="p" data-group-id="5963125679-5">]</span><span class="p" data-group-id="5963125679-4">)</span><span class="p">.</span><span class="w">
+3&gt; </span><span class="nc">logger</span><span class="p">:</span><span class="nf">log</span><span class="p" data-group-id="0551759944-4">(</span><span class="ss">warning</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;The roof is on ~ts&quot;</span><span class="p">,</span><span class="p" data-group-id="0551759944-5">[</span><span class="n">Cause</span><span class="p" data-group-id="0551759944-5">]</span><span class="p" data-group-id="0551759944-4">)</span><span class="p">.</span><span class="w">
 </span><span class="c1">%% A report</span><span class="gp unselectable">
-4&gt; </span><span class="nc">logger</span><span class="p">:</span><span class="nf">log</span><span class="p" data-group-id="5963125679-6">(</span><span class="ss">warning</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5963125679-7">#{</span><span class="w"> </span><span class="ss">what</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">roof</span><span class="p">,</span><span class="w"> </span><span class="ss">cause</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="n">Cause</span><span class="w"> </span><span class="p" data-group-id="5963125679-7">}</span><span class="p" data-group-id="5963125679-6">)</span><span class="p">.</span></code></pre><p>Equivalent to <a href="#log/4"><code class="inline">log(Level, FormatOrFun, Args, #{})</code></a> if called as
+4&gt; </span><span class="nc">logger</span><span class="p">:</span><span class="nf">log</span><span class="p" data-group-id="0551759944-6">(</span><span class="ss">warning</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0551759944-7">#{</span><span class="w"> </span><span class="ss">what</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">roof</span><span class="p">,</span><span class="w"> </span><span class="ss">cause</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="n">Cause</span><span class="w"> </span><span class="p" data-group-id="0551759944-7">}</span><span class="p" data-group-id="0551759944-6">)</span><span class="p">.</span></code></pre><p>Equivalent to <a href="#log/4"><code class="inline">log(Level, FormatOrFun, Args, #{})</code></a> if called as
 <code class="inline">log(Level, FormatOrFun, Args)</code>.</p>
   </section>
 </section>
@@ -3691,7 +3712,7 @@ the given <a href="logger_chapter.html#log-message">message</a> to be logged and
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L589" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L589" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3714,12 +3735,12 @@ returned from a fun. Passing a fun instead of the message/metadata directly is
 useful in scenarios when the message/metadata is very expensive to compute. This
 is because the fun is only evaluated when the message/metadata is actually
 needed, which may be not at all if the log event is not to be logged. Examples:</p><pre><code class="makeup erlang" translate="no"><span class="c1">%% A plain string with expensive metadata</span><span class="gp unselectable">
-1&gt; </span><span class="nc">logger</span><span class="p">:</span><span class="nf">info</span><span class="p" data-group-id="0000472045-1">(</span><span class="nf">fun</span><span class="p" data-group-id="0000472045-2">(</span><span class="p" data-group-id="0000472045-3">[</span><span class="p" data-group-id="0000472045-3">]</span><span class="p" data-group-id="0000472045-2">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="0000472045-4">{</span><span class="s">&quot;Hello World&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0000472045-5">#{</span><span class="w"> </span><span class="ss">meta</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">expensive</span><span class="p" data-group-id="0000472045-6">(</span><span class="p" data-group-id="0000472045-6">)</span><span class="w"> </span><span class="p" data-group-id="0000472045-5">}</span><span class="p" data-group-id="0000472045-4">}</span><span class="w"> </span><span class="k">end</span><span class="p">,</span><span class="p" data-group-id="0000472045-7">[</span><span class="p" data-group-id="0000472045-7">]</span><span class="p" data-group-id="0000472045-1">)</span><span class="p">.</span><span class="w">
+1&gt; </span><span class="nc">logger</span><span class="p">:</span><span class="nf">info</span><span class="p" data-group-id="5655356058-1">(</span><span class="nf">fun</span><span class="p" data-group-id="5655356058-2">(</span><span class="p" data-group-id="5655356058-3">[</span><span class="p" data-group-id="5655356058-3">]</span><span class="p" data-group-id="5655356058-2">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="5655356058-4">{</span><span class="s">&quot;Hello World&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5655356058-5">#{</span><span class="w"> </span><span class="ss">meta</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">expensive</span><span class="p" data-group-id="5655356058-6">(</span><span class="p" data-group-id="5655356058-6">)</span><span class="w"> </span><span class="p" data-group-id="5655356058-5">}</span><span class="p" data-group-id="5655356058-4">}</span><span class="w"> </span><span class="k">end</span><span class="p">,</span><span class="p" data-group-id="5655356058-7">[</span><span class="p" data-group-id="5655356058-7">]</span><span class="p" data-group-id="5655356058-1">)</span><span class="p">.</span><span class="w">
 </span><span class="c1">%% An expensive report</span><span class="gp unselectable">
-2&gt; </span><span class="nc">logger</span><span class="p">:</span><span class="nf">debug</span><span class="p" data-group-id="0000472045-8">(</span><span class="nf">fun</span><span class="p" data-group-id="0000472045-9">(</span><span class="n">What</span><span class="p" data-group-id="0000472045-9">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="0000472045-10">#{</span><span class="w"> </span><span class="ss">what</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="n">What</span><span class="p">,</span><span class="w"> </span><span class="ss">cause</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">expensive</span><span class="p" data-group-id="0000472045-11">(</span><span class="p" data-group-id="0000472045-11">)</span><span class="w"> </span><span class="p" data-group-id="0000472045-10">}</span><span class="w"> </span><span class="k">end</span><span class="p">,</span><span class="ss">roof</span><span class="p" data-group-id="0000472045-8">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">logger</span><span class="p">:</span><span class="nf">debug</span><span class="p" data-group-id="5655356058-8">(</span><span class="nf">fun</span><span class="p" data-group-id="5655356058-9">(</span><span class="n">What</span><span class="p" data-group-id="5655356058-9">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="5655356058-10">#{</span><span class="w"> </span><span class="ss">what</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="n">What</span><span class="p">,</span><span class="w"> </span><span class="ss">cause</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">expensive</span><span class="p" data-group-id="5655356058-11">(</span><span class="p" data-group-id="5655356058-11">)</span><span class="w"> </span><span class="p" data-group-id="5655356058-10">}</span><span class="w"> </span><span class="k">end</span><span class="p">,</span><span class="ss">roof</span><span class="p" data-group-id="5655356058-8">)</span><span class="p">.</span><span class="w">
 </span><span class="c1">%% A plain string with expensive metadata and normal metadata</span><span class="gp unselectable">
-3&gt; </span><span class="nc">logger</span><span class="p">:</span><span class="nf">debug</span><span class="p" data-group-id="0000472045-12">(</span><span class="nf">fun</span><span class="p" data-group-id="0000472045-13">(</span><span class="p" data-group-id="0000472045-14">[</span><span class="p" data-group-id="0000472045-14">]</span><span class="p" data-group-id="0000472045-13">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="0000472045-15">{</span><span class="s">&quot;Hello World&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0000472045-16">#{</span><span class="w"> </span><span class="ss">meta</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">expensive</span><span class="p" data-group-id="0000472045-17">(</span><span class="p" data-group-id="0000472045-17">)</span><span class="w"> </span><span class="p" data-group-id="0000472045-16">}</span><span class="p" data-group-id="0000472045-15">}</span><span class="w"> </span><span class="k">end</span><span class="p">,</span><span class="p" data-group-id="0000472045-18">[</span><span class="p" data-group-id="0000472045-18">]</span><span class="p">,</span><span class="w">
-               </span><span class="p" data-group-id="0000472045-19">#{</span><span class="w"> </span><span class="ss">meta</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">data</span><span class="w"> </span><span class="p" data-group-id="0000472045-19">}</span><span class="p" data-group-id="0000472045-12">)</span><span class="p">.</span></code></pre><p>When metadata is given both as an argument and returned from the fun they are
+3&gt; </span><span class="nc">logger</span><span class="p">:</span><span class="nf">debug</span><span class="p" data-group-id="5655356058-12">(</span><span class="nf">fun</span><span class="p" data-group-id="5655356058-13">(</span><span class="p" data-group-id="5655356058-14">[</span><span class="p" data-group-id="5655356058-14">]</span><span class="p" data-group-id="5655356058-13">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="5655356058-15">{</span><span class="s">&quot;Hello World&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5655356058-16">#{</span><span class="w"> </span><span class="ss">meta</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">expensive</span><span class="p" data-group-id="5655356058-17">(</span><span class="p" data-group-id="5655356058-17">)</span><span class="w"> </span><span class="p" data-group-id="5655356058-16">}</span><span class="p" data-group-id="5655356058-15">}</span><span class="w"> </span><span class="k">end</span><span class="p">,</span><span class="p" data-group-id="5655356058-18">[</span><span class="p" data-group-id="5655356058-18">]</span><span class="p">,</span><span class="w">
+               </span><span class="p" data-group-id="5655356058-19">#{</span><span class="w"> </span><span class="ss">meta</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">data</span><span class="w"> </span><span class="p" data-group-id="5655356058-19">}</span><span class="p" data-group-id="5655356058-12">)</span><span class="p">.</span></code></pre><p>When metadata is given both as an argument and returned from the fun they are
 merged. If equal keys exists the values are taken from the metadata returned by
 the fun.</p>
   </section>
@@ -3736,7 +3757,7 @@ the fun.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L463" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L463" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3767,7 +3788,7 @@ the fun.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L471" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L471" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3802,7 +3823,7 @@ as <a href="#notice/2"><code class="inline">notice(StringOrReport, Metadata)</co
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L477" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L477" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3833,7 +3854,7 @@ as <a href="#notice/2"><code class="inline">notice(StringOrReport, Metadata)</co
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L442" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L442" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3864,7 +3885,7 @@ as <a href="#notice/2"><code class="inline">notice(StringOrReport, Metadata)</co
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L450" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L450" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3899,7 +3920,7 @@ as <a href="#warning/2"><code class="inline">warning(StringOrReport, Metadata)</
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L456" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L456" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3929,6 +3950,7 @@ as <a href="#warning/2"><code class="inline">warning(StringOrReport, Metadata)</
       </a>
       <span class="text">Miscellaneous API functions</span>
     </h1>
+
     <div class="miscellaneous-api-functions-list">
 <section class="detail" id="compare_levels/2">
 
@@ -3942,7 +3964,7 @@ as <a href="#warning/2"><code class="inline">warning(StringOrReport, Metadata)</
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1296" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1298" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3975,7 +3997,7 @@ equal.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L671" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L671" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4011,7 +4033,7 @@ such.</p>
         <span class="note">(since OTP 24.2)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L1544" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L1546" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4048,7 +4070,7 @@ handler is removed. Notice that if you don't add the <code class="inline">defaul
         <span class="note">(since OTP 21.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/logger.erl#L728" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/logger.erl#L728" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4078,8 +4100,8 @@ must be taken at a different point in time than when the log event is issued.</p
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="kernel.epub" title="ePub version">
@@ -4091,7 +4113,7 @@ must be taken at a different point in time than when the log event is issued.</p
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

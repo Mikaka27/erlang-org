@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="kernel v10.4.2">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/kernel/erpc.html" />
     <title>erpc — kernel v10.4.2</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-87F8FB49.js"></script>
+    <script defer src="dist/sidebar_items-D3B3E40C.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ kernel
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of kernel</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ kernel
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L25" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L25" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -134,8 +152,8 @@ delayed.</p></section>
 
       </div>
 
-        <div class="summary-synopsis"><p>Options to be used in <a><code class="inline">call/3,5</code></a> and
-<a><code class="inline">multicall/3,5</code></a> functions.</p></div>
+        <div class="summary-synopsis"><p>Options to be used in <a href="#call/5"><code class="inline">call/3,5</code></a> and
+<a href="#multicall/5"><code class="inline">multicall/3,5</code></a> functions.</p></div>
 
     </div>
 
@@ -153,7 +171,7 @@ delayed.</p></section>
 
       </div>
 
-        <div class="summary-synopsis"><p>An opaque request identifier. For more information see <a><code class="inline">send_request/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>An opaque request identifier. For more information see <a href="#send_request/4"><code class="inline">send_request/4</code></a>.</p></div>
 
     </div>
 
@@ -163,9 +181,9 @@ delayed.</p></section>
 
       </div>
 
-        <div class="summary-synopsis"><p>An opaque collection of request identifiers (<a><code class="inline">request_id/0</code></a>) where each
+        <div class="summary-synopsis"><p>An opaque collection of request identifiers (<a href="#t:request_id/0"><code class="inline">request_id/0</code></a>) where each
 request identifier can be associated with a label chosen by the user. For more
-information see <a><code class="inline">reqids_new/0</code></a>.</p></div>
+information see <a href="#reqids_new/0"><code class="inline">reqids_new/0</code></a>.</p></div>
 
     </div>
 
@@ -199,7 +217,7 @@ information see <a><code class="inline">reqids_new/0</code></a>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">call(Node, Fun, #{timeout =&gt; infinity})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#call/3"><code class="inline">call(Node, Fun, #{timeout =&gt; infinity})</code></a>.</p></div>
 
     </div>
 
@@ -210,7 +228,7 @@ information see <a><code class="inline">reqids_new/0</code></a>.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Equivalent to
-<a><code class="inline">erpc:call(Node, erlang, apply, [Fun,[]], #{timeout =&gt; Timeout})</code></a>.</p></div>
+<a href="#call/5"><code class="inline">erpc:call(Node, erlang, apply, [Fun,[]], #{timeout =&gt; Timeout})</code></a>.</p></div>
 
     </div>
 
@@ -220,7 +238,7 @@ information see <a><code class="inline">reqids_new/0</code></a>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">call(Node, Module, Function, Args, #{timeout =&gt; infinity})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#call/5"><code class="inline">call(Node, Module, Function, Args, #{timeout =&gt; infinity})</code></a>.</p></div>
 
     </div>
 
@@ -230,7 +248,7 @@ information see <a><code class="inline">reqids_new/0</code></a>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Evaluates <a><code class="inline">apply(Module, Function, Args)</code></a> on node <code class="inline">Node</code> and
+        <div class="summary-synopsis"><p>Evaluates <a href="../../apps/erts/erlang.html#apply/3"><code class="inline">apply(Module, Function, Args)</code></a> on node <code class="inline">Node</code> and
 returns the corresponding value <code class="inline">Result</code>.</p></div>
 
     </div>
@@ -241,7 +259,7 @@ returns the corresponding value <code class="inline">Result</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">erpc:cast(Node,erlang,apply,[Fun,[]])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#cast/4"><code class="inline">erpc:cast(Node,erlang,apply,[Fun,[]])</code></a>.</p></div>
 
     </div>
 
@@ -251,7 +269,7 @@ returns the corresponding value <code class="inline">Result</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Evaluates <a><code class="inline">apply(Module, Function, Args)</code></a> on node <code class="inline">Node</code>. No
+        <div class="summary-synopsis"><p>Evaluates <a href="../../apps/erts/erlang.html#apply/3"><code class="inline">apply(Module, Function, Args)</code></a> on node <code class="inline">Node</code>. No
 response is delivered to the calling process. <code class="inline">cast()</code> returns immediately after
 the cast request has been sent. Any failures beside bad arguments are silently
 ignored.</p></div>
@@ -265,7 +283,7 @@ ignored.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Check if a message is a response to a <code class="inline">call</code> request previously made by the
-calling process using <a><code class="inline">send_request/4</code></a>.</p></div>
+calling process using <a href="#send_request/4"><code class="inline">send_request/4</code></a>.</p></div>
 
     </div>
 
@@ -278,7 +296,7 @@ calling process using <a><code class="inline">send_request/4</code></a>.</p></di
         <div class="summary-synopsis"><p>Check if a message is a response to a <code class="inline">call</code> request corresponding to a request
 identifier saved in <code class="inline">RequestIdCollection</code>. All request identifiers of
 <code class="inline">RequestIdCollection</code> must correspond to requests that have been made using
-<a><code class="inline">send_request/4</code></a> or <a><code class="inline">send_request/6</code></a>, and all requests must have been made by
+<a href="#send_request/4"><code class="inline">send_request/4</code></a> or <a href="#send_request/6"><code class="inline">send_request/6</code></a>, and all requests must have been made by
 the process calling this function.</p></div>
 
     </div>
@@ -289,7 +307,7 @@ the process calling this function.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">multicall(Nodes, Fun, #{timeout =&gt; infinity})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#multicall/3"><code class="inline">multicall(Nodes, Fun, #{timeout =&gt; infinity})</code></a>.</p></div>
 
     </div>
 
@@ -300,7 +318,7 @@ the process calling this function.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Equivalent to
-<a><code class="inline">erpc:multicall(Nodes, erlang, apply, [Fun,[]], #{timeout =&gt; Timeout})</code></a>.</p></div>
+<a href="#multicall/5"><code class="inline">erpc:multicall(Nodes, erlang, apply, [Fun,[]], #{timeout =&gt; Timeout})</code></a>.</p></div>
 
     </div>
 
@@ -310,7 +328,7 @@ the process calling this function.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">multicall(Nodes, Module, Function, Args, #{timeout =&gt; infinity})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#multicall/5"><code class="inline">multicall(Nodes, Module, Function, Args, #{timeout =&gt; infinity})</code></a>.</p></div>
 
     </div>
 
@@ -331,7 +349,7 @@ the process calling this function.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Equivalent to
-<a><code class="inline">erpc:multicast(Nodes,erlang,apply,[Fun,[]])</code></a>.</p></div>
+<a href="#multicast/4"><code class="inline">erpc:multicast(Nodes,erlang,apply,[Fun,[]])</code></a>.</p></div>
 
     </div>
 
@@ -341,7 +359,7 @@ the process calling this function.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Evaluates <a><code class="inline">apply(Module, Function, Args)</code></a> on the nodes <code class="inline">Nodes</code>. No
+        <div class="summary-synopsis"><p>Evaluates <a href="../../apps/erts/erlang.html#apply/3"><code class="inline">apply(Module, Function, Args)</code></a> on the nodes <code class="inline">Nodes</code>. No
 response is delivered to the calling process. <code class="inline">multicast()</code> returns immediately
 after the cast requests have been sent. Any failures beside bad arguments are
 silently ignored.</p></div>
@@ -354,7 +372,7 @@ silently ignored.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">receive_response(RequestId, infinity)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#receive_response/2"><code class="inline">receive_response(RequestId, infinity)</code></a>.</p></div>
 
     </div>
 
@@ -365,7 +383,7 @@ silently ignored.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Receive a response to a <code class="inline">call</code> request previously made by the calling process
-using <a><code class="inline">send_request/4</code></a>.</p></div>
+using <a href="#send_request/4"><code class="inline">send_request/4</code></a>.</p></div>
 
     </div>
 
@@ -377,8 +395,8 @@ using <a><code class="inline">send_request/4</code></a>.</p></div>
 
         <div class="summary-synopsis"><p>Receive a response to a <code class="inline">call</code> request corresponding to a request identifier
 saved in <code class="inline">RequestIdCollection</code>. All request identifiers of <code class="inline">RequestIdCollection</code>
-must correspond to requests that have been made using <a><code class="inline">send_request/4</code></a> or
-<a><code class="inline">send_request/6</code></a>, and all requests must have been made by the process calling
+must correspond to requests that have been made using <a href="#send_request/4"><code class="inline">send_request/4</code></a> or
+<a href="#send_request/6"><code class="inline">send_request/6</code></a>, and all requests must have been made by the process calling
 this function.</p></div>
 
     </div>
@@ -435,7 +453,7 @@ collection.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Equivalent to
-<a><code class="inline">erpc:send_request(Node, erlang, apply, [Fun, []])</code></a>.</p></div>
+<a href="#send_request/4"><code class="inline">erpc:send_request(Node, erlang, apply, [Fun, []])</code></a>.</p></div>
 
     </div>
 
@@ -459,8 +477,8 @@ collection.</p></div>
 associated with the request identifier of the operation and added to the
 returned request identifier collection <code class="inline">NewRequestIdCollection</code>. The collection
 can later be used in order to get one response corresponding to a request in the
-collection by passing the collection as argument to <a><code class="inline">receive_response/3</code></a>,
-<a><code class="inline">wait_response/3</code></a>, or, <a><code class="inline">check_response/3</code></a>.</p></div>
+collection by passing the collection as argument to <a href="#receive_response/3"><code class="inline">receive_response/3</code></a>,
+<a href="#wait_response/3"><code class="inline">wait_response/3</code></a>, or, <a href="#check_response/3"><code class="inline">check_response/3</code></a>.</p></div>
 
     </div>
 
@@ -470,7 +488,7 @@ collection by passing the collection as argument to <a><code class="inline">rece
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">erpc:wait_response(RequestId, 0)</code></a>.
+        <div class="summary-synopsis"><p>Equivalent to <a href="#wait_response/2"><code class="inline">erpc:wait_response(RequestId, 0)</code></a>.
 That is, poll for a response message to a <code class="inline">call</code> request previously made by the
 calling process.</p></div>
 
@@ -483,7 +501,7 @@ calling process.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Wait or poll for a response message to a <code class="inline">call</code> request previously made by the
-calling process using <a><code class="inline">send_request/4</code></a>.</p></div>
+calling process using <a href="#send_request/4"><code class="inline">send_request/4</code></a>.</p></div>
 
     </div>
 
@@ -496,7 +514,7 @@ calling process using <a><code class="inline">send_request/4</code></a>.</p></di
         <div class="summary-synopsis"><p>Wait or poll for a response to a <code class="inline">call</code> request corresponding to a request
 identifier saved in <code class="inline">RequestIdCollection</code>. All request identifiers of
 <code class="inline">RequestIdCollection</code> must correspond to requests that have been made using
-<a><code class="inline">send_request/4</code></a> or <a><code class="inline">send_request/6</code></a>, and all requests must have been made by
+<a href="#send_request/4"><code class="inline">send_request/4</code></a> or <a href="#send_request/6"><code class="inline">send_request/6</code></a>, and all requests must have been made by
 the process calling this function.</p></div>
 
     </div>
@@ -513,6 +531,7 @@ the process calling this function.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:call_options/0">
 
@@ -526,7 +545,7 @@ the process calling this function.</p></div>
         <span class="note">(since OTP 28.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L146" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L146" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -563,7 +582,7 @@ used instead, if possible. Default: <code class="inline">false</code>.</p></li><
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L999" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L999" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -598,7 +617,7 @@ used instead, if possible. Default: <code class="inline">false</code>.</p></li><
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L328" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L328" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -628,7 +647,7 @@ used instead, if possible. Default: <code class="inline">false</code>.</p></li><
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L334" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L334" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -662,7 +681,7 @@ information see <a href="#reqids_new/0"><code class="inline">reqids_new/0</code>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L992" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L992" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -696,7 +715,7 @@ information see <a href="#reqids_new/0"><code class="inline">reqids_new/0</code>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L132" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L132" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -734,6 +753,7 @@ relative time until the deadline over and over again.</p></li></ul>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="call/2">
 
@@ -747,7 +767,7 @@ relative time until the deadline over and over again.</p></li></ul>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L160" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L160" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -777,7 +797,7 @@ relative time until the deadline over and over again.</p></li></ul>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L177" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L177" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -814,7 +834,7 @@ relative time until the deadline over and over again.</p></li></ul>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L191" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L191" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -850,7 +870,7 @@ relative time until the deadline over and over again.</p></li></ul>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L277" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L277" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -916,7 +936,7 @@ the calling process itself, or a freshly spawned process.</p></section>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L1219" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L1219" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -946,7 +966,7 @@ the calling process itself, or a freshly spawned process.</p></section>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L1243" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L1243" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -981,7 +1001,7 @@ at the client side.</li></ul>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L820" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L820" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1028,7 +1048,7 @@ communication may, of course, reach the calling process.</p>
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L890" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L890" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1097,7 +1117,7 @@ exception and if so, will be lost for ever.</p>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L1014" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L1014" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1127,7 +1147,7 @@ exception and if so, will be lost for ever.</p>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L1031" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L1031" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1164,7 +1184,7 @@ exception and if so, will be lost for ever.</p>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L1045" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L1045" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1200,7 +1220,7 @@ exception and if so, will be lost for ever.</p>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L1126" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L1126" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1240,20 +1260,20 @@ if one disregard performance and failure behavior. <code class="inline">multical
 selective receive optimization which removes the need to scan the message queue
 from the beginning in order to find a matching message. The
 <code class="inline">send_request()/receive_response()</code> combination can, however, not utilize this
-optimization.</p><pre><code class="makeup erlang" translate="no"><span class="nf">my_multicall</span><span class="p" data-group-id="1251488933-1">(</span><span class="n">Nodes</span><span class="p">,</span><span class="w"> </span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">Function</span><span class="p">,</span><span class="w"> </span><span class="n">Args</span><span class="p" data-group-id="1251488933-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-  </span><span class="n">ReqIds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="nf">map</span><span class="p" data-group-id="1251488933-2">(</span><span class="nf">fun</span><span class="w"> </span><span class="p" data-group-id="1251488933-3">(</span><span class="n">Node</span><span class="p" data-group-id="1251488933-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-                       </span><span class="nc">erpc</span><span class="p">:</span><span class="nf">send_request</span><span class="p" data-group-id="1251488933-4">(</span><span class="n">Node</span><span class="p">,</span><span class="w"> </span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">Function</span><span class="p">,</span><span class="w"> </span><span class="n">Args</span><span class="p" data-group-id="1251488933-4">)</span><span class="w">
+optimization.</p><pre><code class="makeup erlang" translate="no"><span class="nf">my_multicall</span><span class="p" data-group-id="1936817454-1">(</span><span class="n">Nodes</span><span class="p">,</span><span class="w"> </span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">Function</span><span class="p">,</span><span class="w"> </span><span class="n">Args</span><span class="p" data-group-id="1936817454-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+  </span><span class="n">ReqIds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="nf">map</span><span class="p" data-group-id="1936817454-2">(</span><span class="nf">fun</span><span class="w"> </span><span class="p" data-group-id="1936817454-3">(</span><span class="n">Node</span><span class="p" data-group-id="1936817454-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+                       </span><span class="nc">erpc</span><span class="p">:</span><span class="nf">send_request</span><span class="p" data-group-id="1936817454-4">(</span><span class="n">Node</span><span class="p">,</span><span class="w"> </span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">Function</span><span class="p">,</span><span class="w"> </span><span class="n">Args</span><span class="p" data-group-id="1936817454-4">)</span><span class="w">
                      </span><span class="k">end</span><span class="p">,</span><span class="w">
-                     </span><span class="n">Nodes</span><span class="p" data-group-id="1251488933-2">)</span><span class="p">,</span><span class="w">
-  </span><span class="nc">lists</span><span class="p">:</span><span class="nf">map</span><span class="p" data-group-id="1251488933-5">(</span><span class="nf">fun</span><span class="w"> </span><span class="p" data-group-id="1251488933-6">(</span><span class="n">ReqId</span><span class="p" data-group-id="1251488933-6">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+                     </span><span class="n">Nodes</span><span class="p" data-group-id="1936817454-2">)</span><span class="p">,</span><span class="w">
+  </span><span class="nc">lists</span><span class="p">:</span><span class="nf">map</span><span class="p" data-group-id="1936817454-5">(</span><span class="nf">fun</span><span class="w"> </span><span class="p" data-group-id="1936817454-6">(</span><span class="n">ReqId</span><span class="p" data-group-id="1936817454-6">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
               </span><span class="k">try</span><span class="w">
-                </span><span class="p" data-group-id="1251488933-7">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="nc">erpc</span><span class="p">:</span><span class="nf">receive_response</span><span class="p" data-group-id="1251488933-8">(</span><span class="n">ReqId</span><span class="p">,</span><span class="w"> </span><span class="ss">infinity</span><span class="p" data-group-id="1251488933-8">)</span><span class="p" data-group-id="1251488933-7">}</span><span class="w">
+                </span><span class="p" data-group-id="1936817454-7">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="nc">erpc</span><span class="p">:</span><span class="nf">receive_response</span><span class="p" data-group-id="1936817454-8">(</span><span class="n">ReqId</span><span class="p">,</span><span class="w"> </span><span class="ss">infinity</span><span class="p" data-group-id="1936817454-8">)</span><span class="p" data-group-id="1936817454-7">}</span><span class="w">
               </span><span class="k">catch</span><span class="w">
                 </span><span class="n">Class</span><span class="p">:</span><span class="n">Reason</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-                  </span><span class="p" data-group-id="1251488933-9">{</span><span class="n">Class</span><span class="p">,</span><span class="w"> </span><span class="n">Reason</span><span class="p" data-group-id="1251488933-9">}</span><span class="w">
+                  </span><span class="p" data-group-id="1936817454-9">{</span><span class="n">Class</span><span class="p">,</span><span class="w"> </span><span class="n">Reason</span><span class="p" data-group-id="1936817454-9">}</span><span class="w">
               </span><span class="k">end</span><span class="w">
             </span><span class="k">end</span><span class="p">,</span><span class="w">
-            </span><span class="n">ReqIds</span><span class="p" data-group-id="1251488933-5">)</span><span class="p">.</span></code></pre><p>If an <code class="inline">erpc</code> operation fails, but it is unknown if the function is/will be
+            </span><span class="n">ReqIds</span><span class="p" data-group-id="1936817454-5">)</span><span class="p">.</span></code></pre><p>If an <code class="inline">erpc</code> operation fails, but it is unknown if the function is/will be
 applied (that is, a timeout, connection loss, or an improper <code class="inline">Nodes</code> list), the
 caller will not receive any further information about the result if/when the
 applied function completes. If the applied function communicates with the
@@ -1274,7 +1294,7 @@ the calling process itself, or freshly spawned processes, or a mix of both.</p><
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L1161" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L1161" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1306,7 +1326,7 @@ if:</p><ul><li><code class="inline">Nodes</code> is not a proper list of atoms.<
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L1188" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L1188" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1344,7 +1364,7 @@ at the client side.</li></ul>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L484" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L484" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1374,7 +1394,7 @@ at the client side.</li></ul>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L539" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L539" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1410,9 +1430,9 @@ equivalent to the call
 performance. <code class="inline">call()</code> can utilize a selective receive optimization which removes
 the need to scan the message queue from the beginning in order to find a
 matching message. The <code class="inline">send_request()/receive_response()</code> combination can,
-however, not utilize this optimization.</p><pre><code class="makeup erlang" translate="no"><span class="nf">my_call</span><span class="p" data-group-id="8267348778-1">(</span><span class="n">Node</span><span class="p">,</span><span class="w"> </span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">Function</span><span class="p">,</span><span class="w"> </span><span class="n">Args</span><span class="p">,</span><span class="w"> </span><span class="n">Timeout</span><span class="p" data-group-id="8267348778-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-  </span><span class="n">RequestId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">erpc</span><span class="p">:</span><span class="nf">send_request</span><span class="p" data-group-id="8267348778-2">(</span><span class="n">Node</span><span class="p">,</span><span class="w"> </span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">Function</span><span class="p">,</span><span class="w"> </span><span class="n">Args</span><span class="p" data-group-id="8267348778-2">)</span><span class="p">,</span><span class="w">
-  </span><span class="nc">erpc</span><span class="p">:</span><span class="nf">receive_response</span><span class="p" data-group-id="8267348778-3">(</span><span class="n">RequestId</span><span class="p">,</span><span class="w"> </span><span class="n">Timeout</span><span class="p" data-group-id="8267348778-3">)</span><span class="p">.</span></code></pre><p>If the <code class="inline">erpc</code> operation fails, but it is unknown if the function is/will be
+however, not utilize this optimization.</p><pre><code class="makeup erlang" translate="no"><span class="nf">my_call</span><span class="p" data-group-id="2206202305-1">(</span><span class="n">Node</span><span class="p">,</span><span class="w"> </span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">Function</span><span class="p">,</span><span class="w"> </span><span class="n">Args</span><span class="p">,</span><span class="w"> </span><span class="n">Timeout</span><span class="p" data-group-id="2206202305-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+  </span><span class="n">RequestId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">erpc</span><span class="p">:</span><span class="nf">send_request</span><span class="p" data-group-id="2206202305-2">(</span><span class="n">Node</span><span class="p">,</span><span class="w"> </span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">Function</span><span class="p">,</span><span class="w"> </span><span class="n">Args</span><span class="p" data-group-id="2206202305-2">)</span><span class="p">,</span><span class="w">
+  </span><span class="nc">erpc</span><span class="p">:</span><span class="nf">receive_response</span><span class="p" data-group-id="2206202305-3">(</span><span class="n">RequestId</span><span class="p">,</span><span class="w"> </span><span class="n">Timeout</span><span class="p" data-group-id="2206202305-3">)</span><span class="p">.</span></code></pre><p>If the <code class="inline">erpc</code> operation fails, but it is unknown if the function is/will be
 applied (that is, a timeout, or a connection loss), the caller will not receive
 any further information about the result if/when the applied function completes.
 If the applied function explicitly communicates with the calling process, such
@@ -1431,7 +1451,7 @@ communication may, of course, reach the calling process.</p>
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L616" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L616" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1505,7 +1525,7 @@ exception and if so, will be lost for ever.</p>
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L953" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L953" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1540,7 +1560,7 @@ identifier collection.</p>
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L926" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L926" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1576,7 +1596,7 @@ request identifier collection.</p>
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L933" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L933" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1606,7 +1626,7 @@ request identifier collection.</p>
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L975" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L975" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1639,7 +1659,7 @@ collection.</p>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L351" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L351" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1671,7 +1691,7 @@ collection.</p>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L418" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L418" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1714,9 +1734,9 @@ equivalent to the call
 performance. <code class="inline">call()</code> can utilize a selective receive optimization which removes
 the need to scan the message queue from the beginning in order to find a
 matching message. The <code class="inline">send_request()/receive_response()</code> combination can,
-however, not utilize this optimization.</p><pre><code class="makeup erlang" translate="no"><span class="nf">my_call</span><span class="p" data-group-id="0624164695-1">(</span><span class="n">Node</span><span class="p">,</span><span class="w"> </span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">Function</span><span class="p">,</span><span class="w"> </span><span class="n">Args</span><span class="p">,</span><span class="w"> </span><span class="n">Timeout</span><span class="p" data-group-id="0624164695-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-  </span><span class="n">RequestId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">erpc</span><span class="p">:</span><span class="nf">send_request</span><span class="p" data-group-id="0624164695-2">(</span><span class="n">Node</span><span class="p">,</span><span class="w"> </span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">Function</span><span class="p">,</span><span class="w"> </span><span class="n">Args</span><span class="p" data-group-id="0624164695-2">)</span><span class="p">,</span><span class="w">
-  </span><span class="nc">erpc</span><span class="p">:</span><span class="nf">receive_response</span><span class="p" data-group-id="0624164695-3">(</span><span class="n">RequestId</span><span class="p">,</span><span class="w"> </span><span class="n">Timeout</span><span class="p" data-group-id="0624164695-3">)</span><span class="p">.</span></code></pre><p>Fails with an <code class="inline">{erpc, badarg}</code> <code class="inline">error</code> exception if:</p><ul><li><code class="inline">Node</code> is not an atom.</li><li><code class="inline">Module</code> is not an atom.</li><li><code class="inline">Function</code> is not an atom.</li><li><code class="inline">Args</code> is not a list. Note that the list is not verified to be a proper list
+however, not utilize this optimization.</p><pre><code class="makeup erlang" translate="no"><span class="nf">my_call</span><span class="p" data-group-id="3271579834-1">(</span><span class="n">Node</span><span class="p">,</span><span class="w"> </span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">Function</span><span class="p">,</span><span class="w"> </span><span class="n">Args</span><span class="p">,</span><span class="w"> </span><span class="n">Timeout</span><span class="p" data-group-id="3271579834-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+  </span><span class="n">RequestId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">erpc</span><span class="p">:</span><span class="nf">send_request</span><span class="p" data-group-id="3271579834-2">(</span><span class="n">Node</span><span class="p">,</span><span class="w"> </span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">Function</span><span class="p">,</span><span class="w"> </span><span class="n">Args</span><span class="p" data-group-id="3271579834-2">)</span><span class="p">,</span><span class="w">
+  </span><span class="nc">erpc</span><span class="p">:</span><span class="nf">receive_response</span><span class="p" data-group-id="3271579834-3">(</span><span class="n">RequestId</span><span class="p">,</span><span class="w"> </span><span class="n">Timeout</span><span class="p" data-group-id="3271579834-3">)</span><span class="p">.</span></code></pre><p>Fails with an <code class="inline">{erpc, badarg}</code> <code class="inline">error</code> exception if:</p><ul><li><code class="inline">Node</code> is not an atom.</li><li><code class="inline">Module</code> is not an atom.</li><li><code class="inline">Function</code> is not an atom.</li><li><code class="inline">Args</code> is not a list. Note that the list is not verified to be a proper list
 at the client side.</li></ul><p>Equivalent to
 <a href="#send_request/6"><code class="inline">erpc:send_request(Node, erlang, apply, [Fun,[]]), Label, RequestIdCollection)</code></a>.</p><p>Fails with an <code class="inline">{erpc, badarg}</code> <code class="inline">error</code> exception if:</p><ul><li><code class="inline">Node</code> is not an atom.</li><li><code class="inline">Fun</code> is not a fun of zero arity.</li><li><code class="inline">RequestIdCollection</code> is detected not to be request identifier collection.</li></ul>
   </section>
@@ -1733,7 +1753,7 @@ at the client side.</li></ul><p>Equivalent to
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L466" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L466" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1779,7 +1799,7 @@ at the client side.</li><li><code class="inline">RequestIdCollection</code> is d
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L647" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L647" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1812,7 +1832,7 @@ calling process.</p>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L690" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L690" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1862,7 +1882,7 @@ calling process, such communication may, of course, reach the calling process.</
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erpc.erl#L766" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erpc.erl#L766" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1933,8 +1953,8 @@ exception and if so, will be lost for ever.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="kernel.epub" title="ePub version">
@@ -1946,7 +1966,7 @@ exception and if so, will be lost for ever.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

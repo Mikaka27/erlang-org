@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="wx v2.5.2">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/wx/wxPrintout.html" />
     <title>wxPrintout — wx v2.5.2</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-B3665BE0.js"></script>
+    <script defer src="dist/sidebar_items-E2170433.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ wx
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of wx</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ wx
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxPrintout.erl#L58" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxPrintout.erl#L58" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -159,7 +177,7 @@ preview image and the printed page.</p><p>See:</p><ul><li><p><a href="https://do
 
       </div>
 
-        <div class="summary-synopsis"><p>Set the user scale and device origin of the <a><code class="inline">wxDC</code></a> associated with this <a><code class="inline">wxPrintout</code></a>
+        <div class="summary-synopsis"><p>Set the user scale and device origin of the <a href="wxDC.html"><code class="inline">wxDC</code></a> associated with this <a href="wxPrintout.html"><code class="inline">wxPrintout</code></a>
 so that the given image size fits entirely within the page rectangle and the origin is at
 the top left corner of the page rectangle.</p></div>
 
@@ -171,8 +189,8 @@ the top left corner of the page rectangle.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Set the user scale and device origin of the <a><code class="inline">wxDC</code></a> associated with this <a><code class="inline">wxPrintout</code></a>
-so that the given image size fits entirely within the page margins set in the given <a><code class="inline">wxPageSetupDialogData</code></a>
+        <div class="summary-synopsis"><p>Set the user scale and device origin of the <a href="wxDC.html"><code class="inline">wxDC</code></a> associated with this <a href="wxPrintout.html"><code class="inline">wxPrintout</code></a>
+so that the given image size fits entirely within the page margins set in the given <a href="wxPageSetupDialogData.html"><code class="inline">wxPageSetupDialogData</code></a>
 object.</p></div>
 
     </div>
@@ -183,7 +201,7 @@ object.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Set the user scale and device origin of the <a><code class="inline">wxDC</code></a> associated with this <a><code class="inline">wxPrintout</code></a>
+        <div class="summary-synopsis"><p>Set the user scale and device origin of the <a href="wxDC.html"><code class="inline">wxDC</code></a> associated with this <a href="wxPrintout.html"><code class="inline">wxPrintout</code></a>
 so that the given image size fits entirely within the paper and the origin is at the top
 left corner of the paper.</p></div>
 
@@ -206,8 +224,8 @@ of printing or previewing).</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Return the rectangle corresponding to the page margins specified by the given <a><code class="inline">wxPageSetupDialogData</code></a>
-object in the associated <a><code class="inline">wxDC</code></a>'s logical coordinates for the current user scale and
+        <div class="summary-synopsis"><p>Return the rectangle corresponding to the page margins specified by the given <a href="wxPageSetupDialogData.html"><code class="inline">wxPageSetupDialogData</code></a>
+object in the associated <a href="wxDC.html"><code class="inline">wxDC</code></a>'s logical coordinates for the current user scale and
 device origin.</p></div>
 
     </div>
@@ -218,7 +236,7 @@ device origin.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Return the rectangle corresponding to the page in the associated <a><code class="inline">wxDC</code></a> 's logical
+        <div class="summary-synopsis"><p>Return the rectangle corresponding to the page in the associated <a href="wxDC.html"><code class="inline">wxDC</code></a> 's logical
 coordinates for the current user scale and device origin.</p></div>
 
     </div>
@@ -229,7 +247,7 @@ coordinates for the current user scale and device origin.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Return the rectangle corresponding to the paper in the associated <a><code class="inline">wxDC</code></a> 's logical
+        <div class="summary-synopsis"><p>Return the rectangle corresponding to the paper in the associated <a href="wxDC.html"><code class="inline">wxDC</code></a> 's logical
 coordinates for the current user scale and device origin.</p></div>
 
     </div>
@@ -311,7 +329,7 @@ rectangle.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Set the user scale and device origin of the <a><code class="inline">wxDC</code></a> associated with this <a><code class="inline">wxPrintout</code></a>
+        <div class="summary-synopsis"><p>Set the user scale and device origin of the <a href="wxDC.html"><code class="inline">wxDC</code></a> associated with this <a href="wxPrintout.html"><code class="inline">wxPrintout</code></a>
 so that one screen pixel maps to one device pixel on the DC.</p></div>
 
     </div>
@@ -322,8 +340,8 @@ so that one screen pixel maps to one device pixel on the DC.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>This sets the user scale of the <a><code class="inline">wxDC</code></a> associated with this <a><code class="inline">wxPrintout</code></a> to the same
-scale as <a><code class="inline">mapScreenSizeToPaper/1</code></a> but sets the logical origin to the top left corner of
+        <div class="summary-synopsis"><p>This sets the user scale of the <a href="wxDC.html"><code class="inline">wxDC</code></a> associated with this <a href="wxPrintout.html"><code class="inline">wxPrintout</code></a> to the same
+scale as <a href="#mapScreenSizeToPaper/1"><code class="inline">mapScreenSizeToPaper/1</code></a> but sets the logical origin to the top left corner of
 the page rectangle.</p></div>
 
     </div>
@@ -334,9 +352,9 @@ the page rectangle.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>This sets the user scale of the <a><code class="inline">wxDC</code></a> associated with this <a><code class="inline">wxPrintout</code></a> to the same
-scale as <a><code class="inline">mapScreenSizeToPageMargins/2</code></a> but sets the logical origin to the top left corner
-of the page margins specified by the given <a><code class="inline">wxPageSetupDialogData</code></a> object.</p></div>
+        <div class="summary-synopsis"><p>This sets the user scale of the <a href="wxDC.html"><code class="inline">wxDC</code></a> associated with this <a href="wxPrintout.html"><code class="inline">wxPrintout</code></a> to the same
+scale as <a href="#mapScreenSizeToPageMargins/2"><code class="inline">mapScreenSizeToPageMargins/2</code></a> but sets the logical origin to the top left corner
+of the page margins specified by the given <a href="wxPageSetupDialogData.html"><code class="inline">wxPageSetupDialogData</code></a> object.</p></div>
 
     </div>
 
@@ -346,7 +364,7 @@ of the page margins specified by the given <a><code class="inline">wxPageSetupDi
 
       </div>
 
-        <div class="summary-synopsis"><p>Set the user scale and device origin of the <a><code class="inline">wxDC</code></a> associated with this <a><code class="inline">wxPrintout</code></a>
+        <div class="summary-synopsis"><p>Set the user scale and device origin of the <a href="wxDC.html"><code class="inline">wxDC</code></a> associated with this <a href="wxPrintout.html"><code class="inline">wxPrintout</code></a>
 so that the printed page matches the screen size as closely as possible and the logical
 origin is in the top left corner of the paper rectangle.</p></div>
 
@@ -358,7 +376,7 @@ origin is in the top left corner of the paper rectangle.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">new/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#new/3"><code class="inline">new/3</code></a>.</p></div>
 
     </div>
 
@@ -388,7 +406,7 @@ origin is in the top left corner of the paper rectangle.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Set the device origin of the associated <a><code class="inline">wxDC</code></a> so that the current logical point
+        <div class="summary-synopsis"><p>Set the device origin of the associated <a href="wxDC.html"><code class="inline">wxDC</code></a> so that the current logical point
 becomes the new logical origin.</p></div>
 
     </div>
@@ -405,6 +423,7 @@ becomes the new logical origin.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:wxPrintout/0">
 
@@ -416,7 +435,7 @@ becomes the new logical origin.</p></div>
       <h1 class="signature" translate="no">wxPrintout()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxPrintout.erl#L106" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxPrintout.erl#L106" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -445,6 +464,7 @@ becomes the new logical origin.</p></div>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="destroy/1">
 
@@ -456,7 +476,7 @@ becomes the new logical origin.</p></div>
       <h1 class="signature" translate="no">destroy(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxPrintout.erl#L454" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxPrintout.erl#L454" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -484,7 +504,7 @@ becomes the new logical origin.</p></div>
       <h1 class="signature" translate="no">fitThisSizeToPage(This, ImageSize)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxPrintout.erl#L307" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxPrintout.erl#L307" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -517,7 +537,7 @@ some platforms, portions of the image might be cut off at the edges.</p>
       <h1 class="signature" translate="no">fitThisSizeToPageMargins(This, ImageSize, PageSetupData)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxPrintout.erl#L326" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxPrintout.erl#L326" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -554,7 +574,7 @@ wxMacPageMarginsDialog.</p>
       <h1 class="signature" translate="no">fitThisSizeToPaper(This, ImageSize)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxPrintout.erl#L289" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxPrintout.erl#L289" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -586,7 +606,7 @@ that the edges of the image could be cut off.</p>
       <h1 class="signature" translate="no">getDC(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxPrintout.erl#L174" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxPrintout.erl#L174" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -616,7 +636,7 @@ if printing on other platforms, and a <a href="wxMemoryDC.html"><code class="inl
       <h1 class="signature" translate="no">getLogicalPageMarginsRect(This, PageSetupData)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxPrintout.erl#L427" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxPrintout.erl#L427" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -650,7 +670,7 @@ device origin.</p><p>The page margins are specified with respect to the edges of
       <h1 class="signature" translate="no">getLogicalPageRect(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxPrintout.erl#L413" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxPrintout.erl#L413" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -681,7 +701,7 @@ PostScript printing, this will be the full paper rectangle.</p>
       <h1 class="signature" translate="no">getLogicalPaperRect(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxPrintout.erl#L399" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxPrintout.erl#L399" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -711,7 +731,7 @@ coordinates for the current user scale and device origin.</p>
       <h1 class="signature" translate="no">getPageSizeMM(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxPrintout.erl#L182" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxPrintout.erl#L182" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -739,7 +759,7 @@ coordinates for the current user scale and device origin.</p>
       <h1 class="signature" translate="no">getPageSizePixels(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxPrintout.erl#L198" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxPrintout.erl#L198" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -771,7 +791,7 @@ previewing is to be supported.</p>
       <h1 class="signature" translate="no">getPaperRectPixels(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxPrintout.erl#L223" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxPrintout.erl#L223" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -809,7 +829,7 @@ rectangle.</p>
       <h1 class="signature" translate="no">getPPIPrinter(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxPrintout.erl#L240" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxPrintout.erl#L240" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -840,7 +860,7 @@ most of the scaling calculations for you.</p>
       <h1 class="signature" translate="no">getPPIScreen(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxPrintout.erl#L256" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxPrintout.erl#L256" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -870,7 +890,7 @@ the preview DC size into account.</p>
       <h1 class="signature" translate="no">getTitle(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxPrintout.erl#L264" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxPrintout.erl#L264" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -898,7 +918,7 @@ the preview DC size into account.</p>
       <h1 class="signature" translate="no">isPreview(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxPrintout.erl#L272" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxPrintout.erl#L272" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -926,7 +946,7 @@ the preview DC size into account.</p>
       <h1 class="signature" translate="no">mapScreenSizeToDevice(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxPrintout.erl#L389" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxPrintout.erl#L389" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -959,7 +979,7 @@ model scales from integer coordinates.</p>
       <h1 class="signature" translate="no">mapScreenSizeToPage(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxPrintout.erl#L355" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxPrintout.erl#L355" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -989,7 +1009,7 @@ the page rectangle.</p>
       <h1 class="signature" translate="no">mapScreenSizeToPageMargins(This, PageSetupData)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxPrintout.erl#L366" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxPrintout.erl#L366" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1022,7 +1042,7 @@ of the page margins specified by the given <a href="wxPageSetupDialogData.html">
       <h1 class="signature" translate="no">mapScreenSizeToPaper(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxPrintout.erl#L344" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxPrintout.erl#L344" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1053,7 +1073,7 @@ origin is in the top left corner of the paper rectangle.</p><p>That is, a 100-pi
       <h1 class="signature" translate="no">new(Title, OnPrintPage)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxPrintout.erl#L114" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxPrintout.erl#L114" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1081,7 +1101,7 @@ origin is in the top left corner of the paper rectangle.</p><p>That is, a 100-pi
       <h1 class="signature" translate="no">new(Title, OnPrintPage, Opts)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxPrintout.erl#L140" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxPrintout.erl#L140" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1127,7 +1147,7 @@ this object</p><p>Notice: The callbacks may not call other processes.</p>
       <h1 class="signature" translate="no">offsetLogicalOrigin(This, Xoff, Yoff)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxPrintout.erl#L447" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxPrintout.erl#L447" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1156,7 +1176,7 @@ this object</p><p>Notice: The callbacks may not call other processes.</p>
       <h1 class="signature" translate="no">setLogicalOrigin(This, X, Y)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxPrintout.erl#L439" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxPrintout.erl#L439" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1183,8 +1203,8 @@ becomes the new logical origin.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="wx.epub" title="ePub version">
@@ -1196,7 +1216,7 @@ becomes the new logical origin.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

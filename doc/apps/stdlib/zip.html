@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="stdlib v7.1">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/zip.html" />
     <title>zip — stdlib v7.1</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-296BF65E.js"></script>
+    <script defer src="dist/sidebar_items-E5A5C6F9.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ stdlib
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of stdlib</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ stdlib
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -136,7 +154,7 @@ archive, the whole archive must be recreated.</li></ul>
 
       </div>
 
-        <div class="summary-synopsis"><p>These options are described in <a><code class="inline">create/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>These options are described in <a href="zip.html#zip_options"><code class="inline">create/3</code></a>.</p></div>
 
     </div>
 
@@ -184,7 +202,7 @@ archive, the whole archive must be recreated.</li></ul>
 
       </div>
 
-        <div class="summary-synopsis"><p>As returned by <a><code class="inline">zip_open/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>As returned by <a href="#zip_open/2"><code class="inline">zip_open/2</code></a>.</p></div>
 
     </div>
 
@@ -231,7 +249,7 @@ archive, the whole archive must be recreated.</li></ul>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">list_dir(Archive, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#list_dir/2"><code class="inline">list_dir(Archive, [])</code></a>.</p></div>
 
     </div>
 
@@ -273,7 +291,7 @@ the Erlang shell. (Similar to <code class="inline">tar tv</code>.)</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">unzip(Archive, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#unzip/2"><code class="inline">unzip(Archive, [])</code></a>.</p></div>
 
     </div>
 
@@ -293,7 +311,7 @@ the Erlang shell. (Similar to <code class="inline">tar tv</code>.)</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">zip(Name, FileList, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#zip/3"><code class="inline">zip(Name, FileList, [])</code></a>.</p></div>
 
     </div>
 
@@ -313,7 +331,7 @@ the Erlang shell. (Similar to <code class="inline">tar tv</code>.)</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Closes a zip archive, previously opened with <a><code class="inline">zip_open/1,2</code></a>. All
+        <div class="summary-synopsis"><p>Closes a zip archive, previously opened with <a href="#zip_open/1"><code class="inline">zip_open/1,2</code></a>. All
 resources are closed, and the handle is not to be used after closing.</p></div>
 
     </div>
@@ -324,7 +342,7 @@ resources are closed, and the handle is not to be used after closing.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">zip_get/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#zip_get/2"><code class="inline">zip_get/2</code></a>.</p></div>
 
     </div>
 
@@ -365,7 +383,7 @@ zip archive comment.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">zip_open/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#zip_open/2"><code class="inline">zip_open/2</code></a>.</p></div>
 
     </div>
 
@@ -377,7 +395,7 @@ zip archive comment.</p></div>
 
         <div class="summary-synopsis"><p>Opens a zip archive, and reads and saves its directory. This means that later
 reading files from the archive is faster than unzipping files one at a time with
-<a><code class="inline">unzip/1,2</code></a>.</p></div>
+<a href="#unzip/1"><code class="inline">unzip/1,2</code></a>.</p></div>
 
     </div>
 
@@ -393,7 +411,7 @@ reading files from the archive is faster than unzipping files one at a time with
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">zip(Name, FileList)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#zip/2"><code class="inline">zip(Name, FileList)</code></a>.</p></div>
 
     </div>
 
@@ -403,7 +421,7 @@ reading files from the archive is faster than unzipping files one at a time with
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">zip(Name, FileList, Options)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#zip/3"><code class="inline">zip(Name, FileList, Options)</code></a>.</p></div>
 
     </div>
 
@@ -413,7 +431,7 @@ reading files from the archive is faster than unzipping files one at a time with
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">unzip(Archive)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#unzip/1"><code class="inline">unzip(Archive)</code></a>.</p></div>
 
     </div>
 
@@ -423,7 +441,7 @@ reading files from the archive is faster than unzipping files one at a time with
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">unzip(Archive, Options)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#unzip/2"><code class="inline">unzip(Archive, Options)</code></a>.</p></div>
 
     </div>
 
@@ -433,7 +451,7 @@ reading files from the archive is faster than unzipping files one at a time with
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">list_dir(Archive, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#list_dir/2"><code class="inline">list_dir(Archive, [])</code></a>.</p></div>
 
     </div>
 
@@ -443,7 +461,7 @@ reading files from the archive is faster than unzipping files one at a time with
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">list_dir(Archive, Options)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#list_dir/2"><code class="inline">list_dir(Archive, Options)</code></a>.</p></div>
 
     </div>
 
@@ -459,6 +477,7 @@ reading files from the archive is faster than unzipping files one at a time with
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:create_option/0">
 
@@ -470,7 +489,7 @@ reading files from the archive is faster than unzipping files one at a time with
       <h1 class="signature" translate="no">create_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L293" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L293" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -506,7 +525,7 @@ reading files from the archive is faster than unzipping files one at a time with
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L300" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L300" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -536,7 +555,7 @@ reading files from the archive is faster than unzipping files one at a time with
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L301" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L301" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -570,7 +589,7 @@ reading files from the archive is faster than unzipping files one at a time with
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L290" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L290" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -602,7 +621,7 @@ UID and GID for each file into the archive.</li></ul>
       <h1 class="signature" translate="no">filename()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L306" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L306" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -630,7 +649,7 @@ UID and GID for each file into the archive.</li></ul>
       <h1 class="signature" translate="no">handle()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L330" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L330" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -660,7 +679,7 @@ UID and GID for each file into the archive.</li></ul>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L309" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L309" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -690,7 +709,7 @@ UID and GID for each file into the archive.</li></ul>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L327" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L327" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -728,6 +747,7 @@ uncompressed file is found in <code class="inline">info</code>)</p></li></ul>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="foldl/3">
 
@@ -741,7 +761,7 @@ uncompressed file is found in <code class="inline">info</code>)</p></li></ul>
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L498" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L498" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -775,29 +795,29 @@ if the archive is empty. It is not necessary to iterate over all files in the
 archive. The iteration can be ended prematurely in a controlled manner by
 throwing an exception.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;dummy.zip&quot;</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;dummy.zip&quot;</span><span class="gp unselectable">
-&gt; </span><span class="p" data-group-id="7685609171-1">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7685609171-2">{</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Bin</span><span class="p" data-group-id="7685609171-2">}</span><span class="p" data-group-id="7685609171-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">zip</span><span class="p">:</span><span class="nf">create</span><span class="p" data-group-id="7685609171-3">(</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7685609171-4">[</span><span class="p" data-group-id="7685609171-5">{</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7685609171-6">&lt;&lt;</span><span class="s">&quot;FOO&quot;</span><span class="p" data-group-id="7685609171-6">&gt;&gt;</span><span class="p" data-group-id="7685609171-5">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7685609171-7">{</span><span class="s">&quot;bar&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7685609171-8">&lt;&lt;</span><span class="s">&quot;BAR&quot;</span><span class="p" data-group-id="7685609171-8">&gt;&gt;</span><span class="p" data-group-id="7685609171-7">}</span><span class="p" data-group-id="7685609171-4">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7685609171-9">[</span><span class="nb">memory</span><span class="p" data-group-id="7685609171-9">]</span><span class="p" data-group-id="7685609171-3">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="7685609171-10">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="7685609171-11">{</span><span class="s">&quot;dummy.zip&quot;</span><span class="p">,</span><span class="w">
-     </span><span class="p" data-group-id="7685609171-12">&lt;&lt;</span><span class="mi">80</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">74</span><span class="p">,</span><span class="mi">152</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">171</span><span class="p">,</span><span class="mi">39</span><span class="p">,</span><span class="mi">212</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="w">
-       </span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p" data-group-id="7685609171-12">&gt;&gt;</span><span class="p" data-group-id="7685609171-11">}</span><span class="p" data-group-id="7685609171-10">}</span><span class="gp unselectable">
-&gt; </span><span class="p" data-group-id="7685609171-13">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">FileSpec</span><span class="p" data-group-id="7685609171-13">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">zip</span><span class="p">:</span><span class="nf">foldl</span><span class="p" data-group-id="7685609171-14">(</span><span class="nf">fun</span><span class="p" data-group-id="7685609171-15">(</span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">I</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">Acc</span><span class="p" data-group-id="7685609171-15">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="7685609171-16">[</span><span class="p" data-group-id="7685609171-17">{</span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p" data-group-id="7685609171-18">(</span><span class="p" data-group-id="7685609171-18">)</span><span class="p">,</span><span class="w"> </span><span class="n">I</span><span class="p" data-group-id="7685609171-19">(</span><span class="p" data-group-id="7685609171-19">)</span><span class="p" data-group-id="7685609171-17">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="n">Acc</span><span class="p" data-group-id="7685609171-16">]</span><span class="w"> </span><span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7685609171-20">[</span><span class="p" data-group-id="7685609171-20">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7685609171-21">{</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Bin</span><span class="p" data-group-id="7685609171-21">}</span><span class="p" data-group-id="7685609171-14">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="7685609171-22">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="7685609171-23">[</span><span class="p" data-group-id="7685609171-24">{</span><span class="s">&quot;bar&quot;</span><span class="p">,</span><span class="p" data-group-id="7685609171-25">&lt;&lt;</span><span class="s">&quot;BAR&quot;</span><span class="p" data-group-id="7685609171-25">&gt;&gt;</span><span class="p">,</span><span class="w">
-      </span><span class="p" data-group-id="7685609171-26">{</span><span class="ss">file_info</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="ss">regular</span><span class="p">,</span><span class="ss">read_write</span><span class="p">,</span><span class="w">
-                 </span><span class="p" data-group-id="7685609171-27">{</span><span class="p" data-group-id="7685609171-28">{</span><span class="mi">2010</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p" data-group-id="7685609171-28">}</span><span class="p">,</span><span class="p" data-group-id="7685609171-29">{</span><span class="mi">19</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="7685609171-29">}</span><span class="p" data-group-id="7685609171-27">}</span><span class="p">,</span><span class="w">
-                 </span><span class="p" data-group-id="7685609171-30">{</span><span class="p" data-group-id="7685609171-31">{</span><span class="mi">2010</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p" data-group-id="7685609171-31">}</span><span class="p">,</span><span class="p" data-group-id="7685609171-32">{</span><span class="mi">19</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="7685609171-32">}</span><span class="p" data-group-id="7685609171-30">}</span><span class="p">,</span><span class="w">
-                 </span><span class="p" data-group-id="7685609171-33">{</span><span class="p" data-group-id="7685609171-34">{</span><span class="mi">2010</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p" data-group-id="7685609171-34">}</span><span class="p">,</span><span class="p" data-group-id="7685609171-35">{</span><span class="mi">19</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="7685609171-35">}</span><span class="p" data-group-id="7685609171-33">}</span><span class="p">,</span><span class="w">
-                 </span><span class="mi">54</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p" data-group-id="7685609171-26">}</span><span class="p" data-group-id="7685609171-24">}</span><span class="p">,</span><span class="w">
-     </span><span class="p" data-group-id="7685609171-36">{</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="p" data-group-id="7685609171-37">&lt;&lt;</span><span class="s">&quot;FOO&quot;</span><span class="p" data-group-id="7685609171-37">&gt;&gt;</span><span class="p">,</span><span class="w">
-      </span><span class="p" data-group-id="7685609171-38">{</span><span class="ss">file_info</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="ss">regular</span><span class="p">,</span><span class="ss">read_write</span><span class="p">,</span><span class="w">
-                 </span><span class="p" data-group-id="7685609171-39">{</span><span class="p" data-group-id="7685609171-40">{</span><span class="mi">2010</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p" data-group-id="7685609171-40">}</span><span class="p">,</span><span class="p" data-group-id="7685609171-41">{</span><span class="mi">19</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="7685609171-41">}</span><span class="p" data-group-id="7685609171-39">}</span><span class="p">,</span><span class="w">
-                 </span><span class="p" data-group-id="7685609171-42">{</span><span class="p" data-group-id="7685609171-43">{</span><span class="mi">2010</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p" data-group-id="7685609171-43">}</span><span class="p">,</span><span class="p" data-group-id="7685609171-44">{</span><span class="mi">19</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="7685609171-44">}</span><span class="p" data-group-id="7685609171-42">}</span><span class="p">,</span><span class="w">
-                 </span><span class="p" data-group-id="7685609171-45">{</span><span class="p" data-group-id="7685609171-46">{</span><span class="mi">2010</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p" data-group-id="7685609171-46">}</span><span class="p">,</span><span class="p" data-group-id="7685609171-47">{</span><span class="mi">19</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="7685609171-47">}</span><span class="p" data-group-id="7685609171-45">}</span><span class="p">,</span><span class="w">
-                 </span><span class="mi">54</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p" data-group-id="7685609171-38">}</span><span class="p" data-group-id="7685609171-36">}</span><span class="p" data-group-id="7685609171-23">]</span><span class="p" data-group-id="7685609171-22">}</span><span class="gp unselectable">
-&gt; </span><span class="p" data-group-id="7685609171-48">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7685609171-49">{</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Bin</span><span class="p" data-group-id="7685609171-49">}</span><span class="p" data-group-id="7685609171-48">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">zip</span><span class="p">:</span><span class="nf">create</span><span class="p" data-group-id="7685609171-50">(</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="nf">reverse</span><span class="p" data-group-id="7685609171-51">(</span><span class="n">FileSpec</span><span class="p" data-group-id="7685609171-51">)</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7685609171-52">[</span><span class="nb">memory</span><span class="p" data-group-id="7685609171-52">]</span><span class="p" data-group-id="7685609171-50">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="7685609171-53">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="7685609171-54">{</span><span class="s">&quot;dummy.zip&quot;</span><span class="p">,</span><span class="w">
-     </span><span class="p" data-group-id="7685609171-55">&lt;&lt;</span><span class="mi">80</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">74</span><span class="p">,</span><span class="mi">152</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">171</span><span class="p">,</span><span class="mi">39</span><span class="p">,</span><span class="mi">212</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="w">
-       </span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p" data-group-id="7685609171-55">&gt;&gt;</span><span class="p" data-group-id="7685609171-54">}</span><span class="p" data-group-id="7685609171-53">}</span><span class="gp unselectable">
-&gt; </span><span class="k">catch</span><span class="w"> </span><span class="nc">zip</span><span class="p">:</span><span class="nf">foldl</span><span class="p" data-group-id="7685609171-56">(</span><span class="nf">fun</span><span class="p" data-group-id="7685609171-57">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="p" data-group-id="7685609171-57">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nf">throw</span><span class="p" data-group-id="7685609171-58">(</span><span class="n">B</span><span class="p" data-group-id="7685609171-59">(</span><span class="p" data-group-id="7685609171-59">)</span><span class="p" data-group-id="7685609171-58">)</span><span class="p">;</span><span class="w"> </span><span class="p" data-group-id="7685609171-60">(</span><span class="p">_</span><span class="p">,</span><span class="p">_</span><span class="p">,</span><span class="p">_</span><span class="p">,</span><span class="n">Acc</span><span class="p" data-group-id="7685609171-60">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">Acc</span><span class="w"> </span><span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7685609171-61">[</span><span class="p" data-group-id="7685609171-61">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7685609171-62">{</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Bin</span><span class="p" data-group-id="7685609171-62">}</span><span class="p" data-group-id="7685609171-56">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="7685609171-63">&lt;&lt;</span><span class="s">&quot;FOO&quot;</span><span class="p" data-group-id="7685609171-63">&gt;&gt;</span></code></pre>
+&gt; </span><span class="p" data-group-id="4693275784-1">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4693275784-2">{</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Bin</span><span class="p" data-group-id="4693275784-2">}</span><span class="p" data-group-id="4693275784-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">zip</span><span class="p">:</span><span class="nf">create</span><span class="p" data-group-id="4693275784-3">(</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4693275784-4">[</span><span class="p" data-group-id="4693275784-5">{</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4693275784-6">&lt;&lt;</span><span class="s">&quot;FOO&quot;</span><span class="p" data-group-id="4693275784-6">&gt;&gt;</span><span class="p" data-group-id="4693275784-5">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4693275784-7">{</span><span class="s">&quot;bar&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4693275784-8">&lt;&lt;</span><span class="s">&quot;BAR&quot;</span><span class="p" data-group-id="4693275784-8">&gt;&gt;</span><span class="p" data-group-id="4693275784-7">}</span><span class="p" data-group-id="4693275784-4">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4693275784-9">[</span><span class="nb">memory</span><span class="p" data-group-id="4693275784-9">]</span><span class="p" data-group-id="4693275784-3">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4693275784-10">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="4693275784-11">{</span><span class="s">&quot;dummy.zip&quot;</span><span class="p">,</span><span class="w">
+     </span><span class="p" data-group-id="4693275784-12">&lt;&lt;</span><span class="mi">80</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">74</span><span class="p">,</span><span class="mi">152</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">171</span><span class="p">,</span><span class="mi">39</span><span class="p">,</span><span class="mi">212</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="w">
+       </span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p" data-group-id="4693275784-12">&gt;&gt;</span><span class="p" data-group-id="4693275784-11">}</span><span class="p" data-group-id="4693275784-10">}</span><span class="gp unselectable">
+&gt; </span><span class="p" data-group-id="4693275784-13">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">FileSpec</span><span class="p" data-group-id="4693275784-13">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">zip</span><span class="p">:</span><span class="nf">foldl</span><span class="p" data-group-id="4693275784-14">(</span><span class="nf">fun</span><span class="p" data-group-id="4693275784-15">(</span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">I</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="n">Acc</span><span class="p" data-group-id="4693275784-15">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="4693275784-16">[</span><span class="p" data-group-id="4693275784-17">{</span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p" data-group-id="4693275784-18">(</span><span class="p" data-group-id="4693275784-18">)</span><span class="p">,</span><span class="w"> </span><span class="n">I</span><span class="p" data-group-id="4693275784-19">(</span><span class="p" data-group-id="4693275784-19">)</span><span class="p" data-group-id="4693275784-17">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="n">Acc</span><span class="p" data-group-id="4693275784-16">]</span><span class="w"> </span><span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4693275784-20">[</span><span class="p" data-group-id="4693275784-20">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4693275784-21">{</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Bin</span><span class="p" data-group-id="4693275784-21">}</span><span class="p" data-group-id="4693275784-14">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4693275784-22">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="4693275784-23">[</span><span class="p" data-group-id="4693275784-24">{</span><span class="s">&quot;bar&quot;</span><span class="p">,</span><span class="p" data-group-id="4693275784-25">&lt;&lt;</span><span class="s">&quot;BAR&quot;</span><span class="p" data-group-id="4693275784-25">&gt;&gt;</span><span class="p">,</span><span class="w">
+      </span><span class="p" data-group-id="4693275784-26">{</span><span class="ss">file_info</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="ss">regular</span><span class="p">,</span><span class="ss">read_write</span><span class="p">,</span><span class="w">
+                 </span><span class="p" data-group-id="4693275784-27">{</span><span class="p" data-group-id="4693275784-28">{</span><span class="mi">2010</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p" data-group-id="4693275784-28">}</span><span class="p">,</span><span class="p" data-group-id="4693275784-29">{</span><span class="mi">19</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="4693275784-29">}</span><span class="p" data-group-id="4693275784-27">}</span><span class="p">,</span><span class="w">
+                 </span><span class="p" data-group-id="4693275784-30">{</span><span class="p" data-group-id="4693275784-31">{</span><span class="mi">2010</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p" data-group-id="4693275784-31">}</span><span class="p">,</span><span class="p" data-group-id="4693275784-32">{</span><span class="mi">19</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="4693275784-32">}</span><span class="p" data-group-id="4693275784-30">}</span><span class="p">,</span><span class="w">
+                 </span><span class="p" data-group-id="4693275784-33">{</span><span class="p" data-group-id="4693275784-34">{</span><span class="mi">2010</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p" data-group-id="4693275784-34">}</span><span class="p">,</span><span class="p" data-group-id="4693275784-35">{</span><span class="mi">19</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="4693275784-35">}</span><span class="p" data-group-id="4693275784-33">}</span><span class="p">,</span><span class="w">
+                 </span><span class="mi">54</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p" data-group-id="4693275784-26">}</span><span class="p" data-group-id="4693275784-24">}</span><span class="p">,</span><span class="w">
+     </span><span class="p" data-group-id="4693275784-36">{</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="p" data-group-id="4693275784-37">&lt;&lt;</span><span class="s">&quot;FOO&quot;</span><span class="p" data-group-id="4693275784-37">&gt;&gt;</span><span class="p">,</span><span class="w">
+      </span><span class="p" data-group-id="4693275784-38">{</span><span class="ss">file_info</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="ss">regular</span><span class="p">,</span><span class="ss">read_write</span><span class="p">,</span><span class="w">
+                 </span><span class="p" data-group-id="4693275784-39">{</span><span class="p" data-group-id="4693275784-40">{</span><span class="mi">2010</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p" data-group-id="4693275784-40">}</span><span class="p">,</span><span class="p" data-group-id="4693275784-41">{</span><span class="mi">19</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="4693275784-41">}</span><span class="p" data-group-id="4693275784-39">}</span><span class="p">,</span><span class="w">
+                 </span><span class="p" data-group-id="4693275784-42">{</span><span class="p" data-group-id="4693275784-43">{</span><span class="mi">2010</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p" data-group-id="4693275784-43">}</span><span class="p">,</span><span class="p" data-group-id="4693275784-44">{</span><span class="mi">19</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="4693275784-44">}</span><span class="p" data-group-id="4693275784-42">}</span><span class="p">,</span><span class="w">
+                 </span><span class="p" data-group-id="4693275784-45">{</span><span class="p" data-group-id="4693275784-46">{</span><span class="mi">2010</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p" data-group-id="4693275784-46">}</span><span class="p">,</span><span class="p" data-group-id="4693275784-47">{</span><span class="mi">19</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="4693275784-47">}</span><span class="p" data-group-id="4693275784-45">}</span><span class="p">,</span><span class="w">
+                 </span><span class="mi">54</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p" data-group-id="4693275784-38">}</span><span class="p" data-group-id="4693275784-36">}</span><span class="p" data-group-id="4693275784-23">]</span><span class="p" data-group-id="4693275784-22">}</span><span class="gp unselectable">
+&gt; </span><span class="p" data-group-id="4693275784-48">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4693275784-49">{</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Bin</span><span class="p" data-group-id="4693275784-49">}</span><span class="p" data-group-id="4693275784-48">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">zip</span><span class="p">:</span><span class="nf">create</span><span class="p" data-group-id="4693275784-50">(</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="nf">reverse</span><span class="p" data-group-id="4693275784-51">(</span><span class="n">FileSpec</span><span class="p" data-group-id="4693275784-51">)</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4693275784-52">[</span><span class="nb">memory</span><span class="p" data-group-id="4693275784-52">]</span><span class="p" data-group-id="4693275784-50">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4693275784-53">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="4693275784-54">{</span><span class="s">&quot;dummy.zip&quot;</span><span class="p">,</span><span class="w">
+     </span><span class="p" data-group-id="4693275784-55">&lt;&lt;</span><span class="mi">80</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">74</span><span class="p">,</span><span class="mi">152</span><span class="p">,</span><span class="mi">97</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">171</span><span class="p">,</span><span class="mi">39</span><span class="p">,</span><span class="mi">212</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="w">
+       </span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p" data-group-id="4693275784-55">&gt;&gt;</span><span class="p" data-group-id="4693275784-54">}</span><span class="p" data-group-id="4693275784-53">}</span><span class="gp unselectable">
+&gt; </span><span class="k">catch</span><span class="w"> </span><span class="nc">zip</span><span class="p">:</span><span class="nf">foldl</span><span class="p" data-group-id="4693275784-56">(</span><span class="nf">fun</span><span class="p" data-group-id="4693275784-57">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="p" data-group-id="4693275784-57">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nf">throw</span><span class="p" data-group-id="4693275784-58">(</span><span class="n">B</span><span class="p" data-group-id="4693275784-59">(</span><span class="p" data-group-id="4693275784-59">)</span><span class="p" data-group-id="4693275784-58">)</span><span class="p">;</span><span class="w"> </span><span class="p" data-group-id="4693275784-60">(</span><span class="p">_</span><span class="p">,</span><span class="p">_</span><span class="p">,</span><span class="p">_</span><span class="p">,</span><span class="n">Acc</span><span class="p" data-group-id="4693275784-60">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">Acc</span><span class="w"> </span><span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4693275784-61">[</span><span class="p" data-group-id="4693275784-61">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4693275784-62">{</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Bin</span><span class="p" data-group-id="4693275784-62">}</span><span class="p" data-group-id="4693275784-56">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4693275784-63">&lt;&lt;</span><span class="s">&quot;FOO&quot;</span><span class="p" data-group-id="4693275784-63">&gt;&gt;</span></code></pre>
   </section>
 </section>
 <section class="detail" id="list_dir/1">
@@ -810,7 +830,7 @@ throwing an exception.</p><p><em>Example:</em></p><pre><code class="makeup erlan
       <h1 class="signature" translate="no">list_dir(Archive)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L678" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L678" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -842,7 +862,7 @@ throwing an exception.</p><p><em>Example:</em></p><pre><code class="makeup erlan
       <h1 class="signature" translate="no">list_dir(Archive, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L709" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L709" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -885,7 +905,7 @@ See <a href="#t:extra/0"><code class="inline">extra/0</code></a> for more detail
       <h1 class="signature" translate="no">t(Archive)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L849" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L849" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -914,7 +934,7 @@ to <code class="inline">tar t</code>.)</p>
       <h1 class="signature" translate="no">tt(Archive)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L876" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L876" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -943,7 +963,7 @@ the Erlang shell. (Similar to <code class="inline">tar tv</code>.)</p>
       <h1 class="signature" translate="no">unzip(Archive)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L349" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L349" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -980,7 +1000,7 @@ the Erlang shell. (Similar to <code class="inline">tar tv</code>.)</p>
       <h1 class="signature" translate="no">unzip(Archive, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L412" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L412" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1048,7 +1068,7 @@ prepended to filenames when extracting them from the zip archive. (Acting like
       <h1 class="signature" translate="no">zip(Name, FileList)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L547" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L547" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1085,7 +1105,7 @@ prepended to filenames when extracting them from the zip archive. (Acting like
       <h1 class="signature" translate="no">zip(Name, FileList, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L642" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L642" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1159,7 +1179,7 @@ uncompress extensions.</p></li></ul></li></ul>
       <h1 class="signature" translate="no">zip_close(ZipHandle)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L784" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L784" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1188,7 +1208,7 @@ resources are closed, and the handle is not to be used after closing.</p>
       <h1 class="signature" translate="no">zip_get(ZipHandle)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L774" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L774" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1220,7 +1240,7 @@ resources are closed, and the handle is not to be used after closing.</p>
       <h1 class="signature" translate="no">zip_get(FileName, ZipHandle)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L799" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L799" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1256,7 +1276,7 @@ to function <a href="#zip_open/1"><code class="inline">zip_open/1,2</code></a> w
         <span class="note">(since OTP 26.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L810" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L810" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1289,7 +1309,7 @@ to function <a href="#zip_open/1"><code class="inline">zip_open/1,2</code></a> w
       <h1 class="signature" translate="no">zip_list_dir(ZipHandle)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L822" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L822" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1322,7 +1342,7 @@ zip archive comment.</p>
       <h1 class="signature" translate="no">zip_open(Archive)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L742" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L742" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1351,7 +1371,7 @@ zip archive comment.</p>
       <h1 class="signature" translate="no">zip_open(Archive, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L763" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L763" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1389,6 +1409,7 @@ dies.</p>
       </a>
       <span class="text">erl_tar compatibility functions</span>
     </h1>
+
     <div class="erl_tar-compatibility-functions-list">
 <section class="detail" id="create/2">
 
@@ -1400,7 +1421,7 @@ dies.</p>
       <h1 class="signature" translate="no">create(Name, FileList)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L1119" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L1119" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1439,7 +1460,7 @@ dies.</p>
       <h1 class="signature" translate="no">create(Name, FileList, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L1133" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L1133" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1480,7 +1501,7 @@ dies.</p>
       <h1 class="signature" translate="no">extract(Archive)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L1146" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L1146" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1517,7 +1538,7 @@ dies.</p>
       <h1 class="signature" translate="no">extract(Archive, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L1166" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L1166" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1563,7 +1584,7 @@ dies.</p>
       <h1 class="signature" translate="no">table(Archive)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L1094" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L1094" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1595,7 +1616,7 @@ dies.</p>
       <h1 class="signature" translate="no">table(Archive, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/zip.erl#L1106" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/zip.erl#L1106" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1627,8 +1648,8 @@ dies.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="stdlib.epub" title="ePub version">
@@ -1640,7 +1661,7 @@ dies.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

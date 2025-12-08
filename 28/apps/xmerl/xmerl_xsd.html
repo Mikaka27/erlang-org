@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="xmerl v2.1.7">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/xmerl/xmerl_xsd.html" />
     <title>xmerl_xsd — xmerl v2.1.7</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-CB494AA4.js"></script>
+    <script defer src="dist/sidebar_items-B52CE520.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ xmerl
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of xmerl</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ xmerl
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_xsd.erl#L23" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_xsd.erl#L23" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -175,7 +193,7 @@ XML Schema please study <a href="http://www.w3.org/TR/xmlschema-0/">part 0</a>.<
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">process_schema(Schema, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#process_schema/2"><code class="inline">process_schema(Schema, [])</code></a>.</p></div>
 
     </div>
 
@@ -195,7 +213,7 @@ XML Schema please study <a href="http://www.w3.org/TR/xmlschema-0/">part 0</a>.<
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">process_schemas(Schemas, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#process_schemas/2"><code class="inline">process_schemas(Schemas, [])</code></a>.</p></div>
 
     </div>
 
@@ -215,7 +233,7 @@ XML Schema please study <a href="http://www.w3.org/TR/xmlschema-0/">part 0</a>.<
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">process_validate(Schema, Element, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#process_validate/3"><code class="inline">process_validate(Schema, Element, [])</code></a>.</p></div>
 
     </div>
 
@@ -235,7 +253,7 @@ XML Schema please study <a href="http://www.w3.org/TR/xmlschema-0/">part 0</a>.<
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">state2file(State, SchemaName)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#state2file/2"><code class="inline">state2file(State, SchemaName)</code></a>.</p></div>
 
     </div>
 
@@ -255,7 +273,7 @@ XML Schema please study <a href="http://www.w3.org/TR/xmlschema-0/">part 0</a>.<
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">validate(Element, State, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#validate/3"><code class="inline">validate(Element, State, [])</code></a>.</p></div>
 
     </div>
 
@@ -281,6 +299,7 @@ XML Schema please study <a href="http://www.w3.org/TR/xmlschema-0/">part 0</a>.<
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:filename/0">
 
@@ -294,7 +313,7 @@ XML Schema please study <a href="http://www.w3.org/TR/xmlschema-0/">part 0</a>.<
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_xsd.erl#L105" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_xsd.erl#L105" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -324,7 +343,7 @@ XML Schema please study <a href="http://www.w3.org/TR/xmlschema-0/">part 0</a>.<
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_xsd.erl#L78" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_xsd.erl#L78" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -354,7 +373,7 @@ XML Schema please study <a href="http://www.w3.org/TR/xmlschema-0/">part 0</a>.<
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_xsd.erl#L102" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_xsd.erl#L102" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -396,6 +415,7 @@ XML Schema please study <a href="http://www.w3.org/TR/xmlschema-0/">part 0</a>.<
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="file2state/1">
 
@@ -407,7 +427,7 @@ XML Schema please study <a href="http://www.w3.org/TR/xmlschema-0/">part 0</a>.<
       <h1 class="signature" translate="no">file2state(FileName)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_xsd.erl#L196" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_xsd.erl#L196" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -438,7 +458,7 @@ The state can then be used validating an XML document.</p>
       <h1 class="signature" translate="no">format_error(Reasons)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_xsd.erl#L5556" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_xsd.erl#L5556" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -466,7 +486,7 @@ The state can then be used validating an XML document.</p>
       <h1 class="signature" translate="no">process_schema(Schema)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_xsd.erl#L336" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_xsd.erl#L336" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -494,7 +514,7 @@ The state can then be used validating an XML document.</p>
       <h1 class="signature" translate="no">process_schema(Schema, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_xsd.erl#L351" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_xsd.erl#L351" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -526,7 +546,7 @@ during the processing.</p>
       <h1 class="signature" translate="no">process_schemas(Schemas)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_xsd.erl#L383" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_xsd.erl#L383" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -554,7 +574,7 @@ during the processing.</p>
       <h1 class="signature" translate="no">process_schemas(Schemas, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_xsd.erl#L401" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_xsd.erl#L401" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -591,7 +611,7 @@ a list of several errors or a single error encountered during the processing.</p
       <h1 class="signature" translate="no">process_validate(Schema, Element)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_xsd.erl#L245" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_xsd.erl#L245" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -619,7 +639,7 @@ a list of several errors or a single error encountered during the processing.</p
       <h1 class="signature" translate="no">process_validate(Schema, Element, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_xsd.erl#L270" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_xsd.erl#L270" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -658,7 +678,7 @@ defined in <code class="inline">my_XML_Schema.xsd</code>.</p>
       <h1 class="signature" translate="no">state2file(State)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_xsd.erl#L162" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_xsd.erl#L162" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -686,7 +706,7 @@ defined in <code class="inline">my_XML_Schema.xsd</code>.</p>
       <h1 class="signature" translate="no">state2file(S, FileName)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_xsd.erl#L175" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_xsd.erl#L175" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -716,7 +736,7 @@ You can provide the file name for the saved state. FileName is saved with the
       <h1 class="signature" translate="no">validate(Element, State)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_xsd.erl#L114" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_xsd.erl#L114" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -744,7 +764,7 @@ You can provide the file name for the saved state. FileName is saved with the
       <h1 class="signature" translate="no">validate(Xml, State, Opts)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_xsd.erl#L149" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_xsd.erl#L149" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -774,9 +794,9 @@ of the schema information and therefore if one shall validate
 several times towards the same schema it reduces time consumption.</p><p>The result, <code class="inline">ValidElement</code>, is the valid element that conforms to the
 post-schema-validation infoset. When the validator finds an error it tries to
 continue and reports a list of all errors found. In those cases an unexpected
-error is found it may cause a single error reason.</p><p>Usage example:</p><pre><code class="makeup erlang" translate="no"><span class="mi">1</span><span class="o">&gt;</span><span class="p" data-group-id="3924463471-1">{</span><span class="n">E</span><span class="p">,</span><span class="p">_</span><span class="p" data-group-id="3924463471-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">xmerl_scan</span><span class="p">:</span><span class="nf">file</span><span class="p" data-group-id="3924463471-2">(</span><span class="s">&quot;my_XML_document.xml&quot;</span><span class="p" data-group-id="3924463471-2">)</span><span class="p">.</span><span class="w">
-</span><span class="mi">2</span><span class="o">&gt;</span><span class="p" data-group-id="3924463471-3">{</span><span class="ss">ok</span><span class="p">,</span><span class="n">S</span><span class="p" data-group-id="3924463471-3">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">xmerl_xsd</span><span class="p">:</span><span class="nf">process_schema</span><span class="p" data-group-id="3924463471-4">(</span><span class="s">&quot;my_XML_Schema.xsd&quot;</span><span class="p" data-group-id="3924463471-4">)</span><span class="p">.</span><span class="w">
-</span><span class="mi">3</span><span class="o">&gt;</span><span class="p" data-group-id="3924463471-5">{</span><span class="n">E2</span><span class="p">,</span><span class="p">_</span><span class="p" data-group-id="3924463471-5">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">xmerl_xsd</span><span class="p">:</span><span class="nf">validate</span><span class="p" data-group-id="3924463471-6">(</span><span class="n">E</span><span class="p">,</span><span class="n">S</span><span class="p" data-group-id="3924463471-6">)</span><span class="p">.</span></code></pre><p>Observe that E2 may differ from E if for instance there are default values
+error is found it may cause a single error reason.</p><p>Usage example:</p><pre><code class="makeup erlang" translate="no"><span class="mi">1</span><span class="o">&gt;</span><span class="p" data-group-id="4621756492-1">{</span><span class="n">E</span><span class="p">,</span><span class="p">_</span><span class="p" data-group-id="4621756492-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">xmerl_scan</span><span class="p">:</span><span class="nf">file</span><span class="p" data-group-id="4621756492-2">(</span><span class="s">&quot;my_XML_document.xml&quot;</span><span class="p" data-group-id="4621756492-2">)</span><span class="p">.</span><span class="w">
+</span><span class="mi">2</span><span class="o">&gt;</span><span class="p" data-group-id="4621756492-3">{</span><span class="ss">ok</span><span class="p">,</span><span class="n">S</span><span class="p" data-group-id="4621756492-3">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">xmerl_xsd</span><span class="p">:</span><span class="nf">process_schema</span><span class="p" data-group-id="4621756492-4">(</span><span class="s">&quot;my_XML_Schema.xsd&quot;</span><span class="p" data-group-id="4621756492-4">)</span><span class="p">.</span><span class="w">
+</span><span class="mi">3</span><span class="o">&gt;</span><span class="p" data-group-id="4621756492-5">{</span><span class="n">E2</span><span class="p">,</span><span class="p">_</span><span class="p" data-group-id="4621756492-5">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">xmerl_xsd</span><span class="p">:</span><span class="nf">validate</span><span class="p" data-group-id="4621756492-6">(</span><span class="n">E</span><span class="p">,</span><span class="n">S</span><span class="p" data-group-id="4621756492-6">)</span><span class="p">.</span></code></pre><p>Observe that E2 may differ from E if for instance there are default values
 defined in <code class="inline">my_XML_Schema.xsd</code>.</p>
   </section>
 </section>
@@ -788,8 +808,8 @@ defined in <code class="inline">my_XML_Schema.xsd</code>.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
         </span>
@@ -797,7 +817,7 @@ defined in <code class="inline">my_XML_Schema.xsd</code>.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="snmp v5.19.1">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/snmp/snmp_instr_functions.html" />
     <title>Instrumentation Functions — snmp v5.19.1</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-AF03DEA8.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ snmp
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of snmp</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -84,7 +102,7 @@ snmp
     <h1>Instrumentation Functions</h1>
 
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/snmp/doc/guides/snmp_instr_functions.md#L1" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/snmp/doc/guides/snmp_instr_functions.md#L1" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -108,8 +126,8 @@ variables and tables, and for <code class="inline">get-next</code> for tables on
 operation is translated into a series of calls to <code class="inline">get-next</code>.</p><h2 id="instrumentation-functions" class="section-heading"><a href="#instrumentation-functions" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Instrumentation Functions</span></h2><p>The following sections describe how the instrumentation functions should be
 defined in Erlang for the different operations. In the following, <code class="inline">RowIndex</code> is
 a list of key values for the table, and <code class="inline">Column</code> is a column number.</p><p>These functions are described in detail in
-<a href="snmp_def_instr_functions.html">Definition of Instrumentation Functions</a>.</p><h3 id="new-delete-operations" class="section-heading"><a href="#new-delete-operations" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">New / Delete Operations</span></h3><p>For scalar variables:</p><pre><code class="makeup c" translate="no"><span class="nf">variable_access</span><span class="p" data-group-id="5555633859-1">(</span><span class="k">new</span><span class="w"> </span><span class="p" data-group-id="5555633859-2">[</span><span class="p">,</span><span class="w"> </span><span class="no">ExtraArg1</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p" data-group-id="5555633859-2">]</span><span class="p" data-group-id="5555633859-1">)</span><span class="w">
-</span><span class="nf">variable_access</span><span class="p" data-group-id="5555633859-3">(</span><span class="k">delete</span><span class="w"> </span><span class="p" data-group-id="5555633859-4">[</span><span class="p">,</span><span class="w"> </span><span class="no">ExtraArg1</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p" data-group-id="5555633859-4">]</span><span class="p" data-group-id="5555633859-3">)</span></code></pre><p>For tables:</p><pre><code class="text">table_access(new [, ExtraArg1, ...])
+<a href="snmp_def_instr_functions.html">Definition of Instrumentation Functions</a>.</p><h3 id="new-delete-operations" class="section-heading"><a href="#new-delete-operations" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">New / Delete Operations</span></h3><p>For scalar variables:</p><pre><code class="makeup c" translate="no"><span class="nf">variable_access</span><span class="p" data-group-id="6456002501-1">(</span><span class="k">new</span><span class="w"> </span><span class="p" data-group-id="6456002501-2">[</span><span class="p">,</span><span class="w"> </span><span class="no">ExtraArg1</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p" data-group-id="6456002501-2">]</span><span class="p" data-group-id="6456002501-1">)</span><span class="w">
+</span><span class="nf">variable_access</span><span class="p" data-group-id="6456002501-3">(</span><span class="k">delete</span><span class="w"> </span><span class="p" data-group-id="6456002501-4">[</span><span class="p">,</span><span class="w"> </span><span class="no">ExtraArg1</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p" data-group-id="6456002501-4">]</span><span class="p" data-group-id="6456002501-3">)</span></code></pre><p>For tables:</p><pre><code class="text">table_access(new [, ExtraArg1, ...])
 table_access(delete [, ExtraArg1, ...])</code></pre><p>These functions are called for each object in an MIB when the MIB is unloaded or
 loaded, respectively.</p><h3 id="get-operation" class="section-heading"><a href="#get-operation" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Get Operation</span></h3><p>For scalar variables:</p><pre><code class="text">variable_access(get [, ExtraArg1, ...])</code></pre><p>For tables:</p><pre><code class="text">table_access(get,RowIndex,Cols [,ExtraArg1, ...])</code></pre><p><code class="inline">Cols</code> is a list of <code class="inline">Column</code>. The agent will sort incoming variables so that all
 operations on one row (same index) will be supplied at the same time. The reason
@@ -139,9 +157,9 @@ to <code class="inline">my_table</code>:</p><pre><code class="text">my_table(get
 value 1, and <code class="inline">[3, 5]</code> is the list of requested columns. The function should now
 return the lexicographically next elements:</p><pre><code class="text">[{[3, 1, 2], d}, {[5, 1, 2], f}]</code></pre><p>This is illustrated in the following table:</p><p><a href="" id="getnext2"></a></p><p><img src="assets/getnext2.gif" alt="GetNext from [3,1,1] and [5,1,1]." title="GetNext from [3,1,1] and [5,1,1]."/></p><p>The manager now issues the following <code class="inline">getNext</code> request:</p><pre><code class="text">getNext{ myTable.myTableEntry.3.2.1,
          myTable.myTableEntry.5.2.1 }</code></pre><p>This is transformed into one call to <code class="inline">my_table</code>:</p><pre><code class="text">my_table(get_next, [2, 1], [3, 5])</code></pre><p>The function should now return:</p><pre><code class="text">[{[4, 1, 1], b}, endOfTable]</code></pre><p>This is illustrated in the following table:</p><p><a href="" id="getnext3"></a></p><p><img src="assets/getnext3.gif" alt="GetNext from [3,2,1] and [5,2,1]." title="GetNext from [3,2,1] and [5,2,1]."/></p><p>The manager now issues the following <code class="inline">getNext</code> request:</p><pre><code class="text">getNext{ myTable.myTableEntry.3.1.2,
-         myTable.myTableEntry.4.1.2 }</code></pre><p>This will be transform into one call to <code class="inline">my_table</code>:</p><pre><code class="text">my_table(get_next, [1, 2], [3, 4])</code></pre><p>The function should now return:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="6465155744-1">[</span><span class="p" data-group-id="6465155744-2">{</span><span class="p" data-group-id="6465155744-3">[</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="6465155744-3">]</span><span class="p">,</span><span class="w"> </span><span class="ss">g</span><span class="p" data-group-id="6465155744-2">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6465155744-4">{</span><span class="p" data-group-id="6465155744-5">[</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="6465155744-5">]</span><span class="p">,</span><span class="w"> </span><span class="ss">c</span><span class="p" data-group-id="6465155744-4">}</span><span class="p" data-group-id="6465155744-1">]</span></code></pre><p>This is illustrated in the following table:</p><p><a href="" id="getnext4"></a></p><p><img src="assets/getnext4.gif" alt="GetNext from [3,1,2] and [4,1,2]." title="GetNext from [3,1,2] and [4,1,2]."/></p><p>The manager now issues the following <code class="inline">getNext</code> request:</p><pre><code class="text">getNext{ myTable.myTableEntry,
-         myTable.myTableEntry.1.3.2 }</code></pre><p>This will be transform into two calls to <code class="inline">my_table</code>:</p><pre><code class="makeup erlang" translate="no"><span class="nf">my_table</span><span class="p" data-group-id="4423484700-1">(</span><span class="ss">get_next</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4423484700-2">[</span><span class="p" data-group-id="4423484700-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4423484700-3">[</span><span class="mi">0</span><span class="p" data-group-id="4423484700-3">]</span><span class="p" data-group-id="4423484700-1">)</span><span class="w"> </span><span class="ow">and</span><span class="w">
-</span><span class="nf">my_table</span><span class="p" data-group-id="4423484700-4">(</span><span class="ss">get_next</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4423484700-5">[</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="4423484700-5">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4423484700-6">[</span><span class="mi">1</span><span class="p" data-group-id="4423484700-6">]</span><span class="p" data-group-id="4423484700-4">)</span></code></pre><p>The function should now return:</p><pre><code class="text">[{[3, 1, 1], a}] and
+         myTable.myTableEntry.4.1.2 }</code></pre><p>This will be transform into one call to <code class="inline">my_table</code>:</p><pre><code class="text">my_table(get_next, [1, 2], [3, 4])</code></pre><p>The function should now return:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="2375962782-1">[</span><span class="p" data-group-id="2375962782-2">{</span><span class="p" data-group-id="2375962782-3">[</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="2375962782-3">]</span><span class="p">,</span><span class="w"> </span><span class="ss">g</span><span class="p" data-group-id="2375962782-2">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2375962782-4">{</span><span class="p" data-group-id="2375962782-5">[</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="2375962782-5">]</span><span class="p">,</span><span class="w"> </span><span class="ss">c</span><span class="p" data-group-id="2375962782-4">}</span><span class="p" data-group-id="2375962782-1">]</span></code></pre><p>This is illustrated in the following table:</p><p><a href="" id="getnext4"></a></p><p><img src="assets/getnext4.gif" alt="GetNext from [3,1,2] and [4,1,2]." title="GetNext from [3,1,2] and [4,1,2]."/></p><p>The manager now issues the following <code class="inline">getNext</code> request:</p><pre><code class="text">getNext{ myTable.myTableEntry,
+         myTable.myTableEntry.1.3.2 }</code></pre><p>This will be transform into two calls to <code class="inline">my_table</code>:</p><pre><code class="makeup erlang" translate="no"><span class="nf">my_table</span><span class="p" data-group-id="5822315750-1">(</span><span class="ss">get_next</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5822315750-2">[</span><span class="p" data-group-id="5822315750-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5822315750-3">[</span><span class="mi">0</span><span class="p" data-group-id="5822315750-3">]</span><span class="p" data-group-id="5822315750-1">)</span><span class="w"> </span><span class="ow">and</span><span class="w">
+</span><span class="nf">my_table</span><span class="p" data-group-id="5822315750-4">(</span><span class="ss">get_next</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5822315750-5">[</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="5822315750-5">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5822315750-6">[</span><span class="mi">1</span><span class="p" data-group-id="5822315750-6">]</span><span class="p" data-group-id="5822315750-4">)</span></code></pre><p>The function should now return:</p><pre><code class="text">[{[3, 1, 1], a}] and
 [{[3, 1, 1], a}]</code></pre><p>In both cases, the first accessible element in the table should be returned. As
 the key columns are not accessible, this means that the third column is the
 first row.</p><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>Normally, the functions described above behave exactly as shown, but they are
@@ -152,17 +170,17 @@ appended to the standard arguments for each function. Consider two read-only
 variables for a device, <code class="inline">ipAdr</code> and <code class="inline">name</code> with object identifiers 1.1.23.4 and
 1.1.7 respectively. To access these variables, one could implement the two
 Erlang functions <code class="inline">ip_access</code> and <code class="inline">name_access</code>, which will be in the MIB. The
-functions could be specified in a text file as follows:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="0746923983-1">{</span><span class="ss">ipAdr</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0746923983-2">{</span><span class="ss">my_module</span><span class="p">,</span><span class="w"> </span><span class="ss">ip_access</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0746923983-3">[</span><span class="p" data-group-id="0746923983-3">]</span><span class="p" data-group-id="0746923983-2">}</span><span class="p" data-group-id="0746923983-1">}</span><span class="p">.</span><span class="w">
+functions could be specified in a text file as follows:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="7778666228-1">{</span><span class="ss">ipAdr</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7778666228-2">{</span><span class="ss">my_module</span><span class="p">,</span><span class="w"> </span><span class="ss">ip_access</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7778666228-3">[</span><span class="p" data-group-id="7778666228-3">]</span><span class="p" data-group-id="7778666228-2">}</span><span class="p" data-group-id="7778666228-1">}</span><span class="p">.</span><span class="w">
 </span><span class="c1">% Or using the oid syntax for &#39;name&#39;</span><span class="w">
-</span><span class="p" data-group-id="0746923983-4">{</span><span class="p" data-group-id="0746923983-5">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p" data-group-id="0746923983-5">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0746923983-6">{</span><span class="ss">my_module</span><span class="p">,</span><span class="w"> </span><span class="ss">name_access</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0746923983-7">[</span><span class="p" data-group-id="0746923983-7">]</span><span class="p" data-group-id="0746923983-6">}</span><span class="p" data-group-id="0746923983-4">}</span><span class="p">.</span></code></pre><p>The <code class="inline">ExtraArgument</code> parameter is the empty list. For example, when the agent
+</span><span class="p" data-group-id="7778666228-4">{</span><span class="p" data-group-id="7778666228-5">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p" data-group-id="7778666228-5">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7778666228-6">{</span><span class="ss">my_module</span><span class="p">,</span><span class="w"> </span><span class="ss">name_access</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7778666228-7">[</span><span class="p" data-group-id="7778666228-7">]</span><span class="p" data-group-id="7778666228-6">}</span><span class="p" data-group-id="7778666228-4">}</span><span class="p">.</span></code></pre><p>The <code class="inline">ExtraArgument</code> parameter is the empty list. For example, when the agent
 receives a get-request for the <code class="inline">ipAdr</code> variable, a call will be made to
 <code class="inline">ip_access(get)</code>. The value returned by this function is the answer to the
 get-request.</p><p>If <code class="inline">ip_access</code> and <code class="inline">name_access</code> are implemented similarly, we could write a
-<code class="inline">generic_access</code> function using the <code class="inline">ListOfExtraArguments</code>:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="1752437361-1">{</span><span class="ss">ipAdr</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1752437361-2">{</span><span class="ss">my_module</span><span class="p">,</span><span class="w"> </span><span class="ss">generic_access</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1752437361-3">[</span><span class="ss">&#39;IPADR&#39;</span><span class="p" data-group-id="1752437361-3">]</span><span class="p" data-group-id="1752437361-2">}</span><span class="p" data-group-id="1752437361-1">}</span><span class="p">.</span><span class="w">
+<code class="inline">generic_access</code> function using the <code class="inline">ListOfExtraArguments</code>:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="4844621874-1">{</span><span class="ss">ipAdr</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4844621874-2">{</span><span class="ss">my_module</span><span class="p">,</span><span class="w"> </span><span class="ss">generic_access</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4844621874-3">[</span><span class="ss">&#39;IPADR&#39;</span><span class="p" data-group-id="4844621874-3">]</span><span class="p" data-group-id="4844621874-2">}</span><span class="p" data-group-id="4844621874-1">}</span><span class="p">.</span><span class="w">
 </span><span class="c1">% The mnemonic &#39;name&#39; is more convenient than 1.1.7</span><span class="w">
-</span><span class="p" data-group-id="1752437361-4">{</span><span class="ss">name</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1752437361-5">{</span><span class="ss">my_module</span><span class="p">,</span><span class="w"> </span><span class="ss">generic_access</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1752437361-6">[</span><span class="ss">&#39;NAME&#39;</span><span class="p" data-group-id="1752437361-6">]</span><span class="p" data-group-id="1752437361-5">}</span><span class="p" data-group-id="1752437361-4">}</span><span class="p">.</span></code></pre><p>When the agent receives the same get-request as above, a call will be made to
-<code class="inline">generic_access(get,</code>'<code class="inline">IPADR')</code>.</p><p>Yet another possibility, closer to the hardware, could be:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="4260710766-1">{</span><span class="ss">ipAdr</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4260710766-2">{</span><span class="ss">my_module</span><span class="p">,</span><span class="w"> </span><span class="ss">generic_access</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4260710766-3">[</span><span class="mi">16#2543</span><span class="p" data-group-id="4260710766-3">]</span><span class="p" data-group-id="4260710766-2">}</span><span class="p" data-group-id="4260710766-1">}</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="4260710766-4">{</span><span class="ss">name</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4260710766-5">{</span><span class="ss">my_module</span><span class="p">,</span><span class="w"> </span><span class="ss">generic_access</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4260710766-6">[</span><span class="mi">16#A2B3</span><span class="p" data-group-id="4260710766-6">]</span><span class="p" data-group-id="4260710766-5">}</span><span class="p" data-group-id="4260710766-4">}</span><span class="p">.</span></code></pre><h2 id="default-instrumentation" class="section-heading"><a href="#default-instrumentation" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Default Instrumentation</span></h2><p><a href="" id="snmp_3"></a></p><p>When the MIB definition work is finished, there are two major issues left.</p><ul><li>Implementing the MIB</li><li>Implementing a Manager Application.</li></ul><p>Implementing an MIB can be a tedious task. Most probably, there is a need to
+</span><span class="p" data-group-id="4844621874-4">{</span><span class="ss">name</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4844621874-5">{</span><span class="ss">my_module</span><span class="p">,</span><span class="w"> </span><span class="ss">generic_access</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4844621874-6">[</span><span class="ss">&#39;NAME&#39;</span><span class="p" data-group-id="4844621874-6">]</span><span class="p" data-group-id="4844621874-5">}</span><span class="p" data-group-id="4844621874-4">}</span><span class="p">.</span></code></pre><p>When the agent receives the same get-request as above, a call will be made to
+<code class="inline">generic_access(get,</code>'<code class="inline">IPADR')</code>.</p><p>Yet another possibility, closer to the hardware, could be:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="4425114141-1">{</span><span class="ss">ipAdr</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4425114141-2">{</span><span class="ss">my_module</span><span class="p">,</span><span class="w"> </span><span class="ss">generic_access</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4425114141-3">[</span><span class="mi">16#2543</span><span class="p" data-group-id="4425114141-3">]</span><span class="p" data-group-id="4425114141-2">}</span><span class="p" data-group-id="4425114141-1">}</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4425114141-4">{</span><span class="ss">name</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4425114141-5">{</span><span class="ss">my_module</span><span class="p">,</span><span class="w"> </span><span class="ss">generic_access</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4425114141-6">[</span><span class="mi">16#A2B3</span><span class="p" data-group-id="4425114141-6">]</span><span class="p" data-group-id="4425114141-5">}</span><span class="p" data-group-id="4425114141-4">}</span><span class="p">.</span></code></pre><h2 id="default-instrumentation" class="section-heading"><a href="#default-instrumentation" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Default Instrumentation</span></h2><p><a href="" id="snmp_3"></a></p><p>When the MIB definition work is finished, there are two major issues left.</p><ul><li>Implementing the MIB</li><li>Implementing a Manager Application.</li></ul><p>Implementing an MIB can be a tedious task. Most probably, there is a need to
 test the agent before all tables and variables are implemented. In this case,
 the default instrumentation functions are useful. The toolkit can generate
 default instrumentation functions for variables as well as for tables.
@@ -233,8 +251,8 @@ Definition of Instrumentation Functions
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="snmp.epub" title="ePub version">
@@ -246,7 +264,7 @@ Definition of Instrumentation Functions
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

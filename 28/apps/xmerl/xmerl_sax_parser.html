@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="xmerl v2.1.7">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/xmerl/xmerl_sax_parser.html" />
     <title>xmerl_sax_parser — xmerl v2.1.7</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-CB494AA4.js"></script>
+    <script defer src="dist/sidebar_items-B52CE520.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ xmerl
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of xmerl</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ xmerl
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_sax_parser.erl#L27" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_sax_parser.erl#L27" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -122,7 +140,7 @@ versions for several programming language environments other than Java.</p>
 
       </div>
 
-        <div class="summary-synopsis"><p>Callback <a><code class="inline">function/0</code></a> that is called whenever
+        <div class="summary-synopsis"><p>Callback <a href="../../apps/erts/erlang.html#t:function/0"><code class="inline">function/0</code></a> that is called whenever
 the parser runs out if input data.</p></div>
 
     </div>
@@ -142,7 +160,7 @@ the parser runs out if input data.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>SAX events that are sent to the user via the
-<a>event callback</a>.</p></div>
+<a href="#t:event_fun/0">event callback</a>.</p></div>
 
     </div>
 
@@ -152,7 +170,7 @@ the parser runs out if input data.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Callback <a><code class="inline">function/0</code></a> that is called for every event sent by the parser.</p></div>
+        <div class="summary-synopsis"><p>Callback <a href="../../apps/erts/erlang.html#t:function/0"><code class="inline">function/0</code></a> that is called for every event sent by the parser.</p></div>
 
     </div>
 
@@ -250,6 +268,7 @@ the parser runs out if input data.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:continuation_fun/0">
 
@@ -263,7 +282,7 @@ the parser runs out if input data.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_sax_parser.erl#L127" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_sax_parser.erl#L127" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -301,7 +320,7 @@ is a string that describes the problem.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_sax_parser.erl#L113" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_sax_parser.erl#L113" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -331,7 +350,7 @@ is a string that describes the problem.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_sax_parser.erl#L236" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_sax_parser.erl#L236" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -435,7 +454,7 @@ notation declaration event.</p></li></ul>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_sax_parser.erl#L142" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_sax_parser.erl#L142" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -469,7 +488,7 @@ is a string that describes the problem.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_sax_parser.erl#L144" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_sax_parser.erl#L144" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -499,7 +518,7 @@ is a string that describes the problem.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_sax_parser.erl#L131" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_sax_parser.erl#L131" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -527,7 +546,7 @@ is a string that describes the problem.</p>
       <h1 class="signature" translate="no">latin1_binary()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_sax_parser.erl#L267" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_sax_parser.erl#L267" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -555,7 +574,7 @@ is a string that describes the problem.</p>
       <h1 class="signature" translate="no">options()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_sax_parser.erl#L101" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_sax_parser.erl#L101" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -610,7 +629,7 @@ external entities so that an external DTD is not parsed. Default is <code class=
       <h1 class="signature" translate="no">unicode_binary()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_sax_parser.erl#L264" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_sax_parser.erl#L264" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -638,7 +657,7 @@ external entities so that an external DTD is not parsed. Default is <code class=
       <h1 class="signature" translate="no">unicode_char()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_sax_parser.erl#L261" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_sax_parser.erl#L261" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -667,6 +686,7 @@ external entities so that an external DTD is not parsed. Default is <code class=
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="file/2">
 
@@ -678,7 +698,7 @@ external entities so that an external DTD is not parsed. Default is <code class=
       <h1 class="signature" translate="no">file(Name, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_sax_parser.erl#L309" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_sax_parser.erl#L309" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -717,7 +737,7 @@ external entities so that an external DTD is not parsed. Default is <code class=
       <h1 class="signature" translate="no">stream(Xml, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/xmerl/src/xmerl_sax_parser.erl#L351" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/xmerl/src/xmerl_sax_parser.erl#L351" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -753,8 +773,8 @@ external entities so that an external DTD is not parsed. Default is <code class=
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
         </span>
@@ -762,7 +782,7 @@ external entities so that an external DTD is not parsed. Default is <code class=
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="tools v4.1.3">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/tools/make.html" />
     <title>make — tools v4.1.3</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-A238A451.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ tools
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of tools</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ tools
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/tools/src/make.erl#L28" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/tools/src/make.erl#L28" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -104,8 +122,8 @@ named <code class="inline">Emakefile</code>. If present <code class="inline">Ema
 the first match is used. For example, the following <code class="inline">Emakefile</code> means that
 <code class="inline">file1</code> should be compiled with the options <code class="inline">[debug_info,{i,&quot;../foo&quot;}]</code>, while
 all other files in the current directory should be compiled with only the
-<code class="inline">debug_info</code> flag.</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="2119674431-1">{</span><span class="ss">&#39;file1&#39;</span><span class="p">,</span><span class="p" data-group-id="2119674431-2">[</span><span class="ss">debug_info</span><span class="p">,</span><span class="p" data-group-id="2119674431-3">{</span><span class="ss">i</span><span class="p">,</span><span class="s">&quot;../foo&quot;</span><span class="p" data-group-id="2119674431-3">}</span><span class="p" data-group-id="2119674431-2">]</span><span class="p" data-group-id="2119674431-1">}</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="2119674431-4">{</span><span class="ss">&#39;*&#39;</span><span class="p">,</span><span class="p" data-group-id="2119674431-5">[</span><span class="ss">debug_info</span><span class="p" data-group-id="2119674431-5">]</span><span class="p" data-group-id="2119674431-4">}</span><span class="p">.</span></code></pre><h2 id="module-see-also" class="section-heading"><a href="#module-see-also" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">See Also</span></h2><p><a href="../../apps/compiler/compile.html">The Compiler Application</a></p>
+<code class="inline">debug_info</code> flag.</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="9329064491-1">{</span><span class="ss">&#39;file1&#39;</span><span class="p">,</span><span class="p" data-group-id="9329064491-2">[</span><span class="ss">debug_info</span><span class="p">,</span><span class="p" data-group-id="9329064491-3">{</span><span class="ss">i</span><span class="p">,</span><span class="s">&quot;../foo&quot;</span><span class="p" data-group-id="9329064491-3">}</span><span class="p" data-group-id="9329064491-2">]</span><span class="p" data-group-id="9329064491-1">}</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="9329064491-4">{</span><span class="ss">&#39;*&#39;</span><span class="p">,</span><span class="p" data-group-id="9329064491-5">[</span><span class="ss">debug_info</span><span class="p" data-group-id="9329064491-5">]</span><span class="p" data-group-id="9329064491-4">}</span><span class="p">.</span></code></pre><h2 id="module-see-also" class="section-heading"><a href="#module-see-also" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">See Also</span></h2><p><a href="../../apps/compiler/compile.html">The Compiler Application</a></p>
     </section>
 
 </div>
@@ -128,7 +146,7 @@ all other files in the current directory should be compiled with only the
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">all([])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#all/1"><code class="inline">all([])</code></a>.</p></div>
 
     </div>
 
@@ -152,7 +170,7 @@ working directory.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">files(ModFiles, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#files/2"><code class="inline">files(ModFiles, [])</code></a>.</p></div>
 
     </div>
 
@@ -162,7 +180,7 @@ working directory.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>This function does exactly the same thing as <a><code class="inline">all/0,1</code></a>, but for the
+        <div class="summary-synopsis"><p>This function does exactly the same thing as <a href="#all/0"><code class="inline">all/0,1</code></a>, but for the
 specified <code class="inline">ModFiles</code>, which is a list of module or file names.</p></div>
 
     </div>
@@ -179,6 +197,7 @@ specified <code class="inline">ModFiles</code>, which is a list of module or fil
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="all/0">
 
@@ -190,7 +209,7 @@ specified <code class="inline">ModFiles</code>, which is a list of module or fil
       <h1 class="signature" translate="no">all()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/tools/src/make.erl#L90" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/tools/src/make.erl#L90" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -218,7 +237,7 @@ specified <code class="inline">ModFiles</code>, which is a list of module or fil
       <h1 class="signature" translate="no">all(Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/tools/src/make.erl#L138" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/tools/src/make.erl#L138" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -266,7 +285,7 @@ options and are passed as-is to <a href="../../apps/compiler/compile.html#file/2
       <h1 class="signature" translate="no">files(ModFiles)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/tools/src/make.erl#L145" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/tools/src/make.erl#L145" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -295,7 +314,7 @@ options and are passed as-is to <a href="../../apps/compiler/compile.html#file/2
       <h1 class="signature" translate="no">files(ModFiles, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/tools/src/make.erl#L166" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/tools/src/make.erl#L166" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -328,8 +347,8 @@ options for each module. If a given module does not exist in <code class="inline
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="tools.epub" title="ePub version">
@@ -341,7 +360,7 @@ options for each module. If a given module does not exist in <code class="inline
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

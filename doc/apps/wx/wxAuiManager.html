@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="wx v2.5.2">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/wx/wxAuiManager.html" />
     <title>wxAuiManager — wx v2.5.2</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-B3665BE0.js"></script>
+    <script defer src="dist/sidebar_items-E2170433.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ wx
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of wx</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ wx
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L58" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L58" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -164,7 +182,7 @@ wxAUI_MGR_TRANSPARENT_HINT | wxAUI_MGR_HINT_FADE | wxAUI_MGR_NO_VENETIAN_BLINDS_
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">addPane(This, Window, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#addPane/3"><code class="inline">addPane(This, Window, [])</code></a>.</p></div>
 
     </div>
 
@@ -174,7 +192,7 @@ wxAUI_MGR_TRANSPARENT_HINT | wxAUI_MGR_HINT_FADE | wxAUI_MGR_NO_VENETIAN_BLINDS_
 
       </div>
 
-        <div class="summary-synopsis"><p><a><code class="inline">addPane/4</code></a> tells the frame manager to start managing a child window.</p></div>
+        <div class="summary-synopsis"><p><a href="#addPane/4"><code class="inline">addPane/4</code></a> tells the frame manager to start managing a child window.</p></div>
 
     </div>
 
@@ -204,7 +222,7 @@ wxAUI_MGR_TRANSPARENT_HINT | wxAUI_MGR_HINT_FADE | wxAUI_MGR_NO_VENETIAN_BLINDS_
 
       </div>
 
-        <div class="summary-synopsis"><p>Tells the <a><code class="inline">wxAuiManager</code></a> to stop managing the pane specified by window.</p></div>
+        <div class="summary-synopsis"><p>Tells the <a href="wxAuiManager.html"><code class="inline">wxAuiManager</code></a> to stop managing the pane specified by window.</p></div>
 
     </div>
 
@@ -254,7 +272,7 @@ wxAUI_MGR_TRANSPARENT_HINT | wxAUI_MGR_HINT_FADE | wxAUI_MGR_NO_VENETIAN_BLINDS_
 
       </div>
 
-        <div class="summary-synopsis"><p>Returns the frame currently being managed by <a><code class="inline">wxAuiManager</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Returns the frame currently being managed by <a href="wxAuiManager.html"><code class="inline">wxAuiManager</code></a>.</p></div>
 
     </div>
 
@@ -264,7 +282,7 @@ wxAUI_MGR_TRANSPARENT_HINT | wxAUI_MGR_HINT_FADE | wxAUI_MGR_NO_VENETIAN_BLINDS_
 
       </div>
 
-        <div class="summary-synopsis"><p>Calling this method will return the <a><code class="inline">wxAuiManager</code></a> for a given window.</p></div>
+        <div class="summary-synopsis"><p>Calling this method will return the <a href="wxAuiManager.html"><code class="inline">wxAuiManager</code></a> for a given window.</p></div>
 
     </div>
 
@@ -274,7 +292,7 @@ wxAUI_MGR_TRANSPARENT_HINT | wxAUI_MGR_HINT_FADE | wxAUI_MGR_NO_VENETIAN_BLINDS_
 
       </div>
 
-        <div class="summary-synopsis"><p><a><code class="inline">getPane/2</code></a> is used to lookup a <a><code class="inline">wxAuiPaneInfo</code></a> object either by window pointer or by
+        <div class="summary-synopsis"><p><a href="#getPane/2"><code class="inline">getPane/2</code></a> is used to lookup a <a href="wxAuiPaneInfo.html"><code class="inline">wxAuiPaneInfo</code></a> object either by window pointer or by
 pane name, which acts as a unique id for a window pane.</p></div>
 
     </div>
@@ -285,7 +303,7 @@ pane name, which acts as a unique id for a window pane.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p><a><code class="inline">hideHint/1</code></a> hides any docking hint that may be visible.</p></div>
+        <div class="summary-synopsis"><p><a href="#hideHint/1"><code class="inline">hideHint/1</code></a> hides any docking hint that may be visible.</p></div>
 
     </div>
 
@@ -295,7 +313,7 @@ pane name, which acts as a unique id for a window pane.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">insertPane(This, Window, Insert_location, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#insertPane/4"><code class="inline">insertPane(This, Window, Insert_location, [])</code></a>.</p></div>
 
     </div>
 
@@ -316,7 +334,7 @@ manager, or to insert a currently managed pane somewhere else.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p><a><code class="inline">loadPaneInfo/3</code></a> is similar to LoadPerspective, with the exception that it only loads
+        <div class="summary-synopsis"><p><a href="#loadPaneInfo/3"><code class="inline">loadPaneInfo/3</code></a> is similar to LoadPerspective, with the exception that it only loads
 information about a single pane.</p></div>
 
     </div>
@@ -327,7 +345,7 @@ information about a single pane.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">loadPerspective(This, Perspective, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#loadPerspective/3"><code class="inline">loadPerspective(This, Perspective, [])</code></a>.</p></div>
 
     </div>
 
@@ -347,7 +365,7 @@ information about a single pane.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">new([])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#new/1"><code class="inline">new([])</code></a>.</p></div>
 
     </div>
 
@@ -367,7 +385,7 @@ information about a single pane.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p><a><code class="inline">savePaneInfo/2</code></a> is similar to SavePerspective, with the exception that it only saves
+        <div class="summary-synopsis"><p><a href="#savePaneInfo/2"><code class="inline">savePaneInfo/2</code></a> is similar to SavePerspective, with the exception that it only saves
 information about a single pane.</p></div>
 
     </div>
@@ -389,7 +407,7 @@ wx), which can then be stored by the application (probably using wxConfig).</p><
 
       </div>
 
-        <div class="summary-synopsis"><p>Instructs <a><code class="inline">wxAuiManager</code></a> to use art provider specified by parameter <code class="inline">art\_provider</code> for
+        <div class="summary-synopsis"><p>Instructs <a href="wxAuiManager.html"><code class="inline">wxAuiManager</code></a> to use art provider specified by parameter <code class="inline">art\_provider</code> for
 all drawing calls.</p></div>
 
     </div>
@@ -421,7 +439,7 @@ the large size of the window will create a dock that is unwieldy large.</p></div
 
       </div>
 
-        <div class="summary-synopsis"><p>Called to specify the frame or window which is to be managed by <a><code class="inline">wxAuiManager</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Called to specify the frame or window which is to be managed by <a href="wxAuiManager.html"><code class="inline">wxAuiManager</code></a>.</p></div>
 
     </div>
 
@@ -468,6 +486,7 @@ rectangle.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:wxAuiManager/0">
 
@@ -479,7 +498,7 @@ rectangle.</p></div>
       <h1 class="signature" translate="no">wxAuiManager()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L181" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L181" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -508,6 +527,7 @@ rectangle.</p></div>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="addPane/2">
 
@@ -519,7 +539,7 @@ rectangle.</p></div>
       <h1 class="signature" translate="no">addPane(This, Window)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L210" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L210" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -547,7 +567,7 @@ rectangle.</p></div>
       <h1 class="signature" translate="no">addPane/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L228" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L228" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -587,7 +607,7 @@ specified, which will determine where the pane will be added.</p>
       <h1 class="signature" translate="no">addPane(This, Window, Pane_info, Drop_pos)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L248" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L248" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -620,7 +640,7 @@ specified, which will determine where the pane will be added.</p>
       <h1 class="signature" translate="no">destroy(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L602" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L602" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -648,7 +668,7 @@ specified, which will determine where the pane will be added.</p>
       <h1 class="signature" translate="no">detachPane(This, Window)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L263" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L263" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -676,7 +696,7 @@ specified, which will determine where the pane will be added.</p>
       <h1 class="signature" translate="no">getAllPanes(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L272" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L272" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -704,7 +724,7 @@ specified, which will determine where the pane will be added.</p>
       <h1 class="signature" translate="no">getArtProvider(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L284" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L284" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -732,7 +752,7 @@ specified, which will determine where the pane will be added.</p>
       <h1 class="signature" translate="no">getDockSizeConstraint(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L296" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L296" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -761,7 +781,7 @@ specified, which will determine where the pane will be added.</p>
       <h1 class="signature" translate="no">getFlags(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L304" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L304" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -789,7 +809,7 @@ specified, which will determine where the pane will be added.</p>
       <h1 class="signature" translate="no">getManagedWindow(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L312" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L312" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -817,7 +837,7 @@ specified, which will determine where the pane will be added.</p>
       <h1 class="signature" translate="no">getManager(Window)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L329" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L329" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -848,7 +868,7 @@ hierarchy underneath the managed window.</p>
       <h1 class="signature" translate="no">getPane/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L348" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L348" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -884,7 +904,7 @@ return false.</p>
       <h1 class="signature" translate="no">hideHint(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L363" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L363" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -912,7 +932,7 @@ return false.</p>
       <h1 class="signature" translate="no">insertPane(This, Window, Insert_location)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L371" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L371" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -944,7 +964,7 @@ return false.</p>
       <h1 class="signature" translate="no">insertPane/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L389" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L389" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -981,7 +1001,7 @@ wxAUI_INSERT_PANE, wxAUI_INSERT_ROW or wxAUI_INSERT_DOCK.</p>
       <h1 class="signature" translate="no">loadPaneInfo(This, Pane_part, Pane)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L417" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L417" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1015,7 +1035,7 @@ not modified.</p><p>Note: This operation also changes the name in the pane infor
       <h1 class="signature" translate="no">loadPerspective(This, Perspective)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L428" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L428" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1044,7 +1064,7 @@ not modified.</p><p>Note: This operation also changes the name in the pane infor
       <h1 class="signature" translate="no">loadPerspective/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L451" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L451" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1079,7 +1099,7 @@ panes that do not have an equivalent in &quot;perspective&quot; remain unchanged
       <h1 class="signature" translate="no">new()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L190" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L190" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1107,7 +1127,7 @@ panes that do not have an equivalent in &quot;perspective&quot; remain unchanged
       <h1 class="signature" translate="no">new(Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L197" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L197" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1136,7 +1156,7 @@ panes that do not have an equivalent in &quot;perspective&quot; remain unchanged
       <h1 class="signature" translate="no">savePaneInfo(This, Pane)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L476" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L476" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1167,7 +1187,7 @@ Information about the pointers to UI elements stored in the pane are not seriali
       <h1 class="signature" translate="no">savePerspective(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L494" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L494" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1196,7 +1216,7 @@ wx), which can then be stored by the application (probably using wxConfig).</p><
       <h1 class="signature" translate="no">setArtProvider(This, Art_provider)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L510" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L510" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1227,7 +1247,7 @@ will be deleted by <a href="wxAuiManager.html"><code class="inline">wxAuiManager
       <h1 class="signature" translate="no">setDockSizeConstraint(This, Widthpct, Heightpct)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L529" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L529" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1261,7 +1281,7 @@ be limited to half of the size of the entire managed window.</p>
       <h1 class="signature" translate="no">setFlags(This, Flags)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L541" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L541" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1289,7 +1309,7 @@ be limited to half of the size of the entire managed window.</p>
       <h1 class="signature" translate="no">setManagedWindow(This, Managed_wnd)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L554" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L554" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1319,7 +1339,7 @@ also allowed.</p>
       <h1 class="signature" translate="no">showHint(This, Rect)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L568" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L568" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1352,7 +1372,7 @@ behaviour. The specified rectangle should be in screen coordinates.</p>
       <h1 class="signature" translate="no">unInit(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L582" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L582" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1382,7 +1402,7 @@ automatically when this window is destroyed, as well as when the manager itself 
       <h1 class="signature" translate="no">update(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxAuiManager.erl#L596" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxAuiManager.erl#L596" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1411,8 +1431,8 @@ to be avoided by updating the whole layout at one time.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="wx.epub" title="ePub version">
@@ -1424,7 +1444,7 @@ to be avoided by updating the whole layout at one time.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

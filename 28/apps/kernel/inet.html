@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="kernel v10.4.2">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/kernel/inet.html" />
     <title>inet — kernel v10.4.2</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-87F8FB49.js"></script>
+    <script defer src="dist/sidebar_items-D3B3E40C.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ kernel
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of kernel</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ kernel
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -123,19 +141,19 @@ For example, the IP address 150.236.20.73 can be passed to
 or as a tuple <code class="inline">{150, 236, 20, 73}</code>.</p><p><em>IPv4 address examples:</em></p><pre><code class="text">Address          ip_address()
 -------          ------------
 127.0.0.1        {127,0,0,1}
-192.168.42.2     {192,168,42,2}</code></pre><p><em>IPv6 address examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="n">Address</span><span class="w">          </span><span class="nf">ip_address</span><span class="p" data-group-id="4073646119-1">(</span><span class="p" data-group-id="4073646119-1">)</span><span class="w">
+192.168.42.2     {192,168,42,2}</code></pre><p><em>IPv6 address examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="n">Address</span><span class="w">          </span><span class="nf">ip_address</span><span class="p" data-group-id="0768880605-1">(</span><span class="p" data-group-id="0768880605-1">)</span><span class="w">
 </span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">-</span><span class="w">          </span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="w">
-</span><span class="p">:</span><span class="p">:</span><span class="mi">1</span><span class="w">             </span><span class="p" data-group-id="4073646119-2">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p" data-group-id="4073646119-2">}</span><span class="w">
-</span><span class="p">:</span><span class="p">:</span><span class="mf">192.168</span><span class="p">.</span><span class="mf">42.2</span><span class="w">  </span><span class="p" data-group-id="4073646119-3">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="p" data-group-id="4073646119-4">(</span><span class="mi">192</span><span class="w"> </span><span class="ow">bsl</span><span class="w"> </span><span class="mi">8</span><span class="p" data-group-id="4073646119-4">)</span><span class="w"> </span><span class="ow">bor</span><span class="w"> </span><span class="mi">168</span><span class="p">,</span><span class="p" data-group-id="4073646119-5">(</span><span class="mi">42</span><span class="w"> </span><span class="ow">bsl</span><span class="w"> </span><span class="mi">8</span><span class="p" data-group-id="4073646119-5">)</span><span class="w"> </span><span class="ow">bor</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="4073646119-3">}</span><span class="w">
+</span><span class="p">:</span><span class="p">:</span><span class="mi">1</span><span class="w">             </span><span class="p" data-group-id="0768880605-2">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p" data-group-id="0768880605-2">}</span><span class="w">
+</span><span class="p">:</span><span class="p">:</span><span class="mf">192.168</span><span class="p">.</span><span class="mf">42.2</span><span class="w">  </span><span class="p" data-group-id="0768880605-3">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="p" data-group-id="0768880605-4">(</span><span class="mi">192</span><span class="w"> </span><span class="ow">bsl</span><span class="w"> </span><span class="mi">8</span><span class="p" data-group-id="0768880605-4">)</span><span class="w"> </span><span class="ow">bor</span><span class="w"> </span><span class="mi">168</span><span class="p">,</span><span class="p" data-group-id="0768880605-5">(</span><span class="mi">42</span><span class="w"> </span><span class="ow">bsl</span><span class="w"> </span><span class="mi">8</span><span class="p" data-group-id="0768880605-5">)</span><span class="w"> </span><span class="ow">bor</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="0768880605-3">}</span><span class="w">
 </span><span class="p">:</span><span class="p">:</span><span class="n">FFFF</span><span class="p">:</span><span class="mf">192.168</span><span class="p">.</span><span class="mf">42.2</span><span class="w">
-                </span><span class="p" data-group-id="4073646119-6">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">16#FFFF</span><span class="p">,</span><span class="p" data-group-id="4073646119-7">(</span><span class="mi">192</span><span class="w"> </span><span class="ow">bsl</span><span class="w"> </span><span class="mi">8</span><span class="p" data-group-id="4073646119-7">)</span><span class="w"> </span><span class="ow">bor</span><span class="w"> </span><span class="mi">168</span><span class="p">,</span><span class="p" data-group-id="4073646119-8">(</span><span class="mi">42</span><span class="w"> </span><span class="ow">bsl</span><span class="w"> </span><span class="mi">8</span><span class="p" data-group-id="4073646119-8">)</span><span class="w"> </span><span class="ow">bor</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="4073646119-6">}</span><span class="w">
+                </span><span class="p" data-group-id="0768880605-6">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">16#FFFF</span><span class="p">,</span><span class="p" data-group-id="0768880605-7">(</span><span class="mi">192</span><span class="w"> </span><span class="ow">bsl</span><span class="w"> </span><span class="mi">8</span><span class="p" data-group-id="0768880605-7">)</span><span class="w"> </span><span class="ow">bor</span><span class="w"> </span><span class="mi">168</span><span class="p">,</span><span class="p" data-group-id="0768880605-8">(</span><span class="mi">42</span><span class="w"> </span><span class="ow">bsl</span><span class="w"> </span><span class="mi">8</span><span class="p" data-group-id="0768880605-8">)</span><span class="w"> </span><span class="ow">bor</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="0768880605-6">}</span><span class="w">
 </span><span class="mi">3</span><span class="nc">ffe</span><span class="p">:</span><span class="nc">b80</span><span class="p">:</span><span class="mi">1</span><span class="nc">f8d</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">204</span><span class="p">:</span><span class="nc">acff</span><span class="p">:</span><span class="nc">fe17</span><span class="p">:</span><span class="ss">bf38</span><span class="w">
-                </span><span class="p" data-group-id="4073646119-9">{</span><span class="mi">16#3ffe</span><span class="p">,</span><span class="mi">16#b80</span><span class="p">,</span><span class="mi">16#1f8d</span><span class="p">,</span><span class="mi">16#2</span><span class="p">,</span><span class="mi">16#204</span><span class="p">,</span><span class="mi">16#acff</span><span class="p">,</span><span class="mi">16#fe17</span><span class="p">,</span><span class="mi">16#bf38</span><span class="p" data-group-id="4073646119-9">}</span><span class="w">
+                </span><span class="p" data-group-id="0768880605-9">{</span><span class="mi">16#3ffe</span><span class="p">,</span><span class="mi">16#b80</span><span class="p">,</span><span class="mi">16#1f8d</span><span class="p">,</span><span class="mi">16#2</span><span class="p">,</span><span class="mi">16#204</span><span class="p">,</span><span class="mi">16#acff</span><span class="p">,</span><span class="mi">16#fe17</span><span class="p">,</span><span class="mi">16#bf38</span><span class="p" data-group-id="0768880605-9">}</span><span class="w">
 </span><span class="nc">fe80</span><span class="p">:</span><span class="p">:</span><span class="mi">204</span><span class="p">:</span><span class="nc">acff</span><span class="p">:</span><span class="nc">fe17</span><span class="p">:</span><span class="ss">bf38</span><span class="w">
-                </span><span class="p" data-group-id="4073646119-10">{</span><span class="mi">16#fe80</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">16#204</span><span class="p">,</span><span class="mi">16#acff</span><span class="p">,</span><span class="mi">16#fe17</span><span class="p">,</span><span class="mi">16#bf38</span><span class="p" data-group-id="4073646119-10">}</span></code></pre><p>Function <a href="#parse_address/1"><code class="inline">parse_address/1</code></a> can be useful:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">inet</span><span class="p">:</span><span class="nf">parse_address</span><span class="p" data-group-id="1163605648-1">(</span><span class="s">&quot;192.168.42.2&quot;</span><span class="p" data-group-id="1163605648-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="1163605648-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="1163605648-3">{</span><span class="mi">192</span><span class="p">,</span><span class="mi">168</span><span class="p">,</span><span class="mi">42</span><span class="p">,</span><span class="mi">2</span><span class="p" data-group-id="1163605648-3">}</span><span class="p" data-group-id="1163605648-2">}</span><span class="gp unselectable">
-2&gt; </span><span class="nc">inet</span><span class="p">:</span><span class="nf">parse_address</span><span class="p" data-group-id="1163605648-4">(</span><span class="s">&quot;::FFFF:192.168.42.2&quot;</span><span class="p" data-group-id="1163605648-4">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="1163605648-5">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="1163605648-6">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">65535</span><span class="p">,</span><span class="mi">49320</span><span class="p">,</span><span class="mi">10754</span><span class="p" data-group-id="1163605648-6">}</span><span class="p" data-group-id="1163605648-5">}</span></code></pre><h2 id="module-posix-error-codes" class="section-heading"><a href="#module-posix-error-codes" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text"><a href="" id="posix-error-codes"></a> POSIX Error Codes</span></h2><ul><li><code class="inline">e2big</code> - Too long argument list</li><li><code class="inline">eacces</code> - Permission denied</li><li><code class="inline">eaddrinuse</code> - Address already in use</li><li><code class="inline">eaddrnotavail</code> - Cannot assign requested address</li><li><code class="inline">eadv</code> - Advertise error</li><li><code class="inline">eafnosupport</code> - Address family not supported by protocol family</li><li><code class="inline">eagain</code> - Resource temporarily unavailable</li><li><code class="inline">ealign</code> - EALIGN</li><li><code class="inline">ealready</code> - Operation already in progress</li><li><code class="inline">ebade</code> - Bad exchange descriptor</li><li><code class="inline">ebadf</code> - Bad file number</li><li><code class="inline">ebadfd</code> - File descriptor in bad state</li><li><code class="inline">ebadmsg</code> - Not a data message</li><li><code class="inline">ebadr</code> - Bad request descriptor</li><li><code class="inline">ebadrpc</code> - Bad RPC structure</li><li><code class="inline">ebadrqc</code> - Bad request code</li><li><code class="inline">ebadslt</code> - Invalid slot</li><li><code class="inline">ebfont</code> - Bad font file format</li><li><code class="inline">ebusy</code> - File busy</li><li><code class="inline">echild</code> - No children</li><li><code class="inline">echrng</code> - Channel number out of range</li><li><code class="inline">ecomm</code> - Communication error on send</li><li><code class="inline">econnaborted</code> - Software caused connection abort</li><li><code class="inline">econnrefused</code> - Connection refused</li><li><code class="inline">econnreset</code> - Connection reset by peer</li><li><code class="inline">edeadlk</code> - Resource deadlock avoided</li><li><code class="inline">edeadlock</code> - Resource deadlock avoided</li><li><code class="inline">edestaddrreq</code> - Destination address required</li><li><code class="inline">edirty</code> - Mounting a dirty fs without force</li><li><code class="inline">edom</code> - Math argument out of range</li><li><code class="inline">edotdot</code> - Cross mount point</li><li><code class="inline">edquot</code> - Disk quota exceeded</li><li><code class="inline">eduppkg</code> - Duplicate package name</li><li><code class="inline">eexist</code> - File already exists</li><li><code class="inline">efault</code> - Bad address in system call argument</li><li><code class="inline">efbig</code> - File too large</li><li><code class="inline">ehostdown</code> - Host is down</li><li><code class="inline">ehostunreach</code> - Host is unreachable</li><li><code class="inline">eidrm</code> - Identifier removed</li><li><code class="inline">einit</code> - Initialization error</li><li><code class="inline">einprogress</code> - Operation now in progress</li><li><code class="inline">eintr</code> - Interrupted system call</li><li><code class="inline">einval</code> - Invalid argument</li><li><code class="inline">eio</code> - I/O error</li><li><code class="inline">eisconn</code> - Socket is already connected</li><li><code class="inline">eisdir</code> - Illegal operation on a directory</li><li><code class="inline">eisnam</code> - Is a named file</li><li><code class="inline">el2hlt</code> - Level 2 halted</li><li><code class="inline">el2nsync</code> - Level 2 not synchronized</li><li><code class="inline">el3hlt</code> - Level 3 halted</li><li><code class="inline">el3rst</code> - Level 3 reset</li><li><code class="inline">elbin</code> - ELBIN</li><li><code class="inline">elibacc</code> - Cannot access a needed shared library</li><li><code class="inline">elibbad</code> - Accessing a corrupted shared library</li><li><code class="inline">elibexec</code> - Cannot exec a shared library directly</li><li><code class="inline">elibmax</code> - Attempting to link in more shared libraries than system limit</li><li><code class="inline">elibscn</code> - <code class="inline">.lib</code> section in <code class="inline">a.out</code> corrupted</li><li><code class="inline">elnrng</code> - Link number out of range</li><li><code class="inline">eloop</code> - Too many levels of symbolic links</li><li><code class="inline">emfile</code> - Too many open files</li><li><code class="inline">emlink</code> - Too many links</li><li><code class="inline">emsgsize</code> - Message too long</li><li><code class="inline">emultihop</code> - Multihop attempted</li><li><code class="inline">enametoolong</code> - Filename too long</li><li><code class="inline">enavail</code> - Unavailable</li><li><code class="inline">enet</code> - ENET</li><li><code class="inline">enetdown</code> - Network is down</li><li><code class="inline">enetreset</code> - Network dropped connection on reset</li><li><code class="inline">enetunreach</code> - Network is unreachable</li><li><code class="inline">enfile</code> - File table overflow</li><li><code class="inline">enoano</code> - Anode table overflow</li><li><code class="inline">enobufs</code> - No buffer space available</li><li><code class="inline">enocsi</code> - No CSI structure available</li><li><code class="inline">enodata</code> - No data available</li><li><code class="inline">enodev</code> - No such device</li><li><code class="inline">enoent</code> - No such file or directory</li><li><code class="inline">enoexec</code> - Exec format error</li><li><code class="inline">enolck</code> - No locks available</li><li><code class="inline">enolink</code> - Link has been severed</li><li><code class="inline">enomem</code> - Not enough memory</li><li><code class="inline">enomsg</code> - No message of desired type</li><li><code class="inline">enonet</code> - Machine is not on the network</li><li><code class="inline">enopkg</code> - Package not installed</li><li><code class="inline">enoprotoopt</code> - Bad protocol option</li><li><code class="inline">enospc</code> - No space left on device</li><li><code class="inline">enosr</code> - Out of stream resources or not a stream device</li><li><code class="inline">enosym</code> - Unresolved symbol name</li><li><code class="inline">enosys</code> - Function not implemented</li><li><code class="inline">enotblk</code> - Block device required</li><li><code class="inline">enotconn</code> - Socket is not connected</li><li><code class="inline">enotdir</code> - Not a directory</li><li><code class="inline">enotempty</code> - Directory not empty</li><li><code class="inline">enotnam</code> - Not a named file</li><li><code class="inline">enotsock</code> - Socket operation on non-socket</li><li><code class="inline">enotsup</code> - Operation not supported</li><li><code class="inline">enotty</code> - Inappropriate device for <code class="inline">ioctl</code></li><li><code class="inline">enotuniq</code> - Name not unique on network</li><li><code class="inline">enxio</code> - No such device or address</li><li><code class="inline">eopnotsupp</code> - Operation not supported on socket</li><li><code class="inline">eperm</code> - Not owner</li><li><code class="inline">epfnosupport</code> - Protocol family not supported</li><li><code class="inline">epipe</code> - Broken pipe</li><li><code class="inline">eproclim</code> - Too many processes</li><li><code class="inline">eprocunavail</code> - Bad procedure for program</li><li><code class="inline">eprogmismatch</code> - Wrong program version</li><li><code class="inline">eprogunavail</code> - RPC program unavailable</li><li><code class="inline">eproto</code> - Protocol error</li><li><code class="inline">eprotonosupport</code> - Protocol not supported</li><li><code class="inline">eprototype</code> - Wrong protocol type for socket</li><li><code class="inline">erange</code> - Math result unrepresentable</li><li><code class="inline">erefused</code> - EREFUSED</li><li><code class="inline">eremchg</code> - Remote address changed</li><li><code class="inline">eremdev</code> - Remote device</li><li><code class="inline">eremote</code> - Pathname hit remote filesystem</li><li><code class="inline">eremoteio</code> - Remote I/O error</li><li><code class="inline">eremoterelease</code> - EREMOTERELEASE</li><li><code class="inline">erofs</code> - Read-only filesystem</li><li><code class="inline">erpcmismatch</code> - Wrong RPC version</li><li><code class="inline">erremote</code> - Object is remote</li><li><code class="inline">eshutdown</code> - Cannot send after socket shutdown</li><li><code class="inline">esocktnosupport</code> - Socket type not supported</li><li><code class="inline">espipe</code> - Invalid seek</li><li><code class="inline">esrch</code> - No such process</li><li><code class="inline">esrmnt</code> - Srmount error</li><li><code class="inline">estale</code> - Stale remote file handle</li><li><code class="inline">esuccess</code> - Error 0</li><li><code class="inline">etime</code> - Timer expired</li><li><code class="inline">etimedout</code> - Connection timed out</li><li><code class="inline">etoomanyrefs</code> - Too many references</li><li><code class="inline">etxtbsy</code> - Text file or pseudo-device busy</li><li><code class="inline">euclean</code> - Structure needs cleaning</li><li><code class="inline">eunatch</code> - Protocol driver not attached</li><li><code class="inline">eusers</code> - Too many users</li><li><code class="inline">eversion</code> - Version mismatch</li><li><code class="inline">ewouldblock</code> - Operation would block</li><li><code class="inline">exdev</code> - Cross-device link</li><li><code class="inline">exfull</code> - Message tables full</li><li><code class="inline">nxdomain</code> - Hostname or domain name cannot be found</li></ul>
+                </span><span class="p" data-group-id="0768880605-10">{</span><span class="mi">16#fe80</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">16#204</span><span class="p">,</span><span class="mi">16#acff</span><span class="p">,</span><span class="mi">16#fe17</span><span class="p">,</span><span class="mi">16#bf38</span><span class="p" data-group-id="0768880605-10">}</span></code></pre><p>Function <a href="#parse_address/1"><code class="inline">parse_address/1</code></a> can be useful:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">inet</span><span class="p">:</span><span class="nf">parse_address</span><span class="p" data-group-id="5288279321-1">(</span><span class="s">&quot;192.168.42.2&quot;</span><span class="p" data-group-id="5288279321-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="5288279321-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="5288279321-3">{</span><span class="mi">192</span><span class="p">,</span><span class="mi">168</span><span class="p">,</span><span class="mi">42</span><span class="p">,</span><span class="mi">2</span><span class="p" data-group-id="5288279321-3">}</span><span class="p" data-group-id="5288279321-2">}</span><span class="gp unselectable">
+2&gt; </span><span class="nc">inet</span><span class="p">:</span><span class="nf">parse_address</span><span class="p" data-group-id="5288279321-4">(</span><span class="s">&quot;::FFFF:192.168.42.2&quot;</span><span class="p" data-group-id="5288279321-4">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="5288279321-5">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="5288279321-6">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">65535</span><span class="p">,</span><span class="mi">49320</span><span class="p">,</span><span class="mi">10754</span><span class="p" data-group-id="5288279321-6">}</span><span class="p" data-group-id="5288279321-5">}</span></code></pre><h2 id="module-posix-error-codes" class="section-heading"><a href="#module-posix-error-codes" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text"><a href="" id="posix-error-codes"></a> POSIX Error Codes</span></h2><ul><li><code class="inline">e2big</code> - Too long argument list</li><li><code class="inline">eacces</code> - Permission denied</li><li><code class="inline">eaddrinuse</code> - Address already in use</li><li><code class="inline">eaddrnotavail</code> - Cannot assign requested address</li><li><code class="inline">eadv</code> - Advertise error</li><li><code class="inline">eafnosupport</code> - Address family not supported by protocol family</li><li><code class="inline">eagain</code> - Resource temporarily unavailable</li><li><code class="inline">ealign</code> - EALIGN</li><li><code class="inline">ealready</code> - Operation already in progress</li><li><code class="inline">ebade</code> - Bad exchange descriptor</li><li><code class="inline">ebadf</code> - Bad file number</li><li><code class="inline">ebadfd</code> - File descriptor in bad state</li><li><code class="inline">ebadmsg</code> - Not a data message</li><li><code class="inline">ebadr</code> - Bad request descriptor</li><li><code class="inline">ebadrpc</code> - Bad RPC structure</li><li><code class="inline">ebadrqc</code> - Bad request code</li><li><code class="inline">ebadslt</code> - Invalid slot</li><li><code class="inline">ebfont</code> - Bad font file format</li><li><code class="inline">ebusy</code> - File busy</li><li><code class="inline">echild</code> - No children</li><li><code class="inline">echrng</code> - Channel number out of range</li><li><code class="inline">ecomm</code> - Communication error on send</li><li><code class="inline">econnaborted</code> - Software caused connection abort</li><li><code class="inline">econnrefused</code> - Connection refused</li><li><code class="inline">econnreset</code> - Connection reset by peer</li><li><code class="inline">edeadlk</code> - Resource deadlock avoided</li><li><code class="inline">edeadlock</code> - Resource deadlock avoided</li><li><code class="inline">edestaddrreq</code> - Destination address required</li><li><code class="inline">edirty</code> - Mounting a dirty fs without force</li><li><code class="inline">edom</code> - Math argument out of range</li><li><code class="inline">edotdot</code> - Cross mount point</li><li><code class="inline">edquot</code> - Disk quota exceeded</li><li><code class="inline">eduppkg</code> - Duplicate package name</li><li><code class="inline">eexist</code> - File already exists</li><li><code class="inline">efault</code> - Bad address in system call argument</li><li><code class="inline">efbig</code> - File too large</li><li><code class="inline">ehostdown</code> - Host is down</li><li><code class="inline">ehostunreach</code> - Host is unreachable</li><li><code class="inline">eidrm</code> - Identifier removed</li><li><code class="inline">einit</code> - Initialization error</li><li><code class="inline">einprogress</code> - Operation now in progress</li><li><code class="inline">eintr</code> - Interrupted system call</li><li><code class="inline">einval</code> - Invalid argument</li><li><code class="inline">eio</code> - I/O error</li><li><code class="inline">eisconn</code> - Socket is already connected</li><li><code class="inline">eisdir</code> - Illegal operation on a directory</li><li><code class="inline">eisnam</code> - Is a named file</li><li><code class="inline">el2hlt</code> - Level 2 halted</li><li><code class="inline">el2nsync</code> - Level 2 not synchronized</li><li><code class="inline">el3hlt</code> - Level 3 halted</li><li><code class="inline">el3rst</code> - Level 3 reset</li><li><code class="inline">elbin</code> - ELBIN</li><li><code class="inline">elibacc</code> - Cannot access a needed shared library</li><li><code class="inline">elibbad</code> - Accessing a corrupted shared library</li><li><code class="inline">elibexec</code> - Cannot exec a shared library directly</li><li><code class="inline">elibmax</code> - Attempting to link in more shared libraries than system limit</li><li><code class="inline">elibscn</code> - <code class="inline">.lib</code> section in <code class="inline">a.out</code> corrupted</li><li><code class="inline">elnrng</code> - Link number out of range</li><li><code class="inline">eloop</code> - Too many levels of symbolic links</li><li><code class="inline">emfile</code> - Too many open files</li><li><code class="inline">emlink</code> - Too many links</li><li><code class="inline">emsgsize</code> - Message too long</li><li><code class="inline">emultihop</code> - Multihop attempted</li><li><code class="inline">enametoolong</code> - Filename too long</li><li><code class="inline">enavail</code> - Unavailable</li><li><code class="inline">enet</code> - ENET</li><li><code class="inline">enetdown</code> - Network is down</li><li><code class="inline">enetreset</code> - Network dropped connection on reset</li><li><code class="inline">enetunreach</code> - Network is unreachable</li><li><code class="inline">enfile</code> - File table overflow</li><li><code class="inline">enoano</code> - Anode table overflow</li><li><code class="inline">enobufs</code> - No buffer space available</li><li><code class="inline">enocsi</code> - No CSI structure available</li><li><code class="inline">enodata</code> - No data available</li><li><code class="inline">enodev</code> - No such device</li><li><code class="inline">enoent</code> - No such file or directory</li><li><code class="inline">enoexec</code> - Exec format error</li><li><code class="inline">enolck</code> - No locks available</li><li><code class="inline">enolink</code> - Link has been severed</li><li><code class="inline">enomem</code> - Not enough memory</li><li><code class="inline">enomsg</code> - No message of desired type</li><li><code class="inline">enonet</code> - Machine is not on the network</li><li><code class="inline">enopkg</code> - Package not installed</li><li><code class="inline">enoprotoopt</code> - Bad protocol option</li><li><code class="inline">enospc</code> - No space left on device</li><li><code class="inline">enosr</code> - Out of stream resources or not a stream device</li><li><code class="inline">enosym</code> - Unresolved symbol name</li><li><code class="inline">enosys</code> - Function not implemented</li><li><code class="inline">enotblk</code> - Block device required</li><li><code class="inline">enotconn</code> - Socket is not connected</li><li><code class="inline">enotdir</code> - Not a directory</li><li><code class="inline">enotempty</code> - Directory not empty</li><li><code class="inline">enotnam</code> - Not a named file</li><li><code class="inline">enotsock</code> - Socket operation on non-socket</li><li><code class="inline">enotsup</code> - Operation not supported</li><li><code class="inline">enotty</code> - Inappropriate device for <code class="inline">ioctl</code></li><li><code class="inline">enotuniq</code> - Name not unique on network</li><li><code class="inline">enxio</code> - No such device or address</li><li><code class="inline">eopnotsupp</code> - Operation not supported on socket</li><li><code class="inline">eperm</code> - Not owner</li><li><code class="inline">epfnosupport</code> - Protocol family not supported</li><li><code class="inline">epipe</code> - Broken pipe</li><li><code class="inline">eproclim</code> - Too many processes</li><li><code class="inline">eprocunavail</code> - Bad procedure for program</li><li><code class="inline">eprogmismatch</code> - Wrong program version</li><li><code class="inline">eprogunavail</code> - RPC program unavailable</li><li><code class="inline">eproto</code> - Protocol error</li><li><code class="inline">eprotonosupport</code> - Protocol not supported</li><li><code class="inline">eprototype</code> - Wrong protocol type for socket</li><li><code class="inline">erange</code> - Math result unrepresentable</li><li><code class="inline">erefused</code> - EREFUSED</li><li><code class="inline">eremchg</code> - Remote address changed</li><li><code class="inline">eremdev</code> - Remote device</li><li><code class="inline">eremote</code> - Pathname hit remote filesystem</li><li><code class="inline">eremoteio</code> - Remote I/O error</li><li><code class="inline">eremoterelease</code> - EREMOTERELEASE</li><li><code class="inline">erofs</code> - Read-only filesystem</li><li><code class="inline">erpcmismatch</code> - Wrong RPC version</li><li><code class="inline">erremote</code> - Object is remote</li><li><code class="inline">eshutdown</code> - Cannot send after socket shutdown</li><li><code class="inline">esocktnosupport</code> - Socket type not supported</li><li><code class="inline">espipe</code> - Invalid seek</li><li><code class="inline">esrch</code> - No such process</li><li><code class="inline">esrmnt</code> - Srmount error</li><li><code class="inline">estale</code> - Stale remote file handle</li><li><code class="inline">esuccess</code> - Error 0</li><li><code class="inline">etime</code> - Timer expired</li><li><code class="inline">etimedout</code> - Connection timed out</li><li><code class="inline">etoomanyrefs</code> - Too many references</li><li><code class="inline">etxtbsy</code> - Text file or pseudo-device busy</li><li><code class="inline">euclean</code> - Structure needs cleaning</li><li><code class="inline">eunatch</code> - Protocol driver not attached</li><li><code class="inline">eusers</code> - Too many users</li><li><code class="inline">eversion</code> - Version mismatch</li><li><code class="inline">ewouldblock</code> - Operation would block</li><li><code class="inline">exdev</code> - Cross-device link</li><li><code class="inline">exfull</code> - Message tables full</li><li><code class="inline">nxdomain</code> - Hostname or domain name cannot be found</li></ul>
     </section>
 
 </div>
@@ -204,7 +222,7 @@ or as a tuple <code class="inline">{150, 236, 20, 73}</code>.</p><p><em>IPv4 
 
       </div>
 
-        <div class="summary-synopsis"><p>Implementation backend selector for <a><code class="inline">socket/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Implementation backend selector for <a href="#t:socket/0"><code class="inline">socket/0</code></a>.</p></div>
 
     </div>
 
@@ -256,7 +274,7 @@ or as a tuple <code class="inline">{150, 236, 20, 73}</code>.</p><p><em>IPv4 
 
       </div>
 
-        <div class="summary-synopsis"><p>POSIX Error Code <a><code class="inline">atom/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>POSIX Error Code <a href="../../apps/erts/erlang.html#t:atom/0"><code class="inline">atom/0</code></a>.</p></div>
 
     </div>
 
@@ -428,7 +446,7 @@ or as a tuple <code class="inline">{150, 236, 20, 73}</code>.</p><p><em>IPv4 
 
       </div>
 
-        <div class="summary-synopsis"><p>Format an error code into a <a><code class="inline">string/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Format an error code into a <a href="../../apps/erts/erlang.html#t:string/0"><code class="inline">string/0</code></a>.</p></div>
 
     </div>
 
@@ -468,7 +486,7 @@ or as a tuple <code class="inline">{150, 236, 20, 73}</code>.</p><p><em>IPv4 
 
       </div>
 
-        <div class="summary-synopsis"><p>Resolve (reverse) an address to a <a><code class="inline">#hostent{}</code></a> record.</p></div>
+        <div class="summary-synopsis"><p>Resolve (reverse) an address to a <a href="#t:hostent/0"><code class="inline">#hostent{}</code></a> record.</p></div>
 
     </div>
 
@@ -478,7 +496,7 @@ or as a tuple <code class="inline">{150, 236, 20, 73}</code>.</p><p><em>IPv4 
 
       </div>
 
-        <div class="summary-synopsis"><p>Resolve a hostname to a <a><code class="inline">#hostent{}</code></a> record.</p></div>
+        <div class="summary-synopsis"><p>Resolve a hostname to a <a href="#t:hostent/0"><code class="inline">#hostent{}</code></a> record.</p></div>
 
     </div>
 
@@ -488,7 +506,7 @@ or as a tuple <code class="inline">{150, 236, 20, 73}</code>.</p><p><em>IPv4 
 
       </div>
 
-        <div class="summary-synopsis"><p>Resolve a hostname to a <a><code class="inline">#hostent{}</code></a> record,
+        <div class="summary-synopsis"><p>Resolve a hostname to a <a href="#t:hostent/0"><code class="inline">#hostent{}</code></a> record,
 in a specific address family.</p></div>
 
     </div>
@@ -539,7 +557,7 @@ in a specific address family.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">getstat/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#getstat/2"><code class="inline">getstat/2</code></a>.</p></div>
 
     </div>
 
@@ -559,7 +577,7 @@ in a specific address family.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">i/1</code></a> for the protocols <code class="inline">tcp</code>, <code class="inline">udp</code>, and <code class="inline">sctp</code></p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#i/1"><code class="inline">i/1</code></a> for the protocols <code class="inline">tcp</code>, <code class="inline">udp</code>, and <code class="inline">sctp</code></p></div>
 
     </div>
 
@@ -649,7 +667,7 @@ in a specific address family.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Parse an <a><code class="inline">ip_address/0</code></a> to an IPv4 or IPv6 address string.</p></div>
+        <div class="summary-synopsis"><p>Parse an <a href="#t:ip_address/0"><code class="inline">ip_address/0</code></a> to an IPv4 or IPv6 address string.</p></div>
 
     </div>
 
@@ -659,7 +677,7 @@ in a specific address family.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Parse an IP address string to an <a><code class="inline">ip_address/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Parse an IP address string to an <a href="#t:ip_address/0"><code class="inline">ip_address/0</code></a>.</p></div>
 
     </div>
 
@@ -669,7 +687,7 @@ in a specific address family.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Parse (relaxed) an IPv4 address string to an <a><code class="inline">ip4_address/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Parse (relaxed) an IPv4 address string to an <a href="#t:ip4_address/0"><code class="inline">ip4_address/0</code></a>.</p></div>
 
     </div>
 
@@ -679,7 +697,7 @@ in a specific address family.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Parse an IPv4 address string to an <a><code class="inline">ip4_address/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Parse an IPv4 address string to an <a href="#t:ip4_address/0"><code class="inline">ip4_address/0</code></a>.</p></div>
 
     </div>
 
@@ -689,7 +707,7 @@ in a specific address family.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Parse (relaxed) an IPv6 address string to an <a><code class="inline">ip6_address/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Parse (relaxed) an IPv6 address string to an <a href="#t:ip6_address/0"><code class="inline">ip6_address/0</code></a>.</p></div>
 
     </div>
 
@@ -699,7 +717,7 @@ in a specific address family.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Parse an IPv6 address string to an <a><code class="inline">ip6_address/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Parse an IPv6 address string to an <a href="#t:ip6_address/0"><code class="inline">ip6_address/0</code></a>.</p></div>
 
     </div>
 
@@ -709,7 +727,7 @@ in a specific address family.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Parse an IP address string to an <a><code class="inline">ip_address/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Parse an IP address string to an <a href="#t:ip_address/0"><code class="inline">ip_address/0</code></a>.</p></div>
 
     </div>
 
@@ -729,7 +747,7 @@ in a specific address family.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">peernames(Socket, 0)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#peernames/2"><code class="inline">peernames(Socket, 0)</code></a>.</p></div>
 
     </div>
 
@@ -779,7 +797,7 @@ in a specific address family.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">socknames(Socket, 0)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#socknames/2"><code class="inline">socknames(Socket, 0)</code></a>.</p></div>
 
     </div>
 
@@ -805,6 +823,7 @@ in a specific address family.</p></div>
       </a>
       <span class="text">Types: Exported data types</span>
     </h1>
+
     <div class="types-exported-data-types-list">
 <section class="detail" id="t:address_family/0">
 
@@ -816,7 +835,7 @@ in a specific address family.</p></div>
       <h1 class="signature" translate="no">address_family()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L594" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L594" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -844,7 +863,7 @@ in a specific address family.</p></div>
       <h1 class="signature" translate="no">ancillary_data()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L625" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L625" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -879,7 +898,7 @@ the currently active socket option(s).</p>
       <h1 class="signature" translate="no">family_address()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L391" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L391" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -910,7 +929,7 @@ an IP address with port number).</p>
       <h1 class="signature" translate="no">hostent()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L364" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L364" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -931,7 +950,7 @@ an IP address with port number).</p>
       </div>
 
 <p>A record describing a host; name and address.</p><p>Corresponds to the <code class="inline">C</code>: <code class="inline">struct hostent</code> as returned by for example
-<code class="inline">gethostbyname(3)</code>.</p><p>The record is defined in the Kernel include file <code class="inline">&quot;inet.hrl&quot;</code>.</p><p>Add the following directive to the module:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="8879246010-1">(</span><span class="s">&quot;kernel/include/inet.hrl&quot;</span><span class="p" data-group-id="8879246010-1">)</span><span class="p">.</span></code></pre>
+<code class="inline">gethostbyname(3)</code>.</p><p>The record is defined in the Kernel include file <code class="inline">&quot;inet.hrl&quot;</code>.</p><p>Add the following directive to the module:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="2651081066-1">(</span><span class="s">&quot;kernel/include/inet.hrl&quot;</span><span class="p" data-group-id="2651081066-1">)</span><span class="p">.</span></code></pre>
   </section>
 </section>
 <section class="detail" id="t:hostname/0">
@@ -944,7 +963,7 @@ an IP address with port number).</p>
       <h1 class="signature" translate="no">hostname()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L367" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L367" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -972,7 +991,7 @@ an IP address with port number).</p>
       <h1 class="signature" translate="no">inet_backend()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L499" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L499" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1003,7 +1022,7 @@ the <a href="socket.html"><code class="inline">socket</code></a> module and its 
       <h1 class="signature" translate="no">ip4_address()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L370" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L370" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1031,7 +1050,7 @@ the <a href="socket.html"><code class="inline">socket</code></a> module and its 
       <h1 class="signature" translate="no">ip6_address()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L373" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L373" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1059,7 +1078,7 @@ the <a href="socket.html"><code class="inline">socket</code></a> module and its 
       <h1 class="signature" translate="no">ip_address()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L377" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L377" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1087,7 +1106,7 @@ the <a href="socket.html"><code class="inline">socket</code></a> module and its 
       <h1 class="signature" translate="no">local_address()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L436" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L436" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1122,7 +1141,7 @@ the port number must be <code class="inline">0</code>.</p>
       <h1 class="signature" translate="no">port_number()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L380" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L380" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1150,7 +1169,7 @@ the port number must be <code class="inline">0</code>.</p>
       <h1 class="signature" translate="no">posix()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L462" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L462" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1186,7 +1205,7 @@ See section <a href="#posix-error-codes">POSIX Error Codes</a>.</p>
       <h1 class="signature" translate="no">returned_non_ip_address()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L449" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L449" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1219,7 +1238,7 @@ that the VM doesn't recognize.</p>
       <h1 class="signature" translate="no">socket()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L486" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L486" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1247,7 +1266,7 @@ that the VM doesn't recognize.</p>
       <h1 class="signature" translate="no">socket_address()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L602" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L602" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1275,7 +1294,7 @@ that the VM doesn't recognize.</p>
       <h1 class="signature" translate="no">socket_getopt()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L511" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L511" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1303,7 +1322,7 @@ that the VM doesn't recognize.</p>
       <h1 class="signature" translate="no">socket_optval()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L506" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L506" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1332,7 +1351,7 @@ that the VM doesn't recognize.</p>
       <h1 class="signature" translate="no">socket_protocol()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L597" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L597" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1360,7 +1379,7 @@ that the VM doesn't recognize.</p>
       <h1 class="signature" translate="no">socket_setopt()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L502" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L502" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1388,7 +1407,7 @@ that the VM doesn't recognize.</p>
       <h1 class="signature" translate="no">stat_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L606" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L606" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1419,6 +1438,7 @@ that the VM doesn't recognize.</p>
       </a>
       <span class="text">Types: Internal data types</span>
     </h1>
+
     <div class="types-internal-data-types-list">
 <section class="detail" id="t:getifaddrs_ifopts/0">
 
@@ -1432,7 +1452,7 @@ that the VM doesn't recognize.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L584" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L584" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1486,7 +1506,7 @@ values.</p></section>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L412" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L412" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1517,7 +1537,7 @@ to make all address families have a <code class="inline">{Family, Destination}<
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L401" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L401" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1547,6 +1567,7 @@ to make all address families have a <code class="inline">{Family, Destination}<
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:ether_address/0">
 
@@ -1560,7 +1581,7 @@ to make all address families have a <code class="inline">{Family, Destination}<
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L514" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L514" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1590,7 +1611,7 @@ to make all address families have a <code class="inline">{Family, Destination}<
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L4157" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L4177" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1626,7 +1647,7 @@ defaults to <code class="inline">false</code>.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L477" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L477" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1655,6 +1676,7 @@ defaults to <code class="inline">false</code>.</p>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="cancel_monitor/1">
 
@@ -1668,7 +1690,7 @@ defaults to <code class="inline">false</code>.</p>
         <span class="note">(since OTP 24.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L740" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L740" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1702,7 +1724,7 @@ a corresponding <code class="inline">'DOWN'</code> message in the caller message
       <h1 class="signature" translate="no">close(Socket)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L651" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L651" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1730,7 +1752,7 @@ a corresponding <code class="inline">'DOWN'</code> message in the caller message
       <h1 class="signature" translate="no">format_error(Reason)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L4520" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L4540" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1760,7 +1782,7 @@ and corresponding strings, see section
       <h1 class="signature" translate="no">get_rc()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L644" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L644" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1792,7 +1814,7 @@ parameters nor directives that clear parameters.</p>
       <h1 class="signature" translate="no">getaddr(Host, Family)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L2830" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L2839" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1826,7 +1848,7 @@ or a fully qualified <a href="#t:hostname/0"><code class="inline">hostname/0</co
       <h1 class="signature" translate="no">getaddrs(Host, Family)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L2872" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L2881" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1860,7 +1882,7 @@ a single <a href="#t:hostname/0"><code class="inline">hostname/0</code></a>, or 
       <h1 class="signature" translate="no">gethostbyaddr(Address)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L2637" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L2646" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1890,7 +1912,7 @@ with the specified address.</p>
       <h1 class="signature" translate="no">gethostbyname(Hostname)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L2571" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L2580" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1924,7 +1946,7 @@ to the IP address <code class="inline">{192,168,0,1}</code>.</p>
       <h1 class="signature" translate="no">gethostbyname(Hostname, Family)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L2594" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L2603" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1955,7 +1977,7 @@ with the specified <code class="inline">Hostname</code>, restricted to the speci
       <h1 class="signature" translate="no">gethostname()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L2457" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L2466" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1985,7 +2007,7 @@ with the specified <code class="inline">Hostname</code>, restricted to the speci
         <span class="note">(since OTP R14B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L1983" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L1992" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2018,7 +2040,7 @@ the type of the <a href="#t:getifaddrs_ifopts/0"><code class="inline">Ifopts</co
         <span class="note">(since OTP 21.2)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L1682" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L1691" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2054,7 +2076,7 @@ under <a href="#setopts/2"><code class="inline">setopts/2</code></a>.</p>
       <h1 class="signature" translate="no">getopts(Socket, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L1640" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L1649" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2098,9 +2120,9 @@ statistics for a socket. Assume you are interested in field <code class="inline"
 this information, you need to know the following:</p><ul><li>The numeric value of protocol level <code class="inline">IPPROTO_TCP</code></li><li>The numeric value of option <code class="inline">TCP_INFO</code></li><li>The size of <code class="inline">struct tcp_info</code></li><li>The size and offset of the specific field</li></ul><p>By inspecting the headers or writing a small C program, it is found that
 <code class="inline">IPPROTO_TCP</code> is 6, <code class="inline">TCP_INFO</code> is 11, the structure size is 92 (bytes), the
 offset of <code class="inline">tcpi_sacked</code> is 28 bytes, and the value is a 32-bit integer. The
-following code can be used to retrieve the value:</p><pre><code class="makeup erlang" translate="no"><span class="nf">get_tcpi_sacked</span><span class="p" data-group-id="8560479854-1">(</span><span class="n">Sock</span><span class="p" data-group-id="8560479854-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="p" data-group-id="8560479854-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="8560479854-3">[</span><span class="p" data-group-id="8560479854-4">{</span><span class="ss">raw</span><span class="p">,</span><span class="p">_</span><span class="p">,</span><span class="p">_</span><span class="p">,</span><span class="n">Info</span><span class="p" data-group-id="8560479854-4">}</span><span class="p" data-group-id="8560479854-3">]</span><span class="p" data-group-id="8560479854-2">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">inet</span><span class="p">:</span><span class="nf">getopts</span><span class="p" data-group-id="8560479854-5">(</span><span class="n">Sock</span><span class="p">,</span><span class="p" data-group-id="8560479854-6">[</span><span class="p" data-group-id="8560479854-7">{</span><span class="ss">raw</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">92</span><span class="p" data-group-id="8560479854-7">}</span><span class="p" data-group-id="8560479854-6">]</span><span class="p" data-group-id="8560479854-5">)</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="8560479854-8">&lt;&lt;</span><span class="p">_</span><span class="p">:</span><span class="mi">28</span><span class="o">/</span><span class="ss">binary</span><span class="p">,</span><span class="n">TcpiSacked</span><span class="p">:</span><span class="mi">32</span><span class="o">/</span><span class="ss">native</span><span class="p">,</span><span class="p">_</span><span class="o">/</span><span class="ss">binary</span><span class="p" data-group-id="8560479854-8">&gt;&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Info</span><span class="p">,</span><span class="w">
+following code can be used to retrieve the value:</p><pre><code class="makeup erlang" translate="no"><span class="nf">get_tcpi_sacked</span><span class="p" data-group-id="9385724676-1">(</span><span class="n">Sock</span><span class="p" data-group-id="9385724676-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="p" data-group-id="9385724676-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="9385724676-3">[</span><span class="p" data-group-id="9385724676-4">{</span><span class="ss">raw</span><span class="p">,</span><span class="p">_</span><span class="p">,</span><span class="p">_</span><span class="p">,</span><span class="n">Info</span><span class="p" data-group-id="9385724676-4">}</span><span class="p" data-group-id="9385724676-3">]</span><span class="p" data-group-id="9385724676-2">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">inet</span><span class="p">:</span><span class="nf">getopts</span><span class="p" data-group-id="9385724676-5">(</span><span class="n">Sock</span><span class="p">,</span><span class="p" data-group-id="9385724676-6">[</span><span class="p" data-group-id="9385724676-7">{</span><span class="ss">raw</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">92</span><span class="p" data-group-id="9385724676-7">}</span><span class="p" data-group-id="9385724676-6">]</span><span class="p" data-group-id="9385724676-5">)</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="9385724676-8">&lt;&lt;</span><span class="p">_</span><span class="p">:</span><span class="mi">28</span><span class="o">/</span><span class="ss">binary</span><span class="p">,</span><span class="n">TcpiSacked</span><span class="p">:</span><span class="mi">32</span><span class="o">/</span><span class="ss">native</span><span class="p">,</span><span class="p">_</span><span class="o">/</span><span class="ss">binary</span><span class="p" data-group-id="9385724676-8">&gt;&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Info</span><span class="p">,</span><span class="w">
     </span><span class="n">TcpiSacked</span><span class="p">.</span></code></pre><p>Preferably, you would check the machine type, the operating system, and the
 Kernel version before executing anything similar to this code.</p>
   </section>
@@ -2115,7 +2137,7 @@ Kernel version before executing anything similar to this code.</p>
       <h1 class="signature" translate="no">getstat(Socket)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L2502" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L2511" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2144,7 +2166,7 @@ Kernel version before executing anything similar to this code.</p>
       <h1 class="signature" translate="no">getstat(Socket, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L2540" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L2549" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2180,7 +2202,7 @@ socket.</p></li><li><p><strong><code class="inline">recv_max</code></strong> - S
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L4180" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L4200" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2210,7 +2232,7 @@ socket.</p></li><li><p><strong><code class="inline">recv_max</code></strong> - S
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L4198" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L4218" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2246,7 +2268,7 @@ options in <a href="#t:i_option/0"><code class="inline">i_option/0</code></a> wi
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L4241" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L4261" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2279,7 +2301,7 @@ connection.</p></li><li><p><strong><code class="inline">state</code></strong> - 
         <span class="note">(since OTP 24.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L2678" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L2687" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2309,7 +2331,7 @@ connection.</p></li><li><p><strong><code class="inline">state</code></strong> - 
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L3063" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L3072" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2342,7 +2364,7 @@ than IPv4-mapped.</p>
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L2789" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L2798" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2373,7 +2395,7 @@ and if so returns <code class="inline">true</code>, otherwise <code class="inlin
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L2761" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L2770" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2404,7 +2426,7 @@ and if so returns <code class="inline">true</code>, otherwise <code class="inlin
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L2775" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L2784" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2435,7 +2457,7 @@ and if so returns <code class="inline">true</code>, otherwise <code class="inlin
         <span class="note">(since OTP 24.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L695" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L695" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2451,7 +2473,7 @@ and if so returns <code class="inline">true</code>, otherwise <code class="inlin
       </div>
 
 <p>Start a socket monitor.</p><p>If the <code class="inline">Socket</code> to monitor doesn't exist or when the monitor is triggered,
-a <code class="inline">'DOWN'</code> message is sent that has the following pattern:</p><pre><code class="makeup erlang" translate="no"><span class="w">	    </span><span class="p" data-group-id="1207581566-1">{</span><span class="ss">&#39;DOWN&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">MonitorRef</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="p">,</span><span class="w"> </span><span class="n">Info</span><span class="p" data-group-id="1207581566-1">}</span></code></pre><ul><li><p><strong><code class="inline">MonitorRef</code></strong> - The return value from this function.</p></li><li><p><strong><code class="inline">Type</code></strong> - The type of socket, can be one of the following
+a <code class="inline">'DOWN'</code> message is sent that has the following pattern:</p><pre><code class="makeup erlang" translate="no"><span class="w">	    </span><span class="p" data-group-id="4637699294-1">{</span><span class="ss">&#39;DOWN&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">MonitorRef</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="p">,</span><span class="w"> </span><span class="n">Info</span><span class="p" data-group-id="4637699294-1">}</span></code></pre><ul><li><p><strong><code class="inline">MonitorRef</code></strong> - The return value from this function.</p></li><li><p><strong><code class="inline">Type</code></strong> - The type of socket, can be one of the following
 <a href="../../apps/erts/erlang.html#t:atom/0"><code class="inline">atom/0</code></a>s: <code class="inline">port</code> or <code class="inline">socket</code>.</p></li><li><p><strong><code class="inline">Object</code></strong> - The monitored entity, the socket, which triggered the event.</p></li><li><p><strong><code class="inline">Info</code></strong> - Either the termination reason of the socket or <code class="inline">nosock</code>
 (the <code class="inline">Socket</code> did not exist when this function was called).</p></li></ul><p>Making several calls to <a href="#monitor/1"><code class="inline">inet:monitor/1</code></a> for the same <code class="inline">Socket</code>
 is not an error; one monitor is created per call.</p><p>The monitor is triggered when the socket is closed in any way such as
@@ -2470,7 +2492,7 @@ an API call, remote end close, closed by signal when owner exits, ...</p>
         <span class="note">(since OTP R16B02)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L2936" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L2945" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2500,7 +2522,7 @@ an API call, remote end close, closed by signal when owner exits, ...</p>
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L3009" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L3018" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2532,7 +2554,7 @@ on which parsing that succeeds.</p><p>Accepts a short form IPv4 address string l
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L2950" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L2959" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2564,7 +2586,7 @@ such as <code class="inline">&quot;127.1&quot;</code> or <code class="inline">&q
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L2978" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L2987" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2596,7 +2618,7 @@ that is; <em>not</em> a short form address string.</p>
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L2964" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L2973" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2628,7 +2650,7 @@ and returns an IPv4-mapped IPv6 address.</p>
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L2993" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L3002" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2661,7 +2683,7 @@ allows an IPv4 tail like this: <code class="inline">&quot;::127.0.0.1&quot;</cod
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L3036" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L3045" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2690,7 +2712,7 @@ allows an IPv4 tail like this: <code class="inline">&quot;::127.0.0.1&quot;</cod
       <h1 class="signature" translate="no">peername(Socket)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L770" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L770" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2723,7 +2745,7 @@ returns all.</p>
         <span class="note">(since OTP R16B03)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L803" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L803" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2756,7 +2778,7 @@ is not defined by the
         <span class="note">(since OTP R16B03)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L829" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L829" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2801,7 +2823,7 @@ and hence the behavior for one-to-many style sockets.</p>
       <h1 class="signature" translate="no">port(Socket)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L910" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L910" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2829,7 +2851,7 @@ and hence the behavior for one-to-many style sockets.</p>
       <h1 class="signature" translate="no">setopts(Socket, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L1561" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L1570" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2957,7 +2979,7 @@ IPv6 and an IPv4 socket listening on the same port, and for an IPv6 socket
 getting IPv4 traffic is then no longer predictable.</p></li><li><p><strong><code class="inline">{keepalive, Boolean}</code> (TCP/IP sockets)</strong> - Enables/disables periodic
 transmission on a connected socket when no other data is exchanged. If the
 other end does not respond, the connection is considered broken and an error
-message is sent to the controlling process. Defaults to <code class="inline">false</code>.</p></li><li><p><strong><code class="inline">{linger, {true|false, Seconds}}</code></strong> <a href="" id="option-linger"></a> -
+message is sent to the controlling process. Defaults to <code class="inline">false</code>.</p></li><li><p><strong><code class="inline">{keepcnt, Integer}</code> (TCP/IP sockets)</strong> - Linux specific <code class="inline">TCP_KEEPCNT</code>.</p></li><li><p><strong><code class="inline">{keepidle, Integer}</code> (TCP/IP sockets)</strong> - Linux specific <code class="inline">TCP_KEEPIDLE</code>.</p></li><li><p><strong><code class="inline">{keepintvl, Integer}</code> (TCP/IP sockets)</strong> - Linux specific <code class="inline">TCP_KEEPINTVL</code>.</p></li><li><p><strong><code class="inline">{linger, {true|false, Seconds}}</code></strong> <a href="" id="option-linger"></a> -
 Determines the time-out, in seconds, for flushing unsent data
 in the <a href="#close/1"><code class="inline">close/1</code></a> socket call.</p><p>The first component is if linger is enabled, the second component is the
 flushing time-out, in seconds. There are 3 alternatives:</p><ul><li><p><strong><code class="inline">{false, _}</code></strong> - close/1 or shutdown/2 returns immediately, not waiting
@@ -3163,7 +3185,8 @@ systems. The option is ignored on platforms where it is not implemented. Use
 with caution.</p></li><li><p><strong><code class="inline">{tclass, Integer}</code></strong> - Sets <code class="inline">IPV6_TCLASS IP</code> level options on platforms
 where this is implemented. The behavior and allowed range varies between
 different systems. The option is ignored on platforms where it is not
-implemented. Use with caution.</p></li></ul><p>In addition to these options, <em>raw</em> option specifications can be used. The raw
+implemented. Use with caution.</p></li><li><p><strong><code class="inline">{user_timeout, Integer}</code> (TCP/IP sockets)</strong> - Linux specific
+<code class="inline">TCP_USER_TIMEOUT</code>.</p></li></ul><p>In addition to these options, <em>raw</em> option specifications can be used. The raw
 options are specified as a tuple of arity four, beginning with tag <code class="inline">raw</code>,
 followed by the protocol level, the option number, and the option value
 specified as a binary. This corresponds to the second, third, and fourth
@@ -3195,7 +3218,7 @@ Kernel configuration parameters mentioned in the beginning of this manual page.<
       <h1 class="signature" translate="no">sockname(Socket)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L845" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L845" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3227,7 +3250,7 @@ addresses. Function <a href="#socknames/1"><code class="inline">socknames/1,2</c
         <span class="note">(since OTP R16B03)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L872" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L872" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3258,7 +3281,7 @@ addresses. Function <a href="#socknames/1"><code class="inline">socknames/1,2</c
         <span class="note">(since OTP R16B03)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/inet.erl#L901" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/inet.erl#L901" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3302,8 +3325,8 @@ interpret this varies somewhat.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="kernel.epub" title="ePub version">
@@ -3315,7 +3338,7 @@ interpret this varies somewhat.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

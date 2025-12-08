@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="diameter v2.5.2">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/diameter/diameter_app.html" />
     <title>diameter_app — diameter v2.5.2</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-24C2EAB1.js"></script>
+    <script defer src="dist/sidebar_items-1ACE508A.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ diameter
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of diameter</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ diameter
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/diameter/src/base/diameter_app.erl#L23" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/diameter/src/base/diameter_app.erl#L23" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -149,8 +167,8 @@ the bare value.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>The representation of a Diameter message as passed to <a><code class="inline">diameter:call/4</code></a> or
-returned from a <a><code class="inline">handle_request/3</code></a> callback.</p></div>
+        <div class="summary-synopsis"><p>The representation of a Diameter message as passed to <a href="diameter.html#call/4"><code class="inline">diameter:call/4</code></a> or
+returned from a <a href="#c:handle_request/3"><code class="inline">handle_request/3</code></a> callback.</p></div>
 
     </div>
 
@@ -193,9 +211,9 @@ as documented.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>The state maintained by the application
-callback functions <a><code class="inline">peer_up/3</code></a>, <a><code class="inline">peer_down/3</code></a> and (optionally)
-<a><code class="inline">pick_peer/4</code></a>. The initial state is configured in the call to
-<a><code class="inline">diameter:start_service/2</code></a> that configures the application on a service.
+callback functions <a href="#c:peer_up/3"><code class="inline">peer_up/3</code></a>, <a href="#c:peer_down/3"><code class="inline">peer_down/3</code></a> and (optionally)
+<a href="#c:pick_peer/4"><code class="inline">pick_peer/4</code></a>. The initial state is configured in the call to
+<a href="diameter.html#start_service/2"><code class="inline">diameter:start_service/2</code></a> that configures the application on a service.
 Callback functions returning a state are evaluated in a common
 service-specific process while those not returning state are evaluated in a
 request-specific process.</p></div>
@@ -215,7 +233,7 @@ request-specific process.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Invoked when an answer message is received from a peer. The return value is
-returned from <a><code class="inline">diameter:call/4</code></a> unless the <code class="inline">detach</code> option was specified.</p></div>
+returned from <a href="diameter.html#call/4"><code class="inline">diameter:call/4</code></a> unless the <code class="inline">detach</code> option was specified.</p></div>
 
     </div>
 
@@ -226,7 +244,7 @@ returned from <a><code class="inline">diameter:call/4</code></a> unless the <cod
       </div>
 
         <div class="summary-synopsis"><p>Invoked when an error occurs before an answer message is received in response to
-an outgoing request. The return value is returned from <a><code class="inline">diameter:call/4</code></a> unless
+an outgoing request. The return value is returned from <a href="diameter.html#call/4"><code class="inline">diameter:call/4</code></a> unless
 the <code class="inline">detach</code> option was specified.</p></div>
 
     </div>
@@ -239,7 +257,7 @@ the <code class="inline">detach</code> option was specified.</p></div>
 
         <div class="summary-synopsis"><p>Invoked when a request message is received from a peer. The application in which
 the callback takes place (that is, the callback module as configured with
-<a><code class="inline">diameter:start_service/2</code></a>) is determined by the Application Identifier in the
+<a href="diameter.html#start_service/2"><code class="inline">diameter:start_service/2</code></a>) is determined by the Application Identifier in the
 header of the incoming request message, the selected module being the one whose
 corresponding dictionary declares itself as defining either the application in
 question or the Relay application.</p></div>
@@ -253,9 +271,9 @@ question or the Relay application.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Invoked to signal that a peer connection on the local Erlang node is no longer
-available following a previous call to <a><code class="inline">peer_up/3</code></a>. In particular, that the
+available following a previous call to <a href="#c:peer_up/3"><code class="inline">peer_up/3</code></a>. In particular, that the
 RFC 3539 watchdog state machine for the connection has left state <code class="inline">OKAY</code> and the
-peer will no longer be a candidate in <a><code class="inline">pick_peer/4</code></a> callbacks.</p></div>
+peer will no longer be a candidate in <a href="#c:pick_peer/4"><code class="inline">pick_peer/4</code></a> callbacks.</p></div>
 
     </div>
 
@@ -279,7 +297,7 @@ received.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Invoked as a consequence of a call to <a><code class="inline">diameter:call/4</code></a> to select a destination
+        <div class="summary-synopsis"><p>Invoked as a consequence of a call to <a href="diameter.html#call/4"><code class="inline">diameter:call/4</code></a> to select a destination
 peer for an outgoing request. The return value indicates the selected peer.</p></div>
 
     </div>
@@ -303,9 +321,9 @@ implementations may simply want to return <code class="inline">{send, Packet}</c
       </div>
 
         <div class="summary-synopsis"><p>Invoked to return a request for encoding and retransmission. Has the same role
-as <a><code class="inline">prepare_request/3</code></a> in the case that a peer connection is lost an an
-alternate peer selected but the argument <a>packet()</a> is
-as returned by the initial <a><code class="inline">prepare_request/3</code></a>.</p></div>
+as <a href="#c:prepare_request/3"><code class="inline">prepare_request/3</code></a> in the case that a peer connection is lost an an
+alternate peer selected but the argument <a href="#t:packet/0">packet()</a> is
+as returned by the initial <a href="#c:prepare_request/3"><code class="inline">prepare_request/3</code></a>.</p></div>
 
     </div>
 
@@ -321,6 +339,7 @@ as returned by the initial <a><code class="inline">prepare_request/3</code></a>.
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:capabilities/0">
 
@@ -336,7 +355,7 @@ as returned by the initial <a><code class="inline">prepare_request/3</code></a>.
         <span class="note">(since OTP R14B03)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/diameter/src/base/diameter_app.erl#L69" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/diameter/src/base/diameter_app.erl#L69" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -386,7 +405,7 @@ the bare value.</p>
         <span class="note">(since OTP R14B03)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/diameter/src/base/diameter_app.erl#L94" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/diameter/src/base/diameter_app.erl#L94" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -419,7 +438,7 @@ returned from a <a href="#c:handle_request/3"><code class="inline">handle_reques
         <span class="note">(since OTP R14B03)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/diameter/src/base/diameter_app.erl#L79" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/diameter/src/base/diameter_app.erl#L79" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -453,7 +472,7 @@ as documented.</p>
         <span class="note">(since OTP R14B03)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/diameter/src/base/diameter_app.erl#L73" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/diameter/src/base/diameter_app.erl#L73" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -485,7 +504,7 @@ as documented.</p>
         <span class="note">(since OTP R14B03)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/diameter/src/base/diameter_app.erl#L71" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/diameter/src/base/diameter_app.erl#L71" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -517,7 +536,7 @@ as documented.</p>
         <span class="note">(since OTP R14B03)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/diameter/src/base/diameter_app.erl#L89" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/diameter/src/base/diameter_app.erl#L89" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -552,6 +571,7 @@ request-specific process.</p>
       </a>
       <span class="text">Callbacks</span>
     </h1>
+
     <div class="callbacks-list">
 <section class="detail" id="c:handle_answer/4">
 
@@ -565,7 +585,7 @@ request-specific process.</p>
         <span class="note">(since OTP R14B03)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/diameter/src/base/diameter_app.erl#L267" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/diameter/src/base/diameter_app.erl#L267" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -613,7 +633,7 @@ be set to change this behaviour.</p>
         <span class="note">(since OTP R14B03)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/diameter/src/base/diameter_app.erl#L238" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/diameter/src/base/diameter_app.erl#L238" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -655,7 +675,7 @@ become unavailable and that not alternate peer was not selected.</p>
         <span class="note">(since OTP R14B03)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/diameter/src/base/diameter_app.erl#L211" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/diameter/src/base/diameter_app.erl#L211" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -687,12 +707,12 @@ the callback takes place (that is, the callback module as configured with
 <a href="diameter.html#start_service/2"><code class="inline">diameter:start_service/2</code></a>) is determined by the Application Identifier in the
 header of the incoming request message, the selected module being the one whose
 corresponding dictionary declares itself as defining either the application in
-question or the Relay application.</p><p>The argument <a href="#t:packet/0">packet()</a> has the following signature.</p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">diameter_packet</span><span class="p" data-group-id="7186083754-1">{</span><span class="ss">header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">#</span><span class="ss">diameter_header</span><span class="p" data-group-id="7186083754-2">{</span><span class="p" data-group-id="7186083754-2">}</span><span class="p">,</span><span class="w">
-                 </span><span class="ss">avps</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="7186083754-3">[</span><span class="o">#</span><span class="ss">diameter_avp</span><span class="p" data-group-id="7186083754-4">{</span><span class="p" data-group-id="7186083754-4">}</span><span class="p" data-group-id="7186083754-3">]</span><span class="p">,</span><span class="w">
-                 </span><span class="ss">msg</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nf">record</span><span class="p" data-group-id="7186083754-5">(</span><span class="p" data-group-id="7186083754-5">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="ss">undefined</span><span class="p">,</span><span class="w">
-                 </span><span class="ss">errors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="7186083754-6">[</span><span class="n">Unsigned32</span><span class="p" data-group-id="7186083754-7">(</span><span class="p" data-group-id="7186083754-7">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p" data-group-id="7186083754-8">{</span><span class="n">Unsigned32</span><span class="p" data-group-id="7186083754-9">(</span><span class="p" data-group-id="7186083754-9">)</span><span class="p">,</span><span class="w"> </span><span class="o">#</span><span class="ss">diameter_avp</span><span class="p" data-group-id="7186083754-10">{</span><span class="p" data-group-id="7186083754-10">}</span><span class="p" data-group-id="7186083754-8">}</span><span class="p" data-group-id="7186083754-6">]</span><span class="p">,</span><span class="w">
-                 </span><span class="ss">bin</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nf">binary</span><span class="p" data-group-id="7186083754-11">(</span><span class="p" data-group-id="7186083754-11">)</span><span class="p">,</span><span class="w">
-                 </span><span class="ss">transport_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">term</span><span class="p" data-group-id="7186083754-12">(</span><span class="p" data-group-id="7186083754-12">)</span><span class="p" data-group-id="7186083754-1">}</span></code></pre><p>The <code class="inline">msg</code> field will be <code class="inline">undefined</code> in case the request has been received in the
+question or the Relay application.</p><p>The argument <a href="#t:packet/0">packet()</a> has the following signature.</p><pre><code class="makeup erlang" translate="no"><span class="o">#</span><span class="ss">diameter_packet</span><span class="p" data-group-id="4950540844-1">{</span><span class="ss">header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">#</span><span class="ss">diameter_header</span><span class="p" data-group-id="4950540844-2">{</span><span class="p" data-group-id="4950540844-2">}</span><span class="p">,</span><span class="w">
+                 </span><span class="ss">avps</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="4950540844-3">[</span><span class="o">#</span><span class="ss">diameter_avp</span><span class="p" data-group-id="4950540844-4">{</span><span class="p" data-group-id="4950540844-4">}</span><span class="p" data-group-id="4950540844-3">]</span><span class="p">,</span><span class="w">
+                 </span><span class="ss">msg</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nf">record</span><span class="p" data-group-id="4950540844-5">(</span><span class="p" data-group-id="4950540844-5">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="ss">undefined</span><span class="p">,</span><span class="w">
+                 </span><span class="ss">errors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="4950540844-6">[</span><span class="n">Unsigned32</span><span class="p" data-group-id="4950540844-7">(</span><span class="p" data-group-id="4950540844-7">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p" data-group-id="4950540844-8">{</span><span class="n">Unsigned32</span><span class="p" data-group-id="4950540844-9">(</span><span class="p" data-group-id="4950540844-9">)</span><span class="p">,</span><span class="w"> </span><span class="o">#</span><span class="ss">diameter_avp</span><span class="p" data-group-id="4950540844-10">{</span><span class="p" data-group-id="4950540844-10">}</span><span class="p" data-group-id="4950540844-8">}</span><span class="p" data-group-id="4950540844-6">]</span><span class="p">,</span><span class="w">
+                 </span><span class="ss">bin</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="nf">binary</span><span class="p" data-group-id="4950540844-11">(</span><span class="p" data-group-id="4950540844-11">)</span><span class="p">,</span><span class="w">
+                 </span><span class="ss">transport_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">term</span><span class="p" data-group-id="4950540844-12">(</span><span class="p" data-group-id="4950540844-12">)</span><span class="p" data-group-id="4950540844-1">}</span></code></pre><p>The <code class="inline">msg</code> field will be <code class="inline">undefined</code> in case the request has been received in the
 relay application. Otherwise it contains the record representing the request as
 outlined in <a href="diameter_dict.html#MESSAGE_RECORDS">diameter_dict(4)</a>.</p><p>The <code class="inline">errors</code> field specifies any results codes identifying errors found while
 decoding the request. This is used to set Result-Code and/or Failed-AVP in a
@@ -758,7 +778,7 @@ taking place, depending on the value of the
         <span class="note">(since OTP R14B03)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/diameter/src/base/diameter_app.erl#L393" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/diameter/src/base/diameter_app.erl#L393" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -796,7 +816,7 @@ peer will no longer be a candidate in <a href="#c:pick_peer/4"><code class="inli
         <span class="note">(since OTP R14B03)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/diameter/src/base/diameter_app.erl#L419" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/diameter/src/base/diameter_app.erl#L419" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -839,7 +859,7 @@ received: <a href="#c:handle_request/3"><code class="inline">handle_request/3</c
         <span class="note">(since OTP R14B03)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/diameter/src/base/diameter_app.erl#L376" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/diameter/src/base/diameter_app.erl#L376" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -904,7 +924,7 @@ returned by a <a href="#c:peer_up/3"><code class="inline">peer_up/3</code></a> o
         <span class="note">(since OTP R14B03)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/diameter/src/base/diameter_app.erl#L321" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/diameter/src/base/diameter_app.erl#L321" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -956,7 +976,7 @@ is ignored.</p><p>Returning <code class="inline">{discard, Reason}</code> causes
         <span class="note">(since OTP R14B03)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/diameter/src/base/diameter_app.erl#L285" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/diameter/src/base/diameter_app.erl#L285" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -995,8 +1015,8 @@ Returning <code class="inline">discard</code> is equivalent to returning <code c
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="diameter.epub" title="ePub version">
@@ -1008,7 +1028,7 @@ Returning <code class="inline">discard</code> is equivalent to returning <code c
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="ssh v5.3.4">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/ssh/ssh_agent.html" />
     <title>ssh_agent — ssh v5.3.4</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-8DF6FD17.js"></script>
+    <script defer src="dist/sidebar_items-57D42F4F.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ ssh
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of ssh</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ ssh
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_agent.erl#L25" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_agent.erl#L25" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -103,11 +121,11 @@ signing requests to an agent that stores SSH private keys to perform
 authentication.</p><p>Ssh_agent implements the <a href="ssh_client_key_api.html"><code class="inline">ssh_client_key_api</code></a>, to allow it to be used by
 setting the option <a href="ssh.html#t:key_cb_common_option/0"><code class="inline">key_cb</code></a> when starting a
 client (with for example <a href="ssh.html#connect/3">ssh:connect</a>,
-<a href="ssh.html#shell/1">ssh:shell</a> ).</p><pre><code class="makeup erlang" translate="no"><span class="w">      </span><span class="p" data-group-id="3136039098-1">{</span><span class="ss">key_cb</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3136039098-2">{</span><span class="ss">ssh_agent</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3136039098-3">[</span><span class="p" data-group-id="3136039098-3">]</span><span class="p" data-group-id="3136039098-2">}</span><span class="p" data-group-id="3136039098-1">}</span></code></pre><p>The agent communication is established through a UNIX domain socket. By default,
+<a href="ssh.html#shell/1">ssh:shell</a> ).</p><pre><code class="makeup erlang" translate="no"><span class="w">      </span><span class="p" data-group-id="7107287677-1">{</span><span class="ss">key_cb</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7107287677-2">{</span><span class="ss">ssh_agent</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7107287677-3">[</span><span class="p" data-group-id="7107287677-3">]</span><span class="p" data-group-id="7107287677-2">}</span><span class="p" data-group-id="7107287677-1">}</span></code></pre><p>The agent communication is established through a UNIX domain socket. By default,
 the socket path will be fetched from the <code class="inline">SSH_AUTH_SOCK</code> environment variable,
 which is the default socket path in the agent implementation of
 <a href="http://www.openssh.com">OpenSSH</a>.</p><p><a href="" id="SOCKET_PATH"></a> In order to set a different socket path the <code class="inline">socket_path</code>
-option can be set.</p><pre><code class="makeup erlang" translate="no"><span class="w">      </span><span class="p" data-group-id="9363000783-1">{</span><span class="ss">key_cb</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9363000783-2">{</span><span class="ss">ssh_agent</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9363000783-3">[</span><span class="p" data-group-id="9363000783-4">{</span><span class="ss">socket_path</span><span class="p">,</span><span class="w"> </span><span class="n">SocketPath</span><span class="p" data-group-id="9363000783-4">}</span><span class="p" data-group-id="9363000783-3">]</span><span class="p" data-group-id="9363000783-2">}</span><span class="p" data-group-id="9363000783-1">}</span></code></pre><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>The functions are <em>Callbacks</em> for the SSH app. They are not intended to be
+option can be set.</p><pre><code class="makeup erlang" translate="no"><span class="w">      </span><span class="p" data-group-id="3784111567-1">{</span><span class="ss">key_cb</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3784111567-2">{</span><span class="ss">ssh_agent</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3784111567-3">[</span><span class="p" data-group-id="3784111567-4">{</span><span class="ss">socket_path</span><span class="p">,</span><span class="w"> </span><span class="n">SocketPath</span><span class="p" data-group-id="3784111567-4">}</span><span class="p" data-group-id="3784111567-3">]</span><span class="p" data-group-id="3784111567-2">}</span><span class="p" data-group-id="3784111567-1">}</span></code></pre><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>The functions are <em>Callbacks</em> for the SSH app. They are not intended to be
 called from the user's code!</p></section>
     </section>
 
@@ -132,7 +150,7 @@ called from the user's code!</p></section>
       </div>
 
         <div class="summary-synopsis"><p>The module which the <code class="inline">add_host_key</code> and <code class="inline">is_host_key</code> callbacks are delegated
-to. Defaults to the <a><code class="inline">ssh_file</code></a> module.</p></div>
+to. Defaults to the <a href="ssh_file.html"><code class="inline">ssh_file</code></a> module.</p></div>
 
     </div>
 
@@ -142,7 +160,7 @@ to. Defaults to the <a><code class="inline">ssh_file</code></a> module.</p></div
 
       </div>
 
-        <div class="summary-synopsis"><p>Sets the <a>socket path</a> for the communication with the
+        <div class="summary-synopsis"><p>Sets the <a href="ssh_agent.html#SOCKET_PATH">socket path</a> for the communication with the
 agent.</p></div>
 
     </div>
@@ -170,7 +188,7 @@ socket. The default value is <code class="inline">1000</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">add_host_key/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#add_host_key/4"><code class="inline">add_host_key/4</code></a>.</p></div>
 
     </div>
 
@@ -180,7 +198,7 @@ socket. The default value is <code class="inline">1000</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>This callback is delegated to the <a>ssh_file</a> module.</p></div>
+        <div class="summary-synopsis"><p>This callback is delegated to the <a href="ssh_file.html#add_host_key/4">ssh_file</a> module.</p></div>
 
     </div>
 
@@ -190,7 +208,7 @@ socket. The default value is <code class="inline">1000</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">is_host_key/5</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#is_host_key/5"><code class="inline">is_host_key/5</code></a>.</p></div>
 
     </div>
 
@@ -200,7 +218,7 @@ socket. The default value is <code class="inline">1000</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>This callback is delegated to the <a>ssh_file</a> module.</p></div>
+        <div class="summary-synopsis"><p>This callback is delegated to the <a href="ssh_file.html#is_host_key/5">ssh_file</a> module.</p></div>
 
     </div>
 
@@ -226,6 +244,7 @@ socket. The default value is <code class="inline">1000</code>.</p></div>
       </a>
       <span class="text">Types: Options</span>
     </h1>
+
     <div class="types-options-list">
 <section class="detail" id="t:call_ssh_file_option/0">
 
@@ -239,7 +258,7 @@ socket. The default value is <code class="inline">1000</code>.</p></div>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_agent.erl#L88" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_agent.erl#L88" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -270,7 +289,7 @@ to. Defaults to the <a href="ssh_file.html"><code class="inline">ssh_file</code>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_agent.erl#L76" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_agent.erl#L76" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -301,7 +320,7 @@ agent.</p>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_agent.erl#L82" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_agent.erl#L82" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -331,6 +350,7 @@ socket. The default value is <code class="inline">1000</code>.</p>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="add_host_key/3">
 
@@ -344,7 +364,7 @@ socket. The default value is <code class="inline">1000</code>.</p>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_agent.erl#L102" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_agent.erl#L102" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -375,7 +395,7 @@ socket. The default value is <code class="inline">1000</code>.</p>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_agent.erl#L135" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_agent.erl#L135" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -412,7 +432,7 @@ socket. The default value is <code class="inline">1000</code>.</p>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_agent.erl#L118" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_agent.erl#L118" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -447,7 +467,7 @@ socket. The default value is <code class="inline">1000</code>.</p>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_agent.erl#L153" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_agent.erl#L153" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -482,7 +502,7 @@ socket. The default value is <code class="inline">1000</code>.</p>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ssh/src/ssh_agent.erl#L174" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ssh/src/ssh_agent.erl#L174" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -517,8 +537,8 @@ socket. The default value is <code class="inline">1000</code>.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="ssh.epub" title="ePub version">
@@ -530,7 +550,7 @@ socket. The default value is <code class="inline">1000</code>.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

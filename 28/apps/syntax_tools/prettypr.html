@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="syntax_tools v4.0.2">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/syntax_tools/prettypr.html" />
     <title>prettypr — syntax_tools v4.0.2</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-B62031EF.js"></script>
+    <script defer src="dist/sidebar_items-3A7226A9.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ syntax_tools
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of syntax_tools</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ syntax_tools
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/syntax_tools/src/prettypr.erl#L39" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/syntax_tools/src/prettypr.erl#L39" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -202,7 +220,7 @@ document.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">floating(D, 0, 0)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#floating/3"><code class="inline">floating(D, 0, 0)</code></a>.</p></div>
 
     </div>
 
@@ -222,7 +240,7 @@ document.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">follow(D1, D2, 0)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#follow/3"><code class="inline">follow(D1, D2, 0)</code></a>.</p></div>
 
     </div>
 
@@ -243,7 +261,7 @@ indentation.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">format(D, 80)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#format/2"><code class="inline">format(D, 80)</code></a>.</p></div>
 
     </div>
 
@@ -253,7 +271,7 @@ indentation.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">format(D, PaperWidth, 65)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#format/3"><code class="inline">format(D, PaperWidth, 65)</code></a>.</p></div>
 
     </div>
 
@@ -283,7 +301,7 @@ indentation.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Similar to <a><code class="inline">text/1</code></a>, but the result is treated as having zero width.</p></div>
+        <div class="summary-synopsis"><p>Similar to <a href="#text/1"><code class="inline">text/1</code></a>, but the result is treated as having zero width.</p></div>
 
     </div>
 
@@ -293,7 +311,7 @@ indentation.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">par(Ds, 0)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#par/2"><code class="inline">par(Ds, 0)</code></a>.</p></div>
 
     </div>
 
@@ -333,7 +351,7 @@ indentation.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">text_par(Text, 0)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#text_par/2"><code class="inline">text_par(Text, 0)</code></a>.</p></div>
 
     </div>
 
@@ -359,6 +377,7 @@ indentation.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:deep_string/0">
 
@@ -372,7 +391,7 @@ indentation.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/syntax_tools/src/prettypr.erl#L69" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/syntax_tools/src/prettypr.erl#L69" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -400,7 +419,7 @@ indentation.</p></div>
       <h1 class="signature" translate="no">document()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/syntax_tools/src/prettypr.erl#L131" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/syntax_tools/src/prettypr.erl#L131" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -454,6 +473,7 @@ sum of the components.</p>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="above/2">
 
@@ -465,7 +485,7 @@ sum of the components.</p>
       <h1 class="signature" translate="no">above(D1, D2)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/syntax_tools/src/prettypr.erl#L345" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/syntax_tools/src/prettypr.erl#L345" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -503,7 +523,7 @@ abc   fgh  =&gt;   de
       <h1 class="signature" translate="no">beside(D1, D2)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/syntax_tools/src/prettypr.erl#L318" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/syntax_tools/src/prettypr.erl#L318" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -538,7 +558,7 @@ cd  gh  =&gt;  cdef
       <h1 class="signature" translate="no">best(D, W, R)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/syntax_tools/src/prettypr.erl#L727" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/syntax_tools/src/prettypr.erl#L727" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -574,7 +594,7 @@ being laid out as text.</p>
       <h1 class="signature" translate="no">break(D)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/syntax_tools/src/prettypr.erl#L277" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/syntax_tools/src/prettypr.erl#L277" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -602,7 +622,7 @@ being laid out as text.</p>
       <h1 class="signature" translate="no">empty()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/syntax_tools/src/prettypr.erl#L266" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/syntax_tools/src/prettypr.erl#L266" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -634,7 +654,7 @@ function <a href="#break/1"><code class="inline">break/1</code></a> will place a
       <h1 class="signature" translate="no">floating(D)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/syntax_tools/src/prettypr.erl#L497" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/syntax_tools/src/prettypr.erl#L497" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -662,7 +682,7 @@ function <a href="#break/1"><code class="inline">break/1</code></a> will place a
       <h1 class="signature" translate="no">floating(D, H, V)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/syntax_tools/src/prettypr.erl#L521" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/syntax_tools/src/prettypr.erl#L521" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -700,7 +720,7 @@ it to be able to sort large sequences of floating documents quickly.</p></sectio
       <h1 class="signature" translate="no">follow(D1, D2)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/syntax_tools/src/prettypr.erl#L460" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/syntax_tools/src/prettypr.erl#L460" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -728,7 +748,7 @@ it to be able to sort large sequences of floating documents quickly.</p></sectio
       <h1 class="signature" translate="no">follow(D1, D2, N)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/syntax_tools/src/prettypr.erl#L490" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/syntax_tools/src/prettypr.erl#L490" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -759,7 +779,7 @@ useful for typesetting programming language constructs.</p><p>This is a utility 
       <h1 class="signature" translate="no">format(D)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/syntax_tools/src/prettypr.erl#L528" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/syntax_tools/src/prettypr.erl#L528" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -787,7 +807,7 @@ useful for typesetting programming language constructs.</p><p>This is a utility 
       <h1 class="signature" translate="no">format(D, W)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/syntax_tools/src/prettypr.erl#L535" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/syntax_tools/src/prettypr.erl#L535" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -815,7 +835,7 @@ useful for typesetting programming language constructs.</p><p>This is a utility 
       <h1 class="signature" translate="no">format(D, W, R)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/syntax_tools/src/prettypr.erl#L556" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/syntax_tools/src/prettypr.erl#L556" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -849,7 +869,7 @@ properly balanced in order to produce good layouts. By default, <code class="inl
       <h1 class="signature" translate="no">nest(N, D)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/syntax_tools/src/prettypr.erl#L290" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/syntax_tools/src/prettypr.erl#L290" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -878,7 +898,7 @@ in which case <code class="inline">D</code> is returned unchanged.</p>
       <h1 class="signature" translate="no">null_text(S)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/syntax_tools/src/prettypr.erl#L174" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/syntax_tools/src/prettypr.erl#L174" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -913,7 +933,7 @@ markup has zero width.</p><p><em>See also: </em><a href="#empty/0"><code class="
       <h1 class="signature" translate="no">par(Ds)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/syntax_tools/src/prettypr.erl#L386" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/syntax_tools/src/prettypr.erl#L386" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -941,7 +961,7 @@ markup has zero width.</p><p><em>See also: </em><a href="#empty/0"><code class="
       <h1 class="signature" translate="no">par(Ds, N)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/syntax_tools/src/prettypr.erl#L448" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/syntax_tools/src/prettypr.erl#L448" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -991,7 +1011,7 @@ this context for two documents <code class="inline">D1</code> and <code class="i
       <h1 class="signature" translate="no">sep(Ds)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/syntax_tools/src/prettypr.erl#L379" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/syntax_tools/src/prettypr.erl#L379" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1030,7 +1050,7 @@ cd  ef  =&gt;   cd
       <h1 class="signature" translate="no">text(S)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/syntax_tools/src/prettypr.erl#L146" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/syntax_tools/src/prettypr.erl#L146" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1061,7 +1081,7 @@ characters to the next column of 8 characters <em>within the string</em>.</p><p>
       <h1 class="signature" translate="no">text_par(S)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/syntax_tools/src/prettypr.erl#L181" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/syntax_tools/src/prettypr.erl#L181" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1089,7 +1109,7 @@ characters to the next column of 8 characters <em>within the string</em>.</p><p>
       <h1 class="signature" translate="no">text_par(Text, Indentation)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/syntax_tools/src/prettypr.erl#L228" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/syntax_tools/src/prettypr.erl#L228" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1124,8 +1144,8 @@ the given string into words separated by whitespace and setting up a
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
         </span>
@@ -1133,7 +1153,7 @@ the given string into words separated by whitespace and setting up a
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

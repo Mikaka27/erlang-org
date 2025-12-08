@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="stdlib v7.1">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/proc_lib.html" />
     <title>proc_lib — stdlib v7.1</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-296BF65E.js"></script>
+    <script defer src="dist/sidebar_items-E5A5C6F9.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ stdlib
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of stdlib</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ stdlib
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -149,7 +167,7 @@ processes that terminate as a result of this process terminating.</p><h2 id="mod
 
       </div>
 
-        <div class="summary-synopsis"><p>An exception passed to <a><code class="inline">init_fail/3</code></a>. See <a><code class="inline">erlang:raise/3</code></a> for a description
+        <div class="summary-synopsis"><p>An exception passed to <a href="#init_fail/3"><code class="inline">init_fail/3</code></a>. See <a href="../../apps/erts/erlang.html#raise/3"><code class="inline">erlang:raise/3</code></a> for a description
 of <code class="inline">Class</code>, <code class="inline">Reason</code> and <code class="inline">Stacktrace</code>.</p></div>
 
     </div>
@@ -160,7 +178,7 @@ of <code class="inline">Class</code>, <code class="inline">Reason</code> and <co
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">erlang:spawn_opt_option/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="../../apps/erts/erlang.html#t:spawn_opt_option/0"><code class="inline">erlang:spawn_opt_option/0</code></a>.</p></div>
 
     </div>
 
@@ -170,7 +188,7 @@ of <code class="inline">Class</code>, <code class="inline">Reason</code> and <co
 
       </div>
 
-        <div class="summary-synopsis"><p>A restricted set of <a>spawn options</a>. Most notably <code class="inline">monitor</code>
+        <div class="summary-synopsis"><p>A restricted set of <a href="#t:spawn_option/0">spawn options</a>. Most notably <code class="inline">monitor</code>
 is <em>not</em> part of these options.</p></div>
 
     </div>
@@ -187,7 +205,7 @@ is <em>not</em> part of these options.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">format(CrashReport, latin1)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#format/2"><code class="inline">format(CrashReport, latin1)</code></a>.</p></div>
 
     </div>
 
@@ -218,7 +236,7 @@ is <em>not</em> part of these options.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Returns either <code class="inline">undefined</code> or the label for the process Pid set with
-<a><code class="inline">proc_lib:set_label/1</code></a>.</p></div>
+<a href="#set_label/1"><code class="inline">proc_lib:set_label/1</code></a>.</p></div>
 
     </div>
 
@@ -229,7 +247,7 @@ is <em>not</em> part of these options.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>This function does the same as (and does call) the
-<a><code class="inline">hibernate/3</code></a> BIF, but ensures that exception handling
+<a href="../../apps/erts/erlang.html#hibernate/3"><code class="inline">hibernate/3</code></a> BIF, but ensures that exception handling
 and logging continues to work as expected when the process wakes up.</p></div>
 
     </div>
@@ -240,8 +258,8 @@ and logging continues to work as expected when the process wakes up.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">init_ack(Parent, Ret)</code></a> where <code class="inline">Parent</code> is
-the process that called <a><code class="inline">start/5</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#init_ack/2"><code class="inline">init_ack(Parent, Ret)</code></a> where <code class="inline">Parent</code> is
+the process that called <a href="#start/5"><code class="inline">start/5</code></a>.</p></div>
 
     </div>
 
@@ -252,7 +270,7 @@ the process that called <a><code class="inline">start/5</code></a>.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>This function must only be used by a process that has been started by a
-<a><code class="inline">start[_link|_monitor]/3,4,5</code></a> function. It tells <code class="inline">Parent</code> that the
+<a href="#start/5"><code class="inline">start[_link|_monitor]/3,4,5</code></a> function. It tells <code class="inline">Parent</code> that the
 process has initialized itself and started.</p></div>
 
     </div>
@@ -263,8 +281,8 @@ process has initialized itself and started.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">init_fail(Parent, Return, Exception)</code></a> where
-<code class="inline">Parent</code> is the process that called <a><code class="inline">start/5</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#init_fail/3"><code class="inline">init_fail(Parent, Return, Exception)</code></a> where
+<code class="inline">Parent</code> is the process that called <a href="#start/5"><code class="inline">start/5</code></a>.</p></div>
 
     </div>
 
@@ -275,7 +293,7 @@ process has initialized itself and started.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>This function must only be used by a process that has been started by a
-<a><code class="inline">start[_link|_monitor]/3,4,5</code></a> function. It tells <code class="inline">Parent</code> that the
+<a href="#start/3"><code class="inline">start[_link|_monitor]/3,4,5</code></a> function. It tells <code class="inline">Parent</code> that the
 process has failed to initialize, and immediately raises an exception according
 to <code class="inline">Exception</code>. The start function then returns <code class="inline">Ret</code>.</p></div>
 
@@ -314,7 +332,7 @@ registered name needs to be. The process label can be any term, for example
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">spawn(erlang, apply, [Fun])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#spawn/3"><code class="inline">spawn(erlang, apply, [Fun])</code></a>.</p></div>
 
     </div>
 
@@ -324,7 +342,7 @@ registered name needs to be. The process label can be any term, for example
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">spawn(Node, apply, erlang, [Fun])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#spawn/4"><code class="inline">spawn(Node, apply, erlang, [Fun])</code></a>.</p></div>
 
     </div>
 
@@ -334,7 +352,7 @@ registered name needs to be. The process label can be any term, for example
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">spawn(node(), Module, Function, Args)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#spawn/4"><code class="inline">spawn(node(), Module, Function, Args)</code></a>.</p></div>
 
     </div>
 
@@ -345,7 +363,7 @@ registered name needs to be. The process label can be any term, for example
       </div>
 
         <div class="summary-synopsis"><p>Spawns a new process and initializes it as described in the beginning of this
-manual page. The process is spawned using the <a><code class="inline">spawn</code></a> BIFs.</p></div>
+manual page. The process is spawned using the <a href="../../apps/erts/erlang.html#spawn/1"><code class="inline">spawn</code></a> BIFs.</p></div>
 
     </div>
 
@@ -355,7 +373,7 @@ manual page. The process is spawned using the <a><code class="inline">spawn</cod
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">spawn_link(erlang, apply, [Fun])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#spawn_link/3"><code class="inline">spawn_link(erlang, apply, [Fun])</code></a>.</p></div>
 
     </div>
 
@@ -365,7 +383,7 @@ manual page. The process is spawned using the <a><code class="inline">spawn</cod
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">spawn_link(Node, erlang, apply, [Fun])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#spawn_link/4"><code class="inline">spawn_link(Node, erlang, apply, [Fun])</code></a>.</p></div>
 
     </div>
 
@@ -375,7 +393,7 @@ manual page. The process is spawned using the <a><code class="inline">spawn</cod
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">spawn_link(node(), Module, Function, Args)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#spawn_link/4"><code class="inline">spawn_link(node(), Module, Function, Args)</code></a>.</p></div>
 
     </div>
 
@@ -387,7 +405,7 @@ manual page. The process is spawned using the <a><code class="inline">spawn</cod
 
         <div class="summary-synopsis"><p>Spawns a new process and initializes it as described in the beginning of this
 manual page. The process is spawned using the
-<a><code class="inline">spawn_link</code></a> BIFs.</p></div>
+<a href="../../apps/erts/erlang.html#spawn_link/1"><code class="inline">spawn_link</code></a> BIFs.</p></div>
 
     </div>
 
@@ -397,7 +415,7 @@ manual page. The process is spawned using the
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">spawn_opt(erlang, apply, [Fun], SpawnOpts)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#spawn_opt/4"><code class="inline">spawn_opt(erlang, apply, [Fun], SpawnOpts)</code></a>.</p></div>
 
     </div>
 
@@ -407,7 +425,7 @@ manual page. The process is spawned using the
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">spawn_opt(Node, erlang, apply, [Fun], SpawnOpts)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#spawn_opt/5"><code class="inline">spawn_opt(Node, erlang, apply, [Fun], SpawnOpts)</code></a>.</p></div>
 
     </div>
 
@@ -417,7 +435,7 @@ manual page. The process is spawned using the
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">spawn_opt(node(), Module, Function, Args, SpawnOpts)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#spawn_opt/5"><code class="inline">spawn_opt(node(), Module, Function, Args, SpawnOpts)</code></a>.</p></div>
 
     </div>
 
@@ -429,7 +447,7 @@ manual page. The process is spawned using the
 
         <div class="summary-synopsis"><p>Spawns a new process and initializes it as described in the beginning of this
 manual page. The process is spawned using the
-<a><code class="inline">erlang:spawn_opt</code></a> BIFs.</p></div>
+<a href="../../apps/erts/erlang.html#spawn_opt/2"><code class="inline">erlang:spawn_opt</code></a> BIFs.</p></div>
 
     </div>
 
@@ -439,7 +457,7 @@ manual page. The process is spawned using the
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">start(Module, Function, Args, infinity)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#start/4"><code class="inline">start(Module, Function, Args, infinity)</code></a>.</p></div>
 
     </div>
 
@@ -449,7 +467,7 @@ manual page. The process is spawned using the
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">start(Module, Function, Args, Time, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#start/5"><code class="inline">start(Module, Function, Args, Time, [])</code></a>.</p></div>
 
     </div>
 
@@ -470,7 +488,7 @@ start.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">start_link(Module, Function, Args, infinity)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#start_link/4"><code class="inline">start_link(Module, Function, Args, infinity)</code></a>.</p></div>
 
     </div>
 
@@ -480,7 +498,7 @@ start.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">start_link(Module, Function, Args, Time, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#start_link/5"><code class="inline">start_link(Module, Function, Args, Time, [])</code></a>.</p></div>
 
     </div>
 
@@ -501,7 +519,7 @@ start. A link is atomically set on the newly spawned process.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">start_monitor(Module, Function, Args, infinity)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#start_monitor/4"><code class="inline">start_monitor(Module, Function, Args, infinity)</code></a>.</p></div>
 
     </div>
 
@@ -511,7 +529,7 @@ start. A link is atomically set on the newly spawned process.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">start_monitor(Module, Function, Args, Time, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#start_monitor/5"><code class="inline">start_monitor(Module, Function, Args, Time, [])</code></a>.</p></div>
 
     </div>
 
@@ -532,7 +550,7 @@ start. A monitor is atomically set on the newly spawned process.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">stop(Process, normal, infinity)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#stop/3"><code class="inline">stop(Process, normal, infinity)</code></a>.</p></div>
 
     </div>
 
@@ -553,7 +571,7 @@ terminate.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>This function is used by functions <a><code class="inline">c:i/0</code></a> and <a><code class="inline">c:regs/0</code></a> to present process
+        <div class="summary-synopsis"><p>This function is used by functions <a href="c.html#i/0"><code class="inline">c:i/0</code></a> and <a href="c.html#regs/0"><code class="inline">c:regs/0</code></a> to present process
 information.</p></div>
 
     </div>
@@ -570,6 +588,7 @@ information.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:dict_or_pid/0">
 
@@ -583,7 +602,7 @@ information.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L139" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L139" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -613,7 +632,7 @@ information.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L132" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L132" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -644,7 +663,7 @@ of <code class="inline">Class</code>, <code class="inline">Reason</code> and <co
       <h1 class="signature" translate="no">spawn_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L137" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L137" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -672,7 +691,7 @@ of <code class="inline">Class</code>, <code class="inline">Reason</code> and <co
       <h1 class="signature" translate="no">start_spawn_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L103" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L103" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -709,6 +728,7 @@ is <em>not</em> part of these options.</p>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="format/1">
 
@@ -720,7 +740,7 @@ is <em>not</em> part of these options.</p>
       <h1 class="signature" translate="no">format(CrashReport)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L1244" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L1244" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -750,7 +770,7 @@ is <em>not</em> part of these options.</p>
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L1268" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L1268" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -790,7 +810,7 @@ leader pid of process <code class="inline">Pid</code> that sent the crash report
         <span class="note">(since OTP 18.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L1292" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L1292" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -832,7 +852,7 @@ used in the format string to limit the output as follows:
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L880" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L880" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -861,7 +881,7 @@ used in the format string to limit the output as follows:
       <h1 class="signature" translate="no">hibernate(Module, Function, Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L306" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L306" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -893,7 +913,7 @@ and logging continues to work as expected when the process wakes up.</p><p>Alway
       <h1 class="signature" translate="no">init_ack(Ret)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L686" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L686" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -922,7 +942,7 @@ the process that called <a href="#start/5"><code class="inline">start/5</code></
       <h1 class="signature" translate="no">init_ack(Parent, Ret)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L675" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L675" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -947,21 +967,21 @@ process exits, or when the start function time-out (if used) has passed, see
 failed. When doing so the start function can return before the failing process
 has exited, which may block VM resources required for a new start attempt to
 succeed. Use <a href="#init_fail/3"><code class="inline">init_fail/2,3</code></a> for that purpose.</p></section><p>The following example illustrates how this function and <a href="#start_link/3"><code class="inline">proc_lib:start_link/3</code></a>
-are used:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="5075773668-1">(</span><span class="ss">my_proc</span><span class="p" data-group-id="5075773668-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="5075773668-2">(</span><span class="p" data-group-id="5075773668-3">[</span><span class="ss">start_link</span><span class="p">/</span><span class="mi">0</span><span class="p" data-group-id="5075773668-3">]</span><span class="p" data-group-id="5075773668-2">)</span><span class="p">.</span><span class="w">
-</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="5075773668-4">(</span><span class="p" data-group-id="5075773668-5">[</span><span class="ss">init</span><span class="p">/</span><span class="mi">1</span><span class="p" data-group-id="5075773668-5">]</span><span class="p" data-group-id="5075773668-4">)</span><span class="p">.</span><span class="w">
+are used:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="5021439586-1">(</span><span class="ss">my_proc</span><span class="p" data-group-id="5021439586-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="5021439586-2">(</span><span class="p" data-group-id="5021439586-3">[</span><span class="ss">start_link</span><span class="p">/</span><span class="mi">0</span><span class="p" data-group-id="5021439586-3">]</span><span class="p" data-group-id="5021439586-2">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="5021439586-4">(</span><span class="p" data-group-id="5021439586-5">[</span><span class="ss">init</span><span class="p">/</span><span class="mi">1</span><span class="p" data-group-id="5021439586-5">]</span><span class="p" data-group-id="5021439586-4">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">start_link</span><span class="p" data-group-id="5075773668-6">(</span><span class="p" data-group-id="5075773668-6">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="nc">proc_lib</span><span class="p">:</span><span class="nf">start_link</span><span class="p" data-group-id="5075773668-7">(</span><span class="ss">my_proc</span><span class="p">,</span><span class="w"> </span><span class="ss">init</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5075773668-8">[</span><span class="nf">self</span><span class="p" data-group-id="5075773668-9">(</span><span class="p" data-group-id="5075773668-9">)</span><span class="p" data-group-id="5075773668-8">]</span><span class="p" data-group-id="5075773668-7">)</span><span class="p">.</span><span class="w">
+</span><span class="nf">start_link</span><span class="p" data-group-id="5021439586-6">(</span><span class="p" data-group-id="5021439586-6">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="nc">proc_lib</span><span class="p">:</span><span class="nf">start_link</span><span class="p" data-group-id="5021439586-7">(</span><span class="ss">my_proc</span><span class="p">,</span><span class="w"> </span><span class="ss">init</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5021439586-8">[</span><span class="nf">self</span><span class="p" data-group-id="5021439586-9">(</span><span class="p" data-group-id="5021439586-9">)</span><span class="p" data-group-id="5021439586-8">]</span><span class="p" data-group-id="5021439586-7">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">init</span><span class="p" data-group-id="5075773668-10">(</span><span class="n">Parent</span><span class="p" data-group-id="5075773668-10">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="k">case</span><span class="w"> </span><span class="nf">do_initialization</span><span class="p" data-group-id="5075773668-11">(</span><span class="p" data-group-id="5075773668-11">)</span><span class="w"> </span><span class="k">of</span><span class="w">
+</span><span class="nf">init</span><span class="p" data-group-id="5021439586-10">(</span><span class="n">Parent</span><span class="p" data-group-id="5021439586-10">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="k">case</span><span class="w"> </span><span class="nf">do_initialization</span><span class="p" data-group-id="5021439586-11">(</span><span class="p" data-group-id="5021439586-11">)</span><span class="w"> </span><span class="k">of</span><span class="w">
         </span><span class="ss">ok</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-            </span><span class="nc">proc_lib</span><span class="p">:</span><span class="nf">init_ack</span><span class="p" data-group-id="5075773668-12">(</span><span class="n">Parent</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5075773668-13">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="nf">self</span><span class="p" data-group-id="5075773668-14">(</span><span class="p" data-group-id="5075773668-14">)</span><span class="p" data-group-id="5075773668-13">}</span><span class="p" data-group-id="5075773668-12">)</span><span class="p">;</span><span class="w">
-        </span><span class="p" data-group-id="5075773668-15">{</span><span class="ss">error</span><span class="p">,</span><span class="w"> </span><span class="n">Reason</span><span class="p" data-group-id="5075773668-15">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-            </span><span class="nf">exit</span><span class="p" data-group-id="5075773668-16">(</span><span class="n">Reason</span><span class="p" data-group-id="5075773668-16">)</span><span class="w">
+            </span><span class="nc">proc_lib</span><span class="p">:</span><span class="nf">init_ack</span><span class="p" data-group-id="5021439586-12">(</span><span class="n">Parent</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5021439586-13">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="nf">self</span><span class="p" data-group-id="5021439586-14">(</span><span class="p" data-group-id="5021439586-14">)</span><span class="p" data-group-id="5021439586-13">}</span><span class="p" data-group-id="5021439586-12">)</span><span class="p">;</span><span class="w">
+        </span><span class="p" data-group-id="5021439586-15">{</span><span class="ss">error</span><span class="p">,</span><span class="w"> </span><span class="n">Reason</span><span class="p" data-group-id="5021439586-15">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+            </span><span class="nf">exit</span><span class="p" data-group-id="5021439586-16">(</span><span class="n">Reason</span><span class="p" data-group-id="5021439586-16">)</span><span class="w">
     </span><span class="k">end</span><span class="p">,</span><span class="w">
-    </span><span class="nf">loop</span><span class="p" data-group-id="5075773668-17">(</span><span class="p" data-group-id="5075773668-17">)</span><span class="p">.</span><span class="w">
+    </span><span class="nf">loop</span><span class="p" data-group-id="5021439586-17">(</span><span class="p" data-group-id="5021439586-17">)</span><span class="p">.</span><span class="w">
 
 </span><span class="p">.</span><span class="p">.</span><span class="p">.</span></code></pre>
   </section>
@@ -978,7 +998,7 @@ are used:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</
         <span class="note">(since OTP 26.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L756" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L756" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1009,7 +1029,7 @@ are used:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</
         <span class="note">(since OTP 26.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L735" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L735" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1034,21 +1054,21 @@ will be handled by this module. See <a href="proc_lib.html">Description</a>.</p>
 started process, the start function returns an error tuple when the started
 process exits, or when the start function time-out (if used) has passed, see
 <a href="#start/3"><code class="inline">start/3,4,5</code></a>.</p><p>The following example illustrates how this function and <a href="#start_link/3"><code class="inline">proc_lib:start_link/3</code></a>
-can be used:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="8407465889-1">(</span><span class="ss">my_proc</span><span class="p" data-group-id="8407465889-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="8407465889-2">(</span><span class="p" data-group-id="8407465889-3">[</span><span class="ss">start_link</span><span class="p">/</span><span class="mi">0</span><span class="p" data-group-id="8407465889-3">]</span><span class="p" data-group-id="8407465889-2">)</span><span class="p">.</span><span class="w">
-</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="8407465889-4">(</span><span class="p" data-group-id="8407465889-5">[</span><span class="ss">init</span><span class="p">/</span><span class="mi">1</span><span class="p" data-group-id="8407465889-5">]</span><span class="p" data-group-id="8407465889-4">)</span><span class="p">.</span><span class="w">
+can be used:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="7981319664-1">(</span><span class="ss">my_proc</span><span class="p" data-group-id="7981319664-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="7981319664-2">(</span><span class="p" data-group-id="7981319664-3">[</span><span class="ss">start_link</span><span class="p">/</span><span class="mi">0</span><span class="p" data-group-id="7981319664-3">]</span><span class="p" data-group-id="7981319664-2">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="7981319664-4">(</span><span class="p" data-group-id="7981319664-5">[</span><span class="ss">init</span><span class="p">/</span><span class="mi">1</span><span class="p" data-group-id="7981319664-5">]</span><span class="p" data-group-id="7981319664-4">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">start_link</span><span class="p" data-group-id="8407465889-6">(</span><span class="p" data-group-id="8407465889-6">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="nc">proc_lib</span><span class="p">:</span><span class="nf">start_link</span><span class="p" data-group-id="8407465889-7">(</span><span class="ss">my_proc</span><span class="p">,</span><span class="w"> </span><span class="ss">init</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8407465889-8">[</span><span class="nf">self</span><span class="p" data-group-id="8407465889-9">(</span><span class="p" data-group-id="8407465889-9">)</span><span class="p" data-group-id="8407465889-8">]</span><span class="p" data-group-id="8407465889-7">)</span><span class="p">.</span><span class="w">
+</span><span class="nf">start_link</span><span class="p" data-group-id="7981319664-6">(</span><span class="p" data-group-id="7981319664-6">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="nc">proc_lib</span><span class="p">:</span><span class="nf">start_link</span><span class="p" data-group-id="7981319664-7">(</span><span class="ss">my_proc</span><span class="p">,</span><span class="w"> </span><span class="ss">init</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7981319664-8">[</span><span class="nf">self</span><span class="p" data-group-id="7981319664-9">(</span><span class="p" data-group-id="7981319664-9">)</span><span class="p" data-group-id="7981319664-8">]</span><span class="p" data-group-id="7981319664-7">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">init</span><span class="p" data-group-id="8407465889-10">(</span><span class="n">Parent</span><span class="p" data-group-id="8407465889-10">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="k">case</span><span class="w"> </span><span class="nf">do_initialization</span><span class="p" data-group-id="8407465889-11">(</span><span class="p" data-group-id="8407465889-11">)</span><span class="w"> </span><span class="k">of</span><span class="w">
+</span><span class="nf">init</span><span class="p" data-group-id="7981319664-10">(</span><span class="n">Parent</span><span class="p" data-group-id="7981319664-10">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="k">case</span><span class="w"> </span><span class="nf">do_initialization</span><span class="p" data-group-id="7981319664-11">(</span><span class="p" data-group-id="7981319664-11">)</span><span class="w"> </span><span class="k">of</span><span class="w">
         </span><span class="ss">ok</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-            </span><span class="nc">proc_lib</span><span class="p">:</span><span class="nf">init_ack</span><span class="p" data-group-id="8407465889-12">(</span><span class="n">Parent</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8407465889-13">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="nf">self</span><span class="p" data-group-id="8407465889-14">(</span><span class="p" data-group-id="8407465889-14">)</span><span class="p" data-group-id="8407465889-13">}</span><span class="p" data-group-id="8407465889-12">)</span><span class="p">;</span><span class="w">
-        </span><span class="p" data-group-id="8407465889-15">{</span><span class="ss">error</span><span class="p">,</span><span class="w"> </span><span class="n">Reason</span><span class="p" data-group-id="8407465889-15">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Error</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-            </span><span class="nc">proc_lib</span><span class="p">:</span><span class="nf">init_fail</span><span class="p" data-group-id="8407465889-16">(</span><span class="n">Parent</span><span class="p">,</span><span class="w"> </span><span class="n">Error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8407465889-17">{</span><span class="nb">exit</span><span class="p">,</span><span class="w"> </span><span class="ss">normal</span><span class="p" data-group-id="8407465889-17">}</span><span class="p" data-group-id="8407465889-16">)</span><span class="w">
+            </span><span class="nc">proc_lib</span><span class="p">:</span><span class="nf">init_ack</span><span class="p" data-group-id="7981319664-12">(</span><span class="n">Parent</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7981319664-13">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="nf">self</span><span class="p" data-group-id="7981319664-14">(</span><span class="p" data-group-id="7981319664-14">)</span><span class="p" data-group-id="7981319664-13">}</span><span class="p" data-group-id="7981319664-12">)</span><span class="p">;</span><span class="w">
+        </span><span class="p" data-group-id="7981319664-15">{</span><span class="ss">error</span><span class="p">,</span><span class="w"> </span><span class="n">Reason</span><span class="p" data-group-id="7981319664-15">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Error</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+            </span><span class="nc">proc_lib</span><span class="p">:</span><span class="nf">init_fail</span><span class="p" data-group-id="7981319664-16">(</span><span class="n">Parent</span><span class="p">,</span><span class="w"> </span><span class="n">Error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7981319664-17">{</span><span class="nb">exit</span><span class="p">,</span><span class="w"> </span><span class="ss">normal</span><span class="p" data-group-id="7981319664-17">}</span><span class="p" data-group-id="7981319664-16">)</span><span class="w">
     </span><span class="k">end</span><span class="p">,</span><span class="w">
-    </span><span class="nf">loop</span><span class="p" data-group-id="8407465889-18">(</span><span class="p" data-group-id="8407465889-18">)</span><span class="p">.</span><span class="w">
+    </span><span class="nf">loop</span><span class="p" data-group-id="7981319664-18">(</span><span class="p" data-group-id="7981319664-18">)</span><span class="p">.</span><span class="w">
 
 </span><span class="p">.</span><span class="p">.</span><span class="p">.</span></code></pre>
   </section>
@@ -1063,7 +1083,7 @@ can be used:</p><pre><code class="makeup erlang" translate="no"><span class="p">
       <h1 class="signature" translate="no">initial_call(Process)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L792" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L792" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1111,7 +1131,7 @@ wasted.</p></section>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L869" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L869" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1143,7 +1163,7 @@ registered name needs to be. The process label can be any term, for example
       <h1 class="signature" translate="no">spawn(Fun)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L151" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L151" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1171,7 +1191,7 @@ registered name needs to be. The process label can be any term, for example
       <h1 class="signature" translate="no">spawn(Node, Fun)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L192" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L192" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1199,7 +1219,7 @@ registered name needs to be. The process label can be any term, for example
       <h1 class="signature" translate="no">spawn(Module, Function, Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L162" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L162" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1228,7 +1248,7 @@ registered name needs to be. The process label can be any term, for example
       <h1 class="signature" translate="no">spawn(Node, Module, Function, Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L207" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L207" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1258,7 +1278,7 @@ manual page. The process is spawned using the <a href="../../apps/erts/erlang.ht
       <h1 class="signature" translate="no">spawn_link(Fun)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L171" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L171" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1286,7 +1306,7 @@ manual page. The process is spawned using the <a href="../../apps/erts/erlang.ht
       <h1 class="signature" translate="no">spawn_link(Node, Fun)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L217" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L217" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1314,7 +1334,7 @@ manual page. The process is spawned using the <a href="../../apps/erts/erlang.ht
       <h1 class="signature" translate="no">spawn_link(Module, Function, Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L182" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L182" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1343,7 +1363,7 @@ manual page. The process is spawned using the <a href="../../apps/erts/erlang.ht
       <h1 class="signature" translate="no">spawn_link(Node, Module, Function, Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L233" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L233" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1374,7 +1394,7 @@ manual page. The process is spawned using the
       <h1 class="signature" translate="no">spawn_opt(Fun, SpawnOpts)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L243" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L243" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1403,7 +1423,7 @@ manual page. The process is spawned using the
       <h1 class="signature" translate="no">spawn_opt(Node, Fun, SpawnOpts)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L254" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L254" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1432,7 +1452,7 @@ manual page. The process is spawned using the
       <h1 class="signature" translate="no">spawn_opt(Module, Function, Args, SpawnOpts)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L266" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L266" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1465,7 +1485,7 @@ manual page. The process is spawned using the
       <h1 class="signature" translate="no">spawn_opt(Node, Module, Function, Args, SpawnOpts)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L283" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L283" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1501,7 +1521,7 @@ manual page. The process is spawned using the
       <h1 class="signature" translate="no">start(Module, Function, Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L378" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L378" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1534,7 +1554,7 @@ manual page. The process is spawned using the
       <h1 class="signature" translate="no">start(Module, Function, Args, Time)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L389" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L389" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1568,7 +1588,7 @@ manual page. The process is spawned using the
       <h1 class="signature" translate="no">start(Module, Function, Args, Time, SpawnOpts)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L434" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L434" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1618,7 +1638,7 @@ with reason <code class="inline">badarg</code>.</p><p>Using spawn option <code c
       <h1 class="signature" translate="no">start_link(Module, Function, Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L464" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L464" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1651,7 +1671,7 @@ with reason <code class="inline">badarg</code>.</p><p>Using spawn option <code c
       <h1 class="signature" translate="no">start_link(Module, Function, Args, Time)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L475" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L475" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1685,7 +1705,7 @@ with reason <code class="inline">badarg</code>.</p><p>Using spawn option <code c
       <h1 class="signature" translate="no">start_link(Module, Function, Args, Time, SpawnOpts)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L511" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L511" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1732,7 +1752,7 @@ with reason <code class="inline">badarg</code>.</p></section>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L526" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L526" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1768,7 +1788,7 @@ with reason <code class="inline">badarg</code>.</p></section>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L539" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L539" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1805,7 +1825,7 @@ with reason <code class="inline">badarg</code>.</p></section>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L575" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L575" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1851,7 +1871,7 @@ with reason <code class="inline">badarg</code>.</p><p>Using spawn option <code c
         <span class="note">(since OTP 18.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L1554" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L1554" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1881,7 +1901,7 @@ with reason <code class="inline">badarg</code>.</p><p>Using spawn option <code c
         <span class="note">(since OTP 18.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L1579" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L1579" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1919,7 +1939,7 @@ about system messages, see <a href="sys.html"><code class="inline">sys</code></a
       <h1 class="signature" translate="no">translate_initial_call(Process)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/proc_lib.erl#L844" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/proc_lib.erl#L844" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1964,8 +1984,8 @@ has been spawned with the <code class="inline">proc_lib</code> module.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="stdlib.epub" title="ePub version">
@@ -1977,7 +1997,7 @@ has been spawned with the <code class="inline">proc_lib</code> module.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

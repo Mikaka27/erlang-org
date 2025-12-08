@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="et v1.7.2">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/et/et.html" />
     <title>et — et v1.7.2</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-8B24DAD4.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ et
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of et</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ et
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/et/src/et.erl#L87" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/et/src/et.erl#L87" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -141,7 +159,7 @@ et
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">phone_home/5</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#phone_home/5"><code class="inline">phone_home/5</code></a>.</p></div>
 
     </div>
 
@@ -152,8 +170,8 @@ et
       </div>
 
         <div class="summary-synopsis"><p>These functions sends a signal to the outer space and the caller hopes that
-someone is listening. In other words, they invoke <a><code class="inline">et:trace_me/4</code></a> and
-<a><code class="inline">et:trace_me/5</code></a> respectively.</p></div>
+someone is listening. In other words, they invoke <a href="#trace_me/4"><code class="inline">et:trace_me/4</code></a> and
+<a href="#trace_me/5"><code class="inline">et:trace_me/5</code></a> respectively.</p></div>
 
     </div>
 
@@ -163,7 +181,7 @@ someone is listening. In other words, they invoke <a><code class="inline">et:tra
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">report_event/5</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#report_event/5"><code class="inline">report_event/5</code></a>.</p></div>
 
     </div>
 
@@ -174,7 +192,7 @@ someone is listening. In other words, they invoke <a><code class="inline">et:tra
       </div>
 
         <div class="summary-synopsis"><p>Deprecated functions which for the time being are kept for backwards
-compatibility. Invokes <a><code class="inline">et:trace_me/4</code></a> and <a><code class="inline">et:trace_me/5</code></a> respectively.</p></div>
+compatibility. Invokes <a href="#trace_me/4"><code class="inline">et:trace_me/4</code></a> and <a href="#trace_me/5"><code class="inline">et:trace_me/5</code></a> respectively.</p></div>
 
     </div>
 
@@ -184,7 +202,7 @@ compatibility. Invokes <a><code class="inline">et:trace_me/4</code></a> and <a><
 
       </div>
 
-        <div class="summary-synopsis"><p>Invokes <a><code class="inline">et:trace_me/5</code></a> with both <code class="inline">From</code> and <code class="inline">To</code> set to <code class="inline">FromTo</code>.</p></div>
+        <div class="summary-synopsis"><p>Invokes <a href="#trace_me/5"><code class="inline">et:trace_me/5</code></a> with both <code class="inline">From</code> and <code class="inline">To</code> set to <code class="inline">FromTo</code>.</p></div>
 
     </div>
 
@@ -210,6 +228,7 @@ compatibility. Invokes <a><code class="inline">et:trace_me/4</code></a> and <a><
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:actor/0">
 
@@ -223,7 +242,7 @@ compatibility. Invokes <a><code class="inline">et:trace_me/4</code></a> and <a><
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/et/src/et.erl#L100" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/et/src/et.erl#L100" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -253,7 +272,7 @@ compatibility. Invokes <a><code class="inline">et:trace_me/4</code></a> and <a><
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/et/src/et.erl#L101" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/et/src/et.erl#L101" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -282,6 +301,7 @@ compatibility. Invokes <a><code class="inline">et:trace_me/4</code></a> and <a><
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="phone_home/4">
 
@@ -293,7 +313,7 @@ compatibility. Invokes <a><code class="inline">et:trace_me/4</code></a> and <a><
       <h1 class="signature" translate="no">phone_home(DetailLevel, FromTo, Label, Contents)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/et/src/et.erl#L188" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/et/src/et.erl#L188" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -326,7 +346,7 @@ compatibility. Invokes <a><code class="inline">et:trace_me/4</code></a> and <a><
       <h1 class="signature" translate="no">phone_home(DetailLevel, From, To, Label, Contents)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/et/src/et.erl#L203" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/et/src/et.erl#L203" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -362,7 +382,7 @@ someone is listening. In other words, they invoke <a href="#trace_me/4"><code cl
       <h1 class="signature" translate="no">report_event(DetailLevel, FromTo, Label, Contents)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/et/src/et.erl#L213" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/et/src/et.erl#L213" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -395,7 +415,7 @@ someone is listening. In other words, they invoke <a href="#trace_me/4"><code cl
       <h1 class="signature" translate="no">report_event(DetailLevel, From, To, Label, Contents)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/et/src/et.erl#L227" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/et/src/et.erl#L227" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -432,7 +452,7 @@ compatibility. Invokes <a href="#trace_me/4"><code class="inline">et:trace_me/4<
         <span class="note">(since OTP R13B04)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/et/src/et.erl#L149" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/et/src/et.erl#L149" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -467,7 +487,7 @@ compatibility. Invokes <a href="#trace_me/4"><code class="inline">et:trace_me/4<
         <span class="note">(since OTP R13B04)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/et/src/et.erl#L178" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/et/src/et.erl#L178" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -506,8 +526,8 @@ events (termed actions) may be undirected and only have one actor.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="et.epub" title="ePub version">
@@ -519,7 +539,7 @@ events (termed actions) may be undirected and only have one actor.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

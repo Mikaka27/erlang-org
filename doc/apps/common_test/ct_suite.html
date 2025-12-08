@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="common_test v1.29">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/common_test/ct_suite.html" />
     <title>ct_suite — common_test v1.29</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-3DCB9B8F.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ common_test
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of common_test</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ common_test
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L23" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L23" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -131,7 +149,7 @@ that <code class="inline">Common Test</code> calls during test execution. For mo
 
       </div>
 
-        <div class="summary-synopsis"><p>The test group definition, as returned by <a><code class="inline">Module:groups/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>The test group definition, as returned by <a href="#c:groups/0"><code class="inline">Module:groups/0</code></a>.</p></div>
 
     </div>
 
@@ -191,8 +209,8 @@ that <code class="inline">Common Test</code> calls during test execution. For mo
 
       </div>
 
-        <div class="summary-synopsis"><p>The test suite information, as returned by <a><code class="inline">Module:suite/0</code></a>,
-<a><code class="inline">Module:group/1</code></a> and <a><code class="inline">Module:Testcase/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>The test suite information, as returned by <a href="#c:suite/0"><code class="inline">Module:suite/0</code></a>,
+<a href="#c:group/1"><code class="inline">Module:group/1</code></a> and <a href="#c:Testcase/0"><code class="inline">Module:Testcase/0</code></a>.</p></div>
 
     </div>
 
@@ -252,7 +270,7 @@ that <code class="inline">Common Test</code> calls during test execution. For mo
 
       </div>
 
-        <div class="summary-synopsis"><p>The test suite definition, as returned by <a><code class="inline">Module:all/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>The test suite definition, as returned by <a href="#c:all/0"><code class="inline">Module:all/0</code></a>.</p></div>
 
     </div>
 
@@ -314,7 +332,7 @@ to be executed.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>This function is called after the execution of a test case group is finished. It
-is meant to be used for cleaning up after <a><code class="inline">Module:init_per_group/2</code></a>.</p></div>
+is meant to be used for cleaning up after <a href="#c:init_per_group/2"><code class="inline">Module:init_per_group/2</code></a>.</p></div>
 
     </div>
 
@@ -325,7 +343,7 @@ is meant to be used for cleaning up after <a><code class="inline">Module:init_pe
       </div>
 
         <div class="summary-synopsis"><p>This function is called as the last test case in the suite. It is meant to be
-used for cleaning up after <a><code class="inline">Module:init_per_suite/1</code></a>.</p></div>
+used for cleaning up after <a href="#c:init_per_suite/1"><code class="inline">Module:init_per_suite/1</code></a>.</p></div>
 
     </div>
 
@@ -336,7 +354,7 @@ used for cleaning up after <a><code class="inline">Module:init_per_suite/1</code
       </div>
 
         <div class="summary-synopsis"><p>This function is called after each test case, and can be used to clean up after
-<a><code class="inline">Module:init_per_testcase/2</code></a> and the test case.</p></div>
+<a href="#c:init_per_testcase/2"><code class="inline">Module:init_per_testcase/2</code></a> and the test case.</p></div>
 
     </div>
 
@@ -349,8 +367,8 @@ used for cleaning up after <a><code class="inline">Module:init_per_suite/1</code
         <div class="summary-synopsis"><p>The test case group information function. It is supposed to return a list of
 tagged tuples that specify various properties related to the execution of a test
 case group (that is, its test cases and subgroups). Properties set by
-<a><code class="inline">Module:group/1</code></a> override properties with the same key that have
-been set previously by <a><code class="inline">Module:suite/0</code></a>.</p></div>
+<a href="#c:group/1"><code class="inline">Module:group/1</code></a> override properties with the same key that have
+been set previously by <a href="#c:suite/0"><code class="inline">Module:suite/0</code></a>.</p></div>
 
     </div>
 
@@ -361,7 +379,7 @@ been set previously by <a><code class="inline">Module:suite/0</code></a>.</p></d
       </div>
 
         <div class="summary-synopsis"><p>Defines test case groups. For details, see section
-<a>Test Case Groups</a> in the User's Guide.</p></div>
+<a href="write_test_chapter.html#test_case_groups">Test Case Groups</a> in the User's Guide.</p></div>
 
     </div>
 
@@ -419,9 +437,9 @@ test cases in the suite).</p></div>
 
         <div class="summary-synopsis"><p>The test case information function. It is supposed to return a list of tagged
 tuples that specify various properties related to the execution of this
-particular test case. Properties set by <a><code class="inline">Module:Testcase/0</code></a>
+particular test case. Properties set by <a href="#c:Testcase/0"><code class="inline">Module:Testcase/0</code></a>
 override properties set previously for the test case by
-<a><code class="inline">Module:group/1</code></a> or <a><code class="inline">Module:suite/0</code></a>.</p></div>
+<a href="#c:group/1"><code class="inline">Module:group/1</code></a> or <a href="#c:suite/0"><code class="inline">Module:suite/0</code></a>.</p></div>
 
     </div>
 
@@ -433,7 +451,7 @@ override properties set previously for the test case by
 
         <div class="summary-synopsis"><p>The implementation of a test case. Call the functions to test and check the
 result. If something fails, ensure the function causes a runtime error or call
-<a><code class="inline">ct:fail/1,2</code></a> (which also causes the test case process to
+<a href="ct.html#fail/1"><code class="inline">ct:fail/1,2</code></a> (which also causes the test case process to
 terminate).</p></div>
 
     </div>
@@ -450,6 +468,7 @@ terminate).</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:ct_config/0">
 
@@ -461,7 +480,7 @@ terminate).</p></div>
       <h1 class="signature" translate="no">ct_config()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L46" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L46" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -489,7 +508,7 @@ terminate).</p></div>
       <h1 class="signature" translate="no">ct_group_def()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L69" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L69" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -522,7 +541,7 @@ terminate).</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L51" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L51" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -555,7 +574,7 @@ terminate).</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L58" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L58" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -585,7 +604,7 @@ terminate).</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L77" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L77" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -618,7 +637,7 @@ terminate).</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L61" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L61" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -648,7 +667,7 @@ terminate).</p></div>
       <h1 class="signature" translate="no">ct_groupname()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L44" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L44" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -678,7 +697,7 @@ terminate).</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L108" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L108" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -710,7 +729,7 @@ terminate).</p></div>
       <h1 class="signature" translate="no">ct_info()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L88" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L88" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -748,7 +767,7 @@ terminate).</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L102" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L102" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -783,7 +802,7 @@ terminate).</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L106" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L106" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -813,7 +832,7 @@ terminate).</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L95" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L95" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -849,7 +868,7 @@ terminate).</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L101" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L101" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -877,7 +896,7 @@ terminate).</p></div>
       <h1 class="signature" translate="no">ct_status()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L48" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L48" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -907,7 +926,7 @@ terminate).</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L75" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L75" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -937,7 +956,7 @@ terminate).</p></div>
       <h1 class="signature" translate="no">ct_test_def()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L114" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L114" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -967,7 +986,7 @@ terminate).</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L66" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L66" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -997,7 +1016,7 @@ terminate).</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L80" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L80" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1027,7 +1046,7 @@ terminate).</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L81" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L81" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1058,7 +1077,7 @@ terminate).</p></div>
       <h1 class="signature" translate="no">ct_testname()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L42" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L42" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1087,6 +1106,7 @@ terminate).</p></div>
       </a>
       <span class="text">Callbacks</span>
     </h1>
+
     <div class="callbacks-list">
 <section class="detail" id="c:all/0">
 
@@ -1098,7 +1118,7 @@ terminate).</p></div>
       <h1 class="signature" translate="no">all()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L137" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L137" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1140,7 +1160,7 @@ definition properties are used).</p><p>If <code class="inline">{skip, Reason}</c
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L299" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L299" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1178,7 +1198,7 @@ set.</p><p>For details about test case groups, see section
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L218" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L218" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1212,7 +1232,7 @@ Guide.</p><p>If this function is defined, then
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L339" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L339" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1252,7 +1272,7 @@ Guide.</p><p>If this function is defined, then
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L257" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L257" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1301,7 +1321,7 @@ Guide.</p>
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L145" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L145" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1332,7 +1352,7 @@ Guide.</p>
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L279" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L279" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1371,7 +1391,7 @@ all test cases and subgroups in the group.</p><p>If <code class="inline">{skip, 
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L202" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L202" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1413,7 +1433,7 @@ Guide.</p><p>If this function is defined, then
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L318" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L318" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1449,7 +1469,7 @@ printed in the overview log for the suite.</p><p>If this function is defined, th
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L180" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L180" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1498,7 +1518,7 @@ Guide.</p>
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L432" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L432" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1550,7 +1570,7 @@ User's Guide.</p>
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_suite.erl#L383" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_suite.erl#L383" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1602,8 +1622,8 @@ Guide).</p></li></ul><p>If the function returns any other term, the test case is
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="common_test.epub" title="ePub version">
@@ -1615,7 +1635,7 @@ Guide).</p></li></ul><p>If the function returns any other term, the test case is
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

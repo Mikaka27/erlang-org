@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="snmp v5.19.1">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/snmp/snmp_mib_compiler.html" />
     <title>The MIB Compiler — snmp v5.19.1</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-AF03DEA8.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ snmp
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of snmp</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -84,7 +102,7 @@ snmp
     <h1>The MIB Compiler</h1>
 
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/snmp/doc/guides/snmp_mib_compiler.md#L1" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/snmp/doc/guides/snmp_mib_compiler.md#L1" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -102,16 +120,16 @@ the MIB, should have the suffix <code class="inline">.funcs</code>. If the compi
 association file, it gives a warning message and uses default instrumentation
 functions. (See <a href="snmp_instr_functions.html#snmp_3">Default Instrumentation</a> for
 more details).</p><p>The MIB compiler is started with a call to <code class="inline">snmpc:compile(&lt;mibname&gt;).</code> For
-example:</p><pre><code class="makeup erlang" translate="no"><span class="nc">snmpc</span><span class="p">:</span><span class="nf">compile</span><span class="p" data-group-id="5274532297-1">(</span><span class="s">&quot;RFC1213-MIB&quot;</span><span class="p" data-group-id="5274532297-1">)</span><span class="p">.</span></code></pre><p>The output is a new file which is called <code class="inline">&lt;mibname&gt;.bin</code>.</p><p>The MIB compiler understands both SMIv1 and SMIv2 MIBs. It uses the
+example:</p><pre><code class="makeup erlang" translate="no"><span class="nc">snmpc</span><span class="p">:</span><span class="nf">compile</span><span class="p" data-group-id="3990327595-1">(</span><span class="s">&quot;RFC1213-MIB&quot;</span><span class="p" data-group-id="3990327595-1">)</span><span class="p">.</span></code></pre><p>The output is a new file which is called <code class="inline">&lt;mibname&gt;.bin</code>.</p><p>The MIB compiler understands both SMIv1 and SMIv2 MIBs. It uses the
 MODULE-IDENTITY statement to determinate if the MIB is written in SMI version 1
 or 2.</p><h2 id="importing-mibs" class="section-heading"><a href="#importing-mibs" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Importing MIBs</span></h2><p>The compiler handles the <code class="inline">IMPORT</code> statement. It is important to import the
 compiled file and not the ASN.1 (source) file. A MIB must be recompiled to make
 changes visible to other MIBs importing it.</p><p>The compiled files of the imported MIBs must be present in the current
 directory, or a directory in the current path. The path is supplied with the
-<code class="inline">{i, Path}</code> option, for example:</p><pre><code class="makeup erlang" translate="no"><span class="nc">snmpc</span><span class="p">:</span><span class="nf">compile</span><span class="p" data-group-id="4143581668-1">(</span><span class="s">&quot;MY-MIB&quot;</span><span class="p">,</span><span class="w">
-       </span><span class="p" data-group-id="4143581668-2">[</span><span class="p" data-group-id="4143581668-3">{</span><span class="ss">i</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4143581668-4">[</span><span class="s">&quot;friend_mibs/&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;../standard_mibs/&quot;</span><span class="p" data-group-id="4143581668-4">]</span><span class="p" data-group-id="4143581668-3">}</span><span class="p" data-group-id="4143581668-2">]</span><span class="p" data-group-id="4143581668-1">)</span><span class="p">.</span></code></pre><p>It is also possible to import MIBs from OTP applications in an <code class="inline">&quot;include_lib&quot;</code>
-like fashion with the <code class="inline">il</code> option. Example:</p><pre><code class="makeup erlang" translate="no"><span class="nc">snmpc</span><span class="p">:</span><span class="nf">compile</span><span class="p" data-group-id="9239947346-1">(</span><span class="s">&quot;MY-MIB&quot;</span><span class="p">,</span><span class="w">
-       </span><span class="p" data-group-id="9239947346-2">[</span><span class="p" data-group-id="9239947346-3">{</span><span class="ss">il</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9239947346-4">[</span><span class="s">&quot;snmp/priv/mibs/&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;myapp/priv/mibs/&quot;</span><span class="p" data-group-id="9239947346-4">]</span><span class="p" data-group-id="9239947346-3">}</span><span class="p" data-group-id="9239947346-2">]</span><span class="p" data-group-id="9239947346-1">)</span><span class="p">.</span></code></pre><p>finds the latest version of the <code class="inline">snmp</code> and <code class="inline">myapp</code> applications in the OTP
+<code class="inline">{i, Path}</code> option, for example:</p><pre><code class="makeup erlang" translate="no"><span class="nc">snmpc</span><span class="p">:</span><span class="nf">compile</span><span class="p" data-group-id="5656847706-1">(</span><span class="s">&quot;MY-MIB&quot;</span><span class="p">,</span><span class="w">
+       </span><span class="p" data-group-id="5656847706-2">[</span><span class="p" data-group-id="5656847706-3">{</span><span class="ss">i</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5656847706-4">[</span><span class="s">&quot;friend_mibs/&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;../standard_mibs/&quot;</span><span class="p" data-group-id="5656847706-4">]</span><span class="p" data-group-id="5656847706-3">}</span><span class="p" data-group-id="5656847706-2">]</span><span class="p" data-group-id="5656847706-1">)</span><span class="p">.</span></code></pre><p>It is also possible to import MIBs from OTP applications in an <code class="inline">&quot;include_lib&quot;</code>
+like fashion with the <code class="inline">il</code> option. Example:</p><pre><code class="makeup erlang" translate="no"><span class="nc">snmpc</span><span class="p">:</span><span class="nf">compile</span><span class="p" data-group-id="7435911841-1">(</span><span class="s">&quot;MY-MIB&quot;</span><span class="p">,</span><span class="w">
+       </span><span class="p" data-group-id="7435911841-2">[</span><span class="p" data-group-id="7435911841-3">{</span><span class="ss">il</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7435911841-4">[</span><span class="s">&quot;snmp/priv/mibs/&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;myapp/priv/mibs/&quot;</span><span class="p" data-group-id="7435911841-4">]</span><span class="p" data-group-id="7435911841-3">}</span><span class="p" data-group-id="7435911841-2">]</span><span class="p" data-group-id="7435911841-1">)</span><span class="p">.</span></code></pre><p>finds the latest version of the <code class="inline">snmp</code> and <code class="inline">myapp</code> applications in the OTP
 system and uses the expanded paths as include paths.</p><p>Note that an SMIv2 MIB can import an SMIv1 MIB and vice versa.</p><p>The following MIBs are built-ins of the Erlang SNMP compiler: SNMPv2-SMI,
 RFC-1215, RFC-1212, SNMPv2-TC, SNMPv2-CONF, and RFC1155-SMI. They cannot
 therefore be compiled separately.</p><h2 id="mib-consistency-checking" class="section-heading"><a href="#mib-consistency-checking" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">MIB Consistency Checking</span></h2><p>When an MIB is compiled, the compiler detects if several managed objects use the
@@ -174,8 +192,8 @@ Running the application
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="snmp.epub" title="ePub version">
@@ -187,7 +205,7 @@ Running the application
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="ftp v1.2.4">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/ftp/ftp.html" />
     <title>ftp — ftp v1.2.4</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-E1CCA645.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ ftp
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of ftp</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ ftp
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L24" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L24" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -151,7 +169,7 @@ permission denied.</p></li><li><p><strong><code class="inline">etype</code></str
       </div>
 
         <div class="summary-synopsis"><p>Transfers the chunk <code class="inline">Bin</code> to the remote server, which appends it to the file
-specified in the call to <a><code class="inline">append_chunk_start/2</code></a>.</p></div>
+specified in the call to <a href="#append_chunk_start/2"><code class="inline">append_chunk_start/2</code></a>.</p></div>
 
     </div>
 
@@ -163,7 +181,7 @@ specified in the call to <a><code class="inline">append_chunk_start/2</code></a>
 
         <div class="summary-synopsis"><p>Stops transfer of chunks for appending to the remote server. The file at the
 remote server, specified in the call to
-<a><code class="inline">append_chunk_start/2</code></a>, is closed by the server.</p></div>
+<a href="#append_chunk_start/2"><code class="inline">append_chunk_start/2</code></a>, is closed by the server.</p></div>
 
     </div>
 
@@ -206,7 +224,7 @@ return values have the following meaning</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Transfers the chunk <code class="inline">Bin</code> to the remote server, which writes it into the file
-specified in the call to <a><code class="inline">send_chunk_start/2</code></a>.</p></div>
+specified in the call to <a href="#send_chunk_start/2"><code class="inline">send_chunk_start/2</code></a>.</p></div>
 
     </div>
 
@@ -217,7 +235,7 @@ specified in the call to <a><code class="inline">send_chunk_start/2</code></a>.<
       </div>
 
         <div class="summary-synopsis"><p>Stops transfer of chunks to the remote server. The file at the remote server,
-specified in the call to <a><code class="inline">send_chunk_start/2</code></a> is closed
+specified in the call to <a href="#send_chunk_start/2"><code class="inline">send_chunk_start/2</code></a> is closed
 by the server.</p></div>
 
     </div>
@@ -254,7 +272,7 @@ by the server.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Ends an FTP session, created using function <a>open</a>.</p></div>
+        <div class="summary-synopsis"><p>Ends an FTP session, created using function <a href="#open/2">open</a>.</p></div>
 
     </div>
 
@@ -264,7 +282,7 @@ by the server.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">open/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#open/2"><code class="inline">open/2</code></a>.</p></div>
 
     </div>
 
@@ -310,7 +328,7 @@ by the server.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">recv/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#recv/3"><code class="inline">recv/3</code></a>.</p></div>
 
     </div>
 
@@ -343,7 +361,7 @@ binary.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">send/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#send/3"><code class="inline">send/3</code></a>.</p></div>
 
     </div>
 
@@ -402,7 +420,7 @@ readable string describing the error.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">ls/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#ls/2"><code class="inline">ls/2</code></a>.</p></div>
 
     </div>
 
@@ -422,7 +440,7 @@ readable string describing the error.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">nlist/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#nlist/2"><code class="inline">nlist/2</code></a>.</p></div>
 
     </div>
 
@@ -458,7 +476,7 @@ readable string describing the error.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">append/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#append/3"><code class="inline">append/3</code></a>.</p></div>
 
     </div>
 
@@ -554,7 +572,7 @@ created.</p></div>
 
         <div class="summary-synopsis"><p>Sets the file transfer type to <code class="inline">ascii</code> or <code class="inline">binary</code>. When an FTP session is
 opened, the default transfer type of the server is used, most often <code class="inline">ascii</code>,
-which is default according to <a>RFC 959</a>.</p></div>
+which is default according to <a href="http://www.ietf.org/rfc/rfc959.txt">RFC 959</a>.</p></div>
 
     </div>
 
@@ -586,6 +604,7 @@ which is default according to <a>RFC 959</a>.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:client/0">
 
@@ -597,7 +616,7 @@ which is default according to <a>RFC 959</a>.</p></div>
       <h1 class="signature" translate="no">client()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L108" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L108" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -626,6 +645,7 @@ which is default according to <a>RFC 959</a>.</p></div>
       </a>
       <span class="text">Chunk File Transfer API</span>
     </h1>
+
     <div class="chunk-file-transfer-api-list">
 <section class="detail" id="append_chunk/2">
 
@@ -637,7 +657,7 @@ which is default according to <a>RFC 959</a>.</p></div>
       <h1 class="signature" translate="no">append_chunk(Client, Bin)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L722" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L722" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -667,7 +687,7 @@ specified in the call to <a href="#append_chunk_start/2"><code class="inline">ap
       <h1 class="signature" translate="no">append_chunk_end(Client)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L756" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L756" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -697,7 +717,7 @@ remote server, specified in the call to
       <h1 class="signature" translate="no">append_chunk_start(Client, RemoteFile)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L687" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L687" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -726,7 +746,7 @@ remote server. If the file does not exist, it is created.</p>
       <h1 class="signature" translate="no">recv_chunk(Client)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L618" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L618" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -755,7 +775,7 @@ return values have the following meaning:</p><ul><li><code class="inline">ok</co
       <h1 class="signature" translate="no">recv_chunk_start(Pid, RemoteFile)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L597" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L597" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -783,7 +803,7 @@ return values have the following meaning:</p><ul><li><code class="inline">ok</co
       <h1 class="signature" translate="no">send_chunk(Client, Bin)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L705" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L705" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -813,7 +833,7 @@ specified in the call to <a href="#send_chunk_start/2"><code class="inline">send
       <h1 class="signature" translate="no">send_chunk_end(Client)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L739" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L739" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -843,7 +863,7 @@ by the server.</p>
       <h1 class="signature" translate="no">send_chunk_start(Client, RemoteFile)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L673" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L673" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -872,6 +892,7 @@ by the server.</p>
       </a>
       <span class="text">Connection API</span>
     </h1>
+
     <div class="connection-api-list">
 <section class="detail" id="account/2">
 
@@ -883,7 +904,7 @@ by the server.</p>
       <h1 class="signature" translate="no">account(Client, Acc)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L349" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L349" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -911,7 +932,7 @@ by the server.</p>
       <h1 class="signature" translate="no">close(Client)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L841" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L841" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -939,7 +960,7 @@ by the server.</p>
       <h1 class="signature" translate="no">open(Host)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L141" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L141" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -968,7 +989,7 @@ by the server.</p>
       <h1 class="signature" translate="no">open(Host, Opts)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L307" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L307" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1061,7 +1082,7 @@ and terminates if that process terminates.</p></li></ul>
       <h1 class="signature" translate="no">user(Pid, User, Pass)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L322" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L322" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1089,7 +1110,7 @@ and terminates if that process terminates.</p></li></ul>
       <h1 class="signature" translate="no">user(Pid, User, Pass, Account)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L335" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L335" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1119,6 +1140,7 @@ and terminates if that process terminates.</p></li></ul>
       </a>
       <span class="text">File Transfer API</span>
     </h1>
+
     <div class="file-transfer-api-list">
 <section class="detail" id="recv/2">
 
@@ -1130,7 +1152,7 @@ and terminates if that process terminates.</p></li></ul>
       <h1 class="signature" translate="no">recv(Client, RemoteFileName)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L548" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L548" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1158,7 +1180,7 @@ and terminates if that process terminates.</p></li></ul>
       <h1 class="signature" translate="no">recv(Pid, RemoteFileName, LocalFileName)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L565" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L565" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1190,7 +1212,7 @@ returned. However, the file is <em>not</em> removed.</p>
       <h1 class="signature" translate="no">recv_bin(Pid, RemoteFile)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L582" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L582" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1220,7 +1242,7 @@ binary.</p>
       <h1 class="signature" translate="no">send(Client, LocalFileName)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L631" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L631" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1248,7 +1270,7 @@ binary.</p>
       <h1 class="signature" translate="no">send(Pid, LocalFileName, RemoteFileName)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L645" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L645" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1279,7 +1301,7 @@ specified, the name of the remote file is set to <code class="inline">RemoteFile
       <h1 class="signature" translate="no">send_bin(Client, Bin, RemoteFile)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L659" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L659" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1309,6 +1331,7 @@ specified, the name of the remote file is set to <code class="inline">RemoteFile
       </a>
       <span class="text">Info API</span>
     </h1>
+
     <div class="info-api-list">
 <section class="detail" id="formaterror/1">
 
@@ -1320,7 +1343,7 @@ specified, the name of the remote file is set to <code class="inline">RemoteFile
       <h1 class="signature" translate="no">formaterror(Tag)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L856" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L856" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1349,7 +1372,7 @@ readable string describing the error.</p>
       <h1 class="signature" translate="no">lpwd(Client)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L376" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L376" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1377,7 +1400,7 @@ readable string describing the error.</p>
       <h1 class="signature" translate="no">ls(Client)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L415" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L415" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1405,7 +1428,7 @@ readable string describing the error.</p>
       <h1 class="signature" translate="no">ls(Client, Dir)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L433" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L433" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1434,7 +1457,7 @@ typically produced from the output of the <code class="inline">ls -l</code> shel
       <h1 class="signature" translate="no">nlist(Client)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L447" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L447" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1462,7 +1485,7 @@ typically produced from the output of the <code class="inline">ls -l</code> shel
       <h1 class="signature" translate="no">nlist(Client, Pathname)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L467" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L467" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1494,7 +1517,7 @@ is to enable a program to process filename information automatically.</p>
       <h1 class="signature" translate="no">pwd(Client)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L363" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L363" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1523,6 +1546,7 @@ is to enable a program to process filename information automatically.</p>
       </a>
       <span class="text">Update API</span>
     </h1>
+
     <div class="update-api-list">
 <section class="detail" id="append/2">
 
@@ -1534,7 +1558,7 @@ is to enable a program to process filename information automatically.</p>
       <h1 class="signature" translate="no">append(Client, LocalFileName)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L769" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L769" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1562,7 +1586,7 @@ is to enable a program to process filename information automatically.</p>
       <h1 class="signature" translate="no">append(Pid, LocalFileName, RemoteFileName)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L784" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L784" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1594,7 +1618,7 @@ created.</p>
       <h1 class="signature" translate="no">append_bin(Pid, Bin, RemoteFile)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L802" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L802" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1624,7 +1648,7 @@ created.</p>
       <h1 class="signature" translate="no">cd(Client, Dir)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L390" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L390" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1652,7 +1676,7 @@ created.</p>
       <h1 class="signature" translate="no">delete(Client, File)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L494" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L494" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1680,7 +1704,7 @@ created.</p>
       <h1 class="signature" translate="no">lcd(Client, Dir)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L403" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L403" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1708,7 +1732,7 @@ created.</p>
       <h1 class="signature" translate="no">mkdir(Client, Dir)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L507" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L507" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1736,7 +1760,7 @@ created.</p>
       <h1 class="signature" translate="no">rename(Client, Old, New)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L480" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L480" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1764,7 +1788,7 @@ created.</p>
       <h1 class="signature" translate="no">rmdir(Client, Dir)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L520" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L520" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1792,7 +1816,7 @@ created.</p>
       <h1 class="signature" translate="no">type(Client, Type)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L535" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L535" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1823,6 +1847,7 @@ which is default according to <a href="http://www.ietf.org/rfc/rfc959.txt">RFC 9
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="quote/2">
 
@@ -1834,7 +1859,7 @@ which is default according to <a href="http://www.ietf.org/rfc/rfc959.txt">RFC 9
       <h1 class="signature" translate="no">quote(Client, Cmd)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/ftp/src/ftp.erl#L828" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/ftp/src/ftp.erl#L828" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1865,8 +1890,8 @@ this function.</p></section>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="ftp.epub" title="ePub version">
@@ -1878,7 +1903,7 @@ this function.</p></section>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

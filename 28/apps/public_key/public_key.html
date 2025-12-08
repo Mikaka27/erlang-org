@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="public_key v1.19">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/public_key/public_key.html" />
     <title>public_key — public_key v1.19</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-70E6D85A.js"></script>
+    <script defer src="dist/sidebar_items-D6733FEA.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ public_key
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of public_key</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ public_key
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L25" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L25" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -389,7 +407,7 @@ provide additional options understood by the fun.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Possible <code class="inline">Ciphers</code> are &quot;RC2-CBC&quot; | &quot;DES-CBC&quot; | &quot;DES-EDE3-CBC&quot; <code class="inline">Salt</code> could be generated with
-<a><code class="inline">crypto:strong_rand_bytes(8)</code></a>.</p></div>
+<a href="../../apps/crypto/crypto.html#strong_rand_bytes/1"><code class="inline">crypto:strong_rand_bytes(8)</code></a>.</p></div>
 
     </div>
 
@@ -467,6 +485,14 @@ provide additional options understood by the fun.</p></div>
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#t:legacy_digest_type/0" data-no-tooltip="" translate="no">legacy_digest_type()</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#t:mldsa_private_key/0" data-no-tooltip="" translate="no">mldsa_private_key()</a>
 
       </div>
@@ -492,6 +518,26 @@ provide additional options understood by the fun.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Supported private keys</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:slh_dsa_private_key/0" data-no-tooltip="" translate="no">slh_dsa_private_key()</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>SLH-DSA private key</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#t:slh_dsa_public_key/0" data-no-tooltip="" translate="no">slh_dsa_public_key()</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>SLH-DSA public key</p></div>
 
     </div>
 
@@ -544,7 +590,7 @@ provide additional options understood by the fun.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Returns the trusted CA certificates if any are loaded, otherwise uses
-<a><code class="inline">cacerts_load/0</code></a> to load them. The function fails if no <code class="inline">cacerts</code> could be
+<a href="#cacerts_load/0"><code class="inline">cacerts_load/0</code></a> to load them. The function fails if no <code class="inline">cacerts</code> could be
 loaded.</p></div>
 
     </div>
@@ -657,7 +703,7 @@ name.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Performs a basic path validation according to
-<a>RFC 5280.</a></p></div>
+<a href="http://www.ietf.org/rfc/rfc5280.txt">RFC 5280.</a></p></div>
 
     </div>
 
@@ -687,7 +733,7 @@ name.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">pkix_verify_hostname(Cert, ReferenceIDs, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#pkix_verify_hostname/3"><code class="inline">pkix_verify_hostname(Cert, ReferenceIDs, [])</code></a>.</p></div>
 
     </div>
 
@@ -710,7 +756,7 @@ the client expects to be connected to.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>The return value of calling this function is intended to be used in the
-<code class="inline">match_fun</code> option in <a><code class="inline">pkix_verify_hostname/3</code></a>.</p></div>
+<code class="inline">match_fun</code> option in <a href="#pkix_verify_hostname/3"><code class="inline">pkix_verify_hostname/3</code></a>.</p></div>
 
     </div>
 
@@ -747,7 +793,7 @@ the client expects to be connected to.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Performs CRL validation. It is intended to be called from the verify fun of
-<a>pkix_path_validation/3 </a>.</p></div>
+<a href="#pkix_path_validation/3">pkix_path_validation/3 </a>.</p></div>
 
     </div>
 
@@ -758,7 +804,7 @@ the client expects to be connected to.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Creates a distribution point for CRLs issued by the same issuer as <code class="inline">Cert</code>. Can
-be used as input to <a><code class="inline">pkix_crls_validate/3</code></a></p></div>
+be used as input to <a href="#pkix_crls_validate/3"><code class="inline">pkix_crls_validate/3</code></a></p></div>
 
     </div>
 
@@ -852,7 +898,7 @@ selected from <code class="inline">Groups</code>.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Generates a new key pair. Note that except for Diffie-Hellman the public key is
-included in the private key structure. See also <a><code class="inline">crypto:generate_key/2</code></a></p></div>
+included in the private key structure. See also <a href="../../apps/crypto/crypto.html#generate_key/2"><code class="inline">crypto:generate_key/2</code></a></p></div>
 
     </div>
 
@@ -868,7 +914,7 @@ included in the private key structure. See also <a><code class="inline">crypto:g
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">decrypt_private(CipherText, Key, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#decrypt_private/3"><code class="inline">decrypt_private(CipherText, Key, [])</code></a>.</p></div>
 
     </div>
 
@@ -878,7 +924,7 @@ included in the private key structure. See also <a><code class="inline">crypto:g
 
       </div>
 
-        <div class="summary-synopsis"><p>Public-key decryption using the private key. See also <a><code class="inline">crypto:private_decrypt/4</code></a></p></div>
+        <div class="summary-synopsis"><p>Public-key decryption using the private key. See also <a href="../../apps/crypto/crypto.html#private_decrypt/4"><code class="inline">crypto:private_decrypt/4</code></a></p></div>
 
     </div>
 
@@ -888,7 +934,7 @@ included in the private key structure. See also <a><code class="inline">crypto:g
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">decrypt_public(CipherText, Key, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#decrypt_public/3"><code class="inline">decrypt_public(CipherText, Key, [])</code></a>.</p></div>
 
     </div>
 
@@ -898,7 +944,7 @@ included in the private key structure. See also <a><code class="inline">crypto:g
 
       </div>
 
-        <div class="summary-synopsis"><p>Public-key decryption using the public key. See also <a><code class="inline">crypto:public_decrypt/4</code></a></p></div>
+        <div class="summary-synopsis"><p>Public-key decryption using the public key. See also <a href="../../apps/crypto/crypto.html#public_decrypt/4"><code class="inline">crypto:public_decrypt/4</code></a></p></div>
 
     </div>
 
@@ -908,7 +954,7 @@ included in the private key structure. See also <a><code class="inline">crypto:g
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">encrypt_private(PlainText, Key, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#encrypt_private/3"><code class="inline">encrypt_private(PlainText, Key, [])</code></a>.</p></div>
 
     </div>
 
@@ -928,7 +974,7 @@ included in the private key structure. See also <a><code class="inline">crypto:g
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">encrypt_public(PlainText, Key, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#encrypt_public/3"><code class="inline">encrypt_public(PlainText, Key, [])</code></a>.</p></div>
 
     </div>
 
@@ -938,7 +984,7 @@ included in the private key structure. See also <a><code class="inline">crypto:g
 
       </div>
 
-        <div class="summary-synopsis"><p>Public-key encryption using the public key. See also <a><code class="inline">crypto:public_encrypt/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Public-key encryption using the public key. See also <a href="../../apps/crypto/crypto.html#public_encrypt/4"><code class="inline">crypto:public_encrypt/4</code></a>.</p></div>
 
     </div>
 
@@ -974,7 +1020,7 @@ included in the private key structure. See also <a><code class="inline">crypto:g
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">pem_entry_decode(PemEntry, &quot;&quot;)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#pem_entry_decode/2"><code class="inline">pem_entry_decode(PemEntry, &quot;&quot;)</code></a>.</p></div>
 
     </div>
 
@@ -984,9 +1030,9 @@ included in the private key structure. See also <a><code class="inline">crypto:g
 
       </div>
 
-        <div class="summary-synopsis"><p>Decodes a PEM entry. <a><code class="inline">pem_decode/1</code></a> returns a list of PEM
+        <div class="summary-synopsis"><p>Decodes a PEM entry. <a href="#pem_decode/1"><code class="inline">pem_decode/1</code></a> returns a list of PEM
 entries. Notice that if the PEM entry is of type 'SubjectPublickeyInfo', it is
-further decoded to an <a><code class="inline">rsa_public_key/0</code></a> or <a><code class="inline">dsa_public_key/0</code></a>.</p></div>
+further decoded to an <a href="#t:rsa_public_key/0"><code class="inline">rsa_public_key/0</code></a> or <a href="#t:dsa_public_key/0"><code class="inline">dsa_public_key/0</code></a>.</p></div>
 
     </div>
 
@@ -996,7 +1042,7 @@ further decoded to an <a><code class="inline">rsa_public_key/0</code></a> or <a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">pem_entry_encode/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#pem_entry_encode/3"><code class="inline">pem_entry_encode/3</code></a>.</p></div>
 
     </div>
 
@@ -1006,7 +1052,7 @@ further decoded to an <a><code class="inline">rsa_public_key/0</code></a> or <a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Creates a PEM entry that can be feed to <a><code class="inline">pem_encode/1</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Creates a PEM entry that can be feed to <a href="#pem_encode/1"><code class="inline">pem_encode/1</code></a>.</p></div>
 
     </div>
 
@@ -1042,7 +1088,7 @@ further decoded to an <a><code class="inline">rsa_public_key/0</code></a> or <a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">sign(Msg, DigestType, Key, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#sign/4"><code class="inline">sign(Msg, DigestType, Key, [])</code></a>.</p></div>
 
     </div>
 
@@ -1062,7 +1108,7 @@ further decoded to an <a><code class="inline">rsa_public_key/0</code></a> or <a>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">verify(Msg, DigestType, Signature, Key, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#verify/5"><code class="inline">verify(Msg, DigestType, Signature, Key, [])</code></a>.</p></div>
 
     </div>
 
@@ -1103,7 +1149,7 @@ client and the server in a test scenario.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Generates a root certificate that can be used in multiple calls to
-<a><code class="inline">pkix_test_data/1</code></a> when you want the same root certificate for several generated
+<a href="#pkix_test_data/1"><code class="inline">pkix_test_data/1</code></a> when you want the same root certificate for several generated
 certificates.</p></div>
 
     </div>
@@ -1120,6 +1166,7 @@ certificates.</p></div>
       </a>
       <span class="text">Types: Certificate Revocation</span>
     </h1>
+
     <div class="types-certificate-revocation-list">
 <section class="detail" id="t:crl_reason/0">
 
@@ -1133,7 +1180,7 @@ certificates.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L286" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L303" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1164,6 +1211,7 @@ certificates.</p></div>
       </a>
       <span class="text">Types: Certificates</span>
     </h1>
+
     <div class="types-certificates-list">
 <section class="detail" id="t:bad_cert_reason/0">
 
@@ -1175,7 +1223,7 @@ certificates.</p></div>
       <h1 class="signature" translate="no">bad_cert_reason()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L309" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L326" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1212,7 +1260,7 @@ certificates.</p></div>
       <h1 class="signature" translate="no">cert()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L326" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L343" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1242,7 +1290,7 @@ certificates.</p></div>
       <h1 class="signature" translate="no">cert_id()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L297" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L314" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1270,7 +1318,7 @@ certificates.</p></div>
       <h1 class="signature" translate="no">combined_cert()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L322" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L339" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1303,7 +1351,7 @@ certificates.</p></div>
       <h1 class="signature" translate="no">issuer_name()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L303" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L320" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1331,7 +1379,7 @@ certificates.</p></div>
       <h1 class="signature" translate="no">policy_node()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L330" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L347" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1363,7 +1411,7 @@ certificates.</p></div>
       <h1 class="signature" translate="no">public_key_info()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L341" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L358" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1393,6 +1441,7 @@ certificates.</p></div>
       </a>
       <span class="text">Types: Common</span>
     </h1>
+
     <div class="types-common-list">
 <section class="detail" id="t:asn1_type/0">
 
@@ -1404,7 +1453,7 @@ certificates.</p></div>
       <h1 class="signature" translate="no">asn1_type()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L276" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L291" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1432,7 +1481,7 @@ certificates.</p></div>
       <h1 class="signature" translate="no">der_encoded()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L250" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L265" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1460,7 +1509,7 @@ certificates.</p></div>
       <h1 class="signature" translate="no">digest_type()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L280" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L295" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1471,7 +1520,7 @@ certificates.</p></div>
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">-type</span> digest_type() :: <a href="../../apps/crypto/crypto.html#t:sha2/0">crypto:sha2</a>() | <a href="../../apps/crypto/crypto.html#t:sha1/0">crypto:sha1</a>() | md5 | none.</pre>
+          <pre translate="no"><span class="attribute">-type</span> digest_type() :: <a href="../../apps/crypto/crypto.html#t:sha2/0">crypto:sha2</a>() | <a href="../../apps/crypto/crypto.html#t:sha1/0">crypto:sha1</a>() | <a href="#t:legacy_digest_type/0">legacy_digest_type</a>() | none.</pre>
 
       </div>
 
@@ -1488,7 +1537,7 @@ certificates.</p></div>
       <h1 class="signature" translate="no">oid()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L291" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L308" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1517,6 +1566,7 @@ certificates.</p></div>
       </a>
       <span class="text">Types: Keys</span>
     </h1>
+
     <div class="types-keys-list">
 <section class="detail" id="t:custom_key_opts/0">
 
@@ -1528,7 +1578,7 @@ certificates.</p></div>
       <h1 class="signature" translate="no">custom_key_opts()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L180" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L185" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1557,7 +1607,7 @@ provide additional options understood by the fun.</p>
       <h1 class="signature" translate="no">dsa_private_key()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L200" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L205" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1591,7 +1641,7 @@ provide additional options understood by the fun.</p>
       <h1 class="signature" translate="no">dsa_public_key()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L204" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L209" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1621,7 +1671,7 @@ provide additional options understood by the fun.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L208" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L213" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1649,7 +1699,7 @@ provide additional options understood by the fun.</p>
       <h1 class="signature" translate="no">ecdsa_public_key()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L212" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L217" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1685,7 +1735,7 @@ provide additional options understood by the fun.</p>
       <h1 class="signature" translate="no">eddsa_private_key()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L234" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L244" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1718,7 +1768,7 @@ provide additional options understood by the fun.</p>
       <h1 class="signature" translate="no">eddsa_public_key()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L228" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L238" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1746,7 +1796,7 @@ provide additional options understood by the fun.</p>
       <h1 class="signature" translate="no">public_key()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L159" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L161" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1763,7 +1813,8 @@ provide additional options understood by the fun.</p>
           <a href="#t:dsa_public_key/0">dsa_public_key</a>() |
           <a href="#t:ecdsa_public_key/0">ecdsa_public_key</a>() |
           <a href="#t:eddsa_public_key/0">eddsa_public_key</a>() |
-          <a href="#t:mldsa_public_key/0">mldsa_public_key</a>().</pre>
+          <a href="#t:mldsa_public_key/0">mldsa_public_key</a>() |
+          <a href="#t:slh_dsa_public_key/0">slh_dsa_public_key</a>().</pre>
 
       </div>
 
@@ -1780,7 +1831,7 @@ provide additional options understood by the fun.</p>
       <h1 class="signature" translate="no">rsa_private_key()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L188" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L193" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1819,7 +1870,7 @@ provide additional options understood by the fun.</p>
       <h1 class="signature" translate="no">rsa_pss_private_key()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L196" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L201" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1861,7 +1912,7 @@ provide additional options understood by the fun.</p>
       <h1 class="signature" translate="no">rsa_pss_public_key()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L192" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L197" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1894,7 +1945,7 @@ provide additional options understood by the fun.</p>
       <h1 class="signature" translate="no">rsa_public_key()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L184" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L189" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1923,6 +1974,7 @@ provide additional options understood by the fun.</p>
       </a>
       <span class="text">Types: PEM files</span>
     </h1>
+
     <div class="types-pem-files-list">
 <section class="detail" id="t:pem_entry/0">
 
@@ -1934,7 +1986,7 @@ provide additional options understood by the fun.</p>
       <h1 class="signature" translate="no">pem_entry()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L267" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L282" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1971,7 +2023,7 @@ provide additional options understood by the fun.</p>
       <h1 class="signature" translate="no">pki_asn1_type()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L256" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L271" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2003,6 +2055,7 @@ provide additional options understood by the fun.</p>
       </a>
       <span class="text">Types: Test Data</span>
     </h1>
+
     <div class="types-test-data-list">
 <section class="detail" id="t:cert_opt/0">
 
@@ -2014,7 +2067,7 @@ provide additional options understood by the fun.</p>
       <h1 class="signature" translate="no">cert_opt()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L347" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L364" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2055,7 +2108,7 @@ provide additional options understood by the fun.</p>
       <h1 class="signature" translate="no">chain_opts()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L356" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L373" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2083,7 +2136,7 @@ provide additional options understood by the fun.</p>
       <h1 class="signature" translate="no">conf_opt()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L364" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L381" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2115,6 +2168,7 @@ provide additional options understood by the fun.</p>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:ecdsa_private_key/0">
 
@@ -2126,7 +2180,7 @@ provide additional options understood by the fun.</p>
       <h1 class="signature" translate="no">ecdsa_private_key()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L222" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L232" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2159,7 +2213,7 @@ provide additional options understood by the fun.</p>
       <h1 class="signature" translate="no">key_params()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L244" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L259" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2190,6 +2244,36 @@ provide additional options understood by the fun.</p>
 <p>ASN.1 defined parameters for public key algorithms.</p>
   </section>
 </section>
+<section class="detail" id="t:legacy_digest_type/0">
+
+  <div class="detail-header">
+    <a href="#t:legacy_digest_type/0" class="detail-link" data-no-tooltip="" aria-label="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">legacy_digest_type()</h1>
+
+        <span class="note">(not exported)</span>
+
+
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L297" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> legacy_digest_type() :: md5 | md2.</pre>
+
+      </div>
+
+
+  </section>
+</section>
 <section class="detail" id="t:mldsa_private_key/0">
 
   <div class="detail-header">
@@ -2200,7 +2284,7 @@ provide additional options understood by the fun.</p>
       <h1 class="signature" translate="no">mldsa_private_key()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L240" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L250" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2212,9 +2296,7 @@ provide additional options understood by the fun.</p>
       <div class="specs">
 
           <pre translate="no"><span class="attribute">-type</span> mldsa_private_key() ::
-          #'ML-DSAPrivateKey'{algorithm :: mldsa44 | mldsa65 | mldsa87,
-                              seed :: <a href="../../apps/erts/erlang.html#t:binary/0">binary</a>(),
-                              expandedkey :: <a href="../../apps/erts/erlang.html#t:binary/0">binary</a>()}.</pre>
+          #'ML-DSAPrivateKey'{algorithm :: <a href="../../apps/crypto/crypto.html#t:mldsa/0">crypto:mldsa</a>(), seed :: <a href="../../apps/erts/erlang.html#t:binary/0">binary</a>(), expandedkey :: <a href="../../apps/erts/erlang.html#t:binary/0">binary</a>()}.</pre>
 
       </div>
 
@@ -2231,7 +2313,7 @@ provide additional options understood by the fun.</p>
       <h1 class="signature" translate="no">mldsa_public_key()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L218" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L223" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2242,8 +2324,7 @@ provide additional options understood by the fun.</p>
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">-type</span> mldsa_public_key() ::
-          #'ML-DSAPublicKey'{algorithm :: mldsa44 | mldsa65 | mldsa87, key :: <a href="../../apps/erts/erlang.html#t:binary/0">binary</a>()}.</pre>
+          <pre translate="no"><span class="attribute">-type</span> mldsa_public_key() :: #'ML-DSAPublicKey'{algorithm :: <a href="../../apps/crypto/crypto.html#t:mldsa/0">crypto:mldsa</a>(), key :: <a href="../../apps/erts/erlang.html#t:binary/0">binary</a>()}.</pre>
 
       </div>
 
@@ -2260,7 +2341,7 @@ provide additional options understood by the fun.</p>
       <h1 class="signature" translate="no">private_key()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L167" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L170" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2278,11 +2359,68 @@ provide additional options understood by the fun.</p>
           <a href="#t:ecdsa_private_key/0">ecdsa_private_key</a>() |
           <a href="#t:eddsa_private_key/0">eddsa_private_key</a>() |
           <a href="#t:mldsa_private_key/0">mldsa_private_key</a>() |
-          #{algorithm := mldsa | eddsa | rsa_pss_pss | ecdsa | rsa | dsa, sign_fun => fun()}.</pre>
+          <a href="#t:slh_dsa_private_key/0">slh_dsa_private_key</a>() |
+          #{algorithm := slh_dsa | mldsa | eddsa | rsa_pss_pss | ecdsa | rsa | dsa, sign_fun => fun()}.</pre>
 
       </div>
 
 <p>Supported private keys</p>
+  </section>
+</section>
+<section class="detail" id="t:slh_dsa_private_key/0">
+
+  <div class="detail-header">
+    <a href="#t:slh_dsa_private_key/0" class="detail-link" data-no-tooltip="" aria-label="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">slh_dsa_private_key()</h1>
+
+
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L255" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> slh_dsa_private_key() :: #'SLH-DSAPrivateKey'{algorithm :: <a href="../../apps/crypto/crypto.html#t:slh_dsa/0">crypto:slh_dsa</a>(), key :: <a href="../../apps/erts/erlang.html#t:binary/0">binary</a>()}.</pre>
+
+      </div>
+
+<p>SLH-DSA private key</p>
+  </section>
+</section>
+<section class="detail" id="t:slh_dsa_public_key/0">
+
+  <div class="detail-header">
+    <a href="#t:slh_dsa_public_key/0" class="detail-link" data-no-tooltip="" aria-label="Link to this type">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">slh_dsa_public_key()</h1>
+
+
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L228" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">-type</span> slh_dsa_public_key() :: #'SLH-DSAPublicKey'{algorithm :: <a href="../../apps/crypto/crypto.html#t:slh_dsa/0">crypto:slh_dsa</a>(), key :: <a href="../../apps/erts/erlang.html#t:binary/0">binary</a>()}.</pre>
+
+      </div>
+
+<p>SLH-DSA public key</p>
   </section>
 </section>
 
@@ -2296,6 +2434,7 @@ provide additional options understood by the fun.</p>
       </a>
       <span class="text">ASN.1 Encoding API</span>
     </h1>
+
     <div class="asn-1-encoding-api-list">
 <section class="detail" id="der_decode/2">
 
@@ -2309,7 +2448,7 @@ provide additional options understood by the fun.</p>
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L561" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L585" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2340,7 +2479,7 @@ provide additional options understood by the fun.</p>
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L837" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L874" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2370,6 +2509,7 @@ provide additional options understood by the fun.</p>
       </a>
       <span class="text">Certificate API</span>
     </h1>
+
     <div class="certificate-api-list">
 <section class="detail" id="cacerts_clear/0">
 
@@ -2383,7 +2523,7 @@ provide additional options understood by the fun.</p>
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L2522" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L2620" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2413,7 +2553,7 @@ provide additional options understood by the fun.</p>
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L2480" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L2578" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2445,7 +2585,7 @@ loaded.</p>
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L2503" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L2601" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2480,7 +2620,7 @@ can be trusted by the running system.</p>
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L2513" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L2611" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2508,7 +2648,7 @@ can be trusted by the running system.</p>
       <h1 class="signature" translate="no">pkix_decode_cert(Cert, Type)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1010" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1050" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2546,7 +2686,7 @@ decoding and also recursively decode most of the standard parts.</p>
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1050" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1090" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2586,7 +2726,7 @@ may generate different bytes then the supplied original.</p></section>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1421" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1516" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2597,7 +2737,7 @@ may generate different bytes then the supplied original.</p></section>
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">-spec</span> pkix_hash_type(HashOid :: <a href="#t:oid/0">oid</a>()) -> DigestType :: md5 | <a href="../../apps/crypto/crypto.html#t:sha1/0">crypto:sha1</a>() | <a href="../../apps/crypto/crypto.html#t:sha2/0">crypto:sha2</a>().</pre>
+          <pre translate="no"><span class="attribute">-spec</span> pkix_hash_type(HashOid :: <a href="#t:oid/0">oid</a>()) -> DigestType :: <a href="#t:digest_type/0">digest_type</a>().</pre>
 
       </div>
 
@@ -2616,7 +2756,7 @@ may generate different bytes then the supplied original.</p></section>
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1727" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1825" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2646,7 +2786,7 @@ may generate different bytes then the supplied original.</p></section>
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1694" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1792" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2683,7 +2823,7 @@ may generate different bytes then the supplied original.</p></section>
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1715" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1813" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2713,7 +2853,7 @@ may generate different bytes then the supplied original.</p></section>
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1744" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1842" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2744,7 +2884,7 @@ may generate different bytes then the supplied original.</p></section>
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1792" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1890" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2776,7 +2916,7 @@ name.</p>
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1931" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L2029" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2811,22 +2951,22 @@ constrained set can be constrained only by the Certificate Authorities
 or also by the user when the option <code class="inline">policy_set</code> is provided to this
 function. The qualifiers convey information about the valid policy and
 is intended as information to end users.</p><p>Available options:</p><ul><li><p><strong>{verify_fun, {fun(), UserState::term()}</strong> - The fun must be
-defined as:</p><pre><code class="makeup erlang" translate="no"><span class="nf">fun</span><span class="p" data-group-id="7401691817-1">(</span><span class="n">OtpCert</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="o">#</span><span class="ss">&#39;OTPCertificate&#39;</span><span class="p" data-group-id="7401691817-2">{</span><span class="p" data-group-id="7401691817-2">}</span><span class="p">,</span><span class="w">
-    </span><span class="n">Event</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7401691817-3">{</span><span class="ss">bad_cert</span><span class="p">,</span><span class="w"> </span><span class="n">Reason</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">bad_cert_reason</span><span class="p" data-group-id="7401691817-4">(</span><span class="p" data-group-id="7401691817-4">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p" data-group-id="7401691817-5">{</span><span class="ss">revoked</span><span class="p">,</span><span class="w"> </span><span class="nf">atom</span><span class="p" data-group-id="7401691817-6">(</span><span class="p" data-group-id="7401691817-6">)</span><span class="p" data-group-id="7401691817-5">}</span><span class="p" data-group-id="7401691817-3">}</span><span class="w"> </span><span class="p">|</span><span class="w">
-             </span><span class="p" data-group-id="7401691817-7">{</span><span class="ss">extension</span><span class="p">,</span><span class="w"> </span><span class="o">#</span><span class="ss">&#39;Extension&#39;</span><span class="p" data-group-id="7401691817-8">{</span><span class="p" data-group-id="7401691817-8">}</span><span class="p" data-group-id="7401691817-7">}</span><span class="p">,</span><span class="w">
-    </span><span class="n">UserState</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">term</span><span class="p" data-group-id="7401691817-9">(</span><span class="p" data-group-id="7401691817-9">)</span><span class="p" data-group-id="7401691817-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-  </span><span class="p" data-group-id="7401691817-10">{</span><span class="ss">valid</span><span class="p">,</span><span class="w"> </span><span class="n">UserState</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">term</span><span class="p" data-group-id="7401691817-11">(</span><span class="p" data-group-id="7401691817-11">)</span><span class="p" data-group-id="7401691817-10">}</span><span class="w"> </span><span class="p">|</span><span class="w">
-  </span><span class="p" data-group-id="7401691817-12">{</span><span class="ss">valid_peer</span><span class="p">,</span><span class="w"> </span><span class="n">UserState</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">term</span><span class="p" data-group-id="7401691817-13">(</span><span class="p" data-group-id="7401691817-13">)</span><span class="p" data-group-id="7401691817-12">}</span><span class="w"> </span><span class="p">|</span><span class="w">
-  </span><span class="p" data-group-id="7401691817-14">{</span><span class="ss">fail</span><span class="p">,</span><span class="w"> </span><span class="n">Reason</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">term</span><span class="p" data-group-id="7401691817-15">(</span><span class="p" data-group-id="7401691817-15">)</span><span class="p" data-group-id="7401691817-14">}</span><span class="w"> </span><span class="p">|</span><span class="w">
-  </span><span class="p" data-group-id="7401691817-16">{</span><span class="ss">unknown</span><span class="p">,</span><span class="w"> </span><span class="n">UserState</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">term</span><span class="p" data-group-id="7401691817-17">(</span><span class="p" data-group-id="7401691817-17">)</span><span class="p" data-group-id="7401691817-16">}</span><span class="p">.</span></code></pre><p>or as:</p><pre><code class="makeup erlang" translate="no"><span class="nf">fun</span><span class="p" data-group-id="3917922293-1">(</span><span class="n">OtpCert</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="o">#</span><span class="ss">&#39;OTPCertificate&#39;</span><span class="p" data-group-id="3917922293-2">{</span><span class="p" data-group-id="3917922293-2">}</span><span class="p">,</span><span class="w">
-    </span><span class="n">DerCert</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">der_encoded</span><span class="p" data-group-id="3917922293-3">(</span><span class="p" data-group-id="3917922293-3">)</span><span class="p">,</span><span class="w">
-    </span><span class="n">Event</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="3917922293-4">{</span><span class="ss">bad_cert</span><span class="p">,</span><span class="w"> </span><span class="n">Reason</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">bad_cert_reason</span><span class="p" data-group-id="3917922293-5">(</span><span class="p" data-group-id="3917922293-5">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p" data-group-id="3917922293-6">{</span><span class="ss">revoked</span><span class="p">,</span><span class="w"> </span><span class="nf">atom</span><span class="p" data-group-id="3917922293-7">(</span><span class="p" data-group-id="3917922293-7">)</span><span class="p" data-group-id="3917922293-6">}</span><span class="p" data-group-id="3917922293-4">}</span><span class="w"> </span><span class="p">|</span><span class="w">
-             </span><span class="p" data-group-id="3917922293-8">{</span><span class="ss">extension</span><span class="p">,</span><span class="w"> </span><span class="o">#</span><span class="ss">&#39;Extension&#39;</span><span class="p" data-group-id="3917922293-9">{</span><span class="p" data-group-id="3917922293-9">}</span><span class="p" data-group-id="3917922293-8">}</span><span class="p">,</span><span class="w">
-    </span><span class="n">UserState</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">term</span><span class="p" data-group-id="3917922293-10">(</span><span class="p" data-group-id="3917922293-10">)</span><span class="p" data-group-id="3917922293-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-  </span><span class="p" data-group-id="3917922293-11">{</span><span class="ss">valid</span><span class="p">,</span><span class="w"> </span><span class="n">UserState</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">term</span><span class="p" data-group-id="3917922293-12">(</span><span class="p" data-group-id="3917922293-12">)</span><span class="p" data-group-id="3917922293-11">}</span><span class="w"> </span><span class="p">|</span><span class="w">
-  </span><span class="p" data-group-id="3917922293-13">{</span><span class="ss">valid_peer</span><span class="p">,</span><span class="w"> </span><span class="n">UserState</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">term</span><span class="p" data-group-id="3917922293-14">(</span><span class="p" data-group-id="3917922293-14">)</span><span class="p" data-group-id="3917922293-13">}</span><span class="w"> </span><span class="p">|</span><span class="w">
-  </span><span class="p" data-group-id="3917922293-15">{</span><span class="ss">fail</span><span class="p">,</span><span class="w"> </span><span class="n">Reason</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">term</span><span class="p" data-group-id="3917922293-16">(</span><span class="p" data-group-id="3917922293-16">)</span><span class="p" data-group-id="3917922293-15">}</span><span class="w"> </span><span class="p">|</span><span class="w">
-  </span><span class="p" data-group-id="3917922293-17">{</span><span class="ss">unknown</span><span class="p">,</span><span class="w"> </span><span class="n">UserState</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">term</span><span class="p" data-group-id="3917922293-18">(</span><span class="p" data-group-id="3917922293-18">)</span><span class="p" data-group-id="3917922293-17">}</span><span class="p">.</span></code></pre><p>The verify callback can have 3 or 4 arguments in case the DER encoded
+defined as:</p><pre><code class="makeup erlang" translate="no"><span class="nf">fun</span><span class="p" data-group-id="4857209718-1">(</span><span class="n">OtpCert</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="o">#</span><span class="ss">&#39;OTPCertificate&#39;</span><span class="p" data-group-id="4857209718-2">{</span><span class="p" data-group-id="4857209718-2">}</span><span class="p">,</span><span class="w">
+    </span><span class="n">Event</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4857209718-3">{</span><span class="ss">bad_cert</span><span class="p">,</span><span class="w"> </span><span class="n">Reason</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">bad_cert_reason</span><span class="p" data-group-id="4857209718-4">(</span><span class="p" data-group-id="4857209718-4">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p" data-group-id="4857209718-5">{</span><span class="ss">revoked</span><span class="p">,</span><span class="w"> </span><span class="nf">atom</span><span class="p" data-group-id="4857209718-6">(</span><span class="p" data-group-id="4857209718-6">)</span><span class="p" data-group-id="4857209718-5">}</span><span class="p" data-group-id="4857209718-3">}</span><span class="w"> </span><span class="p">|</span><span class="w">
+             </span><span class="p" data-group-id="4857209718-7">{</span><span class="ss">extension</span><span class="p">,</span><span class="w"> </span><span class="o">#</span><span class="ss">&#39;Extension&#39;</span><span class="p" data-group-id="4857209718-8">{</span><span class="p" data-group-id="4857209718-8">}</span><span class="p" data-group-id="4857209718-7">}</span><span class="p">,</span><span class="w">
+    </span><span class="n">UserState</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">term</span><span class="p" data-group-id="4857209718-9">(</span><span class="p" data-group-id="4857209718-9">)</span><span class="p" data-group-id="4857209718-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+  </span><span class="p" data-group-id="4857209718-10">{</span><span class="ss">valid</span><span class="p">,</span><span class="w"> </span><span class="n">UserState</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">term</span><span class="p" data-group-id="4857209718-11">(</span><span class="p" data-group-id="4857209718-11">)</span><span class="p" data-group-id="4857209718-10">}</span><span class="w"> </span><span class="p">|</span><span class="w">
+  </span><span class="p" data-group-id="4857209718-12">{</span><span class="ss">valid_peer</span><span class="p">,</span><span class="w"> </span><span class="n">UserState</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">term</span><span class="p" data-group-id="4857209718-13">(</span><span class="p" data-group-id="4857209718-13">)</span><span class="p" data-group-id="4857209718-12">}</span><span class="w"> </span><span class="p">|</span><span class="w">
+  </span><span class="p" data-group-id="4857209718-14">{</span><span class="ss">fail</span><span class="p">,</span><span class="w"> </span><span class="n">Reason</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">term</span><span class="p" data-group-id="4857209718-15">(</span><span class="p" data-group-id="4857209718-15">)</span><span class="p" data-group-id="4857209718-14">}</span><span class="w"> </span><span class="p">|</span><span class="w">
+  </span><span class="p" data-group-id="4857209718-16">{</span><span class="ss">unknown</span><span class="p">,</span><span class="w"> </span><span class="n">UserState</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">term</span><span class="p" data-group-id="4857209718-17">(</span><span class="p" data-group-id="4857209718-17">)</span><span class="p" data-group-id="4857209718-16">}</span><span class="p">.</span></code></pre><p>or as:</p><pre><code class="makeup erlang" translate="no"><span class="nf">fun</span><span class="p" data-group-id="4640617662-1">(</span><span class="n">OtpCert</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="o">#</span><span class="ss">&#39;OTPCertificate&#39;</span><span class="p" data-group-id="4640617662-2">{</span><span class="p" data-group-id="4640617662-2">}</span><span class="p">,</span><span class="w">
+    </span><span class="n">DerCert</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">der_encoded</span><span class="p" data-group-id="4640617662-3">(</span><span class="p" data-group-id="4640617662-3">)</span><span class="p">,</span><span class="w">
+    </span><span class="n">Event</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4640617662-4">{</span><span class="ss">bad_cert</span><span class="p">,</span><span class="w"> </span><span class="n">Reason</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">bad_cert_reason</span><span class="p" data-group-id="4640617662-5">(</span><span class="p" data-group-id="4640617662-5">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p" data-group-id="4640617662-6">{</span><span class="ss">revoked</span><span class="p">,</span><span class="w"> </span><span class="nf">atom</span><span class="p" data-group-id="4640617662-7">(</span><span class="p" data-group-id="4640617662-7">)</span><span class="p" data-group-id="4640617662-6">}</span><span class="p" data-group-id="4640617662-4">}</span><span class="w"> </span><span class="p">|</span><span class="w">
+             </span><span class="p" data-group-id="4640617662-8">{</span><span class="ss">extension</span><span class="p">,</span><span class="w"> </span><span class="o">#</span><span class="ss">&#39;Extension&#39;</span><span class="p" data-group-id="4640617662-9">{</span><span class="p" data-group-id="4640617662-9">}</span><span class="p" data-group-id="4640617662-8">}</span><span class="p">,</span><span class="w">
+    </span><span class="n">UserState</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">term</span><span class="p" data-group-id="4640617662-10">(</span><span class="p" data-group-id="4640617662-10">)</span><span class="p" data-group-id="4640617662-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+  </span><span class="p" data-group-id="4640617662-11">{</span><span class="ss">valid</span><span class="p">,</span><span class="w"> </span><span class="n">UserState</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">term</span><span class="p" data-group-id="4640617662-12">(</span><span class="p" data-group-id="4640617662-12">)</span><span class="p" data-group-id="4640617662-11">}</span><span class="w"> </span><span class="p">|</span><span class="w">
+  </span><span class="p" data-group-id="4640617662-13">{</span><span class="ss">valid_peer</span><span class="p">,</span><span class="w"> </span><span class="n">UserState</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">term</span><span class="p" data-group-id="4640617662-14">(</span><span class="p" data-group-id="4640617662-14">)</span><span class="p" data-group-id="4640617662-13">}</span><span class="w"> </span><span class="p">|</span><span class="w">
+  </span><span class="p" data-group-id="4640617662-15">{</span><span class="ss">fail</span><span class="p">,</span><span class="w"> </span><span class="n">Reason</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">term</span><span class="p" data-group-id="4640617662-16">(</span><span class="p" data-group-id="4640617662-16">)</span><span class="p" data-group-id="4640617662-15">}</span><span class="w"> </span><span class="p">|</span><span class="w">
+  </span><span class="p" data-group-id="4640617662-17">{</span><span class="ss">unknown</span><span class="p">,</span><span class="w"> </span><span class="n">UserState</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">term</span><span class="p" data-group-id="4640617662-18">(</span><span class="p" data-group-id="4640617662-18">)</span><span class="p" data-group-id="4640617662-17">}</span><span class="p">.</span></code></pre><p>The verify callback can have 3 or 4 arguments in case the DER encoded
 version is needed by the callback.</p><p>If the verify callback fun returns <code class="inline">{fail, Reason}</code>, the verification process
 is immediately stopped. If the verify callback fun returns
 <code class="inline">{valid, UserState}</code>, the verification process is continued. This can be used
@@ -2869,7 +3009,7 @@ contains invalid date formats not matching the RFC.</p></li><li><p><strong>atom(
         <span class="note">(since OTP R16B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1374" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1445" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2884,7 +3024,8 @@ contains invalid date formats not matching the RFC.</p></li><li><p><strong>atom(
                          when
                              AlgorithmId :: <a href="#t:oid/0">oid</a>(),
                              DigestType :: <a href="#t:digest_type/0">digest_type</a>(),
-                             SignatureType :: rsa | dsa | ecdsa | eddsa.</pre>
+                             SignatureType ::
+                                 rsa | dsa | ecdsa | eddsa | <a href="../../apps/crypto/crypto.html#t:mldsa/0">crypto:mldsa</a>() | <a href="../../apps/crypto/crypto.html#t:slh_dsa/0">crypto:slh_dsa</a>().</pre>
 
       </div>
 
@@ -2904,7 +3045,7 @@ revocation list.</p>
         <span class="note">(since OTP 23.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1760" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1858" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2934,7 +3075,7 @@ revocation list.</p>
         <span class="note">(since OTP 19.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L2051" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L2149" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2969,7 +3110,7 @@ revocation list.</p>
         <span class="note">(since OTP 19.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L2134" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L2232" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2998,9 +3139,9 @@ peer certificate when performing
 about hostname verification. The
 <a href="using_public_key.html#verify_hostname">User's Guide</a> and
 <a href="using_public_key.html#verify_hostname_examples">code examples</a> describes this
-function more detailed.</p><p>The option funs are described here:</p><ul><li><p><strong><code class="inline">match_fun</code></strong></p><pre><code class="makeup erlang" translate="no"><span class="nf">fun</span><span class="p" data-group-id="4898665706-1">(</span><span class="n">ReferenceId</span><span class="p">:</span><span class="p">:</span><span class="n">ReferenceId</span><span class="p" data-group-id="4898665706-2">(</span><span class="p" data-group-id="4898665706-2">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="n">FQDN</span><span class="p">:</span><span class="p">:</span><span class="nf">string</span><span class="p" data-group-id="4898665706-3">(</span><span class="p" data-group-id="4898665706-3">)</span><span class="p">,</span><span class="w">
-    </span><span class="n">PresentedId</span><span class="p">:</span><span class="p">:</span><span class="p" data-group-id="4898665706-4">{</span><span class="ss">dNSName</span><span class="p">,</span><span class="nf">string</span><span class="p" data-group-id="4898665706-5">(</span><span class="p" data-group-id="4898665706-5">)</span><span class="p" data-group-id="4898665706-4">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p" data-group-id="4898665706-6">{</span><span class="ss">uniformResourceIdentifier</span><span class="p">,</span><span class="nf">string</span><span class="p" data-group-id="4898665706-7">(</span><span class="p" data-group-id="4898665706-7">)</span><span class="w"> </span><span class="p">|</span><span class="w">
-                 </span><span class="p" data-group-id="4898665706-8">{</span><span class="ss">iPAddress</span><span class="p">,</span><span class="nf">list</span><span class="p" data-group-id="4898665706-9">(</span><span class="nf">byte</span><span class="p" data-group-id="4898665706-10">(</span><span class="p" data-group-id="4898665706-10">)</span><span class="p" data-group-id="4898665706-9">)</span><span class="p" data-group-id="4898665706-8">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p" data-group-id="4898665706-11">{</span><span class="n">OtherId</span><span class="p">:</span><span class="p">:</span><span class="nf">atom</span><span class="p" data-group-id="4898665706-12">(</span><span class="p" data-group-id="4898665706-12">)</span><span class="p">|</span><span class="nf">oid</span><span class="p" data-group-id="4898665706-13">(</span><span class="p" data-group-id="4898665706-13">)</span><span class="p">,</span><span class="nf">term</span><span class="p" data-group-id="4898665706-14">(</span><span class="p" data-group-id="4898665706-14">)</span><span class="p" data-group-id="4898665706-11">}</span><span class="p" data-group-id="4898665706-6">}</span><span class="p" data-group-id="4898665706-1">)</span></code></pre><p>This function replaces the default host name matching rules. The fun should
+function more detailed.</p><p>The option funs are described here:</p><ul><li><p><strong><code class="inline">match_fun</code></strong></p><pre><code class="makeup erlang" translate="no"><span class="nf">fun</span><span class="p" data-group-id="0245425816-1">(</span><span class="n">ReferenceId</span><span class="p">:</span><span class="p">:</span><span class="n">ReferenceId</span><span class="p" data-group-id="0245425816-2">(</span><span class="p" data-group-id="0245425816-2">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="n">FQDN</span><span class="p">:</span><span class="p">:</span><span class="nf">string</span><span class="p" data-group-id="0245425816-3">(</span><span class="p" data-group-id="0245425816-3">)</span><span class="p">,</span><span class="w">
+    </span><span class="n">PresentedId</span><span class="p">:</span><span class="p">:</span><span class="p" data-group-id="0245425816-4">{</span><span class="ss">dNSName</span><span class="p">,</span><span class="nf">string</span><span class="p" data-group-id="0245425816-5">(</span><span class="p" data-group-id="0245425816-5">)</span><span class="p" data-group-id="0245425816-4">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p" data-group-id="0245425816-6">{</span><span class="ss">uniformResourceIdentifier</span><span class="p">,</span><span class="nf">string</span><span class="p" data-group-id="0245425816-7">(</span><span class="p" data-group-id="0245425816-7">)</span><span class="w"> </span><span class="p">|</span><span class="w">
+                 </span><span class="p" data-group-id="0245425816-8">{</span><span class="ss">iPAddress</span><span class="p">,</span><span class="nf">list</span><span class="p" data-group-id="0245425816-9">(</span><span class="nf">byte</span><span class="p" data-group-id="0245425816-10">(</span><span class="p" data-group-id="0245425816-10">)</span><span class="p" data-group-id="0245425816-9">)</span><span class="p" data-group-id="0245425816-8">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p" data-group-id="0245425816-11">{</span><span class="n">OtherId</span><span class="p">:</span><span class="p">:</span><span class="nf">atom</span><span class="p" data-group-id="0245425816-12">(</span><span class="p" data-group-id="0245425816-12">)</span><span class="p">|</span><span class="nf">oid</span><span class="p" data-group-id="0245425816-13">(</span><span class="p" data-group-id="0245425816-13">)</span><span class="p">,</span><span class="nf">term</span><span class="p" data-group-id="0245425816-14">(</span><span class="p" data-group-id="0245425816-14">)</span><span class="p" data-group-id="0245425816-11">}</span><span class="p" data-group-id="0245425816-6">}</span><span class="p" data-group-id="0245425816-1">)</span></code></pre><p>This function replaces the default host name matching rules. The fun should
 return a boolean to tell if the Reference ID and Presented ID matches or not.
 The match fun can also return a third value, value, the atom <code class="inline">default</code>, if the
 default matching rules shall apply. This makes it possible to augment the
@@ -3039,7 +3180,7 @@ Guide.</p></li></ul>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L2215" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L2313" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3075,6 +3216,7 @@ sufficient.</p></section>
       </a>
       <span class="text">Certificate Revocation API</span>
     </h1>
+
     <div class="certificate-revocation-api-list">
 <section class="detail" id="pkix_crl_issuer/1">
 
@@ -3088,7 +3230,7 @@ sufficient.</p></section>
         <span class="note">(since OTP 17.5)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1774" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1872" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3125,7 +3267,7 @@ sufficient.</p></section>
         <span class="note">(since OTP 17.5)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1672" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1770" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3162,7 +3304,7 @@ sufficient.</p></section>
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L2029" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L2127" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3200,14 +3342,14 @@ sufficient.</p></section>
       </div>
 
 <p>Performs CRL validation. It is intended to be called from the verify fun of
-<a href="#pkix_path_validation/3">pkix_path_validation/3 </a>.</p><p>Available options:</p><ul><li><p><strong>{update_crl, fun()}</strong> - The fun has the following type specification:</p><pre><code class="makeup erlang" translate="no"><span class="w"> </span><span class="nf">fun</span><span class="p" data-group-id="0202560316-1">(</span><span class="o">#</span><span class="ss">&#39;DistributionPoint&#39;</span><span class="p" data-group-id="0202560316-2">{</span><span class="p" data-group-id="0202560316-2">}</span><span class="p">,</span><span class="w"> </span><span class="o">#</span><span class="ss">&#39;CertificateList&#39;</span><span class="p" data-group-id="0202560316-3">{</span><span class="p" data-group-id="0202560316-3">}</span><span class="p" data-group-id="0202560316-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-        </span><span class="o">#</span><span class="ss">&#39;CertificateList&#39;</span><span class="p" data-group-id="0202560316-4">{</span><span class="p" data-group-id="0202560316-4">}</span></code></pre><p>The fun uses the information in the distribution point to access the latest
+<a href="#pkix_path_validation/3">pkix_path_validation/3 </a>.</p><p>Available options:</p><ul><li><p><strong>{update_crl, fun()}</strong> - The fun has the following type specification:</p><pre><code class="makeup erlang" translate="no"><span class="w"> </span><span class="nf">fun</span><span class="p" data-group-id="5705229779-1">(</span><span class="o">#</span><span class="ss">&#39;DistributionPoint&#39;</span><span class="p" data-group-id="5705229779-2">{</span><span class="p" data-group-id="5705229779-2">}</span><span class="p">,</span><span class="w"> </span><span class="o">#</span><span class="ss">&#39;CertificateList&#39;</span><span class="p" data-group-id="5705229779-3">{</span><span class="p" data-group-id="5705229779-3">}</span><span class="p" data-group-id="5705229779-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+        </span><span class="o">#</span><span class="ss">&#39;CertificateList&#39;</span><span class="p" data-group-id="5705229779-4">{</span><span class="p" data-group-id="5705229779-4">}</span></code></pre><p>The fun uses the information in the distribution point to access the latest
 possible version of the CRL. If this fun is not specified, Public Key uses the
 default implementation:</p><pre><code class="text"> fun(_DP, CRL) -&gt; CRL end</code></pre></li><li><p><strong>{issuer_fun, {fun(), UserState::term()}}</strong> - The fun has the following type
-specification:</p><pre><code class="makeup erlang" translate="no"><span class="nf">fun</span><span class="p" data-group-id="9909547405-1">(</span><span class="o">#</span><span class="ss">&#39;DistributionPoint&#39;</span><span class="p" data-group-id="9909547405-2">{</span><span class="p" data-group-id="9909547405-2">}</span><span class="p">,</span><span class="w"> </span><span class="o">#</span><span class="ss">&#39;CertificateList&#39;</span><span class="p" data-group-id="9909547405-3">{</span><span class="p" data-group-id="9909547405-3">}</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="9909547405-4">{</span><span class="ss">rdnSequence</span><span class="p">,</span><span class="p" data-group-id="9909547405-5">[</span><span class="o">#</span><span class="ss">&#39;AttributeTypeAndValue&#39;</span><span class="p" data-group-id="9909547405-6">{</span><span class="p" data-group-id="9909547405-6">}</span><span class="p" data-group-id="9909547405-5">]</span><span class="p" data-group-id="9909547405-4">}</span><span class="p">,</span><span class="w"> </span><span class="n">UserState</span><span class="p">:</span><span class="p">:</span><span class="nf">term</span><span class="p" data-group-id="9909547405-7">(</span><span class="p" data-group-id="9909547405-7">)</span><span class="p" data-group-id="9909547405-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-  </span><span class="p" data-group-id="9909547405-8">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="o">#</span><span class="ss">&#39;OTPCertificate&#39;</span><span class="p" data-group-id="9909547405-9">{</span><span class="p" data-group-id="9909547405-9">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9909547405-10">[</span><span class="ss">der_encoded</span><span class="p" data-group-id="9909547405-10">]</span><span class="p" data-group-id="9909547405-8">}</span></code></pre><p>The fun returns the root certificate and certificate chain that has signed the
-CRL.</p><pre><code class="makeup erlang" translate="no"><span class="w"> </span><span class="nf">fun</span><span class="p" data-group-id="4266475429-1">(</span><span class="n">DP</span><span class="p">,</span><span class="w"> </span><span class="n">CRL</span><span class="p">,</span><span class="w"> </span><span class="n">Issuer</span><span class="p">,</span><span class="w"> </span><span class="n">UserState</span><span class="p" data-group-id="4266475429-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="4266475429-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">RootCert</span><span class="p">,</span><span class="w"> </span><span class="n">CertChain</span><span class="p" data-group-id="4266475429-2">}</span></code></pre></li><li><p><strong>{undetermined_details, boolean()}</strong> - Defaults to false. When revocation
+specification:</p><pre><code class="makeup erlang" translate="no"><span class="nf">fun</span><span class="p" data-group-id="7700809223-1">(</span><span class="o">#</span><span class="ss">&#39;DistributionPoint&#39;</span><span class="p" data-group-id="7700809223-2">{</span><span class="p" data-group-id="7700809223-2">}</span><span class="p">,</span><span class="w"> </span><span class="o">#</span><span class="ss">&#39;CertificateList&#39;</span><span class="p" data-group-id="7700809223-3">{</span><span class="p" data-group-id="7700809223-3">}</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="7700809223-4">{</span><span class="ss">rdnSequence</span><span class="p">,</span><span class="p" data-group-id="7700809223-5">[</span><span class="o">#</span><span class="ss">&#39;AttributeTypeAndValue&#39;</span><span class="p" data-group-id="7700809223-6">{</span><span class="p" data-group-id="7700809223-6">}</span><span class="p" data-group-id="7700809223-5">]</span><span class="p" data-group-id="7700809223-4">}</span><span class="p">,</span><span class="w"> </span><span class="n">UserState</span><span class="p">:</span><span class="p">:</span><span class="nf">term</span><span class="p" data-group-id="7700809223-7">(</span><span class="p" data-group-id="7700809223-7">)</span><span class="p" data-group-id="7700809223-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+  </span><span class="p" data-group-id="7700809223-8">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="o">#</span><span class="ss">&#39;OTPCertificate&#39;</span><span class="p" data-group-id="7700809223-9">{</span><span class="p" data-group-id="7700809223-9">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7700809223-10">[</span><span class="ss">der_encoded</span><span class="p" data-group-id="7700809223-10">]</span><span class="p" data-group-id="7700809223-8">}</span></code></pre><p>The fun returns the root certificate and certificate chain that has signed the
+CRL.</p><pre><code class="makeup erlang" translate="no"><span class="w"> </span><span class="nf">fun</span><span class="p" data-group-id="8937834864-1">(</span><span class="n">DP</span><span class="p">,</span><span class="w"> </span><span class="n">CRL</span><span class="p">,</span><span class="w"> </span><span class="n">Issuer</span><span class="p">,</span><span class="w"> </span><span class="n">UserState</span><span class="p" data-group-id="8937834864-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="8937834864-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">RootCert</span><span class="p">,</span><span class="w"> </span><span class="n">CertChain</span><span class="p" data-group-id="8937834864-2">}</span></code></pre></li><li><p><strong>{undetermined_details, boolean()}</strong> - Defaults to false. When revocation
 status cannot be determined, and this option is set to true, details of why no
 CRLs where accepted are included in the return value.</p></li></ul>
   </section>
@@ -3224,7 +3366,7 @@ CRLs where accepted are included in the return value.</p></li></ul>
         <span class="note">(since OTP 17.5)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1530" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1625" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3261,7 +3403,7 @@ be used as input to <a href="#pkix_crls_validate/3"><code class="inline">pkix_cr
         <span class="note">(since OTP 17.5)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1553" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1648" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3297,7 +3439,7 @@ be used as input to <a href="#pkix_crls_validate/3"><code class="inline">pkix_cr
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1578" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1673" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3339,7 +3481,7 @@ Distribution Point extension, the distribution point always matches.</p>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L2425" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L2523" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3386,7 +3528,7 @@ in Details list.</p></section>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L2259" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L2357" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3420,6 +3562,7 @@ looking up a CRL by its issuer name.</p>
       </a>
       <span class="text">Key API</span>
     </h1>
+
     <div class="key-api-list">
 <section class="detail" id="compute_key/2">
 
@@ -3433,7 +3576,7 @@ looking up a CRL by its issuer name.</p>
         <span class="note">(since OTP R16B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1334" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1404" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3472,7 +3615,7 @@ looking up a CRL by its issuer name.</p>
         <span class="note">(since OTP R16B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1355" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1425" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3510,7 +3653,7 @@ looking up a CRL by its issuer name.</p>
         <span class="note">(since OTP 18.2)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1255" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1295" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3560,7 +3703,7 @@ may be regenerated like this:</p><pre><code class="text">	$&gt; cd $ERL_TOP/lib/
         <span class="note">(since OTP R16B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1278" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1322" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3571,7 +3714,8 @@ may be regenerated like this:</p><pre><code class="text">	$&gt; cd $ERL_TOP/lib/
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">-spec</span> generate_key(DHparams | ECparams | RSAparams) -> DHkeys | ECkey | RSAkey
+          <pre translate="no"><span class="attribute">-spec</span> generate_key(DHparams | ECparams | RSAparams | MLDSA | SLHDSA) ->
+                      DHkeys | ECkey | RSAkey | MLDSAKeys | SLHDSAKeys
                       when
                           DHparams ::
                               #'DHParameter'{prime :: <a href="../../apps/erts/erlang.html#t:term/0">term</a>(),
@@ -3605,7 +3749,17 @@ may be regenerated like this:</p><pre><code class="text">	$&gt; cd $ERL_TOP/lib/
                                                exponent1 :: <a href="../../apps/erts/erlang.html#t:term/0">term</a>(),
                                                exponent2 :: <a href="../../apps/erts/erlang.html#t:term/0">term</a>(),
                                                coefficient :: <a href="../../apps/erts/erlang.html#t:term/0">term</a>(),
-                                               otherPrimeInfos :: <a href="../../apps/erts/erlang.html#t:term/0">term</a>()}.</pre>
+                                               otherPrimeInfos :: <a href="../../apps/erts/erlang.html#t:term/0">term</a>()},
+                          MLDSA :: <a href="../../apps/crypto/crypto.html#t:mldsa/0">crypto:mldsa</a>(),
+                          MLDSAKeys ::
+                              {#'ML-DSAPublicKey'{algorithm :: <a href="../../apps/crypto/crypto.html#t:mldsa/0">crypto:mldsa</a>(), key :: <a href="../../apps/erts/erlang.html#t:binary/0">binary</a>()},
+                               #'ML-DSAPrivateKey'{algorithm :: <a href="../../apps/crypto/crypto.html#t:mldsa/0">crypto:mldsa</a>(),
+                                                   seed :: <a href="../../apps/erts/erlang.html#t:binary/0">binary</a>(),
+                                                   expandedkey :: <a href="../../apps/erts/erlang.html#t:binary/0">binary</a>()}},
+                          SLHDSA :: <a href="../../apps/crypto/crypto.html#t:slh_dsa/0">crypto:slh_dsa</a>(),
+                          SLHDSAKeys ::
+                              {#'SLH-DSAPublicKey'{algorithm :: <a href="../../apps/crypto/crypto.html#t:slh_dsa/0">crypto:slh_dsa</a>(), key :: <a href="../../apps/erts/erlang.html#t:binary/0">binary</a>()},
+                               #'SLH-DSAPrivateKey'{algorithm :: <a href="../../apps/crypto/crypto.html#t:slh_dsa/0">crypto:slh_dsa</a>(), key :: <a href="../../apps/erts/erlang.html#t:binary/0">binary</a>()}}.</pre>
 
       </div>
 
@@ -3624,6 +3778,7 @@ included in the private key structure. See also <a href="../../apps/crypto/crypt
       </a>
       <span class="text">Legacy RSA Encryption API</span>
     </h1>
+
     <div class="legacy-rsa-encryption-api-list">
 <section class="detail" id="decrypt_private/2">
 
@@ -3637,7 +3792,7 @@ included in the private key structure. See also <a href="../../apps/crypto/crypt
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1074" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1114" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3668,7 +3823,7 @@ included in the private key structure. See also <a href="../../apps/crypto/crypt
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1091" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1131" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3703,7 +3858,7 @@ included in the private key structure. See also <a href="../../apps/crypto/crypt
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1109" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1149" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3734,7 +3889,7 @@ included in the private key structure. See also <a href="../../apps/crypto/crypt
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1129" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1169" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3771,7 +3926,7 @@ with <a href="#sign/3"><code class="inline">sign/3</code></a> is a prefered solu
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1175" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1215" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3802,7 +3957,7 @@ with <a href="#sign/3"><code class="inline">sign/3</code></a> is a prefered solu
         <span class="note">(since OTP 21.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1201" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1241" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3843,7 +3998,7 @@ the prefered solution.</p></section>
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1144" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1184" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3874,7 +4029,7 @@ the prefered solution.</p></section>
         <span class="note">(since OTP 21.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1162" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1202" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3908,6 +4063,7 @@ the prefered solution.</p></section>
       </a>
       <span class="text">PEM API</span>
     </h1>
+
     <div class="pem-api-list">
 <section class="detail" id="pem_decode/1">
 
@@ -3921,7 +4077,7 @@ the prefered solution.</p></section>
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L395" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L412" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3952,7 +4108,7 @@ the prefered solution.</p></section>
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L405" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L422" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3982,7 +4138,7 @@ the prefered solution.</p></section>
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L414" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L431" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4012,7 +4168,7 @@ the prefered solution.</p></section>
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L447" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L466" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4045,7 +4201,7 @@ further decoded to an <a href="#t:rsa_public_key/0"><code class="inline">rsa_pub
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L479" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L498" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4076,7 +4232,7 @@ further decoded to an <a href="#t:rsa_public_key/0"><code class="inline">rsa_pub
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L530" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L554" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4120,6 +4276,7 @@ function creates the appropriate <code class="inline">'SubjectPublicKeyInfo'</co
       </a>
       <span class="text">Sign/Verify API</span>
     </h1>
+
     <div class="sign-verify-api-list">
 <section class="detail" id="pkix_sign/2">
 
@@ -4133,7 +4290,7 @@ function creates the appropriate <code class="inline">'SubjectPublicKeyInfo'</co
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1611" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1706" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4177,7 +4334,7 @@ function creates the appropriate <code class="inline">'SubjectPublicKeyInfo'</co
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1631" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1726" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4205,7 +4362,7 @@ function creates the appropriate <code class="inline">'SubjectPublicKeyInfo'</co
       <h1 class="signature" translate="no">sign(Msg, DigestType, Key)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1443" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1538" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4240,7 +4397,7 @@ function creates the appropriate <code class="inline">'SubjectPublicKeyInfo'</co
         <span class="note">(since OTP 20.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1463" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1558" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4280,7 +4437,7 @@ security modules (HSM) or trusted platform modules (TPM).</p>
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1486" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1581" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4315,7 +4472,7 @@ security modules (HSM) or trusted platform modules (TPM).</p>
         <span class="note">(since OTP 20.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L1504" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L1599" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4351,6 +4508,7 @@ security modules (HSM) or trusted platform modules (TPM).</p>
       </a>
       <span class="text">Test Data API</span>
     </h1>
+
     <div class="test-data-api-list">
 <section class="detail" id="pkix_test_data/1">
 
@@ -4364,7 +4522,7 @@ security modules (HSM) or trusted platform modules (TPM).</p>
         <span class="note">(since OTP 20.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L2352" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L2450" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4412,18 +4570,18 @@ public_key:generate_key/1, to generate a key, or an existing key. Defaults to
 generating an ECDSA key. Note this could fail if Erlang/OTP is compiled with a
 very old cryptolib.</p></li><li><p><strong>{validity, {From::erlang:timestamp(), To::erlang:timestamp()}}</strong> - The
 validity period of the certificate.</p></li><li><p><strong>{extensions, [#'Extension'{}]}</strong> - Extensions to include in the
-certificate.</p><p>Default extensions included in CA certificates if not otherwise specified are:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="2506310081-1">[</span><span class="o">#</span><span class="ss">&#39;Extension&#39;</span><span class="p" data-group-id="2506310081-2">{</span><span class="ss">extnID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span><span class="ss">&#39;id-ce-keyUsage&#39;</span><span class="p">,</span><span class="w">
-              </span><span class="ss">extnValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="2506310081-3">[</span><span class="ss">keyCertSign</span><span class="p">,</span><span class="w"> </span><span class="ss">cRLSign</span><span class="p" data-group-id="2506310081-3">]</span><span class="p">,</span><span class="w">
-              </span><span class="ss">critical</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">false</span><span class="p" data-group-id="2506310081-2">}</span><span class="p">,</span><span class="w">
-</span><span class="o">#</span><span class="ss">&#39;Extension&#39;</span><span class="p" data-group-id="2506310081-4">{</span><span class="ss">extnID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span><span class="ss">&#39;id-ce-basicConstraints&#39;</span><span class="p">,</span><span class="w">
-             </span><span class="ss">extnValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">#</span><span class="ss">&#39;BasicConstraints&#39;</span><span class="p" data-group-id="2506310081-5">{</span><span class="ss">cA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">true</span><span class="p" data-group-id="2506310081-5">}</span><span class="p">,</span><span class="w">
-             </span><span class="ss">critical</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">true</span><span class="p" data-group-id="2506310081-4">}</span><span class="p" data-group-id="2506310081-1">]</span></code></pre><p>Default extensions included in the server peer cert if not otherwise specified
-are:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="9223503221-1">[</span><span class="o">#</span><span class="ss">&#39;Extension&#39;</span><span class="p" data-group-id="9223503221-2">{</span><span class="ss">extnID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span><span class="ss">&#39;id-ce-keyUsage&#39;</span><span class="p">,</span><span class="w">
-              </span><span class="ss">extnValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="9223503221-3">[</span><span class="ss">digitalSignature</span><span class="p">,</span><span class="w"> </span><span class="ss">keyAgreement</span><span class="p" data-group-id="9223503221-3">]</span><span class="p">,</span><span class="w">
-              </span><span class="ss">critical</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">false</span><span class="p" data-group-id="9223503221-2">}</span><span class="p">,</span><span class="w">
-</span><span class="o">#</span><span class="ss">&#39;Extension&#39;</span><span class="p" data-group-id="9223503221-4">{</span><span class="ss">extnID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span><span class="ss">&#39;id-ce-subjectAltName&#39;</span><span class="p">,</span><span class="w">
-             </span><span class="ss">extnValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="9223503221-5">[</span><span class="p" data-group-id="9223503221-6">{</span><span class="ss">dNSName</span><span class="p">,</span><span class="w"> </span><span class="n">Hostname</span><span class="p" data-group-id="9223503221-6">}</span><span class="p" data-group-id="9223503221-5">]</span><span class="p">,</span><span class="w">
-             </span><span class="ss">critical</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">false</span><span class="p" data-group-id="9223503221-4">}</span><span class="p" data-group-id="9223503221-1">]</span></code></pre><p>Hostname is the result of calling net_adm:localhost() in the Erlang node where
+certificate.</p><p>Default extensions included in CA certificates if not otherwise specified are:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="8513537033-1">[</span><span class="o">#</span><span class="ss">&#39;Extension&#39;</span><span class="p" data-group-id="8513537033-2">{</span><span class="ss">extnID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span><span class="ss">&#39;id-ce-keyUsage&#39;</span><span class="p">,</span><span class="w">
+              </span><span class="ss">extnValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="8513537033-3">[</span><span class="ss">keyCertSign</span><span class="p">,</span><span class="w"> </span><span class="ss">cRLSign</span><span class="p" data-group-id="8513537033-3">]</span><span class="p">,</span><span class="w">
+              </span><span class="ss">critical</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">false</span><span class="p" data-group-id="8513537033-2">}</span><span class="p">,</span><span class="w">
+</span><span class="o">#</span><span class="ss">&#39;Extension&#39;</span><span class="p" data-group-id="8513537033-4">{</span><span class="ss">extnID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span><span class="ss">&#39;id-ce-basicConstraints&#39;</span><span class="p">,</span><span class="w">
+             </span><span class="ss">extnValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">#</span><span class="ss">&#39;BasicConstraints&#39;</span><span class="p" data-group-id="8513537033-5">{</span><span class="ss">cA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">true</span><span class="p" data-group-id="8513537033-5">}</span><span class="p">,</span><span class="w">
+             </span><span class="ss">critical</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">true</span><span class="p" data-group-id="8513537033-4">}</span><span class="p" data-group-id="8513537033-1">]</span></code></pre><p>Default extensions included in the server peer cert if not otherwise specified
+are:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="4690896743-1">[</span><span class="o">#</span><span class="ss">&#39;Extension&#39;</span><span class="p" data-group-id="4690896743-2">{</span><span class="ss">extnID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span><span class="ss">&#39;id-ce-keyUsage&#39;</span><span class="p">,</span><span class="w">
+              </span><span class="ss">extnValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="4690896743-3">[</span><span class="ss">digitalSignature</span><span class="p">,</span><span class="w"> </span><span class="ss">keyAgreement</span><span class="p" data-group-id="4690896743-3">]</span><span class="p">,</span><span class="w">
+              </span><span class="ss">critical</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">false</span><span class="p" data-group-id="4690896743-2">}</span><span class="p">,</span><span class="w">
+</span><span class="o">#</span><span class="ss">&#39;Extension&#39;</span><span class="p" data-group-id="4690896743-4">{</span><span class="ss">extnID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span><span class="ss">&#39;id-ce-subjectAltName&#39;</span><span class="p">,</span><span class="w">
+             </span><span class="ss">extnValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="4690896743-5">[</span><span class="p" data-group-id="4690896743-6">{</span><span class="ss">dNSName</span><span class="p">,</span><span class="w"> </span><span class="n">Hostname</span><span class="p" data-group-id="4690896743-6">}</span><span class="p" data-group-id="4690896743-5">]</span><span class="p">,</span><span class="w">
+             </span><span class="ss">critical</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">false</span><span class="p" data-group-id="4690896743-4">}</span><span class="p" data-group-id="4690896743-1">]</span></code></pre><p>Hostname is the result of calling net_adm:localhost() in the Erlang node where
 this function is called.</p></li></ul><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>Note that the generated certificates and keys does not provide a formally
 correct PKIX-trust-chain and they cannot be used to achieve real security.
 This function is provided for testing purposes only.</p></section>
@@ -4441,7 +4599,7 @@ This function is provided for testing purposes only.</p></section>
         <span class="note">(since OTP 20.2)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/public_key/src/public_key.erl#L2379" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/public_key/src/public_key.erl#L2477" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4473,8 +4631,8 @@ certificates.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="public_key.epub" title="ePub version">
@@ -4486,7 +4644,7 @@ certificates.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

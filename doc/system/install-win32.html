@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="Erlang System Documentation v28.2">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/system/install-win32.html" />
     <title>Building Erlang/OTP on Windows — Erlang System Documentation v28.2</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-351B7E11.js"></script>
+    <script defer src="dist/sidebar_items-11C2FD0A.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ Erlang System Documentation
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of Erlang System Documentation</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -84,7 +102,7 @@ Erlang System Documentation
     <h1>Building Erlang/OTP on Windows</h1>
 
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/HOWTO/INSTALL-WIN32.md#L1" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/HOWTO/INSTALL-WIN32.md#L1" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -240,7 +258,7 @@ If you want to copy the result to a release directory (say
 </span></code></pre><p>and sometimes</p><pre><code class="makeup shell" translate="no"><span class="gp unselectable">$ </span><span class="">cd $ERL_TOP
 </span><span class="gp unselectable">$ </span><span class="">make local_setup
 </span></code></pre><p>So now when you run <code class="inline">$ERL_TOP/erl.exe</code>, you should have a debug compiled
-emulator, which you will see if you do a:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">erlang</span><span class="p">:</span><span class="nf">system_info</span><span class="p" data-group-id="2348900014-1">(</span><span class="ss">system_version</span><span class="p" data-group-id="2348900014-1">)</span><span class="p">.</span></code></pre><p>in the erlang shell. If the returned string contains <code class="inline">[debug]</code>, you
+emulator, which you will see if you do a:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">erlang</span><span class="p">:</span><span class="nf">system_info</span><span class="p" data-group-id="8367834161-1">(</span><span class="ss">system_version</span><span class="p" data-group-id="8367834161-1">)</span><span class="p">.</span></code></pre><p>in the erlang shell. If the returned string contains <code class="inline">[debug]</code>, you
 got a debug compiled emulator.</p><p>To hack the erlang libraries, you simply do a <code class="inline">make opt</code> in the
 specific &quot;applications&quot; directory, like:</p><pre><code class="makeup shell" translate="no"><span class="gp unselectable">$ </span><span class="">cd $ERL_TOP/lib/stdlib
 </span><span class="gp unselectable">$ </span><span class="">make opt
@@ -263,11 +281,11 @@ release area, you do like with the emulator:</p><pre><code class="makeup shell" 
 </span></code></pre><p>Remember that:</p><ul><li><p>  Windows specific C-code goes in the <code class="inline">$ERL_TOP/erts/emulator/sys/win32</code>,
 <code class="inline">$ERL_TOP/erts/emulator/drivers/win32</code> or <code class="inline">$ERL_TOP/erts/etc/win32</code>.</p></li><li><p>  Windows specific erlang code should be used conditionally and the
 host OS tested in <em>runtime</em>, the exactly same beam files should be
-distributed for every platform! So write code like:</p><pre><code class="makeup erlang" translate="no"><span class="k">case</span><span class="w"> </span><span class="nc">os</span><span class="p">:</span><span class="nf">type</span><span class="p" data-group-id="9386112948-1">(</span><span class="p" data-group-id="9386112948-1">)</span><span class="w"> </span><span class="k">of</span><span class="w">
-    </span><span class="p" data-group-id="9386112948-2">{</span><span class="ss">win32</span><span class="p">,</span><span class="p">_</span><span class="p" data-group-id="9386112948-2">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-        </span><span class="nf">do_windows_specific</span><span class="p" data-group-id="9386112948-3">(</span><span class="p" data-group-id="9386112948-3">)</span><span class="p">;</span><span class="w">
+distributed for every platform! So write code like:</p><pre><code class="makeup erlang" translate="no"><span class="k">case</span><span class="w"> </span><span class="nc">os</span><span class="p">:</span><span class="nf">type</span><span class="p" data-group-id="0582506330-1">(</span><span class="p" data-group-id="0582506330-1">)</span><span class="w"> </span><span class="k">of</span><span class="w">
+    </span><span class="p" data-group-id="0582506330-2">{</span><span class="ss">win32</span><span class="p">,</span><span class="p">_</span><span class="p" data-group-id="0582506330-2">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+        </span><span class="nf">do_windows_specific</span><span class="p" data-group-id="0582506330-3">(</span><span class="p" data-group-id="0582506330-3">)</span><span class="p">;</span><span class="w">
     </span><span class="n">Other</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-        </span><span class="nf">do_fallback_or_exit</span><span class="p" data-group-id="9386112948-4">(</span><span class="p" data-group-id="9386112948-4">)</span><span class="w">
+        </span><span class="nf">do_fallback_or_exit</span><span class="p" data-group-id="0582506330-4">(</span><span class="p" data-group-id="0582506330-4">)</span><span class="w">
 </span><span class="k">end</span><span class="p">,</span></code></pre></li></ul><p>That's basically all you need to get going.</p><h2 id="frequently-asked-questions" class="section-heading"><a href="#frequently-asked-questions" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Frequently Asked Questions</span></h2><ul><li><p>  Q: So, now I can build Erlang using GCC on Windows?</p><p>A: No, unfortunately not. You'll need Microsoft's Visual C++
 still. A Bourne-shell script (cc.sh) wraps the Visual C++ compiler
 and runs it from within the WSL environment. All other tools
@@ -353,8 +371,8 @@ Patching OTP Applications
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="Erlang System Documentation.epub" title="ePub version">
@@ -366,7 +384,7 @@ Patching OTP Applications
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

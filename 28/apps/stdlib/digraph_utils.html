@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="stdlib v7.1">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/digraph_utils.html" />
     <title>digraph_utils — stdlib v7.1</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-296BF65E.js"></script>
+    <script defer src="dist/sidebar_items-E5A5C6F9.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ stdlib
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of stdlib</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ stdlib
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/digraph_utils.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/digraph_utils.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -153,7 +171,7 @@ path between every pair of vertices, considering all edges undirected.</li></ul>
 
       </div>
 
-        <div class="summary-synopsis"><p>Returns <code class="inline">{yes, Root}</code> if <code class="inline">Root</code> is the <a>root</a> of the
+        <div class="summary-synopsis"><p>Returns <code class="inline">{yes, Root}</code> if <code class="inline">Root</code> is the <a href="digraph_utils.html#root">root</a> of the
 arborescence <code class="inline">Digraph</code>, otherwise <code class="inline">no</code>.</p></div>
 
     </div>
@@ -164,7 +182,7 @@ arborescence <code class="inline">Digraph</code>, otherwise <code class="inline"
 
       </div>
 
-        <div class="summary-synopsis"><p>Returns a list of <a>connected components</a>. Each
+        <div class="summary-synopsis"><p>Returns a list of <a href="digraph_utils.html#components">connected components</a>. Each
 component is represented by its vertices. The order of the vertices and the
 order of the components are arbitrary. Each vertex of digraph <code class="inline">Digraph</code> occurs
 in exactly one component.</p></div>
@@ -178,11 +196,11 @@ in exactly one component.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Creates a digraph where the vertices are the
-<a>strongly connected components</a> of
-<code class="inline">Digraph</code> as returned by <a><code class="inline">strong_components/1</code></a>. If X and Y are two different
+<a href="digraph_utils.html#strong_components">strongly connected components</a> of
+<code class="inline">Digraph</code> as returned by <a href="#strong_components/1"><code class="inline">strong_components/1</code></a>. If X and Y are two different
 strongly connected components, and vertices x and y exist in X and Y,
-respectively, such that there is an edge <a>emanating</a>
-from x and <a>incident</a> on y, then an edge emanating
+respectively, such that there is an edge <a href="digraph_utils.html#emanate">emanating</a>
+from x and <a href="digraph_utils.html#incident">incident</a> on y, then an edge emanating
 from X and incident on Y is created.</p></div>
 
     </div>
@@ -194,11 +212,11 @@ from X and incident on Y is created.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Returns a list of
-<a>strongly connected components</a>. Each
+<a href="digraph_utils.html#strong_components">strongly connected components</a>. Each
 strongly component is represented by its vertices. The order of the vertices and
 the order of the components are arbitrary. Only vertices that are included in
-some <a>cycle</a> in <code class="inline">Digraph</code> are returned, otherwise the
-returned list is equal to that returned by <a><code class="inline">strong_components/1</code></a>.</p></div>
+some <a href="digraph_utils.html#cycle">cycle</a> in <code class="inline">Digraph</code> are returned, otherwise the
+returned list is equal to that returned by <a href="#strong_components/1"><code class="inline">strong_components/1</code></a>.</p></div>
 
     </div>
 
@@ -209,7 +227,7 @@ returned list is equal to that returned by <a><code class="inline">strong_compon
       </div>
 
         <div class="summary-synopsis"><p>Returns <code class="inline">true</code> if and only if digraph <code class="inline">Digraph</code> is
-<a>acyclic</a>.</p></div>
+<a href="digraph_utils.html#acyclic_digraph">acyclic</a>.</p></div>
 
     </div>
 
@@ -220,7 +238,7 @@ returned list is equal to that returned by <a><code class="inline">strong_compon
       </div>
 
         <div class="summary-synopsis"><p>Returns <code class="inline">true</code> if and only if digraph <code class="inline">Digraph</code> is an
-<a>arborescence</a>.</p></div>
+<a href="digraph_utils.html#arborescence">arborescence</a>.</p></div>
 
     </div>
 
@@ -231,7 +249,7 @@ returned list is equal to that returned by <a><code class="inline">strong_compon
       </div>
 
         <div class="summary-synopsis"><p>Returns <code class="inline">true</code> if and only if digraph <code class="inline">Digraph</code> is a
-<a>tree</a>.</p></div>
+<a href="digraph_utils.html#tree">tree</a>.</p></div>
 
     </div>
 
@@ -242,7 +260,7 @@ returned list is equal to that returned by <a><code class="inline">strong_compon
       </div>
 
         <div class="summary-synopsis"><p>Returns a list of all vertices of <code class="inline">Digraph</code> that are included in some
-<a>loop</a>.</p></div>
+<a href="digraph_utils.html#loop">loop</a>.</p></div>
 
     </div>
 
@@ -253,7 +271,7 @@ returned list is equal to that returned by <a><code class="inline">strong_compon
       </div>
 
         <div class="summary-synopsis"><p>Returns all vertices of digraph <code class="inline">Digraph</code>. The order is given by a
-<a>depth-first traversal</a> of the digraph,
+<a href="digraph_utils.html#depth_first_traversal">depth-first traversal</a> of the digraph,
 collecting visited vertices in postorder. More precisely, the vertices visited
 while searching from an arbitrarily chosen vertex are collected in postorder,
 and all those collected vertices are placed before the subsequently visited
@@ -268,7 +286,7 @@ vertices.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Returns all vertices of digraph <code class="inline">Digraph</code>. The order is given by a
-<a>depth-first traversal</a> of the digraph,
+<a href="digraph_utils.html#depth_first_traversal">depth-first traversal</a> of the digraph,
 collecting visited vertices in preorder.</p></div>
 
     </div>
@@ -280,7 +298,7 @@ collecting visited vertices in preorder.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Returns an unsorted list of digraph vertices such that for each vertex in the
-list, there is a <a>path</a> in <code class="inline">Digraph</code> from some vertex of
+list, there is a <a href="digraph_utils.html#path">path</a> in <code class="inline">Digraph</code> from some vertex of
 <code class="inline">Vertices</code> to the vertex. In particular, as paths can have length zero, the
 vertices of <code class="inline">Vertices</code> are included in the returned list.</p></div>
 
@@ -293,10 +311,10 @@ vertices of <code class="inline">Vertices</code> are included in the returned li
       </div>
 
         <div class="summary-synopsis"><p>Returns an unsorted list of digraph vertices such that for each vertex in the
-list, there is a <a>path</a> in <code class="inline">Digraph</code> of length one or
+list, there is a <a href="digraph_utils.html#path">path</a> in <code class="inline">Digraph</code> of length one or
 more from some vertex of <code class="inline">Vertices</code> to the vertex. As a consequence, only those
 vertices of <code class="inline">Vertices</code> that are included in some
-<a>cycle</a> are returned.</p></div>
+<a href="digraph_utils.html#cycle">cycle</a> are returned.</p></div>
 
     </div>
 
@@ -307,7 +325,7 @@ vertices of <code class="inline">Vertices</code> that are included in some
       </div>
 
         <div class="summary-synopsis"><p>Returns an unsorted list of digraph vertices such that for each vertex in the
-list, there is a <a>path</a> from the vertex to some vertex
+list, there is a <a href="digraph_utils.html#path">path</a> from the vertex to some vertex
 of <code class="inline">Vertices</code>. In particular, as paths can have length zero, the vertices of
 <code class="inline">Vertices</code> are included in the returned list.</p></div>
 
@@ -320,9 +338,9 @@ of <code class="inline">Vertices</code>. In particular, as paths can have length
       </div>
 
         <div class="summary-synopsis"><p>Returns an unsorted list of digraph vertices such that for each vertex in the
-list, there is a <a>path</a> of length one or more from the
+list, there is a <a href="digraph_utils.html#path">path</a> of length one or more from the
 vertex to some vertex of <code class="inline">Vertices</code>. Therefore only those vertices of <code class="inline">Vertices</code>
-that are included in some <a>cycle</a> are returned.</p></div>
+that are included in some <a href="digraph_utils.html#cycle">cycle</a> are returned.</p></div>
 
     </div>
 
@@ -333,7 +351,7 @@ that are included in some <a>cycle</a> are returned.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Returns a list of
-<a>strongly connected components</a>. Each
+<a href="digraph_utils.html#strong_components">strongly connected components</a>. Each
 strongly component is represented by its vertices. The order of the vertices and
 the order of the components are arbitrary. Each vertex of digraph <code class="inline">Digraph</code>
 occurs in exactly one strong component.</p></div>
@@ -346,7 +364,7 @@ occurs in exactly one strong component.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">subgraph/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#subgraph/3"><code class="inline">subgraph/3</code></a>.</p></div>
 
     </div>
 
@@ -356,7 +374,7 @@ occurs in exactly one strong component.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Creates a maximal <a>subgraph</a> of <code class="inline">Digraph</code> having as
+        <div class="summary-synopsis"><p>Creates a maximal <a href="digraph_utils.html#subgraph">subgraph</a> of <code class="inline">Digraph</code> having as
 vertices those vertices of <code class="inline">Digraph</code> that are mentioned in <code class="inline">Vertices</code>.</p></div>
 
     </div>
@@ -367,9 +385,9 @@ vertices those vertices of <code class="inline">Digraph</code> that are mentione
 
       </div>
 
-        <div class="summary-synopsis"><p>Returns a <a>topological ordering</a> of the vertices of
+        <div class="summary-synopsis"><p>Returns a <a href="digraph_utils.html#topsort">topological ordering</a> of the vertices of
 digraph <code class="inline">Digraph</code> if such an ordering exists, otherwise <code class="inline">false</code>. For each vertex
-in the returned list, no <a>out-neighbors</a> occur
+in the returned list, no <a href="digraph_utils.html#out_neighbour">out-neighbors</a> occur
 earlier in the list.</p></div>
 
     </div>
@@ -386,6 +404,7 @@ earlier in the list.</p></div>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="arborescence_root/1">
 
@@ -397,7 +416,7 @@ earlier in the list.</p></div>
       <h1 class="signature" translate="no">arborescence_root(Digraph)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/digraph_utils.erl#L245" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/digraph_utils.erl#L245" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -427,7 +446,7 @@ arborescence <code class="inline">Digraph</code>, otherwise <code class="inline"
       <h1 class="signature" translate="no">components(Digraph)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/digraph_utils.erl#L121" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/digraph_utils.erl#L121" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -459,7 +478,7 @@ in exactly one component.</p>
       <h1 class="signature" translate="no">condensation(Digraph)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/digraph_utils.erl#L364" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/digraph_utils.erl#L364" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -498,7 +517,7 @@ exists.</p>
       <h1 class="signature" translate="no">cyclic_strong_components(Digraph)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/digraph_utils.erl#L150" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/digraph_utils.erl#L150" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -532,7 +551,7 @@ returned list is equal to that returned by <a href="#strong_components/1"><code 
       <h1 class="signature" translate="no">is_acyclic(Digraph)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/digraph_utils.erl#L234" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/digraph_utils.erl#L234" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -561,7 +580,7 @@ returned list is equal to that returned by <a href="#strong_components/1"><code 
       <h1 class="signature" translate="no">is_arborescence(Digraph)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/digraph_utils.erl#L271" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/digraph_utils.erl#L271" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -590,7 +609,7 @@ returned list is equal to that returned by <a href="#strong_components/1"><code 
       <h1 class="signature" translate="no">is_tree(Digraph)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/digraph_utils.erl#L281" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/digraph_utils.erl#L281" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -619,7 +638,7 @@ returned list is equal to that returned by <a href="#strong_components/1"><code 
       <h1 class="signature" translate="no">loop_vertices(Digraph)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/digraph_utils.erl#L293" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/digraph_utils.erl#L293" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -648,7 +667,7 @@ returned list is equal to that returned by <a href="#strong_components/1"><code 
       <h1 class="signature" translate="no">postorder(Digraph)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/digraph_utils.erl#L411" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/digraph_utils.erl#L411" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -681,7 +700,7 @@ vertices.</p>
       <h1 class="signature" translate="no">preorder(Digraph)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/digraph_utils.erl#L394" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/digraph_utils.erl#L394" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -711,7 +730,7 @@ collecting visited vertices in preorder.</p>
       <h1 class="signature" translate="no">reachable(Vertices, Digraph)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/digraph_utils.erl#L164" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/digraph_utils.erl#L164" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -746,7 +765,7 @@ vertices of <code class="inline">Vertices</code> are included in the returned li
       <h1 class="signature" translate="no">reachable_neighbours(Vertices, Digraph)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/digraph_utils.erl#L179" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/digraph_utils.erl#L179" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -782,7 +801,7 @@ vertices of <code class="inline">Vertices</code> that are included in some
       <h1 class="signature" translate="no">reaching(Vertices, Digraph)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/digraph_utils.erl#L193" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/digraph_utils.erl#L193" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -817,7 +836,7 @@ of <code class="inline">Vertices</code>. In particular, as paths can have length
       <h1 class="signature" translate="no">reaching_neighbours(Vertices, Digraph)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/digraph_utils.erl#L207" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/digraph_utils.erl#L207" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -852,7 +871,7 @@ that are included in some <a href="digraph_utils.html#cycle">cycle</a> are retur
       <h1 class="signature" translate="no">strong_components(Digraph)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/digraph_utils.erl#L135" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/digraph_utils.erl#L135" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -885,7 +904,7 @@ occurs in exactly one strong component.</p>
       <h1 class="signature" translate="no">subgraph(Digraph, Vertices)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/digraph_utils.erl#L302" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/digraph_utils.erl#L302" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -917,7 +936,7 @@ occurs in exactly one strong component.</p>
       <h1 class="signature" translate="no">subgraph(Digraph, Vertices, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/digraph_utils.erl#L335" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/digraph_utils.erl#L335" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -958,7 +977,7 @@ for the vertices and edges of the subgroup.</p><p><a href="#subgraph/2"><code cl
       <h1 class="signature" translate="no">topsort(Digraph)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/digraph_utils.erl#L220" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/digraph_utils.erl#L220" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -988,8 +1007,8 @@ earlier in the list.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="stdlib.epub" title="ePub version">
@@ -1001,7 +1020,7 @@ earlier in the list.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

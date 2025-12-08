@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="common_test v1.29">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/common_test/ct_telnet.html" />
     <title>ct_telnet — common_test v1.29</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-3DCB9B8F.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ common_test
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of common_test</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ common_test
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_telnet.erl#L23" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_telnet.erl#L23" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -104,14 +122,14 @@ seconds</li><li>Keep alive (sends NOP to the server every 8 sec if connection is
 <code class="inline">true</code></li><li>Polling limit (max number of times to poll to get a remaining string
 terminated) = 0</li><li>Polling interval (sleep time between polls) = 1 second</li><li>The TCP_NODELAY option for the telnet socket is disabled (set to <code class="inline">false</code>) per
 default</li></ul><p>These parameters can be modified by the user with the following configuration
-term:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="0249743307-1">{</span><span class="ss">telnet_settings</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0249743307-2">[</span><span class="p" data-group-id="0249743307-3">{</span><span class="ss">connect_timeout</span><span class="p">,</span><span class="n">Millisec</span><span class="p" data-group-id="0249743307-3">}</span><span class="p">,</span><span class="w">
-                   </span><span class="p" data-group-id="0249743307-4">{</span><span class="ss">command_timeout</span><span class="p">,</span><span class="n">Millisec</span><span class="p" data-group-id="0249743307-4">}</span><span class="p">,</span><span class="w">
-                   </span><span class="p" data-group-id="0249743307-5">{</span><span class="ss">reconnection_attempts</span><span class="p">,</span><span class="n">N</span><span class="p" data-group-id="0249743307-5">}</span><span class="p">,</span><span class="w">
-                   </span><span class="p" data-group-id="0249743307-6">{</span><span class="ss">reconnection_interval</span><span class="p">,</span><span class="n">Millisec</span><span class="p" data-group-id="0249743307-6">}</span><span class="p">,</span><span class="w">
-                   </span><span class="p" data-group-id="0249743307-7">{</span><span class="ss">keep_alive</span><span class="p">,</span><span class="n">Bool</span><span class="p" data-group-id="0249743307-7">}</span><span class="p">,</span><span class="w">
-                   </span><span class="p" data-group-id="0249743307-8">{</span><span class="ss">poll_limit</span><span class="p">,</span><span class="n">N</span><span class="p" data-group-id="0249743307-8">}</span><span class="p">,</span><span class="w">
-                   </span><span class="p" data-group-id="0249743307-9">{</span><span class="ss">poll_interval</span><span class="p">,</span><span class="n">Millisec</span><span class="p" data-group-id="0249743307-9">}</span><span class="p">,</span><span class="w">
-                   </span><span class="p" data-group-id="0249743307-10">{</span><span class="ss">tcp_nodelay</span><span class="p">,</span><span class="n">Bool</span><span class="p" data-group-id="0249743307-10">}</span><span class="p" data-group-id="0249743307-2">]</span><span class="p" data-group-id="0249743307-1">}</span><span class="p">.</span></code></pre><p><code class="inline">Millisec = timeout(), N = integer()</code></p><p>Enter the <code class="inline">telnet_settings</code> term in a configuration file included in the test
+term:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="8297716630-1">{</span><span class="ss">telnet_settings</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8297716630-2">[</span><span class="p" data-group-id="8297716630-3">{</span><span class="ss">connect_timeout</span><span class="p">,</span><span class="n">Millisec</span><span class="p" data-group-id="8297716630-3">}</span><span class="p">,</span><span class="w">
+                   </span><span class="p" data-group-id="8297716630-4">{</span><span class="ss">command_timeout</span><span class="p">,</span><span class="n">Millisec</span><span class="p" data-group-id="8297716630-4">}</span><span class="p">,</span><span class="w">
+                   </span><span class="p" data-group-id="8297716630-5">{</span><span class="ss">reconnection_attempts</span><span class="p">,</span><span class="n">N</span><span class="p" data-group-id="8297716630-5">}</span><span class="p">,</span><span class="w">
+                   </span><span class="p" data-group-id="8297716630-6">{</span><span class="ss">reconnection_interval</span><span class="p">,</span><span class="n">Millisec</span><span class="p" data-group-id="8297716630-6">}</span><span class="p">,</span><span class="w">
+                   </span><span class="p" data-group-id="8297716630-7">{</span><span class="ss">keep_alive</span><span class="p">,</span><span class="n">Bool</span><span class="p" data-group-id="8297716630-7">}</span><span class="p">,</span><span class="w">
+                   </span><span class="p" data-group-id="8297716630-8">{</span><span class="ss">poll_limit</span><span class="p">,</span><span class="n">N</span><span class="p" data-group-id="8297716630-8">}</span><span class="p">,</span><span class="w">
+                   </span><span class="p" data-group-id="8297716630-9">{</span><span class="ss">poll_interval</span><span class="p">,</span><span class="n">Millisec</span><span class="p" data-group-id="8297716630-9">}</span><span class="p">,</span><span class="w">
+                   </span><span class="p" data-group-id="8297716630-10">{</span><span class="ss">tcp_nodelay</span><span class="p">,</span><span class="n">Bool</span><span class="p" data-group-id="8297716630-10">}</span><span class="p" data-group-id="8297716630-2">]</span><span class="p" data-group-id="8297716630-1">}</span><span class="p">.</span></code></pre><p><code class="inline">Millisec = timeout(), N = integer()</code></p><p>Enter the <code class="inline">telnet_settings</code> term in a configuration file included in the test
 and <code class="inline">ct_telnet</code> retrieves the information automatically.</p><p><code class="inline">keep_alive</code> can be specified per connection, if necessary. For details, see
 <a href="unix_telnet.html"><code class="inline">unix_telnet</code></a>.</p><h2 id="module-logging" class="section-heading"><a href="#module-logging" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Logging</span></h2><p><a href="" id="Logging"></a></p><p>The default logging behavior of <code class="inline">ct_telnet</code> is to print information about
 performed operations, commands, and their corresponding results to the test case
@@ -120,8 +138,8 @@ the Telnet server that are not explicitly received by a <code class="inline">ct_
 such as <a href="#expect/3"><code class="inline">expect/3</code></a>. However, <code class="inline">ct_telnet</code> can be configured to use
 a special purpose event handler, implemented in <code class="inline">ct_conn_log_h</code>, for logging
 <em>all</em> Telnet traffic. To use this handler, install a <code class="inline">Common Test</code> hook named
-<code class="inline">cth_conn_log</code>. Example (using the test suite information function):</p><pre><code class="makeup erlang" translate="no"><span class="nf">suite</span><span class="p" data-group-id="7291825609-1">(</span><span class="p" data-group-id="7291825609-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="p" data-group-id="7291825609-2">[</span><span class="p" data-group-id="7291825609-3">{</span><span class="ss">ct_hooks</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7291825609-4">[</span><span class="p" data-group-id="7291825609-5">{</span><span class="ss">cth_conn_log</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7291825609-6">[</span><span class="p" data-group-id="7291825609-7">{</span><span class="nf">conn_mod</span><span class="p" data-group-id="7291825609-8">(</span><span class="p" data-group-id="7291825609-8">)</span><span class="p">,</span><span class="nf">hook_options</span><span class="p" data-group-id="7291825609-9">(</span><span class="p" data-group-id="7291825609-9">)</span><span class="p" data-group-id="7291825609-7">}</span><span class="p" data-group-id="7291825609-6">]</span><span class="p" data-group-id="7291825609-5">}</span><span class="p" data-group-id="7291825609-4">]</span><span class="p" data-group-id="7291825609-3">}</span><span class="p" data-group-id="7291825609-2">]</span><span class="p">.</span></code></pre><p><code class="inline">conn_mod()</code> is the name of the <code class="inline">Common Test</code> module implementing the connection
+<code class="inline">cth_conn_log</code>. Example (using the test suite information function):</p><pre><code class="makeup erlang" translate="no"><span class="nf">suite</span><span class="p" data-group-id="3929946396-1">(</span><span class="p" data-group-id="3929946396-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="p" data-group-id="3929946396-2">[</span><span class="p" data-group-id="3929946396-3">{</span><span class="ss">ct_hooks</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3929946396-4">[</span><span class="p" data-group-id="3929946396-5">{</span><span class="ss">cth_conn_log</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3929946396-6">[</span><span class="p" data-group-id="3929946396-7">{</span><span class="nf">conn_mod</span><span class="p" data-group-id="3929946396-8">(</span><span class="p" data-group-id="3929946396-8">)</span><span class="p">,</span><span class="nf">hook_options</span><span class="p" data-group-id="3929946396-9">(</span><span class="p" data-group-id="3929946396-9">)</span><span class="p" data-group-id="3929946396-7">}</span><span class="p" data-group-id="3929946396-6">]</span><span class="p" data-group-id="3929946396-5">}</span><span class="p" data-group-id="3929946396-4">]</span><span class="p" data-group-id="3929946396-3">}</span><span class="p" data-group-id="3929946396-2">]</span><span class="p">.</span></code></pre><p><code class="inline">conn_mod()</code> is the name of the <code class="inline">Common Test</code> module implementing the connection
 protocol, that is, <code class="inline">ct_telnet</code>.</p><p>The <code class="inline">cth_conn_log</code> hook performs unformatted logging of Telnet data to a
 separate text file. All Telnet communication is captured and printed, including
 any data sent from the server. The link to this text file is located at the top
@@ -138,15 +156,15 @@ added to connection log. The default value of this option is
 <code class="inline">disabled</code>, which results with no prefix data. If the value is set to
 <code class="inline">full</code> prefix contains timestamp and additonal information. If the
 value is set to <code class="inline">short</code> prefix includes only human readable timestamp.</p><p>All <code class="inline">cth_conn_log</code> hook options described can also be specified in a
-configuration file with configuration variable <code class="inline">ct_conn_log</code>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="4868560475-1">{</span><span class="ss">ct_conn_log</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4868560475-2">[</span><span class="p" data-group-id="4868560475-3">{</span><span class="ss">ct_telnet</span><span class="p">,</span><span class="p" data-group-id="4868560475-4">[</span><span class="p" data-group-id="4868560475-5">{</span><span class="ss">log_type</span><span class="p">,</span><span class="ss">raw</span><span class="p" data-group-id="4868560475-5">}</span><span class="p">,</span><span class="w">
-                           </span><span class="p" data-group-id="4868560475-6">{</span><span class="ss">hosts</span><span class="p">,</span><span class="p" data-group-id="4868560475-7">[</span><span class="nf">key_or_name</span><span class="p" data-group-id="4868560475-8">(</span><span class="p" data-group-id="4868560475-8">)</span><span class="p" data-group-id="4868560475-7">]</span><span class="p" data-group-id="4868560475-6">}</span><span class="p" data-group-id="4868560475-4">]</span><span class="p" data-group-id="4868560475-3">}</span><span class="p" data-group-id="4868560475-2">]</span><span class="p" data-group-id="4868560475-1">}</span></code></pre><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>Hook options specified in a configuration file overwrite any hard-coded hook
+configuration file with configuration variable <code class="inline">ct_conn_log</code>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="7795032735-1">{</span><span class="ss">ct_conn_log</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7795032735-2">[</span><span class="p" data-group-id="7795032735-3">{</span><span class="ss">ct_telnet</span><span class="p">,</span><span class="p" data-group-id="7795032735-4">[</span><span class="p" data-group-id="7795032735-5">{</span><span class="ss">log_type</span><span class="p">,</span><span class="ss">raw</span><span class="p" data-group-id="7795032735-5">}</span><span class="p">,</span><span class="w">
+                           </span><span class="p" data-group-id="7795032735-6">{</span><span class="ss">hosts</span><span class="p">,</span><span class="p" data-group-id="7795032735-7">[</span><span class="nf">key_or_name</span><span class="p" data-group-id="7795032735-8">(</span><span class="p" data-group-id="7795032735-8">)</span><span class="p" data-group-id="7795032735-7">]</span><span class="p" data-group-id="7795032735-6">}</span><span class="p" data-group-id="7795032735-4">]</span><span class="p" data-group-id="7795032735-3">}</span><span class="p" data-group-id="7795032735-2">]</span><span class="p" data-group-id="7795032735-1">}</span></code></pre><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>Hook options specified in a configuration file overwrite any hard-coded hook
 options in the test suite.</p></section><p><a href="" id="Logging_example"></a></p><p><em>Logging Example:</em></p><p>The following <code class="inline">ct_hooks</code> statement causes printing of Telnet traffic to separate
 logs for the connections <code class="inline">server1</code> and <code class="inline">server2</code>. Traffic for any other
-connections is logged in the default Telnet log.</p><pre><code class="makeup erlang" translate="no"><span class="nf">suite</span><span class="p" data-group-id="0521473870-1">(</span><span class="p" data-group-id="0521473870-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="p" data-group-id="0521473870-2">[</span><span class="p" data-group-id="0521473870-3">{</span><span class="ss">ct_hooks</span><span class="p">,</span><span class="w">
-      </span><span class="p" data-group-id="0521473870-4">[</span><span class="p" data-group-id="0521473870-5">{</span><span class="ss">cth_conn_log</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0521473870-6">[</span><span class="p" data-group-id="0521473870-7">{</span><span class="ss">ct_telnet</span><span class="p">,</span><span class="p" data-group-id="0521473870-8">[</span><span class="p" data-group-id="0521473870-9">{</span><span class="ss">hosts</span><span class="p">,</span><span class="p" data-group-id="0521473870-10">[</span><span class="ss">server1</span><span class="p">,</span><span class="ss">server2</span><span class="p" data-group-id="0521473870-10">]</span><span class="p" data-group-id="0521473870-9">}</span><span class="p" data-group-id="0521473870-8">]</span><span class="p" data-group-id="0521473870-7">}</span><span class="p" data-group-id="0521473870-6">]</span><span class="p" data-group-id="0521473870-5">}</span><span class="p" data-group-id="0521473870-4">]</span><span class="p" data-group-id="0521473870-3">}</span><span class="p" data-group-id="0521473870-2">]</span><span class="p">.</span></code></pre><p>As previously explained, this specification can also be provided by an entry
-like the following in a configuration file:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="4122215730-1">{</span><span class="ss">ct_conn_log</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4122215730-2">[</span><span class="p" data-group-id="4122215730-3">{</span><span class="ss">ct_telnet</span><span class="p">,</span><span class="p" data-group-id="4122215730-4">[</span><span class="p" data-group-id="4122215730-5">{</span><span class="ss">hosts</span><span class="p">,</span><span class="p" data-group-id="4122215730-6">[</span><span class="ss">server1</span><span class="p">,</span><span class="ss">server2</span><span class="p" data-group-id="4122215730-6">]</span><span class="p" data-group-id="4122215730-5">}</span><span class="p" data-group-id="4122215730-4">]</span><span class="p" data-group-id="4122215730-3">}</span><span class="p" data-group-id="4122215730-2">]</span><span class="p" data-group-id="4122215730-1">}</span><span class="p">.</span></code></pre><p>In this case the <code class="inline">ct_hooks</code> statement in the test suite can look as follows:</p><pre><code class="makeup erlang" translate="no"><span class="nf">suite</span><span class="p" data-group-id="4253685244-1">(</span><span class="p" data-group-id="4253685244-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="p" data-group-id="4253685244-2">[</span><span class="p" data-group-id="4253685244-3">{</span><span class="ss">ct_hooks</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4253685244-4">[</span><span class="p" data-group-id="4253685244-5">{</span><span class="ss">cth_conn_log</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4253685244-6">[</span><span class="p" data-group-id="4253685244-6">]</span><span class="p" data-group-id="4253685244-5">}</span><span class="p" data-group-id="4253685244-4">]</span><span class="p" data-group-id="4253685244-3">}</span><span class="p" data-group-id="4253685244-2">]</span><span class="p">.</span></code></pre><h2 id="module-see-also" class="section-heading"><a href="#module-see-also" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">See Also</span></h2><p><a href="unix_telnet.html"><code class="inline">unix_telnet</code></a></p>
+connections is logged in the default Telnet log.</p><pre><code class="makeup erlang" translate="no"><span class="nf">suite</span><span class="p" data-group-id="0891257817-1">(</span><span class="p" data-group-id="0891257817-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="p" data-group-id="0891257817-2">[</span><span class="p" data-group-id="0891257817-3">{</span><span class="ss">ct_hooks</span><span class="p">,</span><span class="w">
+      </span><span class="p" data-group-id="0891257817-4">[</span><span class="p" data-group-id="0891257817-5">{</span><span class="ss">cth_conn_log</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0891257817-6">[</span><span class="p" data-group-id="0891257817-7">{</span><span class="ss">ct_telnet</span><span class="p">,</span><span class="p" data-group-id="0891257817-8">[</span><span class="p" data-group-id="0891257817-9">{</span><span class="ss">hosts</span><span class="p">,</span><span class="p" data-group-id="0891257817-10">[</span><span class="ss">server1</span><span class="p">,</span><span class="ss">server2</span><span class="p" data-group-id="0891257817-10">]</span><span class="p" data-group-id="0891257817-9">}</span><span class="p" data-group-id="0891257817-8">]</span><span class="p" data-group-id="0891257817-7">}</span><span class="p" data-group-id="0891257817-6">]</span><span class="p" data-group-id="0891257817-5">}</span><span class="p" data-group-id="0891257817-4">]</span><span class="p" data-group-id="0891257817-3">}</span><span class="p" data-group-id="0891257817-2">]</span><span class="p">.</span></code></pre><p>As previously explained, this specification can also be provided by an entry
+like the following in a configuration file:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="9137522143-1">{</span><span class="ss">ct_conn_log</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9137522143-2">[</span><span class="p" data-group-id="9137522143-3">{</span><span class="ss">ct_telnet</span><span class="p">,</span><span class="p" data-group-id="9137522143-4">[</span><span class="p" data-group-id="9137522143-5">{</span><span class="ss">hosts</span><span class="p">,</span><span class="p" data-group-id="9137522143-6">[</span><span class="ss">server1</span><span class="p">,</span><span class="ss">server2</span><span class="p" data-group-id="9137522143-6">]</span><span class="p" data-group-id="9137522143-5">}</span><span class="p" data-group-id="9137522143-4">]</span><span class="p" data-group-id="9137522143-3">}</span><span class="p" data-group-id="9137522143-2">]</span><span class="p" data-group-id="9137522143-1">}</span><span class="p">.</span></code></pre><p>In this case the <code class="inline">ct_hooks</code> statement in the test suite can look as follows:</p><pre><code class="makeup erlang" translate="no"><span class="nf">suite</span><span class="p" data-group-id="6197821944-1">(</span><span class="p" data-group-id="6197821944-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="p" data-group-id="6197821944-2">[</span><span class="p" data-group-id="6197821944-3">{</span><span class="ss">ct_hooks</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6197821944-4">[</span><span class="p" data-group-id="6197821944-5">{</span><span class="ss">cth_conn_log</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6197821944-6">[</span><span class="p" data-group-id="6197821944-6">]</span><span class="p" data-group-id="6197821944-5">}</span><span class="p" data-group-id="6197821944-4">]</span><span class="p" data-group-id="6197821944-3">}</span><span class="p" data-group-id="6197821944-2">]</span><span class="p">.</span></code></pre><h2 id="module-see-also" class="section-heading"><a href="#module-see-also" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">See Also</span></h2><p><a href="unix_telnet.html"><code class="inline">unix_telnet</code></a></p>
     </section>
 
 </div>
@@ -189,7 +207,7 @@ like the following in a configuration file:</p><pre><code class="makeup erlang" 
 
       </div>
 
-        <div class="summary-synopsis"><p>Handle for a specific Telnet connection, see module <a><code class="inline">ct</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Handle for a specific Telnet connection, see module <a href="ct.html"><code class="inline">ct</code></a>.</p></div>
 
     </div>
 
@@ -199,7 +217,7 @@ like the following in a configuration file:</p><pre><code class="makeup erlang" 
 
       </div>
 
-        <div class="summary-synopsis"><p>See <a><code class="inline">cmd/3</code></a> for explanation.</p></div>
+        <div class="summary-synopsis"><p>See <a href="#cmd/3"><code class="inline">cmd/3</code></a> for explanation.</p></div>
 
     </div>
 
@@ -210,7 +228,7 @@ like the following in a configuration file:</p><pre><code class="makeup erlang" 
       </div>
 
         <div class="summary-synopsis"><p>Regular expression matching all possible prompts for a specific target type.
-<code class="inline">regexp</code> must not have any groups, that is, when matching, <a><code class="inline">re:run/3</code></a> (in
+<code class="inline">regexp</code> must not have any groups, that is, when matching, <a href="../../apps/stdlib/re.html#run/3"><code class="inline">re:run/3</code></a> (in
 STDLIB) must return a list with one single element.</p></div>
 
     </div>
@@ -237,7 +255,7 @@ STDLIB) must return a list with one single element.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">cmd(Connection, Cmd, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#cmd/3"><code class="inline">cmd(Connection, Cmd, [])</code></a>.</p></div>
 
     </div>
 
@@ -257,7 +275,7 @@ STDLIB) must return a list with one single element.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">cmdf(Connection, CmdFormat, Args, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#cmdf/4"><code class="inline">cmdf(Connection, CmdFormat, Args, [])</code></a>.</p></div>
 
     </div>
 
@@ -278,7 +296,7 @@ arguments to build the command).</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">expect(Connection, Patterns, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#expect/3"><code class="inline">expect(Connection, Patterns, [])</code></a>.</p></div>
 
     </div>
 
@@ -311,7 +329,7 @@ string is complete.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">open(Name, telnet)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#open/2"><code class="inline">open(Name, telnet)</code></a>.</p></div>
 
     </div>
 
@@ -331,7 +349,7 @@ string is complete.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">open(KeyOrName, ConnType, TargetMod, KeyOrName)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#open/4"><code class="inline">open(KeyOrName, ConnType, TargetMod, KeyOrName)</code></a>.</p></div>
 
     </div>
 
@@ -351,7 +369,7 @@ string is complete.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">send(Connection, Cmd, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#send/3"><code class="inline">send(Connection, Cmd, [])</code></a>.</p></div>
 
     </div>
 
@@ -371,7 +389,7 @@ string is complete.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">sendf(Connection, CmdFormat, Args, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#sendf/4"><code class="inline">sendf(Connection, CmdFormat, Args, [])</code></a>.</p></div>
 
     </div>
 
@@ -398,6 +416,7 @@ of arguments to build the command).</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:connection/0">
 
@@ -409,7 +428,7 @@ of arguments to build the command).</p></div>
       <h1 class="signature" translate="no">connection()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_telnet.erl#L186" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_telnet.erl#L186" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -437,7 +456,7 @@ of arguments to build the command).</p></div>
       <h1 class="signature" translate="no">connection_type()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_telnet.erl#L188" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_telnet.erl#L188" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -465,7 +484,7 @@ of arguments to build the command).</p></div>
       <h1 class="signature" translate="no">handle()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_telnet.erl#L190" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_telnet.erl#L190" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -495,7 +514,7 @@ of arguments to build the command).</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_telnet.erl#L198" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_telnet.erl#L198" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -523,7 +542,7 @@ of arguments to build the command).</p></div>
       <h1 class="signature" translate="no">prompt_regexp()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_telnet.erl#L196" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_telnet.erl#L196" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -554,6 +573,7 @@ STDLIB) must return a list with one single element.</p>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="close/1">
 
@@ -565,7 +585,7 @@ STDLIB) must return a list with one single element.</p>
       <h1 class="signature" translate="no">close(Connection)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_telnet.erl#L334" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_telnet.erl#L334" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -596,7 +616,7 @@ handle value (see <a href="#open/4"><code class="inline">ct_telnet:open/4</code>
       <h1 class="signature" translate="no">cmd(Connection, Cmd)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_telnet.erl#L358" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_telnet.erl#L358" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -625,7 +645,7 @@ handle value (see <a href="#open/4"><code class="inline">ct_telnet:open/4</code>
       <h1 class="signature" translate="no">cmd(Connection, Cmd, Opts)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_telnet.erl#L384" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_telnet.erl#L384" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -669,7 +689,7 @@ module.</p>
       <h1 class="signature" translate="no">cmdf(Connection, CmdFormat, Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_telnet.erl#L415" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_telnet.erl#L415" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -703,7 +723,7 @@ module.</p>
       <h1 class="signature" translate="no">cmdf(Connection, CmdFormat, Args, Opts)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_telnet.erl#L432" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_telnet.erl#L432" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -740,7 +760,7 @@ arguments to build the command).</p><p>For details, see <a href="#cmd/3"><code c
       <h1 class="signature" translate="no">expect(Connection, Patterns)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_telnet.erl#L557" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_telnet.erl#L557" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -782,7 +802,7 @@ arguments to build the command).</p><p>For details, see <a href="#cmd/3"><code c
       <h1 class="signature" translate="no">expect(Connection, Patterns, Opts)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_telnet.erl#L659" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_telnet.erl#L659" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -849,9 +869,9 @@ returns <code class="inline">HaltReason = done</code>. This option can be interr
 instead of only one <code class="inline">Match</code>. Also <code class="inline">HaltReason</code> is returned.</p></li><li><p><strong><code class="inline">sequence</code></strong> - All patterns must be matched in a sequence. A match is not
 concluded until all patterns are matched. This option can be interrupted by
 one or more <code class="inline">HaltPatterns</code>. <code class="inline">MatchList</code> is always returned, that is, a list of
-<code class="inline">Match</code> instead of only one <code class="inline">Match</code>. Also <code class="inline">HaltReason</code> is returned.</p></li></ul><p><em>Example 1:</em></p><pre><code class="makeup erlang" translate="no"><span class="nf">expect</span><span class="p" data-group-id="1500726828-1">(</span><span class="n">Connection</span><span class="p">,</span><span class="p" data-group-id="1500726828-2">[</span><span class="p" data-group-id="1500726828-3">{</span><span class="ss">abc</span><span class="p">,</span><span class="s">&quot;ABC&quot;</span><span class="p" data-group-id="1500726828-3">}</span><span class="p">,</span><span class="p" data-group-id="1500726828-4">{</span><span class="ss">xyz</span><span class="p">,</span><span class="s">&quot;XYZ&quot;</span><span class="p" data-group-id="1500726828-4">}</span><span class="p" data-group-id="1500726828-2">]</span><span class="p">,</span><span class="p" data-group-id="1500726828-5">[</span><span class="ss">sequence</span><span class="p">,</span><span class="p" data-group-id="1500726828-6">{</span><span class="ss">halt</span><span class="p">,</span><span class="p" data-group-id="1500726828-7">[</span><span class="p" data-group-id="1500726828-8">{</span><span class="ss">nnn</span><span class="p">,</span><span class="s">&quot;NNN&quot;</span><span class="p" data-group-id="1500726828-8">}</span><span class="p" data-group-id="1500726828-7">]</span><span class="p" data-group-id="1500726828-6">}</span><span class="p" data-group-id="1500726828-5">]</span><span class="p" data-group-id="1500726828-1">)</span></code></pre><p>First this tries to match <code class="inline">&quot;ABC&quot;</code>, and then <code class="inline">&quot;XYZ&quot;</code>, but if <code class="inline">&quot;NNN&quot;</code> appears, the
+<code class="inline">Match</code> instead of only one <code class="inline">Match</code>. Also <code class="inline">HaltReason</code> is returned.</p></li></ul><p><em>Example 1:</em></p><pre><code class="makeup erlang" translate="no"><span class="nf">expect</span><span class="p" data-group-id="9900244142-1">(</span><span class="n">Connection</span><span class="p">,</span><span class="p" data-group-id="9900244142-2">[</span><span class="p" data-group-id="9900244142-3">{</span><span class="ss">abc</span><span class="p">,</span><span class="s">&quot;ABC&quot;</span><span class="p" data-group-id="9900244142-3">}</span><span class="p">,</span><span class="p" data-group-id="9900244142-4">{</span><span class="ss">xyz</span><span class="p">,</span><span class="s">&quot;XYZ&quot;</span><span class="p" data-group-id="9900244142-4">}</span><span class="p" data-group-id="9900244142-2">]</span><span class="p">,</span><span class="p" data-group-id="9900244142-5">[</span><span class="ss">sequence</span><span class="p">,</span><span class="p" data-group-id="9900244142-6">{</span><span class="ss">halt</span><span class="p">,</span><span class="p" data-group-id="9900244142-7">[</span><span class="p" data-group-id="9900244142-8">{</span><span class="ss">nnn</span><span class="p">,</span><span class="s">&quot;NNN&quot;</span><span class="p" data-group-id="9900244142-8">}</span><span class="p" data-group-id="9900244142-7">]</span><span class="p" data-group-id="9900244142-6">}</span><span class="p" data-group-id="9900244142-5">]</span><span class="p" data-group-id="9900244142-1">)</span></code></pre><p>First this tries to match <code class="inline">&quot;ABC&quot;</code>, and then <code class="inline">&quot;XYZ&quot;</code>, but if <code class="inline">&quot;NNN&quot;</code> appears, the
 function returns <code class="inline">{error,{nnn,[&quot;NNN&quot;]}}</code>. If both <code class="inline">&quot;ABC&quot;</code> and <code class="inline">&quot;XYZ&quot;</code> are
-matched, the function returns <code class="inline">{ok,[AbcMatch,XyzMatch]}</code>.</p><p><em>Example 2:</em></p><pre><code class="makeup erlang" translate="no"><span class="nf">expect</span><span class="p" data-group-id="0753561270-1">(</span><span class="n">Connection</span><span class="p">,</span><span class="p" data-group-id="0753561270-2">[</span><span class="p" data-group-id="0753561270-3">{</span><span class="ss">abc</span><span class="p">,</span><span class="s">&quot;ABC&quot;</span><span class="p" data-group-id="0753561270-3">}</span><span class="p">,</span><span class="p" data-group-id="0753561270-4">{</span><span class="ss">xyz</span><span class="p">,</span><span class="s">&quot;XYZ&quot;</span><span class="p" data-group-id="0753561270-4">}</span><span class="p" data-group-id="0753561270-2">]</span><span class="p">,</span><span class="p" data-group-id="0753561270-5">[</span><span class="p" data-group-id="0753561270-6">{</span><span class="ss">repeat</span><span class="p">,</span><span class="mi">2</span><span class="p" data-group-id="0753561270-6">}</span><span class="p">,</span><span class="p" data-group-id="0753561270-7">{</span><span class="ss">halt</span><span class="p">,</span><span class="p" data-group-id="0753561270-8">[</span><span class="p" data-group-id="0753561270-9">{</span><span class="ss">nnn</span><span class="p">,</span><span class="s">&quot;NNN&quot;</span><span class="p" data-group-id="0753561270-9">}</span><span class="p" data-group-id="0753561270-8">]</span><span class="p" data-group-id="0753561270-7">}</span><span class="p" data-group-id="0753561270-5">]</span><span class="p" data-group-id="0753561270-1">)</span></code></pre><p>This tries to match <code class="inline">&quot;ABC&quot;</code> or <code class="inline">&quot;XYZ&quot;</code> twice. If <code class="inline">&quot;NNN&quot;</code> appears, the function
+matched, the function returns <code class="inline">{ok,[AbcMatch,XyzMatch]}</code>.</p><p><em>Example 2:</em></p><pre><code class="makeup erlang" translate="no"><span class="nf">expect</span><span class="p" data-group-id="4736877636-1">(</span><span class="n">Connection</span><span class="p">,</span><span class="p" data-group-id="4736877636-2">[</span><span class="p" data-group-id="4736877636-3">{</span><span class="ss">abc</span><span class="p">,</span><span class="s">&quot;ABC&quot;</span><span class="p" data-group-id="4736877636-3">}</span><span class="p">,</span><span class="p" data-group-id="4736877636-4">{</span><span class="ss">xyz</span><span class="p">,</span><span class="s">&quot;XYZ&quot;</span><span class="p" data-group-id="4736877636-4">}</span><span class="p" data-group-id="4736877636-2">]</span><span class="p">,</span><span class="p" data-group-id="4736877636-5">[</span><span class="p" data-group-id="4736877636-6">{</span><span class="ss">repeat</span><span class="p">,</span><span class="mi">2</span><span class="p" data-group-id="4736877636-6">}</span><span class="p">,</span><span class="p" data-group-id="4736877636-7">{</span><span class="ss">halt</span><span class="p">,</span><span class="p" data-group-id="4736877636-8">[</span><span class="p" data-group-id="4736877636-9">{</span><span class="ss">nnn</span><span class="p">,</span><span class="s">&quot;NNN&quot;</span><span class="p" data-group-id="4736877636-9">}</span><span class="p" data-group-id="4736877636-8">]</span><span class="p" data-group-id="4736877636-7">}</span><span class="p" data-group-id="4736877636-5">]</span><span class="p" data-group-id="4736877636-1">)</span></code></pre><p>This tries to match <code class="inline">&quot;ABC&quot;</code> or <code class="inline">&quot;XYZ&quot;</code> twice. If <code class="inline">&quot;NNN&quot;</code> appears, the function
 returns <code class="inline">HaltReason = {nnn,[&quot;NNN&quot;]}</code>.</p><p>Options <code class="inline">repeat</code> and <code class="inline">sequence</code> can be combined to match a sequence multiple
 times.</p>
   </section>
@@ -866,7 +886,7 @@ times.</p>
       <h1 class="signature" translate="no">get_data(Connection)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_telnet.erl#L451" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_telnet.erl#L451" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -901,7 +921,7 @@ non-terminated string for a later <code class="inline">get_data</code> call.</p>
       <h1 class="signature" translate="no">open(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_telnet.erl#L225" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_telnet.erl#L225" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -930,7 +950,7 @@ non-terminated string for a later <code class="inline">get_data</code> call.</p>
       <h1 class="signature" translate="no">open(Name, ConnType)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_telnet.erl#L236" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_telnet.erl#L236" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -959,7 +979,7 @@ non-terminated string for a later <code class="inline">get_data</code> call.</p>
       <h1 class="signature" translate="no">open(KeyOrName, ConnType, TargetMod)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_telnet.erl#L253" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_telnet.erl#L253" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -993,7 +1013,7 @@ non-terminated string for a later <code class="inline">get_data</code> call.</p>
       <h1 class="signature" translate="no">open(KeyOrName, ConnType, TargetMod, Extra)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_telnet.erl#L285" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_telnet.erl#L285" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1035,7 +1055,7 @@ specified <code class="inline">TargetType</code> (for example, <code class="inli
       <h1 class="signature" translate="no">send(Connection, Cmd)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_telnet.erl#L464" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_telnet.erl#L464" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1066,7 +1086,7 @@ specified <code class="inline">TargetType</code> (for example, <code class="inli
         <span class="note">(since OTP 17.4)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_telnet.erl#L486" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_telnet.erl#L486" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1105,7 +1125,7 @@ add both carriage return and newline characters.</p><p>The resulting output from
       <h1 class="signature" translate="no">sendf(Connection, CmdFormat, Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_telnet.erl#L521" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_telnet.erl#L521" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1140,7 +1160,7 @@ add both carriage return and newline characters.</p><p>The resulting output from
         <span class="note">(since OTP 17.4)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/common_test/src/ct_telnet.erl#L537" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/common_test/src/ct_telnet.erl#L537" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1173,8 +1193,8 @@ of arguments to build the command).</p><p>For details, see <a href="#send/3"><co
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="common_test.epub" title="ePub version">
@@ -1186,7 +1206,7 @@ of arguments to build the command).</p><p>For details, see <a href="#send/3"><co
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="Erlang System Documentation v28.2">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/system/install.html" />
     <title>Building and Installing Erlang/OTP — Erlang System Documentation v28.2</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-351B7E11.js"></script>
+    <script defer src="dist/sidebar_items-11C2FD0A.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ Erlang System Documentation
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of Erlang System Documentation</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -84,7 +102,7 @@ Erlang System Documentation
     <h1>Building and Installing Erlang/OTP</h1>
 
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/HOWTO/INSTALL.md#L1" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/HOWTO/INSTALL.md#L1" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -119,7 +137,7 @@ version 3.0 of wxWidgets is required.</p><p>Download from <a href="http://source
 or get it from GitHub: <a href="https://github.com/wxWidgets/wxWidgets">https://github.com/wxWidgets/wxWidgets</a></p><p>Further instructions on wxWidgets, read <a href="#advanced-configuration-and-build-of-erlang-otp_Building_Building-with-Wx" title="">Building with Wx</a>.</p></li></ul><h3 id="building-documentation" class="section-heading"><a href="#building-documentation" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Building Documentation</span></h3><ul><li><p>  <code class="inline">ex_doc</code> -- <a href="https://hexdocs.pm/ex_doc/readme.html">ExDoc</a> is a tool to
 generate html and epub documentation for Erlang and Elixir projects.</p><p>Download as an <a href="https://github.com/elixir-lang/ex_doc/releases/latest">escript from github</a>
 or get it from GitHub: <a href="https://github.com/elixir-lang/ex_doc">https://github.com/elixir-lang/ex_doc</a> and build
-your self.</p><p>ExDoc v0.38.1 was used to build the documentation for this release,
+your self.</p><p>ExDoc v0.39.2 was used to build the documentation for this release,
 but any version after that should work just as well.</p><p>You can also use <code class="inline">./otp_build download_ex_doc</code> to download the correct version
 from github. One of the following dependencies are needed to check the documentation:</p><ul><li>sha256sum, or</li><li>sha1sum, or</li><li>shasum</li></ul></li></ul><h2 id="how-to-build-and-install-erlang-otp" class="section-heading"><a href="#how-to-build-and-install-erlang-otp" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">How to Build and Install Erlang/OTP</span></h2><p>The following instructions are for building <a href="https://github.com/erlang/otp/releases/download/OTP-28.2/otp_src_28.2.tar.gz" title="">the released source tar ball</a>
 or from a <a href="https://github.com/erlang/otp">git clone</a>.</p><p>The variable <code class="inline">$ERL_TOP</code> will be mentioned a lot of times. It refers to
@@ -154,7 +172,7 @@ already ran <code class="inline">configure</code> and do not need to do this aga
 <code class="inline">configure</code>.</p><pre><code class="makeup shell" translate="no"><span class="gp unselectable">$ </span><span class="">./configure [Configure Args]
 </span></code></pre><p>When building the documentation you need a full Erlang/OTP-28.2 system in
 the <code class="inline">$PATH</code>.</p><pre><code class="makeup shell" translate="no"><span class="gp unselectable">$ </span><span class="">export PATH=$ERL_TOP/bin:$PATH     # Assuming bash/sh
-</span></code></pre><p>To build <code class="inline">html</code> and <code class="inline">epub</code> docs you need to have <a href="https://github.com/elixir-lang/ex_doc">ExDoc v0.38.1</a>.
+</span></code></pre><p>To build <code class="inline">html</code> and <code class="inline">epub</code> docs you need to have <a href="https://github.com/elixir-lang/ex_doc">ExDoc v0.39.2</a>.
 See <a href="#building-documentation">Building Documentation</a> for information on how to
 install ExDoc.</p><p>Build the documentation using:</p><pre><code class="makeup shell" translate="no"><span class="gp unselectable">$ </span><span class="">make docs
 </span></code></pre><p>It is possible to limit which types of documentation is build by passing the <code class="inline">DOC_TARGETS</code>
@@ -470,8 +488,8 @@ Cross Compiling Erlang/OTP
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="Erlang System Documentation.epub" title="ePub version">
@@ -483,7 +501,7 @@ Cross Compiling Erlang/OTP
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

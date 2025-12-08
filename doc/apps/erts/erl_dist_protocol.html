@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="erts v16.1.2">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/erts/erl_dist_protocol.html" />
     <title>Distribution Protocol — erts v16.1.2</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-E03DE236.js"></script>
+    <script defer src="dist/sidebar_items-2AA89852.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ erts
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of erts</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -84,7 +102,7 @@ erts
     <h1>Distribution Protocol</h1>
 
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/erts/doc/guides/erl_dist_protocol.md#L1" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/erts/doc/guides/erl_dist_protocol.md#L1" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -193,7 +211,7 @@ sequenceDiagram
     
     client -&gt;&gt; EPMD: NAMES_REQ
     EPMD --&gt;&gt; client: NAMES_RESP</code></pre><table><thead><tr><th style="text-align: left;">1</th></tr></thead><tbody><tr><td style="text-align: left;"><code class="inline">110</code></td></tr></tbody></table><p><em>Table: NAMES_REQ (110)</em></p><p>The response for a <code class="inline">NAMES_REQ</code> is as follows:</p><table><thead><tr><th style="text-align: left;">4</th><th style="text-align: left;"></th></tr></thead><tbody><tr><td style="text-align: left;"><code class="inline">EPMDPortNo</code></td><td style="text-align: left;"><code class="inline">NodeInfo*</code></td></tr></tbody></table><p><em>Table: NAMES_RESP</em></p><p><code class="inline">NodeInfo</code> is a string written for each active node. When all <code class="inline">NodeInfo</code> has
-been written the connection is closed by the EPMD.</p><p><code class="inline">NodeInfo</code> is, as expressed in Erlang:</p><pre><code class="makeup erlang" translate="no"><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="0530478188-1">(</span><span class="s">&quot;name ~ts at port </span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0530478188-2">[</span><span class="n">NodeName</span><span class="p">,</span><span class="w"> </span><span class="n">Port</span><span class="p" data-group-id="0530478188-2">]</span><span class="p" data-group-id="0530478188-1">)</span><span class="p">.</span></code></pre><h3 id="dump-all-data-from-epmd" class="section-heading"><a href="#dump-all-data-from-epmd" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Dump All Data from EPMD</span></h3><p>This request is not really used, it is to be regarded as a debug feature.</p><pre><code class="mermaid">---
+been written the connection is closed by the EPMD.</p><p><code class="inline">NodeInfo</code> is, as expressed in Erlang:</p><pre><code class="makeup erlang" translate="no"><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="9655718502-1">(</span><span class="s">&quot;name ~ts at port </span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9655718502-2">[</span><span class="n">NodeName</span><span class="p">,</span><span class="w"> </span><span class="n">Port</span><span class="p" data-group-id="9655718502-2">]</span><span class="p" data-group-id="9655718502-1">)</span><span class="p">.</span></code></pre><h3 id="dump-all-data-from-epmd" class="section-heading"><a href="#dump-all-data-from-epmd" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Dump All Data from EPMD</span></h3><p>This request is not really used, it is to be regarded as a debug feature.</p><pre><code class="mermaid">---
 title: Dump All Data from EPMD
 ---
 sequenceDiagram
@@ -202,9 +220,9 @@ sequenceDiagram
     
     client -&gt;&gt; EPMD: DUMP_REQ
     EPMD --&gt;&gt; client: DUMP_RESP</code></pre><table><thead><tr><th style="text-align: left;">1</th></tr></thead><tbody><tr><td style="text-align: left;"><code class="inline">100</code></td></tr></tbody></table><p><em>Table: DUMP_REQ</em></p><p>The response for a <code class="inline">DUMP_REQ</code> is as follows:</p><table><thead><tr><th style="text-align: left;">4</th><th style="text-align: left;"></th></tr></thead><tbody><tr><td style="text-align: left;"><code class="inline">EPMDPortNo</code></td><td style="text-align: left;"><code class="inline">NodeInfo*</code></td></tr></tbody></table><p><em>Table: DUMP_RESP</em></p><p><code class="inline">NodeInfo</code> is a string written for each node kept in the EPMD. When all
-<code class="inline">NodeInfo</code> has been written the connection is closed by the EPMD.</p><p><code class="inline">NodeInfo</code> is, as expressed in Erlang:</p><pre><code class="makeup erlang" translate="no"><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="4015279601-1">(</span><span class="s">&quot;active name     ~ts at port </span><span class="si">~p</span><span class="s">, fd = </span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w">
-          </span><span class="p" data-group-id="4015279601-2">[</span><span class="n">NodeName</span><span class="p">,</span><span class="w"> </span><span class="n">Port</span><span class="p">,</span><span class="w"> </span><span class="n">Fd</span><span class="p" data-group-id="4015279601-2">]</span><span class="p" data-group-id="4015279601-1">)</span><span class="p">.</span></code></pre><p>or</p><pre><code class="makeup erlang" translate="no"><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="8926312809-1">(</span><span class="s">&quot;old/unused name ~ts at port </span><span class="si">~p</span><span class="s">, fd = </span><span class="si">~p</span><span class="s"> </span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w">
-          </span><span class="p" data-group-id="8926312809-2">[</span><span class="n">NodeName</span><span class="p">,</span><span class="w"> </span><span class="n">Port</span><span class="p">,</span><span class="w"> </span><span class="n">Fd</span><span class="p" data-group-id="8926312809-2">]</span><span class="p" data-group-id="8926312809-1">)</span><span class="p">.</span></code></pre><h3 id="kill-epmd" class="section-heading"><a href="#kill-epmd" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Kill EPMD</span></h3><p>This request kills the running EPMD. It is almost never used.</p><pre><code class="mermaid">---
+<code class="inline">NodeInfo</code> has been written the connection is closed by the EPMD.</p><p><code class="inline">NodeInfo</code> is, as expressed in Erlang:</p><pre><code class="makeup erlang" translate="no"><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="0074499060-1">(</span><span class="s">&quot;active name     ~ts at port </span><span class="si">~p</span><span class="s">, fd = </span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="0074499060-2">[</span><span class="n">NodeName</span><span class="p">,</span><span class="w"> </span><span class="n">Port</span><span class="p">,</span><span class="w"> </span><span class="n">Fd</span><span class="p" data-group-id="0074499060-2">]</span><span class="p" data-group-id="0074499060-1">)</span><span class="p">.</span></code></pre><p>or</p><pre><code class="makeup erlang" translate="no"><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="2000479027-1">(</span><span class="s">&quot;old/unused name ~ts at port </span><span class="si">~p</span><span class="s">, fd = </span><span class="si">~p</span><span class="s"> </span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="2000479027-2">[</span><span class="n">NodeName</span><span class="p">,</span><span class="w"> </span><span class="n">Port</span><span class="p">,</span><span class="w"> </span><span class="n">Fd</span><span class="p" data-group-id="2000479027-2">]</span><span class="p" data-group-id="2000479027-1">)</span><span class="p">.</span></code></pre><h3 id="kill-epmd" class="section-heading"><a href="#kill-epmd" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Kill EPMD</span></h3><p>This request kills the running EPMD. It is almost never used.</p><pre><code class="mermaid">---
 title: Kill EPMD
 ---
 sequenceDiagram
@@ -300,7 +318,7 @@ big endian integer. <code class="inline">Creation</code> is the incarnation iden
 digest and its own challenge. Those are sent together in a package to <code class="inline">B</code>:</p><table><thead><tr><th style="text-align: left;">1</th><th style="text-align: left;">4</th><th style="text-align: left;">16</th></tr></thead><tbody><tr><td style="text-align: left;"><code class="inline">'r'</code></td><td style="text-align: left;"><code class="inline">Challenge</code></td><td style="text-align: left;"><code class="inline">Digest</code></td></tr></tbody></table><p><em>Table: The challenge_reply message</em></p><p><code class="inline">Challenge</code> is <code class="inline">A</code>'s challenge for <code class="inline">B</code> to handle. <code class="inline">Digest</code> is the MD5 digest
 that <code class="inline">A</code> constructed from the challenge <code class="inline">B</code> sent in the previous step.</p></li><li><p><strong>6) <code class="inline">recv_challenge_ack</code>/<code class="inline">send_challenge_ack</code></strong> - <code class="inline">B</code> checks that the digest
 received from <code class="inline">A</code> is correct and generates a digest from the challenge
-received from <code class="inline">A</code>. The digest is then sent to <code class="inline">A</code>. The message is as follows:</p><table><thead><tr><th style="text-align: left;">1</th><th style="text-align: left;">16</th></tr></thead><tbody><tr><td style="text-align: left;"><code class="inline">'a'</code></td><td style="text-align: left;"><code class="inline">Digest</code></td></tr></tbody></table><p><em>Table: The challenge_ack message</em></p><p><code class="inline">Digest</code> is the digest calculated by <code class="inline">B</code> for <code class="inline">A</code>'s challenge.</p></li><li><p><strong>7) check</strong> - <code class="inline">A</code> checks the digest from <code class="inline">B</code> and the connection is up.</p></li></ul><h3 id="semigraphic-view" class="section-heading"><a href="#semigraphic-view" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Semigraphic View</span></h3><pre><code class="makeup erlang" translate="no"><span class="n">A</span><span class="w"> </span><span class="p" data-group-id="2282011737-1">(</span><span class="ss">initiator</span><span class="p" data-group-id="2282011737-1">)</span><span class="w">                                      </span><span class="n">B</span><span class="w"> </span><span class="p" data-group-id="2282011737-2">(</span><span class="ss">acceptor</span><span class="p" data-group-id="2282011737-2">)</span><span class="w">
+received from <code class="inline">A</code>. The digest is then sent to <code class="inline">A</code>. The message is as follows:</p><table><thead><tr><th style="text-align: left;">1</th><th style="text-align: left;">16</th></tr></thead><tbody><tr><td style="text-align: left;"><code class="inline">'a'</code></td><td style="text-align: left;"><code class="inline">Digest</code></td></tr></tbody></table><p><em>Table: The challenge_ack message</em></p><p><code class="inline">Digest</code> is the digest calculated by <code class="inline">B</code> for <code class="inline">A</code>'s challenge.</p></li><li><p><strong>7) check</strong> - <code class="inline">A</code> checks the digest from <code class="inline">B</code> and the connection is up.</p></li></ul><h3 id="semigraphic-view" class="section-heading"><a href="#semigraphic-view" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Semigraphic View</span></h3><pre><code class="makeup erlang" translate="no"><span class="n">A</span><span class="w"> </span><span class="p" data-group-id="6727684743-1">(</span><span class="ss">initiator</span><span class="p" data-group-id="6727684743-1">)</span><span class="w">                                      </span><span class="n">B</span><span class="w"> </span><span class="p" data-group-id="6727684743-2">(</span><span class="ss">acceptor</span><span class="p" data-group-id="6727684743-2">)</span><span class="w">
 
 </span><span class="n">TCP</span><span class="w"> </span><span class="ss">connect</span><span class="w"> </span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">&gt;</span><span class="w">
                                                    </span><span class="n">TCP</span><span class="w"> </span><span class="ss">accept</span><span class="w">
@@ -310,36 +328,36 @@ received from <code class="inline">A</code>. The digest is then sent to <code cl
 
   </span><span class="o">&lt;-</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">-</span><span class="w"> </span><span class="ss">send_status</span><span class="w">
 </span><span class="nf">recv_status</span><span class="w">
-</span><span class="p" data-group-id="2282011737-3">(</span><span class="k">if</span><span class="w"> </span><span class="ss">status</span><span class="w"> </span><span class="ss">was</span><span class="w"> </span><span class="ss">&#39;alive&#39;</span><span class="w">
+</span><span class="p" data-group-id="6727684743-3">(</span><span class="k">if</span><span class="w"> </span><span class="ss">status</span><span class="w"> </span><span class="ss">was</span><span class="w"> </span><span class="ss">&#39;alive&#39;</span><span class="w">
  </span><span class="ss">send_status</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-                                                   </span><span class="ss">recv_status</span><span class="p" data-group-id="2282011737-3">)</span><span class="w">
+                                                   </span><span class="ss">recv_status</span><span class="p" data-group-id="6727684743-3">)</span><span class="w">
 
-                          </span><span class="p" data-group-id="2282011737-4">(</span><span class="n">ChB</span><span class="p" data-group-id="2282011737-4">)</span><span class="w">                      </span><span class="n">ChB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">gen_challenge</span><span class="p" data-group-id="2282011737-5">(</span><span class="p" data-group-id="2282011737-5">)</span><span class="w">
+                          </span><span class="p" data-group-id="6727684743-4">(</span><span class="n">ChB</span><span class="p" data-group-id="6727684743-4">)</span><span class="w">                      </span><span class="n">ChB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">gen_challenge</span><span class="p" data-group-id="6727684743-5">(</span><span class="p" data-group-id="6727684743-5">)</span><span class="w">
   </span><span class="o">&lt;-</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">-</span><span class="w"> </span><span class="ss">send_challenge</span><span class="w">
 </span><span class="nf">recv_challenge</span><span class="w">
 
-</span><span class="p" data-group-id="2282011737-6">(</span><span class="k">if</span><span class="w"> </span><span class="ss">old</span><span class="w"> </span><span class="ss">send_name</span><span class="w">
+</span><span class="p" data-group-id="6727684743-6">(</span><span class="k">if</span><span class="w"> </span><span class="ss">old</span><span class="w"> </span><span class="ss">send_name</span><span class="w">
  </span><span class="ss">send_complement</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-                                                   </span><span class="ss">recv_complement</span><span class="p" data-group-id="2282011737-6">)</span><span class="w">
+                                                   </span><span class="ss">recv_complement</span><span class="p" data-group-id="6727684743-6">)</span><span class="w">
 
-</span><span class="n">ChA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">gen_challenge</span><span class="p" data-group-id="2282011737-7">(</span><span class="p" data-group-id="2282011737-7">)</span><span class="p">,</span><span class="w">
-</span><span class="n">OCA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">out_cookie</span><span class="p" data-group-id="2282011737-8">(</span><span class="n">B</span><span class="p" data-group-id="2282011737-8">)</span><span class="p">,</span><span class="w">
-</span><span class="n">DiA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">gen_digest</span><span class="p" data-group-id="2282011737-9">(</span><span class="n">ChB</span><span class="p">,</span><span class="w"> </span><span class="n">OCA</span><span class="p" data-group-id="2282011737-9">)</span><span class="w">
-                          </span><span class="p" data-group-id="2282011737-10">(</span><span class="n">ChA</span><span class="p">,</span><span class="w"> </span><span class="n">DiA</span><span class="p" data-group-id="2282011737-10">)</span><span class="w">
+</span><span class="n">ChA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">gen_challenge</span><span class="p" data-group-id="6727684743-7">(</span><span class="p" data-group-id="6727684743-7">)</span><span class="p">,</span><span class="w">
+</span><span class="n">OCA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">out_cookie</span><span class="p" data-group-id="6727684743-8">(</span><span class="n">B</span><span class="p" data-group-id="6727684743-8">)</span><span class="p">,</span><span class="w">
+</span><span class="n">DiA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">gen_digest</span><span class="p" data-group-id="6727684743-9">(</span><span class="n">ChB</span><span class="p">,</span><span class="w"> </span><span class="n">OCA</span><span class="p" data-group-id="6727684743-9">)</span><span class="w">
+                          </span><span class="p" data-group-id="6727684743-10">(</span><span class="n">ChA</span><span class="p">,</span><span class="w"> </span><span class="n">DiA</span><span class="p" data-group-id="6727684743-10">)</span><span class="w">
 </span><span class="ss">send_challenge_reply</span><span class="w"> </span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="p">-&gt;</span><span class="w">
                                                    </span><span class="ss">recv_challenge_reply</span><span class="w">
-                                                   </span><span class="n">ICB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">in_cookie</span><span class="p" data-group-id="2282011737-11">(</span><span class="n">A</span><span class="p" data-group-id="2282011737-11">)</span><span class="p">,</span><span class="w">
+                                                   </span><span class="n">ICB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">in_cookie</span><span class="p" data-group-id="6727684743-11">(</span><span class="n">A</span><span class="p" data-group-id="6727684743-11">)</span><span class="p">,</span><span class="w">
                                                    </span><span class="nc">check</span><span class="p">:</span><span class="w">
-                                                   </span><span class="n">DiA</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nf">gen_digest</span><span class="w"> </span><span class="p" data-group-id="2282011737-12">(</span><span class="n">ChB</span><span class="p">,</span><span class="w"> </span><span class="n">ICB</span><span class="p" data-group-id="2282011737-12">)</span><span class="o">?</span><span class="w">
+                                                   </span><span class="n">DiA</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nf">gen_digest</span><span class="w"> </span><span class="p" data-group-id="6727684743-12">(</span><span class="n">ChB</span><span class="p">,</span><span class="w"> </span><span class="n">ICB</span><span class="p" data-group-id="6727684743-12">)</span><span class="o">?</span><span class="w">
 </span><span class="w">                                                   </span><span class="p">-</span><span class="w"> </span><span class="na">if</span><span class="w"> </span><span class="n">OK</span><span class="p">:</span><span class="w">
-                                                    </span><span class="n">OCB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">out_cookie</span><span class="p" data-group-id="2282011737-13">(</span><span class="n">A</span><span class="p" data-group-id="2282011737-13">)</span><span class="p">,</span><span class="w">
-                                                    </span><span class="n">DiB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">gen_digest</span><span class="w"> </span><span class="p" data-group-id="2282011737-14">(</span><span class="n">ChA</span><span class="p">,</span><span class="w"> </span><span class="n">OCB</span><span class="p" data-group-id="2282011737-14">)</span><span class="w">
-                          </span><span class="p" data-group-id="2282011737-15">(</span><span class="n">DiB</span><span class="p" data-group-id="2282011737-15">)</span><span class="w">
+                                                    </span><span class="n">OCB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">out_cookie</span><span class="p" data-group-id="6727684743-13">(</span><span class="n">A</span><span class="p" data-group-id="6727684743-13">)</span><span class="p">,</span><span class="w">
+                                                    </span><span class="n">DiB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">gen_digest</span><span class="w"> </span><span class="p" data-group-id="6727684743-14">(</span><span class="n">ChA</span><span class="p">,</span><span class="w"> </span><span class="n">OCB</span><span class="p" data-group-id="6727684743-14">)</span><span class="w">
+                          </span><span class="p" data-group-id="6727684743-15">(</span><span class="n">DiB</span><span class="p" data-group-id="6727684743-15">)</span><span class="w">
   </span><span class="o">&lt;-</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="w"> </span><span class="ss">send_challenge_ack</span><span class="w">
 </span><span class="ss">recv_challenge_ack</span><span class="w">                                  </span><span class="n">DONE</span><span class="w">
-</span><span class="n">ICA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">in_cookie</span><span class="p" data-group-id="2282011737-16">(</span><span class="n">B</span><span class="p" data-group-id="2282011737-16">)</span><span class="p">,</span><span class="w">                                </span><span class="o">-</span><span class="w"> </span><span class="nc">else</span><span class="p">:</span><span class="w">
+</span><span class="n">ICA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">in_cookie</span><span class="p" data-group-id="6727684743-16">(</span><span class="n">B</span><span class="p" data-group-id="6727684743-16">)</span><span class="p">,</span><span class="w">                                </span><span class="o">-</span><span class="w"> </span><span class="nc">else</span><span class="p">:</span><span class="w">
 </span><span class="nc">check</span><span class="p">:</span><span class="w">                                              </span><span class="n">CLOSE</span><span class="w">
-</span><span class="n">DiB</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nf">gen_digest</span><span class="p" data-group-id="2282011737-17">(</span><span class="n">ChA</span><span class="p">,</span><span class="w"> </span><span class="n">ICA</span><span class="p" data-group-id="2282011737-17">)</span><span class="o">?</span><span class="w">
+</span><span class="n">DiB</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nf">gen_digest</span><span class="p" data-group-id="6727684743-17">(</span><span class="n">ChA</span><span class="p">,</span><span class="w"> </span><span class="n">ICA</span><span class="p" data-group-id="6727684743-17">)</span><span class="o">?</span><span class="w">
 </span><span class="p">-</span><span class="w"> </span><span class="na">if</span><span class="w"> </span><span class="n">OK</span><span class="p">:</span><span class="w">
  </span><span class="n">DONE</span><span class="w">
 </span><span class="p">-</span><span class="w"> </span><span class="na">else</span><span class="p">:</span><span class="w">
@@ -619,8 +637,8 @@ epmd
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
         </span>
@@ -628,7 +646,7 @@ epmd
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

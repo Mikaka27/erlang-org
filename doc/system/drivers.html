@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="Erlang System Documentation v28.2">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/system/drivers.html" />
     <title>Drivers — Erlang System Documentation v28.2</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-351B7E11.js"></script>
+    <script defer src="dist/sidebar_items-11C2FD0A.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ Erlang System Documentation
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of Erlang System Documentation</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -84,7 +102,7 @@ Erlang System Documentation
     <h1>Drivers</h1>
 
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/system/doc/efficiency_guide/drivers.md#L1" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/system/doc/efficiency_guide/drivers.md#L1" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -97,15 +115,15 @@ been opened to the same driver, only code for one port at the same time can be
 running.</p><p>A driver can be configured to have one lock for each port instead.</p><p>If a driver is used in a functional way (that is, holds no state, but only does
 some heavy calculation and returns a result), several ports with registered
 names can be opened beforehand, and the port to be used can be chosen based on
-the scheduler ID as follows:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">define</span><span class="p" data-group-id="1174343269-1">(</span><span class="n">PORT_NAMES</span><span class="p" data-group-id="1174343269-2">(</span><span class="p" data-group-id="1174343269-2">)</span><span class="p">,</span><span class="w">
-	</span><span class="p" data-group-id="1174343269-3">{</span><span class="ss">some_driver_01</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_02</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_03</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_04</span><span class="p">,</span><span class="w">
+the scheduler ID as follows:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">define</span><span class="p" data-group-id="5976223740-1">(</span><span class="n">PORT_NAMES</span><span class="p" data-group-id="5976223740-2">(</span><span class="p" data-group-id="5976223740-2">)</span><span class="p">,</span><span class="w">
+	</span><span class="p" data-group-id="5976223740-3">{</span><span class="ss">some_driver_01</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_02</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_03</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_04</span><span class="p">,</span><span class="w">
 	 </span><span class="ss">some_driver_05</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_06</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_07</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_08</span><span class="p">,</span><span class="w">
 	 </span><span class="ss">some_driver_09</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_10</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_11</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_12</span><span class="p">,</span><span class="w">
-	 </span><span class="ss">some_driver_13</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_14</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_15</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_16</span><span class="p" data-group-id="1174343269-3">}</span><span class="p" data-group-id="1174343269-1">)</span><span class="p">.</span><span class="w">
+	 </span><span class="ss">some_driver_13</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_14</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_15</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_16</span><span class="p" data-group-id="5976223740-3">}</span><span class="p" data-group-id="5976223740-1">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">client_port</span><span class="p" data-group-id="1174343269-4">(</span><span class="p" data-group-id="1174343269-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="nf">element</span><span class="p" data-group-id="1174343269-5">(</span><span class="nc">erlang</span><span class="p">:</span><span class="nf">system_info</span><span class="p" data-group-id="1174343269-6">(</span><span class="ss">scheduler_id</span><span class="p" data-group-id="1174343269-6">)</span><span class="w"> </span><span class="ow">rem</span><span class="w"> </span><span class="nf">tuple_size</span><span class="p" data-group-id="1174343269-7">(</span><span class="o">?</span><span class="n">PORT_NAMES</span><span class="p" data-group-id="1174343269-8">(</span><span class="p" data-group-id="1174343269-8">)</span><span class="p" data-group-id="1174343269-7">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-	    </span><span class="o">?</span><span class="n">PORT_NAMES</span><span class="p" data-group-id="1174343269-9">(</span><span class="p" data-group-id="1174343269-9">)</span><span class="p" data-group-id="1174343269-5">)</span><span class="p">.</span></code></pre><p>As long as there are no more than 16 schedulers, there will never be any lock
+</span><span class="nf">client_port</span><span class="p" data-group-id="5976223740-4">(</span><span class="p" data-group-id="5976223740-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="nf">element</span><span class="p" data-group-id="5976223740-5">(</span><span class="nc">erlang</span><span class="p">:</span><span class="nf">system_info</span><span class="p" data-group-id="5976223740-6">(</span><span class="ss">scheduler_id</span><span class="p" data-group-id="5976223740-6">)</span><span class="w"> </span><span class="ow">rem</span><span class="w"> </span><span class="nf">tuple_size</span><span class="p" data-group-id="5976223740-7">(</span><span class="o">?</span><span class="n">PORT_NAMES</span><span class="p" data-group-id="5976223740-8">(</span><span class="p" data-group-id="5976223740-8">)</span><span class="p" data-group-id="5976223740-7">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+	    </span><span class="o">?</span><span class="n">PORT_NAMES</span><span class="p" data-group-id="5976223740-9">(</span><span class="p" data-group-id="5976223740-9">)</span><span class="p" data-group-id="5976223740-5">)</span><span class="p">.</span></code></pre><p>As long as there are no more than 16 schedulers, there will never be any lock
 contention on the port lock for the driver.</p><h2 id="avoiding-copying-binaries-when-calling-a-driver" class="section-heading"><a href="#avoiding-copying-binaries-when-calling-a-driver" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Avoiding Copying Binaries When Calling a Driver</span></h2><p>There are basically two ways to avoid copying a binary that is sent to a driver:</p><ul><li><p>If the <code class="inline">Data</code> argument for <a href="../apps/erts/erlang.html#port_control/3"><code class="inline">port_control/3</code></a> is a
 binary, the driver will be passed a pointer to the contents of the binary and
 the binary will not be copied. If the <code class="inline">Data</code> argument is an iolist (list of
@@ -165,8 +183,8 @@ Memory Usage
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="Erlang System Documentation.epub" title="ePub version">
@@ -178,7 +196,7 @@ Memory Usage
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

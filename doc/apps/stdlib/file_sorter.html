@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="stdlib v7.1">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/file_sorter.html" />
     <title>file_sorter — stdlib v7.1</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-296BF65E.js"></script>
+    <script defer src="dist/sidebar_items-E5A5C6F9.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ stdlib
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of stdlib</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ stdlib
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -163,35 +181,35 @@ the current call to the sort or merge function.</p><p>If a function is specified
 argument <code class="inline">{value, Value}</code>. This makes it easy to initiate the sequence of output
 functions with a value calculated by the input functions.</p><p>As an example, consider sorting the terms on a disk log file. A function that
 reads chunks from the disk log and returns a list of binaries is used as input.
-The results are collected in a list of terms.</p><pre><code class="makeup erlang" translate="no"><span class="nf">sort</span><span class="p" data-group-id="1888460344-1">(</span><span class="n">Log</span><span class="p" data-group-id="1888460344-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="p" data-group-id="1888460344-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="p" data-group-id="1888460344-2">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">disk_log</span><span class="p">:</span><span class="nf">open</span><span class="p" data-group-id="1888460344-3">(</span><span class="p" data-group-id="1888460344-4">[</span><span class="p" data-group-id="1888460344-5">{</span><span class="ss">name</span><span class="p">,</span><span class="n">Log</span><span class="p" data-group-id="1888460344-5">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1888460344-6">{</span><span class="ss">mode</span><span class="p">,</span><span class="ss">read_only</span><span class="p" data-group-id="1888460344-6">}</span><span class="p" data-group-id="1888460344-4">]</span><span class="p" data-group-id="1888460344-3">)</span><span class="p">,</span><span class="w">
-    </span><span class="n">Input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">input</span><span class="p" data-group-id="1888460344-7">(</span><span class="n">Log</span><span class="p">,</span><span class="w"> </span><span class="ss">start</span><span class="p" data-group-id="1888460344-7">)</span><span class="p">,</span><span class="w">
-    </span><span class="n">Output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">output</span><span class="p" data-group-id="1888460344-8">(</span><span class="p" data-group-id="1888460344-9">[</span><span class="p" data-group-id="1888460344-9">]</span><span class="p" data-group-id="1888460344-8">)</span><span class="p">,</span><span class="w">
-    </span><span class="n">Reply</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">file_sorter</span><span class="p">:</span><span class="nf">sort</span><span class="p" data-group-id="1888460344-10">(</span><span class="n">Input</span><span class="p">,</span><span class="w"> </span><span class="n">Output</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1888460344-11">{</span><span class="ss">format</span><span class="p">,</span><span class="ss">term</span><span class="p" data-group-id="1888460344-11">}</span><span class="p" data-group-id="1888460344-10">)</span><span class="p">,</span><span class="w">
-    </span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">disk_log</span><span class="p">:</span><span class="nf">close</span><span class="p" data-group-id="1888460344-12">(</span><span class="n">Log</span><span class="p" data-group-id="1888460344-12">)</span><span class="p">,</span><span class="w">
+The results are collected in a list of terms.</p><pre><code class="makeup erlang" translate="no"><span class="nf">sort</span><span class="p" data-group-id="2350975773-1">(</span><span class="n">Log</span><span class="p" data-group-id="2350975773-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="p" data-group-id="2350975773-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="p" data-group-id="2350975773-2">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">disk_log</span><span class="p">:</span><span class="nf">open</span><span class="p" data-group-id="2350975773-3">(</span><span class="p" data-group-id="2350975773-4">[</span><span class="p" data-group-id="2350975773-5">{</span><span class="ss">name</span><span class="p">,</span><span class="n">Log</span><span class="p" data-group-id="2350975773-5">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2350975773-6">{</span><span class="ss">mode</span><span class="p">,</span><span class="ss">read_only</span><span class="p" data-group-id="2350975773-6">}</span><span class="p" data-group-id="2350975773-4">]</span><span class="p" data-group-id="2350975773-3">)</span><span class="p">,</span><span class="w">
+    </span><span class="n">Input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">input</span><span class="p" data-group-id="2350975773-7">(</span><span class="n">Log</span><span class="p">,</span><span class="w"> </span><span class="ss">start</span><span class="p" data-group-id="2350975773-7">)</span><span class="p">,</span><span class="w">
+    </span><span class="n">Output</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">output</span><span class="p" data-group-id="2350975773-8">(</span><span class="p" data-group-id="2350975773-9">[</span><span class="p" data-group-id="2350975773-9">]</span><span class="p" data-group-id="2350975773-8">)</span><span class="p">,</span><span class="w">
+    </span><span class="n">Reply</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">file_sorter</span><span class="p">:</span><span class="nf">sort</span><span class="p" data-group-id="2350975773-10">(</span><span class="n">Input</span><span class="p">,</span><span class="w"> </span><span class="n">Output</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2350975773-11">{</span><span class="ss">format</span><span class="p">,</span><span class="ss">term</span><span class="p" data-group-id="2350975773-11">}</span><span class="p" data-group-id="2350975773-10">)</span><span class="p">,</span><span class="w">
+    </span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">disk_log</span><span class="p">:</span><span class="nf">close</span><span class="p" data-group-id="2350975773-12">(</span><span class="n">Log</span><span class="p" data-group-id="2350975773-12">)</span><span class="p">,</span><span class="w">
     </span><span class="n">Reply</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">input</span><span class="p" data-group-id="1888460344-13">(</span><span class="n">Log</span><span class="p">,</span><span class="w"> </span><span class="n">Cont</span><span class="p" data-group-id="1888460344-13">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="nf">fun</span><span class="p" data-group-id="1888460344-14">(</span><span class="ss">close</span><span class="p" data-group-id="1888460344-14">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+</span><span class="nf">input</span><span class="p" data-group-id="2350975773-13">(</span><span class="n">Log</span><span class="p">,</span><span class="w"> </span><span class="n">Cont</span><span class="p" data-group-id="2350975773-13">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="nf">fun</span><span class="p" data-group-id="2350975773-14">(</span><span class="ss">close</span><span class="p" data-group-id="2350975773-14">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
             </span><span class="ss">ok</span><span class="p">;</span><span class="w">
-       </span><span class="p" data-group-id="1888460344-15">(</span><span class="ss">read</span><span class="p" data-group-id="1888460344-15">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-            </span><span class="k">case</span><span class="w"> </span><span class="nc">disk_log</span><span class="p">:</span><span class="nf">chunk</span><span class="p" data-group-id="1888460344-16">(</span><span class="n">Log</span><span class="p">,</span><span class="w"> </span><span class="n">Cont</span><span class="p" data-group-id="1888460344-16">)</span><span class="w"> </span><span class="k">of</span><span class="w">
-                </span><span class="p" data-group-id="1888460344-17">{</span><span class="ss">error</span><span class="p">,</span><span class="w"> </span><span class="n">Reason</span><span class="p" data-group-id="1888460344-17">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-                    </span><span class="p" data-group-id="1888460344-18">{</span><span class="ss">error</span><span class="p">,</span><span class="w"> </span><span class="n">Reason</span><span class="p" data-group-id="1888460344-18">}</span><span class="p">;</span><span class="w">
-                </span><span class="p" data-group-id="1888460344-19">{</span><span class="n">Cont2</span><span class="p">,</span><span class="w"> </span><span class="n">Terms</span><span class="p" data-group-id="1888460344-19">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-                    </span><span class="p" data-group-id="1888460344-20">{</span><span class="n">Terms</span><span class="p">,</span><span class="w"> </span><span class="nf">input</span><span class="p" data-group-id="1888460344-21">(</span><span class="n">Log</span><span class="p">,</span><span class="w"> </span><span class="n">Cont2</span><span class="p" data-group-id="1888460344-21">)</span><span class="p" data-group-id="1888460344-20">}</span><span class="p">;</span><span class="w">
-                </span><span class="p" data-group-id="1888460344-22">{</span><span class="n">Cont2</span><span class="p">,</span><span class="w"> </span><span class="n">Terms</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="n">Badbytes</span><span class="p" data-group-id="1888460344-22">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-                    </span><span class="p" data-group-id="1888460344-23">{</span><span class="n">Terms</span><span class="p">,</span><span class="w"> </span><span class="nf">input</span><span class="p" data-group-id="1888460344-24">(</span><span class="n">Log</span><span class="p">,</span><span class="w"> </span><span class="n">Cont2</span><span class="p" data-group-id="1888460344-24">)</span><span class="p" data-group-id="1888460344-23">}</span><span class="p">;</span><span class="w">
+       </span><span class="p" data-group-id="2350975773-15">(</span><span class="ss">read</span><span class="p" data-group-id="2350975773-15">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+            </span><span class="k">case</span><span class="w"> </span><span class="nc">disk_log</span><span class="p">:</span><span class="nf">chunk</span><span class="p" data-group-id="2350975773-16">(</span><span class="n">Log</span><span class="p">,</span><span class="w"> </span><span class="n">Cont</span><span class="p" data-group-id="2350975773-16">)</span><span class="w"> </span><span class="k">of</span><span class="w">
+                </span><span class="p" data-group-id="2350975773-17">{</span><span class="ss">error</span><span class="p">,</span><span class="w"> </span><span class="n">Reason</span><span class="p" data-group-id="2350975773-17">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+                    </span><span class="p" data-group-id="2350975773-18">{</span><span class="ss">error</span><span class="p">,</span><span class="w"> </span><span class="n">Reason</span><span class="p" data-group-id="2350975773-18">}</span><span class="p">;</span><span class="w">
+                </span><span class="p" data-group-id="2350975773-19">{</span><span class="n">Cont2</span><span class="p">,</span><span class="w"> </span><span class="n">Terms</span><span class="p" data-group-id="2350975773-19">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+                    </span><span class="p" data-group-id="2350975773-20">{</span><span class="n">Terms</span><span class="p">,</span><span class="w"> </span><span class="nf">input</span><span class="p" data-group-id="2350975773-21">(</span><span class="n">Log</span><span class="p">,</span><span class="w"> </span><span class="n">Cont2</span><span class="p" data-group-id="2350975773-21">)</span><span class="p" data-group-id="2350975773-20">}</span><span class="p">;</span><span class="w">
+                </span><span class="p" data-group-id="2350975773-22">{</span><span class="n">Cont2</span><span class="p">,</span><span class="w"> </span><span class="n">Terms</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="n">Badbytes</span><span class="p" data-group-id="2350975773-22">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+                    </span><span class="p" data-group-id="2350975773-23">{</span><span class="n">Terms</span><span class="p">,</span><span class="w"> </span><span class="nf">input</span><span class="p" data-group-id="2350975773-24">(</span><span class="n">Log</span><span class="p">,</span><span class="w"> </span><span class="n">Cont2</span><span class="p" data-group-id="2350975773-24">)</span><span class="p" data-group-id="2350975773-23">}</span><span class="p">;</span><span class="w">
                 </span><span class="ss">eof</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
                     </span><span class="ss">end_of_input</span><span class="w">
             </span><span class="k">end</span><span class="w">
     </span><span class="k">end</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">output</span><span class="p" data-group-id="1888460344-25">(</span><span class="n">L</span><span class="p" data-group-id="1888460344-25">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="nf">fun</span><span class="p" data-group-id="1888460344-26">(</span><span class="ss">close</span><span class="p" data-group-id="1888460344-26">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-            </span><span class="nc">lists</span><span class="p">:</span><span class="nf">append</span><span class="p" data-group-id="1888460344-27">(</span><span class="nc">lists</span><span class="p">:</span><span class="nf">reverse</span><span class="p" data-group-id="1888460344-28">(</span><span class="n">L</span><span class="p" data-group-id="1888460344-28">)</span><span class="p" data-group-id="1888460344-27">)</span><span class="p">;</span><span class="w">
-       </span><span class="p" data-group-id="1888460344-29">(</span><span class="n">Terms</span><span class="p" data-group-id="1888460344-29">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-            </span><span class="nf">output</span><span class="p" data-group-id="1888460344-30">(</span><span class="p" data-group-id="1888460344-31">[</span><span class="n">Terms</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="n">L</span><span class="p" data-group-id="1888460344-31">]</span><span class="p" data-group-id="1888460344-30">)</span><span class="w">
+</span><span class="nf">output</span><span class="p" data-group-id="2350975773-25">(</span><span class="n">L</span><span class="p" data-group-id="2350975773-25">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="nf">fun</span><span class="p" data-group-id="2350975773-26">(</span><span class="ss">close</span><span class="p" data-group-id="2350975773-26">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+            </span><span class="nc">lists</span><span class="p">:</span><span class="nf">append</span><span class="p" data-group-id="2350975773-27">(</span><span class="nc">lists</span><span class="p">:</span><span class="nf">reverse</span><span class="p" data-group-id="2350975773-28">(</span><span class="n">L</span><span class="p" data-group-id="2350975773-28">)</span><span class="p" data-group-id="2350975773-27">)</span><span class="p">;</span><span class="w">
+       </span><span class="p" data-group-id="2350975773-29">(</span><span class="n">Terms</span><span class="p" data-group-id="2350975773-29">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+            </span><span class="nf">output</span><span class="p" data-group-id="2350975773-30">(</span><span class="p" data-group-id="2350975773-31">[</span><span class="n">Terms</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="n">L</span><span class="p" data-group-id="2350975773-31">]</span><span class="p" data-group-id="2350975773-30">)</span><span class="w">
     </span><span class="k">end</span><span class="p">.</span></code></pre><p>For more examples of functions as input and output, see the end of the
 <code class="inline">file_sorter</code> module; the <code class="inline">term</code> format is implemented with functions.</p><p>The possible values of <code class="inline">Reason</code> returned when an error occurs are:</p><ul><li><code class="inline">bad_object</code>, <code class="inline">{bad_object, FileName}</code> - Applying the format function failed
 for some binary, or the key(s) could not be extracted from some term.</li><li><code class="inline">{bad_term, FileName}</code> - <a href="io.html#read/2"><code class="inline">io:read/2</code></a> failed to read some term.</li><li><code class="inline">{file_error, FileName, file:posix()}</code> - For an explanation of
@@ -433,7 +451,7 @@ term.</li></ul>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">check([FileName], [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#check/2"><code class="inline">check([FileName], [])</code></a>.</p></div>
 
     </div>
 
@@ -454,7 +472,7 @@ element is returned. The first term on a file has position 1.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">keycheck(KeyPos, [Filename], [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#keycheck/3"><code class="inline">keycheck(KeyPos, [Filename], [])</code></a>.</p></div>
 
     </div>
 
@@ -475,7 +493,7 @@ element is returned. The first term on a file has position 1.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">keymerge(KeyPos, FileNames, Output, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#keymerge/4"><code class="inline">keymerge(KeyPos, FileNames, Output, [])</code></a>.</p></div>
 
     </div>
 
@@ -505,7 +523,7 @@ element is returned. The first term on a file has position 1.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">keysort(KeyPos, Input, Output, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#keysort/4"><code class="inline">keysort(KeyPos, Input, Output, [])</code></a>.</p></div>
 
     </div>
 
@@ -527,7 +545,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">merge(FileNames, Output, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#merge/3"><code class="inline">merge(FileNames, Output, [])</code></a>.</p></div>
 
     </div>
 
@@ -557,7 +575,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">sort(Input, Output, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#sort/3"><code class="inline">sort(Input, Output, [])</code></a>.</p></div>
 
     </div>
 
@@ -583,6 +601,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:file_name/0">
 
@@ -596,7 +615,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L215" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L215" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -626,7 +645,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L216" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L216" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -656,7 +675,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L240" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L240" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -686,7 +705,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L241" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L241" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -716,7 +735,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L242" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L242" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -746,7 +765,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L217" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L217" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -776,7 +795,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L218" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L218" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -806,7 +825,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L220" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L220" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -836,7 +855,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L221" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L221" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -866,7 +885,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L222" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L222" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -896,7 +915,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L243" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L243" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -926,7 +945,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L244" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L244" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -956,7 +975,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L223" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L223" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -986,7 +1005,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L224" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L224" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1016,7 +1035,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L225" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L225" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1046,7 +1065,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L232" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L232" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1084,7 +1103,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L231" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L231" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1114,7 +1133,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L245" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L245" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1144,7 +1163,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L246" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L246" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1174,7 +1193,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L226" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L226" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1204,7 +1223,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L227" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L227" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1234,7 +1253,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L228" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L228" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1262,7 +1281,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
       <h1 class="signature" translate="no">reason()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L250" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L250" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1297,7 +1316,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L247" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L247" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1327,7 +1346,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L248" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L248" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1357,7 +1376,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L229" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L229" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1386,6 +1405,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="check/1">
 
@@ -1397,7 +1417,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
       <h1 class="signature" translate="no">check(FileName)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L407" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L407" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1430,7 +1450,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
       <h1 class="signature" translate="no">check(FileNames, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L421" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L421" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1466,7 +1486,7 @@ element is returned. The first term on a file has position 1.</p>
       <h1 class="signature" translate="no">keycheck(KeyPos, FileName)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L436" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L436" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1500,7 +1520,7 @@ element is returned. The first term on a file has position 1.</p>
       <h1 class="signature" translate="no">keycheck(KeyPos, FileNames, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L451" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L451" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1537,7 +1557,7 @@ element is returned. The first term on a file has position 1.</p>
       <h1 class="signature" translate="no">keymerge(KeyPos, FileNames, Output)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L370" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L370" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1570,7 +1590,7 @@ element is returned. The first term on a file has position 1.</p>
       <h1 class="signature" translate="no">keymerge(KeyPos, FileNames, Output, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L382" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L382" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1604,7 +1624,7 @@ element is returned. The first term on a file has position 1.</p>
       <h1 class="signature" translate="no">keysort(KeyPos, FileName)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L297" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L297" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1636,7 +1656,7 @@ element is returned. The first term on a file has position 1.</p>
       <h1 class="signature" translate="no">keysort(KeyPos, Input, Output)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L306" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L306" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1669,7 +1689,7 @@ element is returned. The first term on a file has position 1.</p>
       <h1 class="signature" translate="no">keysort(KeyPos, Input, Output, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L320" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L320" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1705,7 +1725,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
       <h1 class="signature" translate="no">merge(FileNames, Output)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L344" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L344" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1737,7 +1757,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
       <h1 class="signature" translate="no">merge(FileNames, Output, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L355" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L355" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1770,7 +1790,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
       <h1 class="signature" translate="no">sort(FileName)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L263" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L263" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1801,7 +1821,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
       <h1 class="signature" translate="no">sort(Input, Output)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L271" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L271" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1833,7 +1853,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
       <h1 class="signature" translate="no">sort(Input, Output, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/file_sorter.erl#L282" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/file_sorter.erl#L282" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1864,8 +1884,8 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="stdlib.epub" title="ePub version">
@@ -1877,7 +1897,7 @@ according to <code class="inline">KeyPos</code> is compared. The sort is stable.
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

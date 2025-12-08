@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="kernel v10.4.2">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/kernel/erl_ddll.html" />
     <title>erl_ddll — kernel v10.4.2</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-87F8FB49.js"></script>
+    <script defer src="dist/sidebar_items-D3B3E40C.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ kernel
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of kernel</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ kernel
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erl_ddll.erl#L27" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erl_ddll.erl#L27" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -210,7 +228,7 @@ reloader&quot; to demand loading of the driver in question.</p></li></ul></li></
 
       </div>
 
-        <div class="summary-synopsis"><p>Removes a driver monitor in much the same way as <a><code class="inline">erlang:demonitor/1</code></a> in ERTS
+        <div class="summary-synopsis"><p>Removes a driver monitor in much the same way as <a href="../../apps/erts/erlang.html#demonitor/1"><code class="inline">erlang:demonitor/1</code></a> in ERTS
 does with process monitors.</p></div>
 
     </div>
@@ -233,7 +251,7 @@ string that describes the error or warning.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Returns a list of tuples <code class="inline">{DriverName, InfoList}</code>, where <code class="inline">InfoList</code> is the
-result of calling <a><code class="inline">info/1</code></a> for that <code class="inline">DriverName</code>. Only dynamically linked-in
+result of calling <a href="#info/1"><code class="inline">info/1</code></a> for that <code class="inline">DriverName</code>. Only dynamically linked-in
 drivers are included in the list.</p></div>
 
     </div>
@@ -245,7 +263,7 @@ drivers are included in the list.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Returns a list of tuples <code class="inline">{Tag, Value}</code>, where <code class="inline">Tag</code> is the information item and
-<code class="inline">Value</code> is the result of calling <a><code class="inline">info/2</code></a> with this driver name and this tag.
+<code class="inline">Value</code> is the result of calling <a href="#info/2"><code class="inline">info/2</code></a> with this driver name and this tag.
 The result is a tuple list containing all information available about a driver.</p></div>
 
     </div>
@@ -281,7 +299,7 @@ same name. <code class="inline">Name</code> is a string or atom containing at le
 
       </div>
 
-        <div class="summary-synopsis"><p>Works essentially as <a><code class="inline">load/2</code></a>, but loads the driver with other
+        <div class="summary-synopsis"><p>Works essentially as <a href="#load/2"><code class="inline">load/2</code></a>, but loads the driver with other
 options. All ports using the driver are killed with reason <code class="inline">driver_unloaded</code>
 when the driver is to be unloaded.</p></div>
 
@@ -304,7 +322,7 @@ dynamically loaded ones.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Creates a driver monitor and works in many ways as <a><code class="inline">erlang:monitor/2</code></a> in ERTS,
+        <div class="summary-synopsis"><p>Creates a driver monitor and works in many ways as <a href="../../apps/erts/erlang.html#monitor/2"><code class="inline">erlang:monitor/2</code></a> in ERTS,
 does for processes. When a driver changes state, the monitor results in a
 monitor message that is sent to the calling process. <code class="inline">MonitorRef</code> returned by
 this function is included in the message sent.</p></div>
@@ -319,7 +337,7 @@ this function is included in the message sent.</p></div>
 
         <div class="summary-synopsis"><p>Reloads the driver named <code class="inline">Name</code> from a possibly different <code class="inline">Path</code> than previously
 used. This function is used in the code change
-<a><code class="inline">scenario</code></a> described in the introduction.</p></div>
+<a href="erl_ddll.html#scenarios"><code class="inline">scenario</code></a> described in the introduction.</p></div>
 
     </div>
 
@@ -329,7 +347,7 @@ used. This function is used in the code change
 
       </div>
 
-        <div class="summary-synopsis"><p>Works exactly as <a><code class="inline">reload/2</code></a>, but for drivers loaded with the <a><code class="inline">load_driver/2</code></a>
+        <div class="summary-synopsis"><p>Works exactly as <a href="#reload/2"><code class="inline">reload/2</code></a>, but for drivers loaded with the <a href="#load_driver/2"><code class="inline">load_driver/2</code></a>
 interface.</p></div>
 
     </div>
@@ -340,8 +358,8 @@ interface.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Provides more control than the <a><code class="inline">load/2</code></a>/<a><code class="inline">reload/2</code></a> and
-<a><code class="inline">load_driver/2</code></a>/<a><code class="inline">reload_driver/2</code></a>
+        <div class="summary-synopsis"><p>Provides more control than the <a href="#load/2"><code class="inline">load/2</code></a>/<a href="#reload/2"><code class="inline">reload/2</code></a> and
+<a href="#load_driver/2"><code class="inline">load_driver/2</code></a>/<a href="#reload_driver/2"><code class="inline">reload_driver/2</code></a>
 interfaces. It never waits for completion of other operations related to the
 driver, but immediately returns the status of the driver as one of the
 following</p></div>
@@ -357,7 +375,7 @@ following</p></div>
         <div class="summary-synopsis"><p>This is the low-level function to unload (or decrement reference counts of) a
 driver. It can be used to force port killing, in much the same way as the driver
 option <code class="inline">kill_ports</code> implicitly does. Also, it can trigger a monitor either
-because other <a>users</a> still have the driver loaded or
+because other <a href="erl_ddll.html#users">users</a> still have the driver loaded or
 because open ports use the driver.</p></div>
 
     </div>
@@ -369,9 +387,9 @@ because open ports use the driver.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Unloads, or at least dereferences the driver named <code class="inline">Name</code>. If the caller is the
-last <a>user</a> of the driver, and no more open ports use the
+last <a href="erl_ddll.html#users">user</a> of the driver, and no more open ports use the
 driver, the driver gets unloaded. Otherwise, unloading is delayed until all
-ports are closed and no <a>users</a> remain.</p></div>
+ports are closed and no <a href="erl_ddll.html#users">users</a> remain.</p></div>
 
     </div>
 
@@ -382,7 +400,7 @@ ports are closed and no <a>users</a> remain.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Unloads, or at least dereferences the driver named <code class="inline">Name</code>. If the caller is the
-last <a>user</a> of the driver, all remaining open ports using
+last <a href="erl_ddll.html#users">user</a> of the driver, all remaining open ports using
 the driver are killed with reason <code class="inline">driver_unloaded</code> and the driver eventually
 gets unloaded.</p></div>
 
@@ -400,6 +418,7 @@ gets unloaded.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:driver/0">
 
@@ -413,7 +432,7 @@ gets unloaded.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erl_ddll.erl#L168" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erl_ddll.erl#L168" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -443,7 +462,7 @@ gets unloaded.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erl_ddll.erl#L167" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erl_ddll.erl#L167" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -472,6 +491,7 @@ gets unloaded.</p></div>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="demonitor/1">
 
@@ -483,7 +503,7 @@ gets unloaded.</p></div>
       <h1 class="signature" translate="no">demonitor(MonitorRef)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erl_ddll.erl#L189" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erl_ddll.erl#L189" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -514,7 +534,7 @@ does with process monitors.</p><p>For details about how to create driver monitor
       <h1 class="signature" translate="no">format_error(ErrorDesc)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erl_ddll.erl#L1004" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erl_ddll.erl#L1004" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -546,7 +566,7 @@ machine as the error appeared in</em> (meaning the same operating system process
       <h1 class="signature" translate="no">info()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erl_ddll.erl#L1060" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erl_ddll.erl#L1060" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -582,7 +602,7 @@ drivers are included in the list.</p>
       <h1 class="signature" translate="no">info(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erl_ddll.erl#L1039" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erl_ddll.erl#L1039" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -617,7 +637,7 @@ system.</p>
       <h1 class="signature" translate="no">info(Name, Tag)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erl_ddll.erl#L235" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erl_ddll.erl#L235" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -667,7 +687,7 @@ system or if the tag is not supported.</p>
       <h1 class="signature" translate="no">load(Path, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erl_ddll.erl#L832" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erl_ddll.erl#L832" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -723,7 +743,7 @@ described here.</p>
       <h1 class="signature" translate="no">load_driver(Path, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erl_ddll.erl#L776" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erl_ddll.erl#L776" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -760,7 +780,7 @@ described here.</p>
       <h1 class="signature" translate="no">loaded_drivers()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erl_ddll.erl#L736" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erl_ddll.erl#L736" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -790,7 +810,7 @@ for historical reasons.</p><p>For more information about drivers, see <a href="#
       <h1 class="signature" translate="no">monitor(Tag, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erl_ddll.erl#L354" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erl_ddll.erl#L354" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -881,7 +901,7 @@ described here.</p>
       <h1 class="signature" translate="no">reload(Path, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erl_ddll.erl#L964" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erl_ddll.erl#L964" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -924,7 +944,7 @@ described here.</p>
       <h1 class="signature" translate="no">reload_driver(Path, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erl_ddll.erl#L986" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erl_ddll.erl#L986" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -961,7 +981,7 @@ described here.</p>
       <h1 class="signature" translate="no">try_load(Path, Name, OptionList)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erl_ddll.erl#L573" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erl_ddll.erl#L573" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1118,7 +1138,7 @@ exception.</p>
       <h1 class="signature" translate="no">try_unload(Name, OptionList)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erl_ddll.erl#L720" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erl_ddll.erl#L720" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1221,7 +1241,7 @@ described here.</p>
       <h1 class="signature" translate="no">unload(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erl_ddll.erl#L926" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erl_ddll.erl#L926" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1258,7 +1278,7 @@ described here.</p>
       <h1 class="signature" translate="no">unload_driver(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/kernel/src/erl_ddll.erl#L901" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/kernel/src/erl_ddll.erl#L901" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1293,8 +1313,8 @@ described here.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="kernel.epub" title="ePub version">
@@ -1306,7 +1326,7 @@ described here.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

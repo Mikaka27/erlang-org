@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="wx v2.5.2">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/wx/wxSizerFlags.html" />
     <title>wxSizerFlags — wx v2.5.2</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-B3665BE0.js"></script>
+    <script defer src="dist/sidebar_items-E2170433.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ wx
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of wx</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ wx
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxSizerFlags.erl#L58" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxSizerFlags.erl#L58" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -137,7 +155,7 @@ object itself to allowing chaining multiple methods calls like in the examples a
 
       </div>
 
-        <div class="summary-synopsis"><p>Sets the alignment of this <a><code class="inline">wxSizerFlags</code></a> to <code class="inline">align</code>.</p></div>
+        <div class="summary-synopsis"><p>Sets the alignment of this <a href="wxSizerFlags.html"><code class="inline">wxSizerFlags</code></a> to <code class="inline">align</code>.</p></div>
 
     </div>
 
@@ -147,7 +165,7 @@ object itself to allowing chaining multiple methods calls like in the examples a
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">border(This, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#border/2"><code class="inline">border(This, [])</code></a>.</p></div>
 
     </div>
 
@@ -157,7 +175,7 @@ object itself to allowing chaining multiple methods calls like in the examples a
 
       </div>
 
-        <div class="summary-synopsis"><p>Sets the <a><code class="inline">wxSizerFlags</code></a> to have a border with size as returned by <code class="inline">GetDefaultBorder()</code>
+        <div class="summary-synopsis"><p>Sets the <a href="wxSizerFlags.html"><code class="inline">wxSizerFlags</code></a> to have a border with size as returned by <code class="inline">GetDefaultBorder()</code>
 (not implemented in wx).</p></div>
 
     </div>
@@ -168,7 +186,7 @@ object itself to allowing chaining multiple methods calls like in the examples a
 
       </div>
 
-        <div class="summary-synopsis"><p>Sets the <a><code class="inline">wxSizerFlags</code></a> to have a border of a number of pixels specified by <code class="inline">borderinpixels</code>
+        <div class="summary-synopsis"><p>Sets the <a href="wxSizerFlags.html"><code class="inline">wxSizerFlags</code></a> to have a border of a number of pixels specified by <code class="inline">borderinpixels</code>
 with the directions specified by <code class="inline">direction</code>.</p></div>
 
     </div>
@@ -179,7 +197,7 @@ with the directions specified by <code class="inline">direction</code>.</p></div
 
       </div>
 
-        <div class="summary-synopsis"><p>Sets the object of the <a><code class="inline">wxSizerFlags</code></a> to center itself in the area it is given.</p></div>
+        <div class="summary-synopsis"><p>Sets the object of the <a href="wxSizerFlags.html"><code class="inline">wxSizerFlags</code></a> to center itself in the area it is given.</p></div>
 
     </div>
 
@@ -189,7 +207,7 @@ with the directions specified by <code class="inline">direction</code>.</p></div
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to: <a><code class="inline">center/1</code></a></p></div>
+        <div class="summary-synopsis"><p>Equivalent to: <a href="#center/1"><code class="inline">center/1</code></a></p></div>
 
     </div>
 
@@ -209,7 +227,7 @@ with the directions specified by <code class="inline">direction</code>.</p></div
 
       </div>
 
-        <div class="summary-synopsis"><p>Sets the object of the <a><code class="inline">wxSizerFlags</code></a> to expand to fill as much area as it can.</p></div>
+        <div class="summary-synopsis"><p>Sets the object of the <a href="wxSizerFlags.html"><code class="inline">wxSizerFlags</code></a> to expand to fill as much area as it can.</p></div>
 
     </div>
 
@@ -229,7 +247,7 @@ with the directions specified by <code class="inline">direction</code>.</p></div
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">new([])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#new/1"><code class="inline">new([])</code></a>.</p></div>
 
     </div>
 
@@ -239,7 +257,7 @@ with the directions specified by <code class="inline">direction</code>.</p></div
 
       </div>
 
-        <div class="summary-synopsis"><p>Creates the <a><code class="inline">wxSizer</code></a> with the proportion specified by <code class="inline">proportion</code>.</p></div>
+        <div class="summary-synopsis"><p>Creates the <a href="wxSizer.html"><code class="inline">wxSizer</code></a> with the proportion specified by <code class="inline">proportion</code>.</p></div>
 
     </div>
 
@@ -249,7 +267,7 @@ with the directions specified by <code class="inline">direction</code>.</p></div
 
       </div>
 
-        <div class="summary-synopsis"><p>Sets the proportion of this <a><code class="inline">wxSizerFlags</code></a> to <code class="inline">proportion</code>.</p></div>
+        <div class="summary-synopsis"><p>Sets the proportion of this <a href="wxSizerFlags.html"><code class="inline">wxSizerFlags</code></a> to <code class="inline">proportion</code>.</p></div>
 
     </div>
 
@@ -275,6 +293,7 @@ with the directions specified by <code class="inline">direction</code>.</p></div
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:wxSizerFlags/0">
 
@@ -286,7 +305,7 @@ with the directions specified by <code class="inline">direction</code>.</p></div
       <h1 class="signature" translate="no">wxSizerFlags()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxSizerFlags.erl#L85" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxSizerFlags.erl#L85" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -315,6 +334,7 @@ with the directions specified by <code class="inline">direction</code>.</p></div
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="align/2">
 
@@ -326,7 +346,7 @@ with the directions specified by <code class="inline">direction</code>.</p></div
       <h1 class="signature" translate="no">align(This, Alignment)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxSizerFlags.erl#L121" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxSizerFlags.erl#L121" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -354,7 +374,7 @@ with the directions specified by <code class="inline">direction</code>.</p></div
       <h1 class="signature" translate="no">border(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxSizerFlags.erl#L131" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxSizerFlags.erl#L131" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -382,7 +402,7 @@ with the directions specified by <code class="inline">direction</code>.</p></div
       <h1 class="signature" translate="no">border/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxSizerFlags.erl#L142" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxSizerFlags.erl#L142" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -412,7 +432,7 @@ with the directions specified by <code class="inline">direction</code>.</p></div
       <h1 class="signature" translate="no">border(This, Direction, Borderinpixels)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxSizerFlags.erl#L161" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxSizerFlags.erl#L161" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -444,7 +464,7 @@ avoid too small borders on devices with high DPI displays.</p>
       <h1 class="signature" translate="no">center(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxSizerFlags.erl#L178" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxSizerFlags.erl#L178" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -472,7 +492,7 @@ avoid too small borders on devices with high DPI displays.</p>
       <h1 class="signature" translate="no">centre(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxSizerFlags.erl#L171" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxSizerFlags.erl#L171" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -500,7 +520,7 @@ avoid too small borders on devices with high DPI displays.</p>
       <h1 class="signature" translate="no">destroy(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxSizerFlags.erl#L226" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxSizerFlags.erl#L226" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -528,7 +548,7 @@ avoid too small borders on devices with high DPI displays.</p>
       <h1 class="signature" translate="no">expand(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxSizerFlags.erl#L186" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxSizerFlags.erl#L186" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -556,7 +576,7 @@ avoid too small borders on devices with high DPI displays.</p>
       <h1 class="signature" translate="no">left(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxSizerFlags.erl#L198" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxSizerFlags.erl#L198" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -584,7 +604,7 @@ avoid too small borders on devices with high DPI displays.</p>
       <h1 class="signature" translate="no">new()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxSizerFlags.erl#L93" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxSizerFlags.erl#L93" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -612,7 +632,7 @@ avoid too small borders on devices with high DPI displays.</p>
       <h1 class="signature" translate="no">new(Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxSizerFlags.erl#L99" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxSizerFlags.erl#L99" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -640,7 +660,7 @@ avoid too small borders on devices with high DPI displays.</p>
       <h1 class="signature" translate="no">proportion(This, Proportion)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxSizerFlags.erl#L206" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxSizerFlags.erl#L206" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -669,7 +689,7 @@ avoid too small borders on devices with high DPI displays.</p>
       <h1 class="signature" translate="no">right(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/wx/src/gen/wxSizerFlags.erl#L219" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/wx/src/gen/wxSizerFlags.erl#L219" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -695,8 +715,8 @@ avoid too small borders on devices with high DPI displays.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="wx.epub" title="ePub version">
@@ -708,7 +728,7 @@ avoid too small borders on devices with high DPI displays.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

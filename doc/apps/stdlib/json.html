@@ -4,20 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="stdlib v7.1">
 
 
-<meta name="major-vsn" content="28">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=28&q=">
+<meta name="major-vsn" content="29">
+<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/json.html" />
     <title>json — stdlib v7.1</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
-    <script defer src="dist/sidebar_items-296BF65E.js"></script>
+    <script defer src="dist/sidebar_items-E5A5C6F9.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ stdlib
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of stdlib</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ stdlib
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L23" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L23" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -178,7 +196,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
 
       </div>
 
-        <div class="summary-synopsis"><p>Simple JSON value encodeable with <a><code class="inline">json:encode/1</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Simple JSON value encodeable with <a href="#encode/1"><code class="inline">json:encode/1</code></a>.</p></div>
 
     </div>
 
@@ -302,7 +320,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
 
       </div>
 
-        <div class="summary-synopsis"><p>Default encoder for atoms used by <a><code class="inline">json:encode/1</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Default encoder for atoms used by <a href="#encode/1"><code class="inline">json:encode/1</code></a>.</p></div>
 
     </div>
 
@@ -312,7 +330,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
 
       </div>
 
-        <div class="summary-synopsis"><p>Default encoder for binaries as JSON strings used by <a><code class="inline">json:encode/1</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Default encoder for binaries as JSON strings used by <a href="#encode/1"><code class="inline">json:encode/1</code></a>.</p></div>
 
     </div>
 
@@ -332,7 +350,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
 
       </div>
 
-        <div class="summary-synopsis"><p>Default encoder for floats as JSON numbers used by <a><code class="inline">json:encode/1</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Default encoder for floats as JSON numbers used by <a href="#encode/1"><code class="inline">json:encode/1</code></a>.</p></div>
 
     </div>
 
@@ -342,7 +360,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
 
       </div>
 
-        <div class="summary-synopsis"><p>Default encoder for integers as JSON numbers used by <a><code class="inline">json:encode/1</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Default encoder for integers as JSON numbers used by <a href="#encode/1"><code class="inline">json:encode/1</code></a>.</p></div>
 
     </div>
 
@@ -372,7 +390,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
 
       </div>
 
-        <div class="summary-synopsis"><p>Default encoder for lists as JSON arrays used by <a><code class="inline">json:encode/1</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Default encoder for lists as JSON arrays used by <a href="#encode/1"><code class="inline">json:encode/1</code></a>.</p></div>
 
     </div>
 
@@ -382,7 +400,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
 
       </div>
 
-        <div class="summary-synopsis"><p>Default encoder for maps as JSON objects used by <a><code class="inline">json:encode/1</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Default encoder for maps as JSON objects used by <a href="#encode/1"><code class="inline">json:encode/1</code></a>.</p></div>
 
     </div>
 
@@ -402,7 +420,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
 
       </div>
 
-        <div class="summary-synopsis"><p>Default encoder used by <a><code class="inline">json:encode/1</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Default encoder used by <a href="#encode/1"><code class="inline">json:encode/1</code></a>.</p></div>
 
     </div>
 
@@ -462,7 +480,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
 
       </div>
 
-        <div class="summary-synopsis"><p>Default format function used by <a><code class="inline">json:format/1</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Default format function used by <a href="#format/1"><code class="inline">json:format/1</code></a>.</p></div>
 
     </div>
 
@@ -478,6 +496,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:array_finish_fun/0">
 
@@ -491,7 +510,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L806" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L806" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -521,7 +540,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L805" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L805" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -551,7 +570,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L804" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L804" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -581,7 +600,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L841" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L841" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -611,7 +630,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L843" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L843" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -648,7 +667,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L811" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L811" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -690,7 +709,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L118" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L118" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -720,7 +739,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L108" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L108" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -758,7 +777,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L103" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L103" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -788,7 +807,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L553" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L553" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -818,7 +837,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L803" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L803" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -848,7 +867,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L809" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L809" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -879,7 +898,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L808" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L808" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -910,7 +929,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L807" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L807" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -939,6 +958,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="decode/1">
 
@@ -952,7 +972,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L880" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L880" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -967,8 +987,8 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
 
       </div>
 
-<p>Parses a JSON value from <code class="inline">Binary</code>.</p><p>Supports basic data mapping:</p><table><thead><tr><th style="text-align: left;"><strong>JSON</strong></th><th style="text-align: left;"><strong>Erlang</strong></th></tr></thead><tbody><tr><td style="text-align: left;">Number</td><td style="text-align: left;"><code class="inline">integer() | float()</code></td></tr><tr><td style="text-align: left;">Boolean</td><td style="text-align: left;"><code class="inline">true | false</code></td></tr><tr><td style="text-align: left;">Null</td><td style="text-align: left;"><code class="inline">null</code></td></tr><tr><td style="text-align: left;">String</td><td style="text-align: left;"><code class="inline">binary()</code></td></tr><tr><td style="text-align: left;">Object</td><td style="text-align: left;"><code class="inline">#{binary() =&gt; _}</code></td></tr></tbody></table><h2 id="decode/1-errors" class="section-heading"><a href="#decode/1-errors" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Errors</span></h2><ul><li><code class="inline">error(unexpected_end)</code> if <code class="inline">Binary</code> contains incomplete JSON value</li><li><code class="inline">error({invalid_byte, Byte})</code> if <code class="inline">Binary</code> contains unexpected byte or invalid UTF-8 byte</li><li><code class="inline">error({unexpected_sequence, Bytes})</code> if <code class="inline">Binary</code> contains invalid UTF-8 escape</li></ul><h2 id="decode/1-example" class="section-heading"><a href="#decode/1-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Example</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nc">json</span><span class="p">:</span><span class="nf">decode</span><span class="p" data-group-id="6412041804-1">(</span><span class="p" data-group-id="6412041804-2">&lt;&lt;</span><span class="s">&quot;{\&quot;foo\&quot;: 1}&quot;</span><span class="p" data-group-id="6412041804-2">&gt;&gt;</span><span class="p" data-group-id="6412041804-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="6412041804-3">#{</span><span class="p" data-group-id="6412041804-4">&lt;&lt;</span><span class="s">&quot;foo&quot;</span><span class="p" data-group-id="6412041804-4">&gt;&gt;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="6412041804-3">}</span></code></pre>
+<p>Parses a JSON value from <code class="inline">Binary</code>.</p><p>Supports basic data mapping:</p><table><thead><tr><th style="text-align: left;"><strong>JSON</strong></th><th style="text-align: left;"><strong>Erlang</strong></th></tr></thead><tbody><tr><td style="text-align: left;">Number</td><td style="text-align: left;"><code class="inline">integer() | float()</code></td></tr><tr><td style="text-align: left;">Boolean</td><td style="text-align: left;"><code class="inline">true | false</code></td></tr><tr><td style="text-align: left;">Null</td><td style="text-align: left;"><code class="inline">null</code></td></tr><tr><td style="text-align: left;">String</td><td style="text-align: left;"><code class="inline">binary()</code></td></tr><tr><td style="text-align: left;">Object</td><td style="text-align: left;"><code class="inline">#{binary() =&gt; _}</code></td></tr></tbody></table><h2 id="decode/1-errors" class="section-heading"><a href="#decode/1-errors" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Errors</span></h2><ul><li><code class="inline">error(unexpected_end)</code> if <code class="inline">Binary</code> contains incomplete JSON value</li><li><code class="inline">error({invalid_byte, Byte})</code> if <code class="inline">Binary</code> contains unexpected byte or invalid UTF-8 byte</li><li><code class="inline">error({unexpected_sequence, Bytes})</code> if <code class="inline">Binary</code> contains invalid UTF-8 escape</li></ul><h2 id="decode/1-example" class="section-heading"><a href="#decode/1-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Example</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nc">json</span><span class="p">:</span><span class="nf">decode</span><span class="p" data-group-id="4386558802-1">(</span><span class="p" data-group-id="4386558802-2">&lt;&lt;</span><span class="s">&quot;{\&quot;foo\&quot;: 1}&quot;</span><span class="p" data-group-id="4386558802-2">&gt;&gt;</span><span class="p" data-group-id="4386558802-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4386558802-3">#{</span><span class="p" data-group-id="4386558802-4">&lt;&lt;</span><span class="s">&quot;foo&quot;</span><span class="p" data-group-id="4386558802-4">&gt;&gt;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="4386558802-3">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="decode/3">
@@ -983,7 +1003,7 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L939" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L939" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1002,9 +1022,9 @@ standards. The decoder is tested using <a href="https://github.com/nst/JSONTestS
 can be customized with the callbacks specified in
 <code class="inline">Decoders</code>. The callbacks will use the <code class="inline">Acc</code> value
 as the initial accumulator.</p><p>Any leftover, unparsed data in <code class="inline">Binary</code> will be returned.</p><h2 id="decode/3-default-callbacks" class="section-heading"><a href="#decode/3-default-callbacks" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Default callbacks</span></h2><p>All callbacks are optional. If not provided, they will fall back to
-implementations used by the <a href="#decode/1"><code class="inline">decode/1</code></a> function:</p><ul><li>for <code class="inline">array_start</code>: <code class="inline">fun(_) -&gt; [] end</code></li><li><p>for <code class="inline">array_push</code>: <code class="inline">fun(Elem, Acc) -&gt; [Elem | Acc] end</code></p></li><li>for <code class="inline">array_finish</code>: <code class="inline">fun(Acc, OldAcc) -&gt; {lists:reverse(Acc), OldAcc} end</code></li><li>for <code class="inline">object_start</code>: <code class="inline">fun(_) -&gt; [] end</code></li><li><p>for <code class="inline">object_push</code>: <code class="inline">fun(Key, Value, Acc) -&gt; [{Key, Value} | Acc] end</code></p></li><li>for <code class="inline">object_finish</code>: <code class="inline">fun(Acc, OldAcc) -&gt; {maps:from_list(Acc), OldAcc} end</code></li><li>for <code class="inline">float</code>: <code class="inline">fun erlang:binary_to_float/1</code></li><li>for <code class="inline">integer</code>: <code class="inline">fun erlang:binary_to_integer/1</code></li><li>for <code class="inline">string</code>: <code class="inline">fun (Value) -&gt; Value end</code></li><li>for <code class="inline">null</code>: the atom <code class="inline">null</code></li></ul><h2 id="decode/3-errors" class="section-heading"><a href="#decode/3-errors" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Errors</span></h2><ul><li><code class="inline">error({invalid_byte, Byte})</code> if <code class="inline">Binary</code> contains unexpected byte or invalid UTF-8 byte</li><li><code class="inline">error({unexpected_sequence, Bytes})</code> if <code class="inline">Binary</code> contains invalid UTF-8 escape</li><li><code class="inline">error(unexpected_end)</code> if <code class="inline">Binary</code> contains incomplete JSON value</li></ul><h2 id="decode/3-example" class="section-heading"><a href="#decode/3-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Example</span></h2><p>Decoding object keys as atoms:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="n">Push</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">fun</span><span class="p" data-group-id="3761092954-1">(</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="p">,</span><span class="w"> </span><span class="n">Acc</span><span class="p" data-group-id="3761092954-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="3761092954-2">[</span><span class="p" data-group-id="3761092954-3">{</span><span class="nf">binary_to_existing_atom</span><span class="p" data-group-id="3761092954-4">(</span><span class="n">Key</span><span class="p" data-group-id="3761092954-4">)</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="p" data-group-id="3761092954-3">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="n">Acc</span><span class="p" data-group-id="3761092954-2">]</span><span class="w"> </span><span class="k">end</span><span class="p">.</span><span class="gp unselectable">
-&gt; </span><span class="nc">json</span><span class="p">:</span><span class="nf">decode</span><span class="p" data-group-id="3761092954-5">(</span><span class="p" data-group-id="3761092954-6">&lt;&lt;</span><span class="s">&quot;{\&quot;foo\&quot;: 1}&quot;</span><span class="p" data-group-id="3761092954-6">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3761092954-7">#{</span><span class="ss">object_push</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="n">Push</span><span class="p" data-group-id="3761092954-7">}</span><span class="p" data-group-id="3761092954-5">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="3761092954-8">{</span><span class="p" data-group-id="3761092954-9">#{</span><span class="ss">foo</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="3761092954-9">}</span><span class="p">,</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="3761092954-10">&lt;&lt;</span><span class="p" data-group-id="3761092954-10">&gt;&gt;</span><span class="p" data-group-id="3761092954-8">}</span></code></pre>
+implementations used by the <a href="#decode/1"><code class="inline">decode/1</code></a> function:</p><ul><li>for <code class="inline">array_start</code>: <code class="inline">fun(_) -&gt; [] end</code></li><li><p>for <code class="inline">array_push</code>: <code class="inline">fun(Elem, Acc) -&gt; [Elem | Acc] end</code></p></li><li>for <code class="inline">array_finish</code>: <code class="inline">fun(Acc, OldAcc) -&gt; {lists:reverse(Acc), OldAcc} end</code></li><li>for <code class="inline">object_start</code>: <code class="inline">fun(_) -&gt; [] end</code></li><li><p>for <code class="inline">object_push</code>: <code class="inline">fun(Key, Value, Acc) -&gt; [{Key, Value} | Acc] end</code></p></li><li>for <code class="inline">object_finish</code>: <code class="inline">fun(Acc, OldAcc) -&gt; {maps:from_list(Acc), OldAcc} end</code></li><li>for <code class="inline">float</code>: <code class="inline">fun erlang:binary_to_float/1</code></li><li>for <code class="inline">integer</code>: <code class="inline">fun erlang:binary_to_integer/1</code></li><li>for <code class="inline">string</code>: <code class="inline">fun (Value) -&gt; Value end</code></li><li>for <code class="inline">null</code>: the atom <code class="inline">null</code></li></ul><h2 id="decode/3-errors" class="section-heading"><a href="#decode/3-errors" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Errors</span></h2><ul><li><code class="inline">error({invalid_byte, Byte})</code> if <code class="inline">Binary</code> contains unexpected byte or invalid UTF-8 byte</li><li><code class="inline">error({unexpected_sequence, Bytes})</code> if <code class="inline">Binary</code> contains invalid UTF-8 escape</li><li><code class="inline">error(unexpected_end)</code> if <code class="inline">Binary</code> contains incomplete JSON value</li></ul><h2 id="decode/3-example" class="section-heading"><a href="#decode/3-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Example</span></h2><p>Decoding object keys as atoms:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="n">Push</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">fun</span><span class="p" data-group-id="2253189183-1">(</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="p">,</span><span class="w"> </span><span class="n">Acc</span><span class="p" data-group-id="2253189183-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="2253189183-2">[</span><span class="p" data-group-id="2253189183-3">{</span><span class="nf">binary_to_existing_atom</span><span class="p" data-group-id="2253189183-4">(</span><span class="n">Key</span><span class="p" data-group-id="2253189183-4">)</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="p" data-group-id="2253189183-3">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="n">Acc</span><span class="p" data-group-id="2253189183-2">]</span><span class="w"> </span><span class="k">end</span><span class="p">.</span><span class="gp unselectable">
+&gt; </span><span class="nc">json</span><span class="p">:</span><span class="nf">decode</span><span class="p" data-group-id="2253189183-5">(</span><span class="p" data-group-id="2253189183-6">&lt;&lt;</span><span class="s">&quot;{\&quot;foo\&quot;: 1}&quot;</span><span class="p" data-group-id="2253189183-6">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2253189183-7">#{</span><span class="ss">object_push</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="n">Push</span><span class="p" data-group-id="2253189183-7">}</span><span class="p" data-group-id="2253189183-5">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="2253189183-8">{</span><span class="p" data-group-id="2253189183-9">#{</span><span class="ss">foo</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="2253189183-9">}</span><span class="p">,</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="2253189183-10">&lt;&lt;</span><span class="p" data-group-id="2253189183-10">&gt;&gt;</span><span class="p" data-group-id="2253189183-8">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="decode_continue/2">
@@ -1019,7 +1039,7 @@ implementations used by the <a href="#decode/1"><code class="inline">decode/1</c
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L986" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L986" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1030,18 +1050,18 @@ implementations used by the <a href="#decode/1"><code class="inline">decode/1</c
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">-spec</span> decode_continue(<a href="../../apps/erts/erlang.html#t:binary/0">binary</a>() | end_of_input, Opaque :: <a href="../../apps/erts/erlang.html#t:term/0">term</a>()) ->
+          <pre translate="no"><span class="attribute">-spec</span> decode_continue(<a href="../../apps/erts/erlang.html#t:binary/0">binary</a>() | end_of_input, State :: <a href="#t:continuation_state/0">continuation_state</a>()) ->
                          {Result :: <a href="../../apps/erts/erlang.html#t:dynamic/0">dynamic</a>(), Acc :: <a href="../../apps/erts/erlang.html#t:dynamic/0">dynamic</a>(), <a href="../../apps/erts/erlang.html#t:binary/0">binary</a>()} |
                          {continue, <a href="#t:continuation_state/0">continuation_state</a>()}.</pre>
 
       </div>
 
 <p>Continue parsing a stream of bytes of a JSON value.</p><p>Similar to <a href="#decode_start/3"><code class="inline">decode_start/3</code></a>, if the function returns <code class="inline">{continue, State}</code> and
-there is no more data, use <code class="inline">end_of_input</code> instead of a binary.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="p" data-group-id="5622705257-1">{</span><span class="ss">continue</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="5622705257-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">json</span><span class="p">:</span><span class="nf">decode_start</span><span class="p" data-group-id="5622705257-2">(</span><span class="p" data-group-id="5622705257-3">&lt;&lt;</span><span class="s">&quot;{\&quot;foo\&quot;:&quot;</span><span class="p" data-group-id="5622705257-3">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5622705257-4">#{</span><span class="p" data-group-id="5622705257-4">}</span><span class="p" data-group-id="5622705257-2">)</span><span class="p">.</span><span class="gp unselectable">
-&gt; </span><span class="nc">json</span><span class="p">:</span><span class="nf">decode_continue</span><span class="p" data-group-id="5622705257-5">(</span><span class="p" data-group-id="5622705257-6">&lt;&lt;</span><span class="s">&quot;1}&quot;</span><span class="p" data-group-id="5622705257-6">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="5622705257-5">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="5622705257-7">{</span><span class="p" data-group-id="5622705257-8">#{</span><span class="ss">foo</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="5622705257-8">}</span><span class="p">,</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="5622705257-9">&lt;&lt;</span><span class="p" data-group-id="5622705257-9">&gt;&gt;</span><span class="p" data-group-id="5622705257-7">}</span></code></pre><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="p" data-group-id="8139964931-1">{</span><span class="ss">continue</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="8139964931-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">json</span><span class="p">:</span><span class="nf">decode_start</span><span class="p" data-group-id="8139964931-2">(</span><span class="p" data-group-id="8139964931-3">&lt;&lt;</span><span class="s">&quot;123&quot;</span><span class="p" data-group-id="8139964931-3">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8139964931-4">#{</span><span class="p" data-group-id="8139964931-4">}</span><span class="p" data-group-id="8139964931-2">)</span><span class="p">.</span><span class="gp unselectable">
-&gt; </span><span class="nc">json</span><span class="p">:</span><span class="nf">decode_continue</span><span class="p" data-group-id="8139964931-5">(</span><span class="ss">end_of_input</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="8139964931-5">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="8139964931-6">{</span><span class="mi">123</span><span class="p">,</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="8139964931-7">&lt;&lt;</span><span class="p" data-group-id="8139964931-7">&gt;&gt;</span><span class="p" data-group-id="8139964931-6">}</span></code></pre>
+there is no more data, use <code class="inline">end_of_input</code> instead of a binary.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="p" data-group-id="5650846636-1">{</span><span class="ss">continue</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="5650846636-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">json</span><span class="p">:</span><span class="nf">decode_start</span><span class="p" data-group-id="5650846636-2">(</span><span class="p" data-group-id="5650846636-3">&lt;&lt;</span><span class="s">&quot;{\&quot;foo\&quot;:&quot;</span><span class="p" data-group-id="5650846636-3">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5650846636-4">#{</span><span class="p" data-group-id="5650846636-4">}</span><span class="p" data-group-id="5650846636-2">)</span><span class="p">.</span><span class="gp unselectable">
+&gt; </span><span class="nc">json</span><span class="p">:</span><span class="nf">decode_continue</span><span class="p" data-group-id="5650846636-5">(</span><span class="p" data-group-id="5650846636-6">&lt;&lt;</span><span class="s">&quot;1}&quot;</span><span class="p" data-group-id="5650846636-6">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="5650846636-5">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="5650846636-7">{</span><span class="p" data-group-id="5650846636-8">#{</span><span class="ss">foo</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="5650846636-8">}</span><span class="p">,</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="5650846636-9">&lt;&lt;</span><span class="p" data-group-id="5650846636-9">&gt;&gt;</span><span class="p" data-group-id="5650846636-7">}</span></code></pre><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="p" data-group-id="2596240768-1">{</span><span class="ss">continue</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="2596240768-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">json</span><span class="p">:</span><span class="nf">decode_start</span><span class="p" data-group-id="2596240768-2">(</span><span class="p" data-group-id="2596240768-3">&lt;&lt;</span><span class="s">&quot;123&quot;</span><span class="p" data-group-id="2596240768-3">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2596240768-4">#{</span><span class="p" data-group-id="2596240768-4">}</span><span class="p" data-group-id="2596240768-2">)</span><span class="p">.</span><span class="gp unselectable">
+&gt; </span><span class="nc">json</span><span class="p">:</span><span class="nf">decode_continue</span><span class="p" data-group-id="2596240768-5">(</span><span class="ss">end_of_input</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="2596240768-5">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="2596240768-6">{</span><span class="mi">123</span><span class="p">,</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="2596240768-7">&lt;&lt;</span><span class="p" data-group-id="2596240768-7">&gt;&gt;</span><span class="p" data-group-id="2596240768-6">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="decode_start/3">
@@ -1056,7 +1076,7 @@ there is no more data, use <code class="inline">end_of_input</code> instead of a
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L962" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L962" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1090,7 +1110,7 @@ the <code class="inline">State</code> can be fed to the <a href="#decode_continu
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L148" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L148" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1105,8 +1125,8 @@ the <code class="inline">State</code> can be fed to the <a href="#decode_continu
 
       </div>
 
-<p>Generates JSON corresponding to <code class="inline">Term</code>.</p><p>Supports basic data mapping:</p><table><thead><tr><th style="text-align: left;"><strong>Erlang</strong></th><th style="text-align: left;"><strong>JSON</strong></th></tr></thead><tbody><tr><td style="text-align: left;"><code class="inline">integer() | float()</code></td><td style="text-align: left;">Number</td></tr><tr><td style="text-align: left;"><code class="inline">true | false</code></td><td style="text-align: left;">Boolean</td></tr><tr><td style="text-align: left;"><code class="inline">null</code></td><td style="text-align: left;">Null</td></tr><tr><td style="text-align: left;"><code class="inline">binary()</code></td><td style="text-align: left;">String</td></tr><tr><td style="text-align: left;"><code class="inline">atom()</code></td><td style="text-align: left;">String</td></tr><tr><td style="text-align: left;"><code class="inline">list()</code></td><td style="text-align: left;">Array</td></tr><tr><td style="text-align: left;"><code class="inline">#{binary() =&gt; _}</code></td><td style="text-align: left;">Object</td></tr><tr><td style="text-align: left;"><code class="inline">#{atom() =&gt; _}</code></td><td style="text-align: left;">Object</td></tr><tr><td style="text-align: left;"><code class="inline">#{integer() =&gt; _}</code></td><td style="text-align: left;">Object</td></tr></tbody></table><p>This is equivalent to <code class="inline">encode(Term, fun json:encode_value/2)</code>.</p><h2 id="encode/1-examples" class="section-heading"><a href="#encode/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nf">iolist_to_binary</span><span class="p" data-group-id="4885178507-1">(</span><span class="nc">json</span><span class="p">:</span><span class="nf">encode</span><span class="p" data-group-id="4885178507-2">(</span><span class="p" data-group-id="4885178507-3">#{</span><span class="ss">foo</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="4885178507-4">&lt;&lt;</span><span class="s">&quot;bar&quot;</span><span class="p" data-group-id="4885178507-4">&gt;&gt;</span><span class="p" data-group-id="4885178507-3">}</span><span class="p" data-group-id="4885178507-2">)</span><span class="p" data-group-id="4885178507-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="4885178507-5">&lt;&lt;</span><span class="s">&quot;{\&quot;foo\&quot;:\&quot;bar\&quot;}&quot;</span><span class="p" data-group-id="4885178507-5">&gt;&gt;</span></code></pre>
+<p>Generates JSON corresponding to <code class="inline">Term</code>.</p><p>Supports basic data mapping:</p><table><thead><tr><th style="text-align: left;"><strong>Erlang</strong></th><th style="text-align: left;"><strong>JSON</strong></th></tr></thead><tbody><tr><td style="text-align: left;"><code class="inline">integer() | float()</code></td><td style="text-align: left;">Number</td></tr><tr><td style="text-align: left;"><code class="inline">true | false</code></td><td style="text-align: left;">Boolean</td></tr><tr><td style="text-align: left;"><code class="inline">null</code></td><td style="text-align: left;">Null</td></tr><tr><td style="text-align: left;"><code class="inline">binary()</code></td><td style="text-align: left;">String</td></tr><tr><td style="text-align: left;"><code class="inline">atom()</code></td><td style="text-align: left;">String</td></tr><tr><td style="text-align: left;"><code class="inline">list()</code></td><td style="text-align: left;">Array</td></tr><tr><td style="text-align: left;"><code class="inline">#{binary() =&gt; _}</code></td><td style="text-align: left;">Object</td></tr><tr><td style="text-align: left;"><code class="inline">#{atom() =&gt; _}</code></td><td style="text-align: left;">Object</td></tr><tr><td style="text-align: left;"><code class="inline">#{integer() =&gt; _}</code></td><td style="text-align: left;">Object</td></tr></tbody></table><p>This is equivalent to <code class="inline">encode(Term, fun json:encode_value/2)</code>.</p><h2 id="encode/1-examples" class="section-heading"><a href="#encode/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nf">iolist_to_binary</span><span class="p" data-group-id="9300384356-1">(</span><span class="nc">json</span><span class="p">:</span><span class="nf">encode</span><span class="p" data-group-id="9300384356-2">(</span><span class="p" data-group-id="9300384356-3">#{</span><span class="ss">foo</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="9300384356-4">&lt;&lt;</span><span class="s">&quot;bar&quot;</span><span class="p" data-group-id="9300384356-4">&gt;&gt;</span><span class="p" data-group-id="9300384356-3">}</span><span class="p" data-group-id="9300384356-2">)</span><span class="p" data-group-id="9300384356-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="9300384356-5">&lt;&lt;</span><span class="s">&quot;{\&quot;foo\&quot;:\&quot;bar\&quot;}&quot;</span><span class="p" data-group-id="9300384356-5">&gt;&gt;</span></code></pre>
   </section>
 </section>
 <section class="detail" id="encode/2">
@@ -1121,7 +1141,7 @@ the <code class="inline">State</code> can be fed to the <a href="#decode_continu
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L176" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L176" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1141,11 +1161,11 @@ The callback will be recursively called for all the data
 to be encoded and is expected to return the corresponding
 encoded JSON as iodata.</p><p>Various <code class="inline">encode_*</code> functions in this module can be used
 to help in constructing such callbacks.</p><h2 id="encode/2-examples" class="section-heading"><a href="#encode/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><p>An encoder that uses a heuristic to differentiate object-like
-lists of key-value pairs from plain lists:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nf">encoder</span><span class="p" data-group-id="9731206346-1">(</span><span class="p" data-group-id="9731206346-2">[</span><span class="p" data-group-id="9731206346-3">{</span><span class="p">_</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="p" data-group-id="9731206346-3">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">_</span><span class="p" data-group-id="9731206346-2">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Value</span><span class="p">,</span><span class="w"> </span><span class="n">Encode</span><span class="p" data-group-id="9731206346-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">json</span><span class="p">:</span><span class="nf">encode_key_value_list</span><span class="p" data-group-id="9731206346-4">(</span><span class="n">Value</span><span class="p">,</span><span class="w"> </span><span class="n">Encode</span><span class="p" data-group-id="9731206346-4">)</span><span class="p">;</span><span class="gp unselectable">
-&gt; </span><span class="nf">encoder</span><span class="p" data-group-id="9731206346-5">(</span><span class="n">Other</span><span class="p">,</span><span class="w"> </span><span class="n">Encode</span><span class="p" data-group-id="9731206346-5">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">json</span><span class="p">:</span><span class="nf">encode_value</span><span class="p" data-group-id="9731206346-6">(</span><span class="n">Other</span><span class="p">,</span><span class="w"> </span><span class="n">Encode</span><span class="p" data-group-id="9731206346-6">)</span><span class="p">.</span><span class="gp unselectable">
-&gt; </span><span class="nf">custom_encode</span><span class="p" data-group-id="9731206346-7">(</span><span class="n">Value</span><span class="p" data-group-id="9731206346-7">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">json</span><span class="p">:</span><span class="nf">encode</span><span class="p" data-group-id="9731206346-8">(</span><span class="n">Value</span><span class="p">,</span><span class="w"> </span><span class="nf">fun</span><span class="p" data-group-id="9731206346-9">(</span><span class="n">Value</span><span class="p">,</span><span class="w"> </span><span class="n">Encode</span><span class="p" data-group-id="9731206346-9">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nf">encoder</span><span class="p" data-group-id="9731206346-10">(</span><span class="n">Value</span><span class="p">,</span><span class="w"> </span><span class="n">Encode</span><span class="p" data-group-id="9731206346-10">)</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="9731206346-8">)</span><span class="p">.</span><span class="gp unselectable">
-&gt; </span><span class="nf">iolist_to_binary</span><span class="p" data-group-id="9731206346-11">(</span><span class="nf">custom_encode</span><span class="p" data-group-id="9731206346-12">(</span><span class="p" data-group-id="9731206346-13">[</span><span class="p" data-group-id="9731206346-14">{</span><span class="ss">a</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9731206346-15">[</span><span class="p" data-group-id="9731206346-15">]</span><span class="p" data-group-id="9731206346-14">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9731206346-16">{</span><span class="ss">b</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="9731206346-16">}</span><span class="p" data-group-id="9731206346-13">]</span><span class="p" data-group-id="9731206346-12">)</span><span class="p" data-group-id="9731206346-11">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="9731206346-17">&lt;&lt;</span><span class="s">&quot;{\&quot;a\&quot;:[],\&quot;b\&quot;:1}&quot;</span><span class="p" data-group-id="9731206346-17">&gt;&gt;</span></code></pre>
+lists of key-value pairs from plain lists:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nf">encoder</span><span class="p" data-group-id="7648176596-1">(</span><span class="p" data-group-id="7648176596-2">[</span><span class="p" data-group-id="7648176596-3">{</span><span class="p">_</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="p" data-group-id="7648176596-3">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">_</span><span class="p" data-group-id="7648176596-2">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Value</span><span class="p">,</span><span class="w"> </span><span class="n">Encode</span><span class="p" data-group-id="7648176596-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">json</span><span class="p">:</span><span class="nf">encode_key_value_list</span><span class="p" data-group-id="7648176596-4">(</span><span class="n">Value</span><span class="p">,</span><span class="w"> </span><span class="n">Encode</span><span class="p" data-group-id="7648176596-4">)</span><span class="p">;</span><span class="gp unselectable">
+&gt; </span><span class="nf">encoder</span><span class="p" data-group-id="7648176596-5">(</span><span class="n">Other</span><span class="p">,</span><span class="w"> </span><span class="n">Encode</span><span class="p" data-group-id="7648176596-5">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">json</span><span class="p">:</span><span class="nf">encode_value</span><span class="p" data-group-id="7648176596-6">(</span><span class="n">Other</span><span class="p">,</span><span class="w"> </span><span class="n">Encode</span><span class="p" data-group-id="7648176596-6">)</span><span class="p">.</span><span class="gp unselectable">
+&gt; </span><span class="nf">custom_encode</span><span class="p" data-group-id="7648176596-7">(</span><span class="n">Value</span><span class="p" data-group-id="7648176596-7">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">json</span><span class="p">:</span><span class="nf">encode</span><span class="p" data-group-id="7648176596-8">(</span><span class="n">Value</span><span class="p">,</span><span class="w"> </span><span class="nf">fun</span><span class="p" data-group-id="7648176596-9">(</span><span class="n">Value</span><span class="p">,</span><span class="w"> </span><span class="n">Encode</span><span class="p" data-group-id="7648176596-9">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nf">encoder</span><span class="p" data-group-id="7648176596-10">(</span><span class="n">Value</span><span class="p">,</span><span class="w"> </span><span class="n">Encode</span><span class="p" data-group-id="7648176596-10">)</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="7648176596-8">)</span><span class="p">.</span><span class="gp unselectable">
+&gt; </span><span class="nf">iolist_to_binary</span><span class="p" data-group-id="7648176596-11">(</span><span class="nf">custom_encode</span><span class="p" data-group-id="7648176596-12">(</span><span class="p" data-group-id="7648176596-13">[</span><span class="p" data-group-id="7648176596-14">{</span><span class="ss">a</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7648176596-15">[</span><span class="p" data-group-id="7648176596-15">]</span><span class="p" data-group-id="7648176596-14">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7648176596-16">{</span><span class="ss">b</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="7648176596-16">}</span><span class="p" data-group-id="7648176596-13">]</span><span class="p" data-group-id="7648176596-12">)</span><span class="p" data-group-id="7648176596-11">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="7648176596-17">&lt;&lt;</span><span class="s">&quot;{\&quot;a\&quot;:[],\&quot;b\&quot;:1}&quot;</span><span class="p" data-group-id="7648176596-17">&gt;&gt;</span></code></pre>
   </section>
 </section>
 <section class="detail" id="encode_atom/2">
@@ -1160,7 +1180,7 @@ lists of key-value pairs from plain lists:</p><pre><code class="makeup erlang" t
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L215" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L215" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1193,7 +1213,7 @@ callback with the corresponding binary.</p>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L342" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L342" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1223,7 +1243,7 @@ callback with the corresponding binary.</p>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L357" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L357" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1253,7 +1273,7 @@ callback with the corresponding binary.</p>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L232" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L232" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1283,7 +1303,7 @@ callback with the corresponding binary.</p>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L225" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L225" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1313,7 +1333,7 @@ callback with the corresponding binary.</p>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L286" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L286" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1343,7 +1363,7 @@ callback with the corresponding binary.</p>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L302" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L302" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1375,7 +1395,7 @@ resulting JSON object.</p><h2 id="encode_key_value_list_checked/2-errors" class=
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L239" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L239" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1405,7 +1425,7 @@ resulting JSON object.</p><h2 id="encode_key_value_list_checked/2-errors" class=
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L257" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L257" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1435,7 +1455,7 @@ resulting JSON object.</p><h2 id="encode_key_value_list_checked/2-errors" class=
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L276" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L276" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1467,7 +1487,7 @@ resulting JSON object.</p><h2 id="encode_map_checked/2-errors" class="section-he
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L186" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L186" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1497,7 +1517,7 @@ resulting JSON object.</p><h2 id="encode_map_checked/2-errors" class="section-he
         <span class="note">(since OTP 27.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L572" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L572" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1512,11 +1532,11 @@ resulting JSON object.</p><h2 id="encode_map_checked/2-errors" class="section-he
 
       </div>
 
-<p>Generates formatted JSON corresponding to <code class="inline">Term</code>.</p><p>Similiar to <a href="#encode/1"><code class="inline">encode/1</code></a> but with added whitespaces for formatting.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nc">io</span><span class="p">:</span><span class="nf">put_chars</span><span class="p" data-group-id="6051399396-1">(</span><span class="nc">json</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="6051399396-2">(</span><span class="p" data-group-id="6051399396-3">#{</span><span class="ss">foo</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="6051399396-4">&lt;&lt;</span><span class="s">&quot;bar&quot;</span><span class="p" data-group-id="6051399396-4">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="ss">baz</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">52</span><span class="p" data-group-id="6051399396-3">}</span><span class="p" data-group-id="6051399396-2">)</span><span class="p" data-group-id="6051399396-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="6051399396-5">{</span><span class="w">
+<p>Generates formatted JSON corresponding to <code class="inline">Term</code>.</p><p>Similiar to <a href="#encode/1"><code class="inline">encode/1</code></a> but with added whitespaces for formatting.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nc">io</span><span class="p">:</span><span class="nf">put_chars</span><span class="p" data-group-id="6684020132-1">(</span><span class="nc">json</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="6684020132-2">(</span><span class="p" data-group-id="6684020132-3">#{</span><span class="ss">foo</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="6684020132-4">&lt;&lt;</span><span class="s">&quot;bar&quot;</span><span class="p" data-group-id="6684020132-4">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="ss">baz</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">52</span><span class="p" data-group-id="6684020132-3">}</span><span class="p" data-group-id="6684020132-2">)</span><span class="p" data-group-id="6684020132-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="6684020132-5">{</span><span class="w">
   </span><span class="s">&quot;baz&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="p">,</span><span class="w">
   </span><span class="s">&quot;foo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;bar&quot;</span><span class="w">
-</span><span class="p" data-group-id="6051399396-5">}</span><span class="w">
+</span><span class="p" data-group-id="6684020132-5">}</span><span class="w">
 </span><span class="ss">ok</span></code></pre>
   </section>
 </section>
@@ -1532,7 +1552,7 @@ resulting JSON object.</p><h2 id="encode_map_checked/2-errors" class="section-he
         <span class="note">(since OTP 27.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L585" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L585" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1563,7 +1583,7 @@ resulting JSON object.</p><h2 id="encode_map_checked/2-errors" class="section-he
         <span class="note">(since OTP 27.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L626" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L626" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1581,20 +1601,20 @@ resulting JSON object.</p><h2 id="encode_map_checked/2-errors" class="section-he
 <p>Generates formatted JSON corresponding to <code class="inline">Term</code>.</p><p>Similar to <a href="#encode/2"><code class="inline">encode/2</code></a>, can be customised with the <code class="inline">Encoder</code> callback and <code class="inline">Options</code>.</p><p><code class="inline">Options</code> can include 'indent' to specify number of spaces per level and 'max' which loosely limits
 the width of lists.</p><p>The <code class="inline">Encoder</code> will get a 'State' argument which contains the 'Options' maps merged with other data
 when recursing through 'Term'.</p><p><a href="#format_value/3"><code class="inline">format_value/3</code></a> or various <code class="inline">encode_*</code> functions in this module can be used
-to help in constructing such callbacks.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nf">formatter</span><span class="p" data-group-id="4943872433-1">(</span><span class="p" data-group-id="4943872433-2">{</span><span class="ss">posix_time</span><span class="p">,</span><span class="w"> </span><span class="n">SysTimeSecs</span><span class="p" data-group-id="4943872433-2">}</span><span class="p">,</span><span class="w"> </span><span class="n">Encode</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="4943872433-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="n">TimeStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">calendar</span><span class="p">:</span><span class="nf">system_time_to_rfc3339</span><span class="p" data-group-id="4943872433-3">(</span><span class="n">SysTimeSecs</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4943872433-4">[</span><span class="p" data-group-id="4943872433-5">{</span><span class="ss">offset</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Z&quot;</span><span class="p" data-group-id="4943872433-5">}</span><span class="p" data-group-id="4943872433-4">]</span><span class="p" data-group-id="4943872433-3">)</span><span class="p">,</span><span class="w">
-    </span><span class="nc">json</span><span class="p">:</span><span class="nf">format_value</span><span class="p" data-group-id="4943872433-6">(</span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_binary</span><span class="p" data-group-id="4943872433-7">(</span><span class="n">TimeStr</span><span class="p" data-group-id="4943872433-7">)</span><span class="p">,</span><span class="w"> </span><span class="n">Encode</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="4943872433-6">)</span><span class="p">;</span><span class="gp unselectable">
-&gt; </span><span class="nf">formatter</span><span class="p" data-group-id="4943872433-8">(</span><span class="n">Other</span><span class="p">,</span><span class="w"> </span><span class="n">Encode</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="4943872433-8">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">json</span><span class="p">:</span><span class="nf">format_value</span><span class="p" data-group-id="4943872433-9">(</span><span class="n">Other</span><span class="p">,</span><span class="w"> </span><span class="n">Encode</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="4943872433-9">)</span><span class="p">.</span><span class="w">
+to help in constructing such callbacks.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nf">formatter</span><span class="p" data-group-id="4640389778-1">(</span><span class="p" data-group-id="4640389778-2">{</span><span class="ss">posix_time</span><span class="p">,</span><span class="w"> </span><span class="n">SysTimeSecs</span><span class="p" data-group-id="4640389778-2">}</span><span class="p">,</span><span class="w"> </span><span class="n">Encode</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="4640389778-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="n">TimeStr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">calendar</span><span class="p">:</span><span class="nf">system_time_to_rfc3339</span><span class="p" data-group-id="4640389778-3">(</span><span class="n">SysTimeSecs</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4640389778-4">[</span><span class="p" data-group-id="4640389778-5">{</span><span class="ss">offset</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Z&quot;</span><span class="p" data-group-id="4640389778-5">}</span><span class="p" data-group-id="4640389778-4">]</span><span class="p" data-group-id="4640389778-3">)</span><span class="p">,</span><span class="w">
+    </span><span class="nc">json</span><span class="p">:</span><span class="nf">format_value</span><span class="p" data-group-id="4640389778-6">(</span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_binary</span><span class="p" data-group-id="4640389778-7">(</span><span class="n">TimeStr</span><span class="p" data-group-id="4640389778-7">)</span><span class="p">,</span><span class="w"> </span><span class="n">Encode</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="4640389778-6">)</span><span class="p">;</span><span class="gp unselectable">
+&gt; </span><span class="nf">formatter</span><span class="p" data-group-id="4640389778-8">(</span><span class="n">Other</span><span class="p">,</span><span class="w"> </span><span class="n">Encode</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="4640389778-8">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">json</span><span class="p">:</span><span class="nf">format_value</span><span class="p" data-group-id="4640389778-9">(</span><span class="n">Other</span><span class="p">,</span><span class="w"> </span><span class="n">Encode</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="4640389778-9">)</span><span class="p">.</span><span class="w">
 </span><span class="o">&gt;</span><span class="gp unselectable">
-&gt; </span><span class="n">Fun</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">fun</span><span class="p" data-group-id="4943872433-10">(</span><span class="n">Value</span><span class="p">,</span><span class="w"> </span><span class="n">Encode</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="4943872433-10">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nf">formatter</span><span class="p" data-group-id="4943872433-11">(</span><span class="n">Value</span><span class="p">,</span><span class="w"> </span><span class="n">Encode</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="4943872433-11">)</span><span class="w"> </span><span class="k">end</span><span class="p">.</span><span class="gp unselectable">
-&gt; </span><span class="n">Options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="4943872433-12">#{</span><span class="ss">indent</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="4943872433-12">}</span><span class="p">.</span><span class="gp unselectable">
-&gt; </span><span class="n">Term</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="4943872433-13">#{</span><span class="ss">id</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">time</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="4943872433-14">{</span><span class="ss">posix_time</span><span class="p">,</span><span class="w"> </span><span class="nc">erlang</span><span class="p">:</span><span class="nf">system_time</span><span class="p" data-group-id="4943872433-15">(</span><span class="ss">seconds</span><span class="p" data-group-id="4943872433-15">)</span><span class="p" data-group-id="4943872433-14">}</span><span class="p" data-group-id="4943872433-13">}</span><span class="p">.</span><span class="w">
+&gt; </span><span class="n">Fun</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">fun</span><span class="p" data-group-id="4640389778-10">(</span><span class="n">Value</span><span class="p">,</span><span class="w"> </span><span class="n">Encode</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="4640389778-10">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nf">formatter</span><span class="p" data-group-id="4640389778-11">(</span><span class="n">Value</span><span class="p">,</span><span class="w"> </span><span class="n">Encode</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="4640389778-11">)</span><span class="w"> </span><span class="k">end</span><span class="p">.</span><span class="gp unselectable">
+&gt; </span><span class="n">Options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="4640389778-12">#{</span><span class="ss">indent</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="4640389778-12">}</span><span class="p">.</span><span class="gp unselectable">
+&gt; </span><span class="n">Term</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="4640389778-13">#{</span><span class="ss">id</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">time</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="4640389778-14">{</span><span class="ss">posix_time</span><span class="p">,</span><span class="w"> </span><span class="nc">erlang</span><span class="p">:</span><span class="nf">system_time</span><span class="p" data-group-id="4640389778-15">(</span><span class="ss">seconds</span><span class="p" data-group-id="4640389778-15">)</span><span class="p" data-group-id="4640389778-14">}</span><span class="p" data-group-id="4640389778-13">}</span><span class="p">.</span><span class="w">
 </span><span class="o">&gt;</span><span class="gp unselectable">
-&gt; </span><span class="nc">io</span><span class="p">:</span><span class="nf">put_chars</span><span class="p" data-group-id="4943872433-16">(</span><span class="nc">json</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="4943872433-17">(</span><span class="n">Term</span><span class="p">,</span><span class="w"> </span><span class="n">Fun</span><span class="p">,</span><span class="w"> </span><span class="n">Options</span><span class="p" data-group-id="4943872433-17">)</span><span class="p" data-group-id="4943872433-16">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="4943872433-18">{</span><span class="w">
+&gt; </span><span class="nc">io</span><span class="p">:</span><span class="nf">put_chars</span><span class="p" data-group-id="4640389778-16">(</span><span class="nc">json</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="4640389778-17">(</span><span class="n">Term</span><span class="p">,</span><span class="w"> </span><span class="n">Fun</span><span class="p">,</span><span class="w"> </span><span class="n">Options</span><span class="p" data-group-id="4640389778-17">)</span><span class="p" data-group-id="4640389778-16">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4640389778-18">{</span><span class="w">
     </span><span class="s">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s">&quot;time&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2024-05-23T16:07:48Z&quot;</span><span class="w">
-</span><span class="p" data-group-id="4943872433-18">}</span><span class="w">
+</span><span class="p" data-group-id="4640389778-18">}</span><span class="w">
 </span><span class="ss">ok</span></code></pre>
   </section>
 </section>
@@ -1610,7 +1630,7 @@ to help in constructing such callbacks.</p><pre><code class="makeup erlang" tran
         <span class="note">(since OTP 27.2)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L710" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L710" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1640,7 +1660,7 @@ to help in constructing such callbacks.</p><pre><code class="makeup erlang" tran
         <span class="note">(since OTP 27.2)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L736" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L736" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1673,7 +1693,7 @@ resulting JSON object.</p><h2 id="format_key_value_list_checked/3-errors" class=
         <span class="note">(since OTP 27.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/OTP-28.2/lib/stdlib/src/json.erl#L643" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links/lib/stdlib/src/json.erl#L643" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1700,8 +1720,8 @@ and indents objects and lists.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="stdlib.epub" title="ePub version">
@@ -1713,7 +1733,7 @@ and indents objects and lists.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 
