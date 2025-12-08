@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="stdlib v7.1-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/string.html" />
     <title>string — stdlib v7.1-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-4F7E9F36.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ stdlib
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of stdlib</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ stdlib
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L50" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L50" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -117,14 +135,14 @@ example <a href="unicode.html#characters_to_nfc_list/1"><code class="inline">uni
 expect UTF-8 binaries but not all functions verify that all binaries are encoded
 correctly.</p><p>Unless otherwise specified the return value type is the same as the input type.
 That is, binary input returns binary output, list input returns a list output,
-and mixed input can return a mixed output.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">trim</span><span class="p" data-group-id="6576402753-1">(</span><span class="s">&quot;  sarah  &quot;</span><span class="p" data-group-id="6576402753-1">)</span><span class="p">.</span><span class="w">
+and mixed input can return a mixed output.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">trim</span><span class="p" data-group-id="9934617293-1">(</span><span class="s">&quot;  sarah  &quot;</span><span class="p" data-group-id="9934617293-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;sarah&quot;</span><span class="gp unselectable">
-2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">trim</span><span class="p" data-group-id="6576402753-2">(</span><span class="p" data-group-id="6576402753-3">&lt;&lt;</span><span class="s">&quot;  sarah  &quot;</span><span class="p" data-group-id="6576402753-3">&gt;&gt;</span><span class="p" data-group-id="6576402753-2">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="6576402753-4">&lt;&lt;</span><span class="s">&quot;sarah&quot;</span><span class="p" data-group-id="6576402753-4">&gt;&gt;</span><span class="gp unselectable">
-3&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">lexemes</span><span class="p" data-group-id="6576402753-5">(</span><span class="s">&quot;foo bar&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p" data-group-id="6576402753-5">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="6576402753-6">[</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="s">&quot;bar&quot;</span><span class="p" data-group-id="6576402753-6">]</span><span class="gp unselectable">
-4&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">lexemes</span><span class="p" data-group-id="6576402753-7">(</span><span class="p" data-group-id="6576402753-8">&lt;&lt;</span><span class="s">&quot;foo bar&quot;</span><span class="p" data-group-id="6576402753-8">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p" data-group-id="6576402753-7">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="6576402753-9">[</span><span class="p" data-group-id="6576402753-10">&lt;&lt;</span><span class="s">&quot;foo&quot;</span><span class="p" data-group-id="6576402753-10">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="6576402753-11">&lt;&lt;</span><span class="s">&quot;bar&quot;</span><span class="p" data-group-id="6576402753-11">&gt;&gt;</span><span class="p" data-group-id="6576402753-9">]</span></code></pre><p>This module has been reworked in Erlang/OTP 20 to handle <a href="unicode.html#t:chardata/0"><code class="inline">unicode:chardata/0</code></a>
+2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">trim</span><span class="p" data-group-id="9934617293-2">(</span><span class="p" data-group-id="9934617293-3">&lt;&lt;</span><span class="s">&quot;  sarah  &quot;</span><span class="p" data-group-id="9934617293-3">&gt;&gt;</span><span class="p" data-group-id="9934617293-2">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="9934617293-4">&lt;&lt;</span><span class="s">&quot;sarah&quot;</span><span class="p" data-group-id="9934617293-4">&gt;&gt;</span><span class="gp unselectable">
+3&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">lexemes</span><span class="p" data-group-id="9934617293-5">(</span><span class="s">&quot;foo bar&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p" data-group-id="9934617293-5">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="9934617293-6">[</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="s">&quot;bar&quot;</span><span class="p" data-group-id="9934617293-6">]</span><span class="gp unselectable">
+4&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">lexemes</span><span class="p" data-group-id="9934617293-7">(</span><span class="p" data-group-id="9934617293-8">&lt;&lt;</span><span class="s">&quot;foo bar&quot;</span><span class="p" data-group-id="9934617293-8">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p" data-group-id="9934617293-7">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="9934617293-9">[</span><span class="p" data-group-id="9934617293-10">&lt;&lt;</span><span class="s">&quot;foo&quot;</span><span class="p" data-group-id="9934617293-10">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="9934617293-11">&lt;&lt;</span><span class="s">&quot;bar&quot;</span><span class="p" data-group-id="9934617293-11">&gt;&gt;</span><span class="p" data-group-id="9934617293-9">]</span></code></pre><p>This module has been reworked in Erlang/OTP 20 to handle <a href="unicode.html#t:chardata/0"><code class="inline">unicode:chardata/0</code></a>
 and operate on grapheme clusters. The
 <a href="string.html#obsolete-api-functions"><code class="inline">old functions</code></a> that only work on Latin-1
 lists as input are still available but should not be used, they will be
@@ -178,8 +196,8 @@ functions of both packages have been retained.</p>
       </div>
 
         <div class="summary-synopsis"><p>Converts <code class="inline">String</code> to a case-agnostic comparable string. Function
-<a><code class="inline">casefold/1</code></a> is preferred over <a><code class="inline">lowercase/1</code></a>
-when two strings are to be compared for equality. See also <a><code class="inline">equal/4</code></a>.</p></div>
+<a href="#casefold/1"><code class="inline">casefold/1</code></a> is preferred over <a href="#lowercase/1"><code class="inline">lowercase/1</code></a>
+when two strings are to be compared for equality. See also <a href="#equal/4"><code class="inline">equal/4</code></a>.</p></div>
 
     </div>
 
@@ -200,7 +218,7 @@ when two strings are to be compared for equality. See also <a><code class="inlin
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">equal(A, B, true)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#equal/3"><code class="inline">equal(A, B, true)</code></a>.</p></div>
 
     </div>
 
@@ -210,7 +228,7 @@ when two strings are to be compared for equality. See also <a><code class="inlin
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">equal(A, B, IgnoreCase, none)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#equal/4"><code class="inline">equal(A, B, IgnoreCase, none)</code></a>.</p></div>
 
     </div>
 
@@ -230,7 +248,7 @@ when two strings are to be compared for equality. See also <a><code class="inlin
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">find(String, SearchPattern, leading)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#find/3"><code class="inline">find(String, SearchPattern, leading)</code></a>.</p></div>
 
     </div>
 
@@ -264,7 +282,7 @@ searched.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Returns a float between <code class="inline">+0.0</code> and <code class="inline">1.0</code> representing the
-<a>Jaro similarity</a>
+<a href="https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance">Jaro similarity</a>
 between the given strings. Strings with a higher similarity will score closer
 to <code class="inline">1.0</code>, with <code class="inline">+0.0</code> meaning no similarity and <code class="inline">1.0</code> meaning an exact match.</p></div>
 
@@ -342,7 +360,7 @@ grapheme clusters in <code class="inline">SeparatorList</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">pad(String, Length, trailing)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#pad/3"><code class="inline">pad(String, Length, trailing)</code></a>.</p></div>
 
     </div>
 
@@ -352,7 +370,7 @@ grapheme clusters in <code class="inline">SeparatorList</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">pad(String, Length, Dir, $ )</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#pad/4"><code class="inline">pad(String, Length, Dir, $ )</code></a>.</p></div>
 
     </div>
 
@@ -384,7 +402,7 @@ grapheme clusters in <code class="inline">SeparatorList</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">replace(String, SearchPattern, Replacement, leading)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#replace/4"><code class="inline">replace(String, SearchPattern, Replacement, leading)</code></a>.</p></div>
 
     </div>
 
@@ -415,7 +433,7 @@ the <code class="inline">leading</code>, the <code class="inline">trailing</code
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">slice(String, Start, infinity)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#slice/3"><code class="inline">slice(String, Start, infinity)</code></a>.</p></div>
 
     </div>
 
@@ -436,7 +454,7 @@ at position <code class="inline">Start</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">split(String, SearchPattern, leading)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#split/3"><code class="inline">split(String, SearchPattern, leading)</code></a>.</p></div>
 
     </div>
 
@@ -458,7 +476,7 @@ parts. <code class="inline">Where</code>, default <code class="inline">leading</
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">take(String, Characters, false)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#take/3"><code class="inline">take(String, Characters, false)</code></a>.</p></div>
 
     </div>
 
@@ -468,7 +486,7 @@ parts. <code class="inline">Where</code>, default <code class="inline">leading</
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">take(String, Characters, Complement, leading)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#take/4"><code class="inline">take(String, Characters, Complement, leading)</code></a>.</p></div>
 
     </div>
 
@@ -535,7 +553,7 @@ integer are returned in <code class="inline">Rest</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">trim(String, both)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#trim/2"><code class="inline">trim(String, both)</code></a>.</p></div>
 
     </div>
 
@@ -545,10 +563,10 @@ integer are returned in <code class="inline">Rest</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">trim(String, Dir, Whitespace})</code></a> where 
+        <div class="summary-synopsis"><p>Equivalent to <a href="#trim/3"><code class="inline">trim(String, Dir, Whitespace})</code></a> where 
 <code class="inline">Whitespace</code> is the set of nonbreakable whitespace codepoints, defined
 as Pattern_White_Space in
-<a>Unicode Standard Annex #31</a>.</p></div>
+<a href="http://unicode.org/reports/tr31/">Unicode Standard Annex #31</a>.</p></div>
 
     </div>
 
@@ -585,7 +603,7 @@ removed.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">centre(String, Number, $ )</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#centre/3"><code class="inline">centre(String, Number, $ )</code></a>.</p></div>
 
     </div>
 
@@ -606,7 +624,7 @@ blanks or <code class="inline">Character</code>. The resulting string has length
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">chars(Character, Number, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#chars/3"><code class="inline">chars(Character, Number, [])</code></a>.</p></div>
 
     </div>
 
@@ -681,7 +699,7 @@ entirely of characters not from <code class="inline">Chars</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">left(String, Number, $ )</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#left/3"><code class="inline">left(String, Number, $ )</code></a>.</p></div>
 
     </div>
 
@@ -692,7 +710,7 @@ entirely of characters not from <code class="inline">Chars</code>.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Returns <code class="inline">String</code> with the length adjusted in accordance with <code class="inline">Number</code>. The left
-margin is fixed. If <a><code class="inline">length(String)</code></a> &lt; <code class="inline">Number</code>, then <code class="inline">String</code> is
+margin is fixed. If <a href="#length/1"><code class="inline">length(String)</code></a> &lt; <code class="inline">Number</code>, then <code class="inline">String</code> is
 padded with blanks or <code class="inline">Character</code>s.</p></div>
 
     </div>
@@ -724,7 +742,7 @@ if <code class="inline">Character</code> does not occur.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">right(String, Number, $ )</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#right/3"><code class="inline">right(String, Number, $ )</code></a>.</p></div>
 
     </div>
 
@@ -779,7 +797,7 @@ entirely of characters from <code class="inline">Chars</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">strip(String, both)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#strip/2"><code class="inline">strip(String, both)</code></a>.</p></div>
 
     </div>
 
@@ -789,7 +807,7 @@ entirely of characters from <code class="inline">Chars</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">strip(String, Direction, $ )</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#strip/3"><code class="inline">strip(String, Direction, $ )</code></a>.</p></div>
 
     </div>
 
@@ -810,7 +828,7 @@ entirely of characters from <code class="inline">Chars</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">sub_string(String, Start, string:length(String))</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#sub_string/3"><code class="inline">sub_string(String, Start, string:length(String))</code></a>.</p></div>
 
     </div>
 
@@ -831,7 +849,7 @@ string, or to and including position <code class="inline">Stop</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">sub_word(String, Number, $ )</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#sub_word/3"><code class="inline">sub_word(String, Number, $ )</code></a>.</p></div>
 
     </div>
 
@@ -852,7 +870,7 @@ or <code class="inline">Character</code>s.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">substr(String, Start, string:length(String) - Start)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#substr/3"><code class="inline">substr(String, Start, string:length(String) - Start)</code></a>.</p></div>
 
     </div>
 
@@ -908,7 +926,7 @@ set are unchanged.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">words(String, $ )</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#words/2"><code class="inline">words(String, $ )</code></a>.</p></div>
 
     </div>
 
@@ -934,6 +952,7 @@ set are unchanged.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:direction/0">
 
@@ -947,7 +966,7 @@ set are unchanged.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L165" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L165" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -975,7 +994,7 @@ set are unchanged.</p></div>
       <h1 class="signature" translate="no">grapheme_cluster()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L164" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L164" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1004,6 +1023,7 @@ set are unchanged.</p></div>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="casefold/1">
 
@@ -1017,7 +1037,7 @@ set are unchanged.</p></div>
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L724" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L724" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1034,7 +1054,7 @@ set are unchanged.</p></div>
 
 <p>Converts <code class="inline">String</code> to a case-agnostic comparable string. Function
 <a href="#casefold/1"><code class="inline">casefold/1</code></a> is preferred over <a href="#lowercase/1"><code class="inline">lowercase/1</code></a>
-when two strings are to be compared for equality. See also <a href="#equal/4"><code class="inline">equal/4</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">casefold</span><span class="p" data-group-id="0639678826-1">(</span><span class="s">&quot;Ω and ẞ SHARP S&quot;</span><span class="p" data-group-id="0639678826-1">)</span><span class="p">.</span><span class="w">
+when two strings are to be compared for equality. See also <a href="#equal/4"><code class="inline">equal/4</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">casefold</span><span class="p" data-group-id="4489991403-1">(</span><span class="s">&quot;Ω and ẞ SHARP S&quot;</span><span class="p" data-group-id="4489991403-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;ω and ss sharp s&quot;</span></code></pre>
   </section>
 </section>
@@ -1050,7 +1070,7 @@ when two strings are to be compared for equality. See also <a href="#equal/4"><c
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L552" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L552" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1066,9 +1086,9 @@ when two strings are to be compared for equality. See also <a href="#equal/4"><c
       </div>
 
 <p>Returns a string where any trailing <code class="inline">\n</code> or <code class="inline">\r\n</code> have been removed from
-<code class="inline">String</code>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">182&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">chomp</span><span class="p" data-group-id="4174693846-1">(</span><span class="p" data-group-id="4174693846-2">&lt;&lt;</span><span class="s">&quot;\nHello\n\n&quot;</span><span class="p" data-group-id="4174693846-2">&gt;&gt;</span><span class="p" data-group-id="4174693846-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="4174693846-3">&lt;&lt;</span><span class="s">&quot;\nHello&quot;</span><span class="p" data-group-id="4174693846-3">&gt;&gt;</span><span class="gp unselectable">
-183&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">chomp</span><span class="p" data-group-id="4174693846-4">(</span><span class="s">&quot;\nHello\r\r\n&quot;</span><span class="p" data-group-id="4174693846-4">)</span><span class="p">.</span><span class="w">
+<code class="inline">String</code>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">182&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">chomp</span><span class="p" data-group-id="7137971436-1">(</span><span class="p" data-group-id="7137971436-2">&lt;&lt;</span><span class="s">&quot;\nHello\n\n&quot;</span><span class="p" data-group-id="7137971436-2">&gt;&gt;</span><span class="p" data-group-id="7137971436-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="7137971436-3">&lt;&lt;</span><span class="s">&quot;\nHello&quot;</span><span class="p" data-group-id="7137971436-3">&gt;&gt;</span><span class="gp unselectable">
+183&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">chomp</span><span class="p" data-group-id="7137971436-4">(</span><span class="s">&quot;\nHello\r\r\n&quot;</span><span class="p" data-group-id="7137971436-4">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;\nHello\r&quot;</span></code></pre>
   </section>
 </section>
@@ -1082,7 +1102,7 @@ when two strings are to be compared for equality. See also <a href="#equal/4"><c
       <h1 class="signature" translate="no">equal(A, B)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L289" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L289" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1112,7 +1132,7 @@ when two strings are to be compared for equality. See also <a href="#equal/4"><c
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L303" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L303" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1143,7 +1163,7 @@ when two strings are to be compared for equality. See also <a href="#equal/4"><c
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L340" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L340" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1169,11 +1189,11 @@ equality test. There are four available normalization forms:
 <a href="unicode.html#characters_to_nfc_list/1"><code class="inline">nfc</code></a>,
 <a href="unicode.html#characters_to_nfd_list/1"><code class="inline">nfd</code></a>,
 <a href="unicode.html#characters_to_nfkc_list/1"><code class="inline">nfkc</code></a>, and
-<a href="unicode.html#characters_to_nfkd_list/1"><code class="inline">nfkd</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">equal</span><span class="p" data-group-id="1211550675-1">(</span><span class="s">&quot;åäö&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1211550675-2">&lt;&lt;</span><span class="s">&quot;åäö&quot;</span><span class="o">/</span><span class="ss">utf8</span><span class="p" data-group-id="1211550675-2">&gt;&gt;</span><span class="p" data-group-id="1211550675-1">)</span><span class="p">.</span><span class="w">
+<a href="unicode.html#characters_to_nfkd_list/1"><code class="inline">nfkd</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">equal</span><span class="p" data-group-id="3565453844-1">(</span><span class="s">&quot;åäö&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3565453844-2">&lt;&lt;</span><span class="s">&quot;åäö&quot;</span><span class="o">/</span><span class="ss">utf8</span><span class="p" data-group-id="3565453844-2">&gt;&gt;</span><span class="p" data-group-id="3565453844-1">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">true</span><span class="gp unselectable">
-2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">equal</span><span class="p" data-group-id="1211550675-3">(</span><span class="s">&quot;åäö&quot;</span><span class="p">,</span><span class="w"> </span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_nfd_binary</span><span class="p" data-group-id="1211550675-4">(</span><span class="s">&quot;åäö&quot;</span><span class="p" data-group-id="1211550675-4">)</span><span class="p" data-group-id="1211550675-3">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">equal</span><span class="p" data-group-id="3565453844-3">(</span><span class="s">&quot;åäö&quot;</span><span class="p">,</span><span class="w"> </span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_nfd_binary</span><span class="p" data-group-id="3565453844-4">(</span><span class="s">&quot;åäö&quot;</span><span class="p" data-group-id="3565453844-4">)</span><span class="p" data-group-id="3565453844-3">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">false</span><span class="gp unselectable">
-3&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">equal</span><span class="p" data-group-id="1211550675-5">(</span><span class="s">&quot;åäö&quot;</span><span class="p">,</span><span class="w"> </span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_nfd_binary</span><span class="p" data-group-id="1211550675-6">(</span><span class="s">&quot;ÅÄÖ&quot;</span><span class="p" data-group-id="1211550675-6">)</span><span class="p">,</span><span class="w"> </span><span class="ss">true</span><span class="p">,</span><span class="w"> </span><span class="ss">nfc</span><span class="p" data-group-id="1211550675-5">)</span><span class="p">.</span><span class="w">
+3&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">equal</span><span class="p" data-group-id="3565453844-5">(</span><span class="s">&quot;åäö&quot;</span><span class="p">,</span><span class="w"> </span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_nfd_binary</span><span class="p" data-group-id="3565453844-6">(</span><span class="s">&quot;ÅÄÖ&quot;</span><span class="p" data-group-id="3565453844-6">)</span><span class="p">,</span><span class="w"> </span><span class="ss">true</span><span class="p">,</span><span class="w"> </span><span class="ss">nfc</span><span class="p" data-group-id="3565453844-5">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">true</span></code></pre>
   </section>
 </section>
@@ -1189,7 +1209,7 @@ equality test. There are four available normalization forms:
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L998" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L998" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1220,7 +1240,7 @@ equality test. There are four available normalization forms:
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L1026" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L1026" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1239,13 +1259,13 @@ equality test. There are four available normalization forms:
 <p>Removes anything before <code class="inline">SearchPattern</code> in <code class="inline">String</code> and returns the remainder of
 the string or <code class="inline">nomatch</code> if <code class="inline">SearchPattern</code> is not found. <code class="inline">Dir</code>, which can be
 <code class="inline">leading</code> or <code class="inline">trailing</code>, indicates from which direction characters are to be
-searched.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">find</span><span class="p" data-group-id="6831363530-1">(</span><span class="s">&quot;ab..cd..ef&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="p" data-group-id="6831363530-1">)</span><span class="p">.</span><span class="w">
+searched.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">find</span><span class="p" data-group-id="7483340442-1">(</span><span class="s">&quot;ab..cd..ef&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.&quot;</span><span class="p" data-group-id="7483340442-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;..cd..ef&quot;</span><span class="gp unselectable">
-2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">find</span><span class="p" data-group-id="6831363530-2">(</span><span class="p" data-group-id="6831363530-3">&lt;&lt;</span><span class="s">&quot;ab..cd..ef&quot;</span><span class="p" data-group-id="6831363530-3">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;..&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">trailing</span><span class="p" data-group-id="6831363530-2">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="6831363530-4">&lt;&lt;</span><span class="s">&quot;..ef&quot;</span><span class="p" data-group-id="6831363530-4">&gt;&gt;</span><span class="gp unselectable">
-3&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">find</span><span class="p" data-group-id="6831363530-5">(</span><span class="p" data-group-id="6831363530-6">&lt;&lt;</span><span class="s">&quot;ab..cd..ef&quot;</span><span class="p" data-group-id="6831363530-6">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">leading</span><span class="p" data-group-id="6831363530-5">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">find</span><span class="p" data-group-id="7483340442-2">(</span><span class="p" data-group-id="7483340442-3">&lt;&lt;</span><span class="s">&quot;ab..cd..ef&quot;</span><span class="p" data-group-id="7483340442-3">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;..&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">trailing</span><span class="p" data-group-id="7483340442-2">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="7483340442-4">&lt;&lt;</span><span class="s">&quot;..ef&quot;</span><span class="p" data-group-id="7483340442-4">&gt;&gt;</span><span class="gp unselectable">
+3&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">find</span><span class="p" data-group-id="7483340442-5">(</span><span class="p" data-group-id="7483340442-6">&lt;&lt;</span><span class="s">&quot;ab..cd..ef&quot;</span><span class="p" data-group-id="7483340442-6">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">leading</span><span class="p" data-group-id="7483340442-5">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">nomatch</span><span class="gp unselectable">
-4&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">find</span><span class="p" data-group-id="6831363530-7">(</span><span class="s">&quot;ab..cd..ef&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">trailing</span><span class="p" data-group-id="6831363530-7">)</span><span class="p">.</span><span class="w">
+4&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">find</span><span class="p" data-group-id="7483340442-7">(</span><span class="s">&quot;ab..cd..ef&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">trailing</span><span class="p" data-group-id="7483340442-7">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">nomatch</span></code></pre>
   </section>
 </section>
@@ -1261,7 +1281,7 @@ searched.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate=
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L235" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L235" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1276,9 +1296,9 @@ searched.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate=
 
       </div>
 
-<p>Returns <code class="inline">true</code> if <code class="inline">String</code> is the empty string, otherwise <code class="inline">false</code>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">is_empty</span><span class="p" data-group-id="2592017242-1">(</span><span class="s">&quot;foo&quot;</span><span class="p" data-group-id="2592017242-1">)</span><span class="p">.</span><span class="w">
+<p>Returns <code class="inline">true</code> if <code class="inline">String</code> is the empty string, otherwise <code class="inline">false</code>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">is_empty</span><span class="p" data-group-id="2960319929-1">(</span><span class="s">&quot;foo&quot;</span><span class="p" data-group-id="2960319929-1">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">false</span><span class="gp unselectable">
-2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">is_empty</span><span class="p" data-group-id="2592017242-2">(</span><span class="p" data-group-id="2592017242-3">[</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="p" data-group-id="2592017242-4">&lt;&lt;</span><span class="p" data-group-id="2592017242-4">&gt;&gt;</span><span class="p" data-group-id="2592017242-3">]</span><span class="p" data-group-id="2592017242-2">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">is_empty</span><span class="p" data-group-id="2960319929-2">(</span><span class="p" data-group-id="2960319929-3">[</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="p" data-group-id="2960319929-4">&lt;&lt;</span><span class="p" data-group-id="2960319929-4">&gt;&gt;</span><span class="p" data-group-id="2960319929-3">]</span><span class="p" data-group-id="2960319929-2">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">true</span></code></pre>
   </section>
 </section>
@@ -1294,7 +1314,7 @@ searched.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate=
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L1060" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L1060" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1316,13 +1336,13 @@ searched.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate=
 <p>Returns a float between <code class="inline">+0.0</code> and <code class="inline">1.0</code> representing the
 <a href="https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance">Jaro similarity</a>
 between the given strings. Strings with a higher similarity will score closer
-to <code class="inline">1.0</code>, with <code class="inline">+0.0</code> meaning no similarity and <code class="inline">1.0</code> meaning an exact match.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">jaro_similarity</span><span class="p" data-group-id="9296332050-1">(</span><span class="s">&quot;ditto&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ditto&quot;</span><span class="p" data-group-id="9296332050-1">)</span><span class="p">.</span><span class="w">
+to <code class="inline">1.0</code>, with <code class="inline">+0.0</code> meaning no similarity and <code class="inline">1.0</code> meaning an exact match.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">jaro_similarity</span><span class="p" data-group-id="7400316306-1">(</span><span class="s">&quot;ditto&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ditto&quot;</span><span class="p" data-group-id="7400316306-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">1.0</span><span class="gp unselectable">
-2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">jaro_similarity</span><span class="p" data-group-id="9296332050-2">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bar&quot;</span><span class="p" data-group-id="9296332050-2">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">jaro_similarity</span><span class="p" data-group-id="7400316306-2">(</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bar&quot;</span><span class="p" data-group-id="7400316306-2">)</span><span class="p">.</span><span class="w">
 </span><span class="o">+</span><span class="mf">0.0</span><span class="gp unselectable">
-3&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">jaro_similarity</span><span class="p" data-group-id="9296332050-3">(</span><span class="s">&quot;michelle&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;michael&quot;</span><span class="p" data-group-id="9296332050-3">)</span><span class="p">.</span><span class="w">
+3&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">jaro_similarity</span><span class="p" data-group-id="7400316306-3">(</span><span class="s">&quot;michelle&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;michael&quot;</span><span class="p" data-group-id="7400316306-3">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">0.8690476190476191</span><span class="gp unselectable">
-4&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">jaro_similarity</span><span class="p" data-group-id="9296332050-4">(</span><span class="p" data-group-id="9296332050-5">&lt;&lt;</span><span class="s">&quot;Édouard&quot;</span><span class="o">/</span><span class="ss">utf8</span><span class="p" data-group-id="9296332050-5">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9296332050-6">&lt;&lt;</span><span class="s">&quot;Claude&quot;</span><span class="p" data-group-id="9296332050-6">&gt;&gt;</span><span class="p" data-group-id="9296332050-4">)</span><span class="p">.</span><span class="w">
+4&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">jaro_similarity</span><span class="p" data-group-id="7400316306-4">(</span><span class="p" data-group-id="7400316306-5">&lt;&lt;</span><span class="s">&quot;Édouard&quot;</span><span class="o">/</span><span class="ss">utf8</span><span class="p" data-group-id="7400316306-5">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7400316306-6">&lt;&lt;</span><span class="s">&quot;Claude&quot;</span><span class="p" data-group-id="7400316306-6">&gt;&gt;</span><span class="p" data-group-id="7400316306-4">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">0.5317460317460317</span></code></pre><p>The Jaro distance between two strings can be calculated with
 <code class="inline">JaroDistance = 1.0 - JaroSimilarity</code>.</p>
   </section>
@@ -1339,7 +1359,7 @@ to <code class="inline">1.0</code>, with <code class="inline">+0.0</code> meanin
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L255" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L255" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1354,9 +1374,9 @@ to <code class="inline">1.0</code>, with <code class="inline">+0.0</code> meanin
 
       </div>
 
-<p>Returns the number of grapheme clusters in <code class="inline">String</code>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">length</span><span class="p" data-group-id="2208049361-1">(</span><span class="s">&quot;ß↑e̊&quot;</span><span class="p" data-group-id="2208049361-1">)</span><span class="p">.</span><span class="w">
+<p>Returns the number of grapheme clusters in <code class="inline">String</code>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">length</span><span class="p" data-group-id="6727036621-1">(</span><span class="s">&quot;ß↑e̊&quot;</span><span class="p" data-group-id="6727036621-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mi">3</span><span class="gp unselectable">
-2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">length</span><span class="p" data-group-id="2208049361-2">(</span><span class="p" data-group-id="2208049361-3">&lt;&lt;</span><span class="mi">195</span><span class="p">,</span><span class="mi">159</span><span class="p">,</span><span class="mi">226</span><span class="p">,</span><span class="mi">134</span><span class="p">,</span><span class="mi">145</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">138</span><span class="p" data-group-id="2208049361-3">&gt;&gt;</span><span class="p" data-group-id="2208049361-2">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">length</span><span class="p" data-group-id="6727036621-2">(</span><span class="p" data-group-id="6727036621-3">&lt;&lt;</span><span class="mi">195</span><span class="p">,</span><span class="mi">159</span><span class="p">,</span><span class="mi">226</span><span class="p">,</span><span class="mi">134</span><span class="p">,</span><span class="mi">145</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">138</span><span class="p" data-group-id="6727036621-3">&gt;&gt;</span><span class="p" data-group-id="6727036621-2">)</span><span class="p">.</span><span class="w">
 </span><span class="mi">3</span></code></pre>
   </section>
 </section>
@@ -1372,7 +1392,7 @@ to <code class="inline">1.0</code>, with <code class="inline">+0.0</code> meanin
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L964" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L964" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1391,10 +1411,10 @@ to <code class="inline">1.0</code>, with <code class="inline">+0.0</code> meanin
 <p>Returns a list of lexemes in <code class="inline">String</code>, separated by the grapheme clusters in
 <code class="inline">SeparatorList</code>.</p><p>Notice that, as shown in this example, two or more adjacent separator graphemes
 clusters in <code class="inline">String</code> are treated as one. That is, there are no empty strings in
-the resulting list of lexemes. See also <a href="#split/3"><code class="inline">split/3</code></a> which returns empty strings.</p><p>Notice that <code class="inline">[$\r,$\n]</code> is one grapheme cluster.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">lexemes</span><span class="p" data-group-id="5962255104-1">(</span><span class="s">&quot;abc de̊fxxghix jkl\r\nfoo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x e&quot;</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="p" data-group-id="5962255104-2">[</span><span class="p" data-group-id="5962255104-3">[</span><span class="sc">$\r</span><span class="p">,</span><span class="sc">$\n</span><span class="p" data-group-id="5962255104-3">]</span><span class="p" data-group-id="5962255104-2">]</span><span class="p" data-group-id="5962255104-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="5962255104-4">[</span><span class="s">&quot;abc&quot;</span><span class="p">,</span><span class="s">&quot;de̊f&quot;</span><span class="p">,</span><span class="s">&quot;ghi&quot;</span><span class="p">,</span><span class="s">&quot;jkl&quot;</span><span class="p">,</span><span class="s">&quot;foo&quot;</span><span class="p" data-group-id="5962255104-4">]</span><span class="gp unselectable">
-2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">lexemes</span><span class="p" data-group-id="5962255104-5">(</span><span class="p" data-group-id="5962255104-6">&lt;&lt;</span><span class="s">&quot;abc de̊fxxghix jkl\r\nfoo&quot;</span><span class="o">/</span><span class="ss">utf8</span><span class="p" data-group-id="5962255104-6">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x e&quot;</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="p" data-group-id="5962255104-7">[</span><span class="sc">$\r</span><span class="p">,</span><span class="sc">$\n</span><span class="p" data-group-id="5962255104-7">]</span><span class="p" data-group-id="5962255104-5">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="5962255104-8">[</span><span class="p" data-group-id="5962255104-9">&lt;&lt;</span><span class="s">&quot;abc&quot;</span><span class="p" data-group-id="5962255104-9">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="5962255104-10">&lt;&lt;</span><span class="s">&quot;de̊f&quot;</span><span class="o">/</span><span class="ss">utf8</span><span class="p" data-group-id="5962255104-10">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="5962255104-11">&lt;&lt;</span><span class="s">&quot;ghi&quot;</span><span class="p" data-group-id="5962255104-11">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="5962255104-12">&lt;&lt;</span><span class="s">&quot;jkl\r\nfoo&quot;</span><span class="p" data-group-id="5962255104-12">&gt;&gt;</span><span class="p" data-group-id="5962255104-8">]</span></code></pre>
+the resulting list of lexemes. See also <a href="#split/3"><code class="inline">split/3</code></a> which returns empty strings.</p><p>Notice that <code class="inline">[$\r,$\n]</code> is one grapheme cluster.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">lexemes</span><span class="p" data-group-id="1982105525-1">(</span><span class="s">&quot;abc de̊fxxghix jkl\r\nfoo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x e&quot;</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="p" data-group-id="1982105525-2">[</span><span class="p" data-group-id="1982105525-3">[</span><span class="sc">$\r</span><span class="p">,</span><span class="sc">$\n</span><span class="p" data-group-id="1982105525-3">]</span><span class="p" data-group-id="1982105525-2">]</span><span class="p" data-group-id="1982105525-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="1982105525-4">[</span><span class="s">&quot;abc&quot;</span><span class="p">,</span><span class="s">&quot;de̊f&quot;</span><span class="p">,</span><span class="s">&quot;ghi&quot;</span><span class="p">,</span><span class="s">&quot;jkl&quot;</span><span class="p">,</span><span class="s">&quot;foo&quot;</span><span class="p" data-group-id="1982105525-4">]</span><span class="gp unselectable">
+2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">lexemes</span><span class="p" data-group-id="1982105525-5">(</span><span class="p" data-group-id="1982105525-6">&lt;&lt;</span><span class="s">&quot;abc de̊fxxghix jkl\r\nfoo&quot;</span><span class="o">/</span><span class="ss">utf8</span><span class="p" data-group-id="1982105525-6">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x e&quot;</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="p" data-group-id="1982105525-7">[</span><span class="sc">$\r</span><span class="p">,</span><span class="sc">$\n</span><span class="p" data-group-id="1982105525-7">]</span><span class="p" data-group-id="1982105525-5">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="1982105525-8">[</span><span class="p" data-group-id="1982105525-9">&lt;&lt;</span><span class="s">&quot;abc&quot;</span><span class="p" data-group-id="1982105525-9">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="1982105525-10">&lt;&lt;</span><span class="s">&quot;de̊f&quot;</span><span class="o">/</span><span class="ss">utf8</span><span class="p" data-group-id="1982105525-10">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="1982105525-11">&lt;&lt;</span><span class="s">&quot;ghi&quot;</span><span class="p" data-group-id="1982105525-11">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="1982105525-12">&lt;&lt;</span><span class="s">&quot;jkl\r\nfoo&quot;</span><span class="p" data-group-id="1982105525-12">&gt;&gt;</span><span class="p" data-group-id="1982105525-8">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="lowercase/1">
@@ -1409,7 +1429,7 @@ the resulting list of lexemes. See also <a href="#split/3"><code class="inline">
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L668" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L668" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1425,7 +1445,7 @@ the resulting list of lexemes. See also <a href="#split/3"><code class="inline">
       </div>
 
 <p>Converts <code class="inline">String</code> to lowercase.</p><p>Notice that function <a href="#casefold/1"><code class="inline">casefold/1</code></a> should be used when converting a string to be
-tested for equality.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">lowercase</span><span class="p" data-group-id="4583783118-1">(</span><span class="nc">string</span><span class="p">:</span><span class="nf">uppercase</span><span class="p" data-group-id="4583783118-2">(</span><span class="s">&quot;Michał&quot;</span><span class="p" data-group-id="4583783118-2">)</span><span class="p" data-group-id="4583783118-1">)</span><span class="p">.</span><span class="w">
+tested for equality.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">lowercase</span><span class="p" data-group-id="3054771216-1">(</span><span class="nc">string</span><span class="p">:</span><span class="nf">uppercase</span><span class="p" data-group-id="3054771216-2">(</span><span class="s">&quot;Michał&quot;</span><span class="p" data-group-id="3054771216-2">)</span><span class="p" data-group-id="3054771216-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;michał&quot;</span></code></pre>
   </section>
 </section>
@@ -1441,7 +1461,7 @@ tested for equality.</p><p><em>Example:</em></p><pre><code class="makeup erlang"
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L1138" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L1138" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1459,8 +1479,8 @@ tested for equality.</p><p><em>Example:</em></p><pre><code class="makeup erlang"
 
 <p>Returns the first codepoint in <code class="inline">String</code> and the rest of <code class="inline">String</code> in the tail.
 Returns an empty list if <code class="inline">String</code> is empty or an <code class="inline">{error, String}</code> tuple if the
-next byte is invalid.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">next_codepoint</span><span class="p" data-group-id="6960682189-1">(</span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_binary</span><span class="p" data-group-id="6960682189-2">(</span><span class="s">&quot;e̊fg&quot;</span><span class="p" data-group-id="6960682189-2">)</span><span class="p" data-group-id="6960682189-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="6960682189-3">[</span><span class="mi">101</span><span class="p">|</span><span class="p" data-group-id="6960682189-4">&lt;&lt;</span><span class="s">&quot;̊fg&quot;</span><span class="o">/</span><span class="ss">utf8</span><span class="p" data-group-id="6960682189-4">&gt;&gt;</span><span class="p" data-group-id="6960682189-3">]</span></code></pre>
+next byte is invalid.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">next_codepoint</span><span class="p" data-group-id="0948367249-1">(</span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_binary</span><span class="p" data-group-id="0948367249-2">(</span><span class="s">&quot;e̊fg&quot;</span><span class="p" data-group-id="0948367249-2">)</span><span class="p" data-group-id="0948367249-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="0948367249-3">[</span><span class="mi">101</span><span class="p">|</span><span class="p" data-group-id="0948367249-4">&lt;&lt;</span><span class="s">&quot;̊fg&quot;</span><span class="o">/</span><span class="ss">utf8</span><span class="p" data-group-id="0948367249-4">&gt;&gt;</span><span class="p" data-group-id="0948367249-3">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="next_grapheme/1">
@@ -1475,7 +1495,7 @@ next byte is invalid.</p><p><em>Example:</em></p><pre><code class="makeup erlang
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L1119" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L1119" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1494,8 +1514,8 @@ next byte is invalid.</p><p><em>Example:</em></p><pre><code class="makeup erlang
 
 <p>Returns the first grapheme cluster in <code class="inline">String</code> and the rest of <code class="inline">String</code> in the
 tail. Returns an empty list if <code class="inline">String</code> is empty or an <code class="inline">{error, String}</code> tuple
-if the next byte is invalid.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">next_grapheme</span><span class="p" data-group-id="7483831632-1">(</span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_binary</span><span class="p" data-group-id="7483831632-2">(</span><span class="s">&quot;e̊fg&quot;</span><span class="p" data-group-id="7483831632-2">)</span><span class="p" data-group-id="7483831632-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="7483831632-3">[</span><span class="s">&quot;e̊&quot;</span><span class="p">|</span><span class="p" data-group-id="7483831632-4">&lt;&lt;</span><span class="s">&quot;fg&quot;</span><span class="p" data-group-id="7483831632-4">&gt;&gt;</span><span class="p" data-group-id="7483831632-3">]</span></code></pre>
+if the next byte is invalid.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">next_grapheme</span><span class="p" data-group-id="7798483421-1">(</span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_binary</span><span class="p" data-group-id="7798483421-2">(</span><span class="s">&quot;e̊fg&quot;</span><span class="p" data-group-id="7798483421-2">)</span><span class="p" data-group-id="7798483421-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="7798483421-3">[</span><span class="s">&quot;e̊&quot;</span><span class="p">|</span><span class="p" data-group-id="7798483421-4">&lt;&lt;</span><span class="s">&quot;fg&quot;</span><span class="p" data-group-id="7798483421-4">&gt;&gt;</span><span class="p" data-group-id="7798483421-3">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="nth_lexeme/3">
@@ -1510,7 +1530,7 @@ if the next byte is invalid.</p><p><em>Example:</em></p><pre><code class="makeup
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L987" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L987" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1530,7 +1550,7 @@ if the next byte is invalid.</p><p><em>Example:</em></p><pre><code class="makeup
       </div>
 
 <p>Returns lexeme number <code class="inline">N</code> in <code class="inline">String</code>, where lexemes are separated by the
-grapheme clusters in <code class="inline">SeparatorList</code>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">nth_lexeme</span><span class="p" data-group-id="1093376043-1">(</span><span class="s">&quot;abc.de̊f.ghiejkl&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.e&quot;</span><span class="p" data-group-id="1093376043-1">)</span><span class="p">.</span><span class="w">
+grapheme clusters in <code class="inline">SeparatorList</code>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">nth_lexeme</span><span class="p" data-group-id="9465448986-1">(</span><span class="s">&quot;abc.de̊f.ghiejkl&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.e&quot;</span><span class="p" data-group-id="9465448986-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;ghi&quot;</span></code></pre>
   </section>
 </section>
@@ -1546,7 +1566,7 @@ grapheme clusters in <code class="inline">SeparatorList</code>.</p><p><em>Exampl
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L425" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L425" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1576,7 +1596,7 @@ grapheme clusters in <code class="inline">SeparatorList</code>.</p><p><em>Exampl
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L434" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L434" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1607,7 +1627,7 @@ grapheme clusters in <code class="inline">SeparatorList</code>.</p><p><em>Exampl
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L458" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L458" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1628,11 +1648,11 @@ grapheme clusters in <code class="inline">SeparatorList</code>.</p><p><em>Exampl
       </div>
 
 <p>Pads <code class="inline">String</code> to <code class="inline">Length</code> with grapheme cluster <code class="inline">Char</code>. <code class="inline">Dir</code>, which can be
-<code class="inline">leading</code>, <code class="inline">trailing</code>, or <code class="inline">both</code>, indicates where the padding should be added.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">pad</span><span class="p" data-group-id="0557756157-1">(</span><span class="p" data-group-id="0557756157-2">&lt;&lt;</span><span class="s">&quot;He̊llö&quot;</span><span class="o">/</span><span class="ss">utf8</span><span class="p" data-group-id="0557756157-2">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p" data-group-id="0557756157-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="0557756157-3">[</span><span class="p" data-group-id="0557756157-4">&lt;&lt;</span><span class="mi">72</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">138</span><span class="p">,</span><span class="mi">108</span><span class="p">,</span><span class="mi">108</span><span class="p">,</span><span class="mi">195</span><span class="p">,</span><span class="mi">182</span><span class="p" data-group-id="0557756157-4">&gt;&gt;</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">32</span><span class="p" data-group-id="0557756157-3">]</span><span class="gp unselectable">
-2&gt; </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="0557756157-5">(</span><span class="s">&quot;&#39;~ts&#39;</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="p" data-group-id="0557756157-6">[</span><span class="nc">string</span><span class="p">:</span><span class="nf">pad</span><span class="p" data-group-id="0557756157-7">(</span><span class="s">&quot;He̊llö&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="ss">leading</span><span class="p" data-group-id="0557756157-7">)</span><span class="p" data-group-id="0557756157-6">]</span><span class="p" data-group-id="0557756157-5">)</span><span class="p">.</span><span class="w">
+<code class="inline">leading</code>, <code class="inline">trailing</code>, or <code class="inline">both</code>, indicates where the padding should be added.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">pad</span><span class="p" data-group-id="1576472424-1">(</span><span class="p" data-group-id="1576472424-2">&lt;&lt;</span><span class="s">&quot;He̊llö&quot;</span><span class="o">/</span><span class="ss">utf8</span><span class="p" data-group-id="1576472424-2">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p" data-group-id="1576472424-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="1576472424-3">[</span><span class="p" data-group-id="1576472424-4">&lt;&lt;</span><span class="mi">72</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">204</span><span class="p">,</span><span class="mi">138</span><span class="p">,</span><span class="mi">108</span><span class="p">,</span><span class="mi">108</span><span class="p">,</span><span class="mi">195</span><span class="p">,</span><span class="mi">182</span><span class="p" data-group-id="1576472424-4">&gt;&gt;</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">32</span><span class="p" data-group-id="1576472424-3">]</span><span class="gp unselectable">
+2&gt; </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="1576472424-5">(</span><span class="s">&quot;&#39;~ts&#39;</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="p" data-group-id="1576472424-6">[</span><span class="nc">string</span><span class="p">:</span><span class="nf">pad</span><span class="p" data-group-id="1576472424-7">(</span><span class="s">&quot;He̊llö&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="ss">leading</span><span class="p" data-group-id="1576472424-7">)</span><span class="p" data-group-id="1576472424-6">]</span><span class="p" data-group-id="1576472424-5">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">&#39;   He̊llö&#39;</span><span class="gp unselectable">
-3&gt; </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="0557756157-8">(</span><span class="s">&quot;&#39;~ts&#39;</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="p" data-group-id="0557756157-9">[</span><span class="nc">string</span><span class="p">:</span><span class="nf">pad</span><span class="p" data-group-id="0557756157-10">(</span><span class="s">&quot;He̊llö&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="ss">both</span><span class="p" data-group-id="0557756157-10">)</span><span class="p" data-group-id="0557756157-9">]</span><span class="p" data-group-id="0557756157-8">)</span><span class="p">.</span><span class="w">
+3&gt; </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="1576472424-8">(</span><span class="s">&quot;&#39;~ts&#39;</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="p" data-group-id="1576472424-9">[</span><span class="nc">string</span><span class="p">:</span><span class="nf">pad</span><span class="p" data-group-id="1576472424-10">(</span><span class="s">&quot;He̊llö&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="ss">both</span><span class="p" data-group-id="1576472424-10">)</span><span class="p" data-group-id="1576472424-9">]</span><span class="p" data-group-id="1576472424-8">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">&#39; He̊llö  &#39;</span></code></pre>
   </section>
 </section>
@@ -1648,7 +1668,7 @@ grapheme clusters in <code class="inline">SeparatorList</code>.</p><p><em>Exampl
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L844" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L844" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1664,9 +1684,9 @@ grapheme clusters in <code class="inline">SeparatorList</code>.</p><p><em>Exampl
       </div>
 
 <p>If <code class="inline">Prefix</code> is the prefix of <code class="inline">String</code>, removes it and returns the remainder of
-<code class="inline">String</code>, otherwise returns <code class="inline">nomatch</code>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">prefix</span><span class="p" data-group-id="1745107526-1">(</span><span class="p" data-group-id="1745107526-2">&lt;&lt;</span><span class="s">&quot;prefix of string&quot;</span><span class="p" data-group-id="1745107526-2">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pre&quot;</span><span class="p" data-group-id="1745107526-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="1745107526-3">&lt;&lt;</span><span class="s">&quot;fix of string&quot;</span><span class="p" data-group-id="1745107526-3">&gt;&gt;</span><span class="gp unselectable">
-2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">prefix</span><span class="p" data-group-id="1745107526-4">(</span><span class="s">&quot;pre&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;prefix&quot;</span><span class="p" data-group-id="1745107526-4">)</span><span class="p">.</span><span class="w">
+<code class="inline">String</code>, otherwise returns <code class="inline">nomatch</code>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">prefix</span><span class="p" data-group-id="4610967881-1">(</span><span class="p" data-group-id="4610967881-2">&lt;&lt;</span><span class="s">&quot;prefix of string&quot;</span><span class="p" data-group-id="4610967881-2">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pre&quot;</span><span class="p" data-group-id="4610967881-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4610967881-3">&lt;&lt;</span><span class="s">&quot;fix of string&quot;</span><span class="p" data-group-id="4610967881-3">&gt;&gt;</span><span class="gp unselectable">
+2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">prefix</span><span class="p" data-group-id="4610967881-4">(</span><span class="s">&quot;pre&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;prefix&quot;</span><span class="p" data-group-id="4610967881-4">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">nomatch</span></code></pre>
   </section>
 </section>
@@ -1682,7 +1702,7 @@ grapheme clusters in <code class="inline">SeparatorList</code>.</p><p><em>Exampl
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L906" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L906" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1716,7 +1736,7 @@ grapheme clusters in <code class="inline">SeparatorList</code>.</p><p><em>Exampl
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L936" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L936" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1737,10 +1757,10 @@ grapheme clusters in <code class="inline">SeparatorList</code>.</p><p><em>Exampl
       </div>
 
 <p>Replaces <code class="inline">SearchPattern</code> in <code class="inline">String</code> with <code class="inline">Replacement</code>. <code class="inline">Where</code>, indicates whether
-the <code class="inline">leading</code>, the <code class="inline">trailing</code> or <code class="inline">all</code> encounters of <code class="inline">SearchPattern</code> are to be replaced.</p><p>Can be implemented as:</p><pre><code class="makeup erlang" translate="no"><span class="nc">lists</span><span class="p">:</span><span class="nf">join</span><span class="p" data-group-id="8683915428-1">(</span><span class="n">Replacement</span><span class="p">,</span><span class="w"> </span><span class="nf">split</span><span class="p" data-group-id="8683915428-2">(</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">SearchPattern</span><span class="p">,</span><span class="w"> </span><span class="n">Where</span><span class="p" data-group-id="8683915428-2">)</span><span class="p" data-group-id="8683915428-1">)</span><span class="p">.</span></code></pre><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">replace</span><span class="p" data-group-id="1930020550-1">(</span><span class="p" data-group-id="1930020550-2">&lt;&lt;</span><span class="s">&quot;ab..cd..ef&quot;</span><span class="p" data-group-id="1930020550-2">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;..&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;*&quot;</span><span class="p" data-group-id="1930020550-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="1930020550-3">[</span><span class="p" data-group-id="1930020550-4">&lt;&lt;</span><span class="s">&quot;ab&quot;</span><span class="p" data-group-id="1930020550-4">&gt;&gt;</span><span class="p">,</span><span class="s">&quot;*&quot;</span><span class="p">,</span><span class="p" data-group-id="1930020550-5">&lt;&lt;</span><span class="s">&quot;cd..ef&quot;</span><span class="p" data-group-id="1930020550-5">&gt;&gt;</span><span class="p" data-group-id="1930020550-3">]</span><span class="gp unselectable">
-2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">replace</span><span class="p" data-group-id="1930020550-6">(</span><span class="p" data-group-id="1930020550-7">&lt;&lt;</span><span class="s">&quot;ab..cd..ef&quot;</span><span class="p" data-group-id="1930020550-7">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;..&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;*&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">all</span><span class="p" data-group-id="1930020550-6">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="1930020550-8">[</span><span class="p" data-group-id="1930020550-9">&lt;&lt;</span><span class="s">&quot;ab&quot;</span><span class="p" data-group-id="1930020550-9">&gt;&gt;</span><span class="p">,</span><span class="s">&quot;*&quot;</span><span class="p">,</span><span class="p" data-group-id="1930020550-10">&lt;&lt;</span><span class="s">&quot;cd&quot;</span><span class="p" data-group-id="1930020550-10">&gt;&gt;</span><span class="p">,</span><span class="s">&quot;*&quot;</span><span class="p">,</span><span class="p" data-group-id="1930020550-11">&lt;&lt;</span><span class="s">&quot;ef&quot;</span><span class="p" data-group-id="1930020550-11">&gt;&gt;</span><span class="p" data-group-id="1930020550-8">]</span></code></pre>
+the <code class="inline">leading</code>, the <code class="inline">trailing</code> or <code class="inline">all</code> encounters of <code class="inline">SearchPattern</code> are to be replaced.</p><p>Can be implemented as:</p><pre><code class="makeup erlang" translate="no"><span class="nc">lists</span><span class="p">:</span><span class="nf">join</span><span class="p" data-group-id="2230038193-1">(</span><span class="n">Replacement</span><span class="p">,</span><span class="w"> </span><span class="nf">split</span><span class="p" data-group-id="2230038193-2">(</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">SearchPattern</span><span class="p">,</span><span class="w"> </span><span class="n">Where</span><span class="p" data-group-id="2230038193-2">)</span><span class="p" data-group-id="2230038193-1">)</span><span class="p">.</span></code></pre><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">replace</span><span class="p" data-group-id="1641627373-1">(</span><span class="p" data-group-id="1641627373-2">&lt;&lt;</span><span class="s">&quot;ab..cd..ef&quot;</span><span class="p" data-group-id="1641627373-2">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;..&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;*&quot;</span><span class="p" data-group-id="1641627373-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="1641627373-3">[</span><span class="p" data-group-id="1641627373-4">&lt;&lt;</span><span class="s">&quot;ab&quot;</span><span class="p" data-group-id="1641627373-4">&gt;&gt;</span><span class="p">,</span><span class="s">&quot;*&quot;</span><span class="p">,</span><span class="p" data-group-id="1641627373-5">&lt;&lt;</span><span class="s">&quot;cd..ef&quot;</span><span class="p" data-group-id="1641627373-5">&gt;&gt;</span><span class="p" data-group-id="1641627373-3">]</span><span class="gp unselectable">
+2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">replace</span><span class="p" data-group-id="1641627373-6">(</span><span class="p" data-group-id="1641627373-7">&lt;&lt;</span><span class="s">&quot;ab..cd..ef&quot;</span><span class="p" data-group-id="1641627373-7">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;..&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;*&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">all</span><span class="p" data-group-id="1641627373-6">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="1641627373-8">[</span><span class="p" data-group-id="1641627373-9">&lt;&lt;</span><span class="s">&quot;ab&quot;</span><span class="p" data-group-id="1641627373-9">&gt;&gt;</span><span class="p">,</span><span class="s">&quot;*&quot;</span><span class="p">,</span><span class="p" data-group-id="1641627373-10">&lt;&lt;</span><span class="s">&quot;cd&quot;</span><span class="p" data-group-id="1641627373-10">&gt;&gt;</span><span class="p">,</span><span class="s">&quot;*&quot;</span><span class="p">,</span><span class="p" data-group-id="1641627373-11">&lt;&lt;</span><span class="s">&quot;ef&quot;</span><span class="p" data-group-id="1641627373-11">&gt;&gt;</span><span class="p" data-group-id="1641627373-8">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="reverse/1">
@@ -1755,7 +1775,7 @@ the <code class="inline">leading</code>, the <code class="inline">trailing</code
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L362" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L362" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1770,9 +1790,9 @@ the <code class="inline">leading</code>, the <code class="inline">trailing</code
 
       </div>
 
-<p>Returns the reverse list of the grapheme clusters in <code class="inline">String</code>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">Reverse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">string</span><span class="p">:</span><span class="nf">reverse</span><span class="p" data-group-id="7869351373-1">(</span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_nfd_binary</span><span class="p" data-group-id="7869351373-2">(</span><span class="s">&quot;ÅÄÖ&quot;</span><span class="p" data-group-id="7869351373-2">)</span><span class="p" data-group-id="7869351373-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="7869351373-3">[</span><span class="p" data-group-id="7869351373-4">[</span><span class="mi">79</span><span class="p">,</span><span class="mi">776</span><span class="p" data-group-id="7869351373-4">]</span><span class="p">,</span><span class="p" data-group-id="7869351373-5">[</span><span class="mi">65</span><span class="p">,</span><span class="mi">776</span><span class="p" data-group-id="7869351373-5">]</span><span class="p">,</span><span class="p" data-group-id="7869351373-6">[</span><span class="mi">65</span><span class="p">,</span><span class="mi">778</span><span class="p" data-group-id="7869351373-6">]</span><span class="p" data-group-id="7869351373-3">]</span><span class="gp unselectable">
-2&gt; </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="7869351373-7">(</span><span class="s">&quot;~ts</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="p" data-group-id="7869351373-8">[</span><span class="n">Reverse</span><span class="p" data-group-id="7869351373-8">]</span><span class="p" data-group-id="7869351373-7">)</span><span class="p">.</span><span class="w">
+<p>Returns the reverse list of the grapheme clusters in <code class="inline">String</code>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">Reverse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">string</span><span class="p">:</span><span class="nf">reverse</span><span class="p" data-group-id="4960383720-1">(</span><span class="nc">unicode</span><span class="p">:</span><span class="nf">characters_to_nfd_binary</span><span class="p" data-group-id="4960383720-2">(</span><span class="s">&quot;ÅÄÖ&quot;</span><span class="p" data-group-id="4960383720-2">)</span><span class="p" data-group-id="4960383720-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4960383720-3">[</span><span class="p" data-group-id="4960383720-4">[</span><span class="mi">79</span><span class="p">,</span><span class="mi">776</span><span class="p" data-group-id="4960383720-4">]</span><span class="p">,</span><span class="p" data-group-id="4960383720-5">[</span><span class="mi">65</span><span class="p">,</span><span class="mi">776</span><span class="p" data-group-id="4960383720-5">]</span><span class="p">,</span><span class="p" data-group-id="4960383720-6">[</span><span class="mi">65</span><span class="p">,</span><span class="mi">778</span><span class="p" data-group-id="4960383720-6">]</span><span class="p" data-group-id="4960383720-3">]</span><span class="gp unselectable">
+2&gt; </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="4960383720-7">(</span><span class="s">&quot;~ts</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="p" data-group-id="4960383720-8">[</span><span class="n">Reverse</span><span class="p" data-group-id="4960383720-8">]</span><span class="p" data-group-id="4960383720-7">)</span><span class="p">.</span><span class="w">
 </span><span class="n">O</span><span class="err">̈</span><span class="n">A</span><span class="err">̈</span><span class="n">A</span><span class="err">̊</span></code></pre>
   </section>
 </section>
@@ -1788,7 +1808,7 @@ the <code class="inline">leading</code>, the <code class="inline">trailing</code
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L375" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L375" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1820,7 +1840,7 @@ the <code class="inline">leading</code>, the <code class="inline">trailing</code
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L402" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L402" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1841,11 +1861,11 @@ the <code class="inline">leading</code>, the <code class="inline">trailing</code
       </div>
 
 <p>Returns a substring of <code class="inline">String</code> of at most <code class="inline">Length</code> grapheme clusters, starting
-at position <code class="inline">Start</code>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">slice</span><span class="p" data-group-id="7454906698-1">(</span><span class="p" data-group-id="7454906698-2">&lt;&lt;</span><span class="s">&quot;He̊llö Wörld&quot;</span><span class="o">/</span><span class="ss">utf8</span><span class="p" data-group-id="7454906698-2">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="7454906698-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="7454906698-3">&lt;&lt;</span><span class="s">&quot;ö Wörld&quot;</span><span class="o">/</span><span class="ss">utf8</span><span class="p" data-group-id="7454906698-3">&gt;&gt;</span><span class="gp unselectable">
-2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">slice</span><span class="p" data-group-id="7454906698-4">(</span><span class="p" data-group-id="7454906698-5">[</span><span class="s">&quot;He̊llö &quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7454906698-6">&lt;&lt;</span><span class="s">&quot;Wörld&quot;</span><span class="o">/</span><span class="ss">utf8</span><span class="p" data-group-id="7454906698-6">&gt;&gt;</span><span class="p" data-group-id="7454906698-5">]</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="7454906698-4">)</span><span class="p">.</span><span class="w">
+at position <code class="inline">Start</code>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">slice</span><span class="p" data-group-id="8298431205-1">(</span><span class="p" data-group-id="8298431205-2">&lt;&lt;</span><span class="s">&quot;He̊llö Wörld&quot;</span><span class="o">/</span><span class="ss">utf8</span><span class="p" data-group-id="8298431205-2">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="8298431205-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="8298431205-3">&lt;&lt;</span><span class="s">&quot;ö Wörld&quot;</span><span class="o">/</span><span class="ss">utf8</span><span class="p" data-group-id="8298431205-3">&gt;&gt;</span><span class="gp unselectable">
+2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">slice</span><span class="p" data-group-id="8298431205-4">(</span><span class="p" data-group-id="8298431205-5">[</span><span class="s">&quot;He̊llö &quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8298431205-6">&lt;&lt;</span><span class="s">&quot;Wörld&quot;</span><span class="o">/</span><span class="ss">utf8</span><span class="p" data-group-id="8298431205-6">&gt;&gt;</span><span class="p" data-group-id="8298431205-5">]</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="8298431205-4">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;ö Wö&quot;</span><span class="gp unselectable">
-3&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">slice</span><span class="p" data-group-id="7454906698-7">(</span><span class="p" data-group-id="7454906698-8">[</span><span class="s">&quot;He̊llö &quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7454906698-9">&lt;&lt;</span><span class="s">&quot;Wörld&quot;</span><span class="o">/</span><span class="ss">utf8</span><span class="p" data-group-id="7454906698-9">&gt;&gt;</span><span class="p" data-group-id="7454906698-8">]</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="mi">50</span><span class="p" data-group-id="7454906698-7">)</span><span class="p">.</span><span class="w">
+3&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">slice</span><span class="p" data-group-id="8298431205-7">(</span><span class="p" data-group-id="8298431205-8">[</span><span class="s">&quot;He̊llö &quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8298431205-9">&lt;&lt;</span><span class="s">&quot;Wörld&quot;</span><span class="o">/</span><span class="ss">utf8</span><span class="p" data-group-id="8298431205-9">&gt;&gt;</span><span class="p" data-group-id="8298431205-8">]</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="mi">50</span><span class="p" data-group-id="8298431205-7">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;ö Wörld&quot;</span></code></pre>
   </section>
 </section>
@@ -1861,7 +1881,7 @@ at position <code class="inline">Start</code>.</p><p><em>Example:</em></p><pre><
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L860" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L860" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1892,7 +1912,7 @@ at position <code class="inline">Start</code>.</p><p><em>Example:</em></p><pre><
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L885" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L885" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1913,12 +1933,12 @@ at position <code class="inline">Start</code>.</p><p><em>Example:</em></p><pre><
 
 <p>Splits <code class="inline">String</code> where <code class="inline">SearchPattern</code> is encountered and return the remaining
 parts. <code class="inline">Where</code>, default <code class="inline">leading</code>, indicates whether the <code class="inline">leading</code>, the
-<code class="inline">trailing</code> or <code class="inline">all</code> encounters of <code class="inline">SearchPattern</code> will split <code class="inline">String</code>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">0&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">split</span><span class="p" data-group-id="1929560919-1">(</span><span class="s">&quot;ab..bc..cd&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;..&quot;</span><span class="p" data-group-id="1929560919-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="1929560919-2">[</span><span class="s">&quot;ab&quot;</span><span class="p">,</span><span class="s">&quot;bc..cd&quot;</span><span class="p" data-group-id="1929560919-2">]</span><span class="gp unselectable">
-1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">split</span><span class="p" data-group-id="1929560919-3">(</span><span class="p" data-group-id="1929560919-4">&lt;&lt;</span><span class="s">&quot;ab..bc..cd&quot;</span><span class="p" data-group-id="1929560919-4">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;..&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">trailing</span><span class="p" data-group-id="1929560919-3">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="1929560919-5">[</span><span class="p" data-group-id="1929560919-6">&lt;&lt;</span><span class="s">&quot;ab..bc&quot;</span><span class="p" data-group-id="1929560919-6">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="1929560919-7">&lt;&lt;</span><span class="s">&quot;cd&quot;</span><span class="p" data-group-id="1929560919-7">&gt;&gt;</span><span class="p" data-group-id="1929560919-5">]</span><span class="gp unselectable">
-2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">split</span><span class="p" data-group-id="1929560919-8">(</span><span class="p" data-group-id="1929560919-9">&lt;&lt;</span><span class="s">&quot;ab..bc....cd&quot;</span><span class="p" data-group-id="1929560919-9">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;..&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">all</span><span class="p" data-group-id="1929560919-8">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="1929560919-10">[</span><span class="p" data-group-id="1929560919-11">&lt;&lt;</span><span class="s">&quot;ab&quot;</span><span class="p" data-group-id="1929560919-11">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="1929560919-12">&lt;&lt;</span><span class="s">&quot;bc&quot;</span><span class="p" data-group-id="1929560919-12">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="1929560919-13">&lt;&lt;</span><span class="p" data-group-id="1929560919-13">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="1929560919-14">&lt;&lt;</span><span class="s">&quot;cd&quot;</span><span class="p" data-group-id="1929560919-14">&gt;&gt;</span><span class="p" data-group-id="1929560919-10">]</span></code></pre>
+<code class="inline">trailing</code> or <code class="inline">all</code> encounters of <code class="inline">SearchPattern</code> will split <code class="inline">String</code>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">0&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">split</span><span class="p" data-group-id="8005082741-1">(</span><span class="s">&quot;ab..bc..cd&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;..&quot;</span><span class="p" data-group-id="8005082741-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="8005082741-2">[</span><span class="s">&quot;ab&quot;</span><span class="p">,</span><span class="s">&quot;bc..cd&quot;</span><span class="p" data-group-id="8005082741-2">]</span><span class="gp unselectable">
+1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">split</span><span class="p" data-group-id="8005082741-3">(</span><span class="p" data-group-id="8005082741-4">&lt;&lt;</span><span class="s">&quot;ab..bc..cd&quot;</span><span class="p" data-group-id="8005082741-4">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;..&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">trailing</span><span class="p" data-group-id="8005082741-3">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="8005082741-5">[</span><span class="p" data-group-id="8005082741-6">&lt;&lt;</span><span class="s">&quot;ab..bc&quot;</span><span class="p" data-group-id="8005082741-6">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="8005082741-7">&lt;&lt;</span><span class="s">&quot;cd&quot;</span><span class="p" data-group-id="8005082741-7">&gt;&gt;</span><span class="p" data-group-id="8005082741-5">]</span><span class="gp unselectable">
+2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">split</span><span class="p" data-group-id="8005082741-8">(</span><span class="p" data-group-id="8005082741-9">&lt;&lt;</span><span class="s">&quot;ab..bc....cd&quot;</span><span class="p" data-group-id="8005082741-9">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;..&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">all</span><span class="p" data-group-id="8005082741-8">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="8005082741-10">[</span><span class="p" data-group-id="8005082741-11">&lt;&lt;</span><span class="s">&quot;ab&quot;</span><span class="p" data-group-id="8005082741-11">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="8005082741-12">&lt;&lt;</span><span class="s">&quot;bc&quot;</span><span class="p" data-group-id="8005082741-12">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="8005082741-13">&lt;&lt;</span><span class="p" data-group-id="8005082741-13">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="8005082741-14">&lt;&lt;</span><span class="s">&quot;cd&quot;</span><span class="p" data-group-id="8005082741-14">&gt;&gt;</span><span class="p" data-group-id="8005082741-10">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="take/2">
@@ -1933,7 +1953,7 @@ parts. <code class="inline">Where</code>, default <code class="inline">leading</
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L563" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L563" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1968,7 +1988,7 @@ parts. <code class="inline">Where</code>, default <code class="inline">leading</
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L573" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L573" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2004,7 +2024,7 @@ parts. <code class="inline">Where</code>, default <code class="inline">leading</
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L602" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L602" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2029,14 +2049,14 @@ parts. <code class="inline">Where</code>, default <code class="inline">leading</
 <p>Takes characters from <code class="inline">String</code> as long as the characters are members of set
 <code class="inline">Characters</code> or the complement of set <code class="inline">Characters</code>. <code class="inline">Dir</code>, which can be
 <code class="inline">leading</code> or <code class="inline">trailing</code>, indicates from which direction characters are to be
-taken.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">5&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">take</span><span class="p" data-group-id="4381821103-1">(</span><span class="s">&quot;abc0z123&quot;</span><span class="p">,</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="4381821103-2">(</span><span class="sc">$a</span><span class="p">,</span><span class="sc">$z</span><span class="p" data-group-id="4381821103-2">)</span><span class="p" data-group-id="4381821103-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="4381821103-3">{</span><span class="s">&quot;abc&quot;</span><span class="p">,</span><span class="s">&quot;0z123&quot;</span><span class="p" data-group-id="4381821103-3">}</span><span class="gp unselectable">
-6&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">take</span><span class="p" data-group-id="4381821103-4">(</span><span class="p" data-group-id="4381821103-5">&lt;&lt;</span><span class="s">&quot;abc0z123&quot;</span><span class="p" data-group-id="4381821103-5">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="4381821103-6">(</span><span class="sc">$0</span><span class="p">,</span><span class="sc">$9</span><span class="p" data-group-id="4381821103-6">)</span><span class="p">,</span><span class="w"> </span><span class="ss">true</span><span class="p">,</span><span class="w"> </span><span class="ss">leading</span><span class="p" data-group-id="4381821103-4">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="4381821103-7">{</span><span class="p" data-group-id="4381821103-8">&lt;&lt;</span><span class="s">&quot;abc&quot;</span><span class="p" data-group-id="4381821103-8">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="4381821103-9">&lt;&lt;</span><span class="s">&quot;0z123&quot;</span><span class="p" data-group-id="4381821103-9">&gt;&gt;</span><span class="p" data-group-id="4381821103-7">}</span><span class="gp unselectable">
-7&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">take</span><span class="p" data-group-id="4381821103-10">(</span><span class="s">&quot;abc0z123&quot;</span><span class="p">,</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="4381821103-11">(</span><span class="sc">$0</span><span class="p">,</span><span class="sc">$9</span><span class="p" data-group-id="4381821103-11">)</span><span class="p">,</span><span class="w"> </span><span class="ss">false</span><span class="p">,</span><span class="w"> </span><span class="ss">trailing</span><span class="p" data-group-id="4381821103-10">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="4381821103-12">{</span><span class="s">&quot;abc0z&quot;</span><span class="p">,</span><span class="s">&quot;123&quot;</span><span class="p" data-group-id="4381821103-12">}</span><span class="gp unselectable">
-8&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">take</span><span class="p" data-group-id="4381821103-13">(</span><span class="p" data-group-id="4381821103-14">&lt;&lt;</span><span class="s">&quot;abc0z123&quot;</span><span class="p" data-group-id="4381821103-14">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="4381821103-15">(</span><span class="sc">$a</span><span class="p">,</span><span class="sc">$z</span><span class="p" data-group-id="4381821103-15">)</span><span class="p">,</span><span class="w"> </span><span class="ss">true</span><span class="p">,</span><span class="w"> </span><span class="ss">trailing</span><span class="p" data-group-id="4381821103-13">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="4381821103-16">{</span><span class="p" data-group-id="4381821103-17">&lt;&lt;</span><span class="s">&quot;abc0z&quot;</span><span class="p" data-group-id="4381821103-17">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="4381821103-18">&lt;&lt;</span><span class="s">&quot;123&quot;</span><span class="p" data-group-id="4381821103-18">&gt;&gt;</span><span class="p" data-group-id="4381821103-16">}</span></code></pre>
+taken.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">5&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">take</span><span class="p" data-group-id="4939984069-1">(</span><span class="s">&quot;abc0z123&quot;</span><span class="p">,</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="4939984069-2">(</span><span class="sc">$a</span><span class="p">,</span><span class="sc">$z</span><span class="p" data-group-id="4939984069-2">)</span><span class="p" data-group-id="4939984069-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4939984069-3">{</span><span class="s">&quot;abc&quot;</span><span class="p">,</span><span class="s">&quot;0z123&quot;</span><span class="p" data-group-id="4939984069-3">}</span><span class="gp unselectable">
+6&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">take</span><span class="p" data-group-id="4939984069-4">(</span><span class="p" data-group-id="4939984069-5">&lt;&lt;</span><span class="s">&quot;abc0z123&quot;</span><span class="p" data-group-id="4939984069-5">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="4939984069-6">(</span><span class="sc">$0</span><span class="p">,</span><span class="sc">$9</span><span class="p" data-group-id="4939984069-6">)</span><span class="p">,</span><span class="w"> </span><span class="ss">true</span><span class="p">,</span><span class="w"> </span><span class="ss">leading</span><span class="p" data-group-id="4939984069-4">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4939984069-7">{</span><span class="p" data-group-id="4939984069-8">&lt;&lt;</span><span class="s">&quot;abc&quot;</span><span class="p" data-group-id="4939984069-8">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="4939984069-9">&lt;&lt;</span><span class="s">&quot;0z123&quot;</span><span class="p" data-group-id="4939984069-9">&gt;&gt;</span><span class="p" data-group-id="4939984069-7">}</span><span class="gp unselectable">
+7&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">take</span><span class="p" data-group-id="4939984069-10">(</span><span class="s">&quot;abc0z123&quot;</span><span class="p">,</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="4939984069-11">(</span><span class="sc">$0</span><span class="p">,</span><span class="sc">$9</span><span class="p" data-group-id="4939984069-11">)</span><span class="p">,</span><span class="w"> </span><span class="ss">false</span><span class="p">,</span><span class="w"> </span><span class="ss">trailing</span><span class="p" data-group-id="4939984069-10">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4939984069-12">{</span><span class="s">&quot;abc0z&quot;</span><span class="p">,</span><span class="s">&quot;123&quot;</span><span class="p" data-group-id="4939984069-12">}</span><span class="gp unselectable">
+8&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">take</span><span class="p" data-group-id="4939984069-13">(</span><span class="p" data-group-id="4939984069-14">&lt;&lt;</span><span class="s">&quot;abc0z123&quot;</span><span class="p" data-group-id="4939984069-14">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="4939984069-15">(</span><span class="sc">$a</span><span class="p">,</span><span class="sc">$z</span><span class="p" data-group-id="4939984069-15">)</span><span class="p">,</span><span class="w"> </span><span class="ss">true</span><span class="p">,</span><span class="w"> </span><span class="ss">trailing</span><span class="p" data-group-id="4939984069-13">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4939984069-16">{</span><span class="p" data-group-id="4939984069-17">&lt;&lt;</span><span class="s">&quot;abc0z&quot;</span><span class="p" data-group-id="4939984069-17">&gt;&gt;</span><span class="p">,</span><span class="p" data-group-id="4939984069-18">&lt;&lt;</span><span class="s">&quot;123&quot;</span><span class="p" data-group-id="4939984069-18">&gt;&gt;</span><span class="p" data-group-id="4939984069-16">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="titlecase/1">
@@ -2051,7 +2071,7 @@ taken.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L696" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L696" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2066,7 +2086,7 @@ taken.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no
 
       </div>
 
-<p>Converts <code class="inline">String</code> to titlecase.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">titlecase</span><span class="p" data-group-id="6031944127-1">(</span><span class="s">&quot;ß is a SHARP s&quot;</span><span class="p" data-group-id="6031944127-1">)</span><span class="p">.</span><span class="w">
+<p>Converts <code class="inline">String</code> to titlecase.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">titlecase</span><span class="p" data-group-id="1105368313-1">(</span><span class="s">&quot;ß is a SHARP s&quot;</span><span class="p" data-group-id="1105368313-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;Ss is a SHARP s&quot;</span></code></pre>
   </section>
 </section>
@@ -2080,7 +2100,7 @@ taken.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no
       <h1 class="signature" translate="no">to_float(String)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L804" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L804" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2102,14 +2122,14 @@ taken.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no
 
 <p>Argument <code class="inline">String</code> is expected to start with a valid text represented float (the
 digits are ASCII values). Remaining characters in the string after the float are
-returned in <code class="inline">Rest</code>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="p" data-group-id="3445994514-1">{</span><span class="n">F1</span><span class="p">,</span><span class="n">Fs</span><span class="p" data-group-id="3445994514-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">string</span><span class="p">:</span><span class="nf">to_float</span><span class="p" data-group-id="3445994514-2">(</span><span class="s">&quot;1.0-1.0e-1&quot;</span><span class="p" data-group-id="3445994514-2">)</span><span class="p">,</span><span class="gp unselectable">
-1&gt; </span><span class="p" data-group-id="3445994514-3">{</span><span class="n">F2</span><span class="p">,</span><span class="p" data-group-id="3445994514-4">[</span><span class="p" data-group-id="3445994514-4">]</span><span class="p" data-group-id="3445994514-3">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">string</span><span class="p">:</span><span class="nf">to_float</span><span class="p" data-group-id="3445994514-5">(</span><span class="n">Fs</span><span class="p" data-group-id="3445994514-5">)</span><span class="p">,</span><span class="gp unselectable">
+returned in <code class="inline">Rest</code>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="p" data-group-id="1259667591-1">{</span><span class="n">F1</span><span class="p">,</span><span class="n">Fs</span><span class="p" data-group-id="1259667591-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">string</span><span class="p">:</span><span class="nf">to_float</span><span class="p" data-group-id="1259667591-2">(</span><span class="s">&quot;1.0-1.0e-1&quot;</span><span class="p" data-group-id="1259667591-2">)</span><span class="p">,</span><span class="gp unselectable">
+1&gt; </span><span class="p" data-group-id="1259667591-3">{</span><span class="n">F2</span><span class="p">,</span><span class="p" data-group-id="1259667591-4">[</span><span class="p" data-group-id="1259667591-4">]</span><span class="p" data-group-id="1259667591-3">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">string</span><span class="p">:</span><span class="nf">to_float</span><span class="p" data-group-id="1259667591-5">(</span><span class="n">Fs</span><span class="p" data-group-id="1259667591-5">)</span><span class="p">,</span><span class="gp unselectable">
 1&gt; </span><span class="n">F1</span><span class="o">+</span><span class="n">F2</span><span class="p">.</span><span class="w">
 </span><span class="mf">0.9</span><span class="gp unselectable">
-2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">to_float</span><span class="p" data-group-id="3445994514-6">(</span><span class="s">&quot;3/2=1.5&quot;</span><span class="p" data-group-id="3445994514-6">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="3445994514-7">{</span><span class="ss">error</span><span class="p">,</span><span class="ss">no_float</span><span class="p" data-group-id="3445994514-7">}</span><span class="gp unselectable">
-3&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">to_float</span><span class="p" data-group-id="3445994514-8">(</span><span class="s">&quot;-1.5eX&quot;</span><span class="p" data-group-id="3445994514-8">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="3445994514-9">{</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span><span class="s">&quot;eX&quot;</span><span class="p" data-group-id="3445994514-9">}</span></code></pre>
+2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">to_float</span><span class="p" data-group-id="1259667591-6">(</span><span class="s">&quot;3/2=1.5&quot;</span><span class="p" data-group-id="1259667591-6">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="1259667591-7">{</span><span class="ss">error</span><span class="p">,</span><span class="ss">no_float</span><span class="p" data-group-id="1259667591-7">}</span><span class="gp unselectable">
+3&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">to_float</span><span class="p" data-group-id="1259667591-8">(</span><span class="s">&quot;-1.5eX&quot;</span><span class="p" data-group-id="1259667591-8">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="1259667591-9">{</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span><span class="s">&quot;eX&quot;</span><span class="p" data-group-id="1259667591-9">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="to_graphemes/1">
@@ -2124,7 +2144,7 @@ returned in <code class="inline">Rest</code>.</p><p><em>Example:</em></p><pre><c
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L275" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L275" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2139,10 +2159,10 @@ returned in <code class="inline">Rest</code>.</p><p><em>Example:</em></p><pre><c
 
       </div>
 
-<p>Converts <code class="inline">String</code> to a list of grapheme clusters.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">to_graphemes</span><span class="p" data-group-id="7002324901-1">(</span><span class="s">&quot;ß↑e̊&quot;</span><span class="p" data-group-id="7002324901-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="7002324901-2">[</span><span class="mi">223</span><span class="p">,</span><span class="mi">8593</span><span class="p">,</span><span class="p" data-group-id="7002324901-3">[</span><span class="mi">101</span><span class="p">,</span><span class="mi">778</span><span class="p" data-group-id="7002324901-3">]</span><span class="p" data-group-id="7002324901-2">]</span><span class="gp unselectable">
-2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">to_graphemes</span><span class="p" data-group-id="7002324901-4">(</span><span class="p" data-group-id="7002324901-5">&lt;&lt;</span><span class="s">&quot;ß↑e̊&quot;</span><span class="o">/</span><span class="ss">utf8</span><span class="p" data-group-id="7002324901-5">&gt;&gt;</span><span class="p" data-group-id="7002324901-4">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="7002324901-6">[</span><span class="mi">223</span><span class="p">,</span><span class="mi">8593</span><span class="p">,</span><span class="p" data-group-id="7002324901-7">[</span><span class="mi">101</span><span class="p">,</span><span class="mi">778</span><span class="p" data-group-id="7002324901-7">]</span><span class="p" data-group-id="7002324901-6">]</span></code></pre>
+<p>Converts <code class="inline">String</code> to a list of grapheme clusters.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">to_graphemes</span><span class="p" data-group-id="2701724976-1">(</span><span class="s">&quot;ß↑e̊&quot;</span><span class="p" data-group-id="2701724976-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="2701724976-2">[</span><span class="mi">223</span><span class="p">,</span><span class="mi">8593</span><span class="p">,</span><span class="p" data-group-id="2701724976-3">[</span><span class="mi">101</span><span class="p">,</span><span class="mi">778</span><span class="p" data-group-id="2701724976-3">]</span><span class="p" data-group-id="2701724976-2">]</span><span class="gp unselectable">
+2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">to_graphemes</span><span class="p" data-group-id="2701724976-4">(</span><span class="p" data-group-id="2701724976-5">&lt;&lt;</span><span class="s">&quot;ß↑e̊&quot;</span><span class="o">/</span><span class="ss">utf8</span><span class="p" data-group-id="2701724976-5">&gt;&gt;</span><span class="p" data-group-id="2701724976-4">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="2701724976-6">[</span><span class="mi">223</span><span class="p">,</span><span class="mi">8593</span><span class="p">,</span><span class="p" data-group-id="2701724976-7">[</span><span class="mi">101</span><span class="p">,</span><span class="mi">778</span><span class="p" data-group-id="2701724976-7">]</span><span class="p" data-group-id="2701724976-6">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="to_integer/1">
@@ -2155,7 +2175,7 @@ returned in <code class="inline">Rest</code>.</p><p><em>Example:</em></p><pre><c
       <h1 class="signature" translate="no">to_integer(String)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L763" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L763" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2177,14 +2197,14 @@ returned in <code class="inline">Rest</code>.</p><p><em>Example:</em></p><pre><c
 
 <p>Argument <code class="inline">String</code> is expected to start with a valid text represented integer
 (the digits are ASCII values). Remaining characters in the string after the
-integer are returned in <code class="inline">Rest</code>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="p" data-group-id="4627307814-1">{</span><span class="n">I1</span><span class="p">,</span><span class="n">Is</span><span class="p" data-group-id="4627307814-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">string</span><span class="p">:</span><span class="nf">to_integer</span><span class="p" data-group-id="4627307814-2">(</span><span class="s">&quot;33+22&quot;</span><span class="p" data-group-id="4627307814-2">)</span><span class="p">,</span><span class="gp unselectable">
-1&gt; </span><span class="p" data-group-id="4627307814-3">{</span><span class="n">I2</span><span class="p">,</span><span class="p" data-group-id="4627307814-4">[</span><span class="p" data-group-id="4627307814-4">]</span><span class="p" data-group-id="4627307814-3">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">string</span><span class="p">:</span><span class="nf">to_integer</span><span class="p" data-group-id="4627307814-5">(</span><span class="n">Is</span><span class="p" data-group-id="4627307814-5">)</span><span class="p">,</span><span class="gp unselectable">
+integer are returned in <code class="inline">Rest</code>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="p" data-group-id="9313726853-1">{</span><span class="n">I1</span><span class="p">,</span><span class="n">Is</span><span class="p" data-group-id="9313726853-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">string</span><span class="p">:</span><span class="nf">to_integer</span><span class="p" data-group-id="9313726853-2">(</span><span class="s">&quot;33+22&quot;</span><span class="p" data-group-id="9313726853-2">)</span><span class="p">,</span><span class="gp unselectable">
+1&gt; </span><span class="p" data-group-id="9313726853-3">{</span><span class="n">I2</span><span class="p">,</span><span class="p" data-group-id="9313726853-4">[</span><span class="p" data-group-id="9313726853-4">]</span><span class="p" data-group-id="9313726853-3">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">string</span><span class="p">:</span><span class="nf">to_integer</span><span class="p" data-group-id="9313726853-5">(</span><span class="n">Is</span><span class="p" data-group-id="9313726853-5">)</span><span class="p">,</span><span class="gp unselectable">
 1&gt; </span><span class="n">I1</span><span class="o">-</span><span class="n">I2</span><span class="p">.</span><span class="w">
 </span><span class="mi">11</span><span class="gp unselectable">
-2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">to_integer</span><span class="p" data-group-id="4627307814-6">(</span><span class="s">&quot;0.5&quot;</span><span class="p" data-group-id="4627307814-6">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="4627307814-7">{</span><span class="mi">0</span><span class="p">,</span><span class="s">&quot;.5&quot;</span><span class="p" data-group-id="4627307814-7">}</span><span class="gp unselectable">
-3&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">to_integer</span><span class="p" data-group-id="4627307814-8">(</span><span class="s">&quot;x=2&quot;</span><span class="p" data-group-id="4627307814-8">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="4627307814-9">{</span><span class="ss">error</span><span class="p">,</span><span class="ss">no_integer</span><span class="p" data-group-id="4627307814-9">}</span></code></pre>
+2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">to_integer</span><span class="p" data-group-id="9313726853-6">(</span><span class="s">&quot;0.5&quot;</span><span class="p" data-group-id="9313726853-6">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="9313726853-7">{</span><span class="mi">0</span><span class="p">,</span><span class="s">&quot;.5&quot;</span><span class="p" data-group-id="9313726853-7">}</span><span class="gp unselectable">
+3&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">to_integer</span><span class="p" data-group-id="9313726853-8">(</span><span class="s">&quot;x=2&quot;</span><span class="p" data-group-id="9313726853-8">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="9313726853-9">{</span><span class="ss">error</span><span class="p">,</span><span class="ss">no_integer</span><span class="p" data-group-id="9313726853-9">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="trim/1">
@@ -2199,7 +2219,7 @@ integer are returned in <code class="inline">Rest</code>.</p><p><em>Example:</em
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L479" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L479" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2229,7 +2249,7 @@ integer are returned in <code class="inline">Rest</code>.</p><p><em>Example:</em
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L492" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L492" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2263,7 +2283,7 @@ as Pattern_White_Space in
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L521" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L521" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2285,12 +2305,12 @@ as Pattern_White_Space in
 <p>Returns a string, where leading or trailing, or both, <code class="inline">Characters</code> have been
 removed.</p><p><code class="inline">Dir</code> which can be <code class="inline">leading</code>, <code class="inline">trailing</code>, or <code class="inline">both</code>, indicates from
 which direction characters are to be removed.</p><p>Note that <code class="inline">[$\r,$\n]</code> is one grapheme cluster according to the Unicode
-Standard.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">trim</span><span class="p" data-group-id="9235076644-1">(</span><span class="s">&quot;\t  Hello  \n&quot;</span><span class="p" data-group-id="9235076644-1">)</span><span class="p">.</span><span class="w">
+Standard.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">trim</span><span class="p" data-group-id="2497019606-1">(</span><span class="s">&quot;\t  Hello  \n&quot;</span><span class="p" data-group-id="2497019606-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;Hello&quot;</span><span class="gp unselectable">
-2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">trim</span><span class="p" data-group-id="9235076644-2">(</span><span class="p" data-group-id="9235076644-3">&lt;&lt;</span><span class="s">&quot;\t  Hello  \n&quot;</span><span class="p" data-group-id="9235076644-3">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="ss">leading</span><span class="p" data-group-id="9235076644-2">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="9235076644-4">&lt;&lt;</span><span class="s">&quot;Hello  \n&quot;</span><span class="p" data-group-id="9235076644-4">&gt;&gt;</span><span class="gp unselectable">
-3&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">trim</span><span class="p" data-group-id="9235076644-5">(</span><span class="p" data-group-id="9235076644-6">&lt;&lt;</span><span class="s">&quot;.Hello.\n&quot;</span><span class="p" data-group-id="9235076644-6">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="ss">trailing</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;\n.&quot;</span><span class="p" data-group-id="9235076644-5">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="9235076644-7">&lt;&lt;</span><span class="s">&quot;.Hello&quot;</span><span class="p" data-group-id="9235076644-7">&gt;&gt;</span></code></pre>
+2&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">trim</span><span class="p" data-group-id="2497019606-2">(</span><span class="p" data-group-id="2497019606-3">&lt;&lt;</span><span class="s">&quot;\t  Hello  \n&quot;</span><span class="p" data-group-id="2497019606-3">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="ss">leading</span><span class="p" data-group-id="2497019606-2">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="2497019606-4">&lt;&lt;</span><span class="s">&quot;Hello  \n&quot;</span><span class="p" data-group-id="2497019606-4">&gt;&gt;</span><span class="gp unselectable">
+3&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">trim</span><span class="p" data-group-id="2497019606-5">(</span><span class="p" data-group-id="2497019606-6">&lt;&lt;</span><span class="s">&quot;.Hello.\n&quot;</span><span class="p" data-group-id="2497019606-6">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="ss">trailing</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;\n.&quot;</span><span class="p" data-group-id="2497019606-5">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="2497019606-7">&lt;&lt;</span><span class="s">&quot;.Hello&quot;</span><span class="p" data-group-id="2497019606-7">&gt;&gt;</span></code></pre>
   </section>
 </section>
 <section class="detail" id="uppercase/1">
@@ -2305,7 +2325,7 @@ Standard.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate=
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L637" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L637" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2320,7 +2340,7 @@ Standard.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate=
 
       </div>
 
-<p>Converts <code class="inline">String</code> to uppercase.</p><p>See also <a href="#titlecase/1"><code class="inline">titlecase/1</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">uppercase</span><span class="p" data-group-id="4160150271-1">(</span><span class="s">&quot;Michał&quot;</span><span class="p" data-group-id="4160150271-1">)</span><span class="p">.</span><span class="w">
+<p>Converts <code class="inline">String</code> to uppercase.</p><p>See also <a href="#titlecase/1"><code class="inline">titlecase/1</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">uppercase</span><span class="p" data-group-id="8519620716-1">(</span><span class="s">&quot;Michał&quot;</span><span class="p" data-group-id="8519620716-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;MICHAŁ&quot;</span></code></pre>
   </section>
 </section>
@@ -2335,6 +2355,7 @@ Standard.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate=
       </a>
       <span class="text">Obsolete API functions</span>
     </h1>
+
     <div class="obsolete-api-functions-list">
 <section class="detail" id="centre/2">
 
@@ -2346,7 +2367,7 @@ Standard.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate=
       <h1 class="signature" translate="no">centre(String, Number)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L3024" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L3024" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2375,7 +2396,7 @@ Standard.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate=
       <h1 class="signature" translate="no">centre(String, Number, Character)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L3039" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L3039" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2409,7 +2430,7 @@ blanks or <code class="inline">Character</code>. The resulting string has length
       <h1 class="signature" translate="no">chars(Character, Number)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L2738" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L2738" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2438,7 +2459,7 @@ blanks or <code class="inline">Character</code>. The resulting string has length
       <h1 class="signature" translate="no">chars(Character, Number, Tail)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L2754" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L2754" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2473,7 +2494,7 @@ string can end with string <code class="inline">Tail</code>.</p><p>This function
       <h1 class="signature" translate="no">chr(String, Character)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L2464" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L2464" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2503,7 +2524,7 @@ string can end with string <code class="inline">Tail</code>.</p><p>This function
       <h1 class="signature" translate="no">concat(String1, String2)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L2446" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L2446" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2535,7 +2556,7 @@ or <a href="unicode.html#characters_to_binary/2"><code class="inline">unicode:ch
       <h1 class="signature" translate="no">copies(String, Number)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L2775" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L2775" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2565,7 +2586,7 @@ or <a href="unicode.html#characters_to_binary/2"><code class="inline">unicode:ch
       <h1 class="signature" translate="no">cspan(String, Chars)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L2608" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L2608" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2582,7 +2603,7 @@ or <a href="unicode.html#characters_to_binary/2"><code class="inline">unicode:ch
       </div>
 
 <p>Returns the length of the maximum initial segment of <code class="inline">String</code>, which consists
-entirely of characters not from <code class="inline">Chars</code>.</p><p>This function is <a href="string.html#obsolete-api-functions">obsolete</a>. Use <a href="#take/3"><code class="inline">take/3</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">cspan</span><span class="p" data-group-id="2924482558-1">(</span><span class="s">&quot;\t    abcdef&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; \t&quot;</span><span class="p" data-group-id="2924482558-1">)</span><span class="p">.</span><span class="w">
+entirely of characters not from <code class="inline">Chars</code>.</p><p>This function is <a href="string.html#obsolete-api-functions">obsolete</a>. Use <a href="#take/3"><code class="inline">take/3</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">cspan</span><span class="p" data-group-id="9869555632-1">(</span><span class="s">&quot;\t    abcdef&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; \t&quot;</span><span class="p" data-group-id="9869555632-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mi">0</span></code></pre>
   </section>
 </section>
@@ -2596,7 +2617,7 @@ entirely of characters not from <code class="inline">Chars</code>.</p><p>This fu
       <h1 class="signature" translate="no">join(StringList, Separator)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L3169" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L3169" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2614,7 +2635,7 @@ entirely of characters not from <code class="inline">Chars</code>.</p><p>This fu
 
 <p>Returns a string with the elements of <code class="inline">StringList</code> separated by the string in
 <code class="inline">Separator</code>.</p><p>This function is <a href="string.html#obsolete-api-functions">obsolete</a>. Use
-<a href="lists.html#join/2"><code class="inline">lists:join/2</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nf">join</span><span class="p" data-group-id="8172954015-1">(</span><span class="p" data-group-id="8172954015-2">[</span><span class="s">&quot;one&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;two&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;three&quot;</span><span class="p" data-group-id="8172954015-2">]</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="p" data-group-id="8172954015-1">)</span><span class="p">.</span><span class="w">
+<a href="lists.html#join/2"><code class="inline">lists:join/2</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nf">join</span><span class="p" data-group-id="7438290438-1">(</span><span class="p" data-group-id="7438290438-2">[</span><span class="s">&quot;one&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;two&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;three&quot;</span><span class="p" data-group-id="7438290438-2">]</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="p" data-group-id="7438290438-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;one, two, three&quot;</span></code></pre>
   </section>
 </section>
@@ -2628,7 +2649,7 @@ entirely of characters not from <code class="inline">Chars</code>.</p><p>This fu
       <h1 class="signature" translate="no">left(String, Number)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L2939" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L2939" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2657,7 +2678,7 @@ entirely of characters not from <code class="inline">Chars</code>.</p><p>This fu
       <h1 class="signature" translate="no">left(String, Number, Character)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L2963" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L2963" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2677,7 +2698,7 @@ entirely of characters not from <code class="inline">Chars</code>.</p><p>This fu
 <p>Returns <code class="inline">String</code> with the length adjusted in accordance with <code class="inline">Number</code>. The left
 margin is fixed. If <a href="#length/1"><code class="inline">length(String)</code></a> &lt; <code class="inline">Number</code>, then <code class="inline">String</code> is
 padded with blanks or <code class="inline">Character</code>s.</p><p>This function is <a href="string.html#obsolete-api-functions">obsolete</a>. Use <a href="#pad/2"><code class="inline">pad/2</code></a> or
-<a href="#pad/3"><code class="inline">pad/3</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">left</span><span class="p" data-group-id="4779284564-1">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="sc">$.</span><span class="p" data-group-id="4779284564-1">)</span><span class="p">.</span><span class="w">
+<a href="#pad/3"><code class="inline">pad/3</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">left</span><span class="p" data-group-id="5532757083-1">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="sc">$.</span><span class="p" data-group-id="5532757083-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;Hello.....&quot;</span></code></pre>
   </section>
 </section>
@@ -2691,7 +2712,7 @@ padded with blanks or <code class="inline">Character</code>s.</p><p>This functio
       <h1 class="signature" translate="no">len(String)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L2417" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L2417" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2719,7 +2740,7 @@ padded with blanks or <code class="inline">Character</code>s.</p><p>This functio
       <h1 class="signature" translate="no">rchr(String, Character)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L2482" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L2482" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2749,7 +2770,7 @@ if <code class="inline">Character</code> does not occur.</p><p>This function is 
       <h1 class="signature" translate="no">right(String, Number)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L2982" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L2982" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2778,7 +2799,7 @@ if <code class="inline">Character</code> does not occur.</p><p>This function is 
       <h1 class="signature" translate="no">right(String, Number, Character)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L3005" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L3005" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2800,7 +2821,7 @@ if <code class="inline">Character</code> does not occur.</p><p>This function is 
 
 <p>Returns <code class="inline">String</code> with the length adjusted in accordance with <code class="inline">Number</code>. The right
 margin is fixed. If the length of <code class="inline">(String)</code> &lt; <code class="inline">Number</code>, then <code class="inline">String</code> is padded
-with blanks or <code class="inline">Character</code>s.</p><p>This function is <a href="string.html#obsolete-api-functions">obsolete</a>. Use <a href="#pad/3"><code class="inline">pad/3</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">right</span><span class="p" data-group-id="2081770604-1">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="sc">$.</span><span class="p" data-group-id="2081770604-1">)</span><span class="p">.</span><span class="w">
+with blanks or <code class="inline">Character</code>s.</p><p>This function is <a href="string.html#obsolete-api-functions">obsolete</a>. Use <a href="#pad/3"><code class="inline">pad/3</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">right</span><span class="p" data-group-id="5049234740-1">(</span><span class="s">&quot;Hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="sc">$.</span><span class="p" data-group-id="5049234740-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;.....Hello&quot;</span></code></pre>
   </section>
 </section>
@@ -2814,7 +2835,7 @@ with blanks or <code class="inline">Character</code>s.</p><p>This function is <a
       <h1 class="signature" translate="no">rstr(String, SubString)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L2544" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L2544" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2831,7 +2852,7 @@ with blanks or <code class="inline">Character</code>s.</p><p>This function is <a
       </div>
 
 <p>Returns the position where the last occurrence of <code class="inline">SubString</code> begins in
-<code class="inline">String</code>. Returns <code class="inline">0</code> if <code class="inline">SubString</code> does not exist in <code class="inline">String</code>.</p><p>This function is <a href="string.html#obsolete-api-functions">obsolete</a>. Use <a href="#find/3"><code class="inline">find/3</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">rstr</span><span class="p" data-group-id="1583860801-1">(</span><span class="s">&quot; Hello Hello World World &quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p" data-group-id="1583860801-1">)</span><span class="p">.</span><span class="w">
+<code class="inline">String</code>. Returns <code class="inline">0</code> if <code class="inline">SubString</code> does not exist in <code class="inline">String</code>.</p><p>This function is <a href="string.html#obsolete-api-functions">obsolete</a>. Use <a href="#find/3"><code class="inline">find/3</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">rstr</span><span class="p" data-group-id="0066659933-1">(</span><span class="s">&quot; Hello Hello World World &quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p" data-group-id="0066659933-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mi">8</span></code></pre>
   </section>
 </section>
@@ -2845,7 +2866,7 @@ with blanks or <code class="inline">Character</code>s.</p><p>This function is <a
       <h1 class="signature" translate="no">span(String, Chars)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L2580" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L2580" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2862,7 +2883,7 @@ with blanks or <code class="inline">Character</code>s.</p><p>This function is <a
       </div>
 
 <p>Returns the length of the maximum initial segment of <code class="inline">String</code>, which consists
-entirely of characters from <code class="inline">Chars</code>.</p><p>This function is <a href="string.html#obsolete-api-functions">obsolete</a>. Use <a href="#take/2"><code class="inline">take/2</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">span</span><span class="p" data-group-id="5742619993-1">(</span><span class="s">&quot;\t    abcdef&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; \t&quot;</span><span class="p" data-group-id="5742619993-1">)</span><span class="p">.</span><span class="w">
+entirely of characters from <code class="inline">Chars</code>.</p><p>This function is <a href="string.html#obsolete-api-functions">obsolete</a>. Use <a href="#take/2"><code class="inline">take/2</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">span</span><span class="p" data-group-id="1627289851-1">(</span><span class="s">&quot;\t    abcdef&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; \t&quot;</span><span class="p" data-group-id="1627289851-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mi">5</span></code></pre>
   </section>
 </section>
@@ -2876,7 +2897,7 @@ entirely of characters from <code class="inline">Chars</code>.</p><p>This functi
       <h1 class="signature" translate="no">str(String, SubString)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L2515" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L2515" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2893,7 +2914,7 @@ entirely of characters from <code class="inline">Chars</code>.</p><p>This functi
       </div>
 
 <p>Returns the position where the first occurrence of <code class="inline">SubString</code> begins in
-<code class="inline">String</code>. Returns <code class="inline">0</code> if <code class="inline">SubString</code> does not exist in <code class="inline">String</code>.</p><p>This function is <a href="string.html#obsolete-api-functions">obsolete</a>. Use <a href="#find/2"><code class="inline">find/2</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">str</span><span class="p" data-group-id="3861919805-1">(</span><span class="s">&quot; Hello Hello World World &quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p" data-group-id="3861919805-1">)</span><span class="p">.</span><span class="w">
+<code class="inline">String</code>. Returns <code class="inline">0</code> if <code class="inline">SubString</code> does not exist in <code class="inline">String</code>.</p><p>This function is <a href="string.html#obsolete-api-functions">obsolete</a>. Use <a href="#find/2"><code class="inline">find/2</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">str</span><span class="p" data-group-id="5562571476-1">(</span><span class="s">&quot; Hello Hello World World &quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p" data-group-id="5562571476-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mi">8</span></code></pre>
   </section>
 </section>
@@ -2907,7 +2928,7 @@ entirely of characters from <code class="inline">Chars</code>.</p><p>This functi
       <h1 class="signature" translate="no">strip(String)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L2872" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L2872" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2935,7 +2956,7 @@ entirely of characters from <code class="inline">Chars</code>.</p><p>This functi
       <h1 class="signature" translate="no">strip(String, Direction)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L2881" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L2881" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2964,7 +2985,7 @@ entirely of characters from <code class="inline">Chars</code>.</p><p>This functi
       <h1 class="signature" translate="no">strip(String, Direction, Character)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L2910" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L2910" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2987,7 +3008,7 @@ entirely of characters from <code class="inline">Chars</code>.</p><p>This functi
 <p>Returns a string, where leading or trailing, or both, blanks or a number of
 <code class="inline">Character</code> have been removed.</p><p><code class="inline">Direction</code>, which can be <code class="inline">left</code>, <code class="inline">right</code>, or
 <code class="inline">both</code>, indicates from which direction blanks are to be removed.
-<a href="#strip/1"><code class="inline">strip/1</code></a> is equivalent to <a href="#strip/2"><code class="inline">strip(String, both)</code></a>.</p><p>This function is <a href="string.html#obsolete-api-functions">obsolete</a>. Use <a href="#trim/3"><code class="inline">trim/3</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">strip</span><span class="p" data-group-id="5454120154-1">(</span><span class="s">&quot;...Hello.....&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">both</span><span class="p">,</span><span class="w"> </span><span class="sc">$.</span><span class="p" data-group-id="5454120154-1">)</span><span class="p">.</span><span class="w">
+<a href="#strip/1"><code class="inline">strip/1</code></a> is equivalent to <a href="#strip/2"><code class="inline">strip(String, both)</code></a>.</p><p>This function is <a href="string.html#obsolete-api-functions">obsolete</a>. Use <a href="#trim/3"><code class="inline">trim/3</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">strip</span><span class="p" data-group-id="0674904448-1">(</span><span class="s">&quot;...Hello.....&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">both</span><span class="p">,</span><span class="w"> </span><span class="sc">$.</span><span class="p" data-group-id="0674904448-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;Hello&quot;</span></code></pre>
   </section>
 </section>
@@ -3001,7 +3022,7 @@ entirely of characters from <code class="inline">Chars</code>.</p><p>This functi
       <h1 class="signature" translate="no">sub_string(String, Start)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L3060" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L3060" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3030,7 +3051,7 @@ entirely of characters from <code class="inline">Chars</code>.</p><p>This functi
       <h1 class="signature" translate="no">sub_string(String, Start, Stop)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L3082" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L3082" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3051,7 +3072,7 @@ entirely of characters from <code class="inline">Chars</code>.</p><p>This functi
       </div>
 
 <p>Returns a substring of <code class="inline">String</code>, starting at position <code class="inline">Start</code> to the end of the
-string, or to and including position <code class="inline">Stop</code>.</p><p>This function is <a href="string.html#obsolete-api-functions">obsolete</a>. Use <a href="#slice/3"><code class="inline">slice/3</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nf">sub_string</span><span class="p" data-group-id="4619872404-1">(</span><span class="s">&quot;Hello World&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p" data-group-id="4619872404-1">)</span><span class="p">.</span><span class="w">
+string, or to and including position <code class="inline">Stop</code>.</p><p>This function is <a href="string.html#obsolete-api-functions">obsolete</a>. Use <a href="#slice/3"><code class="inline">slice/3</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nf">sub_string</span><span class="p" data-group-id="3365939282-1">(</span><span class="s">&quot;Hello World&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p" data-group-id="3365939282-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;lo Wo&quot;</span></code></pre>
   </section>
 </section>
@@ -3065,7 +3086,7 @@ string, or to and including position <code class="inline">Stop</code>.</p><p>Thi
       <h1 class="signature" translate="no">sub_word(String, Number)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L2827" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L2827" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3093,7 +3114,7 @@ string, or to and including position <code class="inline">Stop</code>.</p><p>Thi
       <h1 class="signature" translate="no">sub_word(String, Number, Character)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L2850" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L2850" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3111,7 +3132,7 @@ string, or to and including position <code class="inline">Stop</code>.</p><p>Thi
 
 <p>Returns the word in position <code class="inline">Number</code> of <code class="inline">String</code>. Words are separated by blanks
 or <code class="inline">Character</code>s.</p><p>This function is <a href="string.html#obsolete-api-functions">obsolete</a>. Use
-<a href="#nth_lexeme/3"><code class="inline">nth_lexeme/3</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">sub_word</span><span class="p" data-group-id="0877838957-1">(</span><span class="s">&quot; Hello old boy !&quot;</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="sc">$o</span><span class="p" data-group-id="0877838957-1">)</span><span class="p">.</span><span class="w">
+<a href="#nth_lexeme/3"><code class="inline">nth_lexeme/3</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">string</span><span class="p">:</span><span class="nf">sub_word</span><span class="p" data-group-id="6229180980-1">(</span><span class="s">&quot; Hello old boy !&quot;</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="sc">$o</span><span class="p" data-group-id="6229180980-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;ld b&quot;</span></code></pre>
   </section>
 </section>
@@ -3125,7 +3146,7 @@ or <code class="inline">Character</code>s.</p><p>This function is <a href="strin
       <h1 class="signature" translate="no">substr(String, Start)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L2628" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L2628" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3154,7 +3175,7 @@ or <code class="inline">Character</code>s.</p><p>This function is <a href="strin
       <h1 class="signature" translate="no">substr(String, Start, Length)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L2653" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L2653" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3175,7 +3196,7 @@ or <code class="inline">Character</code>s.</p><p>This function is <a href="strin
       </div>
 
 <p>Returns a substring of <code class="inline">String</code>, starting at position <code class="inline">Start</code>, and ending at the
-end of the string or at length <code class="inline">Length</code>.</p><p>This function is <a href="string.html#obsolete-api-functions">obsolete</a>. Use <a href="#slice/3"><code class="inline">slice/3</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nf">substr</span><span class="p" data-group-id="6742473817-1">(</span><span class="s">&quot;Hello World&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="6742473817-1">)</span><span class="p">.</span><span class="w">
+end of the string or at length <code class="inline">Length</code>.</p><p>This function is <a href="string.html#obsolete-api-functions">obsolete</a>. Use <a href="#slice/3"><code class="inline">slice/3</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nf">substr</span><span class="p" data-group-id="9088549020-1">(</span><span class="s">&quot;Hello World&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="9088549020-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;lo Wo&quot;</span></code></pre>
   </section>
 </section>
@@ -3189,7 +3210,7 @@ end of the string or at length <code class="inline">Length</code>.</p><p>This fu
       <h1 class="signature" translate="no">to_lower/1</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L3123" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L3123" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3221,7 +3242,7 @@ set are unchanged.</p><p>This function is <a href="string.html#obsolete-api-func
       <h1 class="signature" translate="no">to_upper/1</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L3144" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L3144" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3253,7 +3274,7 @@ set are unchanged.</p><p>This function is <a href="string.html#obsolete-api-func
       <h1 class="signature" translate="no">tokens(String, SeparatorList)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L2688" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L2688" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3273,8 +3294,8 @@ set are unchanged.</p><p>This function is <a href="string.html#obsolete-api-func
       </div>
 
 <p>Returns a list of tokens in <code class="inline">String</code>, separated by the characters in
-<code class="inline">SeparatorList</code>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nf">tokens</span><span class="p" data-group-id="5478893102-1">(</span><span class="s">&quot;abc defxxghix jkl&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x &quot;</span><span class="p" data-group-id="5478893102-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="5478893102-2">[</span><span class="s">&quot;abc&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;def&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ghi&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;jkl&quot;</span><span class="p" data-group-id="5478893102-2">]</span></code></pre><p>Notice that, as shown in this example, two or more adjacent separator characters
+<code class="inline">SeparatorList</code>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nf">tokens</span><span class="p" data-group-id="3034075723-1">(</span><span class="s">&quot;abc defxxghix jkl&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x &quot;</span><span class="p" data-group-id="3034075723-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="3034075723-2">[</span><span class="s">&quot;abc&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;def&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ghi&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;jkl&quot;</span><span class="p" data-group-id="3034075723-2">]</span></code></pre><p>Notice that, as shown in this example, two or more adjacent separator characters
 in <code class="inline">String</code> are treated as one. That is, there are no empty strings in the
 resulting list of tokens.</p><p>This function is <a href="string.html#obsolete-api-functions">obsolete</a>. Use <a href="#lexemes/2"><code class="inline">lexemes/2</code></a>.</p>
   </section>
@@ -3289,7 +3310,7 @@ resulting list of tokens.</p><p>This function is <a href="string.html#obsolete-a
       <h1 class="signature" translate="no">words(String)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L2791" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L2791" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3317,7 +3338,7 @@ resulting list of tokens.</p><p>This function is <a href="string.html#obsolete-a
       <h1 class="signature" translate="no">words(String, Character)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/string.erl#L2811" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/string.erl#L2811" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3333,7 +3354,7 @@ resulting list of tokens.</p><p>This function is <a href="string.html#obsolete-a
 
       </div>
 
-<p>Returns the number of words in <code class="inline">String</code>, separated by blanks or <code class="inline">Character</code>.</p><p>This function is <a href="string.html#obsolete-api-functions">obsolete</a>. Use <a href="#lexemes/2"><code class="inline">lexemes/2</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nf">words</span><span class="p" data-group-id="9965247274-1">(</span><span class="s">&quot; Hello old boy!&quot;</span><span class="p">,</span><span class="w"> </span><span class="sc">$o</span><span class="p" data-group-id="9965247274-1">)</span><span class="p">.</span><span class="w">
+<p>Returns the number of words in <code class="inline">String</code>, separated by blanks or <code class="inline">Character</code>.</p><p>This function is <a href="string.html#obsolete-api-functions">obsolete</a>. Use <a href="#lexemes/2"><code class="inline">lexemes/2</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nf">words</span><span class="p" data-group-id="2382771762-1">(</span><span class="s">&quot; Hello old boy!&quot;</span><span class="p">,</span><span class="w"> </span><span class="sc">$o</span><span class="p" data-group-id="2382771762-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mi">4</span></code></pre>
   </section>
 </section>
@@ -3345,8 +3366,8 @@ resulting list of tokens.</p><p>This function is <a href="string.html#obsolete-a
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="stdlib.epub" title="ePub version">
@@ -3358,7 +3379,7 @@ resulting list of tokens.</p><p>This function is <a href="string.html#obsolete-a
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

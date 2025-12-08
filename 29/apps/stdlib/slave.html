@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="stdlib v7.1-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/slave.html" />
     <title>slave — stdlib v7.1-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-4F7E9F36.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ stdlib
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of stdlib</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ stdlib
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/slave.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/slave.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -138,7 +156,7 @@ running.</p><p>The master node must be alive.</p>
 
       </div>
 
-        <div class="summary-synopsis"><p>Calls <a><code class="inline">pseudo(Master, ServerList)</code></a>. If you want to start a node
+        <div class="summary-synopsis"><p>Calls <a href="#pseudo/2"><code class="inline">pseudo(Master, ServerList)</code></a>. If you want to start a node
 from the command line and set up a number of pseudo servers, an Erlang runtime
 system can be started as follows</p></div>
 
@@ -181,7 +199,7 @@ on to <code class="inline">Pid</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">start(Host, Name)</code></a> where <code class="inline">Name</code> is the same
+        <div class="summary-synopsis"><p>Equivalent to <a href="#start/2"><code class="inline">start(Host, Name)</code></a> where <code class="inline">Name</code> is the same
 as the node that executes this call.</p></div>
 
     </div>
@@ -194,7 +212,7 @@ as the node that executes this call.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">start(Host, Name, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#start/3"><code class="inline">start(Host, Name, [])</code></a>.</p></div>
 
     </div>
 
@@ -220,7 +238,7 @@ condition that applies to names of distributed Erlang nodes.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">start_link/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#start_link/3"><code class="inline">start_link/3</code></a>.</p></div>
 
     </div>
 
@@ -232,7 +250,7 @@ condition that applies to names of distributed Erlang nodes.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">start_link/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#start_link/3"><code class="inline">start_link/3</code></a>.</p></div>
 
     </div>
 
@@ -274,6 +292,7 @@ slave node also terminates.</p></div>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="pseudo/1">
 
@@ -285,7 +304,7 @@ slave node also terminates.</p></div>
       <h1 class="signature" translate="no">pseudo([Master | ServerList])</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/slave.erl#L109" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/slave.erl#L109" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -319,7 +338,7 @@ system can be started as follows:</p><pre><code class="text">% erl -name abc -s 
       <h1 class="signature" translate="no">pseudo(Master, ServerList)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/slave.erl#L132" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/slave.erl#L132" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -343,7 +362,7 @@ name that does nothing but pass on all message to the real server that executes
 at a master node. A pseudo server is an intermediary that only has the same
 registered name as the real server.</p><p>For example, if you have started a slave node <code class="inline">N</code> and want to execute <code class="inline">pxw</code>
 graphics code on this node, you can start server <code class="inline">pxw_server</code> as a pseudo server
-at the slave node. This is illustrated as follows:</p><pre><code class="makeup erlang" translate="no"><span class="nc">rpc</span><span class="p">:</span><span class="nf">call</span><span class="p" data-group-id="8187261605-1">(</span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="ss">slave</span><span class="p">,</span><span class="w"> </span><span class="ss">pseudo</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8187261605-2">[</span><span class="nf">node</span><span class="p" data-group-id="8187261605-3">(</span><span class="p" data-group-id="8187261605-3">)</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8187261605-4">[</span><span class="ss">pxw_server</span><span class="p" data-group-id="8187261605-4">]</span><span class="p" data-group-id="8187261605-2">]</span><span class="p" data-group-id="8187261605-1">)</span><span class="p">.</span></code></pre>
+at the slave node. This is illustrated as follows:</p><pre><code class="makeup erlang" translate="no"><span class="nc">rpc</span><span class="p">:</span><span class="nf">call</span><span class="p" data-group-id="9850789454-1">(</span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="ss">slave</span><span class="p">,</span><span class="w"> </span><span class="ss">pseudo</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9850789454-2">[</span><span class="nf">node</span><span class="p" data-group-id="9850789454-3">(</span><span class="p" data-group-id="9850789454-3">)</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9850789454-4">[</span><span class="ss">pxw_server</span><span class="p" data-group-id="9850789454-4">]</span><span class="p" data-group-id="9850789454-2">]</span><span class="p" data-group-id="9850789454-1">)</span><span class="p">.</span></code></pre>
   </section>
 </section>
 <section class="detail" id="relay/1">
@@ -356,7 +375,7 @@ at the slave node. This is illustrated as follows:</p><pre><code class="makeup e
       <h1 class="signature" translate="no">relay(Pid)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/slave.erl#L154" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/slave.erl#L154" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -390,7 +409,7 @@ on to <code class="inline">Pid</code>.</p>
       <h1 class="signature" translate="no">start(Host)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/slave.erl#L214" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/slave.erl#L214" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -427,7 +446,7 @@ as the node that executes this call.</p>
       <h1 class="signature" translate="no">start(Host, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/slave.erl#L226" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/slave.erl#L226" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -464,7 +483,7 @@ as the node that executes this call.</p>
       <h1 class="signature" translate="no">start(Host, Name, Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/slave.erl#L283" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/slave.erl#L283" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -497,9 +516,9 @@ server is relayed to the master.</p><p>Argument <code class="inline">Args</code>
 passed to the new node and can be used for a variety of purposes; see
 <a href="../../apps/erts/erl_cmd.html"><code class="inline">erl(1)</code></a>.</p><p>As an example, suppose that you want to start a slave node at host <code class="inline">H</code> with node
 name <code class="inline">Name@H</code> and want the slave node to have the following properties:</p><ul><li>Directory <code class="inline">Dir</code> is to be added to the code path.</li><li>The Mnesia directory is to be set to <code class="inline">M</code>.</li><li>The Unix <code class="inline">DISPLAY</code> environment variable is to be set to the display of the
-master node.</li></ul><p>The following code is executed to achieve this:</p><pre><code class="makeup erlang" translate="no"><span class="n">E</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot; -env DISPLAY &quot;</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="nc">net_adm</span><span class="p">:</span><span class="nf">localhost</span><span class="p" data-group-id="9238545650-1">(</span><span class="p" data-group-id="9238545650-1">)</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="s">&quot;:0 &quot;</span><span class="p">,</span><span class="w">
+master node.</li></ul><p>The following code is executed to achieve this:</p><pre><code class="makeup erlang" translate="no"><span class="n">E</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot; -env DISPLAY &quot;</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="nc">net_adm</span><span class="p">:</span><span class="nf">localhost</span><span class="p" data-group-id="9822529856-1">(</span><span class="p" data-group-id="9822529856-1">)</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="s">&quot;:0 &quot;</span><span class="p">,</span><span class="w">
 </span><span class="n">Arg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;-mnesia_dir &quot;</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="s">&quot; -pa &quot;</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="n">Dir</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="n">E</span><span class="p">,</span><span class="w">
-</span><span class="nc">slave</span><span class="p">:</span><span class="nf">start</span><span class="p" data-group-id="9238545650-2">(</span><span class="n">H</span><span class="p">,</span><span class="w"> </span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Arg</span><span class="p" data-group-id="9238545650-2">)</span><span class="p">.</span></code></pre><p>The function returns <code class="inline">{ok, Node}</code>, where <code class="inline">Node</code> is the name of the new node,
+</span><span class="nc">slave</span><span class="p">:</span><span class="nf">start</span><span class="p" data-group-id="9822529856-2">(</span><span class="n">H</span><span class="p">,</span><span class="w"> </span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Arg</span><span class="p" data-group-id="9822529856-2">)</span><span class="p">.</span></code></pre><p>The function returns <code class="inline">{ok, Node}</code>, where <code class="inline">Node</code> is the name of the new node,
 otherwise <code class="inline">{error, Reason}</code>, where <code class="inline">Reason</code> can be one of:</p><ul><li><p><strong><code class="inline">timeout</code></strong> - The master node failed to get in contact with the slave node.
 This can occur in a number of circumstances:</p><ul><li>Erlang/OTP is not installed on the remote host.</li><li>The file system on the other host has a different structure to the the
 master.</li><li>The Erlang nodes have different cookies.</li></ul></li><li><p><strong><code class="inline">no_rsh</code></strong> - No remote shell program was found on the computer. Note that
@@ -516,7 +535,7 @@ master.</li><li>The Erlang nodes have different cookies.</li></ul></li><li><p><s
       <h1 class="signature" translate="no">start_link(Host)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/slave.erl#L292" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/slave.erl#L292" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -552,7 +571,7 @@ master.</li><li>The Erlang nodes have different cookies.</li></ul></li><li><p><s
       <h1 class="signature" translate="no">start_link(Host, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/slave.erl#L304" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/slave.erl#L304" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -589,7 +608,7 @@ master.</li><li>The Erlang nodes have different cookies.</li></ul></li><li><p><s
       <h1 class="signature" translate="no">start_link(Host, Name, Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/slave.erl#L322" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/slave.erl#L322" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -630,7 +649,7 @@ slave node also terminates.</p><p>For a description of arguments and return valu
       <h1 class="signature" translate="no">stop(Node)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/slave.erl#L351" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/slave.erl#L351" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -660,8 +679,8 @@ slave node also terminates.</p><p>For a description of arguments and return valu
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="stdlib.epub" title="ePub version">
@@ -673,7 +692,7 @@ slave node also terminates.</p><p>For a description of arguments and return valu
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

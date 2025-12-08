@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="runtime_tools v2.3-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/runtime_tools/dbg.html" />
     <title>dbg — runtime_tools v2.3-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-DFA571A8.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ runtime_tools
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of runtime_tools</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ runtime_tools
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -179,7 +197,7 @@ and more.</p>
 
       </div>
 
-        <div class="summary-synopsis"><p>A <a><code class="inline">dbg</code></a> session that can be used by <a><code class="inline">session/2</code></a> to
+        <div class="summary-synopsis"><p>A <a href="dbg.html"><code class="inline">dbg</code></a> session that can be used by <a href="#session/2"><code class="inline">session/2</code></a> to
 create isolated debugging sessions.</p></div>
 
     </div>
@@ -252,7 +270,7 @@ create isolated debugging sessions.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">c(Mod, Fun, Args, all)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#c/4"><code class="inline">c(Mod, Fun, Args, all)</code></a>.</p></div>
 
     </div>
 
@@ -262,7 +280,7 @@ create isolated debugging sessions.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Evaluates the expression <a><code class="inline">apply(Mod, Fun, Args)</code></a> with the
+        <div class="summary-synopsis"><p>Evaluates the expression <a href="../../apps/erts/erlang.html#apply/3"><code class="inline">apply(Mod, Fun, Args)</code></a> with the
 trace flags in <code class="inline">Flags</code> set.</p></div>
 
     </div>
@@ -283,7 +301,7 @@ trace flags in <code class="inline">Flags</code> set.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">ctp({'_', '_', '_'})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#ctp/1"><code class="inline">ctp({'_', '_', '_'})</code></a>.</p></div>
 
     </div>
 
@@ -303,7 +321,7 @@ trace flags in <code class="inline">Flags</code> set.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">ctp({Module, Function, '_'})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#ctp/1"><code class="inline">ctp({Module, Function, '_'})</code></a>.</p></div>
 
     </div>
 
@@ -313,7 +331,7 @@ trace flags in <code class="inline">Flags</code> set.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">ctp({Module, Function, Arity})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#ctp/1"><code class="inline">ctp({Module, Function, Arity})</code></a>.</p></div>
 
     </div>
 
@@ -334,7 +352,7 @@ trace flags in <code class="inline">Flags</code> set.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">ctpg({'_', '_', '_'})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#ctpg/1"><code class="inline">ctpg({'_', '_', '_'})</code></a>.</p></div>
 
     </div>
 
@@ -354,7 +372,7 @@ trace flags in <code class="inline">Flags</code> set.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">ctpg({Module, Function, '_'})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#ctpg/1"><code class="inline">ctpg({Module, Function, '_'})</code></a>.</p></div>
 
     </div>
 
@@ -364,7 +382,7 @@ trace flags in <code class="inline">Flags</code> set.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">ctpg({Module, Function, Arity})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#ctpg/1"><code class="inline">ctpg({Module, Function, Arity})</code></a>.</p></div>
 
     </div>
 
@@ -374,7 +392,7 @@ trace flags in <code class="inline">Flags</code> set.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">ctpl({'_', '_', '_'})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#ctpl/1"><code class="inline">ctpl({'_', '_', '_'})</code></a>.</p></div>
 
     </div>
 
@@ -394,7 +412,7 @@ trace flags in <code class="inline">Flags</code> set.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">ctpl({Module, Function, '_'})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#ctpl/1"><code class="inline">ctpl({Module, Function, '_'})</code></a>.</p></div>
 
     </div>
 
@@ -404,7 +422,7 @@ trace flags in <code class="inline">Flags</code> set.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">ctpl({Module, Function, Arity})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#ctpl/1"><code class="inline">ctpl({Module, Function, Arity})</code></a>.</p></div>
 
     </div>
 
@@ -414,7 +432,7 @@ trace flags in <code class="inline">Flags</code> set.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Forgets all match specifications saved during calls to <a><code class="inline">tp/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Forgets all match specifications saved during calls to <a href="#tp/2"><code class="inline">tp/2</code></a>.</p></div>
 
     </div>
 
@@ -424,7 +442,7 @@ trace flags in <code class="inline">Flags</code> set.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Forgets a specific match specification saved during calls to <a><code class="inline">tp/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Forgets a specific match specification saved during calls to <a href="#tp/2"><code class="inline">tp/2</code></a>.</p></div>
 
     </div>
 
@@ -434,7 +452,7 @@ trace flags in <code class="inline">Flags</code> set.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">flush_trace_port(node())</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#flush_trace_port/1"><code class="inline">flush_trace_port(node())</code></a>.</p></div>
 
     </div>
 
@@ -444,7 +462,7 @@ trace flags in <code class="inline">Flags</code> set.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">trace_port_control(Nodename, flush)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#trace_port_control/2"><code class="inline">trace_port_control(Nodename, flush)</code></a>.</p></div>
 
     </div>
 
@@ -455,7 +473,7 @@ trace flags in <code class="inline">Flags</code> set.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Pseudo function that by means of a parse transform translates the
-<em>literal</em> fun typed as parameter in the function call to a <a>match
+<em>literal</em> fun typed as parameter in the function call to a <a href="../../apps/erts/match_spec.html">match
 specification</a>.</p></div>
 
     </div>
@@ -466,7 +484,7 @@ specification</a>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">get_tracer(node())</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#get_tracer/1"><code class="inline">get_tracer(node())</code></a>.</p></div>
 
     </div>
 
@@ -547,7 +565,7 @@ performed.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">p(Item, [m])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#p/2"><code class="inline">p(Item, [m])</code></a>.</p></div>
 
     </div>
 
@@ -568,7 +586,7 @@ performed.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Reads match specifications from a text file (possibly) generated by
-the <a><code class="inline">wtp/1</code></a> function.</p></div>
+the <a href="#wtp/1"><code class="inline">wtp/1</code></a> function.</p></div>
 
     </div>
 
@@ -578,7 +596,7 @@ the <a><code class="inline">wtp/1</code></a> function.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Runs <a><code class="inline">dbg</code></a> commands using the provides session, or
+        <div class="summary-synopsis"><p>Runs <a href="dbg.html"><code class="inline">dbg</code></a> commands using the provides session, or
 creates a session for the duration of the call if a session name
 is provided.</p></div>
 
@@ -590,7 +608,7 @@ is provided.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Create a new <a><code class="inline">dbg</code></a> session with the given <code class="inline">Name</code>.</p></div>
+        <div class="summary-synopsis"><p>Create a new <a href="dbg.html"><code class="inline">dbg</code></a> session with the given <code class="inline">Name</code>.</p></div>
 
     </div>
 
@@ -600,7 +618,7 @@ is provided.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Destroys a dbg <a><code class="inline">session/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Destroys a dbg <a href="#t:session/0"><code class="inline">session/0</code></a>.</p></div>
 
     </div>
 
@@ -642,7 +660,7 @@ down all trace clients, and closes all trace ports.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">tp({Module, Function, '_'}, MatchSpec)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#tp/2"><code class="inline">tp({Module, Function, '_'}, MatchSpec)</code></a>.</p></div>
 
     </div>
 
@@ -652,7 +670,7 @@ down all trace clients, and closes all trace ports.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">tp({Module, Function, Arity}, MatchSpec)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#tp/2"><code class="inline">tp({Module, Function, Arity}, MatchSpec)</code></a>.</p></div>
 
     </div>
 
@@ -683,7 +701,7 @@ down all trace clients, and closes all trace ports.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">tpl({Module, Function, '_'}, MatchSpec)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#tpl/2"><code class="inline">tpl({Module, Function, '_'}, MatchSpec)</code></a>.</p></div>
 
     </div>
 
@@ -693,7 +711,7 @@ down all trace clients, and closes all trace ports.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">tpl({Module, Function, Arity}, MatchSpec)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#tpl/2"><code class="inline">tpl({Module, Function, Arity}, MatchSpec)</code></a>.</p></div>
 
     </div>
 
@@ -704,8 +722,8 @@ down all trace clients, and closes all trace ports.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Starts a trace client that reads the output created by a trace port
-driver (see <a><code class="inline">trace_port/2</code></a>) and handles it in mostly the same way as a
-tracer process created by the <a><code class="inline">tracer/0</code></a> function.</p></div>
+driver (see <a href="#trace_port/2"><code class="inline">trace_port/2</code></a>) and handles it in mostly the same way as a
+tracer process created by the <a href="#tracer/0"><code class="inline">tracer/0</code></a> function.</p></div>
 
     </div>
 
@@ -715,7 +733,7 @@ tracer process created by the <a><code class="inline">tracer/0</code></a> functi
 
       </div>
 
-        <div class="summary-synopsis"><p>This function works exactly as <a><code class="inline">trace_client/2</code></a>, but allows you to write your
+        <div class="summary-synopsis"><p>This function works exactly as <a href="#trace_client/2"><code class="inline">trace_client/2</code></a>, but allows you to write your
 own handler function.</p></div>
 
     </div>
@@ -727,7 +745,7 @@ own handler function.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Creates a trace-port-generating fun that is suitable as the
-second argument to <a><code class="inline">tracer/2</code></a>.</p></div>
+second argument to <a href="#tracer/2"><code class="inline">tracer/2</code></a>.</p></div>
 
     </div>
 
@@ -737,7 +755,7 @@ second argument to <a><code class="inline">tracer/2</code></a>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">trace_port_control(node(), Operation)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#trace_port_control/2"><code class="inline">trace_port_control(node(), Operation)</code></a>.</p></div>
 
     </div>
 
@@ -780,7 +798,7 @@ node.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>This function is equivalent to <a><code class="inline">tracer/2</code></a>, but acts on the given node.</p></div>
+        <div class="summary-synopsis"><p>This function is equivalent to <a href="#tracer/2"><code class="inline">tracer/2</code></a>, but acts on the given node.</p></div>
 
     </div>
 
@@ -791,7 +809,7 @@ node.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Saves all match specifications saved during the session (by calls to
-<a><code class="inline">tp/2</code></a> or <a><code class="inline">tpl/2</code></a>), as well as built-in match specifications, in a text
+<a href="#tp/2"><code class="inline">tp/2</code></a> or <a href="#tpl/2"><code class="inline">tpl/2</code></a>), as well as built-in match specifications, in a text
 file with the name designated by <code class="inline">Name</code>.</p></div>
 
     </div>
@@ -808,6 +826,7 @@ file with the name designated by <code class="inline">Name</code>.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:built_in_alias/0">
 
@@ -821,7 +840,7 @@ file with the name designated by <code class="inline">Name</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L77" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L77" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -851,7 +870,7 @@ file with the name designated by <code class="inline">Name</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L1468" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L1468" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -883,7 +902,7 @@ file with the name designated by <code class="inline">Name</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L453" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L453" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -913,7 +932,7 @@ file with the name designated by <code class="inline">Name</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L454" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L454" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -943,7 +962,7 @@ file with the name designated by <code class="inline">Name</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L455" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L455" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -973,7 +992,7 @@ file with the name designated by <code class="inline">Name</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L75" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L75" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1001,7 +1020,7 @@ file with the name designated by <code class="inline">Name</code>.</p></div>
       <h1 class="signature" translate="no">match_spec()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L76" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L76" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1029,7 +1048,7 @@ file with the name designated by <code class="inline">Name</code>.</p></div>
       <h1 class="signature" translate="no">session()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L72" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L72" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1060,7 +1079,7 @@ create isolated debugging sessions.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L459" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L459" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1090,7 +1109,7 @@ create isolated debugging sessions.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L458" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L458" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1120,7 +1139,7 @@ create isolated debugging sessions.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L456" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L456" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1150,7 +1169,7 @@ create isolated debugging sessions.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L460" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L460" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1180,7 +1199,7 @@ create isolated debugging sessions.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L457" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L457" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1210,7 +1229,7 @@ create isolated debugging sessions.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L85" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L85" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1240,7 +1259,7 @@ create isolated debugging sessions.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L79" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L79" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1276,6 +1295,7 @@ create isolated debugging sessions.</p>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="c/3">
 
@@ -1287,7 +1307,7 @@ create isolated debugging sessions.</p>
       <h1 class="signature" translate="no">c(Mod, Fun, Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L1666" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L1666" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1315,7 +1335,7 @@ create isolated debugging sessions.</p>
       <h1 class="signature" translate="no">c(Mod, Fun, Args, Flags)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L1679" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L1679" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1344,7 +1364,7 @@ trace flags in <code class="inline">Flags</code> set.</p><p><code class="inline"
       <h1 class="signature" translate="no">cn(Nodename)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L424" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L424" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1373,7 +1393,7 @@ already activated on the node will continue to be in effect.</p><p>Returns <code
       <h1 class="signature" translate="no">ctp()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L671" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L671" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1401,7 +1421,7 @@ already activated on the node will continue to be in effect.</p><p>Returns <code
       <h1 class="signature" translate="no">ctp(ModuleOrMFA)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L710" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L710" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1434,7 +1454,7 @@ described in <a href="#tp/2"><code class="inline">tp/2</code></a>, except that n
       <h1 class="signature" translate="no">ctp(Module, Function)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L677" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L677" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1463,7 +1483,7 @@ described in <a href="#tp/2"><code class="inline">tp/2</code></a>, except that n
       <h1 class="signature" translate="no">ctp(Module, Function, Arity)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L683" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L683" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1494,7 +1514,7 @@ described in <a href="#tp/2"><code class="inline">tp/2</code></a>, except that n
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L816" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L816" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1527,7 +1547,7 @@ described in <a href="#tp/2"><code class="inline">tp/2</code></a>, except that n
       <h1 class="signature" translate="no">ctpg()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L758" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L758" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1555,7 +1575,7 @@ described in <a href="#tp/2"><code class="inline">tp/2</code></a>, except that n
       <h1 class="signature" translate="no">ctpg(ModuleOrMFA)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L791" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L791" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1587,7 +1607,7 @@ equivalent to <code class="inline">ctpg({ModuleOrMFA, '_', '_'})</code>.</p><p>O
       <h1 class="signature" translate="no">ctpg(Module, Function)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L764" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L764" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1616,7 +1636,7 @@ equivalent to <code class="inline">ctpg({ModuleOrMFA, '_', '_'})</code>.</p><p>O
       <h1 class="signature" translate="no">ctpg(Module, Function, Arity)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L770" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L770" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1645,7 +1665,7 @@ equivalent to <code class="inline">ctpg({ModuleOrMFA, '_', '_'})</code>.</p><p>O
       <h1 class="signature" translate="no">ctpl()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L717" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L717" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1673,7 +1693,7 @@ equivalent to <code class="inline">ctpg({ModuleOrMFA, '_', '_'})</code>.</p><p>O
       <h1 class="signature" translate="no">ctpl(ModuleOrMFA)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L751" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L751" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1705,7 +1725,7 @@ equivalent to <code class="inline">ctpl({ModuleOrMFA, '_', '_'})</code>.</p><p>O
       <h1 class="signature" translate="no">ctpl(Module, Function)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L724" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L724" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1734,7 +1754,7 @@ equivalent to <code class="inline">ctpl({ModuleOrMFA, '_', '_'})</code>.</p><p>O
       <h1 class="signature" translate="no">ctpl(Module, Function, Arity)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L730" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L730" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1763,7 +1783,7 @@ equivalent to <code class="inline">ctpl({ModuleOrMFA, '_', '_'})</code>.</p><p>O
       <h1 class="signature" translate="no">dtp()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L889" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L889" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1793,7 +1813,7 @@ delete specific saved match specifications.</p>
       <h1 class="signature" translate="no">dtp(N)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L902" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L902" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1821,7 +1841,7 @@ delete specific saved match specifications.</p>
       <h1 class="signature" translate="no">flush_trace_port()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L1147" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L1147" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1849,7 +1869,7 @@ delete specific saved match specifications.</p>
       <h1 class="signature" translate="no">flush_trace_port(Nodename)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L1153" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L1153" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1877,7 +1897,7 @@ delete specific saved match specifications.</p>
       <h1 class="signature" translate="no">fun2ms(LiteralFun)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L206" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L206" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1899,40 +1919,40 @@ specification</a>.</p><p>The meaning of &quot;literal&quot; is that the fun need
 as the argument of the function call; it cannot be held in a variable
 which in turn is passed to the function. Furthermore, the parse
 transform module <a href="../../apps/stdlib/ms_transform.html"><code class="inline">ms_transform</code></a> must be enabled. The easiest way to
-enable it is by adding the following line to the source file:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="7761777754-1">(</span><span class="s">&quot;stdlib/include/ms_transform.hrl&quot;</span><span class="p" data-group-id="7761777754-1">)</span><span class="p">.</span></code></pre><p>Failing to include <code class="inline">ms_transform.hrl</code> in the source will result in a runtime
+enable it is by adding the following line to the source file:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="2977515825-1">(</span><span class="s">&quot;stdlib/include/ms_transform.hrl&quot;</span><span class="p" data-group-id="2977515825-1">)</span><span class="p">.</span></code></pre><p>Failing to include <code class="inline">ms_transform.hrl</code> in the source will result in a runtime
 error, not a compile-time error.</p><p>This function can also be invoked directly from the Erlang shell, as shown in
 the examples that follow.</p><p>The head of the fun must be a single pattern that matches a list. That pattern
-will be used to match the arguments for the call:</p><p><em>Examples</em>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">fun2ms</span><span class="p" data-group-id="3905711138-1">(</span><span class="nf">fun</span><span class="p" data-group-id="3905711138-2">(</span><span class="p" data-group-id="3905711138-3">[</span><span class="p">_</span><span class="p">,</span><span class="p">_</span><span class="p" data-group-id="3905711138-3">]</span><span class="p" data-group-id="3905711138-2">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="ss">true</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="3905711138-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="3905711138-4">[</span><span class="p" data-group-id="3905711138-5">{</span><span class="p" data-group-id="3905711138-6">[</span><span class="ss">&#39;_&#39;</span><span class="p">,</span><span class="ss">&#39;_&#39;</span><span class="p" data-group-id="3905711138-6">]</span><span class="p">,</span><span class="p" data-group-id="3905711138-7">[</span><span class="p" data-group-id="3905711138-7">]</span><span class="p">,</span><span class="p" data-group-id="3905711138-8">[</span><span class="ss">true</span><span class="p" data-group-id="3905711138-8">]</span><span class="p" data-group-id="3905711138-5">}</span><span class="p" data-group-id="3905711138-4">]</span><span class="gp unselectable">
-2&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">fun2ms</span><span class="p" data-group-id="3905711138-9">(</span><span class="nf">fun</span><span class="p" data-group-id="3905711138-10">(</span><span class="n">Args</span><span class="p" data-group-id="3905711138-10">)</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="nf">length</span><span class="p" data-group-id="3905711138-11">(</span><span class="n">Args</span><span class="p" data-group-id="3905711138-11">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="ss">true</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="3905711138-9">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="3905711138-12">[</span><span class="p" data-group-id="3905711138-13">{</span><span class="ss">&#39;$1&#39;</span><span class="p">,</span><span class="p" data-group-id="3905711138-14">[</span><span class="p" data-group-id="3905711138-15">{</span><span class="ss">&#39;&gt;&#39;</span><span class="p">,</span><span class="p" data-group-id="3905711138-16">{</span><span class="nb">length</span><span class="p">,</span><span class="ss">&#39;$1&#39;</span><span class="p" data-group-id="3905711138-16">}</span><span class="p">,</span><span class="mi">6</span><span class="p" data-group-id="3905711138-15">}</span><span class="p" data-group-id="3905711138-14">]</span><span class="p">,</span><span class="p" data-group-id="3905711138-17">[</span><span class="ss">true</span><span class="p" data-group-id="3905711138-17">]</span><span class="p" data-group-id="3905711138-13">}</span><span class="p" data-group-id="3905711138-12">]</span></code></pre><p>The first match specification matches when a function having two
+will be used to match the arguments for the call:</p><p><em>Examples</em>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">fun2ms</span><span class="p" data-group-id="4343951592-1">(</span><span class="nf">fun</span><span class="p" data-group-id="4343951592-2">(</span><span class="p" data-group-id="4343951592-3">[</span><span class="p">_</span><span class="p">,</span><span class="p">_</span><span class="p" data-group-id="4343951592-3">]</span><span class="p" data-group-id="4343951592-2">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="ss">true</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="4343951592-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4343951592-4">[</span><span class="p" data-group-id="4343951592-5">{</span><span class="p" data-group-id="4343951592-6">[</span><span class="ss">&#39;_&#39;</span><span class="p">,</span><span class="ss">&#39;_&#39;</span><span class="p" data-group-id="4343951592-6">]</span><span class="p">,</span><span class="p" data-group-id="4343951592-7">[</span><span class="p" data-group-id="4343951592-7">]</span><span class="p">,</span><span class="p" data-group-id="4343951592-8">[</span><span class="ss">true</span><span class="p" data-group-id="4343951592-8">]</span><span class="p" data-group-id="4343951592-5">}</span><span class="p" data-group-id="4343951592-4">]</span><span class="gp unselectable">
+2&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">fun2ms</span><span class="p" data-group-id="4343951592-9">(</span><span class="nf">fun</span><span class="p" data-group-id="4343951592-10">(</span><span class="n">Args</span><span class="p" data-group-id="4343951592-10">)</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="nf">length</span><span class="p" data-group-id="4343951592-11">(</span><span class="n">Args</span><span class="p" data-group-id="4343951592-11">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="ss">true</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="4343951592-9">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4343951592-12">[</span><span class="p" data-group-id="4343951592-13">{</span><span class="ss">&#39;$1&#39;</span><span class="p">,</span><span class="p" data-group-id="4343951592-14">[</span><span class="p" data-group-id="4343951592-15">{</span><span class="ss">&#39;&gt;&#39;</span><span class="p">,</span><span class="p" data-group-id="4343951592-16">{</span><span class="nb">length</span><span class="p">,</span><span class="ss">&#39;$1&#39;</span><span class="p" data-group-id="4343951592-16">}</span><span class="p">,</span><span class="mi">6</span><span class="p" data-group-id="4343951592-15">}</span><span class="p" data-group-id="4343951592-14">]</span><span class="p">,</span><span class="p" data-group-id="4343951592-17">[</span><span class="ss">true</span><span class="p" data-group-id="4343951592-17">]</span><span class="p" data-group-id="4343951592-13">}</span><span class="p" data-group-id="4343951592-12">]</span></code></pre><p>The first match specification matches when a function having two
 arguments is called. The second matches when a function with more than
-6 arguments is called.</p><p><em>Examples</em>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">fun2ms</span><span class="p" data-group-id="8514994883-1">(</span><span class="nf">fun</span><span class="p" data-group-id="8514994883-2">(</span><span class="mi">42</span><span class="p" data-group-id="8514994883-2">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="ss">true</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="8514994883-1">)</span><span class="p">.</span><span class="w">
+6 arguments is called.</p><p><em>Examples</em>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">fun2ms</span><span class="p" data-group-id="0142177567-1">(</span><span class="nf">fun</span><span class="p" data-group-id="0142177567-2">(</span><span class="mi">42</span><span class="p" data-group-id="0142177567-2">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="ss">true</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="0142177567-1">)</span><span class="p">.</span><span class="w">
 </span><span class="n">Error</span><span class="p">:</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="ss">fun2ms</span><span class="w"> </span><span class="ss">requires</span><span class="w"> </span><span class="k">fun</span><span class="w"> </span><span class="ss">with</span><span class="w"> </span><span class="ss">single</span><span class="w"> </span><span class="ss">variable</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="ss">list</span><span class="w"> </span><span class="ss">parameter</span><span class="w">
-</span><span class="p" data-group-id="8514994883-3">{</span><span class="ss">error</span><span class="p">,</span><span class="ss">transform_error</span><span class="p" data-group-id="8514994883-3">}</span><span class="gp unselectable">
-2&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">fun2ms</span><span class="p" data-group-id="8514994883-4">(</span><span class="nf">fun</span><span class="p" data-group-id="8514994883-5">(</span><span class="p" data-group-id="8514994883-6">[</span><span class="p" data-group-id="8514994883-7">&lt;&lt;</span><span class="n">H</span><span class="p">,</span><span class="n">T</span><span class="o">/</span><span class="ss">binary</span><span class="p" data-group-id="8514994883-7">&gt;&gt;</span><span class="p" data-group-id="8514994883-6">]</span><span class="p" data-group-id="8514994883-5">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="ss">true</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="8514994883-4">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="0142177567-3">{</span><span class="ss">error</span><span class="p">,</span><span class="ss">transform_error</span><span class="p" data-group-id="0142177567-3">}</span><span class="gp unselectable">
+2&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">fun2ms</span><span class="p" data-group-id="0142177567-4">(</span><span class="nf">fun</span><span class="p" data-group-id="0142177567-5">(</span><span class="p" data-group-id="0142177567-6">[</span><span class="p" data-group-id="0142177567-7">&lt;&lt;</span><span class="n">H</span><span class="p">,</span><span class="n">T</span><span class="o">/</span><span class="ss">binary</span><span class="p" data-group-id="0142177567-7">&gt;&gt;</span><span class="p" data-group-id="0142177567-6">]</span><span class="p" data-group-id="0142177567-5">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="ss">true</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="0142177567-4">)</span><span class="p">.</span><span class="w">
 </span><span class="n">Error</span><span class="p">:</span><span class="w"> </span><span class="k">fun</span><span class="w"> </span><span class="ss">head</span><span class="w"> </span><span class="ss">contains</span><span class="w"> </span><span class="ss">bit</span><span class="w"> </span><span class="ss">syntax</span><span class="w"> </span><span class="ss">matching</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="ss">variable</span><span class="w"> </span><span class="ss">&#39;H&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">which</span><span class="w"> </span><span class="ss">cannot</span><span class="w"> </span><span class="ss">be</span><span class="w"> </span><span class="ss">translated</span><span class="w"> </span><span class="ss">into</span><span class="w"> </span><span class="ss">match_spec</span><span class="w">
-</span><span class="p" data-group-id="8514994883-8">{</span><span class="ss">error</span><span class="p">,</span><span class="ss">transform_error</span><span class="p" data-group-id="8514994883-8">}</span></code></pre><p>The preceding two examples show what happens when a fun cannot be
+</span><span class="p" data-group-id="0142177567-8">{</span><span class="ss">error</span><span class="p">,</span><span class="ss">transform_error</span><span class="p" data-group-id="0142177567-8">}</span></code></pre><p>The preceding two examples show what happens when a fun cannot be
 translated into a match specification. In the first example, the fun
 head connot possibly match a list. In the second example, an attempt is made
 to take apart a binary using the bit syntax, which is currently not
-supported in match specifications.</p><p>However, note that literal binaries <em>can</em> be matched:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">fun2ms</span><span class="p" data-group-id="3491170617-1">(</span><span class="nf">fun</span><span class="p" data-group-id="3491170617-2">(</span><span class="p" data-group-id="3491170617-3">[</span><span class="p" data-group-id="3491170617-4">&lt;&lt;</span><span class="s">&quot;abc&quot;</span><span class="p" data-group-id="3491170617-4">&gt;&gt;</span><span class="p" data-group-id="3491170617-3">]</span><span class="p" data-group-id="3491170617-2">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="ss">true</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="3491170617-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="3491170617-5">[</span><span class="p" data-group-id="3491170617-6">{</span><span class="p" data-group-id="3491170617-7">[</span><span class="p" data-group-id="3491170617-8">&lt;&lt;</span><span class="s">&quot;abc&quot;</span><span class="p" data-group-id="3491170617-8">&gt;&gt;</span><span class="p" data-group-id="3491170617-7">]</span><span class="p">,</span><span class="p" data-group-id="3491170617-9">[</span><span class="p" data-group-id="3491170617-9">]</span><span class="p">,</span><span class="p" data-group-id="3491170617-10">[</span><span class="ss">true</span><span class="p" data-group-id="3491170617-10">]</span><span class="p" data-group-id="3491170617-6">}</span><span class="p" data-group-id="3491170617-5">]</span></code></pre><p>Match specifications support a large subset of the
+supported in match specifications.</p><p>However, note that literal binaries <em>can</em> be matched:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">fun2ms</span><span class="p" data-group-id="4009476905-1">(</span><span class="nf">fun</span><span class="p" data-group-id="4009476905-2">(</span><span class="p" data-group-id="4009476905-3">[</span><span class="p" data-group-id="4009476905-4">&lt;&lt;</span><span class="s">&quot;abc&quot;</span><span class="p" data-group-id="4009476905-4">&gt;&gt;</span><span class="p" data-group-id="4009476905-3">]</span><span class="p" data-group-id="4009476905-2">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="ss">true</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="4009476905-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4009476905-5">[</span><span class="p" data-group-id="4009476905-6">{</span><span class="p" data-group-id="4009476905-7">[</span><span class="p" data-group-id="4009476905-8">&lt;&lt;</span><span class="s">&quot;abc&quot;</span><span class="p" data-group-id="4009476905-8">&gt;&gt;</span><span class="p" data-group-id="4009476905-7">]</span><span class="p">,</span><span class="p" data-group-id="4009476905-9">[</span><span class="p" data-group-id="4009476905-9">]</span><span class="p">,</span><span class="p" data-group-id="4009476905-10">[</span><span class="ss">true</span><span class="p" data-group-id="4009476905-10">]</span><span class="p" data-group-id="4009476905-6">}</span><span class="p" data-group-id="4009476905-5">]</span></code></pre><p>Match specifications support a large subset of the
 <a href="../../system/expressions.html#guard-expressions">guard expressions</a> supported
-by Erlang, but not all. For example, updating a map is currently not supported:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">fun2ms</span><span class="p" data-group-id="0290472482-1">(</span><span class="nf">fun</span><span class="p" data-group-id="0290472482-2">(</span><span class="p" data-group-id="0290472482-3">[</span><span class="n">M</span><span class="p" data-group-id="0290472482-3">]</span><span class="p" data-group-id="0290472482-2">)</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="nf">map_size</span><span class="p" data-group-id="0290472482-4">(</span><span class="n">M</span><span class="p" data-group-id="0290472482-5">#{</span><span class="ss">a</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">b</span><span class="p" data-group-id="0290472482-5">}</span><span class="p" data-group-id="0290472482-4">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="ss">true</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="0290472482-1">)</span><span class="p">.</span><span class="w">
-</span><span class="n">Error</span><span class="p">:</span><span class="w"> </span><span class="ss">the</span><span class="w"> </span><span class="ss">language</span><span class="w"> </span><span class="nb">element</span><span class="w"> </span><span class="nf">map</span><span class="w"> </span><span class="p" data-group-id="0290472482-6">(</span><span class="ss">in</span><span class="w"> </span><span class="ss">guard</span><span class="p" data-group-id="0290472482-6">)</span><span class="w"> </span><span class="ss">cannot</span><span class="w"> </span><span class="ss">be</span><span class="w"> </span><span class="ss">translated</span><span class="w"> </span><span class="ss">into</span><span class="w"> </span><span class="ss">match_spec</span><span class="w">
-</span><span class="p" data-group-id="0290472482-7">{</span><span class="ss">error</span><span class="p">,</span><span class="ss">transform_error</span><span class="p" data-group-id="0290472482-7">}</span></code></pre><p>However, creating a map in a guard is allowed:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">fun2ms</span><span class="p" data-group-id="2985772787-1">(</span><span class="nf">fun</span><span class="p" data-group-id="2985772787-2">(</span><span class="p" data-group-id="2985772787-3">[</span><span class="n">M</span><span class="p" data-group-id="2985772787-3">]</span><span class="p" data-group-id="2985772787-2">)</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="nf">map_size</span><span class="p" data-group-id="2985772787-4">(</span><span class="p" data-group-id="2985772787-5">#{</span><span class="ss">a</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">b</span><span class="p" data-group-id="2985772787-5">}</span><span class="p" data-group-id="2985772787-4">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="ss">true</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="2985772787-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="2985772787-6">[</span><span class="p" data-group-id="2985772787-7">{</span><span class="p" data-group-id="2985772787-8">[</span><span class="ss">&#39;$1&#39;</span><span class="p" data-group-id="2985772787-8">]</span><span class="p">,</span><span class="p" data-group-id="2985772787-9">[</span><span class="p" data-group-id="2985772787-10">{</span><span class="ss">&#39;&gt;&#39;</span><span class="p">,</span><span class="p" data-group-id="2985772787-11">{</span><span class="ss">map_size</span><span class="p">,</span><span class="p" data-group-id="2985772787-12">#{</span><span class="ss">a</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">b</span><span class="p" data-group-id="2985772787-12">}</span><span class="p" data-group-id="2985772787-11">}</span><span class="p">,</span><span class="mi">2</span><span class="p" data-group-id="2985772787-10">}</span><span class="p" data-group-id="2985772787-9">]</span><span class="p">,</span><span class="p" data-group-id="2985772787-13">[</span><span class="ss">true</span><span class="p" data-group-id="2985772787-13">]</span><span class="p" data-group-id="2985772787-7">}</span><span class="p" data-group-id="2985772787-6">]</span></code></pre><p>Variables from the environment can be imported, so this works:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">X</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">.</span><span class="w">
+by Erlang, but not all. For example, updating a map is currently not supported:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">fun2ms</span><span class="p" data-group-id="0464319430-1">(</span><span class="nf">fun</span><span class="p" data-group-id="0464319430-2">(</span><span class="p" data-group-id="0464319430-3">[</span><span class="n">M</span><span class="p" data-group-id="0464319430-3">]</span><span class="p" data-group-id="0464319430-2">)</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="nf">map_size</span><span class="p" data-group-id="0464319430-4">(</span><span class="n">M</span><span class="p" data-group-id="0464319430-5">#{</span><span class="ss">a</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">b</span><span class="p" data-group-id="0464319430-5">}</span><span class="p" data-group-id="0464319430-4">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="ss">true</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="0464319430-1">)</span><span class="p">.</span><span class="w">
+</span><span class="n">Error</span><span class="p">:</span><span class="w"> </span><span class="ss">the</span><span class="w"> </span><span class="ss">language</span><span class="w"> </span><span class="nb">element</span><span class="w"> </span><span class="nf">map</span><span class="w"> </span><span class="p" data-group-id="0464319430-6">(</span><span class="ss">in</span><span class="w"> </span><span class="ss">guard</span><span class="p" data-group-id="0464319430-6">)</span><span class="w"> </span><span class="ss">cannot</span><span class="w"> </span><span class="ss">be</span><span class="w"> </span><span class="ss">translated</span><span class="w"> </span><span class="ss">into</span><span class="w"> </span><span class="ss">match_spec</span><span class="w">
+</span><span class="p" data-group-id="0464319430-7">{</span><span class="ss">error</span><span class="p">,</span><span class="ss">transform_error</span><span class="p" data-group-id="0464319430-7">}</span></code></pre><p>However, creating a map in a guard is allowed:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">fun2ms</span><span class="p" data-group-id="0228265910-1">(</span><span class="nf">fun</span><span class="p" data-group-id="0228265910-2">(</span><span class="p" data-group-id="0228265910-3">[</span><span class="n">M</span><span class="p" data-group-id="0228265910-3">]</span><span class="p" data-group-id="0228265910-2">)</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="nf">map_size</span><span class="p" data-group-id="0228265910-4">(</span><span class="p" data-group-id="0228265910-5">#{</span><span class="ss">a</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">b</span><span class="p" data-group-id="0228265910-5">}</span><span class="p" data-group-id="0228265910-4">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="ss">true</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="0228265910-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="0228265910-6">[</span><span class="p" data-group-id="0228265910-7">{</span><span class="p" data-group-id="0228265910-8">[</span><span class="ss">&#39;$1&#39;</span><span class="p" data-group-id="0228265910-8">]</span><span class="p">,</span><span class="p" data-group-id="0228265910-9">[</span><span class="p" data-group-id="0228265910-10">{</span><span class="ss">&#39;&gt;&#39;</span><span class="p">,</span><span class="p" data-group-id="0228265910-11">{</span><span class="ss">map_size</span><span class="p">,</span><span class="p" data-group-id="0228265910-12">#{</span><span class="ss">a</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">b</span><span class="p" data-group-id="0228265910-12">}</span><span class="p" data-group-id="0228265910-11">}</span><span class="p">,</span><span class="mi">2</span><span class="p" data-group-id="0228265910-10">}</span><span class="p" data-group-id="0228265910-9">]</span><span class="p">,</span><span class="p" data-group-id="0228265910-13">[</span><span class="ss">true</span><span class="p" data-group-id="0228265910-13">]</span><span class="p" data-group-id="0228265910-7">}</span><span class="p" data-group-id="0228265910-6">]</span></code></pre><p>Variables from the environment can be imported, so this works:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">X</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">.</span><span class="w">
 </span><span class="mi">3</span><span class="gp unselectable">
-2&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">fun2ms</span><span class="p" data-group-id="5044360456-1">(</span><span class="nf">fun</span><span class="p" data-group-id="5044360456-2">(</span><span class="p" data-group-id="5044360456-3">[</span><span class="n">M</span><span class="p">,</span><span class="n">N</span><span class="p" data-group-id="5044360456-3">]</span><span class="p" data-group-id="5044360456-2">)</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">X</span><span class="w">  </span><span class="p">-&gt;</span><span class="w"> </span><span class="nf">return_trace</span><span class="p" data-group-id="5044360456-4">(</span><span class="p" data-group-id="5044360456-4">)</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="5044360456-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="5044360456-5">[</span><span class="p" data-group-id="5044360456-6">{</span><span class="p" data-group-id="5044360456-7">[</span><span class="ss">&#39;$1&#39;</span><span class="p">,</span><span class="ss">&#39;$2&#39;</span><span class="p" data-group-id="5044360456-7">]</span><span class="p">,</span><span class="p" data-group-id="5044360456-8">[</span><span class="p" data-group-id="5044360456-9">{</span><span class="ss">&#39;&gt;&#39;</span><span class="p">,</span><span class="ss">&#39;$2&#39;</span><span class="p">,</span><span class="p" data-group-id="5044360456-10">{</span><span class="ss">const</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="5044360456-10">}</span><span class="p" data-group-id="5044360456-9">}</span><span class="p" data-group-id="5044360456-8">]</span><span class="p">,</span><span class="p" data-group-id="5044360456-11">[</span><span class="p" data-group-id="5044360456-12">{</span><span class="ss">return_trace</span><span class="p" data-group-id="5044360456-12">}</span><span class="p" data-group-id="5044360456-11">]</span><span class="p" data-group-id="5044360456-6">}</span><span class="p" data-group-id="5044360456-5">]</span></code></pre><p>The imported variables will be replaced by <code class="inline">const</code> expressions, which
+2&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">fun2ms</span><span class="p" data-group-id="6654894719-1">(</span><span class="nf">fun</span><span class="p" data-group-id="6654894719-2">(</span><span class="p" data-group-id="6654894719-3">[</span><span class="n">M</span><span class="p">,</span><span class="n">N</span><span class="p" data-group-id="6654894719-3">]</span><span class="p" data-group-id="6654894719-2">)</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">X</span><span class="w">  </span><span class="p">-&gt;</span><span class="w"> </span><span class="nf">return_trace</span><span class="p" data-group-id="6654894719-4">(</span><span class="p" data-group-id="6654894719-4">)</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="6654894719-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="6654894719-5">[</span><span class="p" data-group-id="6654894719-6">{</span><span class="p" data-group-id="6654894719-7">[</span><span class="ss">&#39;$1&#39;</span><span class="p">,</span><span class="ss">&#39;$2&#39;</span><span class="p" data-group-id="6654894719-7">]</span><span class="p">,</span><span class="p" data-group-id="6654894719-8">[</span><span class="p" data-group-id="6654894719-9">{</span><span class="ss">&#39;&gt;&#39;</span><span class="p">,</span><span class="ss">&#39;$2&#39;</span><span class="p">,</span><span class="p" data-group-id="6654894719-10">{</span><span class="ss">const</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="6654894719-10">}</span><span class="p" data-group-id="6654894719-9">}</span><span class="p" data-group-id="6654894719-8">]</span><span class="p">,</span><span class="p" data-group-id="6654894719-11">[</span><span class="p" data-group-id="6654894719-12">{</span><span class="ss">return_trace</span><span class="p" data-group-id="6654894719-12">}</span><span class="p" data-group-id="6654894719-11">]</span><span class="p" data-group-id="6654894719-6">}</span><span class="p" data-group-id="6654894719-5">]</span></code></pre><p>The imported variables will be replaced by <code class="inline">const</code> expressions, which
 is consistent with the static scoping for Erlang funs.</p><p>In the body of the fun, only guard expressions and calls to the
 <a href="../../apps/erts/match_spec.html#functions-allowed-only-for-tracing">special functions for tracing</a>
-are allowed.</p><p><em>Examples</em>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">fun2ms</span><span class="p" data-group-id="5598639934-1">(</span><span class="nf">fun</span><span class="p" data-group-id="5598639934-2">(</span><span class="p" data-group-id="5598639934-3">[</span><span class="n">A</span><span class="p" data-group-id="5598639934-3">]</span><span class="p" data-group-id="5598639934-2">)</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="nf">is_atom</span><span class="p" data-group-id="5598639934-4">(</span><span class="n">A</span><span class="p" data-group-id="5598639934-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nf">return_trace</span><span class="p" data-group-id="5598639934-5">(</span><span class="p" data-group-id="5598639934-5">)</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="5598639934-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="5598639934-6">[</span><span class="p" data-group-id="5598639934-7">{</span><span class="p" data-group-id="5598639934-8">[</span><span class="ss">&#39;$1&#39;</span><span class="p" data-group-id="5598639934-8">]</span><span class="p">,</span><span class="p" data-group-id="5598639934-9">[</span><span class="p" data-group-id="5598639934-10">{</span><span class="nb">is_atom</span><span class="p">,</span><span class="ss">&#39;$1&#39;</span><span class="p" data-group-id="5598639934-10">}</span><span class="p" data-group-id="5598639934-9">]</span><span class="p">,</span><span class="p" data-group-id="5598639934-11">[</span><span class="p" data-group-id="5598639934-12">{</span><span class="ss">return_trace</span><span class="p" data-group-id="5598639934-12">}</span><span class="p" data-group-id="5598639934-11">]</span><span class="p" data-group-id="5598639934-7">}</span><span class="p" data-group-id="5598639934-6">]</span><span class="gp unselectable">
-2&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">fun2ms</span><span class="p" data-group-id="5598639934-13">(</span><span class="nf">fun</span><span class="p" data-group-id="5598639934-14">(</span><span class="p">_</span><span class="p" data-group-id="5598639934-14">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">erlang</span><span class="p">:</span><span class="nf">garbage_collect</span><span class="p" data-group-id="5598639934-15">(</span><span class="p" data-group-id="5598639934-15">)</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="5598639934-13">)</span><span class="p">.</span><span class="w">
-</span><span class="n">Error</span><span class="p">:</span><span class="w"> </span><span class="k">fun</span><span class="w"> </span><span class="ss">containing</span><span class="w"> </span><span class="ss">the</span><span class="w"> </span><span class="ss">remote</span><span class="w"> </span><span class="ss">function</span><span class="w"> </span><span class="ss">call</span><span class="w"> </span><span class="nf">&#39;erlang:garbage_collect/0&#39;</span><span class="w"> </span><span class="p" data-group-id="5598639934-16">(</span><span class="ss">called</span><span class="w"> </span><span class="ss">in</span><span class="w"> </span><span class="ss">body</span><span class="p" data-group-id="5598639934-16">)</span><span class="w"> </span><span class="ss">cannot</span><span class="w"> </span><span class="ss">be</span><span class="w"> </span><span class="ss">translated</span><span class="w"> </span><span class="ss">into</span><span class="w"> </span><span class="ss">match_spec</span><span class="w">
-</span><span class="p" data-group-id="5598639934-17">{</span><span class="ss">error</span><span class="p">,</span><span class="ss">transform_error</span><span class="p" data-group-id="5598639934-17">}</span></code></pre><section role="note" class="admonition warning"><h4 class="admonition-title warning">Warning</h4><p>If the parse transform is not applied to a module which calls <a href="#fun2ms/1"><code class="inline">dbg:fun2ms/1</code></a>,
+are allowed.</p><p><em>Examples</em>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">fun2ms</span><span class="p" data-group-id="4530647781-1">(</span><span class="nf">fun</span><span class="p" data-group-id="4530647781-2">(</span><span class="p" data-group-id="4530647781-3">[</span><span class="n">A</span><span class="p" data-group-id="4530647781-3">]</span><span class="p" data-group-id="4530647781-2">)</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="nf">is_atom</span><span class="p" data-group-id="4530647781-4">(</span><span class="n">A</span><span class="p" data-group-id="4530647781-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nf">return_trace</span><span class="p" data-group-id="4530647781-5">(</span><span class="p" data-group-id="4530647781-5">)</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="4530647781-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4530647781-6">[</span><span class="p" data-group-id="4530647781-7">{</span><span class="p" data-group-id="4530647781-8">[</span><span class="ss">&#39;$1&#39;</span><span class="p" data-group-id="4530647781-8">]</span><span class="p">,</span><span class="p" data-group-id="4530647781-9">[</span><span class="p" data-group-id="4530647781-10">{</span><span class="nb">is_atom</span><span class="p">,</span><span class="ss">&#39;$1&#39;</span><span class="p" data-group-id="4530647781-10">}</span><span class="p" data-group-id="4530647781-9">]</span><span class="p">,</span><span class="p" data-group-id="4530647781-11">[</span><span class="p" data-group-id="4530647781-12">{</span><span class="ss">return_trace</span><span class="p" data-group-id="4530647781-12">}</span><span class="p" data-group-id="4530647781-11">]</span><span class="p" data-group-id="4530647781-7">}</span><span class="p" data-group-id="4530647781-6">]</span><span class="gp unselectable">
+2&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">fun2ms</span><span class="p" data-group-id="4530647781-13">(</span><span class="nf">fun</span><span class="p" data-group-id="4530647781-14">(</span><span class="p">_</span><span class="p" data-group-id="4530647781-14">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">erlang</span><span class="p">:</span><span class="nf">garbage_collect</span><span class="p" data-group-id="4530647781-15">(</span><span class="p" data-group-id="4530647781-15">)</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="4530647781-13">)</span><span class="p">.</span><span class="w">
+</span><span class="n">Error</span><span class="p">:</span><span class="w"> </span><span class="k">fun</span><span class="w"> </span><span class="ss">containing</span><span class="w"> </span><span class="ss">the</span><span class="w"> </span><span class="ss">remote</span><span class="w"> </span><span class="ss">function</span><span class="w"> </span><span class="ss">call</span><span class="w"> </span><span class="nf">&#39;erlang:garbage_collect/0&#39;</span><span class="w"> </span><span class="p" data-group-id="4530647781-16">(</span><span class="ss">called</span><span class="w"> </span><span class="ss">in</span><span class="w"> </span><span class="ss">body</span><span class="p" data-group-id="4530647781-16">)</span><span class="w"> </span><span class="ss">cannot</span><span class="w"> </span><span class="ss">be</span><span class="w"> </span><span class="ss">translated</span><span class="w"> </span><span class="ss">into</span><span class="w"> </span><span class="ss">match_spec</span><span class="w">
+</span><span class="p" data-group-id="4530647781-17">{</span><span class="ss">error</span><span class="p">,</span><span class="ss">transform_error</span><span class="p" data-group-id="4530647781-17">}</span></code></pre><section role="note" class="admonition warning"><h4 class="admonition-title warning">Warning</h4><p>If the parse transform is not applied to a module which calls <a href="#fun2ms/1"><code class="inline">dbg:fun2ms/1</code></a>,
 the call will fail in runtime with a <code class="inline">badarg</code> exception.</p></section><p>More information is available in the documentation for module <a href="../../apps/stdlib/ms_transform.html"><code class="inline">ms_transform</code></a>
 in STDLIB.</p>
   </section>
@@ -1947,7 +1967,7 @@ in STDLIB.</p>
       <h1 class="signature" translate="no">get_tracer()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L2746" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L2746" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1975,7 +1995,7 @@ in STDLIB.</p>
       <h1 class="signature" translate="no">get_tracer(Nodename)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L2754" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L2754" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2004,7 +2024,7 @@ in STDLIB.</p>
       <h1 class="signature" translate="no">h()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L3007" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L3007" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2032,7 +2052,7 @@ in STDLIB.</p>
       <h1 class="signature" translate="no">h(Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L3034" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L3034" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2060,7 +2080,7 @@ in STDLIB.</p>
       <h1 class="signature" translate="no">i()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L1662" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L1662" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2088,7 +2108,7 @@ in STDLIB.</p>
       <h1 class="signature" translate="no">ln()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L437" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L437" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2116,7 +2136,7 @@ in STDLIB.</p>
       <h1 class="signature" translate="no">ltp()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L867" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L867" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2140,16 +2160,16 @@ present) for use in later debugging sessions; see <a href="#wtp/1"><code class="
 names, parameters, return values, and exceptions raised from
 functions</p></li><li><p><code class="inline">caller_trace</code>, <code class="inline">c</code> - sets a trace that displays function names,
 parameters, and information about which function called it</p></li><li><p><code class="inline">caller_exception_trace</code>, <code class="inline">cx</code> - combines <code class="inline">exception_trace</code> and
-<code class="inline">caller_trace</code></p></li></ul><p>Here is an example that shows how to use a built-in match specification:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">tracer</span><span class="p" data-group-id="8874382080-1">(</span><span class="p" data-group-id="8874382080-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="8874382080-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.90</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="8874382080-2">}</span><span class="gp unselectable">
-2&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">tp</span><span class="p" data-group-id="8874382080-3">(</span><span class="ss">lists</span><span class="p">,</span><span class="w"> </span><span class="ss">seq</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="ss">cx</span><span class="p" data-group-id="8874382080-3">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="8874382080-4">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="8874382080-5">[</span><span class="p" data-group-id="8874382080-6">{</span><span class="ss">matched</span><span class="p">,</span><span class="ss">nonode@nohost</span><span class="p">,</span><span class="mi">1</span><span class="p" data-group-id="8874382080-6">}</span><span class="p">,</span><span class="p" data-group-id="8874382080-7">{</span><span class="ss">saved</span><span class="p">,</span><span class="ss">cx</span><span class="p" data-group-id="8874382080-7">}</span><span class="p" data-group-id="8874382080-5">]</span><span class="p" data-group-id="8874382080-4">}</span><span class="gp unselectable">
-3&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">p</span><span class="p" data-group-id="8874382080-8">(</span><span class="nf">self</span><span class="p" data-group-id="8874382080-9">(</span><span class="p" data-group-id="8874382080-9">)</span><span class="p">,</span><span class="w"> </span><span class="ss">call</span><span class="p" data-group-id="8874382080-8">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="8874382080-10">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="8874382080-11">[</span><span class="p" data-group-id="8874382080-12">{</span><span class="ss">matched</span><span class="p">,</span><span class="ss">nonode@nohost</span><span class="p">,</span><span class="mi">1</span><span class="p" data-group-id="8874382080-12">}</span><span class="p" data-group-id="8874382080-11">]</span><span class="p" data-group-id="8874382080-10">}</span><span class="gp unselectable">
-4&gt; </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="8874382080-13">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="8874382080-13">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="8874382080-14">(</span><span class="o">&lt;</span><span class="mf">0.88</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="8874382080-14">)</span><span class="w"> </span><span class="ss">call</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="8874382080-15">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="8874382080-15">)</span><span class="w"> </span><span class="p" data-group-id="8874382080-16">(</span><span class="p" data-group-id="8874382080-17">{</span><span class="ss">erl_eval</span><span class="p">,</span><span class="ss">do_apply</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="p" data-group-id="8874382080-18">{</span><span class="s">&quot;erl_eval.erl&quot;</span><span class="p">,</span><span class="mi">904</span><span class="p" data-group-id="8874382080-18">}</span><span class="p" data-group-id="8874382080-17">}</span><span class="p" data-group-id="8874382080-16">)</span><span class="w">
-</span><span class="p" data-group-id="8874382080-19">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="8874382080-19">]</span><span class="w">
-</span><span class="p" data-group-id="8874382080-20">(</span><span class="o">&lt;</span><span class="mf">0.88</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="8874382080-20">)</span><span class="w"> </span><span class="ss">returned</span><span class="w"> </span><span class="ss">from</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="ss">seq</span><span class="p">/</span><span class="mi">2</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="8874382080-21">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="8874382080-21">]</span></code></pre>
+<code class="inline">caller_trace</code></p></li></ul><p>Here is an example that shows how to use a built-in match specification:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">tracer</span><span class="p" data-group-id="6067441317-1">(</span><span class="p" data-group-id="6067441317-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="6067441317-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.90</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="6067441317-2">}</span><span class="gp unselectable">
+2&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">tp</span><span class="p" data-group-id="6067441317-3">(</span><span class="ss">lists</span><span class="p">,</span><span class="w"> </span><span class="ss">seq</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="ss">cx</span><span class="p" data-group-id="6067441317-3">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="6067441317-4">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="6067441317-5">[</span><span class="p" data-group-id="6067441317-6">{</span><span class="ss">matched</span><span class="p">,</span><span class="ss">nonode@nohost</span><span class="p">,</span><span class="mi">1</span><span class="p" data-group-id="6067441317-6">}</span><span class="p">,</span><span class="p" data-group-id="6067441317-7">{</span><span class="ss">saved</span><span class="p">,</span><span class="ss">cx</span><span class="p" data-group-id="6067441317-7">}</span><span class="p" data-group-id="6067441317-5">]</span><span class="p" data-group-id="6067441317-4">}</span><span class="gp unselectable">
+3&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">p</span><span class="p" data-group-id="6067441317-8">(</span><span class="nf">self</span><span class="p" data-group-id="6067441317-9">(</span><span class="p" data-group-id="6067441317-9">)</span><span class="p">,</span><span class="w"> </span><span class="ss">call</span><span class="p" data-group-id="6067441317-8">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="6067441317-10">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="6067441317-11">[</span><span class="p" data-group-id="6067441317-12">{</span><span class="ss">matched</span><span class="p">,</span><span class="ss">nonode@nohost</span><span class="p">,</span><span class="mi">1</span><span class="p" data-group-id="6067441317-12">}</span><span class="p" data-group-id="6067441317-11">]</span><span class="p" data-group-id="6067441317-10">}</span><span class="gp unselectable">
+4&gt; </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="6067441317-13">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="6067441317-13">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="6067441317-14">(</span><span class="o">&lt;</span><span class="mf">0.88</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="6067441317-14">)</span><span class="w"> </span><span class="ss">call</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="6067441317-15">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="6067441317-15">)</span><span class="w"> </span><span class="p" data-group-id="6067441317-16">(</span><span class="p" data-group-id="6067441317-17">{</span><span class="ss">erl_eval</span><span class="p">,</span><span class="ss">do_apply</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="p" data-group-id="6067441317-18">{</span><span class="s">&quot;erl_eval.erl&quot;</span><span class="p">,</span><span class="mi">904</span><span class="p" data-group-id="6067441317-18">}</span><span class="p" data-group-id="6067441317-17">}</span><span class="p" data-group-id="6067441317-16">)</span><span class="w">
+</span><span class="p" data-group-id="6067441317-19">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="6067441317-19">]</span><span class="w">
+</span><span class="p" data-group-id="6067441317-20">(</span><span class="o">&lt;</span><span class="mf">0.88</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="6067441317-20">)</span><span class="w"> </span><span class="ss">returned</span><span class="w"> </span><span class="ss">from</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="ss">seq</span><span class="p">/</span><span class="mi">2</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="6067441317-21">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="6067441317-21">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="n/1">
@@ -2162,7 +2182,7 @@ parameters, and information about which function called it</p></li><li><p><code 
       <h1 class="signature" translate="no">n(Nodename)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L395" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L395" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2205,7 +2225,7 @@ started on the remote node with the <a href="#tracer/3"><code class="inline">tra
       <h1 class="signature" translate="no">p(Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L1550" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L1550" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2233,7 +2253,7 @@ started on the remote node with the <a href="#tracer/3"><code class="inline">tra
       <h1 class="signature" translate="no">p(Item, Flags)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L1651" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L1651" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2288,7 +2308,7 @@ and the number of matched processes is 0.</p>
       <h1 class="signature" translate="no">rtp(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L975" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L975" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2326,7 +2346,7 @@ format, giving a hint to what is causing the problem.</p>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L322" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L322" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2347,37 +2367,37 @@ creates a session for the duration of the call if a session name
 is provided.</p><p>Any <a href="dbg.html"><code class="inline">dbg</code></a> function that is called with in the provided fun
 will use the <a href="#t:session/0"><code class="inline">session/0</code></a> provided instead of the default
 <code class="inline">dbg</code> session. This means that the tracing will be isolated
-from other tracing users on the system.</p><p>The function returns the term that the fun returns.</p><p><em>Example</em>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">session_create</span><span class="p" data-group-id="3157809183-1">(</span><span class="ss">my_session</span><span class="p" data-group-id="3157809183-1">)</span><span class="p">.</span><span class="w">
+from other tracing users on the system.</p><p>The function returns the term that the fun returns.</p><p><em>Example</em>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">session_create</span><span class="p" data-group-id="4524219245-1">(</span><span class="ss">my_session</span><span class="p" data-group-id="4524219245-1">)</span><span class="p">.</span><span class="w">
 </span><span class="o">&lt;</span><span class="mf">0.91</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="gp unselectable">
-2&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">session</span><span class="p" data-group-id="3157809183-2">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="nf">fun</span><span class="p" data-group-id="3157809183-3">(</span><span class="p" data-group-id="3157809183-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">tracer</span><span class="p" data-group-id="3157809183-4">(</span><span class="p" data-group-id="3157809183-4">)</span><span class="p">,</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">p</span><span class="p" data-group-id="3157809183-5">(</span><span class="ss">all</span><span class="p">,</span><span class="ss">c</span><span class="p" data-group-id="3157809183-5">)</span><span class="p">,</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">tp</span><span class="p" data-group-id="3157809183-6">(</span><span class="ss">lists</span><span class="p">,</span><span class="ss">seq</span><span class="p">,</span><span class="ss">x</span><span class="p" data-group-id="3157809183-6">)</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="3157809183-2">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="3157809183-7">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="3157809183-8">[</span><span class="p" data-group-id="3157809183-9">{</span><span class="ss">matched</span><span class="p">,</span><span class="ss">nonode@nohost</span><span class="p">,</span><span class="mi">2</span><span class="p" data-group-id="3157809183-9">}</span><span class="p">,</span><span class="p" data-group-id="3157809183-10">{</span><span class="ss">saved</span><span class="p">,</span><span class="ss">x</span><span class="p" data-group-id="3157809183-10">}</span><span class="p" data-group-id="3157809183-8">]</span><span class="p" data-group-id="3157809183-7">}</span><span class="gp unselectable">
-3&gt; </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="3157809183-11">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p" data-group-id="3157809183-11">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="3157809183-12">(</span><span class="o">&lt;</span><span class="mf">0.89</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="3157809183-12">)</span><span class="w"> </span><span class="ss">call</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="3157809183-13">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="3157809183-13">)</span><span class="w">
-</span><span class="p" data-group-id="3157809183-14">(</span><span class="o">&lt;</span><span class="mf">0.89</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="3157809183-14">)</span><span class="w"> </span><span class="ss">returned</span><span class="w"> </span><span class="ss">from</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="ss">seq</span><span class="p">/</span><span class="mi">2</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="3157809183-15">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="3157809183-15">]</span><span class="w">
-</span><span class="p" data-group-id="3157809183-16">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="3157809183-16">]</span><span class="gp unselectable">
-4&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">session_destroy</span><span class="p" data-group-id="3157809183-17">(</span><span class="n">S</span><span class="p" data-group-id="3157809183-17">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">session</span><span class="p" data-group-id="4524219245-2">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="nf">fun</span><span class="p" data-group-id="4524219245-3">(</span><span class="p" data-group-id="4524219245-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">tracer</span><span class="p" data-group-id="4524219245-4">(</span><span class="p" data-group-id="4524219245-4">)</span><span class="p">,</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">p</span><span class="p" data-group-id="4524219245-5">(</span><span class="ss">all</span><span class="p">,</span><span class="ss">c</span><span class="p" data-group-id="4524219245-5">)</span><span class="p">,</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">tp</span><span class="p" data-group-id="4524219245-6">(</span><span class="ss">lists</span><span class="p">,</span><span class="ss">seq</span><span class="p">,</span><span class="ss">x</span><span class="p" data-group-id="4524219245-6">)</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="4524219245-2">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4524219245-7">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="4524219245-8">[</span><span class="p" data-group-id="4524219245-9">{</span><span class="ss">matched</span><span class="p">,</span><span class="ss">nonode@nohost</span><span class="p">,</span><span class="mi">2</span><span class="p" data-group-id="4524219245-9">}</span><span class="p">,</span><span class="p" data-group-id="4524219245-10">{</span><span class="ss">saved</span><span class="p">,</span><span class="ss">x</span><span class="p" data-group-id="4524219245-10">}</span><span class="p" data-group-id="4524219245-8">]</span><span class="p" data-group-id="4524219245-7">}</span><span class="gp unselectable">
+3&gt; </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="4524219245-11">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p" data-group-id="4524219245-11">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4524219245-12">(</span><span class="o">&lt;</span><span class="mf">0.89</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="4524219245-12">)</span><span class="w"> </span><span class="ss">call</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="4524219245-13">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="4524219245-13">)</span><span class="w">
+</span><span class="p" data-group-id="4524219245-14">(</span><span class="o">&lt;</span><span class="mf">0.89</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="4524219245-14">)</span><span class="w"> </span><span class="ss">returned</span><span class="w"> </span><span class="ss">from</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="ss">seq</span><span class="p">/</span><span class="mi">2</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="4524219245-15">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="4524219245-15">]</span><span class="w">
+</span><span class="p" data-group-id="4524219245-16">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="4524219245-16">]</span><span class="gp unselectable">
+4&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">session_destroy</span><span class="p" data-group-id="4524219245-17">(</span><span class="n">S</span><span class="p" data-group-id="4524219245-17">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">ok</span></code></pre><p>The state of the <a href="#t:session/0"><code class="inline">session/0</code></a> is preserved in between <a href="#session/2"><code class="inline">session/2</code></a> calls, so
-you can call <a href="#session/2"><code class="inline">session/2</code></a> multiple when debugging you application.</p><p><em>Example</em>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">session_create</span><span class="p" data-group-id="5117046832-1">(</span><span class="ss">my_session</span><span class="p" data-group-id="5117046832-1">)</span><span class="p">.</span><span class="w">
+you can call <a href="#session/2"><code class="inline">session/2</code></a> multiple when debugging you application.</p><p><em>Example</em>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">session_create</span><span class="p" data-group-id="3261214837-1">(</span><span class="ss">my_session</span><span class="p" data-group-id="3261214837-1">)</span><span class="p">.</span><span class="w">
 </span><span class="o">&lt;</span><span class="mf">0.91</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="w">
 </span><span class="c1">%% Setup the initial traces</span><span class="gp unselectable">
-2&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">session</span><span class="p" data-group-id="5117046832-2">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="nf">fun</span><span class="p" data-group-id="5117046832-3">(</span><span class="p" data-group-id="5117046832-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">tracer</span><span class="p" data-group-id="5117046832-4">(</span><span class="p" data-group-id="5117046832-4">)</span><span class="p">,</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">p</span><span class="p" data-group-id="5117046832-5">(</span><span class="nf">self</span><span class="p" data-group-id="5117046832-6">(</span><span class="p" data-group-id="5117046832-6">)</span><span class="p">,</span><span class="ss">c</span><span class="p" data-group-id="5117046832-5">)</span><span class="p">,</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">tp</span><span class="p" data-group-id="5117046832-7">(</span><span class="ss">lists</span><span class="p">,</span><span class="ss">seq</span><span class="p">,</span><span class="ss">x</span><span class="p" data-group-id="5117046832-7">)</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="5117046832-2">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="5117046832-8">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="5117046832-9">[</span><span class="p" data-group-id="5117046832-10">{</span><span class="ss">matched</span><span class="p">,</span><span class="ss">nonode@nohost</span><span class="p">,</span><span class="mi">2</span><span class="p" data-group-id="5117046832-10">}</span><span class="p">,</span><span class="p" data-group-id="5117046832-11">{</span><span class="ss">saved</span><span class="p">,</span><span class="ss">x</span><span class="p" data-group-id="5117046832-11">}</span><span class="p" data-group-id="5117046832-9">]</span><span class="p" data-group-id="5117046832-8">}</span><span class="gp unselectable">
-3&gt; </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="5117046832-12">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="5117046832-12">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="5117046832-13">(</span><span class="o">&lt;</span><span class="mf">0.89</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="5117046832-13">)</span><span class="w"> </span><span class="ss">call</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="5117046832-14">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="5117046832-14">)</span><span class="w">
-</span><span class="p" data-group-id="5117046832-15">(</span><span class="o">&lt;</span><span class="mf">0.89</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="5117046832-15">)</span><span class="w"> </span><span class="ss">returned</span><span class="w"> </span><span class="ss">from</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="ss">seq</span><span class="p">/</span><span class="mi">2</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="5117046832-16">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="5117046832-16">]</span><span class="w">
-</span><span class="p" data-group-id="5117046832-17">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="5117046832-17">]</span><span class="w">
+2&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">session</span><span class="p" data-group-id="3261214837-2">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="nf">fun</span><span class="p" data-group-id="3261214837-3">(</span><span class="p" data-group-id="3261214837-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">tracer</span><span class="p" data-group-id="3261214837-4">(</span><span class="p" data-group-id="3261214837-4">)</span><span class="p">,</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">p</span><span class="p" data-group-id="3261214837-5">(</span><span class="nf">self</span><span class="p" data-group-id="3261214837-6">(</span><span class="p" data-group-id="3261214837-6">)</span><span class="p">,</span><span class="ss">c</span><span class="p" data-group-id="3261214837-5">)</span><span class="p">,</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">tp</span><span class="p" data-group-id="3261214837-7">(</span><span class="ss">lists</span><span class="p">,</span><span class="ss">seq</span><span class="p">,</span><span class="ss">x</span><span class="p" data-group-id="3261214837-7">)</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="3261214837-2">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="3261214837-8">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="3261214837-9">[</span><span class="p" data-group-id="3261214837-10">{</span><span class="ss">matched</span><span class="p">,</span><span class="ss">nonode@nohost</span><span class="p">,</span><span class="mi">2</span><span class="p" data-group-id="3261214837-10">}</span><span class="p">,</span><span class="p" data-group-id="3261214837-11">{</span><span class="ss">saved</span><span class="p">,</span><span class="ss">x</span><span class="p" data-group-id="3261214837-11">}</span><span class="p" data-group-id="3261214837-9">]</span><span class="p" data-group-id="3261214837-8">}</span><span class="gp unselectable">
+3&gt; </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="3261214837-12">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="3261214837-12">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="3261214837-13">(</span><span class="o">&lt;</span><span class="mf">0.89</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="3261214837-13">)</span><span class="w"> </span><span class="ss">call</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="3261214837-14">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="3261214837-14">)</span><span class="w">
+</span><span class="p" data-group-id="3261214837-15">(</span><span class="o">&lt;</span><span class="mf">0.89</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="3261214837-15">)</span><span class="w"> </span><span class="ss">returned</span><span class="w"> </span><span class="ss">from</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="ss">seq</span><span class="p">/</span><span class="mi">2</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="3261214837-16">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="3261214837-16">]</span><span class="w">
+</span><span class="p" data-group-id="3261214837-17">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="3261214837-17">]</span><span class="w">
 </span><span class="c1">%% Add an additional trace pattern</span><span class="gp unselectable">
-4&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">session</span><span class="p" data-group-id="5117046832-18">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="nf">fun</span><span class="p" data-group-id="5117046832-19">(</span><span class="p" data-group-id="5117046832-19">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">tpl</span><span class="p" data-group-id="5117046832-20">(</span><span class="ss">lists</span><span class="p">,</span><span class="ss">seq_loop</span><span class="p">,</span><span class="ss">x</span><span class="p" data-group-id="5117046832-20">)</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="5117046832-18">)</span><span class="p">.</span><span class="w">
+4&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">session</span><span class="p" data-group-id="3261214837-18">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="nf">fun</span><span class="p" data-group-id="3261214837-19">(</span><span class="p" data-group-id="3261214837-19">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">tpl</span><span class="p" data-group-id="3261214837-20">(</span><span class="ss">lists</span><span class="p">,</span><span class="ss">seq_loop</span><span class="p">,</span><span class="ss">x</span><span class="p" data-group-id="3261214837-20">)</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="3261214837-18">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">ok</span><span class="gp unselectable">
-5&gt; </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="5117046832-21">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="5117046832-21">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="5117046832-22">(</span><span class="o">&lt;</span><span class="mf">0.89</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="5117046832-22">)</span><span class="w"> </span><span class="ss">call</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="5117046832-23">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="5117046832-23">)</span><span class="w">
-</span><span class="p" data-group-id="5117046832-24">(</span><span class="o">&lt;</span><span class="mf">0.89</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="5117046832-24">)</span><span class="w"> </span><span class="ss">call</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq_loop</span><span class="p" data-group-id="5117046832-25">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="p" data-group-id="5117046832-26">[</span><span class="p" data-group-id="5117046832-26">]</span><span class="p" data-group-id="5117046832-25">)</span><span class="w">
-</span><span class="p" data-group-id="5117046832-27">(</span><span class="o">&lt;</span><span class="mf">0.89</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="5117046832-27">)</span><span class="w"> </span><span class="ss">call</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq_loop</span><span class="p" data-group-id="5117046832-28">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="p" data-group-id="5117046832-29">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="5117046832-29">]</span><span class="p" data-group-id="5117046832-28">)</span><span class="w">
-</span><span class="p" data-group-id="5117046832-30">(</span><span class="o">&lt;</span><span class="mf">0.89</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="5117046832-30">)</span><span class="w"> </span><span class="ss">returned</span><span class="w"> </span><span class="ss">from</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="ss">seq_loop</span><span class="p">/</span><span class="mi">3</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="5117046832-31">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="5117046832-31">]</span><span class="w">
-</span><span class="p" data-group-id="5117046832-32">(</span><span class="o">&lt;</span><span class="mf">0.89</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="5117046832-32">)</span><span class="w"> </span><span class="ss">returned</span><span class="w"> </span><span class="ss">from</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="ss">seq_loop</span><span class="p">/</span><span class="mi">3</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="5117046832-33">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="5117046832-33">]</span><span class="w">
-</span><span class="p" data-group-id="5117046832-34">(</span><span class="o">&lt;</span><span class="mf">0.89</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="5117046832-34">)</span><span class="w"> </span><span class="ss">returned</span><span class="w"> </span><span class="ss">from</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="ss">seq</span><span class="p">/</span><span class="mi">2</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="5117046832-35">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="5117046832-35">]</span><span class="w">
-</span><span class="p" data-group-id="5117046832-36">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="5117046832-36">]</span><span class="gp unselectable">
-6&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">session_destroy</span><span class="p" data-group-id="5117046832-37">(</span><span class="n">S</span><span class="p" data-group-id="5117046832-37">)</span><span class="p">.</span><span class="w">
+5&gt; </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="3261214837-21">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="3261214837-21">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="3261214837-22">(</span><span class="o">&lt;</span><span class="mf">0.89</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="3261214837-22">)</span><span class="w"> </span><span class="ss">call</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="3261214837-23">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="3261214837-23">)</span><span class="w">
+</span><span class="p" data-group-id="3261214837-24">(</span><span class="o">&lt;</span><span class="mf">0.89</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="3261214837-24">)</span><span class="w"> </span><span class="ss">call</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq_loop</span><span class="p" data-group-id="3261214837-25">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="p" data-group-id="3261214837-26">[</span><span class="p" data-group-id="3261214837-26">]</span><span class="p" data-group-id="3261214837-25">)</span><span class="w">
+</span><span class="p" data-group-id="3261214837-27">(</span><span class="o">&lt;</span><span class="mf">0.89</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="3261214837-27">)</span><span class="w"> </span><span class="ss">call</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq_loop</span><span class="p" data-group-id="3261214837-28">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="p" data-group-id="3261214837-29">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="3261214837-29">]</span><span class="p" data-group-id="3261214837-28">)</span><span class="w">
+</span><span class="p" data-group-id="3261214837-30">(</span><span class="o">&lt;</span><span class="mf">0.89</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="3261214837-30">)</span><span class="w"> </span><span class="ss">returned</span><span class="w"> </span><span class="ss">from</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="ss">seq_loop</span><span class="p">/</span><span class="mi">3</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="3261214837-31">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="3261214837-31">]</span><span class="w">
+</span><span class="p" data-group-id="3261214837-32">(</span><span class="o">&lt;</span><span class="mf">0.89</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="3261214837-32">)</span><span class="w"> </span><span class="ss">returned</span><span class="w"> </span><span class="ss">from</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="ss">seq_loop</span><span class="p">/</span><span class="mi">3</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="3261214837-33">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="3261214837-33">]</span><span class="w">
+</span><span class="p" data-group-id="3261214837-34">(</span><span class="o">&lt;</span><span class="mf">0.89</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="3261214837-34">)</span><span class="w"> </span><span class="ss">returned</span><span class="w"> </span><span class="ss">from</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="ss">seq</span><span class="p">/</span><span class="mi">2</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="3261214837-35">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="3261214837-35">]</span><span class="w">
+</span><span class="p" data-group-id="3261214837-36">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="3261214837-36">]</span><span class="gp unselectable">
+6&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">session_destroy</span><span class="p" data-group-id="3261214837-37">(</span><span class="n">S</span><span class="p" data-group-id="3261214837-37">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">ok</span></code></pre><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>The session functionality is experimental in Erlang/OTP 27
 and may change in future releases without notice.</p></section>
   </section>
@@ -2394,7 +2414,7 @@ and may change in future releases without notice.</p></section>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L243" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L243" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2425,7 +2445,7 @@ and may change in future releases without notice.</p></section>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L1736" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L1736" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2453,7 +2473,7 @@ and may change in future releases without notice.</p></section>
       <h1 class="signature" translate="no">stop()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L1719" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L1719" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2483,7 +2503,7 @@ down all trace clients, and closes all trace ports.</p>
       <h1 class="signature" translate="no">stop_trace_client(Pid)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L1535" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L1535" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2512,7 +2532,7 @@ down all trace clients, and closes all trace ports.</p>
       <h1 class="signature" translate="no">tp(ModuleOrMFA, MatchSpec)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L535" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L535" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2551,11 +2571,11 @@ as the processes and ports are presented in the return value of <a href="#p/2"><
 and will stand as an &quot;alias&quot; for the given expression.</p><p>If the match specification is invalid, an <code class="inline">{error, Errors}</code> tuple is
 returned.  <code class="inline">Errors</code> is as a list of tuples <code class="inline">{error, string()}</code>, where
 the string is a textual explanation of the compilation error. For
-example:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">tp</span><span class="p" data-group-id="4462722607-1">(</span><span class="p" data-group-id="4462722607-2">{</span><span class="ss">dbg</span><span class="p">,</span><span class="ss">ltp</span><span class="p">,</span><span class="mi">0</span><span class="p" data-group-id="4462722607-2">}</span><span class="p">,</span><span class="p" data-group-id="4462722607-3">[</span><span class="p" data-group-id="4462722607-4">{</span><span class="p" data-group-id="4462722607-5">[</span><span class="p" data-group-id="4462722607-5">]</span><span class="p">,</span><span class="p" data-group-id="4462722607-6">[</span><span class="p" data-group-id="4462722607-6">]</span><span class="p">,</span><span class="p" data-group-id="4462722607-7">[</span><span class="p" data-group-id="4462722607-8">{</span><span class="ss">message</span><span class="p">,</span><span class="w"> </span><span class="ss">two</span><span class="p">,</span><span class="w"> </span><span class="ss">arguments</span><span class="p" data-group-id="4462722607-8">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4462722607-9">{</span><span class="ss">noexist</span><span class="p" data-group-id="4462722607-9">}</span><span class="p" data-group-id="4462722607-7">]</span><span class="p" data-group-id="4462722607-4">}</span><span class="p" data-group-id="4462722607-3">]</span><span class="p" data-group-id="4462722607-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="4462722607-10">{</span><span class="ss">error</span><span class="p">,</span><span class="w">
- </span><span class="p" data-group-id="4462722607-11">[</span><span class="p" data-group-id="4462722607-12">{</span><span class="ss">error</span><span class="p">,</span><span class="s">&quot;Special form &#39;message&#39; called with wrong number of
-          arguments in {message,two,arguments}.&quot;</span><span class="p" data-group-id="4462722607-12">}</span><span class="p">,</span><span class="w">
-  </span><span class="p" data-group-id="4462722607-13">{</span><span class="ss">error</span><span class="p">,</span><span class="s">&quot;Function noexist/1 does_not_exist.&quot;</span><span class="p" data-group-id="4462722607-13">}</span><span class="p" data-group-id="4462722607-11">]</span><span class="p" data-group-id="4462722607-10">}</span></code></pre>
+example:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">tp</span><span class="p" data-group-id="0172467905-1">(</span><span class="p" data-group-id="0172467905-2">{</span><span class="ss">dbg</span><span class="p">,</span><span class="ss">ltp</span><span class="p">,</span><span class="mi">0</span><span class="p" data-group-id="0172467905-2">}</span><span class="p">,</span><span class="p" data-group-id="0172467905-3">[</span><span class="p" data-group-id="0172467905-4">{</span><span class="p" data-group-id="0172467905-5">[</span><span class="p" data-group-id="0172467905-5">]</span><span class="p">,</span><span class="p" data-group-id="0172467905-6">[</span><span class="p" data-group-id="0172467905-6">]</span><span class="p">,</span><span class="p" data-group-id="0172467905-7">[</span><span class="p" data-group-id="0172467905-8">{</span><span class="ss">message</span><span class="p">,</span><span class="w"> </span><span class="ss">two</span><span class="p">,</span><span class="w"> </span><span class="ss">arguments</span><span class="p" data-group-id="0172467905-8">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0172467905-9">{</span><span class="ss">noexist</span><span class="p" data-group-id="0172467905-9">}</span><span class="p" data-group-id="0172467905-7">]</span><span class="p" data-group-id="0172467905-4">}</span><span class="p" data-group-id="0172467905-3">]</span><span class="p" data-group-id="0172467905-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="0172467905-10">{</span><span class="ss">error</span><span class="p">,</span><span class="w">
+ </span><span class="p" data-group-id="0172467905-11">[</span><span class="p" data-group-id="0172467905-12">{</span><span class="ss">error</span><span class="p">,</span><span class="s">&quot;Special form &#39;message&#39; called with wrong number of
+          arguments in {message,two,arguments}.&quot;</span><span class="p" data-group-id="0172467905-12">}</span><span class="p">,</span><span class="w">
+  </span><span class="p" data-group-id="0172467905-13">{</span><span class="ss">error</span><span class="p">,</span><span class="s">&quot;Function noexist/1 does_not_exist.&quot;</span><span class="p" data-group-id="0172467905-13">}</span><span class="p" data-group-id="0172467905-11">]</span><span class="p" data-group-id="0172467905-10">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="tp/3">
@@ -2568,7 +2588,7 @@ example:</p><pre><code class="makeup erlang" translate="no"><span class="gp unse
       <h1 class="signature" translate="no">tp(Module, Function, MatchSpec)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L466" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L466" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2597,7 +2617,7 @@ example:</p><pre><code class="makeup erlang" translate="no"><span class="gp unse
       <h1 class="signature" translate="no">tp(Module, Function, Arity, MatchSpec)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L475" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L475" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2631,7 +2651,7 @@ example:</p><pre><code class="makeup erlang" translate="no"><span class="gp unse
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L614" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L614" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2674,7 +2694,7 @@ for argument <code class="inline">Event</code>.</p>
       <h1 class="signature" translate="no">tpl({Module, Function, Arity}, MatchSpec)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L574" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L574" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2707,7 +2727,7 @@ to both local and exported functions.</p>
       <h1 class="signature" translate="no">tpl(Module, Function, MatchSpec)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L543" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L543" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2736,7 +2756,7 @@ to both local and exported functions.</p>
       <h1 class="signature" translate="no">tpl(Module, Function, Arity, MatchSpec)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L552" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L552" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2768,7 +2788,7 @@ to both local and exported functions.</p>
       <h1 class="signature" translate="no">trace_client(Type, Parameters)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L1459" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L1459" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2806,17 +2826,17 @@ this <code class="inline">Type</code>.</p><p>If <code class="inline">Type</code>
 host <code class="inline">Hostname</code>, from where it reads trace messages until the TCP/IP connection
 is closed. If no <code class="inline">Hostname</code> is specified, the local host is assumed.</p><p>As an example, one can let trace messages be sent over the network to another
 Erlang node (preferably <em>not</em> distributed), where the formatting occurs.</p><p>On the node <code class="inline">stack</code> there exists an Erlang node <code class="inline">ant@stack</code>. In the
-shell, type the following:</p><pre><code class="makeup erlang" translate="no"><span class="ss">ant@stack</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">tracer</span><span class="p" data-group-id="3220691472-1">(</span><span class="ss">port</span><span class="p">,</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">trace_port</span><span class="p" data-group-id="3220691472-2">(</span><span class="ss">ip</span><span class="p">,</span><span class="w"> </span><span class="mi">4711</span><span class="p" data-group-id="3220691472-2">)</span><span class="p" data-group-id="3220691472-1">)</span><span class="p">.</span><span class="w">
+shell, type the following:</p><pre><code class="makeup erlang" translate="no"><span class="ss">ant@stack</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">tracer</span><span class="p" data-group-id="7103607664-1">(</span><span class="ss">port</span><span class="p">,</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">trace_port</span><span class="p" data-group-id="7103607664-2">(</span><span class="ss">ip</span><span class="p">,</span><span class="w"> </span><span class="mi">4711</span><span class="p" data-group-id="7103607664-2">)</span><span class="p" data-group-id="7103607664-1">)</span><span class="p">.</span><span class="w">
 </span><span class="o">&lt;</span><span class="mf">0.17</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="w">
-</span><span class="ss">ant@stack</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">p</span><span class="p" data-group-id="3220691472-3">(</span><span class="nf">self</span><span class="p" data-group-id="3220691472-4">(</span><span class="p" data-group-id="3220691472-4">)</span><span class="p">,</span><span class="w"> </span><span class="nb">send</span><span class="p" data-group-id="3220691472-3">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="3220691472-5">{</span><span class="ss">ok</span><span class="p">,</span><span class="mi">1</span><span class="p" data-group-id="3220691472-5">}</span></code></pre><p>All trace messages are now sent to the trace port driver, which in turn listens
+</span><span class="ss">ant@stack</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">p</span><span class="p" data-group-id="7103607664-3">(</span><span class="nf">self</span><span class="p" data-group-id="7103607664-4">(</span><span class="p" data-group-id="7103607664-4">)</span><span class="p">,</span><span class="w"> </span><span class="nb">send</span><span class="p" data-group-id="7103607664-3">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="7103607664-5">{</span><span class="ss">ok</span><span class="p">,</span><span class="mi">1</span><span class="p" data-group-id="7103607664-5">}</span></code></pre><p>All trace messages are now sent to the trace port driver, which in turn listens
 for connections on the TCP/IP port 4711. If we want to see the messages on
-another node, preferably on another host, we do like this:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">trace_client</span><span class="p" data-group-id="6030777446-1">(</span><span class="ss">ip</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6030777446-2">{</span><span class="s">&quot;stack&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">4711</span><span class="p" data-group-id="6030777446-2">}</span><span class="p" data-group-id="6030777446-1">)</span><span class="p">.</span><span class="w">
+another node, preferably on another host, we do like this:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">trace_client</span><span class="p" data-group-id="6294150352-1">(</span><span class="ss">ip</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6294150352-2">{</span><span class="s">&quot;stack&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">4711</span><span class="p" data-group-id="6294150352-2">}</span><span class="p" data-group-id="6294150352-1">)</span><span class="p">.</span><span class="w">
 </span><span class="o">&lt;</span><span class="mf">0.42</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span></code></pre><p>If we now send a message from the shell on the node <code class="inline">ant@stack</code>, where all sends
-from the shell are traced:</p><pre><code class="makeup erlang" translate="no"><span class="ss">ant@stack</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">self</span><span class="p" data-group-id="6504251921-1">(</span><span class="p" data-group-id="6504251921-1">)</span><span class="w"> </span><span class="o">!</span><span class="w"> </span><span class="ss">hello</span><span class="p">.</span><span class="w">
+from the shell are traced:</p><pre><code class="makeup erlang" translate="no"><span class="ss">ant@stack</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">self</span><span class="p" data-group-id="3352425358-1">(</span><span class="p" data-group-id="3352425358-1">)</span><span class="w"> </span><span class="o">!</span><span class="w"> </span><span class="ss">hello</span><span class="p">.</span><span class="w">
 </span><span class="ss">hello</span></code></pre><p>The following will appear at the console on the node that started the trace
-client:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="3628808372-1">(</span><span class="o">&lt;</span><span class="mf">0.23</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="3628808372-1">)</span><span class="w"> </span><span class="o">&lt;</span><span class="mf">0.23</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="w"> </span><span class="o">!</span><span class="w"> </span><span class="nf">hello</span><span class="w">
-</span><span class="p" data-group-id="3628808372-2">(</span><span class="o">&lt;</span><span class="mf">0.23</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="3628808372-2">)</span><span class="w"> </span><span class="o">&lt;</span><span class="mf">0.22</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="w"> </span><span class="o">!</span><span class="w"> </span><span class="p" data-group-id="3628808372-3">{</span><span class="ss">shell_rep</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.23</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">,</span><span class="p" data-group-id="3628808372-4">{</span><span class="ss">value</span><span class="p">,</span><span class="ss">hello</span><span class="p">,</span><span class="p" data-group-id="3628808372-5">[</span><span class="p" data-group-id="3628808372-5">]</span><span class="p">,</span><span class="p" data-group-id="3628808372-6">[</span><span class="p" data-group-id="3628808372-6">]</span><span class="p" data-group-id="3628808372-4">}</span><span class="p" data-group-id="3628808372-3">}</span></code></pre><p>The last line is generated due to internal message passing in the Erlang shell.
+client:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="9430117709-1">(</span><span class="o">&lt;</span><span class="mf">0.23</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="9430117709-1">)</span><span class="w"> </span><span class="o">&lt;</span><span class="mf">0.23</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="w"> </span><span class="o">!</span><span class="w"> </span><span class="nf">hello</span><span class="w">
+</span><span class="p" data-group-id="9430117709-2">(</span><span class="o">&lt;</span><span class="mf">0.23</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="9430117709-2">)</span><span class="w"> </span><span class="o">&lt;</span><span class="mf">0.22</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="w"> </span><span class="o">!</span><span class="w"> </span><span class="p" data-group-id="9430117709-3">{</span><span class="ss">shell_rep</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.23</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">,</span><span class="p" data-group-id="9430117709-4">{</span><span class="ss">value</span><span class="p">,</span><span class="ss">hello</span><span class="p">,</span><span class="p" data-group-id="9430117709-5">[</span><span class="p" data-group-id="9430117709-5">]</span><span class="p">,</span><span class="p" data-group-id="9430117709-6">[</span><span class="p" data-group-id="9430117709-6">]</span><span class="p" data-group-id="9430117709-4">}</span><span class="p" data-group-id="9430117709-3">}</span></code></pre><p>The last line is generated due to internal message passing in the Erlang shell.
 The pids will vary.</p>
   </section>
 </section>
@@ -2830,7 +2850,7 @@ The pids will vary.</p>
       <h1 class="signature" translate="no">trace_client(Type, Parameters, HandlerSpec)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L1497" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L1497" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2875,7 +2895,7 @@ ignored.</p>
       <h1 class="signature" translate="no">trace_port(Type, Parameters)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L1298" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L1298" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2900,7 +2920,7 @@ ignored.</p>
       </div>
 
 <p>Creates a trace-port-generating fun that is suitable as the
-second argument to <a href="#tracer/2"><code class="inline">tracer/2</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="nc">dbg</span><span class="p">:</span><span class="nf">tracer</span><span class="p" data-group-id="7578156043-1">(</span><span class="ss">port</span><span class="p">,</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">trace_port</span><span class="p" data-group-id="7578156043-2">(</span><span class="ss">ip</span><span class="p">,</span><span class="w"> </span><span class="mi">4711</span><span class="p" data-group-id="7578156043-2">)</span><span class="p" data-group-id="7578156043-1">)</span><span class="p">.</span></code></pre><p>A trace port is an Erlang port to a dynamically linked-in driver that
+second argument to <a href="#tracer/2"><code class="inline">tracer/2</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="nc">dbg</span><span class="p">:</span><span class="nf">tracer</span><span class="p" data-group-id="2248913810-1">(</span><span class="ss">port</span><span class="p">,</span><span class="w"> </span><span class="nc">dbg</span><span class="p">:</span><span class="nf">trace_port</span><span class="p" data-group-id="2248913810-2">(</span><span class="ss">ip</span><span class="p">,</span><span class="w"> </span><span class="mi">4711</span><span class="p" data-group-id="2248913810-2">)</span><span class="p" data-group-id="2248913810-1">)</span><span class="p">.</span></code></pre><p>A trace port is an Erlang port to a dynamically linked-in driver that
 handles trace messages directly, without the overhead of sending them
 as messages to an Erlang process. Using a trace port significantly
 lowers the overhead imposed by tracing.</p><p>Two trace drivers are currently implemented: the <code class="inline">file</code> and the <code class="inline">ip</code>
@@ -2946,7 +2966,7 @@ surely occur if no client is reading the trace messages. The default value of
       <h1 class="signature" translate="no">trace_port_control(Operation)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L1158" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L1158" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2974,7 +2994,7 @@ surely occur if no client is reading the trace messages. The default value of
       <h1 class="signature" translate="no">trace_port_control(Nodename, Operation)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L1184" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L1184" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3011,7 +3031,7 @@ this operation.</p></li></ul>
       <h1 class="signature" translate="no">tracer()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L1006" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L1006" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3043,7 +3063,7 @@ for a description of how the trace message handler can be customized.</p><p>To s
       <h1 class="signature" translate="no">tracer(Type, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L1059" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L1059" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3097,7 +3117,7 @@ already running (<code class="inline">{error,already_started}</code>), or becaus
       <h1 class="signature" translate="no">tracer(Nodename, Type, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L1128" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L1128" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3130,7 +3150,7 @@ independent of the type of tracer on the trace control node.</p></section><p>For
       <h1 class="signature" translate="no">wtp(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/dbg.erl#L932" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/dbg.erl#L932" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3162,8 +3182,8 @@ indicates the reason that writing the file failed.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="runtime_tools.epub" title="ePub version">
@@ -3175,7 +3195,7 @@ indicates the reason that writing the file failed.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

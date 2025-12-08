@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="erts v16.1.2-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/erts/zlib.html" />
     <title>zlib — erts v16.1.2-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-25752129.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ erts
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of erts</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ erts
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L23" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L23" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -101,18 +119,18 @@ erts
 data. The data format is described by
 <a href="https://www.ietf.org/rfc/rfc1950.txt">RFC 1950</a>,
 <a href="https://www.ietf.org/rfc/rfc1951.txt">RFC 1951</a>, and
-<a href="https://www.ietf.org/rfc/rfc1952.txt">RFC 1952</a>.</p><p>A typical (compress) usage is as follows:</p><pre><code class="makeup erlang" translate="no"><span class="n">Z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">open</span><span class="p" data-group-id="8293618339-1">(</span><span class="p" data-group-id="8293618339-1">)</span><span class="p">,</span><span class="w">
-</span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">deflateInit</span><span class="p" data-group-id="8293618339-2">(</span><span class="n">Z</span><span class="p">,</span><span class="ss">default</span><span class="p" data-group-id="8293618339-2">)</span><span class="p">,</span><span class="w">
+<a href="https://www.ietf.org/rfc/rfc1952.txt">RFC 1952</a>.</p><p>A typical (compress) usage is as follows:</p><pre><code class="makeup erlang" translate="no"><span class="n">Z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">open</span><span class="p" data-group-id="4193236731-1">(</span><span class="p" data-group-id="4193236731-1">)</span><span class="p">,</span><span class="w">
+</span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">deflateInit</span><span class="p" data-group-id="4193236731-2">(</span><span class="n">Z</span><span class="p">,</span><span class="ss">default</span><span class="p" data-group-id="4193236731-2">)</span><span class="p">,</span><span class="w">
 
-</span><span class="n">Compress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">fun</span><span class="w"> </span><span class="n">F</span><span class="p" data-group-id="8293618339-3">(</span><span class="ss">end_of_data</span><span class="p" data-group-id="8293618339-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-                 </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">deflate</span><span class="p" data-group-id="8293618339-4">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8293618339-5">[</span><span class="p" data-group-id="8293618339-5">]</span><span class="p">,</span><span class="w"> </span><span class="ss">finish</span><span class="p" data-group-id="8293618339-4">)</span><span class="p">;</span><span class="w">
-               </span><span class="n">F</span><span class="p" data-group-id="8293618339-6">(</span><span class="n">Data</span><span class="p" data-group-id="8293618339-6">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-                 </span><span class="p" data-group-id="8293618339-7">[</span><span class="nc">zlib</span><span class="p">:</span><span class="nf">deflate</span><span class="p" data-group-id="8293618339-8">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">Data</span><span class="p" data-group-id="8293618339-8">)</span><span class="p">|</span><span class="n">F</span><span class="p" data-group-id="8293618339-9">(</span><span class="n">Read</span><span class="p" data-group-id="8293618339-10">(</span><span class="p" data-group-id="8293618339-10">)</span><span class="p" data-group-id="8293618339-9">)</span><span class="p" data-group-id="8293618339-7">]</span><span class="w">
+</span><span class="n">Compress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">fun</span><span class="w"> </span><span class="n">F</span><span class="p" data-group-id="4193236731-3">(</span><span class="ss">end_of_data</span><span class="p" data-group-id="4193236731-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+                 </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">deflate</span><span class="p" data-group-id="4193236731-4">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4193236731-5">[</span><span class="p" data-group-id="4193236731-5">]</span><span class="p">,</span><span class="w"> </span><span class="ss">finish</span><span class="p" data-group-id="4193236731-4">)</span><span class="p">;</span><span class="w">
+               </span><span class="n">F</span><span class="p" data-group-id="4193236731-6">(</span><span class="n">Data</span><span class="p" data-group-id="4193236731-6">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+                 </span><span class="p" data-group-id="4193236731-7">[</span><span class="nc">zlib</span><span class="p">:</span><span class="nf">deflate</span><span class="p" data-group-id="4193236731-8">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">Data</span><span class="p" data-group-id="4193236731-8">)</span><span class="p">|</span><span class="n">F</span><span class="p" data-group-id="4193236731-9">(</span><span class="n">Read</span><span class="p" data-group-id="4193236731-10">(</span><span class="p" data-group-id="4193236731-10">)</span><span class="p" data-group-id="4193236731-9">)</span><span class="p" data-group-id="4193236731-7">]</span><span class="w">
            </span><span class="k">end</span><span class="p">,</span><span class="w">
-</span><span class="n">Compressed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Compress</span><span class="p" data-group-id="8293618339-11">(</span><span class="n">Read</span><span class="p" data-group-id="8293618339-12">(</span><span class="p" data-group-id="8293618339-12">)</span><span class="p" data-group-id="8293618339-11">)</span><span class="p">,</span><span class="w">
-</span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">deflateEnd</span><span class="p" data-group-id="8293618339-13">(</span><span class="n">Z</span><span class="p" data-group-id="8293618339-13">)</span><span class="p">,</span><span class="w">
-</span><span class="nc">zlib</span><span class="p">:</span><span class="nf">close</span><span class="p" data-group-id="8293618339-14">(</span><span class="n">Z</span><span class="p" data-group-id="8293618339-14">)</span><span class="p">,</span><span class="w">
-</span><span class="nf">list_to_binary</span><span class="p" data-group-id="8293618339-15">(</span><span class="n">Compressed</span><span class="p" data-group-id="8293618339-15">)</span></code></pre><p>In all functions errors, <code class="inline">{'EXIT',{Reason,Backtrace}}</code>, can be thrown, where
+</span><span class="n">Compressed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Compress</span><span class="p" data-group-id="4193236731-11">(</span><span class="n">Read</span><span class="p" data-group-id="4193236731-12">(</span><span class="p" data-group-id="4193236731-12">)</span><span class="p" data-group-id="4193236731-11">)</span><span class="p">,</span><span class="w">
+</span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">deflateEnd</span><span class="p" data-group-id="4193236731-13">(</span><span class="n">Z</span><span class="p" data-group-id="4193236731-13">)</span><span class="p">,</span><span class="w">
+</span><span class="nc">zlib</span><span class="p">:</span><span class="nf">close</span><span class="p" data-group-id="4193236731-14">(</span><span class="n">Z</span><span class="p" data-group-id="4193236731-14">)</span><span class="p">,</span><span class="w">
+</span><span class="nf">list_to_binary</span><span class="p" data-group-id="4193236731-15">(</span><span class="n">Compressed</span><span class="p" data-group-id="4193236731-15">)</span></code></pre><p>In all functions errors, <code class="inline">{'EXIT',{Reason,Backtrace}}</code>, can be thrown, where
 <code class="inline">Reason</code> describes the error.</p><p>Typical <code class="inline">Reason</code>s:</p><ul><li><p><strong><code class="inline">badarg</code></strong> - Bad argument.</p></li><li><p><strong><code class="inline">not_initialized</code></strong> - The stream hasn't been initialized, eg. if
 <a href="#inflateInit/1"><code class="inline">inflateInit/1</code></a> wasn't called prior to a call to <a href="#inflate/2"><code class="inline">inflate/2</code></a>.</p></li><li><p><strong><code class="inline">not_on_controlling_process</code></strong> - The stream was used by a process that
 doesn't control it. Use <a href="#set_controlling_process/2"><code class="inline">set_controlling_process/2</code></a> if you need to transfer a
@@ -179,7 +197,7 @@ stream to a different process.</p></li><li><p><strong><code class="inline">data_
 
       </div>
 
-        <div class="summary-synopsis"><p>A zlib stream, see <a><code class="inline">open/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>A zlib stream, see <a href="#open/0"><code class="inline">open/0</code></a>.</p></div>
 
     </div>
 
@@ -225,7 +243,7 @@ stream to a different process.</p></li><li><p><strong><code class="inline">data_
 
       </div>
 
-        <div class="summary-synopsis"><p>Same as <a><code class="inline">deflate(Z, Data, none)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Same as <a href="#deflate/3"><code class="inline">deflate(Z, Data, none)</code></a>.</p></div>
 
     </div>
 
@@ -296,7 +314,7 @@ empty.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">deflateEnd/1</code></a> followed by <a><code class="inline">deflateInit/1,2,6</code></a>,
+        <div class="summary-synopsis"><p>Equivalent to <a href="#deflateEnd/1"><code class="inline">deflateEnd/1</code></a> followed by <a href="#deflateInit/1"><code class="inline">deflateInit/1,2,6</code></a>,
 but does not free and reallocate all the internal compression state.</p></div>
 
     </div>
@@ -338,7 +356,7 @@ producing any compressed output.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">inflate(Z, Data, [])</code></a></p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#inflate/3"><code class="inline">inflate(Z, Data, [])</code></a></p></div>
 
     </div>
 
@@ -399,7 +417,7 @@ producing any compressed output.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">inflateEnd/1</code></a> followed by <a><code class="inline">inflateInit/1</code></a>, but does not free and
+        <div class="summary-synopsis"><p>Equivalent to <a href="#inflateEnd/1"><code class="inline">inflateEnd/1</code></a> followed by <a href="#inflateInit/1"><code class="inline">inflateInit/1</code></a>, but does not free and
 reallocate all the internal decompression state. The stream will keep attributes
 that could have been set by <code class="inline">inflateInit/1,2</code>.</p></div>
 
@@ -432,7 +450,7 @@ sequence.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Like <a><code class="inline">inflate/2</code></a>, but returns once it has expanded beyond a small
+        <div class="summary-synopsis"><p>Like <a href="#inflate/2"><code class="inline">inflate/2</code></a>, but returns once it has expanded beyond a small
 implementation-defined threshold. It's useful when decompressing untrusted input
 which could have been maliciously crafted to expand until the system runs out of
 memory.</p></div>
@@ -491,6 +509,7 @@ memory.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:zflush/0">
 
@@ -502,7 +521,7 @@ memory.</p></div>
       <h1 class="signature" translate="no">zflush()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L151" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L151" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -530,7 +549,7 @@ memory.</p></div>
       <h1 class="signature" translate="no">zlevel()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L153" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L153" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -558,7 +577,7 @@ memory.</p></div>
       <h1 class="signature" translate="no">zmemlevel()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L157" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L157" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -586,7 +605,7 @@ memory.</p></div>
       <h1 class="signature" translate="no">zmethod()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L163" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L163" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -614,7 +633,7 @@ memory.</p></div>
       <h1 class="signature" translate="no">zstrategy()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L155" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L155" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -642,7 +661,7 @@ memory.</p></div>
       <h1 class="signature" translate="no">zstream()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L150" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L150" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -670,7 +689,7 @@ memory.</p></div>
       <h1 class="signature" translate="no">zwindowbits()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L159" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L159" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -699,6 +718,7 @@ memory.</p></div>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="close/1">
 
@@ -710,7 +730,7 @@ memory.</p></div>
       <h1 class="signature" translate="no">close(Z)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L191" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L191" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -738,7 +758,7 @@ memory.</p></div>
       <h1 class="signature" translate="no">compress(Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L683" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L683" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -766,7 +786,7 @@ memory.</p></div>
       <h1 class="signature" translate="no">deflate(Z, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L371" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L371" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -794,7 +814,7 @@ memory.</p></div>
       <h1 class="signature" translate="no">deflate(Z, Data, Flush)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L413" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L413" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -821,11 +841,11 @@ previous compressed data has been damaged or if random access is desired. Using
 <code class="inline">full</code> too often can seriously degrade the compression.</p><p>If <code class="inline">Flush</code> is set to <code class="inline">finish</code>, pending input is processed, pending output is
 flushed, and <a href="#deflate/3"><code class="inline">deflate/3</code></a> returns. Afterwards the only possible
 operations on the stream are <a href="#deflateReset/1"><code class="inline">deflateReset/1</code></a> or <a href="#deflateEnd/1"><code class="inline">deflateEnd/1</code></a>.</p><p><code class="inline">Flush</code> can be set to <code class="inline">finish</code> immediately after
-<a href="#deflateInit/1"><code class="inline">deflateInit</code></a> if all compression is to be done in one step.</p><p>Example:</p><pre><code class="makeup erlang" translate="no"><span class="nc">zlib</span><span class="p">:</span><span class="nf">deflateInit</span><span class="p" data-group-id="2255071490-1">(</span><span class="n">Z</span><span class="p" data-group-id="2255071490-1">)</span><span class="p">,</span><span class="w">
-</span><span class="n">B1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">deflate</span><span class="p" data-group-id="2255071490-2">(</span><span class="n">Z</span><span class="p">,</span><span class="n">Data</span><span class="p" data-group-id="2255071490-2">)</span><span class="p">,</span><span class="w">
-</span><span class="n">B2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">deflate</span><span class="p" data-group-id="2255071490-3">(</span><span class="n">Z</span><span class="p">,</span><span class="p" data-group-id="2255071490-4">&lt;&lt;</span><span class="w"> </span><span class="p" data-group-id="2255071490-4">&gt;&gt;</span><span class="p">,</span><span class="ss">finish</span><span class="p" data-group-id="2255071490-3">)</span><span class="p">,</span><span class="w">
-</span><span class="nc">zlib</span><span class="p">:</span><span class="nf">deflateEnd</span><span class="p" data-group-id="2255071490-5">(</span><span class="n">Z</span><span class="p" data-group-id="2255071490-5">)</span><span class="p">,</span><span class="w">
-</span><span class="nf">list_to_binary</span><span class="p" data-group-id="2255071490-6">(</span><span class="p" data-group-id="2255071490-7">[</span><span class="n">B1</span><span class="p">,</span><span class="n">B2</span><span class="p" data-group-id="2255071490-7">]</span><span class="p" data-group-id="2255071490-6">)</span></code></pre>
+<a href="#deflateInit/1"><code class="inline">deflateInit</code></a> if all compression is to be done in one step.</p><p>Example:</p><pre><code class="makeup erlang" translate="no"><span class="nc">zlib</span><span class="p">:</span><span class="nf">deflateInit</span><span class="p" data-group-id="1152810974-1">(</span><span class="n">Z</span><span class="p" data-group-id="1152810974-1">)</span><span class="p">,</span><span class="w">
+</span><span class="n">B1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">deflate</span><span class="p" data-group-id="1152810974-2">(</span><span class="n">Z</span><span class="p">,</span><span class="n">Data</span><span class="p" data-group-id="1152810974-2">)</span><span class="p">,</span><span class="w">
+</span><span class="n">B2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">deflate</span><span class="p" data-group-id="1152810974-3">(</span><span class="n">Z</span><span class="p">,</span><span class="p" data-group-id="1152810974-4">&lt;&lt;</span><span class="w"> </span><span class="p" data-group-id="1152810974-4">&gt;&gt;</span><span class="p">,</span><span class="ss">finish</span><span class="p" data-group-id="1152810974-3">)</span><span class="p">,</span><span class="w">
+</span><span class="nc">zlib</span><span class="p">:</span><span class="nf">deflateEnd</span><span class="p" data-group-id="1152810974-5">(</span><span class="n">Z</span><span class="p" data-group-id="1152810974-5">)</span><span class="p">,</span><span class="w">
+</span><span class="nf">list_to_binary</span><span class="p" data-group-id="1152810974-6">(</span><span class="p" data-group-id="1152810974-7">[</span><span class="n">B1</span><span class="p">,</span><span class="n">B2</span><span class="p" data-group-id="1152810974-7">]</span><span class="p" data-group-id="1152810974-6">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="deflateEnd/1">
@@ -838,7 +858,7 @@ operations on the stream are <a href="#deflateReset/1"><code class="inline">defl
       <h1 class="signature" translate="no">deflateEnd(Z)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L437" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L437" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -867,7 +887,7 @@ operations on the stream are <a href="#deflateReset/1"><code class="inline">defl
       <h1 class="signature" translate="no">deflateInit(Z)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L209" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L209" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -895,7 +915,7 @@ operations on the stream are <a href="#deflateReset/1"><code class="inline">defl
       <h1 class="signature" translate="no">deflateInit(Z, Level)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L225" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L225" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -923,7 +943,7 @@ operations on the stream are <a href="#deflateReset/1"><code class="inline">defl
       <h1 class="signature" translate="no">deflateInit(Z, Level, Method, WindowBits, MemLevel, Strategy)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L289" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L289" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -979,7 +999,7 @@ compressed output even if it is not set appropriately.</p></li></ul>
       <h1 class="signature" translate="no">deflateParams(Z, Level, Strategy)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L352" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L352" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1015,7 +1035,7 @@ compressed and flushed.</p>
       <h1 class="signature" translate="no">deflateReset(Z)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L329" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L329" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1044,7 +1064,7 @@ but does not free and reallocate all the internal compression state.</p><p>The s
       <h1 class="signature" translate="no">deflateSetDictionary(Z, Dictionary)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L316" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L316" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1077,7 +1097,7 @@ producing any compressed output.</p><p>This function must be called immediately 
       <h1 class="signature" translate="no">gunzip(Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L775" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L775" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1105,7 +1125,7 @@ producing any compressed output.</p><p>This function must be called immediately 
       <h1 class="signature" translate="no">gzip(Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L759" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L759" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1133,7 +1153,7 @@ producing any compressed output.</p><p>This function must be called immediately 
       <h1 class="signature" translate="no">inflate(Z, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L563" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L563" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1163,7 +1183,7 @@ producing any compressed output.</p><p>This function must be called immediately 
         <span class="note">(since OTP 20.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L591" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L591" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1204,7 +1224,7 @@ handle dictionaries manually should always specify
       <h1 class="signature" translate="no">inflateEnd(Z)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L673" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L673" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1235,7 +1255,7 @@ was found (meaning that not all data has been uncompressed).</p>
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L536" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L536" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1264,7 +1284,7 @@ was found (meaning that not all data has been uncompressed).</p>
       <h1 class="signature" translate="no">inflateInit(Z)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L445" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L445" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1292,7 +1312,7 @@ was found (meaning that not all data has been uncompressed).</p>
       <h1 class="signature" translate="no">inflateInit(Z, WindowBits)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L465" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L465" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1325,7 +1345,7 @@ undocumented feature.</p>
       <h1 class="signature" translate="no">inflateReset(Z)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L553" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L553" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1355,7 +1375,7 @@ that could have been set by <code class="inline">inflateInit/1,2</code>.</p>
       <h1 class="signature" translate="no">inflateSetDictionary(Z, Dictionary)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L519" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L519" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1377,20 +1397,20 @@ of deprecated functions, throwing an
 <code class="inline">{'EXIT',{{need_dictionary,Adler},_StackTrace}}</code> exception.</p><p>The dictionary chosen by the compressor can be determined from the Adler value
 returned or thrown by the call to the inflate function. The compressor and
 decompressor must use the same dictionary (See <a href="#deflateSetDictionary/2"><code class="inline">deflateSetDictionary/2</code></a>).</p><p>After setting the dictionary the inflate operation should be retried without new
-input.</p><p>Example:</p><pre><code class="makeup erlang" translate="no"><span class="nf">deprecated_unpack</span><span class="p" data-group-id="8515885126-1">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">Compressed</span><span class="p">,</span><span class="w"> </span><span class="n">Dict</span><span class="p" data-group-id="8515885126-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-     </span><span class="k">case</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">inflate</span><span class="p" data-group-id="8515885126-2">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">Compressed</span><span class="p" data-group-id="8515885126-2">)</span><span class="w"> </span><span class="k">of</span><span class="w">
-          </span><span class="p" data-group-id="8515885126-3">{</span><span class="ss">&#39;EXIT&#39;</span><span class="p">,</span><span class="p" data-group-id="8515885126-4">{</span><span class="p" data-group-id="8515885126-5">{</span><span class="ss">need_dictionary</span><span class="p">,</span><span class="p">_</span><span class="n">DictID</span><span class="p" data-group-id="8515885126-5">}</span><span class="p">,</span><span class="p">_</span><span class="p" data-group-id="8515885126-4">}</span><span class="p" data-group-id="8515885126-3">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-                 </span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">inflateSetDictionary</span><span class="p" data-group-id="8515885126-6">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">Dict</span><span class="p" data-group-id="8515885126-6">)</span><span class="p">,</span><span class="w">
-                 </span><span class="n">Uncompressed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">inflate</span><span class="p" data-group-id="8515885126-7">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8515885126-8">[</span><span class="p" data-group-id="8515885126-8">]</span><span class="p" data-group-id="8515885126-7">)</span><span class="p">;</span><span class="w">
+input.</p><p>Example:</p><pre><code class="makeup erlang" translate="no"><span class="nf">deprecated_unpack</span><span class="p" data-group-id="2821817626-1">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">Compressed</span><span class="p">,</span><span class="w"> </span><span class="n">Dict</span><span class="p" data-group-id="2821817626-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+     </span><span class="k">case</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">inflate</span><span class="p" data-group-id="2821817626-2">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">Compressed</span><span class="p" data-group-id="2821817626-2">)</span><span class="w"> </span><span class="k">of</span><span class="w">
+          </span><span class="p" data-group-id="2821817626-3">{</span><span class="ss">&#39;EXIT&#39;</span><span class="p">,</span><span class="p" data-group-id="2821817626-4">{</span><span class="p" data-group-id="2821817626-5">{</span><span class="ss">need_dictionary</span><span class="p">,</span><span class="p">_</span><span class="n">DictID</span><span class="p" data-group-id="2821817626-5">}</span><span class="p">,</span><span class="p">_</span><span class="p" data-group-id="2821817626-4">}</span><span class="p" data-group-id="2821817626-3">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+                 </span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">inflateSetDictionary</span><span class="p" data-group-id="2821817626-6">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">Dict</span><span class="p" data-group-id="2821817626-6">)</span><span class="p">,</span><span class="w">
+                 </span><span class="n">Uncompressed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">inflate</span><span class="p" data-group-id="2821817626-7">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2821817626-8">[</span><span class="p" data-group-id="2821817626-8">]</span><span class="p" data-group-id="2821817626-7">)</span><span class="p">;</span><span class="w">
           </span><span class="n">Uncompressed</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
                  </span><span class="n">Uncompressed</span><span class="w">
      </span><span class="k">end</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">new_unpack</span><span class="p" data-group-id="8515885126-9">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">Compressed</span><span class="p">,</span><span class="w"> </span><span class="n">Dict</span><span class="p" data-group-id="8515885126-9">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="k">case</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">inflate</span><span class="p" data-group-id="8515885126-10">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">Compressed</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8515885126-11">[</span><span class="p" data-group-id="8515885126-12">{</span><span class="ss">exception_on_need_dict</span><span class="p">,</span><span class="w"> </span><span class="ss">false</span><span class="p" data-group-id="8515885126-12">}</span><span class="p" data-group-id="8515885126-11">]</span><span class="p" data-group-id="8515885126-10">)</span><span class="w"> </span><span class="k">of</span><span class="w">
-        </span><span class="p" data-group-id="8515885126-13">{</span><span class="ss">need_dictionary</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="n">DictId</span><span class="p">,</span><span class="w"> </span><span class="n">Output</span><span class="p" data-group-id="8515885126-13">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-            </span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">inflateSetDictionary</span><span class="p" data-group-id="8515885126-14">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">Dict</span><span class="p" data-group-id="8515885126-14">)</span><span class="p">,</span><span class="w">
-            </span><span class="p" data-group-id="8515885126-15">[</span><span class="n">Output</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">inflate</span><span class="p" data-group-id="8515885126-16">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8515885126-17">[</span><span class="p" data-group-id="8515885126-17">]</span><span class="p" data-group-id="8515885126-16">)</span><span class="p" data-group-id="8515885126-15">]</span><span class="p">;</span><span class="w">
+</span><span class="nf">new_unpack</span><span class="p" data-group-id="2821817626-9">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">Compressed</span><span class="p">,</span><span class="w"> </span><span class="n">Dict</span><span class="p" data-group-id="2821817626-9">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="k">case</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">inflate</span><span class="p" data-group-id="2821817626-10">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">Compressed</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2821817626-11">[</span><span class="p" data-group-id="2821817626-12">{</span><span class="ss">exception_on_need_dict</span><span class="p">,</span><span class="w"> </span><span class="ss">false</span><span class="p" data-group-id="2821817626-12">}</span><span class="p" data-group-id="2821817626-11">]</span><span class="p" data-group-id="2821817626-10">)</span><span class="w"> </span><span class="k">of</span><span class="w">
+        </span><span class="p" data-group-id="2821817626-13">{</span><span class="ss">need_dictionary</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="n">DictId</span><span class="p">,</span><span class="w"> </span><span class="n">Output</span><span class="p" data-group-id="2821817626-13">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+            </span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">inflateSetDictionary</span><span class="p" data-group-id="2821817626-14">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">Dict</span><span class="p" data-group-id="2821817626-14">)</span><span class="p">,</span><span class="w">
+            </span><span class="p" data-group-id="2821817626-15">[</span><span class="n">Output</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">inflate</span><span class="p" data-group-id="2821817626-16">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2821817626-17">[</span><span class="p" data-group-id="2821817626-17">]</span><span class="p" data-group-id="2821817626-16">)</span><span class="p" data-group-id="2821817626-15">]</span><span class="p">;</span><span class="w">
         </span><span class="n">Uncompressed</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
             </span><span class="n">Uncompressed</span><span class="w">
     </span><span class="k">end</span><span class="p">.</span></code></pre>
@@ -1406,7 +1426,7 @@ input.</p><p>Example:</p><pre><code class="makeup erlang" translate="no"><span c
       <h1 class="signature" translate="no">open()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L183" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L183" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1436,7 +1456,7 @@ input.</p><p>Example:</p><pre><code class="makeup erlang" translate="no"><span c
         <span class="note">(since OTP 20.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L661" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L661" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1466,18 +1486,18 @@ that was decompressed in this call. New input can be queued up on each call if
 desired, and the function will return <code class="inline">{finished, Output}</code> once all queued data
 has been decompressed.</p><p>This function can introduce some output latency (reading input without producing
 any output).</p><p>If a preset dictionary is required for further decompression, this function
-returns a <code class="inline">need_dictionary</code> tuple. See <a href="#inflateSetDictionary/2"><code class="inline">inflateSetDictionary/2</code></a>) for details.</p><p>Example:</p><pre><code class="makeup erlang" translate="no"><span class="nf">walk</span><span class="p" data-group-id="0646510362-1">(</span><span class="n">Compressed</span><span class="p">,</span><span class="w"> </span><span class="n">Handler</span><span class="p" data-group-id="0646510362-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="n">Z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">open</span><span class="p" data-group-id="0646510362-2">(</span><span class="p" data-group-id="0646510362-2">)</span><span class="p">,</span><span class="w">
-    </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">inflateInit</span><span class="p" data-group-id="0646510362-3">(</span><span class="n">Z</span><span class="p" data-group-id="0646510362-3">)</span><span class="p">,</span><span class="w">
-    </span><span class="nf">loop</span><span class="p" data-group-id="0646510362-4">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">Handler</span><span class="p">,</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">safeInflate</span><span class="p" data-group-id="0646510362-5">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">Compressed</span><span class="p" data-group-id="0646510362-5">)</span><span class="p" data-group-id="0646510362-4">)</span><span class="p">,</span><span class="w">
-    </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">inflateEnd</span><span class="p" data-group-id="0646510362-6">(</span><span class="n">Z</span><span class="p" data-group-id="0646510362-6">)</span><span class="p">,</span><span class="w">
-    </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">close</span><span class="p" data-group-id="0646510362-7">(</span><span class="n">Z</span><span class="p" data-group-id="0646510362-7">)</span><span class="p">.</span><span class="w">
+returns a <code class="inline">need_dictionary</code> tuple. See <a href="#inflateSetDictionary/2"><code class="inline">inflateSetDictionary/2</code></a>) for details.</p><p>Example:</p><pre><code class="makeup erlang" translate="no"><span class="nf">walk</span><span class="p" data-group-id="5230566064-1">(</span><span class="n">Compressed</span><span class="p">,</span><span class="w"> </span><span class="n">Handler</span><span class="p" data-group-id="5230566064-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="n">Z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">open</span><span class="p" data-group-id="5230566064-2">(</span><span class="p" data-group-id="5230566064-2">)</span><span class="p">,</span><span class="w">
+    </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">inflateInit</span><span class="p" data-group-id="5230566064-3">(</span><span class="n">Z</span><span class="p" data-group-id="5230566064-3">)</span><span class="p">,</span><span class="w">
+    </span><span class="nf">loop</span><span class="p" data-group-id="5230566064-4">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">Handler</span><span class="p">,</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">safeInflate</span><span class="p" data-group-id="5230566064-5">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">Compressed</span><span class="p" data-group-id="5230566064-5">)</span><span class="p" data-group-id="5230566064-4">)</span><span class="p">,</span><span class="w">
+    </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">inflateEnd</span><span class="p" data-group-id="5230566064-6">(</span><span class="n">Z</span><span class="p" data-group-id="5230566064-6">)</span><span class="p">,</span><span class="w">
+    </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">close</span><span class="p" data-group-id="5230566064-7">(</span><span class="n">Z</span><span class="p" data-group-id="5230566064-7">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">loop</span><span class="p" data-group-id="0646510362-8">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">Handler</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0646510362-9">{</span><span class="ss">continue</span><span class="p">,</span><span class="w"> </span><span class="n">Output</span><span class="p" data-group-id="0646510362-9">}</span><span class="p" data-group-id="0646510362-8">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="n">Handler</span><span class="p" data-group-id="0646510362-10">(</span><span class="n">Output</span><span class="p" data-group-id="0646510362-10">)</span><span class="p">,</span><span class="w">
-    </span><span class="nf">loop</span><span class="p" data-group-id="0646510362-11">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">Handler</span><span class="p">,</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">safeInflate</span><span class="p" data-group-id="0646510362-12">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0646510362-13">[</span><span class="p" data-group-id="0646510362-13">]</span><span class="p" data-group-id="0646510362-12">)</span><span class="p" data-group-id="0646510362-11">)</span><span class="p">;</span><span class="w">
-</span><span class="nf">loop</span><span class="p" data-group-id="0646510362-14">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">Handler</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0646510362-15">{</span><span class="ss">finished</span><span class="p">,</span><span class="w"> </span><span class="n">Output</span><span class="p" data-group-id="0646510362-15">}</span><span class="p" data-group-id="0646510362-14">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="n">Handler</span><span class="p" data-group-id="0646510362-16">(</span><span class="n">Output</span><span class="p" data-group-id="0646510362-16">)</span><span class="p">.</span></code></pre>
+</span><span class="nf">loop</span><span class="p" data-group-id="5230566064-8">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">Handler</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5230566064-9">{</span><span class="ss">continue</span><span class="p">,</span><span class="w"> </span><span class="n">Output</span><span class="p" data-group-id="5230566064-9">}</span><span class="p" data-group-id="5230566064-8">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="n">Handler</span><span class="p" data-group-id="5230566064-10">(</span><span class="n">Output</span><span class="p" data-group-id="5230566064-10">)</span><span class="p">,</span><span class="w">
+    </span><span class="nf">loop</span><span class="p" data-group-id="5230566064-11">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">Handler</span><span class="p">,</span><span class="w"> </span><span class="nc">zlib</span><span class="p">:</span><span class="nf">safeInflate</span><span class="p" data-group-id="5230566064-12">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5230566064-13">[</span><span class="p" data-group-id="5230566064-13">]</span><span class="p" data-group-id="5230566064-12">)</span><span class="p" data-group-id="5230566064-11">)</span><span class="p">;</span><span class="w">
+</span><span class="nf">loop</span><span class="p" data-group-id="5230566064-14">(</span><span class="n">Z</span><span class="p">,</span><span class="w"> </span><span class="n">Handler</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5230566064-15">{</span><span class="ss">finished</span><span class="p">,</span><span class="w"> </span><span class="n">Output</span><span class="p" data-group-id="5230566064-15">}</span><span class="p" data-group-id="5230566064-14">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="n">Handler</span><span class="p" data-group-id="5230566064-16">(</span><span class="n">Output</span><span class="p" data-group-id="5230566064-16">)</span><span class="p">.</span></code></pre>
   </section>
 </section>
 <section class="detail" id="set_controlling_process/2">
@@ -1492,7 +1512,7 @@ returns a <code class="inline">need_dictionary</code> tuple. See <a href="#infla
         <span class="note">(since OTP 20.1.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L201" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L201" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1520,7 +1540,7 @@ returns a <code class="inline">need_dictionary</code> tuple. See <a href="#infla
       <h1 class="signature" translate="no">uncompress(Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L699" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L699" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1548,7 +1568,7 @@ returns a <code class="inline">need_dictionary</code> tuple. See <a href="#infla
       <h1 class="signature" translate="no">unzip(Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L743" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L743" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1576,7 +1596,7 @@ returns a <code class="inline">need_dictionary</code> tuple. See <a href="#infla
       <h1 class="signature" translate="no">zip(Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/zlib.erl#L727" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/zlib.erl#L727" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1602,8 +1622,8 @@ returns a <code class="inline">need_dictionary</code> tuple. See <a href="#infla
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
         </span>
@@ -1611,7 +1631,7 @@ returns a <code class="inline">need_dictionary</code> tuple. See <a href="#infla
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

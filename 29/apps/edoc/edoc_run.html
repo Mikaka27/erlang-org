@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="edoc v1.4.1-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/edoc/edoc_run.html" />
     <title>edoc_run — edoc v1.4.1-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-0FCC6507.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ edoc
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of edoc</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ edoc
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/edoc/src/edoc_run.erl#L56" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/edoc/src/edoc_run.erl#L56" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -135,7 +153,7 @@ edoc
 
       </div>
 
-        <div class="summary-synopsis"><p>Calls <a><code>edoc:application/3</code></a> with the corresponding arguments. The strings in the list are parsed as Erlang constant terms. The list can be either <code>[App]</code>, <code>[App, Options]</code> or <code>[App, Dir, Options]</code>. In the first case <a><code>edoc:application/1</code></a> is called instead; in the second case, <a><code>edoc:application/2</code></a> is called.</p></div>
+        <div class="summary-synopsis"><p>Calls <a href="edoc.html#application/3"><code>edoc:application/3</code></a> with the corresponding arguments. The strings in the list are parsed as Erlang constant terms. The list can be either <code>[App]</code>, <code>[App, Options]</code> or <code>[App, Dir, Options]</code>. In the first case <a href="edoc.html#application/1"><code>edoc:application/1</code></a> is called instead; in the second case, <a href="edoc.html#application/2"><code>edoc:application/2</code></a> is called.</p></div>
 
     </div>
 
@@ -147,7 +165,7 @@ edoc
 
       </div>
 
-        <div class="summary-synopsis"><p>Calls <a><code>edoc:file/2</code></a> with the corresponding arguments. The strings in the list are parsed as Erlang constant terms. The list can be either <code>[File]</code> or <code>[File, Options]</code>. In the first case, an empty list of options is passed to <a><code>edoc:file/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Calls <a href="edoc.html#file/2"><code>edoc:file/2</code></a> with the corresponding arguments. The strings in the list are parsed as Erlang constant terms. The list can be either <code>[File]</code> or <code>[File, Options]</code>. In the first case, an empty list of options is passed to <a href="edoc.html#file/2"><code>edoc:file/2</code></a>.</p></div>
 
     </div>
 
@@ -157,7 +175,7 @@ edoc
 
       </div>
 
-        <div class="summary-synopsis"><p>Calls <a><code>edoc:files/2</code></a> with the corresponding arguments. The strings in the list are parsed as Erlang constant terms. The list can be either <code>[Files]</code> or <code>[Files, Options]</code>. In the first case, <a><code>edoc:files/1</code></a> is called instead.</p></div>
+        <div class="summary-synopsis"><p>Calls <a href="edoc.html#files/2"><code>edoc:files/2</code></a> with the corresponding arguments. The strings in the list are parsed as Erlang constant terms. The list can be either <code>[Files]</code> or <code>[Files, Options]</code>. In the first case, <a href="edoc.html#files/1"><code>edoc:files/1</code></a> is called instead.</p></div>
 
     </div>
 
@@ -173,6 +191,7 @@ edoc
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:args/0">
 
@@ -184,7 +203,7 @@ edoc
       <h1 class="signature" translate="no">args/0</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/edoc/src/edoc_run.erl#L66" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/edoc/src/edoc_run.erl#L66" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -213,6 +232,7 @@ edoc
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="application/1">
 
@@ -224,7 +244,7 @@ edoc
       <h1 class="signature" translate="no">application(Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/edoc/src/edoc_run.erl#L79" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/edoc/src/edoc_run.erl#L79" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -252,7 +272,7 @@ edoc
       <h1 class="signature" translate="no">file(Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/edoc/src/edoc_run.erl#L147" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/edoc/src/edoc_run.erl#L147" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -286,7 +306,7 @@ edoc
       <h1 class="signature" translate="no">files(Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/edoc/src/edoc_run.erl#L101" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/edoc/src/edoc_run.erl#L101" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -312,8 +332,8 @@ edoc
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
         </span>
@@ -321,7 +341,7 @@ edoc
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

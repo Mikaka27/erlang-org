@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="sasl v4.3-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/sasl/error_logging.html" />
     <title>SASL Error Logging — sasl v4.3-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-9352BC19.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ sasl
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of sasl</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -84,7 +102,7 @@ sasl
     <h1>SASL Error Logging</h1>
 
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/sasl/doc/guides/error_logging.md#L1" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/sasl/doc/guides/error_logging.md#L1" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -209,42 +227,42 @@ help system.</p><h3 id="list-reports-in-server" class="section-heading"><a href=
         2               error         &lt;0.15.0&gt; 1996-10-16 16:17:04
         1            progress         &lt;0.14.0&gt; 1996-10-16 16:17:09
         ok</code></pre><h3 id="show-reports" class="section-heading"><a href="#show-reports" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Show Reports</span></h3><p>Use function <a href="rb.html#show/1"><code class="inline">rb:show(Number)</code></a> to show details of a specific
-report:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">7&gt; </span><span class="nc">rb</span><span class="p">:</span><span class="nf">show</span><span class="p" data-group-id="5845544242-1">(</span><span class="mi">4</span><span class="p" data-group-id="5845544242-1">)</span><span class="p">.</span><span class="w">
+report:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">7&gt; </span><span class="nc">rb</span><span class="p">:</span><span class="nf">show</span><span class="p" data-group-id="3084129339-1">(</span><span class="mi">4</span><span class="p" data-group-id="3084129339-1">)</span><span class="p">.</span><span class="w">
 
 </span><span class="n">PROGRESS</span><span class="w"> </span><span class="n">REPORT</span><span class="w">  </span><span class="o">&lt;</span><span class="mf">0.20</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="w">                                   </span><span class="mi">1996</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">16</span><span class="w"> </span><span class="mi">16</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">36</span><span class="w">
 </span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">=</span><span class="w">
-</span><span class="ss">supervisor</span><span class="w">                                                     </span><span class="p" data-group-id="5845544242-2">{</span><span class="ss">local</span><span class="p">,</span><span class="ss">sasl_sup</span><span class="p" data-group-id="5845544242-2">}</span><span class="w">
+</span><span class="ss">supervisor</span><span class="w">                                                     </span><span class="p" data-group-id="3084129339-2">{</span><span class="ss">local</span><span class="p">,</span><span class="ss">sasl_sup</span><span class="p" data-group-id="3084129339-2">}</span><span class="w">
 </span><span class="ss">started</span><span class="w">
-</span><span class="p" data-group-id="5845544242-3">[</span><span class="p" data-group-id="5845544242-4">{</span><span class="ss">pid</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.24</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="5845544242-4">}</span><span class="p">,</span><span class="w">
-</span><span class="p" data-group-id="5845544242-5">{</span><span class="ss">name</span><span class="p">,</span><span class="ss">release_handler</span><span class="p" data-group-id="5845544242-5">}</span><span class="p">,</span><span class="w">
-</span><span class="p" data-group-id="5845544242-6">{</span><span class="ss">mfa</span><span class="p">,</span><span class="p" data-group-id="5845544242-7">{</span><span class="ss">release_handler</span><span class="p">,</span><span class="ss">start_link</span><span class="p">,</span><span class="p" data-group-id="5845544242-8">[</span><span class="p" data-group-id="5845544242-8">]</span><span class="p" data-group-id="5845544242-7">}</span><span class="p" data-group-id="5845544242-6">}</span><span class="p">,</span><span class="w">
-</span><span class="p" data-group-id="5845544242-9">{</span><span class="ss">restart_type</span><span class="p">,</span><span class="ss">permanent</span><span class="p" data-group-id="5845544242-9">}</span><span class="p">,</span><span class="w">
-</span><span class="p" data-group-id="5845544242-10">{</span><span class="ss">shutdown</span><span class="p">,</span><span class="mi">2000</span><span class="p" data-group-id="5845544242-10">}</span><span class="p">,</span><span class="w">
-</span><span class="p" data-group-id="5845544242-11">{</span><span class="ss">child_type</span><span class="p">,</span><span class="ss">worker</span><span class="p" data-group-id="5845544242-11">}</span><span class="p" data-group-id="5845544242-3">]</span><span class="w">
+</span><span class="p" data-group-id="3084129339-3">[</span><span class="p" data-group-id="3084129339-4">{</span><span class="ss">pid</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.24</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="3084129339-4">}</span><span class="p">,</span><span class="w">
+</span><span class="p" data-group-id="3084129339-5">{</span><span class="ss">name</span><span class="p">,</span><span class="ss">release_handler</span><span class="p" data-group-id="3084129339-5">}</span><span class="p">,</span><span class="w">
+</span><span class="p" data-group-id="3084129339-6">{</span><span class="ss">mfa</span><span class="p">,</span><span class="p" data-group-id="3084129339-7">{</span><span class="ss">release_handler</span><span class="p">,</span><span class="ss">start_link</span><span class="p">,</span><span class="p" data-group-id="3084129339-8">[</span><span class="p" data-group-id="3084129339-8">]</span><span class="p" data-group-id="3084129339-7">}</span><span class="p" data-group-id="3084129339-6">}</span><span class="p">,</span><span class="w">
+</span><span class="p" data-group-id="3084129339-9">{</span><span class="ss">restart_type</span><span class="p">,</span><span class="ss">permanent</span><span class="p" data-group-id="3084129339-9">}</span><span class="p">,</span><span class="w">
+</span><span class="p" data-group-id="3084129339-10">{</span><span class="ss">shutdown</span><span class="p">,</span><span class="mi">2000</span><span class="p" data-group-id="3084129339-10">}</span><span class="p">,</span><span class="w">
+</span><span class="p" data-group-id="3084129339-11">{</span><span class="ss">child_type</span><span class="p">,</span><span class="ss">worker</span><span class="p" data-group-id="3084129339-11">}</span><span class="p" data-group-id="3084129339-3">]</span><span class="w">
 
 </span><span class="ss">ok</span><span class="gp unselectable">
-8&gt; </span><span class="nc">rb</span><span class="p">:</span><span class="nf">show</span><span class="p" data-group-id="5845544242-12">(</span><span class="mi">9</span><span class="p" data-group-id="5845544242-12">)</span><span class="p">.</span><span class="w">
+8&gt; </span><span class="nc">rb</span><span class="p">:</span><span class="nf">show</span><span class="p" data-group-id="3084129339-12">(</span><span class="mi">9</span><span class="p" data-group-id="3084129339-12">)</span><span class="p">.</span><span class="w">
 
 </span><span class="n">CRASH</span><span class="w"> </span><span class="n">REPORT</span><span class="w">  </span><span class="o">&lt;</span><span class="mf">0.24</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="w">                                      </span><span class="mi">1996</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">16</span><span class="w"> </span><span class="mi">16</span><span class="p">:</span><span class="mi">16</span><span class="p">:</span><span class="mi">21</span><span class="w">
 </span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">==</span><span class="o">=</span><span class="w">
 </span><span class="n">Crashing</span><span class="w"> </span><span class="ss">process</span><span class="w">
 </span><span class="ss">pid</span><span class="w">                                                                 </span><span class="o">&lt;</span><span class="mf">0.24</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="w">
 </span><span class="ss">registered_name</span><span class="w">                                              </span><span class="ss">release_handler</span><span class="w">
-</span><span class="ss">error_info</span><span class="w">                             </span><span class="p" data-group-id="5845544242-13">{</span><span class="ss">undef</span><span class="p">,</span><span class="p" data-group-id="5845544242-14">{</span><span class="ss">release_handler</span><span class="p">,</span><span class="ss">mbj_func</span><span class="p">,</span><span class="p" data-group-id="5845544242-15">[</span><span class="p" data-group-id="5845544242-15">]</span><span class="p" data-group-id="5845544242-14">}</span><span class="p" data-group-id="5845544242-13">}</span><span class="w">
+</span><span class="ss">error_info</span><span class="w">                             </span><span class="p" data-group-id="3084129339-13">{</span><span class="ss">undef</span><span class="p">,</span><span class="p" data-group-id="3084129339-14">{</span><span class="ss">release_handler</span><span class="p">,</span><span class="ss">mbj_func</span><span class="p">,</span><span class="p" data-group-id="3084129339-15">[</span><span class="p" data-group-id="3084129339-15">]</span><span class="p" data-group-id="3084129339-14">}</span><span class="p" data-group-id="3084129339-13">}</span><span class="w">
 </span><span class="ss">initial_call</span><span class="w">
-</span><span class="p" data-group-id="5845544242-16">{</span><span class="ss">gen</span><span class="p">,</span><span class="ss">init_it</span><span class="p">,</span><span class="w">
-</span><span class="p" data-group-id="5845544242-17">[</span><span class="ss">gen_server</span><span class="p">,</span><span class="w">
+</span><span class="p" data-group-id="3084129339-16">{</span><span class="ss">gen</span><span class="p">,</span><span class="ss">init_it</span><span class="p">,</span><span class="w">
+</span><span class="p" data-group-id="3084129339-17">[</span><span class="ss">gen_server</span><span class="p">,</span><span class="w">
 </span><span class="o">&lt;</span><span class="mf">0.20</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
 </span><span class="o">&lt;</span><span class="mf">0.20</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
-</span><span class="p" data-group-id="5845544242-18">{</span><span class="ss">erlang</span><span class="p">,</span><span class="nb">register</span><span class="p" data-group-id="5845544242-18">}</span><span class="p">,</span><span class="w">
+</span><span class="p" data-group-id="3084129339-18">{</span><span class="ss">erlang</span><span class="p">,</span><span class="nb">register</span><span class="p" data-group-id="3084129339-18">}</span><span class="p">,</span><span class="w">
 </span><span class="ss">release_handler</span><span class="p">,</span><span class="w">
 </span><span class="ss">release_handler</span><span class="p">,</span><span class="w">
-</span><span class="p" data-group-id="5845544242-19">[</span><span class="p" data-group-id="5845544242-19">]</span><span class="p">,</span><span class="w">
-</span><span class="p" data-group-id="5845544242-20">[</span><span class="p" data-group-id="5845544242-20">]</span><span class="p" data-group-id="5845544242-17">]</span><span class="p" data-group-id="5845544242-16">}</span><span class="w">
-</span><span class="ss">ancestors</span><span class="w">                                                </span><span class="p" data-group-id="5845544242-21">[</span><span class="ss">sasl_sup</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.18</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="5845544242-21">]</span><span class="w">
-</span><span class="ss">messages</span><span class="w">                                                                  </span><span class="p" data-group-id="5845544242-22">[</span><span class="p" data-group-id="5845544242-22">]</span><span class="w">
-</span><span class="ss">links</span><span class="w">                                                    </span><span class="p" data-group-id="5845544242-23">[</span><span class="o">&lt;</span><span class="mf">0.23</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.20</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="5845544242-23">]</span><span class="w">
-</span><span class="ss">dictionary</span><span class="w">                                                                </span><span class="p" data-group-id="5845544242-24">[</span><span class="p" data-group-id="5845544242-24">]</span><span class="w">
+</span><span class="p" data-group-id="3084129339-19">[</span><span class="p" data-group-id="3084129339-19">]</span><span class="p">,</span><span class="w">
+</span><span class="p" data-group-id="3084129339-20">[</span><span class="p" data-group-id="3084129339-20">]</span><span class="p" data-group-id="3084129339-17">]</span><span class="p" data-group-id="3084129339-16">}</span><span class="w">
+</span><span class="ss">ancestors</span><span class="w">                                                </span><span class="p" data-group-id="3084129339-21">[</span><span class="ss">sasl_sup</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.18</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="3084129339-21">]</span><span class="w">
+</span><span class="ss">messages</span><span class="w">                                                                  </span><span class="p" data-group-id="3084129339-22">[</span><span class="p" data-group-id="3084129339-22">]</span><span class="w">
+</span><span class="ss">links</span><span class="w">                                                    </span><span class="p" data-group-id="3084129339-23">[</span><span class="o">&lt;</span><span class="mf">0.23</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.20</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="3084129339-23">]</span><span class="w">
+</span><span class="ss">dictionary</span><span class="w">                                                                </span><span class="p" data-group-id="3084129339-24">[</span><span class="p" data-group-id="3084129339-24">]</span><span class="w">
 </span><span class="ss">trap_exit</span><span class="w">                                                              </span><span class="ss">false</span><span class="w">
 </span><span class="ss">status</span><span class="w">                                                               </span><span class="ss">running</span><span class="w">
 </span><span class="ss">heap_size</span><span class="w">                                                                </span><span class="mi">610</span><span class="w">
@@ -357,8 +375,8 @@ appup
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="sasl.epub" title="ePub version">
@@ -370,7 +388,7 @@ appup
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

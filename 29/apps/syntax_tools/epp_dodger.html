@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="syntax_tools v4.0.2-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/syntax_tools/epp_dodger.html" />
     <title>epp_dodger — syntax_tools v4.0.2-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-3A7226A9.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ syntax_tools
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of syntax_tools</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ syntax_tools
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/epp_dodger.erl#L70" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/epp_dodger.erl#L70" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -146,7 +164,7 @@ syntax tree is created, using the <a href="erl_syntax.html"><code class="inline"
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">parse(IODevice, 1)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#parse/2"><code class="inline">parse(IODevice, 1)</code></a>.</p></div>
 
     </div>
 
@@ -156,7 +174,7 @@ syntax tree is created, using the <a href="erl_syntax.html"><code class="inline"
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">parse(IODevice, StartLocation, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#parse/3"><code class="inline">parse(IODevice, StartLocation, [])</code></a>.</p></div>
 
     </div>
 
@@ -176,7 +194,7 @@ syntax tree is created, using the <a href="erl_syntax.html"><code class="inline"
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">parse_file(File, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#parse_file/2"><code class="inline">parse_file(File, [])</code></a>.</p></div>
 
     </div>
 
@@ -196,7 +214,7 @@ syntax tree is created, using the <a href="erl_syntax.html"><code class="inline"
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">parse_form(IODevice, StartLocation, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#parse_form/3"><code class="inline">parse_form(IODevice, StartLocation, [])</code></a>.</p></div>
 
     </div>
 
@@ -216,7 +234,7 @@ syntax tree is created, using the <a href="erl_syntax.html"><code class="inline"
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">quick_parse(IODevice, 1)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#quick_parse/2"><code class="inline">quick_parse(IODevice, 1)</code></a>.</p></div>
 
     </div>
 
@@ -226,7 +244,7 @@ syntax tree is created, using the <a href="erl_syntax.html"><code class="inline"
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">quick_parse(IODevice, StartLocation, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#quick_parse/3"><code class="inline">quick_parse(IODevice, StartLocation, [])</code></a>.</p></div>
 
     </div>
 
@@ -236,7 +254,7 @@ syntax tree is created, using the <a href="erl_syntax.html"><code class="inline"
 
       </div>
 
-        <div class="summary-synopsis"><p>Similar to <a><code class="inline">parse/3</code></a>, but does a more quick-and-dirty processing of the code.</p></div>
+        <div class="summary-synopsis"><p>Similar to <a href="#parse/3"><code class="inline">parse/3</code></a>, but does a more quick-and-dirty processing of the code.</p></div>
 
     </div>
 
@@ -246,7 +264,7 @@ syntax tree is created, using the <a href="erl_syntax.html"><code class="inline"
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">quick_parse_file(File, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#quick_parse_file/2"><code class="inline">quick_parse_file(File, [])</code></a>.</p></div>
 
     </div>
 
@@ -256,7 +274,7 @@ syntax tree is created, using the <a href="erl_syntax.html"><code class="inline"
 
       </div>
 
-        <div class="summary-synopsis"><p>Similar to <a><code class="inline">parse_file/2</code></a>, but does a more quick-and-dirty processing of the
+        <div class="summary-synopsis"><p>Similar to <a href="#parse_file/2"><code class="inline">parse_file/2</code></a>, but does a more quick-and-dirty processing of the
 code.</p></div>
 
     </div>
@@ -267,7 +285,7 @@ code.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">quick_parse_form(IODevice, StartLocation, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#quick_parse_form/3"><code class="inline">quick_parse_form(IODevice, StartLocation, [])</code></a>.</p></div>
 
     </div>
 
@@ -277,8 +295,8 @@ code.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Similar to <a><code class="inline">parse_form/3</code></a>, but does a more quick-and-dirty processing of the
-code. See <a><code class="inline">quick_parse_file/2</code></a> for details.</p></div>
+        <div class="summary-synopsis"><p>Similar to <a href="#parse_form/3"><code class="inline">parse_form/3</code></a>, but does a more quick-and-dirty processing of the
+code. See <a href="#quick_parse_file/2"><code class="inline">quick_parse_file/2</code></a> for details.</p></div>
 
     </div>
 
@@ -304,6 +322,7 @@ code. See <a><code class="inline">quick_parse_file/2</code></a> for details.</p>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:errorinfo/0">
 
@@ -317,7 +336,7 @@ code. See <a><code class="inline">quick_parse_file/2</code></a> for details.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/epp_dodger.erl#L100" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/epp_dodger.erl#L100" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -347,7 +366,7 @@ code. See <a><code class="inline">quick_parse_file/2</code></a> for details.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/epp_dodger.erl#L102" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/epp_dodger.erl#L102" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -376,6 +395,7 @@ code. See <a><code class="inline">quick_parse_file/2</code></a> for details.</p>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="parse/1">
 
@@ -387,7 +407,7 @@ code. See <a><code class="inline">quick_parse_file/2</code></a> for details.</p>
       <h1 class="signature" translate="no">parse(Dev)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/epp_dodger.erl#L215" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/epp_dodger.erl#L215" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -415,7 +435,7 @@ code. See <a><code class="inline">quick_parse_file/2</code></a> for details.</p>
       <h1 class="signature" translate="no">parse(Dev, L)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/epp_dodger.erl#L221" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/epp_dodger.erl#L221" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -443,7 +463,7 @@ code. See <a><code class="inline">quick_parse_file/2</code></a> for details.</p>
       <h1 class="signature" translate="no">parse(Dev, L0, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/epp_dodger.erl#L236" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/epp_dodger.erl#L236" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -473,7 +493,7 @@ is the initial location.</p><p><em>See also: </em><a href="#parse/2"><code class
       <h1 class="signature" translate="no">parse_file(File)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/epp_dodger.erl#L108" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/epp_dodger.erl#L108" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -501,7 +521,7 @@ is the initial location.</p><p><em>See also: </em><a href="#parse/2"><code class
       <h1 class="signature" translate="no">parse_file(File, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/epp_dodger.erl#L139" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/epp_dodger.erl#L139" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -541,7 +561,7 @@ is <code class="inline">false</code>.</p></li></ul><p><em>See also: </em><a href
       <h1 class="signature" translate="no">parse_form(Dev, L0)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/epp_dodger.erl#L288" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/epp_dodger.erl#L288" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -572,7 +592,7 @@ is <code class="inline">false</code>.</p></li></ul><p><em>See also: </em><a href
       <h1 class="signature" translate="no">parse_form(Dev, L0, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/epp_dodger.erl#L307" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/epp_dodger.erl#L307" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -608,7 +628,7 @@ that <code class="inline">{eof, Location}</code> may be returned.</p><p><em>See 
       <h1 class="signature" translate="no">quick_parse(Dev)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/epp_dodger.erl#L243" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/epp_dodger.erl#L243" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -636,7 +656,7 @@ that <code class="inline">{eof, Location}</code> may be returned.</p><p><em>See 
       <h1 class="signature" translate="no">quick_parse(Dev, L)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/epp_dodger.erl#L250" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/epp_dodger.erl#L250" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -664,7 +684,7 @@ that <code class="inline">{eof, Location}</code> may be returned.</p><p><em>See 
       <h1 class="signature" translate="no">quick_parse(Dev, L0, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/epp_dodger.erl#L264" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/epp_dodger.erl#L264" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -693,7 +713,7 @@ that <code class="inline">{eof, Location}</code> may be returned.</p><p><em>See 
       <h1 class="signature" translate="no">quick_parse_file(File)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/epp_dodger.erl#L146" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/epp_dodger.erl#L146" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -721,7 +741,7 @@ that <code class="inline">{eof, Location}</code> may be returned.</p><p><em>See 
       <h1 class="signature" translate="no">quick_parse_file(File, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/epp_dodger.erl#L169" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/epp_dodger.erl#L169" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -756,7 +776,7 @@ default.</p><p><em>See also: </em><a href="#parse_file/2"><code class="inline">p
       <h1 class="signature" translate="no">quick_parse_form(Dev, L0)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/epp_dodger.erl#L315" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/epp_dodger.erl#L315" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -787,7 +807,7 @@ default.</p><p><em>See also: </em><a href="#parse_file/2"><code class="inline">p
       <h1 class="signature" translate="no">quick_parse_form(Dev, L0, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/epp_dodger.erl#L328" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/epp_dodger.erl#L328" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -819,7 +839,7 @@ code. See <a href="#quick_parse_file/2"><code class="inline">quick_parse_file/2<
       <h1 class="signature" translate="no">tokens_to_string/1</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/epp_dodger.erl#L796" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/epp_dodger.erl#L796" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -845,8 +865,8 @@ code. See <a href="#quick_parse_file/2"><code class="inline">quick_parse_file/2<
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
         </span>
@@ -854,7 +874,7 @@ code. See <a href="#quick_parse_file/2"><code class="inline">quick_parse_file/2<
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

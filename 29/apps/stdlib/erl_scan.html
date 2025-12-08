@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="stdlib v7.1-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/erl_scan.html" />
     <title>erl_scan — stdlib v7.1-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-4F7E9F36.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ stdlib
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of stdlib</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ stdlib
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L52" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L52" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -98,7 +116,7 @@ stdlib
     <section id="moduledoc">
 <p>The Erlang token scanner.</p><p>This module contains functions for tokenizing (scanning) characters into Erlang
 tokens.</p><h2 id="module-error-information" class="section-heading"><a href="#module-error-information" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Error Information</span></h2><p><code class="inline">ErrorInfo</code> is the standard <code class="inline">ErrorInfo</code> structure that is returned from all I/O
-modules. The format is as follows:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="0375820137-1">{</span><span class="n">ErrorLocation</span><span class="p">,</span><span class="w"> </span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">ErrorDescriptor</span><span class="p" data-group-id="0375820137-1">}</span></code></pre><p>A string describing the error is obtained with the following call:</p><pre><code class="makeup erlang" translate="no"><span class="n">Module</span><span class="p">:</span><span class="nf">format_error</span><span class="p" data-group-id="2677228068-1">(</span><span class="n">ErrorDescriptor</span><span class="p" data-group-id="2677228068-1">)</span></code></pre><h2 id="module-notes" class="section-heading"><a href="#module-notes" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Notes</span></h2><p>The continuation of the first call to the re-entrant input functions must be
+modules. The format is as follows:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="1673888339-1">{</span><span class="n">ErrorLocation</span><span class="p">,</span><span class="w"> </span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">ErrorDescriptor</span><span class="p" data-group-id="1673888339-1">}</span></code></pre><p>A string describing the error is obtained with the following call:</p><pre><code class="makeup erlang" translate="no"><span class="n">Module</span><span class="p">:</span><span class="nf">format_error</span><span class="p" data-group-id="6842387473-1">(</span><span class="n">ErrorDescriptor</span><span class="p" data-group-id="6842387473-1">)</span></code></pre><h2 id="module-notes" class="section-heading"><a href="#module-notes" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Notes</span></h2><p>The continuation of the first call to the re-entrant input functions must be
 <code class="inline">[]</code>. For a complete description of how the re-entrant input scheme works, see
 Armstrong, Virding and Williams: 'Concurrent Programming in Erlang', Chapter 13.</p><h2 id="module-see-also" class="section-heading"><a href="#module-see-also" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">See Also</span></h2><p><a href="erl_anno.html"><code class="inline">erl_anno</code></a>, <a href="erl_parse.html"><code class="inline">erl_parse</code></a>, <a href="io.html"><code class="inline">io</code></a></p>
     </section>
@@ -267,7 +285,7 @@ there is no text, <code class="inline">undefined</code> is returned.</p></div>
         <div class="summary-synopsis"><p>Uses an <code class="inline">ErrorDescriptor</code> and returns a string that describes the error or
 warning. This function is usually called implicitly when an <code class="inline">ErrorInfo</code>
 structure is processed (see section
-<a>Error Information</a>).</p></div>
+<a href="erl_scan.html#module-error-information">Error Information</a>).</p></div>
 
     </div>
 
@@ -307,7 +325,7 @@ structure is processed (see section
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">string(String, 1)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#string/2"><code class="inline">string(String, 1)</code></a>.</p></div>
 
     </div>
 
@@ -317,7 +335,7 @@ structure is processed (see section
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">string(String, StartLocation, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#string/3"><code class="inline">string(String, StartLocation, [])</code></a>.</p></div>
 
     </div>
 
@@ -358,7 +376,7 @@ structure is processed (see section
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">tokens(Continuation, CharSpec, StartLocation, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#tokens/4"><code class="inline">tokens(Continuation, CharSpec, StartLocation, [])</code></a>.</p></div>
 
     </div>
 
@@ -385,6 +403,7 @@ followed by a white space) or <code class="inline">eof</code> is reached.</p></d
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:category/0">
 
@@ -398,7 +417,7 @@ followed by a white space) or <code class="inline">eof</code> is reached.</p></d
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L124" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L124" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -428,7 +447,7 @@ followed by a white space) or <code class="inline">eof</code> is reached.</p></d
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L284" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L284" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -458,7 +477,7 @@ followed by a white space) or <code class="inline">eof</code> is reached.</p></d
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L135" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L135" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -486,7 +505,7 @@ followed by a white space) or <code class="inline">eof</code> is reached.</p></d
       <h1 class="signature" translate="no">error_info()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L136" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L136" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -516,7 +535,7 @@ followed by a white space) or <code class="inline">eof</code> is reached.</p></d
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L127" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L127" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -548,7 +567,7 @@ followed by a white space) or <code class="inline">eof</code> is reached.</p></d
       <h1 class="signature" translate="no">options()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L130" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L130" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -578,7 +597,7 @@ followed by a white space) or <code class="inline">eof</code> is reached.</p></d
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L125" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L125" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -606,7 +625,7 @@ followed by a white space) or <code class="inline">eof</code> is reached.</p></d
       <h1 class="signature" translate="no">return_cont()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L288" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L288" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -636,7 +655,7 @@ followed by a white space) or <code class="inline">eof</code> is reached.</p></d
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L131" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L131" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -666,7 +685,7 @@ followed by a white space) or <code class="inline">eof</code> is reached.</p></d
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L126" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L126" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -694,7 +713,7 @@ followed by a white space) or <code class="inline">eof</code> is reached.</p></d
       <h1 class="signature" translate="no">token()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L132" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L132" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -722,7 +741,7 @@ followed by a white space) or <code class="inline">eof</code> is reached.</p></d
       <h1 class="signature" translate="no">tokens()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L134" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L134" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -750,7 +769,7 @@ followed by a white space) or <code class="inline">eof</code> is reached.</p></d
       <h1 class="signature" translate="no">tokens_result()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L292" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L292" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -782,6 +801,7 @@ followed by a white space) or <code class="inline">eof</code> is reached.</p></d
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="category/1">
 
@@ -795,7 +815,7 @@ followed by a white space) or <code class="inline">eof</code> is reached.</p></d
         <span class="note">(since OTP 18.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L408" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L408" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -825,7 +845,7 @@ followed by a white space) or <code class="inline">eof</code> is reached.</p></d
         <span class="note">(since OTP 18.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L362" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L362" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -855,7 +875,7 @@ followed by a white space) or <code class="inline">eof</code> is reached.</p></d
         <span class="note">(since OTP 18.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L373" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L373" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -884,7 +904,7 @@ there is no text, <code class="inline">undefined</code> is returned.</p>
       <h1 class="signature" translate="no">format_error(ErrorDescriptor)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L160" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L160" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -917,7 +937,7 @@ structure is processed (see section
         <span class="note">(since OTP 18.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L381" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L381" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -947,7 +967,7 @@ structure is processed (see section
         <span class="note">(since OTP 18.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L389" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L389" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -975,7 +995,7 @@ structure is processed (see section
       <h1 class="signature" translate="no">reserved_word(Atom)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L2272" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L2272" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1003,7 +1023,7 @@ structure is processed (see section
       <h1 class="signature" translate="no">string(String)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L186" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L186" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1038,7 +1058,7 @@ structure is processed (see section
       <h1 class="signature" translate="no">string(String, StartLocation)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L197" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L197" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1074,7 +1094,7 @@ structure is processed (see section
       <h1 class="signature" translate="no">string(String, StartLocation, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L277" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L277" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1141,7 +1161,7 @@ on the BEAM SSA code produced by the compiler.</li></ul></li></ul>
         <span class="note">(since OTP 18.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L420" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L420" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1171,7 +1191,7 @@ on the BEAM SSA code produced by the compiler.</li></ul></li></ul>
         <span class="note">(since OTP 18.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L400" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L400" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1200,7 +1220,7 @@ on the BEAM SSA code produced by the compiler.</li></ul></li></ul>
       <h1 class="signature" translate="no">tokens(Continuation, CharSpec, StartLocation)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L305" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L305" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1235,7 +1255,7 @@ on the BEAM SSA code produced by the compiler.</li></ul></li></ul>
       <h1 class="signature" translate="no">tokens(Continuation, CharSpec, StartLocation, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_scan.erl#L342" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_scan.erl#L342" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1277,8 +1297,8 @@ available.</p></li></ul><p>The <code class="inline">CharSpec</code> <code class=
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="stdlib.epub" title="ePub version">
@@ -1290,7 +1310,7 @@ available.</p></li></ul><p>The <code class="inline">CharSpec</code> <code class=
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

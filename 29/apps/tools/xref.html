@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="tools v4.1.3-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/tools/xref.html" />
     <title>xref — tools v4.1.3-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-A238A451.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ tools
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of tools</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ tools
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L23" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L23" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -627,7 +645,7 @@ called, all user variables are forgotten.</p><h2 id="module-see-also" class="sec
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">add_application(XrefServer, Directory, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#add_application/3"><code class="inline">add_application(XrefServer, Directory, [])</code></a>.</p></div>
 
     </div>
 
@@ -638,8 +656,8 @@ called, all user variables are forgotten.</p><h2 id="module-see-also" class="sec
       </div>
 
         <div class="summary-synopsis"><p>Adds an application, the modules of the application, and
-<a>module data</a> of the modules to an
-<a>Xref server</a>.</p></div>
+<a href="xref.html#module_data">module data</a> of the modules to an
+<a href="xref.html#xref_server">Xref server</a>.</p></div>
 
     </div>
 
@@ -649,7 +667,7 @@ called, all user variables are forgotten.</p><h2 id="module-see-also" class="sec
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">add_directory(Name, Directory, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#add_directory/3"><code class="inline">add_directory(Name, Directory, [])</code></a>.</p></div>
 
     </div>
 
@@ -660,7 +678,7 @@ called, all user variables are forgotten.</p><h2 id="module-see-also" class="sec
       </div>
 
         <div class="summary-synopsis"><p>Adds the modules found in the given directory and the
-<a>modules' data</a> to an <a>Xref server</a>.</p></div>
+<a href="xref.html#module_data">modules' data</a> to an <a href="xref.html#xref_server">Xref server</a>.</p></div>
 
     </div>
 
@@ -670,7 +688,7 @@ called, all user variables are forgotten.</p><h2 id="module-see-also" class="sec
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">add_module(Name, File, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#add_module/3"><code class="inline">add_module(Name, File, [])</code></a>.</p></div>
 
     </div>
 
@@ -680,8 +698,8 @@ called, all user variables are forgotten.</p><h2 id="module-see-also" class="sec
 
       </div>
 
-        <div class="summary-synopsis"><p>Adds a module and its <a>module data</a> to an
-<a>Xref server</a>.</p></div>
+        <div class="summary-synopsis"><p>Adds a module and its <a href="xref.html#module_data">module data</a> to an
+<a href="xref.html#xref_server">Xref server</a>.</p></div>
 
     </div>
 
@@ -691,7 +709,7 @@ called, all user variables are forgotten.</p><h2 id="module-see-also" class="sec
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">add_release(Name, Directory, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#add_release/3"><code class="inline">add_release(Name, Directory, [])</code></a>.</p></div>
 
     </div>
 
@@ -702,8 +720,8 @@ called, all user variables are forgotten.</p><h2 id="module-see-also" class="sec
       </div>
 
         <div class="summary-synopsis"><p>Adds a release, the applications of the release, the modules of the
-applications, and <a>module data</a> of the modules to an
-<a>Xref server</a>.</p></div>
+applications, and <a href="xref.html#module_data">module data</a> of the modules to an
+<a href="xref.html#xref_server">Xref server</a>.</p></div>
 
     </div>
 
@@ -713,7 +731,7 @@ applications, and <a>module data</a> of the modules to an
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">analyze(XrefServer, Analysis, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#analyze/3"><code class="inline">analyze(XrefServer, Analysis, [])</code></a>.</p></div>
 
     </div>
 
@@ -734,8 +752,8 @@ applications, and <a>module data</a> of the modules to an
       </div>
 
         <div class="summary-synopsis"><p>The modules found in the given directory are checked for calls to
-<a>deprecated functions</a>, calls to
-<a>undefined functions</a>, and for unused local
+<a href="xref.html#deprecated_function">deprecated functions</a>, calls to
+<a href="xref.html#undefined_function">undefined functions</a>, and for unused local
 functions.</p></div>
 
     </div>
@@ -746,8 +764,8 @@ functions.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Removes all <a>user variables</a> of an
-<a>Xref server</a>.</p></div>
+        <div class="summary-synopsis"><p>Removes all <a href="xref.html#user_variable">user variables</a> of an
+<a href="xref.html#xref_server">Xref server</a>.</p></div>
 
     </div>
 
@@ -757,8 +775,8 @@ functions.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Removes the <a>user variables</a> given by <code class="inline">Variables</code> from
-an <a>Xref server</a>.</p></div>
+        <div class="summary-synopsis"><p>Removes the <a href="xref.html#user_variable">user variables</a> given by <code class="inline">Variables</code> from
+an <a href="xref.html#xref_server">Xref server</a>.</p></div>
 
     </div>
 
@@ -799,7 +817,7 @@ an <a>Xref server</a>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Returns the <a>library path</a>.</p></div>
+        <div class="summary-synopsis"><p>Returns the <a href="xref.html#library_path">library path</a>.</p></div>
 
     </div>
 
@@ -809,9 +827,9 @@ an <a>Xref server</a>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>The <a><code class="inline">info/1</code></a> function returns information as a list of pairs <code class="inline">{Tag, term()</code> in
-some order about the state and the <a>module data</a> of an
-<a>Xref server</a>.</p></div>
+        <div class="summary-synopsis"><p>The <a href="#info/1"><code class="inline">info/1</code></a> function returns information as a list of pairs <code class="inline">{Tag, term()</code> in
+some order about the state and the <a href="xref.html#module_data">module data</a> of an
+<a href="xref.html#xref_server">Xref server</a>.</p></div>
 
     </div>
 
@@ -822,7 +840,7 @@ some order about the state and the <a>module data</a> of an
       </div>
 
         <div class="summary-synopsis"><p>Returns information about all items belonging to category <code class="inline">Category</code>.
-See <a><code class="inline">info/3</code></a> for details.</p></div>
+See <a href="#info/3"><code class="inline">info/3</code></a> for details.</p></div>
 
     </div>
 
@@ -833,8 +851,8 @@ See <a><code class="inline">info/3</code></a> for details.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>The <code class="inline">info</code> functions return information as a list of pairs <code class="inline">{Tag, term()}</code> in
-some order about the state and the <a>module data</a> of an
-<a>Xref server</a>.</p></div>
+some order about the state and the <a href="xref.html#module_data">module data</a> of an
+<a href="xref.html#xref_server">Xref server</a>.</p></div>
 
     </div>
 
@@ -846,8 +864,8 @@ some order about the state and the <a>module data</a> of an
 
         <div class="summary-synopsis"><p>The given BEAM file (with or without the <code class="inline">.beam</code> extension) or the file found by
 calling <code class="inline">code:which(Module)</code> is checked for calls to
-<a>deprecated functions</a>, calls to
-<a>undefined functions</a>, and for unused local
+<a href="xref.html#deprecated_function">deprecated functions</a>, calls to
+<a href="xref.html#undefined_function">undefined functions</a>, and for unused local
 functions.</p></div>
 
     </div>
@@ -858,7 +876,7 @@ functions.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">q(XrefServer, Query, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#q/3"><code class="inline">q(XrefServer, Query, [])</code></a>.</p></div>
 
     </div>
 
@@ -868,8 +886,8 @@ functions.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Evaluates a <a>query</a> in the context of an
-<a>Xref server</a>, and returns the value of the last
+        <div class="summary-synopsis"><p>Evaluates a <a href="xref.html#query">query</a> in the context of an
+<a href="xref.html#xref_server">Xref server</a>, and returns the value of the last
 statement.</p></div>
 
     </div>
@@ -880,8 +898,8 @@ statement.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Removes applications and their modules and <a>module data</a>
-from an <a>Xref server</a>.</p></div>
+        <div class="summary-synopsis"><p>Removes applications and their modules and <a href="xref.html#module_data">module data</a>
+from an <a href="xref.html#xref_server">Xref server</a>.</p></div>
 
     </div>
 
@@ -891,8 +909,8 @@ from an <a>Xref server</a>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Removes <a>analyzed modules</a> and
-<a>module data</a> from an <a>Xref server</a>.</p></div>
+        <div class="summary-synopsis"><p>Removes <a href="xref.html#analyzed_module">analyzed modules</a> and
+<a href="xref.html#module_data">module data</a> from an <a href="xref.html#xref_server">Xref server</a>.</p></div>
 
     </div>
 
@@ -903,7 +921,7 @@ from an <a>Xref server</a>.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Removes releases and their applications, modules, and
-<a>module data</a> from an <a>Xref server</a>.</p></div>
+<a href="xref.html#module_data">module data</a> from an <a href="xref.html#xref_server">Xref server</a>.</p></div>
 
     </div>
 
@@ -913,7 +931,7 @@ from an <a>Xref server</a>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">replace_application(XrefServer, Application, Directory, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#replace_application/4"><code class="inline">replace_application(XrefServer, Application, Directory, [])</code></a>.</p></div>
 
     </div>
 
@@ -934,7 +952,7 @@ application directory.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">replace_module(XrefServer, Module, File, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#replace_module/4"><code class="inline">replace_module(XrefServer, Module, File, [])</code></a>.</p></div>
 
     </div>
 
@@ -944,8 +962,8 @@ application directory.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Replaces <a>module data</a> of an
-<a>analyzed module</a> with data read from a BEAM file.</p></div>
+        <div class="summary-synopsis"><p>Replaces <a href="xref.html#module_data">module data</a> of an
+<a href="xref.html#analyzed_module">analyzed module</a> with data read from a BEAM file.</p></div>
 
     </div>
 
@@ -975,7 +993,7 @@ application directory.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">set_library_path(XrefServer, LibraryPath, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#set_library_path/3"><code class="inline">set_library_path(XrefServer, LibraryPath, [])</code></a>.</p></div>
 
     </div>
 
@@ -985,7 +1003,7 @@ application directory.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Sets the <a>library path</a>.</p></div>
+        <div class="summary-synopsis"><p>Sets the <a href="xref.html#library_path">library path</a>.</p></div>
 
     </div>
 
@@ -995,7 +1013,7 @@ application directory.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Creates an <a>Xref server</a>.</p></div>
+        <div class="summary-synopsis"><p>Creates an <a href="xref.html#xref_server">Xref server</a>.</p></div>
 
     </div>
 
@@ -1005,7 +1023,7 @@ application directory.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Creates an <a>Xref server</a> with a given name.</p></div>
+        <div class="summary-synopsis"><p>Creates an <a href="xref.html#xref_server">Xref server</a> with a given name.</p></div>
 
     </div>
 
@@ -1015,7 +1033,7 @@ application directory.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Stops an <a>Xref server</a>.</p></div>
+        <div class="summary-synopsis"><p>Stops an <a href="xref.html#xref_server">Xref server</a>.</p></div>
 
     </div>
 
@@ -1025,7 +1043,7 @@ application directory.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">update(XrefServer, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#update/2"><code class="inline">update(XrefServer, [])</code></a>.</p></div>
 
     </div>
 
@@ -1035,8 +1053,8 @@ application directory.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Replaces the <a>module data</a> of all
-<a>analyzed modules</a> the BEAM files of which have been
+        <div class="summary-synopsis"><p>Replaces the <a href="xref.html#module_data">module data</a> of all
+<a href="xref.html#analyzed_module">analyzed modules</a> the BEAM files of which have been
 modified since last read by an <code class="inline">add</code> function or <code class="inline">update</code>.</p></div>
 
     </div>
@@ -1047,7 +1065,7 @@ modified since last read by an <code class="inline">add</code> function or <code
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">variables(XrefServer, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#variables/2"><code class="inline">variables(XrefServer, [])</code></a>.</p></div>
 
     </div>
 
@@ -1058,7 +1076,7 @@ modified since last read by an <code class="inline">add</code> function or <code
       </div>
 
         <div class="summary-synopsis"><p>Returns a sorted lists of the names of the variables of an
-<a>Xref server</a>.</p></div>
+<a href="xref.html#xref_server">Xref server</a>.</p></div>
 
     </div>
 
@@ -1074,6 +1092,7 @@ modified since last read by an <code class="inline">add</code> function or <code
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:add_dir_rsn/0">
 
@@ -1087,7 +1106,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L956" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L956" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1122,7 +1141,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L910" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L910" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1158,7 +1177,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1497" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1497" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1201,7 +1220,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1514" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1514" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1237,7 +1256,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1617" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1617" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1275,7 +1294,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1490" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1490" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1305,7 +1324,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L602" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L602" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1335,7 +1354,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L603" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L603" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1365,7 +1384,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1615" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1615" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1395,7 +1414,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L604" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L604" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1425,7 +1444,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1616" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1616" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1455,7 +1474,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1491" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1491" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1485,7 +1504,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L605" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L605" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1515,7 +1534,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L606" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L606" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1545,7 +1564,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L607" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L607" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1575,7 +1594,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1494" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1494" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1605,7 +1624,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L608" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L608" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1635,7 +1654,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L609" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L609" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1665,7 +1684,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1185" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1185" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1712,7 +1731,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L610" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L610" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1742,7 +1761,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L611" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L611" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1772,7 +1791,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1495" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1495" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1802,7 +1821,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L612" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L612" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1832,7 +1851,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L613" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L613" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1862,7 +1881,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1627" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1627" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1900,7 +1919,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1496" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1496" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1930,7 +1949,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L614" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L614" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1960,7 +1979,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L615" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L615" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1990,7 +2009,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L616" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L616" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2020,7 +2039,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L617" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L617" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2050,7 +2069,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L618" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L618" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2080,7 +2099,7 @@ modified since last read by an <code class="inline">add</code> function or <code
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L619" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L619" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2109,6 +2128,7 @@ modified since last read by an <code class="inline">add</code> function or <code
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="add_application/2">
 
@@ -2120,7 +2140,7 @@ modified since last read by an <code class="inline">add</code> function or <code
       <h1 class="signature" translate="no">add_application(XrefServer, Directory)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L871" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L871" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2154,7 +2174,7 @@ modified since last read by an <code class="inline">add</code> function or <code
       <h1 class="signature" translate="no">add_application(XrefServer, Directory, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L907" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L907" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2203,7 +2223,7 @@ contain no <a href="xref.html#debug_info">debug information</a> are ignored.</p>
       <h1 class="signature" translate="no">add_directory(XrefServer, Directory)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L973" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L973" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2238,7 +2258,7 @@ contain no <a href="xref.html#debug_info">debug information</a> are ignored.</p>
       <h1 class="signature" translate="no">add_directory(XrefServer, Directory, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1007" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1007" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2283,7 +2303,7 @@ contain no <a href="xref.html#debug_info">debug information</a> are ignored.</p>
       <h1 class="signature" translate="no">add_module(XrefServer, File)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L926" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L926" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2312,7 +2332,7 @@ contain no <a href="xref.html#debug_info">debug information</a> are ignored.</p>
       <h1 class="signature" translate="no">add_module(XrefServer, File, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L953" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L953" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2353,7 +2373,7 @@ file contains no <a href="xref.html#debug_info">debug information</a>, the error
       <h1 class="signature" translate="no">add_release(XrefServer, Directory)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L820" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L820" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2388,7 +2408,7 @@ file contains no <a href="xref.html#debug_info">debug information</a>, the error
       <h1 class="signature" translate="no">add_release(XrefServer, Directory, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L859" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L859" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2440,7 +2460,7 @@ contain no <a href="xref.html#debug_info">debug information</a> are ignored.</p>
       <h1 class="signature" translate="no">analyze(XrefServer, Analysis)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1530" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1530" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2473,7 +2493,7 @@ contain no <a href="xref.html#debug_info">debug information</a> are ignored.</p>
       <h1 class="signature" translate="no">analyze(XrefServer, Analysis, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1612" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1612" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2540,7 +2560,7 @@ given releases.</p></li></ul>
       <h1 class="signature" translate="no">d(Directory)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L734" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L734" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2587,7 +2607,7 @@ deprecated functions;</li><li><code class="inline">undefined</code>, the second 
       <h1 class="signature" translate="no">forget(XrefServer)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1420" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1420" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2616,7 +2636,7 @@ deprecated functions;</li><li><code class="inline">undefined</code>, the second 
       <h1 class="signature" translate="no">forget(XrefServer, Variables)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1432" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1432" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2649,7 +2669,7 @@ an <a href="xref.html#xref_server">Xref server</a>.</p>
       <h1 class="signature" translate="no">format_error(Error)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1768" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1768" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2678,7 +2698,7 @@ an <a href="xref.html#xref_server">Xref server</a>.</p>
       <h1 class="signature" translate="no">get_default(XrefServer)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1701" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1701" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2710,7 +2730,7 @@ an <a href="xref.html#xref_server">Xref server</a>.</p>
       <h1 class="signature" translate="no">get_default(XrefServer, Option)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1713" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1713" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2743,7 +2763,7 @@ an <a href="xref.html#xref_server">Xref server</a>.</p>
       <h1 class="signature" translate="no">get_library_path(XrefServer)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1138" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1138" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2772,7 +2792,7 @@ an <a href="xref.html#xref_server">Xref server</a>.</p>
       <h1 class="signature" translate="no">info(XrefServer)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1232" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1232" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2808,7 +2828,7 @@ resolved <a href="xref.html#external_call">external calls</a> and
       <h1 class="signature" translate="no">info(XrefServer, Category)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1247" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1247" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2842,7 +2862,7 @@ See <a href="#info/3"><code class="inline">info/3</code></a> for details.</p>
       <h1 class="signature" translate="no">info(XrefServer, Category, Items)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1373" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1373" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2909,7 +2929,7 @@ calls and unresolved calls:</p><ul><li><code class="inline">&quot;# LC + # XC&qu
       <h1 class="signature" translate="no">m(FileOrModule)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L664" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L664" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2958,7 +2978,7 @@ deprecated functions;</li><li><code class="inline">undefined</code>, the second 
       <h1 class="signature" translate="no">q(XrefServer, Query)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1645" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1645" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2987,7 +3007,7 @@ deprecated functions;</li><li><code class="inline">undefined</code>, the second 
       <h1 class="signature" translate="no">q(XrefServer, Query, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1690" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1690" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3036,7 +3056,7 @@ list without duplicates of <code class="inline">AllLines</code>.</li></ul><p>For
       <h1 class="signature" translate="no">remove_application(XrefServer, Applications)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1117" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1117" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3069,7 +3089,7 @@ from an <a href="xref.html#xref_server">Xref server</a>.</p>
       <h1 class="signature" translate="no">remove_module(XrefServer, Modules)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1104" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1104" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3102,7 +3122,7 @@ from an <a href="xref.html#xref_server">Xref server</a>.</p>
       <h1 class="signature" translate="no">remove_release(XrefServer, Releases)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1130" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1130" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3135,7 +3155,7 @@ from an <a href="xref.html#xref_server">Xref server</a>.</p>
       <h1 class="signature" translate="no">replace_application(XrefServer, Application, Directory)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1063" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1063" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3169,7 +3189,7 @@ from an <a href="xref.html#xref_server">Xref server</a>.</p>
       <h1 class="signature" translate="no">replace_application(XrefServer, Application, Directory, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1091" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1091" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3215,7 +3235,7 @@ used.</p>
       <h1 class="signature" translate="no">replace_module(XrefServer, Module, File)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1021" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1021" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3251,7 +3271,7 @@ used.</p>
       <h1 class="signature" translate="no">replace_module(XrefServer, Module, File, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1050" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1050" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3293,7 +3313,7 @@ modules.</p>
       <h1 class="signature" translate="no">set_default(XrefServer, OptionValues)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1731" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1731" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3328,7 +3348,7 @@ modules.</p>
       <h1 class="signature" translate="no">set_default(XrefServer, Option, Value)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1756" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1756" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3363,7 +3383,7 @@ modules.</p>
       <h1 class="signature" translate="no">set_library_path(XrefServer, LibraryPath)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1150" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1150" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3398,7 +3418,7 @@ modules.</p>
       <h1 class="signature" translate="no">set_library_path(XrefServer, LibraryPath, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1182" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1182" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3443,7 +3463,7 @@ determined, and the <code class="inline">info</code> functions will return empty
       <h1 class="signature" translate="no">start(NameOrOptions)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L768" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L768" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3478,7 +3498,7 @@ not recognized by Xref are passed on to <a href="../../apps/stdlib/gen_server.ht
       <h1 class="signature" translate="no">start(Name, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L787" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L787" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3508,7 +3528,7 @@ not recognized by Xref are passed on to <a href="../../apps/stdlib/gen_server.ht
       <h1 class="signature" translate="no">stop(XrefServer)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L805" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L805" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3536,7 +3556,7 @@ not recognized by Xref are passed on to <a href="../../apps/stdlib/gen_server.ht
       <h1 class="signature" translate="no">update(XrefServer)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1385" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1385" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3568,7 +3588,7 @@ not recognized by Xref are passed on to <a href="../../apps/stdlib/gen_server.ht
       <h1 class="signature" translate="no">update(XrefServer, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1410" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1410" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3606,7 +3626,7 @@ the replaced modules.</p>
       <h1 class="signature" translate="no">variables(XrefServer)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1441" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1441" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3637,7 +3657,7 @@ the replaced modules.</p>
       <h1 class="signature" translate="no">variables(XrefServer, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/xref.erl#L1461" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/xref.erl#L1461" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3670,8 +3690,8 @@ the replaced modules.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="tools.epub" title="ePub version">
@@ -3683,7 +3703,7 @@ the replaced modules.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

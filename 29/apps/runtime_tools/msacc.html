@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="runtime_tools v2.3-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/runtime_tools/msacc.html" />
     <title>msacc — runtime_tools v2.3-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-DFA571A8.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ runtime_tools
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of runtime_tools</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ runtime_tools
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/msacc.erl#L30" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/msacc.erl#L30" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -99,9 +117,9 @@ runtime_tools
 <p>Convenience functions for microstate accounting</p><p>This module implements some convenience functions for analyzing microstate
 accounting data. For details about how to use the basic API and what the
 different states represent, see
-<a href="../../apps/erts/erlang.html#statistics_microstate_accounting"><code class="inline">erlang:statistics(microstate_accounting)</code></a>.</p><p><a href="" id="msacc_print_example"></a></p><p><em>Basic Scenario</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">msacc</span><span class="p">:</span><span class="nf">start</span><span class="p" data-group-id="5606107371-1">(</span><span class="mi">1000</span><span class="p" data-group-id="5606107371-1">)</span><span class="p">.</span><span class="w">
+<a href="../../apps/erts/erlang.html#statistics_microstate_accounting"><code class="inline">erlang:statistics(microstate_accounting)</code></a>.</p><p><a href="" id="msacc_print_example"></a></p><p><em>Basic Scenario</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">msacc</span><span class="p">:</span><span class="nf">start</span><span class="p" data-group-id="8956089071-1">(</span><span class="mi">1000</span><span class="p" data-group-id="8956089071-1">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">ok</span><span class="gp unselectable">
-2&gt; </span><span class="nc">msacc</span><span class="p">:</span><span class="nf">print</span><span class="p" data-group-id="5606107371-2">(</span><span class="p" data-group-id="5606107371-2">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">msacc</span><span class="p">:</span><span class="nf">print</span><span class="p" data-group-id="8956089071-2">(</span><span class="p" data-group-id="8956089071-2">)</span><span class="p">.</span><span class="w">
 </span><span class="n">Average</span><span class="w"> </span><span class="ss">thread</span><span class="w"> </span><span class="ss">real</span><span class="o">-</span><span class="ss">time</span><span class="w">    </span><span class="p">:</span><span class="w"> </span><span class="mi">1000513</span><span class="w"> </span><span class="ss">us</span><span class="w">
 </span><span class="n">Accumulated</span><span class="w"> </span><span class="ss">system</span><span class="w"> </span><span class="ss">run</span><span class="o">-</span><span class="ss">time</span><span class="w"> </span><span class="p">:</span><span class="w">    </span><span class="mi">2213</span><span class="w"> </span><span class="ss">us</span><span class="w">
 </span><span class="n">Average</span><span class="w"> </span><span class="ss">scheduler</span><span class="w"> </span><span class="ss">run</span><span class="o">-</span><span class="ss">time</span><span class="w">  </span><span class="p">:</span><span class="w">    </span><span class="mi">1076</span><span class="w"> </span><span class="ss">us</span><span class="w">
@@ -109,11 +127,11 @@ different states represent, see
         </span><span class="n">Thread</span><span class="w">      </span><span class="ss">aux</span><span class="w"> </span><span class="ss">check_io</span><span class="w"> </span><span class="ss">emulator</span><span class="w">       </span><span class="ss">gc</span><span class="w">    </span><span class="ss">other</span><span class="w">     </span><span class="ss">port</span><span class="w">    </span><span class="ss">sleep</span><span class="w">
 
 </span><span class="n">Stats</span><span class="w"> </span><span class="ss">per</span><span class="w"> </span><span class="nc">thread</span><span class="p">:</span><span class="w">
-     </span><span class="nf">async</span><span class="p" data-group-id="5606107371-3">(</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="5606107371-3">)</span><span class="w">    </span><span class="mf">0.00</span><span class="c1">%    0.00%    0.00%    0.00%    0.00%    0.00%  100.00%</span><span class="w">
-     </span><span class="nf">async</span><span class="p" data-group-id="5606107371-4">(</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="5606107371-4">)</span><span class="w">    </span><span class="mf">0.00</span><span class="c1">%    0.00%    0.00%    0.00%    0.00%    0.00%  100.00%</span><span class="w">
-       </span><span class="nf">aux</span><span class="p" data-group-id="5606107371-5">(</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="5606107371-5">)</span><span class="w">    </span><span class="mf">0.00</span><span class="c1">%    0.00%    0.00%    0.00%    0.00%    0.00%   99.99%</span><span class="w">
- </span><span class="nf">scheduler</span><span class="p" data-group-id="5606107371-6">(</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="5606107371-6">)</span><span class="w">    </span><span class="mf">0.00</span><span class="c1">%    0.03%    0.13%    0.00%    0.01%    0.00%   99.82%</span><span class="w">
- </span><span class="nf">scheduler</span><span class="p" data-group-id="5606107371-7">(</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="5606107371-7">)</span><span class="w">    </span><span class="mf">0.00</span><span class="c1">%    0.00%    0.00%    0.00%    0.03%    0.00%   99.97%</span><span class="w">
+     </span><span class="nf">async</span><span class="p" data-group-id="8956089071-3">(</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="8956089071-3">)</span><span class="w">    </span><span class="mf">0.00</span><span class="c1">%    0.00%    0.00%    0.00%    0.00%    0.00%  100.00%</span><span class="w">
+     </span><span class="nf">async</span><span class="p" data-group-id="8956089071-4">(</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="8956089071-4">)</span><span class="w">    </span><span class="mf">0.00</span><span class="c1">%    0.00%    0.00%    0.00%    0.00%    0.00%  100.00%</span><span class="w">
+       </span><span class="nf">aux</span><span class="p" data-group-id="8956089071-5">(</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="8956089071-5">)</span><span class="w">    </span><span class="mf">0.00</span><span class="c1">%    0.00%    0.00%    0.00%    0.00%    0.00%   99.99%</span><span class="w">
+ </span><span class="nf">scheduler</span><span class="p" data-group-id="8956089071-6">(</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="8956089071-6">)</span><span class="w">    </span><span class="mf">0.00</span><span class="c1">%    0.03%    0.13%    0.00%    0.01%    0.00%   99.82%</span><span class="w">
+ </span><span class="nf">scheduler</span><span class="p" data-group-id="8956089071-7">(</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="8956089071-7">)</span><span class="w">    </span><span class="mf">0.00</span><span class="c1">%    0.00%    0.00%    0.00%    0.03%    0.00%   99.97%</span><span class="w">
 
 </span><span class="n">Stats</span><span class="w"> </span><span class="ss">per</span><span class="w"> </span><span class="nc">type</span><span class="p">:</span><span class="w">
          </span><span class="ss">async</span><span class="w">    </span><span class="mf">0.00</span><span class="c1">%    0.00%    0.00%    0.00%    0.00%    0.00%  100.00%</span><span class="w">
@@ -188,7 +206,7 @@ microseconds spent in it.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>The different options that can be given to <a><code class="inline">print/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>The different options that can be given to <a href="#print/2"><code class="inline">print/2</code></a>.</p></div>
 
     </div>
 
@@ -199,7 +217,7 @@ microseconds spent in it.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>The different states that a thread can be in. See
-<a>erlang:statistics(microstate_accounting)</a>
+<a href="../../apps/erts/erlang.html#statistics_microstate_accounting">erlang:statistics(microstate_accounting)</a>
 for details.</p></div>
 
     </div>
@@ -233,7 +251,7 @@ that specific <code class="inline">thread</code> is part of the map.</p></div>
 
         <div class="summary-synopsis"><p>A map containing information about a specific thread. The percentages in the map
 can be either run-time or real-time depending on if <code class="inline">runtime</code> or <code class="inline">realtime</code> was
-requested from <a><code class="inline">stats/2</code></a>. <code class="inline">system</code> is the percentage of total system time for
+requested from <a href="#stats/2"><code class="inline">stats/2</code></a>. <code class="inline">system</code> is the percentage of total system time for
 this specific thread.</p></div>
 
     </div>
@@ -268,7 +286,7 @@ this specific thread.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Read a file dump produced by <a>to_file(Filename)</a>.</p></div>
+        <div class="summary-synopsis"><p>Read a file dump produced by <a href="#to_file/1">to_file(Filename)</a>.</p></div>
 
     </div>
 
@@ -279,7 +297,7 @@ this specific thread.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Prints the current microstate accounting to standard out. Equivalent to
-<a><code class="inline">msacc:print(msacc:stats(), #{}).</code></a></p></div>
+<a href="#print/1"><code class="inline">msacc:print(msacc:stats(), #{}).</code></a></p></div>
 
     </div>
 
@@ -289,7 +307,7 @@ this specific thread.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">print(DataOrStats, #{})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#print/2"><code class="inline">print(DataOrStats, #{})</code></a>.</p></div>
 
     </div>
 
@@ -312,7 +330,7 @@ description of what the fields mean.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Print the given microstate statistics values to the given file or device. The
-other arguments behave the same way as for <a><code class="inline">print/2</code></a>.</p></div>
+other arguments behave the same way as for <a href="#print/2"><code class="inline">print/2</code></a>.</p></div>
 
     </div>
 
@@ -357,7 +375,7 @@ milliseconds.</p></div>
 
         <div class="summary-synopsis"><p>Returns a runtime system independent version of the microstate statistics data
 presented by
-<a><code class="inline">erlang:statistics(microstate_accounting)</code></a>.
+<a href="../../apps/erts/erlang.html#statistics_microstate_accounting"><code class="inline">erlang:statistics(microstate_accounting)</code></a>.
 All counters have been normalized to be in microsecond resolution.</p></div>
 
     </div>
@@ -391,7 +409,7 @@ disabled.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Dumps the current microstate statistics counters to a file that can be parsed
-with <a><code class="inline">file:consult/1</code></a>.</p></div>
+with <a href="../../apps/kernel/file.html#consult/1"><code class="inline">file:consult/1</code></a>.</p></div>
 
     </div>
 
@@ -407,6 +425,7 @@ with <a><code class="inline">file:consult/1</code></a>.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:msacc_data/0">
 
@@ -422,7 +441,7 @@ with <a><code class="inline">file:consult/1</code></a>.</p></div>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/msacc.erl#L95" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/msacc.erl#L95" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -454,7 +473,7 @@ with <a><code class="inline">file:consult/1</code></a>.</p></div>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/msacc.erl#L104" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/msacc.erl#L104" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -487,7 +506,7 @@ microseconds spent in it.</p>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/msacc.erl#L97" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/msacc.erl#L97" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -523,7 +542,7 @@ microseconds spent in it.</p>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/msacc.erl#L129" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/msacc.erl#L129" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -555,7 +574,7 @@ microseconds spent in it.</p>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/msacc.erl#L140" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/msacc.erl#L140" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -587,7 +606,7 @@ microseconds spent in it.</p>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/msacc.erl#L135" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/msacc.erl#L135" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -623,7 +642,7 @@ for details.</p>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/msacc.erl#L106" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/msacc.erl#L106" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -655,7 +674,7 @@ for details.</p>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/msacc.erl#L123" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/msacc.erl#L123" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -690,7 +709,7 @@ that specific <code class="inline">thread</code> is part of the map.</p>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/msacc.erl#L113" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/msacc.erl#L113" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -730,7 +749,7 @@ this specific thread.</p>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/msacc.erl#L127" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/msacc.erl#L127" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -759,6 +778,7 @@ this specific thread.</p>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="available/0">
 
@@ -772,7 +792,7 @@ this specific thread.</p>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/msacc.erl#L145" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/msacc.erl#L145" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -802,7 +822,7 @@ this specific thread.</p>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/msacc.erl#L206" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/msacc.erl#L206" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -832,7 +852,7 @@ this specific thread.</p>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/msacc.erl#L216" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/msacc.erl#L216" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -863,7 +883,7 @@ this specific thread.</p>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/msacc.erl#L223" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/msacc.erl#L223" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -893,7 +913,7 @@ this specific thread.</p>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/msacc.erl#L254" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/msacc.erl#L254" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -913,7 +933,7 @@ this specific thread.</p>
 this can be verbose. See the top of this reference manual for a brief
 description of what the fields mean.</p><p>It is possible to print more specific types of statistics by first manipulating
 the <code class="inline">DataOrStats</code> using <a href="#stats/2"><code class="inline">stats/2</code></a>. For instance if you want to print the
-percentage of run-time for each thread you can do:</p><pre><code class="makeup erlang" translate="no"><span class="nc">msacc</span><span class="p">:</span><span class="nf">print</span><span class="p" data-group-id="5642041387-1">(</span><span class="nc">msacc</span><span class="p">:</span><span class="nf">stats</span><span class="p" data-group-id="5642041387-2">(</span><span class="ss">runtime</span><span class="p">,</span><span class="w"> </span><span class="nc">msacc</span><span class="p">:</span><span class="nf">stats</span><span class="p" data-group-id="5642041387-3">(</span><span class="p" data-group-id="5642041387-3">)</span><span class="p" data-group-id="5642041387-2">)</span><span class="p" data-group-id="5642041387-1">)</span><span class="p">.</span></code></pre><p>If you want to only print run-time per thread type you can do:</p><pre><code class="makeup erlang" translate="no"><span class="nc">msacc</span><span class="p">:</span><span class="nf">print</span><span class="p" data-group-id="7856111425-1">(</span><span class="nc">msacc</span><span class="p">:</span><span class="nf">stats</span><span class="p" data-group-id="7856111425-2">(</span><span class="ss">type</span><span class="p">,</span><span class="w"> </span><span class="nc">msacc</span><span class="p">:</span><span class="nf">stats</span><span class="p" data-group-id="7856111425-3">(</span><span class="ss">runtime</span><span class="p">,</span><span class="w"> </span><span class="nc">msacc</span><span class="p">:</span><span class="nf">stats</span><span class="p" data-group-id="7856111425-4">(</span><span class="p" data-group-id="7856111425-4">)</span><span class="p" data-group-id="7856111425-3">)</span><span class="p" data-group-id="7856111425-2">)</span><span class="p" data-group-id="7856111425-1">)</span><span class="p">.</span></code></pre><p><em>Options</em></p><ul><li><strong><code class="inline">system</code></strong> - Print percentage of time spent in each state out of system time
+percentage of run-time for each thread you can do:</p><pre><code class="makeup erlang" translate="no"><span class="nc">msacc</span><span class="p">:</span><span class="nf">print</span><span class="p" data-group-id="4596267396-1">(</span><span class="nc">msacc</span><span class="p">:</span><span class="nf">stats</span><span class="p" data-group-id="4596267396-2">(</span><span class="ss">runtime</span><span class="p">,</span><span class="w"> </span><span class="nc">msacc</span><span class="p">:</span><span class="nf">stats</span><span class="p" data-group-id="4596267396-3">(</span><span class="p" data-group-id="4596267396-3">)</span><span class="p" data-group-id="4596267396-2">)</span><span class="p" data-group-id="4596267396-1">)</span><span class="p">.</span></code></pre><p>If you want to only print run-time per thread type you can do:</p><pre><code class="makeup erlang" translate="no"><span class="nc">msacc</span><span class="p">:</span><span class="nf">print</span><span class="p" data-group-id="0137907103-1">(</span><span class="nc">msacc</span><span class="p">:</span><span class="nf">stats</span><span class="p" data-group-id="0137907103-2">(</span><span class="ss">type</span><span class="p">,</span><span class="w"> </span><span class="nc">msacc</span><span class="p">:</span><span class="nf">stats</span><span class="p" data-group-id="0137907103-3">(</span><span class="ss">runtime</span><span class="p">,</span><span class="w"> </span><span class="nc">msacc</span><span class="p">:</span><span class="nf">stats</span><span class="p" data-group-id="0137907103-4">(</span><span class="p" data-group-id="0137907103-4">)</span><span class="p" data-group-id="0137907103-3">)</span><span class="p" data-group-id="0137907103-2">)</span><span class="p" data-group-id="0137907103-1">)</span><span class="p">.</span></code></pre><p><em>Options</em></p><ul><li><strong><code class="inline">system</code></strong> - Print percentage of time spent in each state out of system time
 as well as thread time. Default: false.</li></ul>
   </section>
 </section>
@@ -929,7 +949,7 @@ as well as thread time. Default: false.</li></ul>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/msacc.erl#L266" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/msacc.erl#L266" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -964,7 +984,7 @@ other arguments behave the same way as for <a href="#print/2"><code class="inlin
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/msacc.erl#L177" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/msacc.erl#L177" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -995,7 +1015,7 @@ disabled.</p>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/msacc.erl#L159" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/msacc.erl#L159" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1026,7 +1046,7 @@ disabled.</p>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/msacc.erl#L187" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/msacc.erl#L187" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1057,7 +1077,7 @@ milliseconds.</p>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/msacc.erl#L304" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/msacc.erl#L304" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1090,7 +1110,7 @@ All counters have been normalized to be in microsecond resolution.</p>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/msacc.erl#L343" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/msacc.erl#L343" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1128,7 +1148,7 @@ of the same type has been merged.</p>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/msacc.erl#L168" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/msacc.erl#L168" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1159,7 +1179,7 @@ disabled.</p>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/runtime_tools/src/msacc.erl#L199" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/runtime_tools/src/msacc.erl#L199" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1186,8 +1206,8 @@ with <a href="../../apps/kernel/file.html#consult/1"><code class="inline">file:c
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="runtime_tools.epub" title="ePub version">
@@ -1199,7 +1219,7 @@ with <a href="../../apps/kernel/file.html#consult/1"><code class="inline">file:c
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

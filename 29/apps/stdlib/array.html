@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="stdlib v7.1-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/array.html" />
     <title>array — stdlib v7.1-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-4F7E9F36.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ stdlib
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of stdlib</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ stdlib
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L23" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L23" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -104,14 +122,14 @@ that has been explicitly set to the same value as the default one (compare
 <a href="#reset/2"><code class="inline">reset/2</code></a>). If you need to differentiate between unset and set entries, ensure
 that the default value cannot be confused with the values of set entries.</p><p>The array never shrinks automatically. If an index <code class="inline">I</code> has been used to set an
 entry successfully, all indices in the range <code class="inline">[0,I]</code> stay accessible unless the
-array size is explicitly changed by calling <a href="#resize/2"><code class="inline">resize/2</code></a>.</p><p><em>Examples:</em></p><p>Create a fixed-size array with entries 0-9 set to <code class="inline">undefined</code>:</p><pre><code class="makeup erlang" translate="no"><span class="n">A0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">new</span><span class="p" data-group-id="1554766923-1">(</span><span class="mi">10</span><span class="p" data-group-id="1554766923-1">)</span><span class="p">.</span><span class="w">
-</span><span class="mi">10</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">size</span><span class="p" data-group-id="1554766923-2">(</span><span class="n">A0</span><span class="p" data-group-id="1554766923-2">)</span><span class="p">.</span></code></pre><p>Create an extendible array and set entry 17 to <code class="inline">true</code>, causing the array to grow
-automatically:</p><pre><code class="makeup erlang" translate="no"><span class="n">A1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">set</span><span class="p" data-group-id="0485904136-1">(</span><span class="mi">17</span><span class="p">,</span><span class="w"> </span><span class="ss">true</span><span class="p">,</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">new</span><span class="p" data-group-id="0485904136-2">(</span><span class="p" data-group-id="0485904136-2">)</span><span class="p" data-group-id="0485904136-1">)</span><span class="p">.</span><span class="w">
-</span><span class="mi">18</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">size</span><span class="p" data-group-id="0485904136-3">(</span><span class="n">A1</span><span class="p" data-group-id="0485904136-3">)</span><span class="p">.</span></code></pre><p>Read back a stored value:</p><pre><code class="makeup erlang" translate="no"><span class="ss">true</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">get</span><span class="p" data-group-id="8491360057-1">(</span><span class="mi">17</span><span class="p">,</span><span class="w"> </span><span class="n">A1</span><span class="p" data-group-id="8491360057-1">)</span><span class="p">.</span></code></pre><p>Accessing an unset entry returns default value:</p><pre><code class="makeup erlang" translate="no"><span class="ss">undefined</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">get</span><span class="p" data-group-id="0953853666-1">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">A1</span><span class="p" data-group-id="0953853666-1">)</span></code></pre><p>Accessing an entry beyond the last set entry also returns the default value, if
-the array does not have fixed size:</p><pre><code class="makeup erlang" translate="no"><span class="ss">undefined</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">get</span><span class="p" data-group-id="0561661964-1">(</span><span class="mi">18</span><span class="p">,</span><span class="w"> </span><span class="n">A1</span><span class="p" data-group-id="0561661964-1">)</span><span class="p">.</span></code></pre><p>&quot;Sparse&quot; functions ignore default-valued entries:</p><pre><code class="makeup erlang" translate="no"><span class="n">A2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">set</span><span class="p" data-group-id="8048482309-1">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="ss">false</span><span class="p">,</span><span class="w"> </span><span class="n">A1</span><span class="p" data-group-id="8048482309-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="8048482309-2">[</span><span class="p" data-group-id="8048482309-3">{</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="ss">false</span><span class="p" data-group-id="8048482309-3">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8048482309-4">{</span><span class="mi">17</span><span class="p">,</span><span class="w"> </span><span class="ss">true</span><span class="p" data-group-id="8048482309-4">}</span><span class="p" data-group-id="8048482309-2">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">sparse_to_orddict</span><span class="p" data-group-id="8048482309-5">(</span><span class="n">A2</span><span class="p" data-group-id="8048482309-5">)</span><span class="p">.</span></code></pre><p>An extendible array can be made fixed-size later:</p><pre><code class="makeup erlang" translate="no"><span class="n">A3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">fix</span><span class="p" data-group-id="6893840502-1">(</span><span class="n">A2</span><span class="p" data-group-id="6893840502-1">)</span><span class="p">.</span></code></pre><p>A fixed-size array does not grow automatically and does not allow accesses
-beyond the last set entry:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="0913364599-1">{</span><span class="ss">&#39;EXIT&#39;</span><span class="p">,</span><span class="p" data-group-id="0913364599-2">{</span><span class="ss">badarg</span><span class="p">,</span><span class="p">_</span><span class="p" data-group-id="0913364599-2">}</span><span class="p" data-group-id="0913364599-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="0913364599-3">(</span><span class="k">catch</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">set</span><span class="p" data-group-id="0913364599-4">(</span><span class="mi">18</span><span class="p">,</span><span class="w"> </span><span class="ss">true</span><span class="p">,</span><span class="w"> </span><span class="n">A3</span><span class="p" data-group-id="0913364599-4">)</span><span class="p" data-group-id="0913364599-3">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="0913364599-5">{</span><span class="ss">&#39;EXIT&#39;</span><span class="p">,</span><span class="p" data-group-id="0913364599-6">{</span><span class="ss">badarg</span><span class="p">,</span><span class="p">_</span><span class="p" data-group-id="0913364599-6">}</span><span class="p" data-group-id="0913364599-5">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="0913364599-7">(</span><span class="k">catch</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">get</span><span class="p" data-group-id="0913364599-8">(</span><span class="mi">18</span><span class="p">,</span><span class="w"> </span><span class="n">A3</span><span class="p" data-group-id="0913364599-8">)</span><span class="p" data-group-id="0913364599-7">)</span><span class="p">.</span></code></pre>
+array size is explicitly changed by calling <a href="#resize/2"><code class="inline">resize/2</code></a>.</p><p><em>Examples:</em></p><p>Create a fixed-size array with entries 0-9 set to <code class="inline">undefined</code>:</p><pre><code class="makeup erlang" translate="no"><span class="n">A0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">new</span><span class="p" data-group-id="8100190334-1">(</span><span class="mi">10</span><span class="p" data-group-id="8100190334-1">)</span><span class="p">.</span><span class="w">
+</span><span class="mi">10</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">size</span><span class="p" data-group-id="8100190334-2">(</span><span class="n">A0</span><span class="p" data-group-id="8100190334-2">)</span><span class="p">.</span></code></pre><p>Create an extendible array and set entry 17 to <code class="inline">true</code>, causing the array to grow
+automatically:</p><pre><code class="makeup erlang" translate="no"><span class="n">A1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">set</span><span class="p" data-group-id="7417587271-1">(</span><span class="mi">17</span><span class="p">,</span><span class="w"> </span><span class="ss">true</span><span class="p">,</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">new</span><span class="p" data-group-id="7417587271-2">(</span><span class="p" data-group-id="7417587271-2">)</span><span class="p" data-group-id="7417587271-1">)</span><span class="p">.</span><span class="w">
+</span><span class="mi">18</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">size</span><span class="p" data-group-id="7417587271-3">(</span><span class="n">A1</span><span class="p" data-group-id="7417587271-3">)</span><span class="p">.</span></code></pre><p>Read back a stored value:</p><pre><code class="makeup erlang" translate="no"><span class="ss">true</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">get</span><span class="p" data-group-id="3887518457-1">(</span><span class="mi">17</span><span class="p">,</span><span class="w"> </span><span class="n">A1</span><span class="p" data-group-id="3887518457-1">)</span><span class="p">.</span></code></pre><p>Accessing an unset entry returns default value:</p><pre><code class="makeup erlang" translate="no"><span class="ss">undefined</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">get</span><span class="p" data-group-id="1925955480-1">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">A1</span><span class="p" data-group-id="1925955480-1">)</span></code></pre><p>Accessing an entry beyond the last set entry also returns the default value, if
+the array does not have fixed size:</p><pre><code class="makeup erlang" translate="no"><span class="ss">undefined</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">get</span><span class="p" data-group-id="7430932034-1">(</span><span class="mi">18</span><span class="p">,</span><span class="w"> </span><span class="n">A1</span><span class="p" data-group-id="7430932034-1">)</span><span class="p">.</span></code></pre><p>&quot;Sparse&quot; functions ignore default-valued entries:</p><pre><code class="makeup erlang" translate="no"><span class="n">A2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">set</span><span class="p" data-group-id="2843515040-1">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="ss">false</span><span class="p">,</span><span class="w"> </span><span class="n">A1</span><span class="p" data-group-id="2843515040-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="2843515040-2">[</span><span class="p" data-group-id="2843515040-3">{</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="ss">false</span><span class="p" data-group-id="2843515040-3">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2843515040-4">{</span><span class="mi">17</span><span class="p">,</span><span class="w"> </span><span class="ss">true</span><span class="p" data-group-id="2843515040-4">}</span><span class="p" data-group-id="2843515040-2">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">sparse_to_orddict</span><span class="p" data-group-id="2843515040-5">(</span><span class="n">A2</span><span class="p" data-group-id="2843515040-5">)</span><span class="p">.</span></code></pre><p>An extendible array can be made fixed-size later:</p><pre><code class="makeup erlang" translate="no"><span class="n">A3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">fix</span><span class="p" data-group-id="4632430359-1">(</span><span class="n">A2</span><span class="p" data-group-id="4632430359-1">)</span><span class="p">.</span></code></pre><p>A fixed-size array does not grow automatically and does not allow accesses
+beyond the last set entry:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="9680057778-1">{</span><span class="ss">&#39;EXIT&#39;</span><span class="p">,</span><span class="p" data-group-id="9680057778-2">{</span><span class="ss">badarg</span><span class="p">,</span><span class="p">_</span><span class="p" data-group-id="9680057778-2">}</span><span class="p" data-group-id="9680057778-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="9680057778-3">(</span><span class="k">catch</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">set</span><span class="p" data-group-id="9680057778-4">(</span><span class="mi">18</span><span class="p">,</span><span class="w"> </span><span class="ss">true</span><span class="p">,</span><span class="w"> </span><span class="n">A3</span><span class="p" data-group-id="9680057778-4">)</span><span class="p" data-group-id="9680057778-3">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="9680057778-5">{</span><span class="ss">&#39;EXIT&#39;</span><span class="p">,</span><span class="p" data-group-id="9680057778-6">{</span><span class="ss">badarg</span><span class="p">,</span><span class="p">_</span><span class="p" data-group-id="9680057778-6">}</span><span class="p" data-group-id="9680057778-5">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="9680057778-7">(</span><span class="k">catch</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">get</span><span class="p" data-group-id="9680057778-8">(</span><span class="mi">18</span><span class="p">,</span><span class="w"> </span><span class="n">A3</span><span class="p" data-group-id="9680057778-8">)</span><span class="p" data-group-id="9680057778-7">)</span><span class="p">.</span></code></pre>
     </section>
 
 </div>
@@ -244,7 +262,7 @@ the lowest.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">from(Fun, State, undefined)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#from/3"><code class="inline">from(Fun, State, undefined)</code></a>.</p></div>
 
     </div>
 
@@ -264,7 +282,7 @@ the lowest.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">from_list(List, undefined)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#from_list/2"><code class="inline">from_list(List, undefined)</code></a>.</p></div>
 
     </div>
 
@@ -285,7 +303,7 @@ uninitialized entries of the array.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">from_orddict(Orddict, undefined)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#from_orddict/2"><code class="inline">from_orddict(Orddict, undefined)</code></a>.</p></div>
 
     </div>
 
@@ -379,7 +397,7 @@ extendible and has initial size zero. Array indices start at <code class="inline
 
       </div>
 
-        <div class="summary-synopsis"><p>Makes the array resizable. (Reverses the effects of <a><code class="inline">fix/1</code></a>.)</p></div>
+        <div class="summary-synopsis"><p>Makes the array resizable. (Reverses the effects of <a href="#fix/1"><code class="inline">fix/1</code></a>.)</p></div>
 
     </div>
 
@@ -400,7 +418,7 @@ is the default value, the array is returned unchanged.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Changes the array size to that reported by <a><code class="inline">sparse_size/1</code></a>. If the specified
+        <div class="summary-synopsis"><p>Changes the array size to that reported by <a href="#sparse_size/1"><code class="inline">sparse_size/1</code></a>. If the specified
 array has fixed size, also the resulting array has fixed size.</p></div>
 
     </div>
@@ -537,6 +555,7 @@ default-valued entries.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:array/0">
 
@@ -548,7 +567,7 @@ default-valued entries.</p></div>
       <h1 class="signature" translate="no">array()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L191" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L191" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -576,7 +595,7 @@ default-valued entries.</p></div>
       <h1 class="signature" translate="no">array(Type)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L198" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L198" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -608,7 +627,7 @@ for equality.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L205" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L205" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -638,7 +657,7 @@ for equality.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L207" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L207" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -673,7 +692,7 @@ for equality.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L211" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L211" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -703,7 +722,7 @@ for equality.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L213" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L213" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -733,7 +752,7 @@ for equality.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L214" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L214" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -762,6 +781,7 @@ for equality.</p>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="default/1">
 
@@ -773,7 +793,7 @@ for equality.</p>
       <h1 class="signature" translate="no">default(Array)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L382" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L382" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -801,7 +821,7 @@ for equality.</p>
       <h1 class="signature" translate="no">fix(Array)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L467" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L467" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -830,7 +850,7 @@ insertion.</p><p>See also <a href="#set/3"><code class="inline">set/3</code></a>
       <h1 class="signature" translate="no">foldl(Function, InitialAcc, Array)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L1722" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L1722" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -860,7 +880,7 @@ value. The elements are visited in order from the lowest index to the highest.</
       <h1 class="signature" translate="no">foldr(Function, InitialAcc, Array)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L1873" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L1873" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -893,7 +913,7 @@ the lowest.</p><p>If <code class="inline">Function</code> is not a function, the
         <span class="note">(since OTP 29.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L1073" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L1073" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -924,7 +944,7 @@ the lowest.</p><p>If <code class="inline">Function</code> is not a function, the
         <span class="note">(since OTP 29.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L1114" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L1114" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -941,22 +961,22 @@ the lowest.</p><p>If <code class="inline">Function</code> is not a function, the
       </div>
 
 <p>Creates an extendible array with values obtained with <code class="inline">Function(State)</code>.</p><p>The 'Function(State)' shall return <code class="inline">{Value, NewState}</code> or <code class="inline">done</code>, and is invoked
-until <code class="inline">done</code> is returned, otherwise the call fails with reason <code class="inline">badarg</code>.</p><p><code class="inline">Default</code> is used as the value for uninitialized entries of the array.</p><h2 id="from/3-examples" class="section-heading"><a href="#from/3-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">Floats</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="2150808657-1">&lt;&lt;</span><span class="w"> </span><span class="p" data-group-id="2150808657-2">&lt;&lt;</span><span class="n">N</span><span class="p">:</span><span class="mi">32</span><span class="o">/</span><span class="nb">float</span><span class="o">-</span><span class="ss">native</span><span class="p" data-group-id="2150808657-2">&gt;&gt;</span><span class="w"> </span><span class="p">||</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="2150808657-3">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2047</span><span class="p" data-group-id="2150808657-3">)</span><span class="p" data-group-id="2150808657-1">&gt;&gt;</span><span class="p">.</span><span class="gp unselectable">
-2&gt; </span><span class="n">BinToVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">fun</span><span class="p" data-group-id="2150808657-4">(</span><span class="n">I</span><span class="p" data-group-id="2150808657-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+until <code class="inline">done</code> is returned, otherwise the call fails with reason <code class="inline">badarg</code>.</p><p><code class="inline">Default</code> is used as the value for uninitialized entries of the array.</p><h2 id="from/3-examples" class="section-heading"><a href="#from/3-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">Floats</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="6009442963-1">&lt;&lt;</span><span class="w"> </span><span class="p" data-group-id="6009442963-2">&lt;&lt;</span><span class="n">N</span><span class="p">:</span><span class="mi">32</span><span class="o">/</span><span class="nb">float</span><span class="o">-</span><span class="ss">native</span><span class="p" data-group-id="6009442963-2">&gt;&gt;</span><span class="w"> </span><span class="p">||</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="6009442963-3">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">2047</span><span class="p" data-group-id="6009442963-3">)</span><span class="p" data-group-id="6009442963-1">&gt;&gt;</span><span class="p">.</span><span class="gp unselectable">
+2&gt; </span><span class="n">BinToVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">fun</span><span class="p" data-group-id="6009442963-4">(</span><span class="n">I</span><span class="p" data-group-id="6009442963-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
      </span><span class="k">case</span><span class="w"> </span><span class="n">Floats</span><span class="w"> </span><span class="k">of</span><span class="w">
-         </span><span class="p" data-group-id="2150808657-5">&lt;&lt;</span><span class="p">_</span><span class="p">:</span><span class="n">I</span><span class="o">/</span><span class="ss">binary</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">:</span><span class="mi">32</span><span class="o">/</span><span class="nb">float</span><span class="o">-</span><span class="ss">native</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="o">/</span><span class="ss">binary</span><span class="p" data-group-id="2150808657-5">&gt;&gt;</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-             </span><span class="p" data-group-id="2150808657-6">{</span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">I</span><span class="o">+</span><span class="mi">4</span><span class="p" data-group-id="2150808657-6">}</span><span class="p">;</span><span class="w">
+         </span><span class="p" data-group-id="6009442963-5">&lt;&lt;</span><span class="p">_</span><span class="p">:</span><span class="n">I</span><span class="o">/</span><span class="ss">binary</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">:</span><span class="mi">32</span><span class="o">/</span><span class="nb">float</span><span class="o">-</span><span class="ss">native</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="o">/</span><span class="ss">binary</span><span class="p" data-group-id="6009442963-5">&gt;&gt;</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+             </span><span class="p" data-group-id="6009442963-6">{</span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="n">I</span><span class="o">+</span><span class="mi">4</span><span class="p" data-group-id="6009442963-6">}</span><span class="p">;</span><span class="w">
          </span><span class="p">_</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
              </span><span class="ss">done</span><span class="w">
      </span><span class="k">end</span><span class="w">
    </span><span class="k">end</span><span class="p">.</span><span class="gp unselectable">
-3&gt; </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">from</span><span class="p" data-group-id="2150808657-7">(</span><span class="n">BinToVal</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="2150808657-7">)</span><span class="p">.</span><span class="gp unselectable">
-4&gt; </span><span class="nc">array</span><span class="p">:</span><span class="nf">get</span><span class="p" data-group-id="2150808657-8">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p" data-group-id="2150808657-8">)</span><span class="p">.</span><span class="w">
+3&gt; </span><span class="n">A</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">from</span><span class="p" data-group-id="6009442963-7">(</span><span class="n">BinToVal</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="6009442963-7">)</span><span class="p">.</span><span class="gp unselectable">
+4&gt; </span><span class="nc">array</span><span class="p">:</span><span class="nf">get</span><span class="p" data-group-id="6009442963-8">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p" data-group-id="6009442963-8">)</span><span class="p">.</span><span class="w">
 </span><span class="mf">10.0</span><span class="gp unselectable">
-5&gt; </span><span class="nc">array</span><span class="p">:</span><span class="nf">size</span><span class="p" data-group-id="2150808657-9">(</span><span class="n">A</span><span class="p" data-group-id="2150808657-9">)</span><span class="p">.</span><span class="w">
+5&gt; </span><span class="nc">array</span><span class="p">:</span><span class="nf">size</span><span class="p" data-group-id="6009442963-9">(</span><span class="n">A</span><span class="p" data-group-id="6009442963-9">)</span><span class="p">.</span><span class="w">
 </span><span class="mi">2048</span><span class="gp unselectable">
-6&gt; </span><span class="n">ValToBin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">fun</span><span class="p" data-group-id="2150808657-10">(</span><span class="p">_</span><span class="n">K</span><span class="p">,</span><span class="w"> </span><span class="n">V</span><span class="p">,</span><span class="w"> </span><span class="n">Acc</span><span class="p" data-group-id="2150808657-10">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="2150808657-11">&lt;&lt;</span><span class="n">Acc</span><span class="o">/</span><span class="ss">binary</span><span class="p">,</span><span class="w"> </span><span class="n">V</span><span class="p">:</span><span class="mi">32</span><span class="o">/</span><span class="nb">float</span><span class="o">-</span><span class="ss">native</span><span class="p" data-group-id="2150808657-11">&gt;&gt;</span><span class="w"> </span><span class="k">end</span><span class="p">.</span><span class="gp unselectable">
-7&gt; </span><span class="n">Floats</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">foldl</span><span class="p" data-group-id="2150808657-12">(</span><span class="n">ValToBin</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2150808657-13">&lt;&lt;</span><span class="p" data-group-id="2150808657-13">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p" data-group-id="2150808657-12">)</span><span class="p">.</span><span class="w">
+6&gt; </span><span class="n">ValToBin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">fun</span><span class="p" data-group-id="6009442963-10">(</span><span class="p">_</span><span class="n">K</span><span class="p">,</span><span class="w"> </span><span class="n">V</span><span class="p">,</span><span class="w"> </span><span class="n">Acc</span><span class="p" data-group-id="6009442963-10">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="6009442963-11">&lt;&lt;</span><span class="n">Acc</span><span class="o">/</span><span class="ss">binary</span><span class="p">,</span><span class="w"> </span><span class="n">V</span><span class="p">:</span><span class="mi">32</span><span class="o">/</span><span class="nb">float</span><span class="o">-</span><span class="ss">native</span><span class="p" data-group-id="6009442963-11">&gt;&gt;</span><span class="w"> </span><span class="k">end</span><span class="p">.</span><span class="gp unselectable">
+7&gt; </span><span class="n">Floats</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nc">array</span><span class="p">:</span><span class="nf">foldl</span><span class="p" data-group-id="6009442963-12">(</span><span class="n">ValToBin</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6009442963-13">&lt;&lt;</span><span class="p" data-group-id="6009442963-13">&gt;&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">A</span><span class="p" data-group-id="6009442963-12">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">true</span></code></pre><p>See also <a href="#new/2"><code class="inline">new/2</code></a>, <a href="#from_list/1"><code class="inline">from_list/1</code></a>, <a href="#foldl/3"><code class="inline">foldl/3</code></a>.</p>
   </section>
 </section>
@@ -970,7 +990,7 @@ until <code class="inline">done</code> is returned, otherwise the call fails wit
       <h1 class="signature" translate="no">from_list(List)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L963" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L963" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -998,7 +1018,7 @@ until <code class="inline">done</code> is returned, otherwise the call fails wit
       <h1 class="signature" translate="no">from_list(List, Default)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L976" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L976" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1027,7 +1047,7 @@ uninitialized entries of the array.</p><p>If <code class="inline">List</code> is
       <h1 class="signature" translate="no">from_orddict(Orddict)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L1323" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L1323" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1055,7 +1075,7 @@ uninitialized entries of the array.</p><p>If <code class="inline">List</code> is
       <h1 class="signature" translate="no">from_orddict(Orddict, Default)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L1338" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L1338" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1085,7 +1105,7 @@ non-negative integers, the call fails with reason <code class="inline">badarg</c
       <h1 class="signature" translate="no">get(I, Array)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L694" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L694" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1115,7 +1135,7 @@ greater than <code class="inline">size(Array)-1</code> is returned.</p><p>See al
       <h1 class="signature" translate="no">is_array(X)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L355" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L355" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1144,7 +1164,7 @@ well-formed array representation even if this function returns <code class="inli
       <h1 class="signature" translate="no">is_fix(Array)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L479" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L479" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1173,7 +1193,7 @@ otherwise <code class="inline">false</code>.</p><p>See also <a href="#fix/1"><co
       <h1 class="signature" translate="no">map(Function, Array)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L1535" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L1535" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1203,7 +1223,7 @@ order from the lowest index to the highest.</p><p>If <code class="inline">Functi
       <h1 class="signature" translate="no">new()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L225" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L225" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1231,7 +1251,7 @@ order from the lowest index to the highest.</p><p>If <code class="inline">Functi
       <h1 class="signature" translate="no">new(Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L274" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L274" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1251,7 +1271,7 @@ extendible and has initial size zero. Array indices start at <code class="inline
 array size; this also implies <code class="inline">{fixed, true}</code>. If <code class="inline">N</code> is not a non-negative
 integer, the call fails with reason <code class="inline">badarg</code>.</p></li><li><p><strong><code class="inline">fixed</code> or <code class="inline">{fixed, true}</code></strong> - Creates a fixed-size array. See also <a href="#fix/1"><code class="inline">fix/1</code></a>.</p></li><li><p><strong><code class="inline">{fixed, false}</code></strong> - Creates an extendible (non-fixed-size) array.</p></li><li><p><strong><code class="inline">{default, Value}</code></strong> - Sets the default value for the array to <code class="inline">Value</code>.</p></li></ul><p>Options are processed in the order they occur in the list, that is, later
 options have higher precedence.</p><p>The default value is used as the value of uninitialized entries, and cannot be
-changed once the array has been created.</p><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="nc">array</span><span class="p">:</span><span class="nf">new</span><span class="p" data-group-id="9198485578-1">(</span><span class="mi">100</span><span class="p" data-group-id="9198485578-1">)</span></code></pre><p>creates a fixed-size array of size 100.</p><pre><code class="makeup erlang" translate="no"><span class="nc">array</span><span class="p">:</span><span class="nf">new</span><span class="p" data-group-id="2467097165-1">(</span><span class="p" data-group-id="2467097165-2">{</span><span class="ss">default</span><span class="p">,</span><span class="mi">0</span><span class="p" data-group-id="2467097165-2">}</span><span class="p" data-group-id="2467097165-1">)</span></code></pre><p>creates an empty, extendible array whose default value is <code class="inline">0</code>.</p><pre><code class="makeup erlang" translate="no"><span class="nc">array</span><span class="p">:</span><span class="nf">new</span><span class="p" data-group-id="5370301491-1">(</span><span class="p" data-group-id="5370301491-2">[</span><span class="p" data-group-id="5370301491-3">{</span><span class="nb">size</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="5370301491-3">}</span><span class="p">,</span><span class="p" data-group-id="5370301491-4">{</span><span class="ss">fixed</span><span class="p">,</span><span class="ss">false</span><span class="p" data-group-id="5370301491-4">}</span><span class="p">,</span><span class="p" data-group-id="5370301491-5">{</span><span class="ss">default</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p" data-group-id="5370301491-5">}</span><span class="p" data-group-id="5370301491-2">]</span><span class="p" data-group-id="5370301491-1">)</span></code></pre><p>creates an extendible array with initial size 10 whose default value is <code class="inline">-1</code>.</p><p>See also <a href="#fix/1"><code class="inline">fix/1</code></a>, <a href="#from_list/2"><code class="inline">from_list/2</code></a>, <a href="#get/2"><code class="inline">get/2</code></a>, <a href="#new/0"><code class="inline">new/0</code></a>, <a href="#new/2"><code class="inline">new/2</code></a>, <a href="#set/3"><code class="inline">set/3</code></a>.</p>
+changed once the array has been created.</p><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="nc">array</span><span class="p">:</span><span class="nf">new</span><span class="p" data-group-id="4847750392-1">(</span><span class="mi">100</span><span class="p" data-group-id="4847750392-1">)</span></code></pre><p>creates a fixed-size array of size 100.</p><pre><code class="makeup erlang" translate="no"><span class="nc">array</span><span class="p">:</span><span class="nf">new</span><span class="p" data-group-id="1187451756-1">(</span><span class="p" data-group-id="1187451756-2">{</span><span class="ss">default</span><span class="p">,</span><span class="mi">0</span><span class="p" data-group-id="1187451756-2">}</span><span class="p" data-group-id="1187451756-1">)</span></code></pre><p>creates an empty, extendible array whose default value is <code class="inline">0</code>.</p><pre><code class="makeup erlang" translate="no"><span class="nc">array</span><span class="p">:</span><span class="nf">new</span><span class="p" data-group-id="9944930623-1">(</span><span class="p" data-group-id="9944930623-2">[</span><span class="p" data-group-id="9944930623-3">{</span><span class="nb">size</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="9944930623-3">}</span><span class="p">,</span><span class="p" data-group-id="9944930623-4">{</span><span class="ss">fixed</span><span class="p">,</span><span class="ss">false</span><span class="p" data-group-id="9944930623-4">}</span><span class="p">,</span><span class="p" data-group-id="9944930623-5">{</span><span class="ss">default</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p" data-group-id="9944930623-5">}</span><span class="p" data-group-id="9944930623-2">]</span><span class="p" data-group-id="9944930623-1">)</span></code></pre><p>creates an extendible array with initial size 10 whose default value is <code class="inline">-1</code>.</p><p>See also <a href="#fix/1"><code class="inline">fix/1</code></a>, <a href="#from_list/2"><code class="inline">from_list/2</code></a>, <a href="#get/2"><code class="inline">get/2</code></a>, <a href="#new/0"><code class="inline">new/0</code></a>, <a href="#new/2"><code class="inline">new/2</code></a>, <a href="#set/3"><code class="inline">set/3</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="new/2">
@@ -1264,7 +1284,7 @@ changed once the array has been created.</p><p><em>Examples:</em></p><pre><code 
       <h1 class="signature" translate="no">new(Size, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L301" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L301" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1284,7 +1304,7 @@ By default, the array has fixed size. Notice that any size specifications in
 <code class="inline">Options</code> override parameter <code class="inline">Size</code>.</p><p>If <code class="inline">Options</code> is a list, this is equivalent to
 <a href="#new/1"><code class="inline">new([{size, Size} | Options])</code></a>, otherwise it is equivalent to
 <a href="#new/1"><code class="inline">new([{size, Size} | [Options]])</code></a>. However, using this function
-directly is more efficient.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="nc">array</span><span class="p">:</span><span class="nf">new</span><span class="p" data-group-id="5087163702-1">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5087163702-2">{</span><span class="ss">default</span><span class="p">,</span><span class="mi">0</span><span class="p" data-group-id="5087163702-2">}</span><span class="p" data-group-id="5087163702-1">)</span></code></pre><p>creates a fixed-size array of size 100, whose default value is <code class="inline">0</code>.</p><p>See also <a href="#new/1"><code class="inline">new/1</code></a>.</p>
+directly is more efficient.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="nc">array</span><span class="p">:</span><span class="nf">new</span><span class="p" data-group-id="4977691523-1">(</span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4977691523-2">{</span><span class="ss">default</span><span class="p">,</span><span class="mi">0</span><span class="p" data-group-id="4977691523-2">}</span><span class="p" data-group-id="4977691523-1">)</span></code></pre><p>creates a fixed-size array of size 100, whose default value is <code class="inline">0</code>.</p><p>See also <a href="#new/1"><code class="inline">new/1</code></a>.</p>
   </section>
 </section>
 <section class="detail" id="relax/1">
@@ -1297,7 +1317,7 @@ directly is more efficient.</p><p><em>Example:</em></p><pre><code class="makeup 
       <h1 class="signature" translate="no">relax(Array)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L518" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L518" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1325,7 +1345,7 @@ directly is more efficient.</p><p><em>Example:</em></p><pre><code class="makeup 
       <h1 class="signature" translate="no">reset(I, Array)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L735" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L735" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1357,7 +1377,7 @@ larger than the maximum index, the call fails with reason <code class="inline">b
       <h1 class="signature" translate="no">resize(Array)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L578" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L578" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1386,7 +1406,7 @@ array has fixed size, also the resulting array has fixed size.</p><p>See also <a
       <h1 class="signature" translate="no">resize(Size, Array)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L546" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L546" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1415,7 +1435,7 @@ the specified array has fixed size, also the resulting array has fixed size.</p>
       <h1 class="signature" translate="no">set(I, Value, Array)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L629" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L629" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1445,7 +1465,7 @@ the array grows to size <code class="inline">I+1</code>.</p><p>See also <a href=
       <h1 class="signature" translate="no">size(Array)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L371" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L371" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1475,7 +1495,7 @@ guaranteed to not have been previously set.</p><p>See also <a href="#set/3"><cod
       <h1 class="signature" translate="no">sparse_foldl(Function, InitialAcc, Array)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L1795" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L1795" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1506,7 +1526,7 @@ the lowest index to the highest.</p><p>If <code class="inline">Function</code> i
       <h1 class="signature" translate="no">sparse_foldr(Function, InitialAcc, Array)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L1951" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L1951" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1537,7 +1557,7 @@ order from the highest index to the lowest.</p><p>If <code class="inline">Functi
       <h1 class="signature" translate="no">sparse_map(Function, Array)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L1627" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L1627" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1567,7 +1587,7 @@ entries. The elements are visited in order from the lowest index to the highest.
       <h1 class="signature" translate="no">sparse_size(Array)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L2001" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L2001" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1597,7 +1617,7 @@ array, or zero if no such entry exists.</p><p>See also <a href="#resize/1"><code
       <h1 class="signature" translate="no">sparse_to_list(Array)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L895" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L895" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1625,7 +1645,7 @@ array, or zero if no such entry exists.</p><p>See also <a href="#resize/1"><code
       <h1 class="signature" translate="no">sparse_to_orddict(Array)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L1243" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L1243" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1654,7 +1674,7 @@ default-valued entries.</p><p>See also <a href="#to_orddict/1"><code class="inli
       <h1 class="signature" translate="no">to_list(Array)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L821" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L821" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1682,7 +1702,7 @@ default-valued entries.</p><p>See also <a href="#to_orddict/1"><code class="inli
       <h1 class="signature" translate="no">to_orddict(Array)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/array.erl#L1150" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/array.erl#L1150" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1708,8 +1728,8 @@ default-valued entries.</p><p>See also <a href="#to_orddict/1"><code class="inli
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="stdlib.epub" title="ePub version">
@@ -1721,7 +1741,7 @@ default-valued entries.</p><p>See also <a href="#to_orddict/1"><code class="inli
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

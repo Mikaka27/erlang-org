@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="snmp v5.19.1-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/snmp/snmp_generic.html" />
     <title>snmp_generic — snmp v5.19.1-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-AF03DEA8.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ snmp
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of snmp</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ snmp
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/snmp/src/agent/snmp_generic.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/snmp/src/agent/snmp_generic.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -108,9 +126,9 @@ information is changed.</p><p>The overall structure is shown in the following fi
          </span><span class="o">|</span><span class="w">      </span><span class="no">MIB</span><span class="w">      </span><span class="o">|</span><span class="w">
          </span><span class="o">+</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">-</span><span class="o">+</span><span class="w">
                  </span><span class="o">|</span><span class="w">
-         </span><span class="no">Association</span><span class="w"> </span><span class="n">file</span><span class="w">       </span><span class="p" data-group-id="8820654899-1">(</span><span class="n">associates</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="no">MIB</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="n">with</span><span class="w">
+         </span><span class="no">Association</span><span class="w"> </span><span class="n">file</span><span class="w">       </span><span class="p" data-group-id="0414820195-1">(</span><span class="n">associates</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="no">MIB</span><span class="w"> </span><span class="n">object</span><span class="w"> </span><span class="n">with</span><span class="w">
                  </span><span class="o">|</span><span class="w">               </span><span class="n">snmp_generic</span><span class="o">:</span><span class="n">table_funct</span><span class="w">
-                 </span><span class="o">|</span><span class="w">               </span><span class="n">snmp_generic</span><span class="o">:</span><span class="n">variable_func</span><span class="p" data-group-id="8820654899-1">)</span><span class="w">
+                 </span><span class="o">|</span><span class="w">               </span><span class="n">snmp_generic</span><span class="o">:</span><span class="n">variable_func</span><span class="p" data-group-id="0414820195-1">)</span><span class="w">
 </span><span class="o">+</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">+</span><span class="w">
 </span><span class="o">|</span><span class="w">           </span><span class="n">snmp_generic</span><span class="w">               </span><span class="o">|</span><span class="w">  </span><span class="no">Support</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">get</span><span class="o">-</span><span class="n">next</span><span class="p">,</span><span class="w">
 </span><span class="o">|</span><span class="w">                                      </span><span class="o">|</span><span class="w">  </span><span class="no">RowStatus</span><span class="w"> </span><span class="n">operations</span><span class="w">
@@ -118,7 +136,7 @@ information is changed.</p><p>The overall structure is shown in the following fi
 </span><span class="o">|</span><span class="w">    </span><span class="n">snmpa_local_db</span><span class="w">    </span><span class="o">|</span><span class="w">    </span><span class="no">Mnesia</span><span class="w">     </span><span class="o">|</span><span class="w">  </span><span class="no">Database</span><span class="w">
 </span><span class="o">+</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">+</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">-</span><span class="o">+</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">-</span><span class="o">+</span><span class="w">
 </span><span class="o">|</span><span class="w">     </span><span class="n">dets</span><span class="w">     </span><span class="o">|</span><span class="w">  </span><span class="n">ets</span><span class="w">  </span><span class="o">|</span><span class="w">
-</span><span class="o">|</span><span class="w"> </span><span class="p" data-group-id="8820654899-2">(</span><span class="n">persistent</span><span class="p" data-group-id="8820654899-2">)</span><span class="w"> </span><span class="o">|</span><span class="w">       </span><span class="o">|</span><span class="w">
+</span><span class="o">|</span><span class="w"> </span><span class="p" data-group-id="0414820195-2">(</span><span class="n">persistent</span><span class="p" data-group-id="0414820195-2">)</span><span class="w"> </span><span class="o">|</span><span class="w">       </span><span class="o">|</span><span class="w">
 </span><span class="o">+</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">+</span><span class="o">--</span><span class="o">--</span><span class="o">--</span><span class="o">-</span><span class="o">+</span></code></pre><p>Each function takes the argument <code class="inline">NameDb</code>, which is a tuple <code class="inline">{Name, Db}</code>, to
 identify which database the functions should use. <code class="inline">Name</code> is the symbolic name of
 the managed object as defined in the MIB, and <code class="inline">Db</code> is either <code class="inline">volatile</code>,
@@ -130,35 +148,35 @@ the correct name and attributes. It is the programmer's responsibility to ensure
 this. Specifically, if variables are stored in Mnesia, the table
 <code class="inline">snmp_variables</code> must be created by the programmer. The record definition for
 this table is defined in the file <code class="inline">snmp/include/snmp_types.hrl</code>.</p><p>If an instrumentation function in the association file for a variable <code class="inline">myVar</code>
-does not have a name when compiling an MIB, the compiler generates an entry.</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="2692011897-1">{</span><span class="ss">myVar</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2692011897-2">{</span><span class="ss">snmp_generic</span><span class="p">,</span><span class="w"> </span><span class="ss">variable_func</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2692011897-3">[</span><span class="p" data-group-id="2692011897-4">{</span><span class="ss">myVar</span><span class="p">,</span><span class="w"> </span><span class="n">Db</span><span class="p">]</span><span class="p" data-group-id="2692011897-4">}</span><span class="p">}</span><span class="p">.</span></code></pre><p>And for a table:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="3667704835-1">{</span><span class="ss">myTable</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3667704835-2">{</span><span class="ss">snmp_generic</span><span class="p">,</span><span class="w"> </span><span class="ss">table_func</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3667704835-3">[</span><span class="p" data-group-id="3667704835-4">{</span><span class="ss">myTable</span><span class="p">,</span><span class="w"> </span><span class="n">Db</span><span class="p">]</span><span class="p" data-group-id="3667704835-4">}</span><span class="p">}</span><span class="p">.</span></code></pre><h2 id="module-example" class="section-heading"><a href="#module-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Example</span></h2><p>The following example shows an implementation of a table which is stored in
-Mnesia, but with some checks performed at set-request operations.</p><pre><code class="makeup erlang" translate="no"><span class="nf">myTable_func</span><span class="p" data-group-id="8018991313-1">(</span><span class="ss">new</span><span class="p">,</span><span class="w"> </span><span class="n">NameDb</span><span class="p" data-group-id="8018991313-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">   </span><span class="c1">% pass unchanged</span><span class="w">
-  </span><span class="nc">snmp_generic</span><span class="p">:</span><span class="nf">table_func</span><span class="p" data-group-id="8018991313-2">(</span><span class="ss">new</span><span class="p">,</span><span class="w"> </span><span class="n">NameDb</span><span class="p" data-group-id="8018991313-2">)</span><span class="p">.</span><span class="w">
+does not have a name when compiling an MIB, the compiler generates an entry.</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="2939567257-1">{</span><span class="ss">myVar</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2939567257-2">{</span><span class="ss">snmp_generic</span><span class="p">,</span><span class="w"> </span><span class="ss">variable_func</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2939567257-3">[</span><span class="p" data-group-id="2939567257-4">{</span><span class="ss">myVar</span><span class="p">,</span><span class="w"> </span><span class="n">Db</span><span class="p">]</span><span class="p" data-group-id="2939567257-4">}</span><span class="p">}</span><span class="p">.</span></code></pre><p>And for a table:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="7567132886-1">{</span><span class="ss">myTable</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7567132886-2">{</span><span class="ss">snmp_generic</span><span class="p">,</span><span class="w"> </span><span class="ss">table_func</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7567132886-3">[</span><span class="p" data-group-id="7567132886-4">{</span><span class="ss">myTable</span><span class="p">,</span><span class="w"> </span><span class="n">Db</span><span class="p">]</span><span class="p" data-group-id="7567132886-4">}</span><span class="p">}</span><span class="p">.</span></code></pre><h2 id="module-example" class="section-heading"><a href="#module-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Example</span></h2><p>The following example shows an implementation of a table which is stored in
+Mnesia, but with some checks performed at set-request operations.</p><pre><code class="makeup erlang" translate="no"><span class="nf">myTable_func</span><span class="p" data-group-id="1481501190-1">(</span><span class="ss">new</span><span class="p">,</span><span class="w"> </span><span class="n">NameDb</span><span class="p" data-group-id="1481501190-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">   </span><span class="c1">% pass unchanged</span><span class="w">
+  </span><span class="nc">snmp_generic</span><span class="p">:</span><span class="nf">table_func</span><span class="p" data-group-id="1481501190-2">(</span><span class="ss">new</span><span class="p">,</span><span class="w"> </span><span class="n">NameDb</span><span class="p" data-group-id="1481501190-2">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">myTable_func</span><span class="p" data-group-id="8018991313-3">(</span><span class="ss">delete</span><span class="p">,</span><span class="w"> </span><span class="n">NameDb</span><span class="p" data-group-id="8018991313-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">   </span><span class="c1">% pass unchanged</span><span class="w">
-  </span><span class="nc">snmp_generic</span><span class="p">:</span><span class="nf">table_func</span><span class="p" data-group-id="8018991313-4">(</span><span class="ss">delete</span><span class="p">,</span><span class="w"> </span><span class="n">NameDb</span><span class="p" data-group-id="8018991313-4">)</span><span class="p">.</span><span class="w">
+</span><span class="nf">myTable_func</span><span class="p" data-group-id="1481501190-3">(</span><span class="ss">delete</span><span class="p">,</span><span class="w"> </span><span class="n">NameDb</span><span class="p" data-group-id="1481501190-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">   </span><span class="c1">% pass unchanged</span><span class="w">
+  </span><span class="nc">snmp_generic</span><span class="p">:</span><span class="nf">table_func</span><span class="p" data-group-id="1481501190-4">(</span><span class="ss">delete</span><span class="p">,</span><span class="w"> </span><span class="n">NameDb</span><span class="p" data-group-id="1481501190-4">)</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%% change row</span><span class="w">
-</span><span class="nf">myTable_func</span><span class="p" data-group-id="8018991313-5">(</span><span class="ss">is_set_ok</span><span class="p">,</span><span class="w"> </span><span class="n">RowIndex</span><span class="p">,</span><span class="w"> </span><span class="n">Cols</span><span class="p">,</span><span class="w"> </span><span class="n">NameDb</span><span class="p" data-group-id="8018991313-5">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-  </span><span class="k">case</span><span class="w"> </span><span class="nc">snmp_generic</span><span class="p">:</span><span class="nf">table_func</span><span class="p" data-group-id="8018991313-6">(</span><span class="ss">is_set_ok</span><span class="p">,</span><span class="w"> </span><span class="n">RowIndex</span><span class="p">,</span><span class="w">
-                               </span><span class="n">Cols</span><span class="p">,</span><span class="w"> </span><span class="n">NameDb</span><span class="p" data-group-id="8018991313-6">)</span><span class="w"> </span><span class="k">of</span><span class="w">
-    </span><span class="p" data-group-id="8018991313-7">{</span><span class="ss">noError</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="8018991313-7">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-      </span><span class="nc">myApplication</span><span class="p">:</span><span class="nf">is_set_ok</span><span class="p" data-group-id="8018991313-8">(</span><span class="n">RowIndex</span><span class="p">,</span><span class="w"> </span><span class="n">Cols</span><span class="p" data-group-id="8018991313-8">)</span><span class="p">;</span><span class="w">
+</span><span class="nf">myTable_func</span><span class="p" data-group-id="1481501190-5">(</span><span class="ss">is_set_ok</span><span class="p">,</span><span class="w"> </span><span class="n">RowIndex</span><span class="p">,</span><span class="w"> </span><span class="n">Cols</span><span class="p">,</span><span class="w"> </span><span class="n">NameDb</span><span class="p" data-group-id="1481501190-5">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+  </span><span class="k">case</span><span class="w"> </span><span class="nc">snmp_generic</span><span class="p">:</span><span class="nf">table_func</span><span class="p" data-group-id="1481501190-6">(</span><span class="ss">is_set_ok</span><span class="p">,</span><span class="w"> </span><span class="n">RowIndex</span><span class="p">,</span><span class="w">
+                               </span><span class="n">Cols</span><span class="p">,</span><span class="w"> </span><span class="n">NameDb</span><span class="p" data-group-id="1481501190-6">)</span><span class="w"> </span><span class="k">of</span><span class="w">
+    </span><span class="p" data-group-id="1481501190-7">{</span><span class="ss">noError</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="1481501190-7">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+      </span><span class="nc">myApplication</span><span class="p">:</span><span class="nf">is_set_ok</span><span class="p" data-group-id="1481501190-8">(</span><span class="n">RowIndex</span><span class="p">,</span><span class="w"> </span><span class="n">Cols</span><span class="p" data-group-id="1481501190-8">)</span><span class="p">;</span><span class="w">
     </span><span class="n">Err</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
       </span><span class="n">Err</span><span class="w">
   </span><span class="k">end</span><span class="p">;</span><span class="w">
 
-</span><span class="nf">myTable_func</span><span class="p" data-group-id="8018991313-9">(</span><span class="ss">set</span><span class="p">,</span><span class="w"> </span><span class="n">RowIndex</span><span class="p">,</span><span class="w"> </span><span class="n">Cols</span><span class="p">,</span><span class="w"> </span><span class="n">NameDb</span><span class="p" data-group-id="8018991313-9">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-  </span><span class="k">case</span><span class="w"> </span><span class="nc">snmp_generic</span><span class="p">:</span><span class="nf">table_func</span><span class="p" data-group-id="8018991313-10">(</span><span class="ss">set</span><span class="p">,</span><span class="w"> </span><span class="n">RowIndex</span><span class="p">,</span><span class="w"> </span><span class="n">Cols</span><span class="p">,</span><span class="w">
-                               </span><span class="n">NameDb</span><span class="p" data-group-id="8018991313-10">)</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="8018991313-11">{</span><span class="ss">noError</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="8018991313-11">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+</span><span class="nf">myTable_func</span><span class="p" data-group-id="1481501190-9">(</span><span class="ss">set</span><span class="p">,</span><span class="w"> </span><span class="n">RowIndex</span><span class="p">,</span><span class="w"> </span><span class="n">Cols</span><span class="p">,</span><span class="w"> </span><span class="n">NameDb</span><span class="p" data-group-id="1481501190-9">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+  </span><span class="k">case</span><span class="w"> </span><span class="nc">snmp_generic</span><span class="p">:</span><span class="nf">table_func</span><span class="p" data-group-id="1481501190-10">(</span><span class="ss">set</span><span class="p">,</span><span class="w"> </span><span class="n">RowIndex</span><span class="p">,</span><span class="w"> </span><span class="n">Cols</span><span class="p">,</span><span class="w">
+                               </span><span class="n">NameDb</span><span class="p" data-group-id="1481501190-10">)</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="1481501190-11">{</span><span class="ss">noError</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="1481501190-11">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
       </span><span class="c1">% Now the row is updated, tell the application</span><span class="w">
-      </span><span class="nc">myApplication</span><span class="p">:</span><span class="nf">update</span><span class="p" data-group-id="8018991313-12">(</span><span class="n">RowIndex</span><span class="p">,</span><span class="w"> </span><span class="n">Cols</span><span class="p" data-group-id="8018991313-12">)</span><span class="p">;</span><span class="w">
+      </span><span class="nc">myApplication</span><span class="p">:</span><span class="nf">update</span><span class="p" data-group-id="1481501190-12">(</span><span class="n">RowIndex</span><span class="p">,</span><span class="w"> </span><span class="n">Cols</span><span class="p" data-group-id="1481501190-12">)</span><span class="p">;</span><span class="w">
     </span><span class="n">Err</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
       </span><span class="n">Err</span><span class="w">
   </span><span class="k">end</span><span class="p">;</span><span class="w">
 
-</span><span class="nf">myTable_func</span><span class="p" data-group-id="8018991313-13">(</span><span class="n">Op</span><span class="p">,</span><span class="w"> </span><span class="n">RowIndex</span><span class="p">,</span><span class="w"> </span><span class="n">Cols</span><span class="p">,</span><span class="w"> </span><span class="n">NameDb</span><span class="p" data-group-id="8018991313-13">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">   </span><span class="c1">% pass unchanged</span><span class="w">
-  </span><span class="nc">snmp_generic</span><span class="p">:</span><span class="nf">table_func</span><span class="p" data-group-id="8018991313-14">(</span><span class="n">Op</span><span class="p">,</span><span class="w"> </span><span class="n">RowIndex</span><span class="p">,</span><span class="w"> </span><span class="n">Cols</span><span class="p">,</span><span class="w"> </span><span class="n">NameDb</span><span class="p" data-group-id="8018991313-14">)</span><span class="p">.</span></code></pre><p>The <code class="inline">.funcs</code> file would look like:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="7922292631-1">{</span><span class="ss">myTable</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7922292631-2">{</span><span class="ss">myModule</span><span class="p">,</span><span class="w"> </span><span class="ss">myTable_func</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7922292631-3">[</span><span class="p" data-group-id="7922292631-4">{</span><span class="ss">myTable</span><span class="p">,</span><span class="w"> </span><span class="ss">mnesia</span><span class="p" data-group-id="7922292631-4">}</span><span class="p" data-group-id="7922292631-3">]</span><span class="p" data-group-id="7922292631-2">}</span><span class="p" data-group-id="7922292631-1">}</span><span class="p">.</span></code></pre>
+</span><span class="nf">myTable_func</span><span class="p" data-group-id="1481501190-13">(</span><span class="n">Op</span><span class="p">,</span><span class="w"> </span><span class="n">RowIndex</span><span class="p">,</span><span class="w"> </span><span class="n">Cols</span><span class="p">,</span><span class="w"> </span><span class="n">NameDb</span><span class="p" data-group-id="1481501190-13">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">   </span><span class="c1">% pass unchanged</span><span class="w">
+  </span><span class="nc">snmp_generic</span><span class="p">:</span><span class="nf">table_func</span><span class="p" data-group-id="1481501190-14">(</span><span class="n">Op</span><span class="p">,</span><span class="w"> </span><span class="n">RowIndex</span><span class="p">,</span><span class="w"> </span><span class="n">Cols</span><span class="p">,</span><span class="w"> </span><span class="n">NameDb</span><span class="p" data-group-id="1481501190-14">)</span><span class="p">.</span></code></pre><p>The <code class="inline">.funcs</code> file would look like:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="9647143716-1">{</span><span class="ss">myTable</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9647143716-2">{</span><span class="ss">myModule</span><span class="p">,</span><span class="w"> </span><span class="ss">myTable_func</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9647143716-3">[</span><span class="p" data-group-id="9647143716-4">{</span><span class="ss">myTable</span><span class="p">,</span><span class="w"> </span><span class="ss">mnesia</span><span class="p" data-group-id="9647143716-4">}</span><span class="p" data-group-id="9647143716-3">]</span><span class="p" data-group-id="9647143716-2">}</span><span class="p" data-group-id="9647143716-1">}</span><span class="p">.</span></code></pre>
     </section>
 
 </div>
@@ -360,6 +378,7 @@ checks are made on the type of the new value.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:column/0">
 
@@ -371,7 +390,7 @@ checks are made on the type of the new value.</p></div>
       <h1 class="signature" translate="no">column()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/snmp/src/agent/snmp_generic.erl#L159" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/snmp/src/agent/snmp_generic.erl#L159" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -399,7 +418,7 @@ checks are made on the type of the new value.</p></div>
       <h1 class="signature" translate="no">columns()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/snmp/src/agent/snmp_generic.erl#L164" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/snmp/src/agent/snmp_generic.erl#L164" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -430,7 +449,7 @@ numbers and values in the case of a set operation.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/snmp/src/agent/snmp_generic.erl#L211" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/snmp/src/agent/snmp_generic.erl#L211" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -466,6 +485,7 @@ there is no such index for this table.</p><p>Value type: <a href="../../apps/ert
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="get_index_types/1">
 
@@ -477,7 +497,7 @@ there is no such index for this table.</p><p>Value type: <a href="../../apps/ert
       <h1 class="signature" translate="no">get_index_types(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/snmp/src/agent/snmp_generic.erl#L1328" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/snmp/src/agent/snmp_generic.erl#L1328" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -507,7 +527,7 @@ types part of the table info.</p>
       <h1 class="signature" translate="no">get_status_col(Name, Cols)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/snmp/src/agent/snmp_generic.erl#L1226" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/snmp/src/agent/snmp_generic.erl#L1226" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -542,7 +562,7 @@ or <code class="inline">set</code> to check if the status column of a table is m
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/snmp/src/agent/snmp_generic.erl#L1287" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/snmp/src/agent/snmp_generic.erl#L1287" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -595,7 +615,7 @@ retrieve a given part of the table info.</p>
       <h1 class="signature" translate="no">table_func(Op, NameDb)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/snmp/src/agent/snmp_generic.erl#L511" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/snmp/src/agent/snmp_generic.erl#L511" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -628,7 +648,7 @@ function.</p>
       <h1 class="signature" translate="no">table_func(Op, RowIndex, Cols, NameDb)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/snmp/src/agent/snmp_generic.erl#L544" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/snmp/src/agent/snmp_generic.erl#L544" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -669,7 +689,7 @@ function.</p>
       <h1 class="signature" translate="no">table_get_elements(NameDb, RowIndex, Cols)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/snmp/src/agent/snmp_generic.erl#L300" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/snmp/src/agent/snmp_generic.erl#L300" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -704,7 +724,7 @@ its value is <code class="inline">noinit</code>.</p>
       <h1 class="signature" translate="no">table_next(NameDb, RestOid)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/snmp/src/agent/snmp_generic.erl#L371" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/snmp/src/agent/snmp_generic.erl#L371" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -738,7 +758,7 @@ specify an existing row.</p>
       <h1 class="signature" translate="no">table_row_exists(NameDb, RowIndex)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/snmp/src/agent/snmp_generic.erl#L1043" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/snmp/src/agent/snmp_generic.erl#L1043" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -770,7 +790,7 @@ specify an existing row.</p>
       <h1 class="signature" translate="no">table_set_elements(NameDb, RowIndex, Cols)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/snmp/src/agent/snmp_generic.erl#L353" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/snmp/src/agent/snmp_generic.erl#L353" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -808,7 +828,7 @@ values. This means that this function must be called from within a transaction
       <h1 class="signature" translate="no">variable_func/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/snmp/src/agent/snmp_generic.erl#L422" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/snmp/src/agent/snmp_generic.erl#L422" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -847,7 +867,7 @@ function.</p>
       <h1 class="signature" translate="no">variable_func/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/snmp/src/agent/snmp_generic.erl#L465" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/snmp/src/agent/snmp_generic.erl#L465" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -885,7 +905,7 @@ function.</p>
       <h1 class="signature" translate="no">variable_get(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/snmp/src/agent/snmp_generic.erl#L238" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/snmp/src/agent/snmp_generic.erl#L238" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -914,7 +934,7 @@ function.</p>
       <h1 class="signature" translate="no">variable_set(Name, Value)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/snmp/src/agent/snmp_generic.erl#L255" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/snmp/src/agent/snmp_generic.erl#L255" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -943,8 +963,8 @@ checks are made on the type of the new value.</p><p>Returns <code class="inline"
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="snmp.epub" title="ePub version">
@@ -956,7 +976,7 @@ checks are made on the type of the new value.</p><p>Returns <code class="inline"
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

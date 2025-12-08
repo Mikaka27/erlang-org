@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="stdlib v7.1-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/calendar.html" />
     <title>calendar — stdlib v7.1-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-4F7E9F36.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ stdlib
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of stdlib</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ stdlib
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -323,7 +341,7 @@ specified date.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">date_to_gregorian_days({Year, Month, Day})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#date_to_gregorian_days/1"><code class="inline">date_to_gregorian_days({Year, Month, Day})</code></a>.</p></div>
 
     </div>
 
@@ -355,7 +373,7 @@ Returns the day of the week as <code class="inline">1</code>: Monday, <code clas
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">day_of_the_week({Year, Month, Day})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#day_of_the_week/1"><code class="inline">day_of_the_week({Year, Month, Day})</code></a>.</p></div>
 
     </div>
 
@@ -396,7 +414,7 @@ Returns the day of the week as <code class="inline">1</code>: Monday, <code clas
       </div>
 
         <div class="summary-synopsis"><p>Returns tuple <code class="inline">{Year, WeekNum}</code> representing the ISO week number for the actual
-date. To determine the actual date, use function <a><code class="inline">local_time/0</code></a>.</p></div>
+date. To determine the actual date, use function <a href="#local_time/0"><code class="inline">local_time/0</code></a>.</p></div>
 
     </div>
 
@@ -437,7 +455,7 @@ specified date.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">local_time_to_system_time(LocalTime, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#local_time_to_system_time/2"><code class="inline">local_time_to_system_time(LocalTime, [])</code></a>.</p></div>
 
     </div>
 
@@ -449,7 +467,7 @@ specified date.</p></div>
 
         <div class="summary-synopsis"><p>Converts local time into system time.
 Error will occur if the local time is non existing or ambiguous due to DST,
-see <a><code class="inline">calendar:local_time_to_universal_time_dst/1</code></a>.</p></div>
+see <a href="#local_time_to_universal_time_dst/1"><code class="inline">calendar:local_time_to_universal_time_dst/1</code></a>.</p></div>
 
     </div>
 
@@ -484,7 +502,7 @@ refer to a local date after Jan 1, 1970.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Returns Universal Coordinated Time (UTC) converted from the return value from
-<a><code class="inline">erlang:timestamp/0</code></a>.</p></div>
+<a href="../../apps/erts/erlang.html#timestamp/0"><code class="inline">erlang:timestamp/0</code></a>.</p></div>
 
     </div>
 
@@ -495,7 +513,7 @@ refer to a local date after Jan 1, 1970.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Returns local date and time converted from the return value from
-<a><code class="inline">erlang:timestamp/0</code></a>.</p></div>
+<a href="../../apps/erts/erlang.html#timestamp/0"><code class="inline">erlang:timestamp/0</code></a>.</p></div>
 
     </div>
 
@@ -506,7 +524,7 @@ refer to a local date after Jan 1, 1970.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Returns Universal Coordinated Time (UTC) converted from the return value from
-<a><code class="inline">erlang:timestamp/0</code></a>.</p></div>
+<a href="../../apps/erts/erlang.html#timestamp/0"><code class="inline">erlang:timestamp/0</code></a>.</p></div>
 
     </div>
 
@@ -516,7 +534,7 @@ refer to a local date after Jan 1, 1970.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">rfc3339_to_system_time(DateTimeString, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#rfc3339_to_system_time/2"><code class="inline">rfc3339_to_system_time(DateTimeString, [])</code></a>.</p></div>
 
     </div>
 
@@ -527,7 +545,7 @@ refer to a local date after Jan 1, 1970.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Converts an RFC 3339 timestamp into system time. The data format of RFC 3339
-timestamps is described by <a>RFC 3339</a>.
+timestamps is described by <a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a>.
 Starting from OTP 25.1, the minutes part of the time zone is optional.</p></div>
 
     </div>
@@ -570,7 +588,7 @@ than the number of seconds per day (86400).</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">system_time_to_rfc3339(Time, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#system_time_to_rfc3339/2"><code class="inline">system_time_to_rfc3339(Time, [])</code></a>.</p></div>
 
     </div>
 
@@ -643,7 +661,7 @@ refer to a date after Jan 1, 1970.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">universal_time_to_system_time(LocalTime, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#universal_time_to_system_time/2"><code class="inline">universal_time_to_system_time(LocalTime, [])</code></a>.</p></div>
 
     </div>
 
@@ -673,7 +691,7 @@ refer to a date after Jan 1, 1970.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">valid_date({Year, Month, Day})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#valid_date/1"><code class="inline">valid_date({Year, Month, Day})</code></a>.</p></div>
 
     </div>
 
@@ -689,6 +707,7 @@ refer to a date after Jan 1, 1970.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:date/0">
 
@@ -700,7 +719,7 @@ refer to a date after Jan 1, 1970.</p></div>
       <h1 class="signature" translate="no">date()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L177" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L177" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -730,7 +749,7 @@ before using it.</p>
       <h1 class="signature" translate="no">datetime1970()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L180" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L180" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -758,7 +777,7 @@ before using it.</p>
       <h1 class="signature" translate="no">datetime()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L179" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L179" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -788,7 +807,7 @@ before using it.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L161" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L161" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -818,7 +837,7 @@ before using it.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L165" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L165" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -848,7 +867,7 @@ before using it.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L162" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L162" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -878,7 +897,7 @@ before using it.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L167" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L167" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -908,7 +927,7 @@ before using it.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L163" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L163" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -938,7 +957,7 @@ before using it.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L160" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L160" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -968,7 +987,7 @@ before using it.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L684" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L684" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -998,7 +1017,7 @@ before using it.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L183" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L183" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1028,7 +1047,7 @@ before using it.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L191" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L191" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1058,7 +1077,7 @@ before using it.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L164" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L164" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1088,7 +1107,7 @@ before using it.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L640" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L640" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1116,7 +1135,7 @@ before using it.</p>
       <h1 class="signature" translate="no">time()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L178" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L178" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1146,7 +1165,7 @@ before using it.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L168" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L168" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1176,7 +1195,7 @@ before using it.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L159" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L159" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1206,7 +1225,7 @@ before using it.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L158" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L158" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1237,7 +1256,7 @@ range depends on the underlying operating system.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L181" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L181" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1266,6 +1285,7 @@ range depends on the underlying operating system.</p>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="date_to_gregorian_days/1">
 
@@ -1277,7 +1297,7 @@ range depends on the underlying operating system.</p>
       <h1 class="signature" translate="no">date_to_gregorian_days(Date)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L241" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L241" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1306,7 +1326,7 @@ specified date.</p>
       <h1 class="signature" translate="no">date_to_gregorian_days(Year, Month, Day)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L227" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L227" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1339,7 +1359,7 @@ specified date.</p>
       <h1 class="signature" translate="no">datetime_to_gregorian_seconds(DateTime)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L257" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L257" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1369,7 +1389,7 @@ specified date and time.</p>
       <h1 class="signature" translate="no">day_of_the_week(Date)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L281" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L281" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1398,7 +1418,7 @@ Returns the day of the week as <code class="inline">1</code>: Monday, <code clas
       <h1 class="signature" translate="no">day_of_the_week(Year, Month, Day)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L272" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L272" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1426,7 +1446,7 @@ Returns the day of the week as <code class="inline">1</code>: Monday, <code clas
       <h1 class="signature" translate="no">gregorian_days_to_date(Days)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L290" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L290" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1454,7 +1474,7 @@ Returns the day of the week as <code class="inline">1</code>: Monday, <code clas
       <h1 class="signature" translate="no">gregorian_seconds_to_datetime(Seconds)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L301" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L301" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1482,7 +1502,7 @@ Returns the day of the week as <code class="inline">1</code>: Monday, <code clas
       <h1 class="signature" translate="no">is_leap_year(Year)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L312" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L312" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1512,7 +1532,7 @@ Returns the day of the week as <code class="inline">1</code>: Monday, <code clas
         <span class="note">(since OTP R14B02)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L332" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L332" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1543,7 +1563,7 @@ date. To determine the actual date, use function <a href="#local_time/0"><code c
         <span class="note">(since OTP R14B02)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L347" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L347" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1572,7 +1592,7 @@ specified date.</p>
       <h1 class="signature" translate="no">last_day_of_the_month(Year, Month)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L379" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L379" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1601,7 +1621,7 @@ specified date.</p>
       <h1 class="signature" translate="no">local_time()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L401" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L401" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1631,7 +1651,7 @@ specified date.</p>
         <span class="note">(since OTP 28.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L407" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L407" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1661,7 +1681,7 @@ specified date.</p>
         <span class="note">(since OTP 28.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L419" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L419" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1692,7 +1712,7 @@ see <a href="#local_time_to_universal_time_dst/1"><code class="inline">calendar:
       <h1 class="signature" translate="no">local_time_to_universal_time(DateTime1)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L446" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L446" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1729,7 +1749,7 @@ this function still returns a result.</p></section>
       <h1 class="signature" translate="no">local_time_to_universal_time_dst(DateTime1)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L477" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L477" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1765,7 +1785,7 @@ exists.</p></li></ul>
       <h1 class="signature" translate="no">now_to_datetime(Now)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L510" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L510" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1794,7 +1814,7 @@ exists.</p></li></ul>
       <h1 class="signature" translate="no">now_to_local_time(Now)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L533" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L533" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1823,7 +1843,7 @@ exists.</p></li></ul>
       <h1 class="signature" translate="no">now_to_universal_time(Now)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L519" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L519" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1854,7 +1874,7 @@ exists.</p></li></ul>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L542" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L542" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1884,7 +1904,7 @@ exists.</p></li></ul>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L572" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L572" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1906,13 +1926,13 @@ exists.</p></li></ul>
 <p>Converts an RFC 3339 timestamp into system time. The data format of RFC 3339
 timestamps is described by <a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a>.
 Starting from OTP 25.1, the minutes part of the time zone is optional.</p><p>Valid option:</p><ul><li><strong><code class="inline">{unit, Unit}</code></strong> - The time unit of the return value. The default is
-<code class="inline">second</code>.</li></ul><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">calendar</span><span class="p">:</span><span class="nf">rfc3339_to_system_time</span><span class="p" data-group-id="1586410382-1">(</span><span class="s">&quot;2018-02-01T16:17:58+01:00&quot;</span><span class="p" data-group-id="1586410382-1">)</span><span class="p">.</span><span class="w">
+<code class="inline">second</code>.</li></ul><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">calendar</span><span class="p">:</span><span class="nf">rfc3339_to_system_time</span><span class="p" data-group-id="0133123780-1">(</span><span class="s">&quot;2018-02-01T16:17:58+01:00&quot;</span><span class="p" data-group-id="0133123780-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mi">1517498278</span><span class="gp unselectable">
-2&gt; </span><span class="nc">calendar</span><span class="p">:</span><span class="nf">rfc3339_to_system_time</span><span class="p" data-group-id="1586410382-2">(</span><span class="s">&quot;2018-02-01 15:18:02.088Z&quot;</span><span class="p">,</span><span class="w">
-   </span><span class="p" data-group-id="1586410382-3">[</span><span class="p" data-group-id="1586410382-4">{</span><span class="ss">unit</span><span class="p">,</span><span class="w"> </span><span class="ss">nanosecond</span><span class="p" data-group-id="1586410382-4">}</span><span class="p" data-group-id="1586410382-3">]</span><span class="p" data-group-id="1586410382-2">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">calendar</span><span class="p">:</span><span class="nf">rfc3339_to_system_time</span><span class="p" data-group-id="0133123780-2">(</span><span class="s">&quot;2018-02-01 15:18:02.088Z&quot;</span><span class="p">,</span><span class="w">
+   </span><span class="p" data-group-id="0133123780-3">[</span><span class="p" data-group-id="0133123780-4">{</span><span class="ss">unit</span><span class="p">,</span><span class="w"> </span><span class="ss">nanosecond</span><span class="p" data-group-id="0133123780-4">}</span><span class="p" data-group-id="0133123780-3">]</span><span class="p" data-group-id="0133123780-2">)</span><span class="p">.</span><span class="w">
 </span><span class="mi">1517498282088000000</span><span class="gp unselectable">
-3&gt; </span><span class="nc">calendar</span><span class="p">:</span><span class="nf">rfc3339_to_system_time</span><span class="p" data-group-id="1586410382-5">(</span><span class="p" data-group-id="1586410382-6">&lt;&lt;</span><span class="s">&quot;2018-02-01 15:18:02.088Z&quot;</span><span class="p" data-group-id="1586410382-6">&gt;&gt;</span><span class="p">,</span><span class="w">
-   </span><span class="p" data-group-id="1586410382-7">[</span><span class="p" data-group-id="1586410382-8">{</span><span class="ss">unit</span><span class="p">,</span><span class="w"> </span><span class="ss">nanosecond</span><span class="p" data-group-id="1586410382-8">}</span><span class="p" data-group-id="1586410382-7">]</span><span class="p" data-group-id="1586410382-5">)</span><span class="p">.</span><span class="w">
+3&gt; </span><span class="nc">calendar</span><span class="p">:</span><span class="nf">rfc3339_to_system_time</span><span class="p" data-group-id="0133123780-5">(</span><span class="p" data-group-id="0133123780-6">&lt;&lt;</span><span class="s">&quot;2018-02-01 15:18:02.088Z&quot;</span><span class="p" data-group-id="0133123780-6">&gt;&gt;</span><span class="p">,</span><span class="w">
+   </span><span class="p" data-group-id="0133123780-7">[</span><span class="p" data-group-id="0133123780-8">{</span><span class="ss">unit</span><span class="p">,</span><span class="w"> </span><span class="ss">nanosecond</span><span class="p" data-group-id="0133123780-8">}</span><span class="p" data-group-id="0133123780-7">]</span><span class="p" data-group-id="0133123780-5">)</span><span class="p">.</span><span class="w">
 </span><span class="mi">1517498282088000000</span></code></pre>
   </section>
 </section>
@@ -1926,7 +1946,7 @@ Starting from OTP 25.1, the minutes part of the time zone is optional.</p><p>Val
       <h1 class="signature" translate="no">seconds_to_daystime(Seconds)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L624" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L624" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1956,7 +1976,7 @@ Starting from OTP 25.1, the minutes part of the time zone is optional.</p><p>Val
       <h1 class="signature" translate="no">seconds_to_time(Seconds)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L647" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L647" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1987,7 +2007,7 @@ than the number of seconds per day (86400).</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L661" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L661" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2018,7 +2038,7 @@ than the number of seconds per day (86400).</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L681" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L681" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2049,7 +2069,7 @@ than the number of seconds per day (86400).</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L739" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L739" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2084,20 +2104,20 @@ the formatted string includes a fraction of a second. The number of fractional
 second digits is three, six, or nine depending on what time unit is chosen.
 For <code class="inline">native</code> three fractional digits are included. Notice that trailing zeros
 are not removed from the fraction.</p></li><li><p><strong><code class="inline">{return, Return}</code></strong> - The desired encoding type for the output,
-whether a string or a binary is desired. Defaults to string.</p></li></ul><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">calendar</span><span class="p">:</span><span class="nf">system_time_to_rfc3339</span><span class="p" data-group-id="4548352541-1">(</span><span class="nc">erlang</span><span class="p">:</span><span class="nf">system_time</span><span class="p" data-group-id="4548352541-2">(</span><span class="ss">second</span><span class="p" data-group-id="4548352541-2">)</span><span class="p" data-group-id="4548352541-1">)</span><span class="p">.</span><span class="w">
+whether a string or a binary is desired. Defaults to string.</p></li></ul><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">calendar</span><span class="p">:</span><span class="nf">system_time_to_rfc3339</span><span class="p" data-group-id="7044994219-1">(</span><span class="nc">erlang</span><span class="p">:</span><span class="nf">system_time</span><span class="p" data-group-id="7044994219-2">(</span><span class="ss">second</span><span class="p" data-group-id="7044994219-2">)</span><span class="p" data-group-id="7044994219-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;2018-04-23T14:56:28+02:00&quot;</span><span class="gp unselectable">
-2&gt; </span><span class="nc">calendar</span><span class="p">:</span><span class="nf">system_time_to_rfc3339</span><span class="p" data-group-id="4548352541-3">(</span><span class="nc">erlang</span><span class="p">:</span><span class="nf">system_time</span><span class="p" data-group-id="4548352541-4">(</span><span class="ss">second</span><span class="p" data-group-id="4548352541-4">)</span><span class="p">,</span><span class="w">
-   </span><span class="p" data-group-id="4548352541-5">[</span><span class="p" data-group-id="4548352541-6">{</span><span class="ss">offset</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-02:00&quot;</span><span class="p" data-group-id="4548352541-6">}</span><span class="p" data-group-id="4548352541-5">]</span><span class="p" data-group-id="4548352541-3">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">calendar</span><span class="p">:</span><span class="nf">system_time_to_rfc3339</span><span class="p" data-group-id="7044994219-3">(</span><span class="nc">erlang</span><span class="p">:</span><span class="nf">system_time</span><span class="p" data-group-id="7044994219-4">(</span><span class="ss">second</span><span class="p" data-group-id="7044994219-4">)</span><span class="p">,</span><span class="w">
+   </span><span class="p" data-group-id="7044994219-5">[</span><span class="p" data-group-id="7044994219-6">{</span><span class="ss">offset</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;-02:00&quot;</span><span class="p" data-group-id="7044994219-6">}</span><span class="p" data-group-id="7044994219-5">]</span><span class="p" data-group-id="7044994219-3">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;2018-04-23T10:56:52-02:00&quot;</span><span class="gp unselectable">
-3&gt; </span><span class="nc">calendar</span><span class="p">:</span><span class="nf">system_time_to_rfc3339</span><span class="p" data-group-id="4548352541-7">(</span><span class="nc">erlang</span><span class="p">:</span><span class="nf">system_time</span><span class="p" data-group-id="4548352541-8">(</span><span class="ss">second</span><span class="p" data-group-id="4548352541-8">)</span><span class="p">,</span><span class="w">
-   </span><span class="p" data-group-id="4548352541-9">[</span><span class="p" data-group-id="4548352541-10">{</span><span class="ss">offset</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">7200</span><span class="p" data-group-id="4548352541-10">}</span><span class="p" data-group-id="4548352541-9">]</span><span class="p" data-group-id="4548352541-7">)</span><span class="p">.</span><span class="w">
+3&gt; </span><span class="nc">calendar</span><span class="p">:</span><span class="nf">system_time_to_rfc3339</span><span class="p" data-group-id="7044994219-7">(</span><span class="nc">erlang</span><span class="p">:</span><span class="nf">system_time</span><span class="p" data-group-id="7044994219-8">(</span><span class="ss">second</span><span class="p" data-group-id="7044994219-8">)</span><span class="p">,</span><span class="w">
+   </span><span class="p" data-group-id="7044994219-9">[</span><span class="p" data-group-id="7044994219-10">{</span><span class="ss">offset</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">7200</span><span class="p" data-group-id="7044994219-10">}</span><span class="p" data-group-id="7044994219-9">]</span><span class="p" data-group-id="7044994219-7">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;2018-04-23T10:57:05-02:00&quot;</span><span class="gp unselectable">
-4&gt; </span><span class="nc">calendar</span><span class="p">:</span><span class="nf">system_time_to_rfc3339</span><span class="p" data-group-id="4548352541-11">(</span><span class="nc">erlang</span><span class="p">:</span><span class="nf">system_time</span><span class="p" data-group-id="4548352541-12">(</span><span class="ss">millisecond</span><span class="p" data-group-id="4548352541-12">)</span><span class="p">,</span><span class="w">
-   </span><span class="p" data-group-id="4548352541-13">[</span><span class="p" data-group-id="4548352541-14">{</span><span class="ss">unit</span><span class="p">,</span><span class="w"> </span><span class="ss">millisecond</span><span class="p" data-group-id="4548352541-14">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4548352541-15">{</span><span class="ss">time_designator</span><span class="p">,</span><span class="w"> </span><span class="sc">$\s</span><span class="p" data-group-id="4548352541-15">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4548352541-16">{</span><span class="ss">offset</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Z&quot;</span><span class="p" data-group-id="4548352541-16">}</span><span class="p" data-group-id="4548352541-13">]</span><span class="p" data-group-id="4548352541-11">)</span><span class="p">.</span><span class="w">
+4&gt; </span><span class="nc">calendar</span><span class="p">:</span><span class="nf">system_time_to_rfc3339</span><span class="p" data-group-id="7044994219-11">(</span><span class="nc">erlang</span><span class="p">:</span><span class="nf">system_time</span><span class="p" data-group-id="7044994219-12">(</span><span class="ss">millisecond</span><span class="p" data-group-id="7044994219-12">)</span><span class="p">,</span><span class="w">
+   </span><span class="p" data-group-id="7044994219-13">[</span><span class="p" data-group-id="7044994219-14">{</span><span class="ss">unit</span><span class="p">,</span><span class="w"> </span><span class="ss">millisecond</span><span class="p" data-group-id="7044994219-14">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7044994219-15">{</span><span class="ss">time_designator</span><span class="p">,</span><span class="w"> </span><span class="sc">$\s</span><span class="p" data-group-id="7044994219-15">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7044994219-16">{</span><span class="ss">offset</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Z&quot;</span><span class="p" data-group-id="7044994219-16">}</span><span class="p" data-group-id="7044994219-13">]</span><span class="p" data-group-id="7044994219-11">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;2018-04-23 12:57:20.482Z&quot;</span><span class="gp unselectable">
-5&gt; </span><span class="nc">calendar</span><span class="p">:</span><span class="nf">system_time_to_rfc3339</span><span class="p" data-group-id="4548352541-17">(</span><span class="nc">erlang</span><span class="p">:</span><span class="nf">system_time</span><span class="p" data-group-id="4548352541-18">(</span><span class="ss">millisecond</span><span class="p" data-group-id="4548352541-18">)</span><span class="p">,</span><span class="w">
-   </span><span class="p" data-group-id="4548352541-19">[</span><span class="p" data-group-id="4548352541-20">{</span><span class="ss">unit</span><span class="p">,</span><span class="w"> </span><span class="ss">millisecond</span><span class="p" data-group-id="4548352541-20">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4548352541-21">{</span><span class="ss">time_designator</span><span class="p">,</span><span class="w"> </span><span class="sc">$\s</span><span class="p" data-group-id="4548352541-21">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4548352541-22">{</span><span class="ss">offset</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Z&quot;</span><span class="p" data-group-id="4548352541-22">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4548352541-23">{</span><span class="ss">return</span><span class="p">,</span><span class="w"> </span><span class="ss">binary</span><span class="p" data-group-id="4548352541-23">}</span><span class="p" data-group-id="4548352541-19">]</span><span class="p" data-group-id="4548352541-17">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="4548352541-24">&lt;&lt;</span><span class="s">&quot;2018-04-23 12:57:20.482Z&quot;</span><span class="p" data-group-id="4548352541-24">&gt;&gt;</span></code></pre>
+5&gt; </span><span class="nc">calendar</span><span class="p">:</span><span class="nf">system_time_to_rfc3339</span><span class="p" data-group-id="7044994219-17">(</span><span class="nc">erlang</span><span class="p">:</span><span class="nf">system_time</span><span class="p" data-group-id="7044994219-18">(</span><span class="ss">millisecond</span><span class="p" data-group-id="7044994219-18">)</span><span class="p">,</span><span class="w">
+   </span><span class="p" data-group-id="7044994219-19">[</span><span class="p" data-group-id="7044994219-20">{</span><span class="ss">unit</span><span class="p">,</span><span class="w"> </span><span class="ss">millisecond</span><span class="p" data-group-id="7044994219-20">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7044994219-21">{</span><span class="ss">time_designator</span><span class="p">,</span><span class="w"> </span><span class="sc">$\s</span><span class="p" data-group-id="7044994219-21">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7044994219-22">{</span><span class="ss">offset</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Z&quot;</span><span class="p" data-group-id="7044994219-22">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7044994219-23">{</span><span class="ss">return</span><span class="p">,</span><span class="w"> </span><span class="ss">binary</span><span class="p" data-group-id="7044994219-23">}</span><span class="p" data-group-id="7044994219-19">]</span><span class="p" data-group-id="7044994219-17">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="7044994219-24">&lt;&lt;</span><span class="s">&quot;2018-04-23 12:57:20.482Z&quot;</span><span class="p" data-group-id="7044994219-24">&gt;&gt;</span></code></pre>
   </section>
 </section>
 <section class="detail" id="system_time_to_universal_time/2">
@@ -2112,7 +2132,7 @@ whether a string or a binary is desired. Defaults to string.</p></li></ul><pre><
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L671" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L671" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2141,7 +2161,7 @@ whether a string or a binary is desired. Defaults to string.</p></li></ul><pre><
       <h1 class="signature" translate="no">time_difference(T1, T2)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L804" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L804" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2172,7 +2192,7 @@ seconds instead.</p></section>
       <h1 class="signature" translate="no">time_to_seconds(Time)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L817" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L817" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2200,7 +2220,7 @@ seconds instead.</p></section>
       <h1 class="signature" translate="no">universal_time()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L830" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L830" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2229,7 +2249,7 @@ operating system. Returns local time if universal time is unavailable.</p>
       <h1 class="signature" translate="no">universal_time_to_local_time(DateTime)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L858" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L858" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2260,7 +2280,7 @@ refer to a date after Jan 1, 1970.</p>
         <span class="note">(since OTP 28.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L836" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L836" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2290,7 +2310,7 @@ refer to a date after Jan 1, 1970.</p>
         <span class="note">(since OTP 28.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L844" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L844" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2319,7 +2339,7 @@ refer to a date after Jan 1, 1970.</p>
       <h1 class="signature" translate="no">valid_date(Date)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L882" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L882" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2347,7 +2367,7 @@ refer to a date after Jan 1, 1970.</p>
       <h1 class="signature" translate="no">valid_date(Year, Month, Day)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/calendar.erl#L870" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/calendar.erl#L870" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2374,8 +2394,8 @@ refer to a date after Jan 1, 1970.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="stdlib.epub" title="ePub version">
@@ -2387,7 +2407,7 @@ refer to a date after Jan 1, 1970.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

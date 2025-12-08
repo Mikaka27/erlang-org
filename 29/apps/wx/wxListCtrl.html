@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="wx v2.5.2-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/wx/wxListCtrl.html" />
     <title>wxListCtrl — wx v2.5.2-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-E2170433.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ wx
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of wx</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ wx
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L58" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L58" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -155,7 +173,7 @@ callback in <a href="#sortItems/2"><code class="inline">sortItems/2</code></a>.)
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">arrange(This, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#arrange/2"><code class="inline">arrange(This, [])</code></a>.</p></div>
 
     </div>
 
@@ -271,7 +289,7 @@ callback in <a href="#sortItems/2"><code class="inline">sortItems/2</code></a>.)
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">findItem(This, Start, Str, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#findItem/4"><code class="inline">findItem(This, Start, Str, [])</code></a>.</p></div>
 
     </div>
 
@@ -414,7 +432,7 @@ view).</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">getItemRect(This, Item, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#getItemRect/3"><code class="inline">getItemRect(This, Item, [])</code></a>.</p></div>
 
     </div>
 
@@ -455,7 +473,7 @@ component of the {Width,Height} object and the vertical spacing as its <code cla
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">getItemText(This, Item, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#getItemText/3"><code class="inline">getItemText(This, Item, [])</code></a>.</p></div>
 
     </div>
 
@@ -485,7 +503,7 @@ component of the {Width,Height} object and the vertical spacing as its <code cla
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">getNextItem(This, Item, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#getNextItem/3"><code class="inline">getNextItem(This, Item, [])</code></a>.</p></div>
 
     </div>
 
@@ -710,7 +728,7 @@ the <code class="inline">item</code> itself.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">setItem(This, Index, Column, Label, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#setItem/5"><code class="inline">setItem(This, Index, Column, Label, [])</code></a>.</p></div>
 
     </div>
 
@@ -780,7 +798,7 @@ the <code class="inline">item</code> itself.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">setItemImage(This, Item, Image, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#setItemImage/4"><code class="inline">setItemImage(This, Item, Image, [])</code></a>.</p></div>
 
     </div>
 
@@ -840,7 +858,7 @@ the <code class="inline">item</code> itself.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">setSingleStyle(This, Style, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#setSingleStyle/3"><code class="inline">setSingleStyle(This, Style, [])</code></a>.</p></div>
 
     </div>
 
@@ -894,6 +912,7 @@ the <code class="inline">item</code> itself.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:wxListCtrl/0">
 
@@ -905,7 +924,7 @@ the <code class="inline">item</code> itself.</p></div>
       <h1 class="signature" translate="no">wxListCtrl()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L255" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L255" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -934,6 +953,7 @@ the <code class="inline">item</code> itself.</p></div>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="arrange/1">
 
@@ -945,7 +965,7 @@ the <code class="inline">item</code> itself.</p></div>
       <h1 class="signature" translate="no">arrange(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L307" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L307" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -973,7 +993,7 @@ the <code class="inline">item</code> itself.</p></div>
       <h1 class="signature" translate="no">arrange/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L327" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L327" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1001,7 +1021,7 @@ the <code class="inline">item</code> itself.</p></div>
       <h1 class="signature" translate="no">assignImageList(This, ImageList, Which)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L346" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L346" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1034,7 +1054,7 @@ the <code class="inline">item</code> itself.</p></div>
       <h1 class="signature" translate="no">clearAll(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L359" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L359" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1062,7 +1082,7 @@ the <code class="inline">item</code> itself.</p></div>
       <h1 class="signature" translate="no">create(This, Parent)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L368" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L368" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1090,7 +1110,7 @@ the <code class="inline">item</code> itself.</p></div>
       <h1 class="signature" translate="no">create/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L385" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L385" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1130,7 +1150,7 @@ the <code class="inline">item</code> itself.</p></div>
       <h1 class="signature" translate="no">deleteAllItems(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L418" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L418" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1162,7 +1182,7 @@ false if an error occurred while deleting the items.</p>
       <h1 class="signature" translate="no">deleteColumn(This, Col)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L426" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L426" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1190,7 +1210,7 @@ false if an error occurred while deleting the items.</p>
       <h1 class="signature" translate="no">deleteItem(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L441" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L441" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1218,7 +1238,7 @@ false if an error occurred while deleting the items.</p>
       <h1 class="signature" translate="no">destroy(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L1319" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L1319" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1246,7 +1266,7 @@ false if an error occurred while deleting the items.</p>
       <h1 class="signature" translate="no">editLabel(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L459" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L459" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1277,7 +1297,7 @@ well.</p>
       <h1 class="signature" translate="no">ensureVisible(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L468" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L468" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1305,7 +1325,7 @@ well.</p>
       <h1 class="signature" translate="no">findItem(This, Start, Str)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L478" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L478" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1334,7 +1354,7 @@ well.</p>
       <h1 class="signature" translate="no">findItem/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L493" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L493" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1374,7 +1394,7 @@ the beginning if <code class="inline">start</code> is -1.</p><p>Return: The next
       <h1 class="signature" translate="no">getColumn(This, Col, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L515" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L515" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1403,7 +1423,7 @@ the beginning if <code class="inline">start</code> is -1.</p><p>Return: The next
       <h1 class="signature" translate="no">getColumnCount(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L525" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L525" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1431,7 +1451,7 @@ the beginning if <code class="inline">start</code> is -1.</p><p>Return: The next
       <h1 class="signature" translate="no">getColumnWidth(This, Col)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L533" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L533" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1459,7 +1479,7 @@ the beginning if <code class="inline">start</code> is -1.</p><p>Return: The next
       <h1 class="signature" translate="no">getCountPerPage(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L546" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L546" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1489,7 +1509,7 @@ view).</p>
       <h1 class="signature" translate="no">getEditControl(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L561" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L561" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1518,7 +1538,7 @@ native macOS version.</p>
       <h1 class="signature" translate="no">getImageList(This, Which)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L579" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L579" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1547,7 +1567,7 @@ native macOS version.</p>
       <h1 class="signature" translate="no">getItem(This, Info)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L596" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L596" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1577,7 +1597,7 @@ retrieve from <code class="inline">info</code>.</p>
       <h1 class="signature" translate="no">getItemBackgroundColour(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L612" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L612" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1607,7 +1627,7 @@ background control of the control itself).</p><p>See: <a href="#getItemTextColou
       <h1 class="signature" translate="no">getItemCount(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L621" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L621" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1635,7 +1655,7 @@ background control of the control itself).</p><p>See: <a href="#getItemTextColou
       <h1 class="signature" translate="no">getItemData(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L629" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L629" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1663,7 +1683,7 @@ background control of the control itself).</p><p>See: <a href="#getItemTextColou
       <h1 class="signature" translate="no">getItemFont(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L638" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L638" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1691,7 +1711,7 @@ background control of the control itself).</p><p>See: <a href="#getItemTextColou
       <h1 class="signature" translate="no">getItemPosition(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L648" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L648" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1723,7 +1743,7 @@ background control of the control itself).</p><p>See: <a href="#getItemTextColou
       <h1 class="signature" translate="no">getItemRect(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L659" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L659" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1757,7 +1777,7 @@ background control of the control itself).</p><p>See: <a href="#getItemTextColou
       <h1 class="signature" translate="no">getItemRect/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L672" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L672" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1792,7 +1812,7 @@ background control of the control itself).</p><p>See: <a href="#getItemTextColou
       <h1 class="signature" translate="no">getItemSpacing(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L687" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L687" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1821,7 +1841,7 @@ component of the {Width,Height} object and the vertical spacing as its <code cla
       <h1 class="signature" translate="no">getItemState(This, Item, StateMask)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L700" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L700" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1851,7 +1871,7 @@ interest.</p>
       <h1 class="signature" translate="no">getItemText(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L710" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L710" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1879,7 +1899,7 @@ interest.</p>
       <h1 class="signature" translate="no">getItemText/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L718" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L718" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1908,7 +1928,7 @@ interest.</p>
       <h1 class="signature" translate="no">getItemTextColour(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L737" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L737" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1939,7 +1959,7 @@ colour which, hence, have always the same colour as the control).</p>
       <h1 class="signature" translate="no">getNextItem(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L747" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L747" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1967,7 +1987,7 @@ colour which, hence, have always the same colour as the control).</p>
       <h1 class="signature" translate="no">getNextItem/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L789" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L789" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2002,7 +2022,7 @@ function may be used to find all selected items in the control like this:</p><p>
       <h1 class="signature" translate="no">getSelectedItemCount(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L802" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L802" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2030,7 +2050,7 @@ function may be used to find all selected items in the control like this:</p><p>
       <h1 class="signature" translate="no">getTextColour(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L810" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L810" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2058,7 +2078,7 @@ function may be used to find all selected items in the control like this:</p><p>
       <h1 class="signature" translate="no">getTopItem(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L818" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L818" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2086,7 +2106,7 @@ function may be used to find all selected items in the control like this:</p><p>
       <h1 class="signature" translate="no">getViewRect(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L834" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L834" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2117,7 +2137,7 @@ report views (this is a limitation of the native Win32 control).</p>
       <h1 class="signature" translate="no">hitTest(This, Point)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L874" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L874" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2154,7 +2174,7 @@ version 4.70 that is provided by Microsoft.</p>
       <h1 class="signature" translate="no">insertColumn/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L891" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L891" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2186,7 +2206,7 @@ this method and the description of how the item width is interpreted by this met
       <h1 class="signature" translate="no">insertColumn/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L916" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L916" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2221,7 +2241,7 @@ specifying its most common attributes.</p><p>Notice that to set the image for th
       <h1 class="signature" translate="no">insertItem(This, Info)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L930" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L930" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2249,7 +2269,7 @@ specifying its most common attributes.</p><p>Notice that to set the image for th
       <h1 class="signature" translate="no">insertItem/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L941" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L941" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2280,7 +2300,7 @@ specifying its most common attributes.</p><p>Notice that to set the image for th
       <h1 class="signature" translate="no">insertItem(This, Index, Label, ImageIndex)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L956" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L956" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2313,7 +2333,7 @@ specifying its most common attributes.</p><p>Notice that to set the image for th
       <h1 class="signature" translate="no">new()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L266" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L266" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2341,7 +2361,7 @@ specifying its most common attributes.</p><p>Notice that to set the image for th
       <h1 class="signature" translate="no">new(Parent)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L274" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L274" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2369,7 +2389,7 @@ specifying its most common attributes.</p><p>Notice that to set the image for th
       <h1 class="signature" translate="no">new/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L296" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L296" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2408,7 +2428,7 @@ specifying its most common attributes.</p><p>Notice that to set the image for th
       <h1 class="signature" translate="no">refreshItem(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L973" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L973" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2437,7 +2457,7 @@ displayed value of the item doesn't change even when the underlying data does ch
       <h1 class="signature" translate="no">refreshItems(This, ItemFrom, ItemTo)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L987" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L987" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2466,7 +2486,7 @@ displayed value of the item doesn't change even when the underlying data does ch
       <h1 class="signature" translate="no">scrollList(This, Dx, Dy)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L1003" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L1003" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2496,7 +2516,7 @@ specifies the number of pixels to scroll vertically.</p><p>Note: This method is 
       <h1 class="signature" translate="no">setBackgroundColour(This, Col)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L1017" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L1017" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2525,7 +2545,7 @@ background colour.</p>
       <h1 class="signature" translate="no">setColumn(This, Col, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L1030" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L1030" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2554,7 +2574,7 @@ background colour.</p>
       <h1 class="signature" translate="no">setColumnWidth(This, Col, Width)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L1052" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L1052" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2585,7 +2605,7 @@ columns.</p>
       <h1 class="signature" translate="no">setImageList(This, ImageList, Which)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L1070" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L1070" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2618,7 +2638,7 @@ last is unimplemented).</p><p>This method does not take ownership of the image l
       <h1 class="signature" translate="no">setItem(This, Info)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L1087" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L1087" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2648,7 +2668,7 @@ reason (e.g. an invalid item index).</p>
       <h1 class="signature" translate="no">setItem(This, Index, Column, Label)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L1097" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L1097" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2681,7 +2701,7 @@ reason (e.g. an invalid item index).</p>
       <h1 class="signature" translate="no">setItem/5</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L1110" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L1110" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2716,7 +2736,7 @@ reason (e.g. an invalid item index).</p>
       <h1 class="signature" translate="no">setItemBackgroundColour(This, Item, Col)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L1127" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L1127" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2745,7 +2765,7 @@ reason (e.g. an invalid item index).</p>
       <h1 class="signature" translate="no">setItemColumnImage(This, Item, Column, Image)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L1207" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L1207" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2779,7 +2799,7 @@ associated with the list control.</p>
       <h1 class="signature" translate="no">setItemCount(This, Count)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L1146" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L1146" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2812,7 +2832,7 @@ call <a href="wxWindow.html#refresh/2"><code class="inline">wxWindow:refresh/2</
       <h1 class="signature" translate="no">setItemData(This, Item, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L1159" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L1159" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2842,7 +2862,7 @@ use <code class="inline">SetItemPtrData()</code> (not implemented in wx) instead
       <h1 class="signature" translate="no">setItemFont(This, Item, Font)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L1168" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L1168" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2871,7 +2891,7 @@ use <code class="inline">SetItemPtrData()</code> (not implemented in wx) instead
       <h1 class="signature" translate="no">setItemImage(This, Item, Image)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L1178" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L1178" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2900,7 +2920,7 @@ use <code class="inline">SetItemPtrData()</code> (not implemented in wx) instead
       <h1 class="signature" translate="no">setItemImage/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L1190" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L1190" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2933,7 +2953,7 @@ use <code class="inline">SetItemPtrData()</code> (not implemented in wx) instead
       <h1 class="signature" translate="no">setItemPosition(This, Item, Pos)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L1220" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L1220" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2965,7 +2985,7 @@ use <code class="inline">SetItemPtrData()</code> (not implemented in wx) instead
       <h1 class="signature" translate="no">setItemState(This, Item, State, StateMask)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L1243" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L1243" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3002,7 +3022,7 @@ method does generate wxEVT_LIST_ITEM_SELECTED event when it is used to select an
       <h1 class="signature" translate="no">setItemText(This, Item, Text)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L1252" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L1252" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3031,7 +3051,7 @@ method does generate wxEVT_LIST_ITEM_SELECTED event when it is used to select an
       <h1 class="signature" translate="no">setItemTextColour(This, Item, Col)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L1265" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L1265" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3060,7 +3080,7 @@ method does generate wxEVT_LIST_ITEM_SELECTED event when it is used to select an
       <h1 class="signature" translate="no">setSingleStyle(This, Style)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L1274" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L1274" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3088,7 +3108,7 @@ method does generate wxEVT_LIST_ITEM_SELECTED event when it is used to select an
       <h1 class="signature" translate="no">setSingleStyle/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L1282" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L1282" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3117,7 +3137,7 @@ method does generate wxEVT_LIST_ITEM_SELECTED event when it is used to select an
       <h1 class="signature" translate="no">setTextColour(This, Col)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L1293" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L1293" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3145,7 +3165,7 @@ method does generate wxEVT_LIST_ITEM_SELECTED event when it is used to select an
       <h1 class="signature" translate="no">setWindowStyleFlag(This, Style)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L1301" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L1301" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3173,7 +3193,7 @@ method does generate wxEVT_LIST_ITEM_SELECTED event when it is used to select an
       <h1 class="signature" translate="no">sortItems(This, SortCallBack)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxListCtrl.erl#L1309" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxListCtrl.erl#L1309" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3200,8 +3220,8 @@ method does generate wxEVT_LIST_ITEM_SELECTED event when it is used to select an
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="wx.epub" title="ePub version">
@@ -3213,7 +3233,7 @@ method does generate wxEVT_LIST_ITEM_SELECTED event when it is used to select an
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="stdlib v7.1-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/erl_tar.html" />
     <title>erl_tar — stdlib v7.1-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-4F7E9F36.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ stdlib
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of stdlib</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ stdlib
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.erl#L32" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.erl#L32" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -279,7 +297,7 @@ headers will be used.</li></ul>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">add/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#add/4"><code class="inline">add/4</code></a>.</p></div>
 
     </div>
 
@@ -290,7 +308,7 @@ headers will be used.</li></ul>
       </div>
 
         <div class="summary-synopsis"><p>Adds a file to a tar file that has been opened for writing by
-<a><code class="inline">open/1</code></a>.</p></div>
+<a href="#open/2"><code class="inline">open/1</code></a>.</p></div>
 
     </div>
 
@@ -300,7 +318,7 @@ headers will be used.</li></ul>
 
       </div>
 
-        <div class="summary-synopsis"><p>Closes a tar file opened by <a><code class="inline">open/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Closes a tar file opened by <a href="#open/2"><code class="inline">open/2</code></a>.</p></div>
 
     </div>
 
@@ -366,7 +384,7 @@ binaries.</p></div>
 
         <div class="summary-synopsis"><p>The <code class="inline">Fun</code> is the definition of what to do when the different storage operations
 functions are to be called from the higher tar handling functions (such as
-<a><code class="inline">add/3</code></a>, <a><code class="inline">add/4</code></a>, and <a><code class="inline">close/1</code></a>).</p></div>
+<a href="#add/3"><code class="inline">add/3</code></a>, <a href="#add/4"><code class="inline">add/4</code></a>, and <a href="#close/1"><code class="inline">close/1</code></a>).</p></div>
 
     </div>
 
@@ -398,7 +416,7 @@ truncated).</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">table(Open, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#table/2"><code class="inline">table(Open, [])</code></a>.</p></div>
 
     </div>
 
@@ -435,6 +453,7 @@ Erlang shell (similar to &quot;<code class="inline">tar tv</code>&quot;).</p></
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:add_opt/0">
 
@@ -448,7 +467,7 @@ Erlang shell (similar to &quot;<code class="inline">tar tv</code>&quot;).</p></
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.hrl#L44" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.hrl#L44" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -485,7 +504,7 @@ Erlang shell (similar to &quot;<code class="inline">tar tv</code>&quot;).</p></
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.hrl#L63" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.hrl#L63" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -515,7 +534,7 @@ Erlang shell (similar to &quot;<code class="inline">tar tv</code>&quot;).</p></
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.hrl#L55" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.hrl#L55" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -548,7 +567,7 @@ Erlang shell (similar to &quot;<code class="inline">tar tv</code>&quot;).</p></
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.hrl#L196" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.hrl#L196" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -584,7 +603,7 @@ Erlang shell (similar to &quot;<code class="inline">tar tv</code>&quot;).</p></
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.hrl#L68" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.hrl#L68" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -614,7 +633,7 @@ Erlang shell (similar to &quot;<code class="inline">tar tv</code>&quot;).</p></
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.erl#L388" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.erl#L388" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -644,7 +663,7 @@ Erlang shell (similar to &quot;<code class="inline">tar tv</code>&quot;).</p></
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.erl#L386" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.erl#L386" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -674,7 +693,7 @@ Erlang shell (similar to &quot;<code class="inline">tar tv</code>&quot;).</p></
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.hrl#L53" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.hrl#L53" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -704,7 +723,7 @@ Erlang shell (similar to &quot;<code class="inline">tar tv</code>&quot;).</p></
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.erl#L528" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.erl#L528" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -732,7 +751,7 @@ Erlang shell (similar to &quot;<code class="inline">tar tv</code>&quot;).</p></
       <h1 class="signature" translate="no">tar_descriptor()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.hrl#L168" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.hrl#L168" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -762,7 +781,7 @@ Erlang shell (similar to &quot;<code class="inline">tar tv</code>&quot;).</p></
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.erl#L390" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.erl#L390" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -799,7 +818,7 @@ Erlang shell (similar to &quot;<code class="inline">tar tv</code>&quot;).</p></
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.hrl#L71" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.hrl#L71" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -829,7 +848,7 @@ Erlang shell (similar to &quot;<code class="inline">tar tv</code>&quot;).</p></
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.erl#L383" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.erl#L383" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -859,7 +878,7 @@ Erlang shell (similar to &quot;<code class="inline">tar tv</code>&quot;).</p></
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.erl#L387" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.erl#L387" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -889,7 +908,7 @@ Erlang shell (similar to &quot;<code class="inline">tar tv</code>&quot;).</p></
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.hrl#L193" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.hrl#L193" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -918,6 +937,7 @@ Erlang shell (similar to &quot;<code class="inline">tar tv</code>&quot;).</p></
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="add/3">
 
@@ -929,7 +949,7 @@ Erlang shell (similar to &quot;<code class="inline">tar tv</code>&quot;).</p></
       <h1 class="signature" translate="no">add(TarDescriptor, Name, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.erl#L763" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.erl#L763" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -961,7 +981,7 @@ Erlang shell (similar to &quot;<code class="inline">tar tv</code>&quot;).</p></
       <h1 class="signature" translate="no">add(TarDescriptor, Filename, NameInArchive, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.erl#L814" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.erl#L814" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1007,7 +1027,7 @@ created. See also <a href="../../apps/kernel/file.html#read_file_info/1"><code c
       <h1 class="signature" translate="no">close(TarDescriptor)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.erl#L667" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.erl#L667" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1035,7 +1055,7 @@ created. See also <a href="../../apps/kernel/file.html#read_file_info/1"><code c
       <h1 class="signature" translate="no">create(Name, FileList)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.erl#L693" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.erl#L693" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1065,7 +1085,7 @@ binaries.</p>
       <h1 class="signature" translate="no">create(Name, FileList, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.erl#L722" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.erl#L722" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1103,7 +1123,7 @@ link points to into the tar file, use option <code class="inline">dereference</c
       <h1 class="signature" translate="no">extract(Open)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.erl#L263" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.erl#L263" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1137,7 +1157,7 @@ flags.</p></section>
       <h1 class="signature" translate="no">extract/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.erl#L324" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.erl#L324" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1182,7 +1202,7 @@ flags.</p></section>
       <h1 class="signature" translate="no">format_error/1</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.erl#L118" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.erl#L118" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1212,7 +1232,7 @@ flags.</p></section>
         <span class="note">(since OTP 17.4)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.erl#L230" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.erl#L230" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1241,14 +1261,14 @@ operate on that very term.</p><p>The following are the fun clauses parameter lis
 Notice that there is only an arity-2 read function, not an arity-1 function.</p></li><li><p><strong><code class="inline">(position,{UserData,Position})</code></strong> - Sets the position of <code class="inline">UserData</code> as
 defined for files in <a href="../../apps/kernel/file.html#position/2"><code class="inline">file:position/2</code></a></p></li></ul><p><em>Example:</em></p><p>The following is a complete <code class="inline">Fun</code> parameter for reading and writing on files
 using the <a href="../../apps/kernel/file.html"><code class="inline">file</code></a> module:</p><pre><code class="makeup erlang" translate="no"><span class="n">ExampleFun</span><span class="w"> </span><span class="o">=</span><span class="w">
-   </span><span class="nf">fun</span><span class="p" data-group-id="0706548876-1">(</span><span class="ss">write</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0706548876-2">{</span><span class="n">Fd</span><span class="p">,</span><span class="n">Data</span><span class="p" data-group-id="0706548876-2">}</span><span class="p" data-group-id="0706548876-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">  </span><span class="nc">file</span><span class="p">:</span><span class="nf">write</span><span class="p" data-group-id="0706548876-3">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="n">Data</span><span class="p" data-group-id="0706548876-3">)</span><span class="p">;</span><span class="w">
-      </span><span class="p" data-group-id="0706548876-4">(</span><span class="ss">position</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0706548876-5">{</span><span class="n">Fd</span><span class="p">,</span><span class="n">Pos</span><span class="p" data-group-id="0706548876-5">}</span><span class="p" data-group-id="0706548876-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">file</span><span class="p">:</span><span class="nf">position</span><span class="p" data-group-id="0706548876-6">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="n">Pos</span><span class="p" data-group-id="0706548876-6">)</span><span class="p">;</span><span class="w">
-      </span><span class="p" data-group-id="0706548876-7">(</span><span class="ss">read2</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0706548876-8">{</span><span class="n">Fd</span><span class="p">,</span><span class="n">Size</span><span class="p" data-group-id="0706548876-8">}</span><span class="p" data-group-id="0706548876-7">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">file</span><span class="p">:</span><span class="nf">read</span><span class="p" data-group-id="0706548876-9">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="n">Size</span><span class="p" data-group-id="0706548876-9">)</span><span class="p">;</span><span class="w">
-      </span><span class="p" data-group-id="0706548876-10">(</span><span class="ss">close</span><span class="p">,</span><span class="w"> </span><span class="n">Fd</span><span class="p" data-group-id="0706548876-10">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">file</span><span class="p">:</span><span class="nf">close</span><span class="p" data-group-id="0706548876-11">(</span><span class="n">Fd</span><span class="p" data-group-id="0706548876-11">)</span><span class="w">
-   </span><span class="k">end</span></code></pre><p>Here <code class="inline">Fd</code> was specified to function <a href="#init/3"><code class="inline">init/3</code></a> as:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="2559772454-1">{</span><span class="ss">ok</span><span class="p">,</span><span class="n">Fd</span><span class="p" data-group-id="2559772454-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">file</span><span class="p">:</span><span class="nf">open</span><span class="p" data-group-id="2559772454-2">(</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p" data-group-id="2559772454-2">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="2559772454-3">{</span><span class="ss">ok</span><span class="p">,</span><span class="n">TarDesc</span><span class="p" data-group-id="2559772454-3">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">erl_tar</span><span class="p">:</span><span class="nf">init</span><span class="p" data-group-id="2559772454-4">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="ss">write</span><span class="p">,</span><span class="w"> </span><span class="n">ExampleFun</span><span class="p" data-group-id="2559772454-4">)</span><span class="p">,</span></code></pre><p><code class="inline">TarDesc</code> is then used:</p><pre><code class="makeup erlang" translate="no"><span class="nc">erl_tar</span><span class="p">:</span><span class="nf">add</span><span class="p" data-group-id="5537275738-1">(</span><span class="n">TarDesc</span><span class="p">,</span><span class="w"> </span><span class="n">SomeValueIwantToAdd</span><span class="p">,</span><span class="w"> </span><span class="n">FileNameInTarFile</span><span class="p" data-group-id="5537275738-1">)</span><span class="p">,</span><span class="w">
+   </span><span class="nf">fun</span><span class="p" data-group-id="4879569713-1">(</span><span class="ss">write</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4879569713-2">{</span><span class="n">Fd</span><span class="p">,</span><span class="n">Data</span><span class="p" data-group-id="4879569713-2">}</span><span class="p" data-group-id="4879569713-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">  </span><span class="nc">file</span><span class="p">:</span><span class="nf">write</span><span class="p" data-group-id="4879569713-3">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="n">Data</span><span class="p" data-group-id="4879569713-3">)</span><span class="p">;</span><span class="w">
+      </span><span class="p" data-group-id="4879569713-4">(</span><span class="ss">position</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4879569713-5">{</span><span class="n">Fd</span><span class="p">,</span><span class="n">Pos</span><span class="p" data-group-id="4879569713-5">}</span><span class="p" data-group-id="4879569713-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">file</span><span class="p">:</span><span class="nf">position</span><span class="p" data-group-id="4879569713-6">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="n">Pos</span><span class="p" data-group-id="4879569713-6">)</span><span class="p">;</span><span class="w">
+      </span><span class="p" data-group-id="4879569713-7">(</span><span class="ss">read2</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4879569713-8">{</span><span class="n">Fd</span><span class="p">,</span><span class="n">Size</span><span class="p" data-group-id="4879569713-8">}</span><span class="p" data-group-id="4879569713-7">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">file</span><span class="p">:</span><span class="nf">read</span><span class="p" data-group-id="4879569713-9">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="n">Size</span><span class="p" data-group-id="4879569713-9">)</span><span class="p">;</span><span class="w">
+      </span><span class="p" data-group-id="4879569713-10">(</span><span class="ss">close</span><span class="p">,</span><span class="w"> </span><span class="n">Fd</span><span class="p" data-group-id="4879569713-10">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">file</span><span class="p">:</span><span class="nf">close</span><span class="p" data-group-id="4879569713-11">(</span><span class="n">Fd</span><span class="p" data-group-id="4879569713-11">)</span><span class="w">
+   </span><span class="k">end</span></code></pre><p>Here <code class="inline">Fd</code> was specified to function <a href="#init/3"><code class="inline">init/3</code></a> as:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="1465546533-1">{</span><span class="ss">ok</span><span class="p">,</span><span class="n">Fd</span><span class="p" data-group-id="1465546533-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">file</span><span class="p">:</span><span class="nf">open</span><span class="p" data-group-id="1465546533-2">(</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p" data-group-id="1465546533-2">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="1465546533-3">{</span><span class="ss">ok</span><span class="p">,</span><span class="n">TarDesc</span><span class="p" data-group-id="1465546533-3">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">erl_tar</span><span class="p">:</span><span class="nf">init</span><span class="p" data-group-id="1465546533-4">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="ss">write</span><span class="p">,</span><span class="w"> </span><span class="n">ExampleFun</span><span class="p" data-group-id="1465546533-4">)</span><span class="p">,</span></code></pre><p><code class="inline">TarDesc</code> is then used:</p><pre><code class="makeup erlang" translate="no"><span class="nc">erl_tar</span><span class="p">:</span><span class="nf">add</span><span class="p" data-group-id="0037387897-1">(</span><span class="n">TarDesc</span><span class="p">,</span><span class="w"> </span><span class="n">SomeValueIwantToAdd</span><span class="p">,</span><span class="w"> </span><span class="n">FileNameInTarFile</span><span class="p" data-group-id="0037387897-1">)</span><span class="p">,</span><span class="w">
 </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p">,</span><span class="w">
-</span><span class="nc">erl_tar</span><span class="p">:</span><span class="nf">close</span><span class="p" data-group-id="5537275738-2">(</span><span class="n">TarDesc</span><span class="p" data-group-id="5537275738-2">)</span></code></pre><p>When the <code class="inline">erl_tar</code> core wants to, for example, write a piece of <code class="inline">Data</code>, it would
+</span><span class="nc">erl_tar</span><span class="p">:</span><span class="nf">close</span><span class="p" data-group-id="0037387897-2">(</span><span class="n">TarDesc</span><span class="p" data-group-id="0037387897-2">)</span></code></pre><p>When the <code class="inline">erl_tar</code> core wants to, for example, write a piece of <code class="inline">Data</code>, it would
 call <code class="inline">ExampleFun(write, {UserData,Data})</code>.</p><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>This example with the <code class="inline">file</code> module operations is not necessary to use
 directly, as that is what function <a href="#open/2"><code class="inline">open/2</code></a> in principle does.</p></section><section role="note" class="admonition warning"><h4 class="admonition-title warning">Warning</h4><p>The <code class="inline">TarDescriptor</code> term is not a file descriptor. You are advised not to rely
 on the specific contents of this term, as it can change in future Erlang/OTP
@@ -1265,7 +1285,7 @@ releases when more features are added to this module.</p></section>
       <h1 class="signature" translate="no">open/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.erl#L566" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.erl#L566" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1306,7 +1326,7 @@ releases when more features are added to this module.</p></section>
       <h1 class="signature" translate="no">t(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.erl#L453" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.erl#L453" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1335,7 +1355,7 @@ releases when more features are added to this module.</p></section>
       <h1 class="signature" translate="no">table(Open)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.erl#L401" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.erl#L401" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1363,7 +1383,7 @@ releases when more features are added to this module.</p></section>
       <h1 class="signature" translate="no">table(Name, Opts)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.erl#L409" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.erl#L409" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1392,7 +1412,7 @@ releases when more features are added to this module.</p></section>
       <h1 class="signature" translate="no">tt(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/erl_tar.erl#L467" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/erl_tar.erl#L467" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1419,8 +1439,8 @@ Erlang shell (similar to &quot;<code class="inline">tar tv</code>&quot;).</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="stdlib.epub" title="ePub version">
@@ -1432,7 +1452,7 @@ Erlang shell (similar to &quot;<code class="inline">tar tv</code>&quot;).</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

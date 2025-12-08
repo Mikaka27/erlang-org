@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="Erlang System Documentation v29.0-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/system/example.html" />
     <title>Problem Example — Erlang System Documentation v29.0-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-1026E94C.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ Erlang System Documentation
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of Erlang System Documentation</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -84,7 +102,7 @@ Erlang System Documentation
     <h1>Problem Example</h1>
 
 
-      <a href="https://github.com/erlang/otp/blob/master/system/doc/tutorial/example.md#L1" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/system/doc/tutorial/example.md#L1" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -96,17 +114,17 @@ Erlang System Documentation
 code, solving a complex problem, in your Erlang program. Suppose for example,
 that you have the following C functions that you would like to call from Erlang:</p><pre><code class="makeup c" translate="no"><span class="cm">/* complex.c */</span><span class="w">
 
-</span><span class="kt">int</span><span class="w"> </span><span class="nf">foo</span><span class="p" data-group-id="6945933865-1">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p" data-group-id="6945933865-1">)</span><span class="w"> </span><span class="p" data-group-id="6945933865-2">{</span><span class="w">
+</span><span class="kt">int</span><span class="w"> </span><span class="nf">foo</span><span class="p" data-group-id="7037597590-1">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p" data-group-id="7037597590-1">)</span><span class="w"> </span><span class="p" data-group-id="7037597590-2">{</span><span class="w">
   </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="w">
-</span><span class="p" data-group-id="6945933865-2">}</span><span class="w">
+</span><span class="p" data-group-id="7037597590-2">}</span><span class="w">
 
-</span><span class="kt">int</span><span class="w"> </span><span class="nf">bar</span><span class="p" data-group-id="6945933865-3">(</span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p" data-group-id="6945933865-3">)</span><span class="w"> </span><span class="p" data-group-id="6945933865-4">{</span><span class="w">
+</span><span class="kt">int</span><span class="w"> </span><span class="nf">bar</span><span class="p" data-group-id="7037597590-3">(</span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p" data-group-id="7037597590-3">)</span><span class="w"> </span><span class="p" data-group-id="7037597590-4">{</span><span class="w">
   </span><span class="k">return</span><span class="w"> </span><span class="n">y</span><span class="o">*</span><span class="mi">2</span><span class="p">;</span><span class="w">
-</span><span class="p" data-group-id="6945933865-4">}</span></code></pre><p>The functions are deliberately kept as simple as possible, for readability
+</span><span class="p" data-group-id="7037597590-4">}</span></code></pre><p>The functions are deliberately kept as simple as possible, for readability
 reasons.</p><p>From an Erlang perspective, it is preferable to be able to call <code class="inline">foo</code> and <code class="inline">bar</code>
 without having to bother about that they are C functions:</p><pre><code class="makeup erlang" translate="no"><span class="c1">% Erlang code</span><span class="w">
 </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="w">
-</span><span class="n">Res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">complex</span><span class="p">:</span><span class="nf">foo</span><span class="p" data-group-id="9414993100-1">(</span><span class="n">X</span><span class="p" data-group-id="9414993100-1">)</span><span class="p">,</span><span class="w">
+</span><span class="n">Res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">complex</span><span class="p">:</span><span class="nf">foo</span><span class="p" data-group-id="8061662042-1">(</span><span class="n">X</span><span class="p" data-group-id="8061662042-1">)</span><span class="p">,</span><span class="w">
 </span><span class="p">.</span><span class="p">.</span><span class="p">.</span></code></pre><p>Here, the communication with C is hidden in the implementation of <code class="inline">complex.erl</code>.
 In the following sections, it is shown how this module can be implemented using
 the different interoperability mechanisms.</p>
@@ -143,8 +161,8 @@ Ports
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="Erlang System Documentation.epub" title="ePub version">
@@ -156,7 +174,7 @@ Ports
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

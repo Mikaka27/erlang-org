@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="tools v4.1.3-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/tools/cover.html" />
     <title>cover — tools v4.1.3-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-A238A451.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ tools
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of tools</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ tools
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -344,7 +362,7 @@ period will be included in the analysis.</p>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">analyse('_', coverage, function)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#analyse/3"><code class="inline">analyse('_', coverage, function)</code></a>.</p></div>
 
     </div>
 
@@ -386,7 +404,7 @@ database.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">analyse_to_file('_', [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#analyse_to_file/2"><code class="inline">analyse_to_file('_', [])</code></a>.</p></div>
 
     </div>
 
@@ -396,8 +414,8 @@ database.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>If <code class="inline">Arg</code> is a list of <a><code class="inline">analyse_option()</code></a>
-options, this call is equivalent to <a><code class="inline">analyse_to_file('_', Arg)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>If <code class="inline">Arg</code> is a list of <a href="#t:analyse_option/0"><code class="inline">analyse_option()</code></a>
+options, this call is equivalent to <a href="#analyse_to_file/2"><code class="inline">analyse_to_file('_', Arg)</code></a>.</p></div>
 
     </div>
 
@@ -418,7 +436,7 @@ execution counts for each executable line.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">async_analyse_to_file/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#async_analyse_to_file/3"><code class="inline">async_analyse_to_file/3</code></a>.</p></div>
 
     </div>
 
@@ -428,7 +446,7 @@ execution counts for each executable line.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">async_analyse_to_file/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#async_analyse_to_file/3"><code class="inline">async_analyse_to_file/3</code></a>.</p></div>
 
     </div>
 
@@ -439,7 +457,7 @@ execution counts for each executable line.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>This function works the same way as
-<a><code class="inline">analyse_to_file/2</code></a> except that it is asynchronous instead
+<a href="#analyse_to_file/2"><code class="inline">analyse_to_file/2</code></a> except that it is asynchronous instead
 of synchronous.</p></div>
 
     </div>
@@ -450,7 +468,7 @@ of synchronous.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">compile_module(ModFiles, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#compile_module/2"><code class="inline">compile_module(ModFiles, [])</code></a>.</p></div>
 
     </div>
 
@@ -460,7 +478,7 @@ of synchronous.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">compile_module(ModFile, Options)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#compile_module/2"><code class="inline">compile_module(ModFile, Options)</code></a>.</p></div>
 
     </div>
 
@@ -481,7 +499,7 @@ abstract code (option <code class="inline">debug_info</code>).</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">compile_beam_directory(&quot;.&quot;)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#compile_beam_directory/1"><code class="inline">compile_beam_directory(&quot;.&quot;)</code></a>.</p></div>
 
     </div>
 
@@ -492,7 +510,7 @@ abstract code (option <code class="inline">debug_info</code>).</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Cover-compiles all <code class="inline">.beam</code> files in directory <code class="inline">Dir</code> in the same way
-as <a><code class="inline">compile_beam/1</code></a>.</p></div>
+as <a href="#compile_beam/1"><code class="inline">compile_beam/1</code></a>.</p></div>
 
     </div>
 
@@ -502,7 +520,7 @@ as <a><code class="inline">compile_beam/1</code></a>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">compile_directory(&quot;.&quot;, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#compile_directory/2"><code class="inline">compile_directory(&quot;.&quot;, [])</code></a>.</p></div>
 
     </div>
 
@@ -512,7 +530,7 @@ as <a><code class="inline">compile_beam/1</code></a>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">compile_directory(Dir, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#compile_directory/2"><code class="inline">compile_directory(Dir, [])</code></a>.</p></div>
 
     </div>
 
@@ -523,8 +541,8 @@ as <a><code class="inline">compile_beam/1</code></a>.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Compiles all modules (<code class="inline">.erl</code> files) in a directory <code class="inline">Dir</code> for Cover analysis the
-same way as <a><code class="inline">compile_module/1,2</code></a> and returns a list of
-<a><code class="inline">Result</code></a>.</p></div>
+same way as <a href="#compile_module/1"><code class="inline">compile_module/1,2</code></a> and returns a list of
+<a href="#t:compile_result/0"><code class="inline">Result</code></a>.</p></div>
 
     </div>
 
@@ -534,7 +552,7 @@ same way as <a><code class="inline">compile_module/1,2</code></a> and returns a 
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">compile_module(ModFile, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#compile_module/2"><code class="inline">compile_module(ModFile, [])</code></a>.</p></div>
 
     </div>
 
@@ -554,7 +572,7 @@ same way as <a><code class="inline">compile_module/1,2</code></a> and returns a 
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">export(File, '_')</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#export/2"><code class="inline">export(File, '_')</code></a>.</p></div>
 
     </div>
 
@@ -586,7 +604,7 @@ node.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Imports coverage data from the file <code class="inline">ExportFile</code> created with
-<a><code class="inline">export/1,2</code></a>.</p></div>
+<a href="#export/2"><code class="inline">export/1,2</code></a>.</p></div>
 
     </div>
 
@@ -727,6 +745,7 @@ modules.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:analyse_answer/0">
 
@@ -740,7 +759,7 @@ modules.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L781" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L781" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -770,7 +789,7 @@ modules.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L610" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L610" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -800,7 +819,7 @@ modules.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L784" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L784" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -830,7 +849,7 @@ modules.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L783" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L783" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -860,7 +879,7 @@ modules.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L601" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L601" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -893,7 +912,7 @@ modules.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L608" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L608" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -925,7 +944,7 @@ modules.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L778" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L778" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -956,7 +975,7 @@ modules.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L785" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L785" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -989,7 +1008,7 @@ modules.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L606" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L606" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1020,7 +1039,7 @@ modules.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L611" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L611" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1050,7 +1069,7 @@ modules.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L462" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L462" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1080,7 +1099,7 @@ modules.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L463" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L463" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1110,7 +1129,7 @@ modules.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L473" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L473" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1141,7 +1160,7 @@ modules.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L464" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L464" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1178,7 +1197,7 @@ modules.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L306" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L306" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1208,7 +1227,7 @@ modules.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L980" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L980" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1241,7 +1260,7 @@ modules.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L393" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L393" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1271,7 +1290,7 @@ modules.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L612" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L612" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1301,7 +1320,7 @@ modules.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L309" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L309" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1331,7 +1350,7 @@ modules.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L310" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L310" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1361,7 +1380,7 @@ modules.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L613" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L613" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1391,7 +1410,7 @@ modules.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L614" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L614" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1424,7 +1443,7 @@ modules.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L311" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L311" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1457,6 +1476,7 @@ modules.</p></div>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="analyse/0">
 
@@ -1470,7 +1490,7 @@ modules.</p></div>
         <span class="note">(since OTP 18.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L630" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L630" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1498,7 +1518,7 @@ modules.</p></div>
       <h1 class="signature" translate="no">analyse(Arg)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L670" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L670" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1523,7 +1543,7 @@ call is equivalent to <a href="#analyse/3"><code class="inline">analyse('_', Arg
 call is equivalent to <a href="#analyse/3"><code class="inline">analyse('_', coverage, Arg)</code></a>.</p><p>Otherwise <code class="inline">Arg</code> is assumed to be a module name, and this call is equivalent
 to <a href="#analyse/3"><code class="inline">analyse(Arg, coverage, function)</code></a>.</p><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>To analyze a module whose name overlaps with one the values in
 <a href="#t:analysis/0"><code class="inline">analysis()</code></a> or <a href="#t:level/0"><code class="inline">level()</code></a>, the module
-name has to be in a list. For example, to analyze a module named <code class="inline">calls</code>:</p><pre><code class="makeup erlang" translate="no"><span class="nc">cover</span><span class="p">:</span><span class="nf">analyse</span><span class="p" data-group-id="0860679935-1">(</span><span class="p" data-group-id="0860679935-2">[</span><span class="ss">calls</span><span class="p" data-group-id="0860679935-2">]</span><span class="p" data-group-id="0860679935-1">)</span><span class="p">.</span></code></pre></section>
+name has to be in a list. For example, to analyze a module named <code class="inline">calls</code>:</p><pre><code class="makeup erlang" translate="no"><span class="nc">cover</span><span class="p">:</span><span class="nf">analyse</span><span class="p" data-group-id="4983594475-1">(</span><span class="p" data-group-id="4983594475-2">[</span><span class="ss">calls</span><span class="p" data-group-id="4983594475-2">]</span><span class="p" data-group-id="4983594475-1">)</span><span class="p">.</span></code></pre></section>
   </section>
 </section>
 <section class="detail" id="analyse/2">
@@ -1536,7 +1556,7 @@ name has to be in a list. For example, to analyze a module named <code class="in
       <h1 class="signature" translate="no">analyse(Arg1, Arg2)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L722" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L722" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1565,7 +1585,7 @@ call is equivalent to <a href="#analyse/3"><code class="inline">analyse('_', Arg
 <a href="#analyse/3"><code class="inline">analyse(Arg1, Arg2, function)</code></a>.</p><p>If <code class="inline">Arg2</code> is one of the values in <a href="#t:level/0"><code class="inline">level()</code></a>, <code class="inline">Arg1</code> is
 assumed to be a module and this call is equivalent to <a href="#analyse/3"><code class="inline">analyse(Arg1, coverage, Arg2)</code></a>.</p><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>To analyze a module whose name overlaps with one of the values in
 <a href="#t:analysis/0"><code class="inline">analysis()</code></a>, the module name needs to be in a
-list. For example, to analyze a module named <code class="inline">calls</code>:</p><pre><code class="makeup erlang" translate="no"><span class="nc">cover</span><span class="p">:</span><span class="nf">analyse</span><span class="p" data-group-id="8959208031-1">(</span><span class="p" data-group-id="8959208031-2">[</span><span class="ss">calls</span><span class="p" data-group-id="8959208031-2">]</span><span class="p">,</span><span class="w"> </span><span class="ss">function</span><span class="p" data-group-id="8959208031-1">)</span><span class="p">.</span></code></pre></section>
+list. For example, to analyze a module named <code class="inline">calls</code>:</p><pre><code class="makeup erlang" translate="no"><span class="nc">cover</span><span class="p">:</span><span class="nf">analyse</span><span class="p" data-group-id="4498895653-1">(</span><span class="p" data-group-id="4498895653-2">[</span><span class="ss">calls</span><span class="p" data-group-id="4498895653-2">]</span><span class="p">,</span><span class="w"> </span><span class="ss">function</span><span class="p" data-group-id="4498895653-1">)</span><span class="p">.</span></code></pre></section>
   </section>
 </section>
 <section class="detail" id="analyse/3">
@@ -1578,7 +1598,7 @@ list. For example, to analyze a module named <code class="inline">calls</code>:<
       <h1 class="signature" translate="no">analyse(Modules, Analysis, Level)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L753" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L753" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1620,7 +1640,7 @@ modules.</p><p>If a given module is not cover-compiled, this is indicated by the
         <span class="note">(since OTP 18.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L775" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L775" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1648,7 +1668,7 @@ modules.</p><p>If a given module is not cover-compiled, this is indicated by the
       <h1 class="signature" translate="no">analyse_to_file(Arg)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L822" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L822" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1674,7 +1694,7 @@ modules.</p><p>If a given module is not cover-compiled, this is indicated by the
 options, this call is equivalent to <a href="#analyse_to_file/2"><code class="inline">analyse_to_file('_', Arg)</code></a>.</p><p>Otherwise <code class="inline">Arg</code> is assumed to be a module, and this call is equivalent to
 <a href="#analyse_to_file/2"><code class="inline">analyse_to_file(Arg, [])</code></a>.</p><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>To analyze a module of the name <code class="inline">html</code> (which overlaps with an option
 in <a href="#t:analyse_option/0"><code class="inline">analyse_option()</code></a>), it is necessary to
-use <a href="#analyse_to_file/2"><code class="inline">cover:analyse_to_file/2</code></a>:</p><pre><code class="makeup erlang" translate="no"><span class="nc">cover</span><span class="p">:</span><span class="nf">analyse_to_file</span><span class="p" data-group-id="2052688665-1">(</span><span class="p" data-group-id="2052688665-2">[</span><span class="ss">html</span><span class="p" data-group-id="2052688665-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2052688665-3">[</span><span class="p" data-group-id="2052688665-3">]</span><span class="p" data-group-id="2052688665-1">)</span><span class="p">.</span></code></pre></section>
+use <a href="#analyse_to_file/2"><code class="inline">cover:analyse_to_file/2</code></a>:</p><pre><code class="makeup erlang" translate="no"><span class="nc">cover</span><span class="p">:</span><span class="nf">analyse_to_file</span><span class="p" data-group-id="6901434734-1">(</span><span class="p" data-group-id="6901434734-2">[</span><span class="ss">html</span><span class="p" data-group-id="6901434734-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6901434734-3">[</span><span class="p" data-group-id="6901434734-3">]</span><span class="p" data-group-id="6901434734-1">)</span><span class="p">.</span></code></pre></section>
   </section>
 </section>
 <section class="detail" id="analyse_to_file/2">
@@ -1687,7 +1707,7 @@ use <a href="#analyse_to_file/2"><code class="inline">cover:analyse_to_file/2</c
       <h1 class="signature" translate="no">analyse_to_file(Modules, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L876" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L876" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1738,7 +1758,7 @@ below a trailing <code class="inline">src</code> component</li><li>the compiled 
         <span class="note">(since OTP R14B02)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L902" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L902" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1768,7 +1788,7 @@ below a trailing <code class="inline">src</code> component</li><li>the compiled 
         <span class="note">(since OTP R14B02)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L918" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L918" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1801,7 +1821,7 @@ below a trailing <code class="inline">src</code> component</li><li>the compiled 
         <span class="note">(since OTP R14B02)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L938" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L938" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1839,7 +1859,7 @@ as <a href="#analyse_to_file/1"><code class="inline">analyse_to_file</code></a> 
       <h1 class="signature" translate="no">compile(ModFiles)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L321" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L321" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1867,7 +1887,7 @@ as <a href="#analyse_to_file/1"><code class="inline">analyse_to_file</code></a> 
       <h1 class="signature" translate="no">compile(ModFiles, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L330" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L330" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1896,7 +1916,7 @@ as <a href="#analyse_to_file/1"><code class="inline">analyse_to_file</code></a> 
       <h1 class="signature" translate="no">compile_beam(ModFiles)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L514" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L514" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1944,7 +1964,7 @@ The order of the returned list is undefined.</p>
       <h1 class="signature" translate="no">compile_beam_directory()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L531" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L531" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1973,7 +1993,7 @@ The order of the returned list is undefined.</p>
       <h1 class="signature" translate="no">compile_beam_directory(Dir)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L553" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L553" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2008,7 +2028,7 @@ readable, and <code class="inline">{error, enoent}</code> if the directory does 
       <h1 class="signature" translate="no">compile_directory()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L400" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L400" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2037,7 +2057,7 @@ readable, and <code class="inline">{error, enoent}</code> if the directory does 
       <h1 class="signature" translate="no">compile_directory(Dir)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L414" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L414" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2069,7 +2089,7 @@ readable, and <code class="inline">{error, enoent}</code> if the directory does 
       <h1 class="signature" translate="no">compile_directory(Dir, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L432" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L432" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2105,7 +2125,7 @@ same way as <a href="#compile_module/1"><code class="inline">compile_module/1,2<
       <h1 class="signature" translate="no">compile_module(ModFiles)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L338" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L338" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2134,7 +2154,7 @@ same way as <a href="#compile_module/1"><code class="inline">compile_module/1,2<
       <h1 class="signature" translate="no">compile_module(ModFiles, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L371" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L371" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2172,7 +2192,7 @@ is lost.</p>
       <h1 class="signature" translate="no">export(File)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L990" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L990" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2200,7 +2220,7 @@ is lost.</p>
       <h1 class="signature" translate="no">export(File, Module)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L1010" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L1010" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2232,7 +2252,7 @@ modules is exported.</p><p>This function is useful if coverage data from differe
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L1134" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L1134" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2261,7 +2281,7 @@ node.</p>
       <h1 class="signature" translate="no">import(ExportFile)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L1035" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L1035" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2298,7 +2318,7 @@ you can easily fool the system by renaming your export file.</p>
       <h1 class="signature" translate="no">imported()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L1053" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L1053" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2326,7 +2346,7 @@ you can easily fool the system by renaming your export file.</p>
       <h1 class="signature" translate="no">imported_modules()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L1047" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L1047" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2354,7 +2374,7 @@ you can easily fool the system by renaming your export file.</p>
       <h1 class="signature" translate="no">is_compiled(Module)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L1079" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L1079" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2387,7 +2407,7 @@ or the <code class="inline">.beam</code> file used by <a href="#compile_beam/1">
         <span class="note">(since OTP 22.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L303" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L303" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2418,7 +2438,7 @@ only work on the same node they were compiled on.</p>
       <h1 class="signature" translate="no">modules()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L1041" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L1041" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2446,7 +2466,7 @@ only work on the same node they were compiled on.</p>
       <h1 class="signature" translate="no">reset()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L1103" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L1103" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2475,7 +2495,7 @@ database on all nodes.</p>
       <h1 class="signature" translate="no">reset(Module)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L1094" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L1094" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2506,7 +2526,7 @@ database on all nodes.</p><p>If <code class="inline">Module</code> is not cover-
       <h1 class="signature" translate="no">start()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L251" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L251" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2535,7 +2555,7 @@ called automatically by the other functions in the module.</p>
       <h1 class="signature" translate="no">start(Nodes)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L287" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L287" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2565,7 +2585,7 @@ modules.</p><p>This call will fail if <a href="#local_only/0"><code class="inlin
       <h1 class="signature" translate="no">stop()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L1109" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L1109" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2593,7 +2613,7 @@ modules.</p><p>This call will fail if <a href="#local_only/0"><code class="inlin
       <h1 class="signature" translate="no">stop(Nodes)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L1121" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L1121" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2622,7 +2642,7 @@ the main node.</p>
       <h1 class="signature" translate="no">which_nodes()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/tools/src/cover.erl#L1064" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/tools/src/cover.erl#L1064" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2649,8 +2669,8 @@ of the analysis.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="tools.epub" title="ePub version">
@@ -2662,7 +2682,7 @@ of the analysis.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

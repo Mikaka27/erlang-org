@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="erts v16.1.2-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/erts/erl_tracer.html" />
     <title>erl_tracer — erts v16.1.2-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-25752129.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ erts
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of erts</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ erts
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L23" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L23" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -111,107 +129,107 @@ including, but not limited to, infinite recursions.</p></section><p><a href="" i
 module, a much more lightweight message tracer is used, which only records who
 sent messages to who.</p><p>The following is an example session using it on Linux:</p><pre><code class="makeup erlang" translate="no"><span class="sc">$ </span><span class="ss">gcc</span><span class="w"> </span><span class="o">-</span><span class="n">I</span><span class="w"> </span><span class="ss">erts</span><span class="o">-</span><span class="mf">8.0</span><span class="o">/</span><span class="ss">include</span><span class="o">/</span><span class="w"> </span><span class="o">-</span><span class="ss">fPIC</span><span class="w"> </span><span class="o">-</span><span class="ss">shared</span><span class="w"> </span><span class="o">-</span><span class="ss">o</span><span class="w"> </span><span class="ss">erl_msg_tracer</span><span class="p">.</span><span class="ss">so</span><span class="w"> </span><span class="ss">erl_msg_tracer</span><span class="p">.</span><span class="ss">c</span><span class="w">
 </span><span class="sc">$ </span><span class="ss">erl</span><span class="w">
-</span><span class="n">Erlang</span><span class="o">/</span><span class="n">OTP</span><span class="w"> </span><span class="mi">19</span><span class="w"> </span><span class="p" data-group-id="7078006493-1">[</span><span class="n">DEVELOPMENT</span><span class="p" data-group-id="7078006493-1">]</span><span class="w"> </span><span class="p" data-group-id="7078006493-2">[</span><span class="ss">erts</span><span class="o">-</span><span class="mf">8.0</span><span class="p" data-group-id="7078006493-2">]</span><span class="w"> </span><span class="p" data-group-id="7078006493-3">[</span><span class="ss">source</span><span class="o">-</span><span class="ss">ed2b56b</span><span class="p" data-group-id="7078006493-3">]</span><span class="w"> </span><span class="p" data-group-id="7078006493-4">[</span><span class="mi">64</span><span class="o">-</span><span class="ss">bit</span><span class="p" data-group-id="7078006493-4">]</span><span class="w"> </span><span class="p" data-group-id="7078006493-5">[</span><span class="nc">smp</span><span class="p">:</span><span class="mi">8</span><span class="p">:</span><span class="mi">8</span><span class="p" data-group-id="7078006493-5">]</span><span class="w"> </span><span class="p" data-group-id="7078006493-6">[</span><span class="ss">async</span><span class="o">-</span><span class="nc">threads</span><span class="p">:</span><span class="mi">10</span><span class="p" data-group-id="7078006493-6">]</span><span class="w"> </span><span class="p" data-group-id="7078006493-7">[</span><span class="ss">hipe</span><span class="p" data-group-id="7078006493-7">]</span><span class="w"> </span><span class="p" data-group-id="7078006493-8">[</span><span class="ss">kernel</span><span class="o">-</span><span class="nc">poll</span><span class="p">:</span><span class="ss">false</span><span class="p" data-group-id="7078006493-8">]</span><span class="w">
+</span><span class="n">Erlang</span><span class="o">/</span><span class="n">OTP</span><span class="w"> </span><span class="mi">19</span><span class="w"> </span><span class="p" data-group-id="6426634164-1">[</span><span class="n">DEVELOPMENT</span><span class="p" data-group-id="6426634164-1">]</span><span class="w"> </span><span class="p" data-group-id="6426634164-2">[</span><span class="ss">erts</span><span class="o">-</span><span class="mf">8.0</span><span class="p" data-group-id="6426634164-2">]</span><span class="w"> </span><span class="p" data-group-id="6426634164-3">[</span><span class="ss">source</span><span class="o">-</span><span class="ss">ed2b56b</span><span class="p" data-group-id="6426634164-3">]</span><span class="w"> </span><span class="p" data-group-id="6426634164-4">[</span><span class="mi">64</span><span class="o">-</span><span class="ss">bit</span><span class="p" data-group-id="6426634164-4">]</span><span class="w"> </span><span class="p" data-group-id="6426634164-5">[</span><span class="nc">smp</span><span class="p">:</span><span class="mi">8</span><span class="p">:</span><span class="mi">8</span><span class="p" data-group-id="6426634164-5">]</span><span class="w"> </span><span class="p" data-group-id="6426634164-6">[</span><span class="ss">async</span><span class="o">-</span><span class="nc">threads</span><span class="p">:</span><span class="mi">10</span><span class="p" data-group-id="6426634164-6">]</span><span class="w"> </span><span class="p" data-group-id="6426634164-7">[</span><span class="ss">hipe</span><span class="p" data-group-id="6426634164-7">]</span><span class="w"> </span><span class="p" data-group-id="6426634164-8">[</span><span class="ss">kernel</span><span class="o">-</span><span class="nc">poll</span><span class="p">:</span><span class="ss">false</span><span class="p" data-group-id="6426634164-8">]</span><span class="w">
 
-</span><span class="n">Eshell</span><span class="w"> </span><span class="n">V8</span><span class="p">.</span><span class="mi">0</span><span class="w">  </span><span class="p" data-group-id="7078006493-9">(</span><span class="ss">abort</span><span class="w"> </span><span class="ss">with</span><span class="w"> </span><span class="err">^</span><span class="n">G</span><span class="p" data-group-id="7078006493-9">)</span><span class="gp unselectable">
-1&gt; </span><span class="nf">c</span><span class="p" data-group-id="7078006493-10">(</span><span class="ss">erl_msg_tracer</span><span class="p" data-group-id="7078006493-10">)</span><span class="p">,</span><span class="w"> </span><span class="nc">erl_msg_tracer</span><span class="p">:</span><span class="nf">load</span><span class="p" data-group-id="7078006493-11">(</span><span class="p" data-group-id="7078006493-11">)</span><span class="p">.</span><span class="w">
+</span><span class="n">Eshell</span><span class="w"> </span><span class="n">V8</span><span class="p">.</span><span class="mi">0</span><span class="w">  </span><span class="p" data-group-id="6426634164-9">(</span><span class="ss">abort</span><span class="w"> </span><span class="ss">with</span><span class="w"> </span><span class="err">^</span><span class="n">G</span><span class="p" data-group-id="6426634164-9">)</span><span class="gp unselectable">
+1&gt; </span><span class="nf">c</span><span class="p" data-group-id="6426634164-10">(</span><span class="ss">erl_msg_tracer</span><span class="p" data-group-id="6426634164-10">)</span><span class="p">,</span><span class="w"> </span><span class="nc">erl_msg_tracer</span><span class="p">:</span><span class="nf">load</span><span class="p" data-group-id="6426634164-11">(</span><span class="p" data-group-id="6426634164-11">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">ok</span><span class="gp unselectable">
-2&gt; </span><span class="n">Tracer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">spawn</span><span class="p" data-group-id="7078006493-12">(</span><span class="k">fun</span><span class="w"> </span><span class="n">F</span><span class="p" data-group-id="7078006493-13">(</span><span class="p" data-group-id="7078006493-13">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="k">receive</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="7078006493-14">(</span><span class="s">&quot;</span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="p" data-group-id="7078006493-15">[</span><span class="n">M</span><span class="p" data-group-id="7078006493-15">]</span><span class="p" data-group-id="7078006493-14">)</span><span class="p">,</span><span class="w"> </span><span class="n">F</span><span class="p" data-group-id="7078006493-16">(</span><span class="p" data-group-id="7078006493-16">)</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="7078006493-12">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="n">Tracer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">spawn</span><span class="p" data-group-id="6426634164-12">(</span><span class="k">fun</span><span class="w"> </span><span class="n">F</span><span class="p" data-group-id="6426634164-13">(</span><span class="p" data-group-id="6426634164-13">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="k">receive</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="6426634164-14">(</span><span class="s">&quot;</span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="p" data-group-id="6426634164-15">[</span><span class="n">M</span><span class="p" data-group-id="6426634164-15">]</span><span class="p" data-group-id="6426634164-14">)</span><span class="p">,</span><span class="w"> </span><span class="n">F</span><span class="p" data-group-id="6426634164-16">(</span><span class="p" data-group-id="6426634164-16">)</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="6426634164-12">)</span><span class="p">.</span><span class="w">
 </span><span class="o">&lt;</span><span class="mf">0.37</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="gp unselectable">
-3&gt; </span><span class="nc">erlang</span><span class="p">:</span><span class="nf">trace</span><span class="p" data-group-id="7078006493-17">(</span><span class="ss">new</span><span class="p">,</span><span class="w"> </span><span class="ss">true</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7078006493-18">[</span><span class="nb">send</span><span class="p">,</span><span class="p" data-group-id="7078006493-19">{</span><span class="ss">tracer</span><span class="p">,</span><span class="w"> </span><span class="ss">erl_msg_tracer</span><span class="p">,</span><span class="w"> </span><span class="n">Tracer</span><span class="p" data-group-id="7078006493-19">}</span><span class="p" data-group-id="7078006493-18">]</span><span class="p" data-group-id="7078006493-17">)</span><span class="p">.</span><span class="w">
+3&gt; </span><span class="nc">erlang</span><span class="p">:</span><span class="nf">trace</span><span class="p" data-group-id="6426634164-17">(</span><span class="ss">new</span><span class="p">,</span><span class="w"> </span><span class="ss">true</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6426634164-18">[</span><span class="nb">send</span><span class="p">,</span><span class="p" data-group-id="6426634164-19">{</span><span class="ss">tracer</span><span class="p">,</span><span class="w"> </span><span class="ss">erl_msg_tracer</span><span class="p">,</span><span class="w"> </span><span class="n">Tracer</span><span class="p" data-group-id="6426634164-19">}</span><span class="p" data-group-id="6426634164-18">]</span><span class="p" data-group-id="6426634164-17">)</span><span class="p">.</span><span class="w">
 </span><span class="mi">0</span><span class="w">
-</span><span class="p" data-group-id="7078006493-20">{</span><span class="nb">trace</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.39</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.27</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="7078006493-20">}</span><span class="gp unselectable">
-4&gt; </span><span class="p" data-group-id="7078006493-21">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="p" data-group-id="7078006493-21">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">file</span><span class="p">:</span><span class="nf">open</span><span class="p" data-group-id="7078006493-22">(</span><span class="s">&quot;/tmp/tmp.data&quot;</span><span class="p">,</span><span class="p" data-group-id="7078006493-23">[</span><span class="ss">write</span><span class="p" data-group-id="7078006493-23">]</span><span class="p" data-group-id="7078006493-22">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="7078006493-24">{</span><span class="nb">trace</span><span class="p">,</span><span class="p">#</span><span class="n">Port</span><span class="o">&lt;</span><span class="mf">0.486</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.40</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="7078006493-24">}</span><span class="w">
-</span><span class="p" data-group-id="7078006493-25">{</span><span class="nb">trace</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.40</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.21</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="7078006493-25">}</span><span class="w">
-</span><span class="p" data-group-id="7078006493-26">{</span><span class="nb">trace</span><span class="p">,</span><span class="p">#</span><span class="n">Port</span><span class="o">&lt;</span><span class="mf">0.487</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="7078006493-26">}</span><span class="w">
-</span><span class="p" data-group-id="7078006493-27">{</span><span class="nb">trace</span><span class="p">,</span><span class="p">#</span><span class="n">Port</span><span class="o">&lt;</span><span class="mf">0.488</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="7078006493-27">}</span><span class="w">
-</span><span class="p" data-group-id="7078006493-28">{</span><span class="nb">trace</span><span class="p">,</span><span class="p">#</span><span class="n">Port</span><span class="o">&lt;</span><span class="mf">0.489</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="7078006493-28">}</span><span class="w">
-</span><span class="p" data-group-id="7078006493-29">{</span><span class="nb">trace</span><span class="p">,</span><span class="p">#</span><span class="n">Port</span><span class="o">&lt;</span><span class="mf">0.490</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="7078006493-29">}</span><span class="w">
-</span><span class="p" data-group-id="7078006493-30">{</span><span class="ss">ok</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.40</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="7078006493-30">}</span><span class="w">
-</span><span class="p" data-group-id="7078006493-31">{</span><span class="nb">trace</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.41</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.27</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="7078006493-31">}</span><span class="w">
-</span><span class="mi">5</span><span class="o">&gt;</span></code></pre><p><code class="inline">erl_msg_tracer.erl</code>:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="4104072905-1">(</span><span class="ss">erl_msg_tracer</span><span class="p" data-group-id="4104072905-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="6426634164-20">{</span><span class="nb">trace</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.39</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.27</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="6426634164-20">}</span><span class="gp unselectable">
+4&gt; </span><span class="p" data-group-id="6426634164-21">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="p" data-group-id="6426634164-21">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">file</span><span class="p">:</span><span class="nf">open</span><span class="p" data-group-id="6426634164-22">(</span><span class="s">&quot;/tmp/tmp.data&quot;</span><span class="p">,</span><span class="p" data-group-id="6426634164-23">[</span><span class="ss">write</span><span class="p" data-group-id="6426634164-23">]</span><span class="p" data-group-id="6426634164-22">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="6426634164-24">{</span><span class="nb">trace</span><span class="p">,</span><span class="p">#</span><span class="n">Port</span><span class="o">&lt;</span><span class="mf">0.486</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.40</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="6426634164-24">}</span><span class="w">
+</span><span class="p" data-group-id="6426634164-25">{</span><span class="nb">trace</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.40</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.21</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="6426634164-25">}</span><span class="w">
+</span><span class="p" data-group-id="6426634164-26">{</span><span class="nb">trace</span><span class="p">,</span><span class="p">#</span><span class="n">Port</span><span class="o">&lt;</span><span class="mf">0.487</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="6426634164-26">}</span><span class="w">
+</span><span class="p" data-group-id="6426634164-27">{</span><span class="nb">trace</span><span class="p">,</span><span class="p">#</span><span class="n">Port</span><span class="o">&lt;</span><span class="mf">0.488</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="6426634164-27">}</span><span class="w">
+</span><span class="p" data-group-id="6426634164-28">{</span><span class="nb">trace</span><span class="p">,</span><span class="p">#</span><span class="n">Port</span><span class="o">&lt;</span><span class="mf">0.489</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="6426634164-28">}</span><span class="w">
+</span><span class="p" data-group-id="6426634164-29">{</span><span class="nb">trace</span><span class="p">,</span><span class="p">#</span><span class="n">Port</span><span class="o">&lt;</span><span class="mf">0.490</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.4</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="6426634164-29">}</span><span class="w">
+</span><span class="p" data-group-id="6426634164-30">{</span><span class="ss">ok</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.40</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="6426634164-30">}</span><span class="w">
+</span><span class="p" data-group-id="6426634164-31">{</span><span class="nb">trace</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.41</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.27</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="6426634164-31">}</span><span class="w">
+</span><span class="mi">5</span><span class="o">&gt;</span></code></pre><p><code class="inline">erl_msg_tracer.erl</code>:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="4405868721-1">(</span><span class="ss">erl_msg_tracer</span><span class="p" data-group-id="4405868721-1">)</span><span class="p">.</span><span class="w">
 </span><span class="w">
-</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="4104072905-2">(</span><span class="p" data-group-id="4104072905-3">[</span><span class="ss">enabled</span><span class="p">/</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="nb">trace</span><span class="p">/</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="ss">load</span><span class="p">/</span><span class="mi">0</span><span class="p" data-group-id="4104072905-3">]</span><span class="p" data-group-id="4104072905-2">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="4405868721-2">(</span><span class="p" data-group-id="4405868721-3">[</span><span class="ss">enabled</span><span class="p">/</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="nb">trace</span><span class="p">/</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="ss">load</span><span class="p">/</span><span class="mi">0</span><span class="p" data-group-id="4405868721-3">]</span><span class="p" data-group-id="4405868721-2">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">load</span><span class="p" data-group-id="4104072905-4">(</span><span class="p" data-group-id="4104072905-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="nc">erlang</span><span class="p">:</span><span class="nf">load_nif</span><span class="p" data-group-id="4104072905-5">(</span><span class="s">&quot;erl_msg_tracer&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4104072905-6">[</span><span class="p" data-group-id="4104072905-6">]</span><span class="p" data-group-id="4104072905-5">)</span><span class="p">.</span><span class="w">
+</span><span class="nf">load</span><span class="p" data-group-id="4405868721-4">(</span><span class="p" data-group-id="4405868721-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="nc">erlang</span><span class="p">:</span><span class="nf">load_nif</span><span class="p" data-group-id="4405868721-5">(</span><span class="s">&quot;erl_msg_tracer&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4405868721-6">[</span><span class="p" data-group-id="4405868721-6">]</span><span class="p" data-group-id="4405868721-5">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">enabled</span><span class="p" data-group-id="4104072905-7">(</span><span class="p">_</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="p" data-group-id="4104072905-7">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+</span><span class="nf">enabled</span><span class="p" data-group-id="4405868721-7">(</span><span class="p">_</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="p" data-group-id="4405868721-7">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
     </span><span class="ss">error</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">trace</span><span class="p" data-group-id="4104072905-8">(</span><span class="p">_</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="p" data-group-id="4104072905-8">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+</span><span class="nf">trace</span><span class="p" data-group-id="4405868721-8">(</span><span class="p">_</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="p" data-group-id="4405868721-8">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
     </span><span class="ss">error</span><span class="p">.</span></code></pre><p><code class="inline">erl_msg_tracer.c</code>:</p><pre><code class="makeup c" translate="no"><span class="kp">#include</span><span class="w"> </span><span class="o">&lt;</span><span class="n">erl_nif</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span><span class="w">
 
 </span><span class="cm">/* NIF interface declarations */</span><span class="w">
-</span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">load</span><span class="p" data-group-id="1925674381-1">(</span><span class="no">ErlNifEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="kc">void</span><span class="o">*</span><span class="o">*</span><span class="w"> </span><span class="n">priv_data</span><span class="p">,</span><span class="w"> </span><span class="no">ERL_NIF_TERM</span><span class="w"> </span><span class="n">load_info</span><span class="p" data-group-id="1925674381-1">)</span><span class="p">;</span><span class="w">
-</span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">upgrade</span><span class="p" data-group-id="1925674381-2">(</span><span class="no">ErlNifEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="kc">void</span><span class="o">*</span><span class="o">*</span><span class="w"> </span><span class="n">priv_data</span><span class="p">,</span><span class="w"> </span><span class="kc">void</span><span class="o">*</span><span class="o">*</span><span class="w"> </span><span class="n">old_priv_data</span><span class="p">,</span><span class="w"> </span><span class="no">ERL_NIF_TERM</span><span class="w"> </span><span class="n">load_info</span><span class="p" data-group-id="1925674381-2">)</span><span class="p">;</span><span class="w">
-</span><span class="k">static</span><span class="w"> </span><span class="kc">void</span><span class="w"> </span><span class="nf">unload</span><span class="p" data-group-id="1925674381-3">(</span><span class="no">ErlNifEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="kc">void</span><span class="o">*</span><span class="w"> </span><span class="n">priv_data</span><span class="p" data-group-id="1925674381-3">)</span><span class="p">;</span><span class="w">
+</span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">load</span><span class="p" data-group-id="9310061326-1">(</span><span class="no">ErlNifEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="kc">void</span><span class="o">*</span><span class="o">*</span><span class="w"> </span><span class="n">priv_data</span><span class="p">,</span><span class="w"> </span><span class="no">ERL_NIF_TERM</span><span class="w"> </span><span class="n">load_info</span><span class="p" data-group-id="9310061326-1">)</span><span class="p">;</span><span class="w">
+</span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">upgrade</span><span class="p" data-group-id="9310061326-2">(</span><span class="no">ErlNifEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="kc">void</span><span class="o">*</span><span class="o">*</span><span class="w"> </span><span class="n">priv_data</span><span class="p">,</span><span class="w"> </span><span class="kc">void</span><span class="o">*</span><span class="o">*</span><span class="w"> </span><span class="n">old_priv_data</span><span class="p">,</span><span class="w"> </span><span class="no">ERL_NIF_TERM</span><span class="w"> </span><span class="n">load_info</span><span class="p" data-group-id="9310061326-2">)</span><span class="p">;</span><span class="w">
+</span><span class="k">static</span><span class="w"> </span><span class="kc">void</span><span class="w"> </span><span class="nf">unload</span><span class="p" data-group-id="9310061326-3">(</span><span class="no">ErlNifEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="kc">void</span><span class="o">*</span><span class="w"> </span><span class="n">priv_data</span><span class="p" data-group-id="9310061326-3">)</span><span class="p">;</span><span class="w">
 
 </span><span class="cm">/* The NIFs: */</span><span class="w">
-</span><span class="k">static</span><span class="w"> </span><span class="no">ERL_NIF_TERM</span><span class="w"> </span><span class="nf">enabled</span><span class="p" data-group-id="1925674381-4">(</span><span class="no">ErlNifEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="no">ERL_NIF_TERM</span><span class="w"> </span><span class="n">argv</span><span class="p" data-group-id="1925674381-5">[</span><span class="p" data-group-id="1925674381-5">]</span><span class="p" data-group-id="1925674381-4">)</span><span class="p">;</span><span class="w">
-</span><span class="k">static</span><span class="w"> </span><span class="no">ERL_NIF_TERM</span><span class="w"> </span><span class="nf">trace</span><span class="p" data-group-id="1925674381-6">(</span><span class="no">ErlNifEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="no">ERL_NIF_TERM</span><span class="w"> </span><span class="n">argv</span><span class="p" data-group-id="1925674381-7">[</span><span class="p" data-group-id="1925674381-7">]</span><span class="p" data-group-id="1925674381-6">)</span><span class="p">;</span><span class="w">
+</span><span class="k">static</span><span class="w"> </span><span class="no">ERL_NIF_TERM</span><span class="w"> </span><span class="nf">enabled</span><span class="p" data-group-id="9310061326-4">(</span><span class="no">ErlNifEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="no">ERL_NIF_TERM</span><span class="w"> </span><span class="n">argv</span><span class="p" data-group-id="9310061326-5">[</span><span class="p" data-group-id="9310061326-5">]</span><span class="p" data-group-id="9310061326-4">)</span><span class="p">;</span><span class="w">
+</span><span class="k">static</span><span class="w"> </span><span class="no">ERL_NIF_TERM</span><span class="w"> </span><span class="nf">trace</span><span class="p" data-group-id="9310061326-6">(</span><span class="no">ErlNifEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="no">ERL_NIF_TERM</span><span class="w"> </span><span class="n">argv</span><span class="p" data-group-id="9310061326-7">[</span><span class="p" data-group-id="9310061326-7">]</span><span class="p" data-group-id="9310061326-6">)</span><span class="p">;</span><span class="w">
 
-</span><span class="k">static</span><span class="w"> </span><span class="no">ErlNifFunc</span><span class="w"> </span><span class="n">nif_funcs</span><span class="p" data-group-id="1925674381-8">[</span><span class="p" data-group-id="1925674381-8">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="1925674381-9">{</span><span class="w">
-    </span><span class="p" data-group-id="1925674381-10">{</span><span class="s">&quot;enabled&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">enabled</span><span class="p" data-group-id="1925674381-10">}</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="1925674381-11">{</span><span class="s">&quot;trace&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">trace</span><span class="p" data-group-id="1925674381-11">}</span><span class="w">
-</span><span class="p" data-group-id="1925674381-9">}</span><span class="p">;</span><span class="w">
+</span><span class="k">static</span><span class="w"> </span><span class="no">ErlNifFunc</span><span class="w"> </span><span class="n">nif_funcs</span><span class="p" data-group-id="9310061326-8">[</span><span class="p" data-group-id="9310061326-8">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="9310061326-9">{</span><span class="w">
+    </span><span class="p" data-group-id="9310061326-10">{</span><span class="s">&quot;enabled&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">enabled</span><span class="p" data-group-id="9310061326-10">}</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="9310061326-11">{</span><span class="s">&quot;trace&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">trace</span><span class="p" data-group-id="9310061326-11">}</span><span class="w">
+</span><span class="p" data-group-id="9310061326-9">}</span><span class="p">;</span><span class="w">
 
-</span><span class="no">ERL_NIF_INIT</span><span class="p" data-group-id="1925674381-12">(</span><span class="n">erl_msg_tracer</span><span class="p">,</span><span class="w"> </span><span class="n">nif_funcs</span><span class="p">,</span><span class="w"> </span><span class="n">load</span><span class="p">,</span><span class="w"> </span><span class="no">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">upgrade</span><span class="p">,</span><span class="w"> </span><span class="n">unload</span><span class="p" data-group-id="1925674381-12">)</span><span class="w">
+</span><span class="no">ERL_NIF_INIT</span><span class="p" data-group-id="9310061326-12">(</span><span class="n">erl_msg_tracer</span><span class="p">,</span><span class="w"> </span><span class="n">nif_funcs</span><span class="p">,</span><span class="w"> </span><span class="n">load</span><span class="p">,</span><span class="w"> </span><span class="no">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">upgrade</span><span class="p">,</span><span class="w"> </span><span class="n">unload</span><span class="p" data-group-id="9310061326-12">)</span><span class="w">
 
-</span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">load</span><span class="p" data-group-id="1925674381-13">(</span><span class="no">ErlNifEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="kc">void</span><span class="o">*</span><span class="o">*</span><span class="w"> </span><span class="n">priv_data</span><span class="p">,</span><span class="w"> </span><span class="no">ERL_NIF_TERM</span><span class="w"> </span><span class="n">load_info</span><span class="p" data-group-id="1925674381-13">)</span><span class="w">
-</span><span class="p" data-group-id="1925674381-14">{</span><span class="w">
+</span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">load</span><span class="p" data-group-id="9310061326-13">(</span><span class="no">ErlNifEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="kc">void</span><span class="o">*</span><span class="o">*</span><span class="w"> </span><span class="n">priv_data</span><span class="p">,</span><span class="w"> </span><span class="no">ERL_NIF_TERM</span><span class="w"> </span><span class="n">load_info</span><span class="p" data-group-id="9310061326-13">)</span><span class="w">
+</span><span class="p" data-group-id="9310061326-14">{</span><span class="w">
     </span><span class="o">*</span><span class="n">priv_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">NULL</span><span class="p">;</span><span class="w">
     </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">
-</span><span class="p" data-group-id="1925674381-14">}</span><span class="w">
+</span><span class="p" data-group-id="9310061326-14">}</span><span class="w">
 
-</span><span class="k">static</span><span class="w"> </span><span class="kc">void</span><span class="w"> </span><span class="nf">unload</span><span class="p" data-group-id="1925674381-15">(</span><span class="no">ErlNifEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="kc">void</span><span class="o">*</span><span class="w"> </span><span class="n">priv_data</span><span class="p" data-group-id="1925674381-15">)</span><span class="w">
-</span><span class="p" data-group-id="1925674381-16">{</span><span class="w">
+</span><span class="k">static</span><span class="w"> </span><span class="kc">void</span><span class="w"> </span><span class="nf">unload</span><span class="p" data-group-id="9310061326-15">(</span><span class="no">ErlNifEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="kc">void</span><span class="o">*</span><span class="w"> </span><span class="n">priv_data</span><span class="p" data-group-id="9310061326-15">)</span><span class="w">
+</span><span class="p" data-group-id="9310061326-16">{</span><span class="w">
 
-</span><span class="p" data-group-id="1925674381-16">}</span><span class="w">
+</span><span class="p" data-group-id="9310061326-16">}</span><span class="w">
 
-</span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">upgrade</span><span class="p" data-group-id="1925674381-17">(</span><span class="no">ErlNifEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="kc">void</span><span class="o">*</span><span class="o">*</span><span class="w"> </span><span class="n">priv_data</span><span class="p">,</span><span class="w"> </span><span class="kc">void</span><span class="o">*</span><span class="o">*</span><span class="w"> </span><span class="n">old_priv_data</span><span class="p">,</span><span class="w">
-</span><span class="err">	</span><span class="err">	</span><span class="w">   </span><span class="no">ERL_NIF_TERM</span><span class="w"> </span><span class="n">load_info</span><span class="p" data-group-id="1925674381-17">)</span><span class="w">
-</span><span class="p" data-group-id="1925674381-18">{</span><span class="w">
-    </span><span class="k">if</span><span class="w"> </span><span class="p" data-group-id="1925674381-19">(</span><span class="o">*</span><span class="n">old_priv_data</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="no">NULL</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">*</span><span class="n">priv_data</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="no">NULL</span><span class="p" data-group-id="1925674381-19">)</span><span class="w"> </span><span class="p" data-group-id="1925674381-20">{</span><span class="w">
+</span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">upgrade</span><span class="p" data-group-id="9310061326-17">(</span><span class="no">ErlNifEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="kc">void</span><span class="o">*</span><span class="o">*</span><span class="w"> </span><span class="n">priv_data</span><span class="p">,</span><span class="w"> </span><span class="kc">void</span><span class="o">*</span><span class="o">*</span><span class="w"> </span><span class="n">old_priv_data</span><span class="p">,</span><span class="w">
+</span><span class="err">	</span><span class="err">	</span><span class="w">   </span><span class="no">ERL_NIF_TERM</span><span class="w"> </span><span class="n">load_info</span><span class="p" data-group-id="9310061326-17">)</span><span class="w">
+</span><span class="p" data-group-id="9310061326-18">{</span><span class="w">
+    </span><span class="k">if</span><span class="w"> </span><span class="p" data-group-id="9310061326-19">(</span><span class="o">*</span><span class="n">old_priv_data</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="no">NULL</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">*</span><span class="n">priv_data</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="no">NULL</span><span class="p" data-group-id="9310061326-19">)</span><span class="w"> </span><span class="p" data-group-id="9310061326-20">{</span><span class="w">
 </span><span class="err">	</span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="cm">/* Don&#39;t know how to do that */</span><span class="w">
-    </span><span class="p" data-group-id="1925674381-20">}</span><span class="w">
-    </span><span class="k">if</span><span class="w"> </span><span class="p" data-group-id="1925674381-21">(</span><span class="nf">load</span><span class="p" data-group-id="1925674381-22">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">priv_data</span><span class="p">,</span><span class="w"> </span><span class="n">load_info</span><span class="p" data-group-id="1925674381-22">)</span><span class="p" data-group-id="1925674381-21">)</span><span class="w"> </span><span class="p" data-group-id="1925674381-23">{</span><span class="w">
+    </span><span class="p" data-group-id="9310061326-20">}</span><span class="w">
+    </span><span class="k">if</span><span class="w"> </span><span class="p" data-group-id="9310061326-21">(</span><span class="nf">load</span><span class="p" data-group-id="9310061326-22">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">priv_data</span><span class="p">,</span><span class="w"> </span><span class="n">load_info</span><span class="p" data-group-id="9310061326-22">)</span><span class="p" data-group-id="9310061326-21">)</span><span class="w"> </span><span class="p" data-group-id="9310061326-23">{</span><span class="w">
 </span><span class="err">	</span><span class="k">return</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="w">
-    </span><span class="p" data-group-id="1925674381-23">}</span><span class="w">
+    </span><span class="p" data-group-id="9310061326-23">}</span><span class="w">
     </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">
-</span><span class="p" data-group-id="1925674381-18">}</span><span class="w">
+</span><span class="p" data-group-id="9310061326-18">}</span><span class="w">
 
 </span><span class="cm">/*
  * argv[0]: TraceTag
  * argv[1]: TracerState
  * argv[2]: Tracee
  */</span><span class="w">
-</span><span class="k">static</span><span class="w"> </span><span class="no">ERL_NIF_TERM</span><span class="w"> </span><span class="nf">enabled</span><span class="p" data-group-id="1925674381-24">(</span><span class="no">ErlNifEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="no">ERL_NIF_TERM</span><span class="w"> </span><span class="n">argv</span><span class="p" data-group-id="1925674381-25">[</span><span class="p" data-group-id="1925674381-25">]</span><span class="p" data-group-id="1925674381-24">)</span><span class="w">
-</span><span class="p" data-group-id="1925674381-26">{</span><span class="w">
+</span><span class="k">static</span><span class="w"> </span><span class="no">ERL_NIF_TERM</span><span class="w"> </span><span class="nf">enabled</span><span class="p" data-group-id="9310061326-24">(</span><span class="no">ErlNifEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="no">ERL_NIF_TERM</span><span class="w"> </span><span class="n">argv</span><span class="p" data-group-id="9310061326-25">[</span><span class="p" data-group-id="9310061326-25">]</span><span class="p" data-group-id="9310061326-24">)</span><span class="w">
+</span><span class="p" data-group-id="9310061326-26">{</span><span class="w">
     </span><span class="no">ErlNifPid</span><span class="w"> </span><span class="n">to_pid</span><span class="p">;</span><span class="w">
-    </span><span class="k">if</span><span class="w"> </span><span class="p" data-group-id="1925674381-27">(</span><span class="nf">enif_get_local_pid</span><span class="p" data-group-id="1925674381-28">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p" data-group-id="1925674381-29">[</span><span class="mi">1</span><span class="p" data-group-id="1925674381-29">]</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">to_pid</span><span class="p" data-group-id="1925674381-28">)</span><span class="p" data-group-id="1925674381-27">)</span><span class="w">
-        </span><span class="k">if</span><span class="w"> </span><span class="p" data-group-id="1925674381-30">(</span><span class="o">!</span><span class="nf">enif_is_process_alive</span><span class="p" data-group-id="1925674381-31">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">to_pid</span><span class="p" data-group-id="1925674381-31">)</span><span class="p" data-group-id="1925674381-30">)</span><span class="w">
-            </span><span class="k">if</span><span class="w"> </span><span class="p" data-group-id="1925674381-32">(</span><span class="nf">enif_is_identical</span><span class="p" data-group-id="1925674381-33">(</span><span class="nf">enif_make_atom</span><span class="p" data-group-id="1925674381-34">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;trace_status&quot;</span><span class="p" data-group-id="1925674381-34">)</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p" data-group-id="1925674381-35">[</span><span class="mi">0</span><span class="p" data-group-id="1925674381-35">]</span><span class="p" data-group-id="1925674381-33">)</span><span class="p" data-group-id="1925674381-32">)</span><span class="w">
+    </span><span class="k">if</span><span class="w"> </span><span class="p" data-group-id="9310061326-27">(</span><span class="nf">enif_get_local_pid</span><span class="p" data-group-id="9310061326-28">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p" data-group-id="9310061326-29">[</span><span class="mi">1</span><span class="p" data-group-id="9310061326-29">]</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">to_pid</span><span class="p" data-group-id="9310061326-28">)</span><span class="p" data-group-id="9310061326-27">)</span><span class="w">
+        </span><span class="k">if</span><span class="w"> </span><span class="p" data-group-id="9310061326-30">(</span><span class="o">!</span><span class="nf">enif_is_process_alive</span><span class="p" data-group-id="9310061326-31">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">to_pid</span><span class="p" data-group-id="9310061326-31">)</span><span class="p" data-group-id="9310061326-30">)</span><span class="w">
+            </span><span class="k">if</span><span class="w"> </span><span class="p" data-group-id="9310061326-32">(</span><span class="nf">enif_is_identical</span><span class="p" data-group-id="9310061326-33">(</span><span class="nf">enif_make_atom</span><span class="p" data-group-id="9310061326-34">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;trace_status&quot;</span><span class="p" data-group-id="9310061326-34">)</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p" data-group-id="9310061326-35">[</span><span class="mi">0</span><span class="p" data-group-id="9310061326-35">]</span><span class="p" data-group-id="9310061326-33">)</span><span class="p" data-group-id="9310061326-32">)</span><span class="w">
                 </span><span class="cm">/* tracer is dead so we should remove this tracepoint */</span><span class="w">
-                </span><span class="k">return</span><span class="w"> </span><span class="nf">enif_make_atom</span><span class="p" data-group-id="1925674381-36">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;remove&quot;</span><span class="p" data-group-id="1925674381-36">)</span><span class="p">;</span><span class="w">
+                </span><span class="k">return</span><span class="w"> </span><span class="nf">enif_make_atom</span><span class="p" data-group-id="9310061326-36">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;remove&quot;</span><span class="p" data-group-id="9310061326-36">)</span><span class="p">;</span><span class="w">
             </span><span class="k">else</span><span class="w">
-                </span><span class="k">return</span><span class="w"> </span><span class="nf">enif_make_atom</span><span class="p" data-group-id="1925674381-37">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;discard&quot;</span><span class="p" data-group-id="1925674381-37">)</span><span class="p">;</span><span class="w">
+                </span><span class="k">return</span><span class="w"> </span><span class="nf">enif_make_atom</span><span class="p" data-group-id="9310061326-37">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;discard&quot;</span><span class="p" data-group-id="9310061326-37">)</span><span class="p">;</span><span class="w">
 
     </span><span class="cm">/* Only generate trace for when tracer != tracee */</span><span class="w">
-    </span><span class="k">if</span><span class="w"> </span><span class="p" data-group-id="1925674381-38">(</span><span class="nf">enif_is_identical</span><span class="p" data-group-id="1925674381-39">(</span><span class="n">argv</span><span class="p" data-group-id="1925674381-40">[</span><span class="mi">1</span><span class="p" data-group-id="1925674381-40">]</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p" data-group-id="1925674381-41">[</span><span class="mi">2</span><span class="p" data-group-id="1925674381-41">]</span><span class="p" data-group-id="1925674381-39">)</span><span class="p" data-group-id="1925674381-38">)</span><span class="w">
-        </span><span class="k">return</span><span class="w"> </span><span class="nf">enif_make_atom</span><span class="p" data-group-id="1925674381-42">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;discard&quot;</span><span class="p" data-group-id="1925674381-42">)</span><span class="p">;</span><span class="w">
+    </span><span class="k">if</span><span class="w"> </span><span class="p" data-group-id="9310061326-38">(</span><span class="nf">enif_is_identical</span><span class="p" data-group-id="9310061326-39">(</span><span class="n">argv</span><span class="p" data-group-id="9310061326-40">[</span><span class="mi">1</span><span class="p" data-group-id="9310061326-40">]</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p" data-group-id="9310061326-41">[</span><span class="mi">2</span><span class="p" data-group-id="9310061326-41">]</span><span class="p" data-group-id="9310061326-39">)</span><span class="p" data-group-id="9310061326-38">)</span><span class="w">
+        </span><span class="k">return</span><span class="w"> </span><span class="nf">enif_make_atom</span><span class="p" data-group-id="9310061326-42">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;discard&quot;</span><span class="p" data-group-id="9310061326-42">)</span><span class="p">;</span><span class="w">
 
     </span><span class="cm">/* Only trigger trace messages on &#39;send&#39; */</span><span class="w">
-    </span><span class="k">if</span><span class="w"> </span><span class="p" data-group-id="1925674381-43">(</span><span class="nf">enif_is_identical</span><span class="p" data-group-id="1925674381-44">(</span><span class="nf">enif_make_atom</span><span class="p" data-group-id="1925674381-45">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;send&quot;</span><span class="p" data-group-id="1925674381-45">)</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p" data-group-id="1925674381-46">[</span><span class="mi">0</span><span class="p" data-group-id="1925674381-46">]</span><span class="p" data-group-id="1925674381-44">)</span><span class="p" data-group-id="1925674381-43">)</span><span class="w">
-        </span><span class="k">return</span><span class="w"> </span><span class="nf">enif_make_atom</span><span class="p" data-group-id="1925674381-47">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;trace&quot;</span><span class="p" data-group-id="1925674381-47">)</span><span class="p">;</span><span class="w">
+    </span><span class="k">if</span><span class="w"> </span><span class="p" data-group-id="9310061326-43">(</span><span class="nf">enif_is_identical</span><span class="p" data-group-id="9310061326-44">(</span><span class="nf">enif_make_atom</span><span class="p" data-group-id="9310061326-45">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;send&quot;</span><span class="p" data-group-id="9310061326-45">)</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p" data-group-id="9310061326-46">[</span><span class="mi">0</span><span class="p" data-group-id="9310061326-46">]</span><span class="p" data-group-id="9310061326-44">)</span><span class="p" data-group-id="9310061326-43">)</span><span class="w">
+        </span><span class="k">return</span><span class="w"> </span><span class="nf">enif_make_atom</span><span class="p" data-group-id="9310061326-47">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;trace&quot;</span><span class="p" data-group-id="9310061326-47">)</span><span class="p">;</span><span class="w">
 
     </span><span class="cm">/* Have to answer trace_status */</span><span class="w">
-    </span><span class="k">if</span><span class="w"> </span><span class="p" data-group-id="1925674381-48">(</span><span class="nf">enif_is_identical</span><span class="p" data-group-id="1925674381-49">(</span><span class="nf">enif_make_atom</span><span class="p" data-group-id="1925674381-50">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;trace_status&quot;</span><span class="p" data-group-id="1925674381-50">)</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p" data-group-id="1925674381-51">[</span><span class="mi">0</span><span class="p" data-group-id="1925674381-51">]</span><span class="p" data-group-id="1925674381-49">)</span><span class="p" data-group-id="1925674381-48">)</span><span class="w">
-        </span><span class="k">return</span><span class="w"> </span><span class="nf">enif_make_atom</span><span class="p" data-group-id="1925674381-52">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;trace&quot;</span><span class="p" data-group-id="1925674381-52">)</span><span class="p">;</span><span class="w">
+    </span><span class="k">if</span><span class="w"> </span><span class="p" data-group-id="9310061326-48">(</span><span class="nf">enif_is_identical</span><span class="p" data-group-id="9310061326-49">(</span><span class="nf">enif_make_atom</span><span class="p" data-group-id="9310061326-50">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;trace_status&quot;</span><span class="p" data-group-id="9310061326-50">)</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p" data-group-id="9310061326-51">[</span><span class="mi">0</span><span class="p" data-group-id="9310061326-51">]</span><span class="p" data-group-id="9310061326-49">)</span><span class="p" data-group-id="9310061326-48">)</span><span class="w">
+        </span><span class="k">return</span><span class="w"> </span><span class="nf">enif_make_atom</span><span class="p" data-group-id="9310061326-52">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;trace&quot;</span><span class="p" data-group-id="9310061326-52">)</span><span class="p">;</span><span class="w">
 
-    </span><span class="k">return</span><span class="w"> </span><span class="nf">enif_make_atom</span><span class="p" data-group-id="1925674381-53">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;discard&quot;</span><span class="p" data-group-id="1925674381-53">)</span><span class="p">;</span><span class="w">
-</span><span class="p" data-group-id="1925674381-26">}</span><span class="w">
+    </span><span class="k">return</span><span class="w"> </span><span class="nf">enif_make_atom</span><span class="p" data-group-id="9310061326-53">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;discard&quot;</span><span class="p" data-group-id="9310061326-53">)</span><span class="p">;</span><span class="w">
+</span><span class="p" data-group-id="9310061326-26">}</span><span class="w">
 
 </span><span class="cm">/*
  * argv[0]: TraceTag, should only be &#39;send&#39;
@@ -220,20 +238,20 @@ sent messages to who.</p><p>The following is an example session using it on Linu
  * argv[3]: Message
  * argv[4]: Options, map containing Recipient
  */</span><span class="w">
-</span><span class="k">static</span><span class="w"> </span><span class="no">ERL_NIF_TERM</span><span class="w"> </span><span class="nf">trace</span><span class="p" data-group-id="1925674381-54">(</span><span class="no">ErlNifEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="no">ERL_NIF_TERM</span><span class="w"> </span><span class="n">argv</span><span class="p" data-group-id="1925674381-55">[</span><span class="p" data-group-id="1925674381-55">]</span><span class="p" data-group-id="1925674381-54">)</span><span class="w">
-</span><span class="p" data-group-id="1925674381-56">{</span><span class="w">
+</span><span class="k">static</span><span class="w"> </span><span class="no">ERL_NIF_TERM</span><span class="w"> </span><span class="nf">trace</span><span class="p" data-group-id="9310061326-54">(</span><span class="no">ErlNifEnv</span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="no">ERL_NIF_TERM</span><span class="w"> </span><span class="n">argv</span><span class="p" data-group-id="9310061326-55">[</span><span class="p" data-group-id="9310061326-55">]</span><span class="p" data-group-id="9310061326-54">)</span><span class="w">
+</span><span class="p" data-group-id="9310061326-56">{</span><span class="w">
     </span><span class="no">ErlNifPid</span><span class="w"> </span><span class="n">to_pid</span><span class="p">;</span><span class="w">
     </span><span class="no">ERL_NIF_TERM</span><span class="w"> </span><span class="n">recipient</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="p">;</span><span class="w">
 
-    </span><span class="k">if</span><span class="w"> </span><span class="p" data-group-id="1925674381-57">(</span><span class="nf">enif_get_local_pid</span><span class="p" data-group-id="1925674381-58">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p" data-group-id="1925674381-59">[</span><span class="mi">1</span><span class="p" data-group-id="1925674381-59">]</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">to_pid</span><span class="p" data-group-id="1925674381-58">)</span><span class="p" data-group-id="1925674381-57">)</span><span class="w"> </span><span class="p" data-group-id="1925674381-60">{</span><span class="w">
-      </span><span class="k">if</span><span class="w"> </span><span class="p" data-group-id="1925674381-61">(</span><span class="nf">enif_get_map_value</span><span class="p" data-group-id="1925674381-62">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p" data-group-id="1925674381-63">[</span><span class="mi">4</span><span class="p" data-group-id="1925674381-63">]</span><span class="p">,</span><span class="w"> </span><span class="nf">enif_make_atom</span><span class="p" data-group-id="1925674381-64">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;extra&quot;</span><span class="p" data-group-id="1925674381-64">)</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">recipient</span><span class="p" data-group-id="1925674381-62">)</span><span class="p" data-group-id="1925674381-61">)</span><span class="w"> </span><span class="p" data-group-id="1925674381-65">{</span><span class="w">
-        </span><span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">enif_make_tuple3</span><span class="p" data-group-id="1925674381-66">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="nf">enif_make_atom</span><span class="p" data-group-id="1925674381-67">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;trace&quot;</span><span class="p" data-group-id="1925674381-67">)</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p" data-group-id="1925674381-68">[</span><span class="mi">2</span><span class="p" data-group-id="1925674381-68">]</span><span class="p">,</span><span class="w"> </span><span class="n">recipient</span><span class="p" data-group-id="1925674381-66">)</span><span class="p">;</span><span class="w">
-        </span><span class="nf">enif_send</span><span class="p" data-group-id="1925674381-69">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">to_pid</span><span class="p">,</span><span class="w"> </span><span class="no">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="p" data-group-id="1925674381-69">)</span><span class="p">;</span><span class="w">
-      </span><span class="p" data-group-id="1925674381-65">}</span><span class="w">
-    </span><span class="p" data-group-id="1925674381-60">}</span><span class="w">
+    </span><span class="k">if</span><span class="w"> </span><span class="p" data-group-id="9310061326-57">(</span><span class="nf">enif_get_local_pid</span><span class="p" data-group-id="9310061326-58">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p" data-group-id="9310061326-59">[</span><span class="mi">1</span><span class="p" data-group-id="9310061326-59">]</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">to_pid</span><span class="p" data-group-id="9310061326-58">)</span><span class="p" data-group-id="9310061326-57">)</span><span class="w"> </span><span class="p" data-group-id="9310061326-60">{</span><span class="w">
+      </span><span class="k">if</span><span class="w"> </span><span class="p" data-group-id="9310061326-61">(</span><span class="nf">enif_get_map_value</span><span class="p" data-group-id="9310061326-62">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p" data-group-id="9310061326-63">[</span><span class="mi">4</span><span class="p" data-group-id="9310061326-63">]</span><span class="p">,</span><span class="w"> </span><span class="nf">enif_make_atom</span><span class="p" data-group-id="9310061326-64">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;extra&quot;</span><span class="p" data-group-id="9310061326-64">)</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">recipient</span><span class="p" data-group-id="9310061326-62">)</span><span class="p" data-group-id="9310061326-61">)</span><span class="w"> </span><span class="p" data-group-id="9310061326-65">{</span><span class="w">
+        </span><span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">enif_make_tuple3</span><span class="p" data-group-id="9310061326-66">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="nf">enif_make_atom</span><span class="p" data-group-id="9310061326-67">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;trace&quot;</span><span class="p" data-group-id="9310061326-67">)</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p" data-group-id="9310061326-68">[</span><span class="mi">2</span><span class="p" data-group-id="9310061326-68">]</span><span class="p">,</span><span class="w"> </span><span class="n">recipient</span><span class="p" data-group-id="9310061326-66">)</span><span class="p">;</span><span class="w">
+        </span><span class="nf">enif_send</span><span class="p" data-group-id="9310061326-69">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">to_pid</span><span class="p">,</span><span class="w"> </span><span class="no">NULL</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="p" data-group-id="9310061326-69">)</span><span class="p">;</span><span class="w">
+      </span><span class="p" data-group-id="9310061326-65">}</span><span class="w">
+    </span><span class="p" data-group-id="9310061326-60">}</span><span class="w">
 
-    </span><span class="k">return</span><span class="w"> </span><span class="nf">enif_make_atom</span><span class="p" data-group-id="1925674381-70">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ok&quot;</span><span class="p" data-group-id="1925674381-70">)</span><span class="p">;</span><span class="w">
-</span><span class="p" data-group-id="1925674381-56">}</span></code></pre>
+    </span><span class="k">return</span><span class="w"> </span><span class="nf">enif_make_atom</span><span class="p" data-group-id="9310061326-70">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ok&quot;</span><span class="p" data-group-id="9310061326-70">)</span><span class="p">;</span><span class="w">
+</span><span class="p" data-group-id="9310061326-56">}</span></code></pre>
     </section>
 
 </div>
@@ -367,7 +385,7 @@ sent messages to who.</p><p>The following is an example session using it on Linu
       </div>
 
         <div class="summary-synopsis"><p>This callback is called whenever a tracepoint with trace flag
-<a><code class="inline">call | return_to</code></a> is triggered.</p></div>
+<a href="erlang.html#trace/3"><code class="inline">call | return_to</code></a> is triggered.</p></div>
 
     </div>
 
@@ -378,7 +396,7 @@ sent messages to who.</p><p>The following is an example session using it on Linu
       </div>
 
         <div class="summary-synopsis"><p>This callback is called whenever a tracepoint with trace flag
-<a><code class="inline">garbage_collection</code></a> is triggered.</p></div>
+<a href="erlang.html#trace/3"><code class="inline">garbage_collection</code></a> is triggered.</p></div>
 
     </div>
 
@@ -389,7 +407,7 @@ sent messages to who.</p><p>The following is an example session using it on Linu
       </div>
 
         <div class="summary-synopsis"><p>This callback is called whenever a tracepoint with trace flag
-<a><code class="inline">ports</code></a> is triggered.</p></div>
+<a href="erlang.html#trace/3"><code class="inline">ports</code></a> is triggered.</p></div>
 
     </div>
 
@@ -400,7 +418,7 @@ sent messages to who.</p><p>The following is an example session using it on Linu
       </div>
 
         <div class="summary-synopsis"><p>This callback is called whenever a tracepoint with trace flag
-<a><code class="inline">procs</code></a> is triggered.</p></div>
+<a href="erlang.html#trace/3"><code class="inline">procs</code></a> is triggered.</p></div>
 
     </div>
 
@@ -411,7 +429,7 @@ sent messages to who.</p><p>The following is an example session using it on Linu
       </div>
 
         <div class="summary-synopsis"><p>This callback is called whenever a tracepoint with trace flag
-<a><code class="inline">'receive'</code></a> is triggered.</p></div>
+<a href="erlang.html#trace/3"><code class="inline">'receive'</code></a> is triggered.</p></div>
 
     </div>
 
@@ -422,7 +440,7 @@ sent messages to who.</p><p>The following is an example session using it on Linu
       </div>
 
         <div class="summary-synopsis"><p>This callback is called whenever a tracepoint with trace flag
-<a><code class="inline">running_ports</code></a> is triggered.</p></div>
+<a href="erlang.html#trace/3"><code class="inline">running_ports</code></a> is triggered.</p></div>
 
     </div>
 
@@ -433,7 +451,7 @@ sent messages to who.</p><p>The following is an example session using it on Linu
       </div>
 
         <div class="summary-synopsis"><p>This callback is called whenever a tracepoint with trace flag
-<a><code class="inline">running_procs | running</code></a> is triggered.</p></div>
+<a href="erlang.html#trace/3"><code class="inline">running_procs | running</code></a> is triggered.</p></div>
 
     </div>
 
@@ -444,7 +462,7 @@ sent messages to who.</p><p>The following is an example session using it on Linu
       </div>
 
         <div class="summary-synopsis"><p>This callback is called whenever a tracepoint with trace flag
-<a><code class="inline">send</code></a> is triggered.</p></div>
+<a href="erlang.html#trace/3"><code class="inline">send</code></a> is triggered.</p></div>
 
     </div>
 
@@ -455,7 +473,7 @@ sent messages to who.</p><p>The following is an example session using it on Linu
       </div>
 
         <div class="summary-synopsis"><p>This callback is called when a tracepoint is triggered and the
-<a><code class="inline">Module:enabled/3</code></a> callback returned <code class="inline">trace</code>.</p></div>
+<a href="#c:enabled/3"><code class="inline">Module:enabled/3</code></a> callback returned <code class="inline">trace</code>.</p></div>
 
     </div>
 
@@ -466,7 +484,7 @@ sent messages to who.</p><p>The following is an example session using it on Linu
       </div>
 
         <div class="summary-synopsis"><p>This callback is called when a tracepoint is triggered and the
-<a><code class="inline">Module:enabled_call/3</code></a> callback returned <code class="inline">trace</code>.</p></div>
+<a href="#c:enabled_call/3"><code class="inline">Module:enabled_call/3</code></a> callback returned <code class="inline">trace</code>.</p></div>
 
     </div>
 
@@ -477,7 +495,7 @@ sent messages to who.</p><p>The following is an example session using it on Linu
       </div>
 
         <div class="summary-synopsis"><p>This callback is called when a tracepoint is triggered and the
-<a><code class="inline">Module:enabled_garbage_collection/3</code></a>
+<a href="#c:enabled_garbage_collection/3"><code class="inline">Module:enabled_garbage_collection/3</code></a>
 callback returned <code class="inline">trace</code>.</p></div>
 
     </div>
@@ -489,7 +507,7 @@ callback returned <code class="inline">trace</code>.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>This callback is called when a tracepoint is triggered and the
-<a><code class="inline">Module:enabled_ports/3</code></a> callback returned <code class="inline">trace</code>.</p></div>
+<a href="#c:enabled_ports/3"><code class="inline">Module:enabled_ports/3</code></a> callback returned <code class="inline">trace</code>.</p></div>
 
     </div>
 
@@ -500,7 +518,7 @@ callback returned <code class="inline">trace</code>.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>This callback is called when a tracepoint is triggered and the
-<a><code class="inline">Module:enabled_procs/3</code></a> callback returned <code class="inline">trace</code>.</p></div>
+<a href="#c:enabled_procs/3"><code class="inline">Module:enabled_procs/3</code></a> callback returned <code class="inline">trace</code>.</p></div>
 
     </div>
 
@@ -511,7 +529,7 @@ callback returned <code class="inline">trace</code>.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>This callback is called when a tracepoint is triggered and the
-<a><code class="inline">Module:enabled_receive/3</code></a> callback returned <code class="inline">trace</code>.</p></div>
+<a href="#c:enabled_receive/3"><code class="inline">Module:enabled_receive/3</code></a> callback returned <code class="inline">trace</code>.</p></div>
 
     </div>
 
@@ -522,7 +540,7 @@ callback returned <code class="inline">trace</code>.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>This callback is called when a tracepoint is triggered and the
-<a><code class="inline">Module:enabled_running_ports/3</code></a> callback
+<a href="#c:enabled_running_ports/3"><code class="inline">Module:enabled_running_ports/3</code></a> callback
 returned <code class="inline">trace</code>.</p></div>
 
     </div>
@@ -534,7 +552,7 @@ returned <code class="inline">trace</code>.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>This callback is called when a tracepoint is triggered and the
-<a><code class="inline">Module:enabled_running_procs/3</code></a> callback
+<a href="#c:enabled_running_procs/3"><code class="inline">Module:enabled_running_procs/3</code></a> callback
 returned <code class="inline">trace</code>.</p></div>
 
     </div>
@@ -546,7 +564,7 @@ returned <code class="inline">trace</code>.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>This callback is called when a tracepoint is triggered and the
-<a><code class="inline">Module:enabled_send/3</code></a> callback returned <code class="inline">trace</code>.</p></div>
+<a href="#c:enabled_send/3"><code class="inline">Module:enabled_send/3</code></a> callback returned <code class="inline">trace</code>.</p></div>
 
     </div>
 
@@ -562,6 +580,7 @@ returned <code class="inline">trace</code>.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:trace_opts/0">
 
@@ -575,7 +594,7 @@ returned <code class="inline">trace</code>.</p></div>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L250" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L250" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -614,7 +633,7 @@ output of a match specification that was run.</p></li><li><p><strong><code class
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L225" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L225" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -652,7 +671,7 @@ output of a match specification that was run.</p></li><li><p><strong><code class
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L211" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L211" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -682,7 +701,7 @@ output of a match specification that was run.</p></li><li><p><strong><code class
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L217" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L217" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -712,7 +731,7 @@ output of a match specification that was run.</p></li><li><p><strong><code class
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L215" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L215" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -742,7 +761,7 @@ output of a match specification that was run.</p></li><li><p><strong><code class
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L212" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L212" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -774,7 +793,7 @@ output of a match specification that was run.</p></li><li><p><strong><code class
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L210" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L210" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -804,7 +823,7 @@ output of a match specification that was run.</p></li><li><p><strong><code class
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L207" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L207" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -834,7 +853,7 @@ output of a match specification that was run.</p></li><li><p><strong><code class
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L208" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L208" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -864,7 +883,7 @@ output of a match specification that was run.</p></li><li><p><strong><code class
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L209" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L209" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -894,7 +913,7 @@ output of a match specification that was run.</p></li><li><p><strong><code class
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L205" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L205" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -923,6 +942,7 @@ output of a match specification that was run.</p></li><li><p><strong><code class
       </a>
       <span class="text">Callbacks</span>
     </h1>
+
     <div class="callbacks-list">
 <section class="detail" id="c:enabled/3">
 
@@ -936,7 +956,7 @@ output of a match specification that was run.</p></li><li><p><strong><code class
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L281" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L281" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -982,7 +1002,7 @@ that it is both fast and without side effects.</p>
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L294" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L294" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1021,7 +1041,7 @@ that it is both fast and without side effects.</p>
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L307" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L307" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1060,7 +1080,7 @@ undefined, <a href="#c:enabled/3"><code class="inline">Module:enabled/3</code></
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L320" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L320" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1099,7 +1119,7 @@ undefined, <a href="#c:enabled/3"><code class="inline">Module:enabled/3</code></
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L333" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L333" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1138,7 +1158,7 @@ undefined, <a href="#c:enabled/3"><code class="inline">Module:enabled/3</code></
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L346" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L346" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1177,7 +1197,7 @@ undefined, <a href="#c:enabled/3"><code class="inline">Module:enabled/3</code></
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L359" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L359" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1214,7 +1234,7 @@ undefined, <a href="#c:enabled/3"><code class="inline">Module:enabled/3</code></
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L372" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L372" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1253,7 +1273,7 @@ undefined, <a href="#c:enabled/3"><code class="inline">Module:enabled/3</code></
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L385" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L385" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1290,7 +1310,7 @@ undefined, <a href="#c:enabled/3"><code class="inline">Module:enabled/3</code></
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L411" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L411" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1344,7 +1364,7 @@ specified.</p><p>For more information on what <code class="inline">Label</code> 
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L432" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L432" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1385,7 +1405,7 @@ specified.</p><p>For more information on what <code class="inline">Label</code> 
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L448" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L448" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1427,7 +1447,7 @@ callback returned <code class="inline">trace</code>.</p><p>If <a href="#c:trace_
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L463" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L463" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1468,7 +1488,7 @@ callback returned <code class="inline">trace</code>.</p><p>If <a href="#c:trace_
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L478" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L478" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1509,7 +1529,7 @@ callback returned <code class="inline">trace</code>.</p><p>If <a href="#c:trace_
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L493" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L493" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1550,7 +1570,7 @@ callback returned <code class="inline">trace</code>.</p><p>If <a href="#c:trace_
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L509" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L509" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1590,7 +1610,7 @@ returned <code class="inline">trace</code>.</p><p>If <a href="#c:trace_running_p
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L525" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L525" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1632,7 +1652,7 @@ returned <code class="inline">trace</code>.</p><p>If <a href="#c:trace_running_p
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/erl_tracer.erl#L540" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/erl_tracer.erl#L540" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1667,8 +1687,8 @@ returned <code class="inline">trace</code>.</p><p>If <a href="#c:trace_running_p
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
         </span>
@@ -1676,7 +1696,7 @@ returned <code class="inline">trace</code>.</p><p>If <a href="#c:trace_running_p
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

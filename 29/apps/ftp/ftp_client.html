@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="ftp v1.2.4-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/ftp/ftp_client.html" />
     <title>Examples — ftp v1.2.4-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-E1CCA645.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ ftp
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of ftp</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -84,7 +102,7 @@ ftp
     <h1>Examples</h1>
 
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/ftp/doc/guides/ftp_client.md#L1" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ftp/doc/guides/ftp_client.md#L1" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -93,25 +111,25 @@ ftp
 
 
 <p>The following is a simple example of an FTP session, where the user <code class="inline">guest</code> with
-password <code class="inline">password</code> logs on to the remote host <code class="inline">erlang.org</code>:</p><pre><code class="makeup erlang" translate="no"><span class="w">      </span><span class="mi">1</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ftp</span><span class="p">:</span><span class="nf">start</span><span class="p" data-group-id="9867234727-1">(</span><span class="p" data-group-id="9867234727-1">)</span><span class="p">.</span><span class="w">
+password <code class="inline">password</code> logs on to the remote host <code class="inline">erlang.org</code>:</p><pre><code class="makeup erlang" translate="no"><span class="w">      </span><span class="mi">1</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ftp</span><span class="p">:</span><span class="nf">start</span><span class="p" data-group-id="6232634736-1">(</span><span class="p" data-group-id="6232634736-1">)</span><span class="p">.</span><span class="w">
       </span><span class="ss">ok</span><span class="w">
-      </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="9867234727-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">Pid</span><span class="p" data-group-id="9867234727-2">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ftp</span><span class="p">:</span><span class="nf">open</span><span class="p" data-group-id="9867234727-3">(</span><span class="p" data-group-id="9867234727-4">[</span><span class="p" data-group-id="9867234727-5">{</span><span class="ss">host</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;erlang.org&quot;</span><span class="p" data-group-id="9867234727-5">}</span><span class="p" data-group-id="9867234727-4">]</span><span class="p" data-group-id="9867234727-3">)</span><span class="p">.</span><span class="w">
-      </span><span class="p" data-group-id="9867234727-6">{</span><span class="ss">ok</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.22</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="9867234727-6">}</span><span class="w">
-      </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ftp</span><span class="p">:</span><span class="nf">user</span><span class="p" data-group-id="9867234727-7">(</span><span class="n">Pid</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;guest&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;password&quot;</span><span class="p" data-group-id="9867234727-7">)</span><span class="p">.</span><span class="w">
+      </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="p" data-group-id="6232634736-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">Pid</span><span class="p" data-group-id="6232634736-2">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ftp</span><span class="p">:</span><span class="nf">open</span><span class="p" data-group-id="6232634736-3">(</span><span class="p" data-group-id="6232634736-4">[</span><span class="p" data-group-id="6232634736-5">{</span><span class="ss">host</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;erlang.org&quot;</span><span class="p" data-group-id="6232634736-5">}</span><span class="p" data-group-id="6232634736-4">]</span><span class="p" data-group-id="6232634736-3">)</span><span class="p">.</span><span class="w">
+      </span><span class="p" data-group-id="6232634736-6">{</span><span class="ss">ok</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.22</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p" data-group-id="6232634736-6">}</span><span class="w">
+      </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ftp</span><span class="p">:</span><span class="nf">user</span><span class="p" data-group-id="6232634736-7">(</span><span class="n">Pid</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;guest&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;password&quot;</span><span class="p" data-group-id="6232634736-7">)</span><span class="p">.</span><span class="w">
       </span><span class="ss">ok</span><span class="w">
-      </span><span class="mi">4</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ftp</span><span class="p">:</span><span class="nf">pwd</span><span class="p" data-group-id="9867234727-8">(</span><span class="n">Pid</span><span class="p" data-group-id="9867234727-8">)</span><span class="p">.</span><span class="w">
-      </span><span class="p" data-group-id="9867234727-9">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/home/guest&quot;</span><span class="p" data-group-id="9867234727-9">}</span><span class="w">
-      </span><span class="mi">5</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ftp</span><span class="p">:</span><span class="nf">cd</span><span class="p" data-group-id="9867234727-10">(</span><span class="n">Pid</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;appl/examples&quot;</span><span class="p" data-group-id="9867234727-10">)</span><span class="p">.</span><span class="w">
+      </span><span class="mi">4</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ftp</span><span class="p">:</span><span class="nf">pwd</span><span class="p" data-group-id="6232634736-8">(</span><span class="n">Pid</span><span class="p" data-group-id="6232634736-8">)</span><span class="p">.</span><span class="w">
+      </span><span class="p" data-group-id="6232634736-9">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/home/guest&quot;</span><span class="p" data-group-id="6232634736-9">}</span><span class="w">
+      </span><span class="mi">5</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ftp</span><span class="p">:</span><span class="nf">cd</span><span class="p" data-group-id="6232634736-10">(</span><span class="n">Pid</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;appl/examples&quot;</span><span class="p" data-group-id="6232634736-10">)</span><span class="p">.</span><span class="w">
       </span><span class="ss">ok</span><span class="w">
-      </span><span class="mi">6</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ftp</span><span class="p">:</span><span class="nf">lpwd</span><span class="p" data-group-id="9867234727-11">(</span><span class="n">Pid</span><span class="p" data-group-id="9867234727-11">)</span><span class="p">.</span><span class="w">
-      </span><span class="p" data-group-id="9867234727-12">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/home/fred&quot;</span><span class="p" data-group-id="9867234727-12">}</span><span class="p">.</span><span class="w">
-      </span><span class="mi">7</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ftp</span><span class="p">:</span><span class="nf">lcd</span><span class="p" data-group-id="9867234727-13">(</span><span class="n">Pid</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/home/eproj/examples&quot;</span><span class="p" data-group-id="9867234727-13">)</span><span class="p">.</span><span class="w">
+      </span><span class="mi">6</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ftp</span><span class="p">:</span><span class="nf">lpwd</span><span class="p" data-group-id="6232634736-11">(</span><span class="n">Pid</span><span class="p" data-group-id="6232634736-11">)</span><span class="p">.</span><span class="w">
+      </span><span class="p" data-group-id="6232634736-12">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/home/fred&quot;</span><span class="p" data-group-id="6232634736-12">}</span><span class="p">.</span><span class="w">
+      </span><span class="mi">7</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ftp</span><span class="p">:</span><span class="nf">lcd</span><span class="p" data-group-id="6232634736-13">(</span><span class="n">Pid</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/home/eproj/examples&quot;</span><span class="p" data-group-id="6232634736-13">)</span><span class="p">.</span><span class="w">
       </span><span class="ss">ok</span><span class="w">
-      </span><span class="mi">8</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ftp</span><span class="p">:</span><span class="nf">recv</span><span class="p" data-group-id="9867234727-14">(</span><span class="n">Pid</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;appl.erl&quot;</span><span class="p" data-group-id="9867234727-14">)</span><span class="p">.</span><span class="w">
+      </span><span class="mi">8</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ftp</span><span class="p">:</span><span class="nf">recv</span><span class="p" data-group-id="6232634736-14">(</span><span class="n">Pid</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;appl.erl&quot;</span><span class="p" data-group-id="6232634736-14">)</span><span class="p">.</span><span class="w">
       </span><span class="ss">ok</span><span class="w">
-      </span><span class="mi">9</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ftp</span><span class="p">:</span><span class="nf">close</span><span class="p" data-group-id="9867234727-15">(</span><span class="n">Pid</span><span class="p" data-group-id="9867234727-15">)</span><span class="p">.</span><span class="w">
+      </span><span class="mi">9</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ftp</span><span class="p">:</span><span class="nf">close</span><span class="p" data-group-id="6232634736-15">(</span><span class="n">Pid</span><span class="p" data-group-id="6232634736-15">)</span><span class="p">.</span><span class="w">
       </span><span class="ss">ok</span><span class="w">
-      </span><span class="mi">10</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ftp</span><span class="p">:</span><span class="nf">stop</span><span class="p" data-group-id="9867234727-16">(</span><span class="p" data-group-id="9867234727-16">)</span><span class="p">.</span><span class="w">
+      </span><span class="mi">10</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ftp</span><span class="p">:</span><span class="nf">stop</span><span class="p" data-group-id="6232634736-16">(</span><span class="p" data-group-id="6232634736-16">)</span><span class="p">.</span><span class="w">
       </span><span class="ss">ok</span></code></pre><p>The file <code class="inline">appl.erl</code> is transferred from the remote to the local host. When the
 session is opened, the current directory at the remote host is <code class="inline">/home/guest</code>,
 and <code class="inline">/home/fred</code> at the local host. Before transferring the file, the current
@@ -141,8 +159,8 @@ FTP client introduction
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="ftp.epub" title="ePub version">
@@ -154,7 +172,7 @@ FTP client introduction
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

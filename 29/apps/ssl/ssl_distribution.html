@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="ssl v11.4.2-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/ssl/ssl_distribution.html" />
     <title>Erlang Distribution over TLS — ssl v11.4.2-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-1344640E.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ ssl
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of ssl</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -84,7 +102,7 @@ ssl
     <h1>Erlang Distribution over TLS</h1>
 
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/ssl/doc/guides/ssl_distribution.md#L1" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssl/doc/guides/ssl_distribution.md#L1" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -108,14 +126,14 @@ example of what can be done.</p><p>The simplest boot script possible includes on
 applications. Such a script is located in the <code class="inline">bin</code> directory of the Erlang
 distribution. The source for the script is found under the Erlang installation
 top directory under <code class="inline">releases/&lt;OTP version&gt;/start_clean.rel</code>.</p><p>Do the following:</p><ul><li>Copy that script to another location (and preferably another name).</li><li>Add the applications Crypto, Public Key, and SSL with their current version
-numbers after the STDLIB application.</li></ul><p>The following shows an example <code class="inline">.rel</code> file with TLS added:</p><pre><code class="makeup erlang" translate="no"><span class="w">      </span><span class="p" data-group-id="9444062344-1">{</span><span class="ss">release</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9444062344-2">{</span><span class="s">&quot;OTP  APN 181 01&quot;</span><span class="p">,</span><span class="s">&quot;R15A&quot;</span><span class="p" data-group-id="9444062344-2">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9444062344-3">{</span><span class="ss">erts</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;5.9&quot;</span><span class="p" data-group-id="9444062344-3">}</span><span class="p">,</span><span class="w">
-      </span><span class="p" data-group-id="9444062344-4">[</span><span class="p" data-group-id="9444062344-5">{</span><span class="ss">kernel</span><span class="p">,</span><span class="s">&quot;2.15&quot;</span><span class="p" data-group-id="9444062344-5">}</span><span class="p">,</span><span class="w">
-      </span><span class="p" data-group-id="9444062344-6">{</span><span class="ss">stdlib</span><span class="p">,</span><span class="s">&quot;1.18&quot;</span><span class="p" data-group-id="9444062344-6">}</span><span class="p">,</span><span class="w">
-      </span><span class="p" data-group-id="9444062344-7">{</span><span class="ss">crypto</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2.0.3&quot;</span><span class="p" data-group-id="9444062344-7">}</span><span class="p">,</span><span class="w">
-      </span><span class="p" data-group-id="9444062344-8">{</span><span class="ss">public_key</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;0.12&quot;</span><span class="p" data-group-id="9444062344-8">}</span><span class="p">,</span><span class="w">
-      </span><span class="p" data-group-id="9444062344-9">{</span><span class="ss">asn1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;4.0&quot;</span><span class="p" data-group-id="9444062344-9">}</span><span class="p">,</span><span class="w">
-      </span><span class="p" data-group-id="9444062344-10">{</span><span class="ss">ssl</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;5.0&quot;</span><span class="p" data-group-id="9444062344-10">}</span><span class="w">
-      </span><span class="p" data-group-id="9444062344-4">]</span><span class="p" data-group-id="9444062344-1">}</span><span class="p">.</span></code></pre><p>The version numbers differ in your system. Whenever one of the applications
+numbers after the STDLIB application.</li></ul><p>The following shows an example <code class="inline">.rel</code> file with TLS added:</p><pre><code class="makeup erlang" translate="no"><span class="w">      </span><span class="p" data-group-id="8746909937-1">{</span><span class="ss">release</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8746909937-2">{</span><span class="s">&quot;OTP  APN 181 01&quot;</span><span class="p">,</span><span class="s">&quot;R15A&quot;</span><span class="p" data-group-id="8746909937-2">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8746909937-3">{</span><span class="ss">erts</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;5.9&quot;</span><span class="p" data-group-id="8746909937-3">}</span><span class="p">,</span><span class="w">
+      </span><span class="p" data-group-id="8746909937-4">[</span><span class="p" data-group-id="8746909937-5">{</span><span class="ss">kernel</span><span class="p">,</span><span class="s">&quot;2.15&quot;</span><span class="p" data-group-id="8746909937-5">}</span><span class="p">,</span><span class="w">
+      </span><span class="p" data-group-id="8746909937-6">{</span><span class="ss">stdlib</span><span class="p">,</span><span class="s">&quot;1.18&quot;</span><span class="p" data-group-id="8746909937-6">}</span><span class="p">,</span><span class="w">
+      </span><span class="p" data-group-id="8746909937-7">{</span><span class="ss">crypto</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;2.0.3&quot;</span><span class="p" data-group-id="8746909937-7">}</span><span class="p">,</span><span class="w">
+      </span><span class="p" data-group-id="8746909937-8">{</span><span class="ss">public_key</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;0.12&quot;</span><span class="p" data-group-id="8746909937-8">}</span><span class="p">,</span><span class="w">
+      </span><span class="p" data-group-id="8746909937-9">{</span><span class="ss">asn1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;4.0&quot;</span><span class="p" data-group-id="8746909937-9">}</span><span class="p">,</span><span class="w">
+      </span><span class="p" data-group-id="8746909937-10">{</span><span class="ss">ssl</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;5.0&quot;</span><span class="p" data-group-id="8746909937-10">}</span><span class="w">
+      </span><span class="p" data-group-id="8746909937-4">]</span><span class="p" data-group-id="8746909937-1">}</span><span class="p">.</span></code></pre><p>The version numbers differ in your system. Whenever one of the applications
 included in the script is upgraded, change the script.</p><p>Do the following:</p><ul><li><p>Build the boot script.</p><p>Assuming the <code class="inline">.rel file</code> is stored in a file <code class="inline">start_ssl.rel</code> in the current
 directory, a boot script can be built as follows:</p></li></ul><pre><code class="text">   1&gt; systools:make_script(&quot;start_ssl&quot;,[]).</code></pre><p>There is now a <code class="inline">start_ssl.boot</code> file in the current directory.</p><p>Do the following:</p><ul><li>Test the boot script. To do this, start Erlang with the <code class="inline">-boot</code> command-line
 parameter specifying this boot script (with its full path, but without the
@@ -150,10 +168,10 @@ itself. Other raw socket options such as <code class="inline">packet_size</code>
 so beware!</p></section><p>For TLS to work, at least a public key and a certificate must be specified for
 the server side and the client needs to specify CAs that it trusts (client certification
 is optional and requires more configuration).</p><p>In the following example (to keep it simple), the PEM file <code class="inline">&quot;/home/me/ssl/erlserver.pem&quot;</code>
-contains both the server certificate and its private key .</p><p>Create a file named for example <code class="inline">&quot;/home/me/ssl/ssl_test@myhost.conf&quot;</code>:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="4595077927-1">[</span><span class="p" data-group-id="4595077927-2">{</span><span class="ss">server</span><span class="p">,</span><span class="w">
-  </span><span class="p" data-group-id="4595077927-3">[</span><span class="p" data-group-id="4595077927-4">{</span><span class="ss">certfile</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/home/me/ssl/erlserver.pem&quot;</span><span class="p" data-group-id="4595077927-4">}</span><span class="p" data-group-id="4595077927-3">]</span><span class="p" data-group-id="4595077927-2">}</span><span class="p">,</span><span class="w">
- </span><span class="p" data-group-id="4595077927-5">{</span><span class="ss">client</span><span class="p">,</span><span class="w">
-  </span><span class="p" data-group-id="4595077927-6">[</span><span class="p" data-group-id="4595077927-7">{</span><span class="ss">cacertfile</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/home/me/ssl/client_trusted.pem&quot;</span><span class="p" data-group-id="4595077927-7">}</span><span class="p" data-group-id="4595077927-6">]</span><span class="p" data-group-id="4595077927-5">}</span><span class="p" data-group-id="4595077927-1">]</span><span class="p">.</span></code></pre><p>And then start the node like this (line breaks in the command are for
+contains both the server certificate and its private key .</p><p>Create a file named for example <code class="inline">&quot;/home/me/ssl/ssl_test@myhost.conf&quot;</code>:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="1614172211-1">[</span><span class="p" data-group-id="1614172211-2">{</span><span class="ss">server</span><span class="p">,</span><span class="w">
+  </span><span class="p" data-group-id="1614172211-3">[</span><span class="p" data-group-id="1614172211-4">{</span><span class="ss">certfile</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/home/me/ssl/erlserver.pem&quot;</span><span class="p" data-group-id="1614172211-4">}</span><span class="p" data-group-id="1614172211-3">]</span><span class="p" data-group-id="1614172211-2">}</span><span class="p">,</span><span class="w">
+ </span><span class="p" data-group-id="1614172211-5">{</span><span class="ss">client</span><span class="p">,</span><span class="w">
+  </span><span class="p" data-group-id="1614172211-6">[</span><span class="p" data-group-id="1614172211-7">{</span><span class="ss">cacertfile</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/home/me/ssl/client_trusted.pem&quot;</span><span class="p" data-group-id="1614172211-7">}</span><span class="p" data-group-id="1614172211-6">]</span><span class="p" data-group-id="1614172211-5">}</span><span class="p" data-group-id="1614172211-1">]</span><span class="p">.</span></code></pre><p>And then start the node like this (line breaks in the command are for
 readability, and shall not be there when typed):</p><pre><code class="text">$ erl -boot /home/me/ssl/start_ssl -proto_dist inet_tls
   -ssl_dist_optfile &quot;/home/me/ssl/ssl_test@myhost.conf&quot;
   -sname ssl_test</code></pre><p>The options in the <code class="inline">{server, Opts}</code> tuple are used when calling
@@ -171,25 +189,25 @@ untrusted certificate will be rejected. This option is preferably combined with
 present any certificate.</p><p>A node started in this way is fully functional, using TLS as the distribution
 protocol.</p><h2 id="verify_fun-configuration-example" class="section-heading"><a href="#verify_fun-configuration-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">verify_fun Configuration Example</span></h2><p>The <code class="inline">verify_fun</code> option creates a reference to the implementing
 function since the configuration is evaluated as an Erlang term. In
-an example file for use with <code class="inline">-ssl_dist_optfile</code>:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="8165509448-1">[</span><span class="p" data-group-id="8165509448-2">{</span><span class="ss">server</span><span class="p">,</span><span class="p" data-group-id="8165509448-3">[</span><span class="p" data-group-id="8165509448-4">{</span><span class="ss">fail_if_no_peer_cert</span><span class="p">,</span><span class="ss">true</span><span class="p" data-group-id="8165509448-4">}</span><span class="p">,</span><span class="w">
-          </span><span class="p" data-group-id="8165509448-5">{</span><span class="ss">certfile</span><span class="p">,</span><span class="s">&quot;/home/me/ssl/cert.pem&quot;</span><span class="p" data-group-id="8165509448-5">}</span><span class="p">,</span><span class="w">
-          </span><span class="p" data-group-id="8165509448-6">{</span><span class="ss">keyfile</span><span class="p">,</span><span class="s">&quot;/home/me/ssl/privkey.pem&quot;</span><span class="p" data-group-id="8165509448-6">}</span><span class="p">,</span><span class="w">
-          </span><span class="p" data-group-id="8165509448-7">{</span><span class="ss">cacertfile</span><span class="p">,</span><span class="s">&quot;/home/me/ssl/ca_cert.pem&quot;</span><span class="p" data-group-id="8165509448-7">}</span><span class="p">,</span><span class="w">
-          </span><span class="p" data-group-id="8165509448-8">{</span><span class="ss">verify</span><span class="p">,</span><span class="ss">verify_peer</span><span class="p" data-group-id="8165509448-8">}</span><span class="p">,</span><span class="w">
-          </span><span class="p" data-group-id="8165509448-9">{</span><span class="ss">verify_fun</span><span class="p">,</span><span class="p" data-group-id="8165509448-10">{</span><span class="k">fun</span><span class="w"> </span><span class="nc">mydist</span><span class="p">:</span><span class="ss">verify</span><span class="p">/</span><span class="mi">3</span><span class="p">,</span><span class="s">&quot;any initial value&quot;</span><span class="p" data-group-id="8165509448-10">}</span><span class="p" data-group-id="8165509448-9">}</span><span class="p" data-group-id="8165509448-3">]</span><span class="p" data-group-id="8165509448-2">}</span><span class="p">,</span><span class="w">
- </span><span class="p" data-group-id="8165509448-11">{</span><span class="ss">client</span><span class="p">,</span><span class="p" data-group-id="8165509448-12">[</span><span class="p" data-group-id="8165509448-13">{</span><span class="ss">certfile</span><span class="p">,</span><span class="s">&quot;/home/me/ssl/cert.pem&quot;</span><span class="p" data-group-id="8165509448-13">}</span><span class="p">,</span><span class="w">
-          </span><span class="p" data-group-id="8165509448-14">{</span><span class="ss">keyfile</span><span class="p">,</span><span class="s">&quot;/home/me/ssl/privkey.pem&quot;</span><span class="p" data-group-id="8165509448-14">}</span><span class="p">,</span><span class="w">
-          </span><span class="p" data-group-id="8165509448-15">{</span><span class="ss">cacertfile</span><span class="p">,</span><span class="s">&quot;/home/me/ssl/ca_cert.pem&quot;</span><span class="p" data-group-id="8165509448-15">}</span><span class="p">,</span><span class="w">
-          </span><span class="p" data-group-id="8165509448-16">{</span><span class="ss">verify</span><span class="p">,</span><span class="ss">verify_peer</span><span class="p" data-group-id="8165509448-16">}</span><span class="p">,</span><span class="w">
-          </span><span class="p" data-group-id="8165509448-17">{</span><span class="ss">verify_fun</span><span class="p">,</span><span class="p" data-group-id="8165509448-18">{</span><span class="k">fun</span><span class="w"> </span><span class="nc">mydist</span><span class="p">:</span><span class="ss">verify</span><span class="p">/</span><span class="mi">3</span><span class="p">,</span><span class="s">&quot;any initial value&quot;</span><span class="p" data-group-id="8165509448-18">}</span><span class="p" data-group-id="8165509448-17">}</span><span class="p" data-group-id="8165509448-12">]</span><span class="p" data-group-id="8165509448-11">}</span><span class="p" data-group-id="8165509448-1">]</span><span class="p">.</span><span class="w">
-</span></code></pre><p><code class="inline">mydist:verify/3</code> will be called with:</p><ul><li>OtpCert, the other party's certificate <a href="../../apps/public_key/public_key_records.html#pkix-certificates">PKIX Certificates</a></li><li>SslStatus, OTP's verification outcome, such as <code class="inline">valid</code> or a tuple <code class="inline">{bad_cert, unknown_ca}</code></li><li>Init will be <code class="inline">&quot;any initial value&quot;</code></li></ul><p>A pattern for <code class="inline">verify/3</code> will look like:</p><pre><code class="makeup erlang" translate="no"><span class="nf">verify</span><span class="p" data-group-id="3922765125-1">(</span><span class="n">OtpCert</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="n">SslStatus</span><span class="p">,</span><span class="w"> </span><span class="n">Init</span><span class="p" data-group-id="3922765125-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="n">IsOk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">is_ok</span><span class="p" data-group-id="3922765125-2">(</span><span class="n">OtpCert</span><span class="p">,</span><span class="w"> </span><span class="n">Init</span><span class="p" data-group-id="3922765125-2">)</span><span class="p">,</span><span class="w">
+an example file for use with <code class="inline">-ssl_dist_optfile</code>:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="6829192186-1">[</span><span class="p" data-group-id="6829192186-2">{</span><span class="ss">server</span><span class="p">,</span><span class="p" data-group-id="6829192186-3">[</span><span class="p" data-group-id="6829192186-4">{</span><span class="ss">fail_if_no_peer_cert</span><span class="p">,</span><span class="ss">true</span><span class="p" data-group-id="6829192186-4">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="6829192186-5">{</span><span class="ss">certfile</span><span class="p">,</span><span class="s">&quot;/home/me/ssl/cert.pem&quot;</span><span class="p" data-group-id="6829192186-5">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="6829192186-6">{</span><span class="ss">keyfile</span><span class="p">,</span><span class="s">&quot;/home/me/ssl/privkey.pem&quot;</span><span class="p" data-group-id="6829192186-6">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="6829192186-7">{</span><span class="ss">cacertfile</span><span class="p">,</span><span class="s">&quot;/home/me/ssl/ca_cert.pem&quot;</span><span class="p" data-group-id="6829192186-7">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="6829192186-8">{</span><span class="ss">verify</span><span class="p">,</span><span class="ss">verify_peer</span><span class="p" data-group-id="6829192186-8">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="6829192186-9">{</span><span class="ss">verify_fun</span><span class="p">,</span><span class="p" data-group-id="6829192186-10">{</span><span class="k">fun</span><span class="w"> </span><span class="nc">mydist</span><span class="p">:</span><span class="ss">verify</span><span class="p">/</span><span class="mi">3</span><span class="p">,</span><span class="s">&quot;any initial value&quot;</span><span class="p" data-group-id="6829192186-10">}</span><span class="p" data-group-id="6829192186-9">}</span><span class="p" data-group-id="6829192186-3">]</span><span class="p" data-group-id="6829192186-2">}</span><span class="p">,</span><span class="w">
+ </span><span class="p" data-group-id="6829192186-11">{</span><span class="ss">client</span><span class="p">,</span><span class="p" data-group-id="6829192186-12">[</span><span class="p" data-group-id="6829192186-13">{</span><span class="ss">certfile</span><span class="p">,</span><span class="s">&quot;/home/me/ssl/cert.pem&quot;</span><span class="p" data-group-id="6829192186-13">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="6829192186-14">{</span><span class="ss">keyfile</span><span class="p">,</span><span class="s">&quot;/home/me/ssl/privkey.pem&quot;</span><span class="p" data-group-id="6829192186-14">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="6829192186-15">{</span><span class="ss">cacertfile</span><span class="p">,</span><span class="s">&quot;/home/me/ssl/ca_cert.pem&quot;</span><span class="p" data-group-id="6829192186-15">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="6829192186-16">{</span><span class="ss">verify</span><span class="p">,</span><span class="ss">verify_peer</span><span class="p" data-group-id="6829192186-16">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="6829192186-17">{</span><span class="ss">verify_fun</span><span class="p">,</span><span class="p" data-group-id="6829192186-18">{</span><span class="k">fun</span><span class="w"> </span><span class="nc">mydist</span><span class="p">:</span><span class="ss">verify</span><span class="p">/</span><span class="mi">3</span><span class="p">,</span><span class="s">&quot;any initial value&quot;</span><span class="p" data-group-id="6829192186-18">}</span><span class="p" data-group-id="6829192186-17">}</span><span class="p" data-group-id="6829192186-12">]</span><span class="p" data-group-id="6829192186-11">}</span><span class="p" data-group-id="6829192186-1">]</span><span class="p">.</span><span class="w">
+</span></code></pre><p><code class="inline">mydist:verify/3</code> will be called with:</p><ul><li>OtpCert, the other party's certificate <a href="../../apps/public_key/public_key_records.html#pkix-certificates">PKIX Certificates</a></li><li>SslStatus, OTP's verification outcome, such as <code class="inline">valid</code> or a tuple <code class="inline">{bad_cert, unknown_ca}</code></li><li>Init will be <code class="inline">&quot;any initial value&quot;</code></li></ul><p>A pattern for <code class="inline">verify/3</code> will look like:</p><pre><code class="makeup erlang" translate="no"><span class="nf">verify</span><span class="p" data-group-id="9754145518-1">(</span><span class="n">OtpCert</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="n">SslStatus</span><span class="p">,</span><span class="w"> </span><span class="n">Init</span><span class="p" data-group-id="9754145518-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="n">IsOk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">is_ok</span><span class="p" data-group-id="9754145518-2">(</span><span class="n">OtpCert</span><span class="p">,</span><span class="w"> </span><span class="n">Init</span><span class="p" data-group-id="9754145518-2">)</span><span class="p">,</span><span class="w">
     </span><span class="n">NewInitValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;some new value&quot;</span><span class="p">,</span><span class="w">
     </span><span class="k">case</span><span class="w"> </span><span class="n">IsOk</span><span class="w"> </span><span class="k">of</span><span class="w">
        </span><span class="ss">true</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-           </span><span class="p" data-group-id="3922765125-3">{</span><span class="ss">valid</span><span class="p">,</span><span class="w"> </span><span class="n">NewInitValue</span><span class="p" data-group-id="3922765125-3">}</span><span class="p">;</span><span class="w">
+           </span><span class="p" data-group-id="9754145518-3">{</span><span class="ss">valid</span><span class="p">,</span><span class="w"> </span><span class="n">NewInitValue</span><span class="p" data-group-id="9754145518-3">}</span><span class="p">;</span><span class="w">
        </span><span class="ss">false</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-           </span><span class="p" data-group-id="3922765125-4">{</span><span class="ss">failure</span><span class="p">,</span><span class="w"> </span><span class="n">NewInitValue</span><span class="p" data-group-id="3922765125-4">}</span><span class="w">
+           </span><span class="p" data-group-id="9754145518-4">{</span><span class="ss">failure</span><span class="p">,</span><span class="w"> </span><span class="n">NewInitValue</span><span class="p" data-group-id="9754145518-4">}</span><span class="w">
     </span><span class="k">end</span><span class="p">.</span></code></pre><p><code class="inline">verify_fun</code> can accept a <code class="inline">verify/4</code> function, which will receive:</p><ul><li>OtpCert, the other party's certificate <a href="../../apps/public_key/public_key_records.html#pkix-certificates">PKIX Certificates</a></li><li>DerCert, the other party's original <a href="../../apps/public_key/public_key.html#t:der_encoded/0">DER Encoded</a> certificate</li><li>SslStatus, OTP's verification outcome, such as <code class="inline">valid</code> or a tuple <code class="inline">{bad_cert, unknown_ca}</code></li><li>Init will be <code class="inline">&quot;any initial value&quot;</code></li></ul><p>The <code class="inline">verify/4</code> can use the DerCert for atypical workarounds such as
 handling decoding errors and directly verifying signatures.</p><p>For more details see <code class="inline">{verify_fun, Verify}</code> <a href="ssl.html#t:common_option_cert/0">in common_option_cert</a></p><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>The legacy command line format for <code class="inline">verify_fun</code> cannot be used
 in a <code class="inline">-ssl_dist_optfile</code> file as described below in
@@ -229,19 +247,19 @@ readability, they are not to be there when typed):</p><pre><code class="makeup e
   -ssl_dist_opt server_secure_renegotiate true client_secure_renegotiate true&quot;</span><span class="w">
 </span><span class="sc">$ </span><span class="ss">export</span><span class="w"> </span><span class="n">ERL_FLAGS</span><span class="w">
 </span><span class="sc">$ </span><span class="ss">erl</span><span class="w"> </span><span class="o">-</span><span class="ss">sname</span><span class="w"> </span><span class="ss">ssl_test</span><span class="w">
-</span><span class="n">Erlang</span><span class="w"> </span><span class="p" data-group-id="2977127152-1">(</span><span class="n">BEAM</span><span class="p" data-group-id="2977127152-1">)</span><span class="w"> </span><span class="ss">emulator</span><span class="w"> </span><span class="ss">version</span><span class="w"> </span><span class="mf">5.0</span><span class="w"> </span><span class="p" data-group-id="2977127152-2">[</span><span class="ss">source</span><span class="p" data-group-id="2977127152-2">]</span><span class="w">
+</span><span class="n">Erlang</span><span class="w"> </span><span class="p" data-group-id="4602966284-1">(</span><span class="n">BEAM</span><span class="p" data-group-id="4602966284-1">)</span><span class="w"> </span><span class="ss">emulator</span><span class="w"> </span><span class="ss">version</span><span class="w"> </span><span class="mf">5.0</span><span class="w"> </span><span class="p" data-group-id="4602966284-2">[</span><span class="ss">source</span><span class="p" data-group-id="4602966284-2">]</span><span class="w">
 
-</span><span class="n">Eshell</span><span class="w"> </span><span class="n">V5</span><span class="p">.</span><span class="mi">0</span><span class="w">  </span><span class="p" data-group-id="2977127152-3">(</span><span class="ss">abort</span><span class="w"> </span><span class="ss">with</span><span class="w"> </span><span class="err">^</span><span class="n">G</span><span class="p" data-group-id="2977127152-3">)</span><span class="gp unselectable">
-(ssl_test@myhost)1&gt; </span><span class="nc">init</span><span class="p">:</span><span class="nf">get_arguments</span><span class="p" data-group-id="2977127152-4">(</span><span class="p" data-group-id="2977127152-4">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="2977127152-5">[</span><span class="p" data-group-id="2977127152-6">{</span><span class="ss">root</span><span class="p">,</span><span class="p" data-group-id="2977127152-7">[</span><span class="s">&quot;/usr/local/erlang&quot;</span><span class="p" data-group-id="2977127152-7">]</span><span class="p" data-group-id="2977127152-6">}</span><span class="p">,</span><span class="w">
- </span><span class="p" data-group-id="2977127152-8">{</span><span class="ss">progname</span><span class="p">,</span><span class="p" data-group-id="2977127152-9">[</span><span class="s">&quot;erl &quot;</span><span class="p" data-group-id="2977127152-9">]</span><span class="p" data-group-id="2977127152-8">}</span><span class="p">,</span><span class="w">
- </span><span class="p" data-group-id="2977127152-10">{</span><span class="ss">sname</span><span class="p">,</span><span class="p" data-group-id="2977127152-11">[</span><span class="s">&quot;ssl_test&quot;</span><span class="p" data-group-id="2977127152-11">]</span><span class="p" data-group-id="2977127152-10">}</span><span class="p">,</span><span class="w">
- </span><span class="p" data-group-id="2977127152-12">{</span><span class="ss">boot</span><span class="p">,</span><span class="p" data-group-id="2977127152-13">[</span><span class="s">&quot;/home/me/ssl/start_ssl&quot;</span><span class="p" data-group-id="2977127152-13">]</span><span class="p" data-group-id="2977127152-12">}</span><span class="p">,</span><span class="w">
- </span><span class="p" data-group-id="2977127152-14">{</span><span class="ss">proto_dist</span><span class="p">,</span><span class="p" data-group-id="2977127152-15">[</span><span class="s">&quot;inet_tls&quot;</span><span class="p" data-group-id="2977127152-15">]</span><span class="p" data-group-id="2977127152-14">}</span><span class="p">,</span><span class="w">
- </span><span class="p" data-group-id="2977127152-16">{</span><span class="ss">ssl_dist_opt</span><span class="p">,</span><span class="p" data-group-id="2977127152-17">[</span><span class="s">&quot;server_certfile&quot;</span><span class="p">,</span><span class="s">&quot;/home/me/ssl/erlserver.pem&quot;</span><span class="p" data-group-id="2977127152-17">]</span><span class="p" data-group-id="2977127152-16">}</span><span class="p">,</span><span class="w">
- </span><span class="p" data-group-id="2977127152-18">{</span><span class="ss">ssl_dist_opt</span><span class="p">,</span><span class="p" data-group-id="2977127152-19">[</span><span class="s">&quot;server_secure_renegotiate&quot;</span><span class="p">,</span><span class="s">&quot;true&quot;</span><span class="p">,</span><span class="w">
-                </span><span class="s">&quot;client_secure_renegotiate&quot;</span><span class="p">,</span><span class="s">&quot;true&quot;</span><span class="p" data-group-id="2977127152-19">]</span><span class="w">
- </span><span class="p" data-group-id="2977127152-20">{</span><span class="ss">home</span><span class="p">,</span><span class="p" data-group-id="2977127152-21">[</span><span class="s">&quot;/home/me&quot;</span><span class="p" data-group-id="2977127152-21">]</span><span class="p" data-group-id="2977127152-20">}</span><span class="p">]</span></code></pre><p>The <code class="inline">init:get_arguments()</code> call verifies that the correct arguments are supplied
+</span><span class="n">Eshell</span><span class="w"> </span><span class="n">V5</span><span class="p">.</span><span class="mi">0</span><span class="w">  </span><span class="p" data-group-id="4602966284-3">(</span><span class="ss">abort</span><span class="w"> </span><span class="ss">with</span><span class="w"> </span><span class="err">^</span><span class="n">G</span><span class="p" data-group-id="4602966284-3">)</span><span class="gp unselectable">
+(ssl_test@myhost)1&gt; </span><span class="nc">init</span><span class="p">:</span><span class="nf">get_arguments</span><span class="p" data-group-id="4602966284-4">(</span><span class="p" data-group-id="4602966284-4">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4602966284-5">[</span><span class="p" data-group-id="4602966284-6">{</span><span class="ss">root</span><span class="p">,</span><span class="p" data-group-id="4602966284-7">[</span><span class="s">&quot;/usr/local/erlang&quot;</span><span class="p" data-group-id="4602966284-7">]</span><span class="p" data-group-id="4602966284-6">}</span><span class="p">,</span><span class="w">
+ </span><span class="p" data-group-id="4602966284-8">{</span><span class="ss">progname</span><span class="p">,</span><span class="p" data-group-id="4602966284-9">[</span><span class="s">&quot;erl &quot;</span><span class="p" data-group-id="4602966284-9">]</span><span class="p" data-group-id="4602966284-8">}</span><span class="p">,</span><span class="w">
+ </span><span class="p" data-group-id="4602966284-10">{</span><span class="ss">sname</span><span class="p">,</span><span class="p" data-group-id="4602966284-11">[</span><span class="s">&quot;ssl_test&quot;</span><span class="p" data-group-id="4602966284-11">]</span><span class="p" data-group-id="4602966284-10">}</span><span class="p">,</span><span class="w">
+ </span><span class="p" data-group-id="4602966284-12">{</span><span class="ss">boot</span><span class="p">,</span><span class="p" data-group-id="4602966284-13">[</span><span class="s">&quot;/home/me/ssl/start_ssl&quot;</span><span class="p" data-group-id="4602966284-13">]</span><span class="p" data-group-id="4602966284-12">}</span><span class="p">,</span><span class="w">
+ </span><span class="p" data-group-id="4602966284-14">{</span><span class="ss">proto_dist</span><span class="p">,</span><span class="p" data-group-id="4602966284-15">[</span><span class="s">&quot;inet_tls&quot;</span><span class="p" data-group-id="4602966284-15">]</span><span class="p" data-group-id="4602966284-14">}</span><span class="p">,</span><span class="w">
+ </span><span class="p" data-group-id="4602966284-16">{</span><span class="ss">ssl_dist_opt</span><span class="p">,</span><span class="p" data-group-id="4602966284-17">[</span><span class="s">&quot;server_certfile&quot;</span><span class="p">,</span><span class="s">&quot;/home/me/ssl/erlserver.pem&quot;</span><span class="p" data-group-id="4602966284-17">]</span><span class="p" data-group-id="4602966284-16">}</span><span class="p">,</span><span class="w">
+ </span><span class="p" data-group-id="4602966284-18">{</span><span class="ss">ssl_dist_opt</span><span class="p">,</span><span class="p" data-group-id="4602966284-19">[</span><span class="s">&quot;server_secure_renegotiate&quot;</span><span class="p">,</span><span class="s">&quot;true&quot;</span><span class="p">,</span><span class="w">
+                </span><span class="s">&quot;client_secure_renegotiate&quot;</span><span class="p">,</span><span class="s">&quot;true&quot;</span><span class="p" data-group-id="4602966284-19">]</span><span class="w">
+ </span><span class="p" data-group-id="4602966284-20">{</span><span class="ss">home</span><span class="p">,</span><span class="p" data-group-id="4602966284-21">[</span><span class="s">&quot;/home/me&quot;</span><span class="p" data-group-id="4602966284-21">]</span><span class="p" data-group-id="4602966284-20">}</span><span class="p">]</span></code></pre><p>The <code class="inline">init:get_arguments()</code> call verifies that the correct arguments are supplied
 to the emulator.</p>
 
 </div>
@@ -276,8 +294,8 @@ Standards Compliance
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="ssl.epub" title="ePub version">
@@ -289,7 +307,7 @@ Standards Compliance
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

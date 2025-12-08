@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="ssh v5.3.4-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/ssh/ssh_connection.html" />
     <title>ssh_connection — ssh v5.3.4-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-F5655088.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ ssh
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of ssh</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ ssh
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L29" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L29" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -127,9 +145,9 @@ these messages are handled by
 
       </div>
 
-        <div class="summary-synopsis"><p>This event is sent as a result of calling <a>ssh_connection:close/2</a>.
+        <div class="summary-synopsis"><p>This event is sent as a result of calling <a href="#close/2">ssh_connection:close/2</a>.
 Both the handling of this event and sending it are taken care of by the
-<a><code class="inline">ssh_client_channel</code></a> behavior.</p></div>
+<a href="ssh_client_channel.html"><code class="inline">ssh_client_channel</code></a> behavior.</p></div>
 
     </div>
 
@@ -140,7 +158,7 @@ Both the handling of this event and sending it are taken care of by the
       </div>
 
         <div class="summary-synopsis"><p>Indicates that the other side sends no more data. This event is sent as a result
-of calling <a>ssh_connection:send_eof/2</a>.</p></div>
+of calling <a href="#send_eof/2">ssh_connection:send_eof/2</a>.</p></div>
 
     </div>
 
@@ -157,7 +175,7 @@ of calling <a>ssh_connection:send_eof/2</a>.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Data has arrived on the channel. This event is sent as a result of calling
-<a>ssh_connection:send/3,4,5</a>.</p></div>
+<a href="#send/3">ssh_connection:send/3,4,5</a>.</p></div>
 
     </div>
 
@@ -174,7 +192,7 @@ of calling <a>ssh_connection:send_eof/2</a>.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Environment variables can be passed to the shell/command to be started later.
-This event is sent as a result of calling <a>ssh_connection:setenv/5</a>.</p></div>
+This event is sent as a result of calling <a href="#setenv/5">ssh_connection:setenv/5</a>.</p></div>
 
     </div>
 
@@ -192,7 +210,7 @@ This event is sent as a result of calling <a>ssh_connection:setenv/5</a>.</p></d
 
         <div class="summary-synopsis"><p>A remote execution can terminate violently because of a signal. Then this
 message can be received. For details on valid string values, see
-<a>RFC 4254</a> Section 6.10, which
+<a href="https://tools.ietf.org/html/rfc4254#section-6.10">RFC 4254</a> Section 6.10, which
 shows a special case of these signals.</p></div>
 
     </div>
@@ -206,7 +224,7 @@ shows a special case of these signals.</p></div>
         <div class="summary-synopsis"><p>When the command running at the other end terminates, the following message can
 be sent to return the exit status of the command. A zero <code class="inline">exit_status</code> usually
 means that the command terminated successfully. This event is sent as a result
-of calling <a>ssh_connection:exit_status/3</a>.</p></div>
+of calling <a href="#exit_status/3">ssh_connection:exit_status/3</a>.</p></div>
 
     </div>
 
@@ -223,9 +241,9 @@ of calling <a>ssh_connection:exit_status/3</a>.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>As mentioned in the introduction, the
-<a>SSH Connection Protocol</a> events are
+<a href="https://tools.ietf.org/html/rfc4254">SSH Connection Protocol</a> events are
 handled as messages. When writing a channel handling process without using the
-support by the <a><code class="inline">ssh_client_channel</code></a> behavior the process must handle thoose
+support by the <a href="ssh_client_channel.html"><code class="inline">ssh_client_channel</code></a> behavior the process must handle thoose
 messages.</p></div>
 
     </div>
@@ -245,7 +263,7 @@ messages.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Messages that include a <code class="inline">WantReply</code> expect the channel handling process to call
-<a>ssh_connection:reply_request/4</a> with the boolean value of
+<a href="#reply_request/4">ssh_connection:reply_request/4</a> with the boolean value of
 <code class="inline">WantReply</code> as the second argument.</p></div>
 
     </div>
@@ -276,10 +294,10 @@ must be ignored. The character/row dimensions override the pixel dimensions
 (when non-zero). Pixel dimensions refer to the drawable area of the window.
 <code class="inline">Opcode</code> in the <code class="inline">TerminalModes</code> list is the mnemonic name, represented as a
 lowercase Erlang atom, defined in
-<a>RFC 4254</a>, Section 8. It can
+<a href="https://tools.ietf.org/html/rfc4254#section/8">RFC 4254</a>, Section 8. It can
 also be an <code class="inline">Opcode</code> if the mnemonic name is not listed in the RFC. Example:
 <code class="inline">OP code: 53, mnemonic name ECHO erlang atom: echo</code>. This event is sent as a
-result of calling <a>ssh_connection:ptty_alloc/4</a>.</p></div>
+result of calling <a href="#ptty_alloc/4">ssh_connection:ptty_alloc/4</a>.</p></div>
 
     </div>
 
@@ -296,7 +314,7 @@ result of calling <a>ssh_connection:ptty_alloc/4</a>.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>This message requests that the server starts execution of the given command.
-This event is sent as a result of calling <a>ssh_connection:exec/4 </a>.</p></div>
+This event is sent as a result of calling <a href="#exec/4">ssh_connection:exec/4 </a>.</p></div>
 
     </div>
 
@@ -307,7 +325,7 @@ This event is sent as a result of calling <a>ssh_connection:exec/4 </a>.</p></di
       </div>
 
         <div class="summary-synopsis"><p>This message requests that the user default shell is started at the other end.
-This event is sent as a result of calling <a>ssh_connection:shell/2</a>.</p></div>
+This event is sent as a result of calling <a href="#shell/2">ssh_connection:shell/2</a>.</p></div>
 
     </div>
 
@@ -389,7 +407,7 @@ generates this event.</p></div>
 
         <div class="summary-synopsis"><p>The status of a request. Corresponds to the <code class="inline">SSH_MSG_CHANNEL_SUCCESS</code> and
 <code class="inline">SSH_MSG_CHANNEL_FAILURE</code> values in
-<a>RFC 4254, Section 5.4</a>.</p></div>
+<a href="https://tools.ietf.org/html/rfc4254#section-5.4">RFC 4254, Section 5.4</a>.</p></div>
 
     </div>
 
@@ -408,7 +426,7 @@ generates this event.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>The valid values are <code class="inline">0</code> (&quot;normal&quot;) and <code class="inline">1</code> (&quot;stderr&quot;), see
-<a>RFC 4254, Section 5.2</a>.</p></div>
+<a href="https://tools.ietf.org/html/rfc4254#page-8">RFC 4254, Section 5.2</a>.</p></div>
 
     </div>
 
@@ -470,7 +488,7 @@ to the client.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">ptty_alloc/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#ptty_alloc/4"><code class="inline">ptty_alloc/4</code></a>.</p></div>
 
     </div>
 
@@ -504,7 +522,7 @@ Protocol message containing a <code class="inline">WantReply</code> boolean valu
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">send/5</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#send/5"><code class="inline">send/5</code></a>.</p></div>
 
     </div>
 
@@ -514,7 +532,7 @@ Protocol message containing a <code class="inline">WantReply</code> boolean valu
 
       </div>
 
-        <div class="summary-synopsis"><p>Depending on input arguments equivalent to one of <a><code class="inline">send/5</code></a> calls specified below.</p></div>
+        <div class="summary-synopsis"><p>Depending on input arguments equivalent to one of <a href="#send/5"><code class="inline">send/5</code></a> calls specified below.</p></div>
 
     </div>
 
@@ -545,7 +563,7 @@ other.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">session_channel/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#session_channel/4"><code class="inline">session_channel/4</code></a>.</p></div>
 
     </div>
 
@@ -606,6 +624,7 @@ predefined subsystem on the server.</p></div>
       </a>
       <span class="text">Types: Closing a Channel</span>
     </h1>
+
     <div class="types-closing-a-channel-list">
 <section class="detail" id="t:closed_ch_msg/0">
 
@@ -619,7 +638,7 @@ predefined subsystem on the server.</p></div>
         <span class="note">(RFC 4254, section 5.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L241" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L241" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -651,7 +670,7 @@ Both the handling of this event and sending it are taken care of by the
         <span class="note">(RFC 4254, section 5.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L194" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L194" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -681,6 +700,7 @@ of calling <a href="#send_eof/2">ssh_connection:send_eof/2</a>.</p>
       </a>
       <span class="text">Types: Data Transfer</span>
     </h1>
+
     <div class="types-data-transfer-list">
 <section class="detail" id="t:data_ch_msg/0">
 
@@ -694,7 +714,7 @@ of calling <a href="#send_eof/2">ssh_connection:send_eof/2</a>.</p>
         <span class="note">(RFC 4254, section 5.2)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L183" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L183" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -724,6 +744,7 @@ of calling <a href="#send_eof/2">ssh_connection:send_eof/2</a>.</p>
       </a>
       <span class="text">Types: Environment Variable</span>
     </h1>
+
     <div class="types-environment-variable-list">
 <section class="detail" id="t:env_ch_msg/0">
 
@@ -737,7 +758,7 @@ of calling <a href="#send_eof/2">ssh_connection:send_eof/2</a>.</p>
         <span class="note">(RFC 4254, section 6.4)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L250" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L250" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -767,6 +788,7 @@ This event is sent as a result of calling <a href="#setenv/5">ssh_connection:set
       </a>
       <span class="text">Types: Exit Status</span>
     </h1>
+
     <div class="types-exit-status-list">
 <section class="detail" id="t:exit_signal_ch_msg/0">
 
@@ -780,7 +802,7 @@ This event is sent as a result of calling <a href="#setenv/5">ssh_connection:set
         <span class="note">(RFC 4254, section 6.10)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L218" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L218" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -818,7 +840,7 @@ shows a special case of these signals.</p>
         <span class="note">(RFC 4254, section 6.10)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L230" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L230" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -850,6 +872,7 @@ of calling <a href="#exit_status/3">ssh_connection:exit_status/3</a>.</p>
       </a>
       <span class="text">Types: General</span>
     </h1>
+
     <div class="types-general-list">
 <section class="detail" id="t:channel_msg/0">
 
@@ -861,7 +884,7 @@ of calling <a href="#exit_status/3">ssh_connection:exit_status/3</a>.</p>
       <h1 class="signature" translate="no">channel_msg()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L156" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L156" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -904,7 +927,7 @@ messages.</p>
       <h1 class="signature" translate="no">event()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L147" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L147" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -932,7 +955,7 @@ messages.</p>
       <h1 class="signature" translate="no">want_reply()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L175" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L175" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -963,6 +986,7 @@ messages.</p>
       </a>
       <span class="text">Types: Pseudo-Terminal</span>
     </h1>
+
     <div class="types-pseudo-terminal-list">
 <section class="detail" id="t:pty_ch_msg/0">
 
@@ -976,7 +1000,7 @@ messages.</p>
         <span class="note">(RFC 4254, section 6.2)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L258" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L258" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1015,7 +1039,7 @@ messages.</p>
         <span class="note">(RFC 4254, section 6.2)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L284" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L284" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1053,6 +1077,7 @@ result of calling <a href="#ptty_alloc/4">ssh_connection:ptty_alloc/4</a>.</p>
       </a>
       <span class="text">Types: Shell or Command</span>
     </h1>
+
     <div class="types-shell-or-command-list">
 <section class="detail" id="t:exec_ch_msg/0">
 
@@ -1066,7 +1091,7 @@ result of calling <a href="#ptty_alloc/4">ssh_connection:ptty_alloc/4</a>.</p>
         <span class="note">(RFC 4254, section 6.5)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L317" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L317" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1097,7 +1122,7 @@ This event is sent as a result of calling <a href="#exec/4">ssh_connection:exec/
         <span class="note">(RFC 4254, section 6.5)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L293" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L293" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1127,6 +1152,7 @@ This event is sent as a result of calling <a href="#shell/2">ssh_connection:shel
       </a>
       <span class="text">Types: Signals</span>
     </h1>
+
     <div class="types-signals-list">
 <section class="detail" id="t:signal_ch_msg/0">
 
@@ -1140,7 +1166,7 @@ This event is sent as a result of calling <a href="#shell/2">ssh_connection:shel
         <span class="note">(RFC 4254, section 6.9)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L206" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L206" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1173,6 +1199,7 @@ program.</p>
       </a>
       <span class="text">Types: Window Change</span>
     </h1>
+
     <div class="types-window-change-list">
 <section class="detail" id="t:window_change_ch_msg/0">
 
@@ -1186,7 +1213,7 @@ program.</p>
         <span class="note">(RFC 4254, section 6.7)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L304" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L304" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1223,6 +1250,7 @@ generates this event.</p>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:channel_id/0">
 
@@ -1234,7 +1262,7 @@ generates this event.</p>
       <h1 class="signature" translate="no">channel_id()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L96" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L96" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1262,7 +1290,7 @@ generates this event.</p>
       <h1 class="signature" translate="no">connection_ref()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L95" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L95" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1290,7 +1318,7 @@ generates this event.</p>
       <h1 class="signature" translate="no">reason()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L117" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L117" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1320,7 +1348,7 @@ to send the request</p></li><li><p><strong><code class="inline">timeout</code></
       <h1 class="signature" translate="no">req_status()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L103" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L103" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1350,7 +1378,7 @@ to send the request</p></li><li><p><strong><code class="inline">timeout</code></
       <h1 class="signature" translate="no">result()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L119" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L119" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1378,7 +1406,7 @@ to send the request</p></li><li><p><strong><code class="inline">timeout</code></
       <h1 class="signature" translate="no">ssh_data_type_code()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L125" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L125" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1408,6 +1436,7 @@ to send the request</p></li><li><p><strong><code class="inline">timeout</code></
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="adjust_window/3">
 
@@ -1419,7 +1448,7 @@ to send the request</p></li><li><p><strong><code class="inline">timeout</code></
       <h1 class="signature" translate="no">adjust_window(ConnectionRef, ChannelId, NumOfBytes)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L557" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L557" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1456,7 +1485,7 @@ processing channel data.</p></section>
       <h1 class="signature" translate="no">close(ConnectionRef, ChannelId)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L605" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L605" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1488,7 +1517,7 @@ behavior are not to call this function explicitly.</p></section>
       <h1 class="signature" translate="no">exec(ConnectionRef, ChannelId, Command, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L426" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L426" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1534,7 +1563,7 @@ see <a href="#adjust_window/3"><code class="inline">ssh_connectino:adjust_window
       <h1 class="signature" translate="no">exit_status(ConnectionRef, ChannelId, Status)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L714" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L714" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1569,7 +1598,7 @@ to the client.</p>
         <span class="note">(since OTP 17.5)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L639" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L639" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1603,7 +1632,7 @@ to the client.</p>
         <span class="note">(since OTP 17.4)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L671" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L671" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1640,7 +1669,7 @@ list. Otherwise, see possible <em>POSIX</em> names in Section 8 in
       <h1 class="signature" translate="no">reply_request(ConnectionRef, WantReply, Status, ChannelId)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L624" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L624" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1676,7 +1705,7 @@ Protocol message containing a <code class="inline">WantReply</code> boolean valu
       <h1 class="signature" translate="no">send(ConnectionRef, ChannelId, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L480" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L480" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1704,7 +1733,7 @@ Protocol message containing a <code class="inline">WantReply</code> boolean valu
       <h1 class="signature" translate="no">send(ConnectionRef, ChannelId, Type, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L502" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L502" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1736,7 +1765,7 @@ called with last argument which is not integer or infinity atom.</p>
       <h1 class="signature" translate="no">send(ConnectionRef, ChannelId, Type, Data, TimeOut)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L521" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L521" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1767,7 +1796,7 @@ in the same process.</p>
       <h1 class="signature" translate="no">send_eof(ConnectionRef, ChannelId)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L533" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L533" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1796,7 +1825,7 @@ in the same process.</p>
       <h1 class="signature" translate="no">session_channel(ConnectionRef, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L346" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L346" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1828,7 +1857,7 @@ in the same process.</p>
       <h1 class="signature" translate="no">session_channel(ConnectionRef, InitialWindowSize, MaxPacketSize, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L361" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L361" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1863,7 +1892,7 @@ is the id used as input to the other functions in this module.</p>
       <h1 class="signature" translate="no">setenv(ConnectionRef, ChannelId, Var, Value, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L575" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L575" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1898,7 +1927,7 @@ called by a client channel processes.</p>
       <h1 class="signature" translate="no">shell(ConnectionRef, ChannelId)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L449" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L449" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1934,7 +1963,7 @@ would break a large number of existing software.</p>
       <h1 class="signature" translate="no">subsystem(ConnectionRef, ChannelId, Subsystem, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh_connection.erl#L469" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh_connection.erl#L469" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1967,8 +1996,8 @@ predefined subsystem on the server.</p><p>The function <a href="#subsystem/4"><c
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="ssh.epub" title="ePub version">
@@ -1980,7 +2009,7 @@ predefined subsystem on the server.</p><p>The function <a href="#subsystem/4"><c
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

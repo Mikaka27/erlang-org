@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="inets v9.4.2-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/inets/mod_security.html" />
     <title>mod_security — inets v9.4.2-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-395DC6BD.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ inets
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of inets</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ inets
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_server/mod_security.erl#L23" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_server/mod_security.erl#L23" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -127,10 +145,10 @@ inets
 
       </div>
 
-        <div class="summary-synopsis"><p><a><code class="inline">event/4</code></a> or <a><code class="inline">event/5</code></a> is called whenever an event
+        <div class="summary-synopsis"><p><a href="#c:event/4"><code class="inline">event/4</code></a> or <a href="#c:event/5"><code class="inline">event/5</code></a> is called whenever an event
 occurs in the <code class="inline">mod_security</code> Erlang web server API module.
-(<a><code class="inline">event/4</code></a> is called if <code class="inline">Address</code> is undefined, otherwise
-<a><code class="inline">event/5</code></a>. Argument <code class="inline">What</code> specifies the type of event that has
+(<a href="#c:event/4"><code class="inline">event/4</code></a> is called if <code class="inline">Address</code> is undefined, otherwise
+<a href="#c:event/5"><code class="inline">event/5</code></a>. Argument <code class="inline">What</code> specifies the type of event that has
 occurred and is one of the following reasons</p></div>
 
     </div>
@@ -147,7 +165,7 @@ occurred and is one of the following reasons</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">block_user/5</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#block_user/5"><code class="inline">block_user/5</code></a>.</p></div>
 
     </div>
 
@@ -157,7 +175,7 @@ occurred and is one of the following reasons</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p><a><code class="inline">block_user/4</code></a> and <a><code class="inline">block_user/5</code></a> each
+        <div class="summary-synopsis"><p><a href="#block_user/4"><code class="inline">block_user/4</code></a> and <a href="#block_user/5"><code class="inline">block_user/5</code></a> each
 blocks the user <code class="inline">User</code> from directory <code class="inline">Dir</code> for a specified amount of time.</p></div>
 
     </div>
@@ -168,7 +186,7 @@ blocks the user <code class="inline">User</code> from directory <code class="inl
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">list_auth_users/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#list_auth_users/3"><code class="inline">list_auth_users/3</code></a>.</p></div>
 
     </div>
 
@@ -178,7 +196,7 @@ blocks the user <code class="inline">User</code> from directory <code class="inl
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">list_auth_users/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#list_auth_users/3"><code class="inline">list_auth_users/3</code></a>.</p></div>
 
     </div>
 
@@ -188,9 +206,9 @@ blocks the user <code class="inline">User</code> from directory <code class="inl
 
       </div>
 
-        <div class="summary-synopsis"><p><a><code class="inline">list_auth_users/1</code></a>,
-<a><code class="inline">list_auth_users/2</code></a>, and
-<a><code class="inline">list_auth_users/3</code></a> each returns a list of users that are
+        <div class="summary-synopsis"><p><a href="#list_auth_users/1"><code class="inline">list_auth_users/1</code></a>,
+<a href="#list_auth_users/2"><code class="inline">list_auth_users/2</code></a>, and
+<a href="#list_auth_users/3"><code class="inline">list_auth_users/3</code></a> each returns a list of users that are
 currently authenticated. Authentications are stored for <code class="inline">SecurityAuthTimeout</code>
 seconds, and then discarded.</p></div>
 
@@ -202,7 +220,7 @@ seconds, and then discarded.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">list_blocked_users/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#list_blocked_users/3"><code class="inline">list_blocked_users/3</code></a>.</p></div>
 
     </div>
 
@@ -212,7 +230,7 @@ seconds, and then discarded.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">list_blocked_users/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#list_blocked_users/3"><code class="inline">list_blocked_users/3</code></a>.</p></div>
 
     </div>
 
@@ -222,9 +240,9 @@ seconds, and then discarded.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p><a><code class="inline">list_blocked_users/1</code></a>,
-<a><code class="inline">list_blocked_users/2</code></a>, and
-<a><code class="inline">list_blocked_users/3</code></a> each returns a list of users
+        <div class="summary-synopsis"><p><a href="#list_blocked_users/1"><code class="inline">list_blocked_users/1</code></a>,
+<a href="#list_blocked_users/2"><code class="inline">list_blocked_users/2</code></a>, and
+<a href="#list_blocked_users/3"><code class="inline">list_blocked_users/3</code></a> each returns a list of users
 that are currently blocked from access.</p></div>
 
     </div>
@@ -235,7 +253,7 @@ that are currently blocked from access.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">unblock_user/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#unblock_user/4"><code class="inline">unblock_user/4</code></a>.</p></div>
 
     </div>
 
@@ -245,7 +263,7 @@ that are currently blocked from access.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">unblock_user/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#unblock_user/4"><code class="inline">unblock_user/4</code></a>.</p></div>
 
     </div>
 
@@ -255,8 +273,8 @@ that are currently blocked from access.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p><a><code class="inline">unblock_user/2</code></a>, <a><code class="inline">unblock_user/3</code></a>, and
-<a><code class="inline">unblock_user/4</code></a> each removes the user <code class="inline">User</code> from the list
+        <div class="summary-synopsis"><p><a href="#unblock_user/2"><code class="inline">unblock_user/2</code></a>, <a href="#unblock_user/3"><code class="inline">unblock_user/3</code></a>, and
+<a href="#unblock_user/4"><code class="inline">unblock_user/4</code></a> each removes the user <code class="inline">User</code> from the list
 of blocked users for <code class="inline">Port</code> (and <code class="inline">Dir</code>).</p></div>
 
     </div>
@@ -273,6 +291,7 @@ of blocked users for <code class="inline">Port</code> (and <code class="inline">
       </a>
       <span class="text">Callbacks</span>
     </h1>
+
     <div class="callbacks-list">
 <section class="detail" id="c:event/4">
 
@@ -286,7 +305,7 @@ of blocked users for <code class="inline">Port</code> (and <code class="inline">
         <span class="note">(since OTP 18.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_server/mod_security.erl#L49" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_server/mod_security.erl#L49" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -322,7 +341,7 @@ of blocked users for <code class="inline">Port</code> (and <code class="inline">
         <span class="note">(since OTP 18.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_server/mod_security.erl#L74" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_server/mod_security.erl#L74" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -363,6 +382,7 @@ block list explicitly using the <code class="inline">unblock_user</code> functio
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="block_user/4">
 
@@ -374,7 +394,7 @@ block list explicitly using the <code class="inline">unblock_user</code> functio
       <h1 class="signature" translate="no">block_user(User, Port, Dir, Seconds)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_server/mod_security.erl#L243" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_server/mod_security.erl#L243" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -408,7 +428,7 @@ block list explicitly using the <code class="inline">unblock_user</code> functio
       <h1 class="signature" translate="no">block_user(User, Address, Port, Dir, Seconds)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_server/mod_security.erl#L256" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_server/mod_security.erl#L256" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -444,7 +464,7 @@ blocks the user <code class="inline">User</code> from directory <code class="inl
       <h1 class="signature" translate="no">list_auth_users(Port)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_server/mod_security.erl#L301" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_server/mod_security.erl#L301" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -472,7 +492,7 @@ blocks the user <code class="inline">User</code> from directory <code class="inl
       <h1 class="signature" translate="no">list_auth_users/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_server/mod_security.erl#L313" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_server/mod_security.erl#L313" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -506,7 +526,7 @@ blocks the user <code class="inline">User</code> from directory <code class="inl
       <h1 class="signature" translate="no">list_auth_users(Address, Port, Dir)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_server/mod_security.erl#L330" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_server/mod_security.erl#L330" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -543,7 +563,7 @@ seconds, and then discarded.</p>
       <h1 class="signature" translate="no">list_blocked_users(Port)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_server/mod_security.erl#L199" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_server/mod_security.erl#L199" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -574,7 +594,7 @@ seconds, and then discarded.</p>
       <h1 class="signature" translate="no">list_blocked_users/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_server/mod_security.erl#L211" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_server/mod_security.erl#L211" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -612,7 +632,7 @@ seconds, and then discarded.</p>
       <h1 class="signature" translate="no">list_blocked_users(Address, Port, Dir)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_server/mod_security.erl#L230" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_server/mod_security.erl#L230" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -649,7 +669,7 @@ that are currently blocked from access.</p>
       <h1 class="signature" translate="no">unblock_user(User, Port)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_server/mod_security.erl#L264" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_server/mod_security.erl#L264" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -678,7 +698,7 @@ that are currently blocked from access.</p>
       <h1 class="signature" translate="no">unblock_user/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_server/mod_security.erl#L278" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_server/mod_security.erl#L278" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -713,7 +733,7 @@ that are currently blocked from access.</p>
       <h1 class="signature" translate="no">unblock_user(User, Address, Port, Dir)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_server/mod_security.erl#L294" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_server/mod_security.erl#L294" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -747,8 +767,8 @@ of blocked users for <code class="inline">Port</code> (and <code class="inline">
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="inets.epub" title="ePub version">
@@ -760,7 +780,7 @@ of blocked users for <code class="inline">Port</code> (and <code class="inline">
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

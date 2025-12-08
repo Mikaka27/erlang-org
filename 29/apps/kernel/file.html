@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="kernel v10.4.2-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/kernel/file.html" />
     <title>file — kernel v10.4.2-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-4B8F4164.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ kernel
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of kernel</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ kernel
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -135,31 +153,31 @@ caching, which will reduce the number of operating system calls and greatly
 improve performance for small reads and writes. However, the overhead won't
 disappear completely and it's best to keep the number of file operations to a
 minimum. As a contrived example, the following function writes 4MB in 2.5
-seconds when tested:</p><pre><code class="makeup erlang" translate="no"><span class="nf">create_file_slow</span><span class="p" data-group-id="5143144213-1">(</span><span class="n">Name</span><span class="p" data-group-id="5143144213-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="p" data-group-id="5143144213-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">Fd</span><span class="p" data-group-id="5143144213-2">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">file</span><span class="p">:</span><span class="nf">open</span><span class="p" data-group-id="5143144213-3">(</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5143144213-4">[</span><span class="ss">raw</span><span class="p">,</span><span class="w"> </span><span class="ss">write</span><span class="p">,</span><span class="w"> </span><span class="ss">delayed_write</span><span class="p">,</span><span class="w"> </span><span class="ss">binary</span><span class="p" data-group-id="5143144213-4">]</span><span class="p" data-group-id="5143144213-3">)</span><span class="p">,</span><span class="w">
-    </span><span class="nf">create_file_slow_1</span><span class="p" data-group-id="5143144213-5">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="ow">bsl</span><span class="w"> </span><span class="mi">20</span><span class="p" data-group-id="5143144213-5">)</span><span class="p">,</span><span class="w">
-    </span><span class="nc">file</span><span class="p">:</span><span class="nf">close</span><span class="p" data-group-id="5143144213-6">(</span><span class="n">Fd</span><span class="p" data-group-id="5143144213-6">)</span><span class="p">.</span><span class="w">
+seconds when tested:</p><pre><code class="makeup erlang" translate="no"><span class="nf">create_file_slow</span><span class="p" data-group-id="8695646523-1">(</span><span class="n">Name</span><span class="p" data-group-id="8695646523-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="p" data-group-id="8695646523-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">Fd</span><span class="p" data-group-id="8695646523-2">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">file</span><span class="p">:</span><span class="nf">open</span><span class="p" data-group-id="8695646523-3">(</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8695646523-4">[</span><span class="ss">raw</span><span class="p">,</span><span class="w"> </span><span class="ss">write</span><span class="p">,</span><span class="w"> </span><span class="ss">delayed_write</span><span class="p">,</span><span class="w"> </span><span class="ss">binary</span><span class="p" data-group-id="8695646523-4">]</span><span class="p" data-group-id="8695646523-3">)</span><span class="p">,</span><span class="w">
+    </span><span class="nf">create_file_slow_1</span><span class="p" data-group-id="8695646523-5">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="ow">bsl</span><span class="w"> </span><span class="mi">20</span><span class="p" data-group-id="8695646523-5">)</span><span class="p">,</span><span class="w">
+    </span><span class="nc">file</span><span class="p">:</span><span class="nf">close</span><span class="p" data-group-id="8695646523-6">(</span><span class="n">Fd</span><span class="p" data-group-id="8695646523-6">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">create_file_slow_1</span><span class="p" data-group-id="5143144213-7">(</span><span class="p">_</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="5143144213-7">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+</span><span class="nf">create_file_slow_1</span><span class="p" data-group-id="8695646523-7">(</span><span class="p">_</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="8695646523-7">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
     </span><span class="ss">ok</span><span class="p">;</span><span class="w">
-</span><span class="nf">create_file_slow_1</span><span class="p" data-group-id="5143144213-8">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="p" data-group-id="5143144213-8">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">file</span><span class="p">:</span><span class="nf">write</span><span class="p" data-group-id="5143144213-9">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5143144213-10">&lt;&lt;</span><span class="mi">0</span><span class="p" data-group-id="5143144213-10">&gt;&gt;</span><span class="p" data-group-id="5143144213-9">)</span><span class="p">,</span><span class="w">
-    </span><span class="nf">create_file_slow_1</span><span class="p" data-group-id="5143144213-11">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="5143144213-11">)</span><span class="p">.</span></code></pre><p>The following functionally equivalent code writes 128 bytes per call to
+</span><span class="nf">create_file_slow_1</span><span class="p" data-group-id="8695646523-8">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="p" data-group-id="8695646523-8">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">file</span><span class="p">:</span><span class="nf">write</span><span class="p" data-group-id="8695646523-9">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8695646523-10">&lt;&lt;</span><span class="mi">0</span><span class="p" data-group-id="8695646523-10">&gt;&gt;</span><span class="p" data-group-id="8695646523-9">)</span><span class="p">,</span><span class="w">
+    </span><span class="nf">create_file_slow_1</span><span class="p" data-group-id="8695646523-11">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="8695646523-11">)</span><span class="p">.</span></code></pre><p>The following functionally equivalent code writes 128 bytes per call to
 <a href="#write/2"><code class="inline">write/2</code></a> and so does the same work in 0.08 seconds, which is roughly 30 times
-faster:</p><pre><code class="makeup erlang" translate="no"><span class="nf">create_file</span><span class="p" data-group-id="9637360721-1">(</span><span class="n">Name</span><span class="p" data-group-id="9637360721-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="p" data-group-id="9637360721-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">Fd</span><span class="p" data-group-id="9637360721-2">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">file</span><span class="p">:</span><span class="nf">open</span><span class="p" data-group-id="9637360721-3">(</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9637360721-4">[</span><span class="ss">raw</span><span class="p">,</span><span class="w"> </span><span class="ss">write</span><span class="p">,</span><span class="w"> </span><span class="ss">delayed_write</span><span class="p">,</span><span class="w"> </span><span class="ss">binary</span><span class="p" data-group-id="9637360721-4">]</span><span class="p" data-group-id="9637360721-3">)</span><span class="p">,</span><span class="w">
-    </span><span class="nf">create_file_1</span><span class="p" data-group-id="9637360721-5">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="ow">bsl</span><span class="w"> </span><span class="mi">20</span><span class="p" data-group-id="9637360721-5">)</span><span class="p">,</span><span class="w">
-    </span><span class="nc">file</span><span class="p">:</span><span class="nf">close</span><span class="p" data-group-id="9637360721-6">(</span><span class="n">Fd</span><span class="p" data-group-id="9637360721-6">)</span><span class="p">,</span><span class="w">
+faster:</p><pre><code class="makeup erlang" translate="no"><span class="nf">create_file</span><span class="p" data-group-id="4686095703-1">(</span><span class="n">Name</span><span class="p" data-group-id="4686095703-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="p" data-group-id="4686095703-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">Fd</span><span class="p" data-group-id="4686095703-2">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">file</span><span class="p">:</span><span class="nf">open</span><span class="p" data-group-id="4686095703-3">(</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4686095703-4">[</span><span class="ss">raw</span><span class="p">,</span><span class="w"> </span><span class="ss">write</span><span class="p">,</span><span class="w"> </span><span class="ss">delayed_write</span><span class="p">,</span><span class="w"> </span><span class="ss">binary</span><span class="p" data-group-id="4686095703-4">]</span><span class="p" data-group-id="4686095703-3">)</span><span class="p">,</span><span class="w">
+    </span><span class="nf">create_file_1</span><span class="p" data-group-id="4686095703-5">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="ow">bsl</span><span class="w"> </span><span class="mi">20</span><span class="p" data-group-id="4686095703-5">)</span><span class="p">,</span><span class="w">
+    </span><span class="nc">file</span><span class="p">:</span><span class="nf">close</span><span class="p" data-group-id="4686095703-6">(</span><span class="n">Fd</span><span class="p" data-group-id="4686095703-6">)</span><span class="p">,</span><span class="w">
     </span><span class="ss">ok</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">create_file_1</span><span class="p" data-group-id="9637360721-7">(</span><span class="p">_</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="9637360721-7">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+</span><span class="nf">create_file_1</span><span class="p" data-group-id="4686095703-7">(</span><span class="p">_</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="4686095703-7">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
     </span><span class="ss">ok</span><span class="p">;</span><span class="w">
-</span><span class="nf">create_file_1</span><span class="p" data-group-id="9637360721-8">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="p" data-group-id="9637360721-8">)</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">128</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">file</span><span class="p">:</span><span class="nf">write</span><span class="p" data-group-id="9637360721-9">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9637360721-10">&lt;&lt;</span><span class="mi">0</span><span class="p">:</span><span class="p" data-group-id="9637360721-11">(</span><span class="mi">128</span><span class="p" data-group-id="9637360721-11">)</span><span class="o">/</span><span class="nc">unit</span><span class="p">:</span><span class="mi">8</span><span class="p" data-group-id="9637360721-10">&gt;&gt;</span><span class="p" data-group-id="9637360721-9">)</span><span class="p">,</span><span class="w">
-    </span><span class="nf">create_file_1</span><span class="p" data-group-id="9637360721-12">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">128</span><span class="p" data-group-id="9637360721-12">)</span><span class="p">;</span><span class="w">
-</span><span class="nf">create_file_1</span><span class="p" data-group-id="9637360721-13">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="p" data-group-id="9637360721-13">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">file</span><span class="p">:</span><span class="nf">write</span><span class="p" data-group-id="9637360721-14">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9637360721-15">&lt;&lt;</span><span class="mi">0</span><span class="p">:</span><span class="p" data-group-id="9637360721-16">(</span><span class="n">M</span><span class="p" data-group-id="9637360721-16">)</span><span class="o">/</span><span class="nc">unit</span><span class="p">:</span><span class="mi">8</span><span class="p" data-group-id="9637360721-15">&gt;&gt;</span><span class="p" data-group-id="9637360721-14">)</span><span class="p">,</span><span class="w">
-    </span><span class="nf">create_file_1</span><span class="p" data-group-id="9637360721-17">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="9637360721-17">)</span><span class="p">.</span></code></pre><p>When writing data it's generally more efficient to write a list of binaries
+</span><span class="nf">create_file_1</span><span class="p" data-group-id="4686095703-8">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="p" data-group-id="4686095703-8">)</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">128</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">file</span><span class="p">:</span><span class="nf">write</span><span class="p" data-group-id="4686095703-9">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4686095703-10">&lt;&lt;</span><span class="mi">0</span><span class="p">:</span><span class="p" data-group-id="4686095703-11">(</span><span class="mi">128</span><span class="p" data-group-id="4686095703-11">)</span><span class="o">/</span><span class="nc">unit</span><span class="p">:</span><span class="mi">8</span><span class="p" data-group-id="4686095703-10">&gt;&gt;</span><span class="p" data-group-id="4686095703-9">)</span><span class="p">,</span><span class="w">
+    </span><span class="nf">create_file_1</span><span class="p" data-group-id="4686095703-12">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">128</span><span class="p" data-group-id="4686095703-12">)</span><span class="p">;</span><span class="w">
+</span><span class="nf">create_file_1</span><span class="p" data-group-id="4686095703-13">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="p" data-group-id="4686095703-13">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">file</span><span class="p">:</span><span class="nf">write</span><span class="p" data-group-id="4686095703-14">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4686095703-15">&lt;&lt;</span><span class="mi">0</span><span class="p">:</span><span class="p" data-group-id="4686095703-16">(</span><span class="n">M</span><span class="p" data-group-id="4686095703-16">)</span><span class="o">/</span><span class="nc">unit</span><span class="p">:</span><span class="mi">8</span><span class="p" data-group-id="4686095703-15">&gt;&gt;</span><span class="p" data-group-id="4686095703-14">)</span><span class="p">,</span><span class="w">
+    </span><span class="nf">create_file_1</span><span class="p" data-group-id="4686095703-17">(</span><span class="n">Fd</span><span class="p">,</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="4686095703-17">)</span><span class="p">.</span></code></pre><p>When writing data it's generally more efficient to write a list of binaries
 rather than a list of integers. It is not needed to flatten a deep list before
 writing. On Unix hosts, scatter output, which writes a set of buffers in one
 operation, is used when possible. In this way
@@ -216,7 +234,7 @@ access it later. This will be fixed in a future release.</p></section><h2 id="mo
 
       </div>
 
-        <div class="summary-synopsis"><p>A file descriptor representing a file opened in <a><code class="inline">raw</code></a> mode.</p></div>
+        <div class="summary-synopsis"><p>A file descriptor representing a file opened in <a href="file.html#raw"><code class="inline">raw</code></a> mode.</p></div>
 
     </div>
 
@@ -242,7 +260,7 @@ access it later. This will be fixed in a future release.</p></section><h2 id="mo
 
       </div>
 
-        <div class="summary-synopsis"><p>A file name as returned from <a><code class="inline">file</code></a> API functions.</p></div>
+        <div class="summary-synopsis"><p>A file name as returned from <a href="file.html"><code class="inline">file</code></a> API functions.</p></div>
 
     </div>
 
@@ -252,7 +270,7 @@ access it later. This will be fixed in a future release.</p></section><h2 id="mo
 
       </div>
 
-        <div class="summary-synopsis"><p>A file name as returned from <a><code class="inline">file</code></a> API functions.</p></div>
+        <div class="summary-synopsis"><p>A file name as returned from <a href="file.html"><code class="inline">file</code></a> API functions.</p></div>
 
     </div>
 
@@ -262,7 +280,7 @@ access it later. This will be fixed in a future release.</p></section><h2 id="mo
 
       </div>
 
-        <div class="summary-synopsis"><p>An IO device as returned by <a><code class="inline">open/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>An IO device as returned by <a href="#open/2"><code class="inline">open/2</code></a>.</p></div>
 
     </div>
 
@@ -298,7 +316,7 @@ access it later. This will be fixed in a future release.</p></section><h2 id="mo
 
       </div>
 
-        <div class="summary-synopsis"><p>A restricted file name used as input into <a><code class="inline">file</code></a> API functions.</p></div>
+        <div class="summary-synopsis"><p>A restricted file name used as input into <a href="file.html"><code class="inline">file</code></a> API functions.</p></div>
 
     </div>
 
@@ -308,7 +326,7 @@ access it later. This will be fixed in a future release.</p></section><h2 id="mo
 
       </div>
 
-        <div class="summary-synopsis"><p>A file name used as input into <a><code class="inline">file</code></a> API functions.</p></div>
+        <div class="summary-synopsis"><p>A file name used as input into <a href="file.html"><code class="inline">file</code></a> API functions.</p></div>
 
     </div>
 
@@ -359,7 +377,7 @@ runtime libraries of most C compilers.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p><a><code class="inline">advise/4</code></a> can be used to announce an intention to access file
+        <div class="summary-synopsis"><p><a href="#advise/4"><code class="inline">advise/4</code></a> can be used to announce an intention to access file
 data in a specific pattern in the future, thus allowing the operating system to
 perform appropriate optimizations.</p></div>
 
@@ -371,7 +389,7 @@ perform appropriate optimizations.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p><a><code class="inline">allocate/3</code></a> can be used to preallocate space for a file.</p></div>
+        <div class="summary-synopsis"><p><a href="#allocate/3"><code class="inline">allocate/3</code></a> can be used to preallocate space for a file.</p></div>
 
     </div>
 
@@ -381,7 +399,7 @@ perform appropriate optimizations.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Changes group of a file. See <a><code class="inline">write_file_info/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Changes group of a file. See <a href="#write_file_info/2"><code class="inline">write_file_info/2</code></a>.</p></div>
 
     </div>
 
@@ -391,7 +409,7 @@ perform appropriate optimizations.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Changes permissions of a file. See <a><code class="inline">write_file_info/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Changes permissions of a file. See <a href="#write_file_info/2"><code class="inline">write_file_info/2</code></a>.</p></div>
 
     </div>
 
@@ -401,7 +419,7 @@ perform appropriate optimizations.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Changes owner of a file. See <a><code class="inline">write_file_info/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Changes owner of a file. See <a href="#write_file_info/2"><code class="inline">write_file_info/2</code></a>.</p></div>
 
     </div>
 
@@ -411,7 +429,7 @@ perform appropriate optimizations.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Changes owner and group of a file. See <a><code class="inline">write_file_info/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Changes owner and group of a file. See <a href="#write_file_info/2"><code class="inline">write_file_info/2</code></a>.</p></div>
 
     </div>
 
@@ -421,7 +439,7 @@ perform appropriate optimizations.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Changes the modification and access times of a file. See <a><code class="inline">write_file_info/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Changes the modification and access times of a file. See <a href="#write_file_info/2"><code class="inline">write_file_info/2</code></a>.</p></div>
 
     </div>
 
@@ -432,7 +450,7 @@ perform appropriate optimizations.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Changes the modification and last access times of a file. See
-<a><code class="inline">write_file_info/2</code></a>.</p></div>
+<a href="#write_file_info/2"><code class="inline">write_file_info/2</code></a>.</p></div>
 
     </div>
 
@@ -464,7 +482,7 @@ following</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">copy(Source, Destination, infinity)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#copy/3"><code class="inline">copy(Source, Destination, infinity)</code></a>.</p></div>
 
     </div>
 
@@ -476,7 +494,7 @@ following</p></div>
 
         <div class="summary-synopsis"><p>Copies <code class="inline">ByteCount</code> bytes from <code class="inline">Source</code> to <code class="inline">Destination</code>. <code class="inline">Source</code> and
 <code class="inline">Destination</code> refer to either filenames or IO devices from, for example,
-<a><code class="inline">open/2</code></a>.</p></div>
+<a href="#open/2"><code class="inline">open/2</code></a>.</p></div>
 
     </div>
 
@@ -521,7 +539,7 @@ first recursively deleted. Returns</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">delete(Filename, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#delete/2"><code class="inline">delete(Filename, [])</code></a>.</p></div>
 
     </div>
 
@@ -554,9 +572,9 @@ effect.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>The same as <a><code class="inline">eval/1</code></a>, but the variable bindings <code class="inline">Bindings</code> are used
+        <div class="summary-synopsis"><p>The same as <a href="#eval/1"><code class="inline">eval/1</code></a>, but the variable bindings <code class="inline">Bindings</code> are used
 in the evaluation. For information about the variable bindings, see
-<a><code class="inline">erl_eval</code></a>.</p></div>
+<a href="../../apps/stdlib/erl_eval.html"><code class="inline">erl_eval</code></a>.</p></div>
 
     </div>
 
@@ -737,8 +755,8 @@ expressions is also an expression), from the file.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>The same as <a><code class="inline">path_script/2</code></a> but the variable bindings
-<code class="inline">Bindings</code> are used in the evaluation. See <a><code class="inline">erl_eval</code></a> about variable bindings.</p></div>
+        <div class="summary-synopsis"><p>The same as <a href="#path_script/2"><code class="inline">path_script/2</code></a> but the variable bindings
+<code class="inline">Bindings</code> are used in the evaluation. See <a href="../../apps/stdlib/erl_eval.html"><code class="inline">erl_eval</code></a> about variable bindings.</p></div>
 
     </div>
 
@@ -760,7 +778,7 @@ expressions is also an expression), from the file.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Performs a sequence of <a><code class="inline">pread/3</code></a> in one operation, which is more
+        <div class="summary-synopsis"><p>Performs a sequence of <a href="#pread/3"><code class="inline">pread/3</code></a> in one operation, which is more
 efficient than calling them one at a time. Returns <code class="inline">{ok, [Data, ...]}</code> or
 <code class="inline">{error, Reason}</code>, where each <code class="inline">Data</code>, the result of the corresponding <code class="inline">pread</code>,
 is either a list or a binary depending on the mode of the file, or <code class="inline">eof</code> if the
@@ -774,7 +792,7 @@ requested position is beyond end of file.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Combines <a><code class="inline">position/2</code></a> and <a><code class="inline">read/2</code></a> in one operation,
+        <div class="summary-synopsis"><p>Combines <a href="#position/2"><code class="inline">position/2</code></a> and <a href="#read/2"><code class="inline">read/2</code></a> in one operation,
 which is more efficient than calling them one at a time.</p></div>
 
     </div>
@@ -785,7 +803,7 @@ which is more efficient than calling them one at a time.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Performs a sequence of <a><code class="inline">pwrite/3</code></a> in one operation, which is more
+        <div class="summary-synopsis"><p>Performs a sequence of <a href="#pwrite/3"><code class="inline">pwrite/3</code></a> in one operation, which is more
 efficient than calling them one at a time. Returns <code class="inline">ok</code> or
 <code class="inline">{error, {N, Reason}}</code>, where <code class="inline">N</code> is the number of successful writes done before
 the failure.</p></div>
@@ -798,7 +816,7 @@ the failure.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Combines <a><code class="inline">position/2</code></a> and <a><code class="inline">write/2</code></a> in one
+        <div class="summary-synopsis"><p>Combines <a href="#position/2"><code class="inline">position/2</code></a> and <a href="#write/2"><code class="inline">write/2</code></a> in one
 operation, which is more efficient than calling them one at a time.</p></div>
 
     </div>
@@ -819,7 +837,7 @@ operation, which is more efficient than calling them one at a time.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">read_file(Filename, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#read_file/2"><code class="inline">read_file(Filename, [])</code></a>.</p></div>
 
     </div>
 
@@ -840,7 +858,7 @@ contents of <code class="inline">Filename</code>, or <code class="inline">{error
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">read_file_info(File, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#read_file_info/2"><code class="inline">read_file_info(File, [])</code></a>.</p></div>
 
     </div>
 
@@ -895,7 +913,7 @@ the return value is <code class="inline">{error, enotsup}</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">read_link_info(Name, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#read_link_info/2"><code class="inline">read_link_info(Name, [])</code></a>.</p></div>
 
     </div>
 
@@ -905,7 +923,7 @@ the return value is <code class="inline">{error, enotsup}</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Works like <a><code class="inline">read_file_info/1,2</code></a> except that if <code class="inline">Name</code> is a
+        <div class="summary-synopsis"><p>Works like <a href="#read_file_info/2"><code class="inline">read_file_info/1,2</code></a> except that if <code class="inline">Name</code> is a
 symbolic link, information about the link is returned in the <code class="inline">file_info</code> record
 and the <code class="inline">type</code> field of the record is set to <code class="inline">symlink</code>.</p></div>
 
@@ -921,8 +939,8 @@ and the <code class="inline">type</code> field of the record is set to <code cla
 (and directories) between directories, but it is not sufficient to specify the
 destination only. The destination filename must also be specified. For example,
 if <code class="inline">bar</code> is a normal file and <code class="inline">foo</code> and <code class="inline">baz</code> are directories,
-<a><code class="inline">rename(&quot;foo/bar&quot;, &quot;baz&quot;)</code></a> returns an error, but
-<a><code class="inline">rename(&quot;foo/bar&quot;, &quot;baz/bar&quot;)</code></a> succeeds. Returns <code class="inline">ok</code> if it is
+<a href="#rename/2"><code class="inline">rename(&quot;foo/bar&quot;, &quot;baz&quot;)</code></a> returns an error, but
+<a href="#rename/2"><code class="inline">rename(&quot;foo/bar&quot;, &quot;baz/bar&quot;)</code></a> succeeds. Returns <code class="inline">ok</code> if it is
 successful.</p></div>
 
     </div>
@@ -944,8 +962,8 @@ expressions is also an expression), from the file.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>The same as <a><code class="inline">script/1</code></a> but the variable bindings <code class="inline">Bindings</code> are
-used in the evaluation. See <a><code class="inline">erl_eval</code></a> about variable bindings.</p></div>
+        <div class="summary-synopsis"><p>The same as <a href="#script/1"><code class="inline">script/1</code></a> but the variable bindings <code class="inline">Bindings</code> are
+used in the evaluation. See <a href="../../apps/stdlib/erl_eval.html"><code class="inline">erl_eval</code></a> about variable bindings.</p></div>
 
     </div>
 
@@ -1036,8 +1054,8 @@ overwritten. Returns <code class="inline">ok</code> if successful, otherwise <co
 
       </div>
 
-        <div class="summary-synopsis"><p>Same as <a><code class="inline">write_file/2</code></a>, but takes a third argument <code class="inline">Modes</code>, a
-list of possible modes, see <a><code class="inline">open/2</code></a>. The mode flags <code class="inline">binary</code> and <code class="inline">write</code> are
+        <div class="summary-synopsis"><p>Same as <a href="#write_file/2"><code class="inline">write_file/2</code></a>, but takes a third argument <code class="inline">Modes</code>, a
+list of possible modes, see <a href="#open/2"><code class="inline">open/2</code></a>. The mode flags <code class="inline">binary</code> and <code class="inline">write</code> are
 implicit, so they are not to be used.</p></div>
 
     </div>
@@ -1048,7 +1066,7 @@ implicit, so they are not to be used.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">write_file_info(Filename, FileInfo, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#write_file_info/3"><code class="inline">write_file_info(Filename, FileInfo, [])</code></a>.</p></div>
 
     </div>
 
@@ -1075,6 +1093,7 @@ implicit, so they are not to be used.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:date_time/0">
 
@@ -1086,7 +1105,7 @@ implicit, so they are not to be used.</p></div>
       <h1 class="signature" translate="no">date_time()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L331" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L331" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1116,7 +1135,7 @@ implicit, so they are not to be used.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L288" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L288" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1146,7 +1165,7 @@ implicit, so they are not to be used.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L334" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L334" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1174,7 +1193,7 @@ implicit, so they are not to be used.</p></div>
       <h1 class="signature" translate="no">fd()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L267" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L267" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1202,7 +1221,7 @@ implicit, so they are not to be used.</p></div>
       <h1 class="signature" translate="no">file_info()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L262" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L262" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1245,7 +1264,7 @@ implicit, so they are not to be used.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L338" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L338" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1273,7 +1292,7 @@ implicit, so they are not to be used.</p></div>
       <h1 class="signature" translate="no">filename()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L257" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L257" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1301,7 +1320,7 @@ implicit, so they are not to be used.</p></div>
       <h1 class="signature" translate="no">filename_all()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L261" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L261" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1329,7 +1348,7 @@ implicit, so they are not to be used.</p></div>
       <h1 class="signature" translate="no">io_device()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L275" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L275" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1357,7 +1376,7 @@ implicit, so they are not to be used.</p></div>
       <h1 class="signature" translate="no">io_server()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L269" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L269" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1385,7 +1404,7 @@ implicit, so they are not to be used.</p></div>
       <h1 class="signature" translate="no">location()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L276" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L276" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1418,7 +1437,7 @@ implicit, so they are not to be used.</p></div>
       <h1 class="signature" translate="no">mode()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L279" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L279" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1453,7 +1472,7 @@ implicit, so they are not to be used.</p></div>
       <h1 class="signature" translate="no">name()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L295" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L295" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1482,7 +1501,7 @@ be &gt; 255. See also the documentation of the <a href="#t:name_all/0"><code cla
       <h1 class="signature" translate="no">name_all()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L306" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L306" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1515,7 +1534,7 @@ filenames (not even at the end).</p>
       <h1 class="signature" translate="no">posix()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L311" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L311" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1551,7 +1570,7 @@ runtime libraries of most C compilers.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L332" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L332" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1581,7 +1600,7 @@ runtime libraries of most C compilers.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L335" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L335" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1611,7 +1630,7 @@ runtime libraries of most C compilers.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L336" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L336" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1640,6 +1659,7 @@ runtime libraries of most C compilers.</p>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="advise/4">
 
@@ -1653,7 +1673,7 @@ runtime libraries of most C compilers.</p>
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L1541" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L1541" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1691,7 +1711,7 @@ perform appropriate optimizations.</p><p>On some platforms, this function might 
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L1560" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L1560" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1720,7 +1740,7 @@ perform appropriate optimizations.</p><p>On some platforms, this function might 
       <h1 class="signature" translate="no">change_group(Filename, Gid)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L2632" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L2632" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1751,7 +1771,7 @@ perform appropriate optimizations.</p><p>On some platforms, this function might 
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L2601" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L2601" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1780,7 +1800,7 @@ perform appropriate optimizations.</p><p>On some platforms, this function might 
       <h1 class="signature" translate="no">change_owner(Filename, Uid)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L2611" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L2611" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1809,7 +1829,7 @@ perform appropriate optimizations.</p><p>On some platforms, this function might 
       <h1 class="signature" translate="no">change_owner(Filename, Uid, Gid)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L2622" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L2622" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1842,7 +1862,7 @@ perform appropriate optimizations.</p><p>On some platforms, this function might 
       <h1 class="signature" translate="no">change_time(Filename, Mtime)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L2642" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L2642" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1871,7 +1891,7 @@ perform appropriate optimizations.</p><p>On some platforms, this function might 
       <h1 class="signature" translate="no">change_time(Filename, Atime, Mtime)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L2657" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L2657" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1905,7 +1925,7 @@ perform appropriate optimizations.</p><p>On some platforms, this function might 
       <h1 class="signature" translate="no">close(IoDevice)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L1511" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L1511" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1937,7 +1957,7 @@ the file. See <a href="#open/2"><code class="inline">open/2</code></a>.</p>
       <h1 class="signature" translate="no">consult(Filename)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L2262" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L2262" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1964,8 +1984,8 @@ following:</p><ul><li><p><strong><code class="inline">{ok, Terms}</code></strong
 For a list of typical error codes, see <a href="#open/2"><code class="inline">open/2</code></a>.</p></li><li><p><strong><code class="inline">{error, {Line, Mod, Term}}</code></strong> - An error occurred when interpreting the
 Erlang terms in the file. To convert the three-element tuple to an English
 description of the error, use <a href="#format_error/1"><code class="inline">format_error/1</code></a>.</p></li></ul><p><em>Example:</em></p><pre><code class="text">f.txt:  {person, &quot;kalle&quot;, 25}.
-        {person, &quot;pelle&quot;, 30}.</code></pre><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">file</span><span class="p">:</span><span class="nf">consult</span><span class="p" data-group-id="5950259492-1">(</span><span class="s">&quot;f.txt&quot;</span><span class="p" data-group-id="5950259492-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="5950259492-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="5950259492-3">[</span><span class="p" data-group-id="5950259492-4">{</span><span class="ss">person</span><span class="p">,</span><span class="s">&quot;kalle&quot;</span><span class="p">,</span><span class="mi">25</span><span class="p" data-group-id="5950259492-4">}</span><span class="p">,</span><span class="p" data-group-id="5950259492-5">{</span><span class="ss">person</span><span class="p">,</span><span class="s">&quot;pelle&quot;</span><span class="p">,</span><span class="mi">30</span><span class="p" data-group-id="5950259492-5">}</span><span class="p" data-group-id="5950259492-3">]</span><span class="p" data-group-id="5950259492-2">}</span></code></pre><p>The encoding of <code class="inline">Filename</code> can be set by a comment, as described in
+        {person, &quot;pelle&quot;, 30}.</code></pre><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">file</span><span class="p">:</span><span class="nf">consult</span><span class="p" data-group-id="1831551326-1">(</span><span class="s">&quot;f.txt&quot;</span><span class="p" data-group-id="1831551326-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="1831551326-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="1831551326-3">[</span><span class="p" data-group-id="1831551326-4">{</span><span class="ss">person</span><span class="p">,</span><span class="s">&quot;kalle&quot;</span><span class="p">,</span><span class="mi">25</span><span class="p" data-group-id="1831551326-4">}</span><span class="p">,</span><span class="p" data-group-id="1831551326-5">{</span><span class="ss">person</span><span class="p">,</span><span class="s">&quot;pelle&quot;</span><span class="p">,</span><span class="mi">30</span><span class="p" data-group-id="1831551326-5">}</span><span class="p" data-group-id="1831551326-3">]</span><span class="p" data-group-id="1831551326-2">}</span></code></pre><p>The encoding of <code class="inline">Filename</code> can be set by a comment, as described in
 <a href="../../apps/stdlib/epp.html#encoding"><code class="inline">epp</code></a>.</p>
   </section>
 </section>
@@ -1979,7 +1999,7 @@ description of the error, use <a href="#format_error/1"><code class="inline">for
       <h1 class="signature" translate="no">copy(Source, Destination)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L1960" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L1960" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2014,7 +2034,7 @@ description of the error, use <a href="#format_error/1"><code class="inline">for
       <h1 class="signature" translate="no">copy(Source, Destination, ByteCount)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L1998" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L1998" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2062,7 +2082,7 @@ source. If the operation fails, <code class="inline">{error, Reason}</code> is r
         <span class="note">(since OTP R14B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L1867" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L1867" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2101,7 +2121,7 @@ or has no effect in systems not providing the <code class="inline">fdatasync()</
       <h1 class="signature" translate="no">del_dir(Dir)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L618" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L618" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2135,7 +2155,7 @@ of <code class="inline">Dir</code>.</p></li><li><p><strong><code class="inline">
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L636" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L636" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2166,7 +2186,7 @@ deleted as it is non-empty, and <code class="inline">{error, eexist}</code> is r
       <h1 class="signature" translate="no">delete(Filename)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L481" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L481" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2196,7 +2216,7 @@ deleted as it is non-empty, and <code class="inline">{error, eexist}</code> is r
         <span class="note">(since OTP 24.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L515" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L515" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2229,7 +2249,7 @@ an exception.</p></section>
       <h1 class="signature" translate="no">eval(Filename)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L2344" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L2344" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2270,7 +2290,7 @@ English description of the error, use <a href="#format_error/1"><code class="inl
       <h1 class="signature" translate="no">eval(Filename, Bindings)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L2358" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L2358" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2307,7 +2327,7 @@ in the evaluation. For information about the variable bindings, see
       <h1 class="signature" translate="no">format_error(Reason)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L370" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L370" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2342,7 +2362,7 @@ descriptive string of the error in English.</p>
       <h1 class="signature" translate="no">get_cwd()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L411" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L411" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2373,7 +2393,7 @@ directory.</li></ul>
       <h1 class="signature" translate="no">get_cwd(Drive)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L436" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L436" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2404,7 +2424,7 @@ directory of the specified drive.</p><p><code class="inline">Drive</code> is to 
       <h1 class="signature" translate="no">list_dir(Dir)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L1040" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L1040" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2442,7 +2462,7 @@ characters coded in ISO Latin-1 and the VM was started with parameter <code clas
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L1062" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L1062" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2475,7 +2495,7 @@ parent directories.</p></li><li><p><strong><code class="inline">enoent</code></s
       <h1 class="signature" translate="no">make_dir(Dir)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L592" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L592" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2506,7 +2526,7 @@ of <code class="inline">Dir</code>.</p></li><li><p><strong><code class="inline">
       <h1 class="signature" translate="no">make_link(Existing, New)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L1135" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L1135" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2539,7 +2559,7 @@ otherwise <code class="inline">{error, Reason}</code>. On platforms not supporti
       <h1 class="signature" translate="no">make_symlink(Existing, New)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L1162" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L1162" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2576,7 +2596,7 @@ links, <code class="inline">{error, enotsup}</code> is returned.</p><p>Typical e
         <span class="note">(since OTP R14B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L352" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L352" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2606,7 +2626,7 @@ filename encoding (usually UTF-8, but UTF-16 on Windows).</p>
       <h1 class="signature" translate="no">open(File, Modes)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L1470" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L1470" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2737,7 +2757,7 @@ specified).</p></li></ul>
       <h1 class="signature" translate="no">path_consult(Path, Filename)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L2304" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L2304" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2783,7 +2803,7 @@ tuple to an English description of the error.</p></li></ul><p>The encoding of <c
       <h1 class="signature" translate="no">path_eval(Path, Filename)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L2401" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L2401" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2830,7 +2850,7 @@ three-element tuple to an English description of the error.</p></li></ul><p>The 
       <h1 class="signature" translate="no">path_open(Path, Filename, Modes)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L2576" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L2576" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2870,7 +2890,7 @@ file.</p></li><li><p><strong><code class="inline">{error, enoent}</code></strong
       <h1 class="signature" translate="no">path_script(Path, Filename)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L2511" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L2511" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2916,7 +2936,7 @@ three-element tuple to an English description of the error.</p></li></ul><p>The 
       <h1 class="signature" translate="no">path_script(Path, Filename, Bindings)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L2528" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L2528" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2955,7 +2975,7 @@ three-element tuple to an English description of the error.</p></li></ul><p>The 
       <h1 class="signature" translate="no">position(IoDevice, Location)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L1929" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L1929" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2998,7 +3018,7 @@ the result is an error, and after the call the file position is undefined.</li><
       <h1 class="signature" translate="no">pread(IoDevice, LocNums)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L1700" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L1700" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3038,7 +3058,7 @@ byte position is a valid character boundary on such a file.</p>
       <h1 class="signature" translate="no">pread(IoDevice, Location, Number)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L1742" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L1742" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3076,7 +3096,7 @@ byte position is a valid character boundary on such a file.</p>
       <h1 class="signature" translate="no">pwrite(IoDevice, LocBytes)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L1800" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L1800" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3114,7 +3134,7 @@ taken to set the position on a correct character boundary. For details, see
       <h1 class="signature" translate="no">pwrite(IoDevice, Location, Bytes)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L1838" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L1838" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3151,7 +3171,7 @@ taken to set the position on a correct character boundary. For details, see
       <h1 class="signature" translate="no">read(IoDevice, Number)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L1608" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L1608" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3195,7 +3215,7 @@ byte-oriented data that this function returns.</p></li></ul>
       <h1 class="signature" translate="no">read_file(Filename)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L1071" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L1071" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3229,7 +3249,7 @@ byte-oriented data that this function returns.</p></li></ul>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L1101" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L1101" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3265,7 +3285,7 @@ platforms, <code class="inline">enoent</code> is returned instead.</p></li><li><
       <h1 class="signature" translate="no">read_file_info(File)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L657" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L657" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3299,7 +3319,7 @@ platforms, <code class="inline">enoent</code> is returned instead.</p></li><li><
         <span class="note">(since OTP R15B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L784" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L784" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3321,7 +3341,7 @@ platforms, <code class="inline">enoent</code> is returned instead.</p></li><li><
 
 <p>Retrieves information about a file. Returns <code class="inline">{ok, FileInfo}</code> if successful,
 otherwise <code class="inline">{error, Reason}</code>.</p><p><code class="inline">FileInfo</code> is a record <code class="inline">file_info</code>, defined in the Kernel include file <code class="inline">file.hrl</code>.
-Include the following directive in the module from which the function is called:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="5608189828-1">(</span><span class="s">&quot;kernel/include/file.hrl&quot;</span><span class="p" data-group-id="5608189828-1">)</span><span class="p">.</span></code></pre><p>The time type returned in <code class="inline">atime</code>, <code class="inline">mtime</code>, and <code class="inline">ctime</code> is dependent on the time
+Include the following directive in the module from which the function is called:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="8410317418-1">(</span><span class="s">&quot;kernel/include/file.hrl&quot;</span><span class="p" data-group-id="8410317418-1">)</span><span class="p">.</span></code></pre><p>The time type returned in <code class="inline">atime</code>, <code class="inline">mtime</code>, and <code class="inline">ctime</code> is dependent on the time
 type set in <code class="inline">Opts :: {time, Type}</code> as follows:</p><ul><li><p><strong><code class="inline">local</code></strong> - Returns local time.</p></li><li><p><strong><code class="inline">universal</code></strong> - Returns universal time.</p></li><li><p><strong><code class="inline">posix</code></strong> - Returns seconds since or before Unix time epoch, which is
 1970-01-01 00:00 UTC.</p></li></ul><p>Default is <code class="inline">{time, local}</code>.</p><p>If the option <code class="inline">raw</code> is set, the file server is not called and only information
 about local files is returned. Note that this will break this module's atomicity
@@ -3358,7 +3378,7 @@ platforms, <code class="inline">enoent</code> is returned instead.</p></li></ul>
       <h1 class="signature" translate="no">read_line(IoDevice)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L1670" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L1670" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3406,7 +3426,7 @@ byte-oriented data that this function returns.</p></li></ul>
       <h1 class="signature" translate="no">read_link(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L877" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L877" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3440,7 +3460,7 @@ file that it refers to does not conform to the expected encoding.</p></li><li><p
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L901" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L901" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3471,7 +3491,7 @@ the return value is <code class="inline">{error, enotsup}</code>.</p><p>Notice t
       <h1 class="signature" translate="no">read_link_info(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L817" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L817" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3502,7 +3522,7 @@ the return value is <code class="inline">{error, enotsup}</code>.</p><p>Notice t
         <span class="note">(since OTP R15B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L842" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L842" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3543,7 +3563,7 @@ symbolic links, this function is always equivalent to
       <h1 class="signature" translate="no">rename(Source, Destination)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L567" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L567" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3582,7 +3602,7 @@ subdirectory of <code class="inline">Source</code>.</p></li><li><p><strong><code
       <h1 class="signature" translate="no">script(Filename)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L2454" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L2454" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3623,7 +3643,7 @@ three-element tuple to an English description of the error.</p></li></ul><p>The 
       <h1 class="signature" translate="no">script(Filename, Bindings)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L2468" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L2468" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3662,7 +3682,7 @@ used in the evaluation. See <a href="../../apps/stdlib/erl_eval.html"><code clas
         <span class="note">(since OTP R15B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L2731" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L2731" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3700,7 +3720,7 @@ otherwise <code class="inline">{error, Reason}</code>.</p>
         <span class="note">(since OTP R15B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L2701" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L2701" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3746,7 +3766,7 @@ memory. Default is 20 MB.</li></ul>
       <h1 class="signature" translate="no">set_cwd(Dir)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L473" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L473" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3786,7 +3806,7 @@ exception.</p></section>
       <h1 class="signature" translate="no">sync(IoDevice)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L1887" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L1887" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3817,7 +3837,7 @@ effect.</p><p>A typical error reason is:</p><ul><li><strong><code class="inline"
       <h1 class="signature" translate="no">truncate(IoDevice)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L1944" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L1944" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3847,7 +3867,7 @@ effect.</p><p>A typical error reason is:</p><ul><li><strong><code class="inline"
       <h1 class="signature" translate="no">write(IoDevice, Bytes)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L1772" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L1772" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3885,7 +3905,7 @@ value and UTF encoding type. If you want to write <a href="../../apps/stdlib/uni
       <h1 class="signature" translate="no">write_file(Filename, Bytes)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L1189" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L1189" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3921,7 +3941,7 @@ parent directories.</p></li><li><p><strong><code class="inline">eisdir</code></s
       <h1 class="signature" translate="no">write_file(Filename, Bytes, Modes)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L1207" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L1207" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3956,7 +3976,7 @@ implicit, so they are not to be used.</p>
       <h1 class="signature" translate="no">write_file_info(Filename, FileInfo)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L910" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L910" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3988,7 +4008,7 @@ implicit, so they are not to be used.</p>
         <span class="note">(since OTP R15B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/file.erl#L1003" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/file.erl#L1003" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4011,7 +4031,7 @@ implicit, so they are not to be used.</p>
 <p>Changes file information. Returns <code class="inline">ok</code> if successful, otherwise
 <code class="inline">{error, Reason}</code>.</p><p><code class="inline">FileInfo</code> is a record <code class="inline">file_info</code>, defined in the Kernel
 include file <code class="inline">file.hrl</code>. Include the following directive in the module from
-which the function is called:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="0821201083-1">(</span><span class="s">&quot;kernel/include/file.hrl&quot;</span><span class="p" data-group-id="0821201083-1">)</span><span class="p">.</span></code></pre><p>The time type set in <code class="inline">atime</code>, <code class="inline">mtime</code>, and <code class="inline">ctime</code> depends on the time type set
+which the function is called:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="9122192941-1">(</span><span class="s">&quot;kernel/include/file.hrl&quot;</span><span class="p" data-group-id="9122192941-1">)</span><span class="p">.</span></code></pre><p>The time type set in <code class="inline">atime</code>, <code class="inline">mtime</code>, and <code class="inline">ctime</code> depends on the time type set
 in <code class="inline">Opts :: {time, Type}</code> as follows:</p><ul><li><p><strong><code class="inline">local</code></strong> - Interprets the time set as local.</p></li><li><p><strong><code class="inline">universal</code></strong> - Interprets it as universal time.</p></li><li><p><strong><code class="inline">posix</code></strong> - Must be seconds since or before Unix time epoch, which is
 1970-01-01 00:00 UTC.</p></li></ul><p>Default is <code class="inline">{time, local}</code>.</p><p>If the option <code class="inline">raw</code> is set, the file server is not called and only information
 about local files is returned.</p><p>The following fields are used from the record, if they are specified:</p><ul><li><p><strong><code class="inline">atime =</code> <a href="#t:date_time/0"><code class="inline">date_time/0</code></a> <code class="inline">|</code> <a href="../../apps/erts/erlang.html#t:non_neg_integer/0"><code class="inline">non_neg_integer/0</code></a></strong> - The last time the file was
@@ -4035,8 +4055,8 @@ platforms, <code class="inline">enoent</code> is returned instead.</p></li></ul>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="kernel.epub" title="ePub version">
@@ -4048,7 +4068,7 @@ platforms, <code class="inline">enoent</code> is returned instead.</p></li></ul>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

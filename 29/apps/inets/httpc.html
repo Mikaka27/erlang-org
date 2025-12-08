@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="inets v9.4.2-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/inets/httpc.html" />
     <title>httpc — inets v9.4.2-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-395DC6BD.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ inets
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of inets</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ inets
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_client/httpc.erl#L29" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_client/httpc.erl#L29" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -141,7 +159,7 @@ when creating the request: <code class="inline">httpc:request(&quot;http://local
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">cancel_request/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#cancel_request/2"><code class="inline">cancel_request/2</code></a>.</p></div>
 
     </div>
 
@@ -163,7 +181,7 @@ can already have been completed when the cancellation arrives.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">cookie_header/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#cookie_header/2"><code class="inline">cookie_header/2</code></a>.</p></div>
 
     </div>
 
@@ -197,7 +215,7 @@ is used.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">get_options/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#get_options/2"><code class="inline">get_options/2</code></a>.</p></div>
 
     </div>
 
@@ -217,7 +235,7 @@ is used.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">info/1</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#info/1"><code class="inline">info/1</code></a>.</p></div>
 
     </div>
 
@@ -238,7 +256,7 @@ profile is specified, the default profile is used.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">request/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#request/2"><code class="inline">request/2</code></a>.</p></div>
 
     </div>
 
@@ -248,7 +266,7 @@ profile is specified, the default profile is used.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">httpc:request(get, {Url, []}, [], [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#request/4"><code class="inline">httpc:request(get, {Url, []}, [], [])</code></a>.</p></div>
 
     </div>
 
@@ -258,7 +276,7 @@ profile is specified, the default profile is used.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">request/5</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#request/5"><code class="inline">request/5</code></a>.</p></div>
 
     </div>
 
@@ -280,7 +298,7 @@ is delivered to the <code class="inline">receiver</code> depending on that value
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">reset_cookies/1</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#reset_cookies/1"><code class="inline">reset_cookies/1</code></a>.</p></div>
 
     </div>
 
@@ -301,7 +319,7 @@ is specified the default profile is used.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">set_options/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#set_options/2"><code class="inline">set_options/2</code></a>.</p></div>
 
     </div>
 
@@ -322,9 +340,9 @@ is specified the default profile is used.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Returns ssl options which can be used to verify the host, uses
-<a><code class="inline">public_key:cacerts_get()</code></a> to read CA certicates
+<a href="../../apps/public_key/public_key.html#cacerts_get/0"><code class="inline">public_key:cacerts_get()</code></a> to read CA certicates
 and if <code class="inline">WildcardHostName</code> is true adds the hostname check from
-<a><code class="inline">public_key:public_key:pkix_verify_hostname_match_fun(https)</code></a>
+<a href="../../apps/public_key/public_key.html#pkix_verify_hostname_match_fun/1"><code class="inline">public_key:public_key:pkix_verify_hostname_match_fun(https)</code></a>
 to the options.</p></div>
 
     </div>
@@ -335,7 +353,7 @@ to the options.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">store_cookies/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#store_cookies/3"><code class="inline">store_cookies/3</code></a>.</p></div>
 
     </div>
 
@@ -368,7 +386,7 @@ ones for sockets.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">which_cookies/1</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#which_cookies/1"><code class="inline">which_cookies/1</code></a>.</p></div>
 
     </div>
 
@@ -389,7 +407,7 @@ purposes. If no profile is specified, the default profile is used.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">which_sessions/1</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#which_sessions/1"><code class="inline">which_sessions/1</code></a>.</p></div>
 
     </div>
 
@@ -419,6 +437,7 @@ intended. If no profile is specified, the default profile is used.</p></div>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="cancel_request/1">
 
@@ -432,7 +451,7 @@ intended. If no profile is specified, the default profile is used.</p></div>
         <span class="note">(since OTP R13B04)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_client/httpc.erl#L520" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_client/httpc.erl#L520" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -462,7 +481,7 @@ intended. If no profile is specified, the default profile is used.</p></div>
         <span class="note">(since OTP R13B04)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_client/httpc.erl#L538" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_client/httpc.erl#L538" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -494,7 +513,7 @@ can already have been completed when the cancellation arrives.</p>
         <span class="note">(since OTP R13B04)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_client/httpc.erl#L876" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_client/httpc.erl#L876" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -528,7 +547,7 @@ can already have been completed when the cancellation arrives.</p>
         <span class="note">(since OTP R13B04)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_client/httpc.erl#L896" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_client/httpc.erl#L896" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -569,7 +588,7 @@ details, see argument <code class="inline">Options</code> of <a href="#request/4
         <span class="note">(since OTP R15B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_client/httpc.erl#L922" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_client/httpc.erl#L922" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -609,7 +628,7 @@ details, see argument <code class="inline">Options</code> of <a href="#request/4
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_client/httpc.erl#L743" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_client/httpc.erl#L743" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -647,7 +666,7 @@ details, see argument <code class="inline">Options</code> of <a href="#request/4
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_client/httpc.erl#L759" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_client/httpc.erl#L759" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -686,7 +705,7 @@ details, see argument <code class="inline">Options</code> of <a href="#request/4
         <span class="note">(since OTP R15B02)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_client/httpc.erl#L1023" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_client/httpc.erl#L1023" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -716,7 +735,7 @@ details, see argument <code class="inline">Options</code> of <a href="#request/4
         <span class="note">(since OTP R15B02)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_client/httpc.erl#L1038" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_client/httpc.erl#L1038" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -747,7 +766,7 @@ profile is specified, the default profile is used.</p>
         <span class="note">(since OTP R13B04)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_client/httpc.erl#L165" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_client/httpc.erl#L165" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -789,7 +808,7 @@ profile is specified, the default profile is used.</p>
         <span class="note">(since OTP R13B04)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_client/httpc.erl#L186" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_client/httpc.erl#L186" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -832,7 +851,7 @@ profile is specified, the default profile is used.</p>
         <span class="note">(since OTP R13B04)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_client/httpc.erl#L250" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_client/httpc.erl#L250" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -911,7 +930,7 @@ profile is specified, the default profile is used.</p>
         <span class="note">(since OTP R13B04)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_client/httpc.erl#L469" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_client/httpc.erl#L469" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1017,13 +1036,13 @@ request (<code class="inline">sync</code> has the value <code class="inline">fal
 <code class="inline">{http, ReplyInfo}</code>.</p></li><li><p><strong><code class="inline">function/1</code></strong> - Information is delivered to the receiver through calls to
 the provided fun <code class="inline">Receiver(ReplyInfo)</code>.</p></li><li><p><strong><code class="inline">{Module, Function, Args}</code></strong> - Information is delivered to the receiver
 through calls to the callback function
-<a href="../../apps/erts/erlang.html#apply/3"><code class="inline">apply(Module, Function, [ReplyInfo | Args])</code></a>.</p></li></ul><p>In all of these cases, <code class="inline">ReplyInfo</code> has the following structure:</p><pre><code class="makeup erlang" translate="no"><span class="w"> </span><span class="p" data-group-id="5152350006-1">{</span><span class="n">RequestId</span><span class="p">,</span><span class="w"> </span><span class="ss">saved_to_file</span><span class="p" data-group-id="5152350006-1">}</span><span class="w">
- </span><span class="p" data-group-id="5152350006-2">{</span><span class="n">RequestId</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5152350006-3">{</span><span class="ss">error</span><span class="p">,</span><span class="w"> </span><span class="n">Reason</span><span class="p" data-group-id="5152350006-3">}</span><span class="p" data-group-id="5152350006-2">}</span><span class="w">
- </span><span class="p" data-group-id="5152350006-4">{</span><span class="n">RequestId</span><span class="p">,</span><span class="w"> </span><span class="n">Result</span><span class="p" data-group-id="5152350006-4">}</span><span class="w">
- </span><span class="p" data-group-id="5152350006-5">{</span><span class="n">RequestId</span><span class="p">,</span><span class="w"> </span><span class="ss">stream_start</span><span class="p">,</span><span class="w"> </span><span class="n">Headers</span><span class="p" data-group-id="5152350006-5">}</span><span class="w">
- </span><span class="p" data-group-id="5152350006-6">{</span><span class="n">RequestId</span><span class="p">,</span><span class="w"> </span><span class="ss">stream_start</span><span class="p">,</span><span class="w"> </span><span class="n">Headers</span><span class="p">,</span><span class="w"> </span><span class="n">HandlerPid</span><span class="p" data-group-id="5152350006-6">}</span><span class="w">
- </span><span class="p" data-group-id="5152350006-7">{</span><span class="n">RequestId</span><span class="p">,</span><span class="w"> </span><span class="ss">stream</span><span class="p">,</span><span class="w"> </span><span class="n">BinBodyPart</span><span class="p" data-group-id="5152350006-7">}</span><span class="w">
- </span><span class="p" data-group-id="5152350006-8">{</span><span class="n">RequestId</span><span class="p">,</span><span class="w"> </span><span class="ss">stream_end</span><span class="p">,</span><span class="w"> </span><span class="n">Headers</span><span class="p" data-group-id="5152350006-8">}</span></code></pre><p>Default is the <code class="inline">pid</code> of the process calling the request function (<a href="../../apps/erts/erlang.html#self/0"><code class="inline">self/0</code></a>).</p><p><a href="" id="ipv6_host_with_brackets"></a></p></li><li><p><strong><code class="inline">ipv6_host_with_brackets</code></strong> - Defines when parsing the Host-Port part of an
+<a href="../../apps/erts/erlang.html#apply/3"><code class="inline">apply(Module, Function, [ReplyInfo | Args])</code></a>.</p></li></ul><p>In all of these cases, <code class="inline">ReplyInfo</code> has the following structure:</p><pre><code class="makeup erlang" translate="no"><span class="w"> </span><span class="p" data-group-id="2314901960-1">{</span><span class="n">RequestId</span><span class="p">,</span><span class="w"> </span><span class="ss">saved_to_file</span><span class="p" data-group-id="2314901960-1">}</span><span class="w">
+ </span><span class="p" data-group-id="2314901960-2">{</span><span class="n">RequestId</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2314901960-3">{</span><span class="ss">error</span><span class="p">,</span><span class="w"> </span><span class="n">Reason</span><span class="p" data-group-id="2314901960-3">}</span><span class="p" data-group-id="2314901960-2">}</span><span class="w">
+ </span><span class="p" data-group-id="2314901960-4">{</span><span class="n">RequestId</span><span class="p">,</span><span class="w"> </span><span class="n">Result</span><span class="p" data-group-id="2314901960-4">}</span><span class="w">
+ </span><span class="p" data-group-id="2314901960-5">{</span><span class="n">RequestId</span><span class="p">,</span><span class="w"> </span><span class="ss">stream_start</span><span class="p">,</span><span class="w"> </span><span class="n">Headers</span><span class="p" data-group-id="2314901960-5">}</span><span class="w">
+ </span><span class="p" data-group-id="2314901960-6">{</span><span class="n">RequestId</span><span class="p">,</span><span class="w"> </span><span class="ss">stream_start</span><span class="p">,</span><span class="w"> </span><span class="n">Headers</span><span class="p">,</span><span class="w"> </span><span class="n">HandlerPid</span><span class="p" data-group-id="2314901960-6">}</span><span class="w">
+ </span><span class="p" data-group-id="2314901960-7">{</span><span class="n">RequestId</span><span class="p">,</span><span class="w"> </span><span class="ss">stream</span><span class="p">,</span><span class="w"> </span><span class="n">BinBodyPart</span><span class="p" data-group-id="2314901960-7">}</span><span class="w">
+ </span><span class="p" data-group-id="2314901960-8">{</span><span class="n">RequestId</span><span class="p">,</span><span class="w"> </span><span class="ss">stream_end</span><span class="p">,</span><span class="w"> </span><span class="n">Headers</span><span class="p" data-group-id="2314901960-8">}</span></code></pre><p>Default is the <code class="inline">pid</code> of the process calling the request function (<a href="../../apps/erts/erlang.html#self/0"><code class="inline">self/0</code></a>).</p><p><a href="" id="ipv6_host_with_brackets"></a></p></li><li><p><strong><code class="inline">ipv6_host_with_brackets</code></strong> - Defines when parsing the Host-Port part of an
 URI with an IPv6 address with brackets, if those brackets are to be retained
 (<code class="inline">true</code>) or stripped (<code class="inline">false</code>).</p><p>Default is <code class="inline">false</code>.</p></li></ul>
   </section>
@@ -1040,7 +1059,7 @@ URI with an IPv6 address with brackets, if those brackets are to be retained
         <span class="note">(since OTP R13B04)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_client/httpc.erl#L1056" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_client/httpc.erl#L1056" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1070,7 +1089,7 @@ URI with an IPv6 address with brackets, if those brackets are to be retained
         <span class="note">(since OTP R13B04)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_client/httpc.erl#L1071" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_client/httpc.erl#L1071" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1101,7 +1120,7 @@ is specified the default profile is used.</p>
         <span class="note">(since OTP R13B04)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_client/httpc.erl#L582" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_client/httpc.erl#L582" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1167,7 +1186,7 @@ is specified the default profile is used.</p>
         <span class="note">(since OTP R13B04)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_client/httpc.erl#L702" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_client/httpc.erl#L702" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1268,7 +1287,7 @@ combination will use the same socket options.</p></section>
         <span class="note">(since OTP 25.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_client/httpc.erl#L807" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_client/httpc.erl#L807" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1302,7 +1321,7 @@ to the options.</p>
         <span class="note">(since OTP R14B02)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_client/httpc.erl#L825" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_client/httpc.erl#L825" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1337,7 +1356,7 @@ to the options.</p>
         <span class="note">(since OTP R14B02)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_client/httpc.erl#L844" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_client/httpc.erl#L844" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1375,7 +1394,7 @@ profile is specified, the default profile is used.</p>
         <span class="note">(since OTP R13B04)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_client/httpc.erl#L1093" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_client/httpc.erl#L1093" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1406,7 +1425,7 @@ ones for sockets.</p>
         <span class="note">(since OTP R13B04)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_client/httpc.erl#L939" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_client/httpc.erl#L939" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1439,7 +1458,7 @@ ones for sockets.</p>
         <span class="note">(since OTP R13B04)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_client/httpc.erl#L956" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_client/httpc.erl#L956" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1474,7 +1493,7 @@ purposes. If no profile is specified, the default profile is used.</p>
         <span class="note">(since OTP R15B02)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_client/httpc.erl#L976" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_client/httpc.erl#L976" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1510,7 +1529,7 @@ purposes. If no profile is specified, the default profile is used.</p>
         <span class="note">(since OTP R15B02)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/inets/src/http_client/httpc.erl#L1003" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/inets/src/http_client/httpc.erl#L1003" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1547,8 +1566,8 @@ intended. If no profile is specified, the default profile is used.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="inets.epub" title="ePub version">
@@ -1560,7 +1579,7 @@ intended. If no profile is specified, the default profile is used.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

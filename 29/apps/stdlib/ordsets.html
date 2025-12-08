@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="stdlib v7.1-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/ordsets.html" />
     <title>ordsets — stdlib v7.1-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-4F7E9F36.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ stdlib
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of stdlib</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ stdlib
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/ordsets.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/ordsets.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -127,7 +145,7 @@ sets in the Standard Library.</p><h2 id="module-see-also" class="section-heading
 
       </div>
 
-        <div class="summary-synopsis"><p>As returned by <a><code class="inline">new/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>As returned by <a href="#new/0"><code class="inline">new/0</code></a>.</p></div>
 
     </div>
 
@@ -366,6 +384,7 @@ that are not elements in <code class="inline">Ordset2</code>.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:ordset/1">
 
@@ -377,7 +396,7 @@ that are not elements in <code class="inline">Ordset2</code>.</p></div>
       <h1 class="signature" translate="no">ordset(T)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/ordsets.erl#L55" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/ordsets.erl#L55" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -406,6 +425,7 @@ that are not elements in <code class="inline">Ordset2</code>.</p></div>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="add_element/2">
 
@@ -417,7 +437,7 @@ that are not elements in <code class="inline">Ordset2</code>.</p></div>
       <h1 class="signature" translate="no">add_element(Element, Ordset1)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/ordsets.erl#L240" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/ordsets.erl#L240" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -433,14 +453,14 @@ that are not elements in <code class="inline">Ordset2</code>.</p></div>
 
       </div>
 
-<p>Returns a new ordered set formed from <code class="inline">Ordset1</code> with <code class="inline">Element</code> inserted.</p><h2 id="add_element/2-examples" class="section-heading"><a href="#add_element/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">new</span><span class="p" data-group-id="2065415238-1">(</span><span class="p" data-group-id="2065415238-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="2065415238-2">[</span><span class="p" data-group-id="2065415238-2">]</span><span class="gp unselectable">
-2&gt; </span><span class="n">S1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">add_element</span><span class="p" data-group-id="2065415238-3">(</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="n">S0</span><span class="p" data-group-id="2065415238-3">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="2065415238-4">[</span><span class="mi">7</span><span class="p" data-group-id="2065415238-4">]</span><span class="gp unselectable">
-3&gt; </span><span class="n">S2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">add_element</span><span class="p" data-group-id="2065415238-5">(</span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="n">S1</span><span class="p" data-group-id="2065415238-5">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="2065415238-6">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">42</span><span class="p" data-group-id="2065415238-6">]</span><span class="gp unselectable">
-4&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">add_element</span><span class="p" data-group-id="2065415238-7">(</span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="n">S2</span><span class="p" data-group-id="2065415238-7">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="2065415238-8">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">42</span><span class="p" data-group-id="2065415238-8">]</span></code></pre>
+<p>Returns a new ordered set formed from <code class="inline">Ordset1</code> with <code class="inline">Element</code> inserted.</p><h2 id="add_element/2-examples" class="section-heading"><a href="#add_element/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">new</span><span class="p" data-group-id="1229603633-1">(</span><span class="p" data-group-id="1229603633-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="1229603633-2">[</span><span class="p" data-group-id="1229603633-2">]</span><span class="gp unselectable">
+2&gt; </span><span class="n">S1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">add_element</span><span class="p" data-group-id="1229603633-3">(</span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="n">S0</span><span class="p" data-group-id="1229603633-3">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="1229603633-4">[</span><span class="mi">7</span><span class="p" data-group-id="1229603633-4">]</span><span class="gp unselectable">
+3&gt; </span><span class="n">S2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">add_element</span><span class="p" data-group-id="1229603633-5">(</span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="n">S1</span><span class="p" data-group-id="1229603633-5">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="1229603633-6">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">42</span><span class="p" data-group-id="1229603633-6">]</span><span class="gp unselectable">
+4&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">add_element</span><span class="p" data-group-id="1229603633-7">(</span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="n">S2</span><span class="p" data-group-id="1229603633-7">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="1229603633-8">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">42</span><span class="p" data-group-id="1229603633-8">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="del_element/2">
@@ -453,7 +473,7 @@ that are not elements in <code class="inline">Ordset2</code>.</p></div>
       <h1 class="signature" translate="no">del_element(Element, Ordset1)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/ordsets.erl#L263" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/ordsets.erl#L263" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -469,11 +489,11 @@ that are not elements in <code class="inline">Ordset2</code>.</p></div>
 
       </div>
 
-<p>Returns a copy of <code class="inline">Ordset1</code> with <code class="inline">Element</code> removed.</p><h2 id="del_element/2-examples" class="section-heading"><a href="#del_element/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="6142253642-1">(</span><span class="p" data-group-id="6142253642-2">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p" data-group-id="6142253642-2">]</span><span class="p" data-group-id="6142253642-1">)</span><span class="p">.</span><span class="gp unselectable">
-2&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">del_element</span><span class="p" data-group-id="6142253642-3">(</span><span class="ss">c</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p" data-group-id="6142253642-3">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="6142253642-4">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p" data-group-id="6142253642-4">]</span><span class="gp unselectable">
-3&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">del_element</span><span class="p" data-group-id="6142253642-5">(</span><span class="ss">x</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p" data-group-id="6142253642-5">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="6142253642-6">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p" data-group-id="6142253642-6">]</span></code></pre>
+<p>Returns a copy of <code class="inline">Ordset1</code> with <code class="inline">Element</code> removed.</p><h2 id="del_element/2-examples" class="section-heading"><a href="#del_element/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="1743463164-1">(</span><span class="p" data-group-id="1743463164-2">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p" data-group-id="1743463164-2">]</span><span class="p" data-group-id="1743463164-1">)</span><span class="p">.</span><span class="gp unselectable">
+2&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">del_element</span><span class="p" data-group-id="1743463164-3">(</span><span class="ss">c</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p" data-group-id="1743463164-3">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="1743463164-4">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p" data-group-id="1743463164-4">]</span><span class="gp unselectable">
+3&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">del_element</span><span class="p" data-group-id="1743463164-5">(</span><span class="ss">x</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p" data-group-id="1743463164-5">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="1743463164-6">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p" data-group-id="1743463164-6">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="filter/2">
@@ -486,7 +506,7 @@ that are not elements in <code class="inline">Ordset2</code>.</p></div>
       <h1 class="signature" translate="no">filter(Pred, Ordset1)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/ordsets.erl#L522" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/ordsets.erl#L522" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -503,10 +523,10 @@ that are not elements in <code class="inline">Ordset2</code>.</p></div>
 
       </div>
 
-<p>Filters elements in <code class="inline">Ordset1</code> using predicate function <code class="inline">Pred</code>.</p><h2 id="filter/2-examples" class="section-heading"><a href="#filter/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="0886103714-1">(</span><span class="p" data-group-id="0886103714-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p" data-group-id="0886103714-2">]</span><span class="p" data-group-id="0886103714-1">)</span><span class="p">.</span><span class="gp unselectable">
-2&gt; </span><span class="n">IsEven</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">fun</span><span class="p" data-group-id="0886103714-3">(</span><span class="n">N</span><span class="p" data-group-id="0886103714-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="ow">rem</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">=:=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">end</span><span class="p">.</span><span class="gp unselectable">
-3&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">filter</span><span class="p" data-group-id="0886103714-4">(</span><span class="n">IsEven</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p" data-group-id="0886103714-4">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="0886103714-5">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p" data-group-id="0886103714-5">]</span></code></pre>
+<p>Filters elements in <code class="inline">Ordset1</code> using predicate function <code class="inline">Pred</code>.</p><h2 id="filter/2-examples" class="section-heading"><a href="#filter/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="4514269081-1">(</span><span class="p" data-group-id="4514269081-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p" data-group-id="4514269081-2">]</span><span class="p" data-group-id="4514269081-1">)</span><span class="p">.</span><span class="gp unselectable">
+2&gt; </span><span class="n">IsEven</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">fun</span><span class="p" data-group-id="4514269081-3">(</span><span class="n">N</span><span class="p" data-group-id="4514269081-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="ow">rem</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">=:=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">end</span><span class="p">.</span><span class="gp unselectable">
+3&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">filter</span><span class="p" data-group-id="4514269081-4">(</span><span class="n">IsEven</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p" data-group-id="4514269081-4">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4514269081-5">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p" data-group-id="4514269081-5">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="filtermap/2">
@@ -521,7 +541,7 @@ that are not elements in <code class="inline">Ordset2</code>.</p></div>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/ordsets.erl#L581" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/ordsets.erl#L581" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -543,16 +563,16 @@ that are not elements in <code class="inline">Ordset2</code>.</p></div>
 <p>Calls <code class="inline">Fun(Elem)</code> for each <code class="inline">Elem</code> of <code class="inline">Ordset1</code> to update or remove
 elements from <code class="inline">Ordset1</code>.</p><p><code class="inline">Fun/1</code> must return either a Boolean or a tuple <code class="inline">{true, Value}</code>. The
 function returns the set of elements for which <code class="inline">Fun</code> returns a new
-value, with <code class="inline">true</code> being equivalent to <code class="inline">{true, Elem}</code>.</p><p><a href="#filtermap/2"><code class="inline">ordsets:filtermap/2</code></a> behaves as if it were defined as follows:</p><pre><code class="makeup erlang" translate="no"><span class="nf">filtermap</span><span class="p" data-group-id="4597518442-1">(</span><span class="n">Fun</span><span class="p">,</span><span class="w"> </span><span class="n">Ordset1</span><span class="p" data-group-id="4597518442-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="4597518442-2">(</span><span class="nc">lists</span><span class="p">:</span><span class="nf">filtermap</span><span class="p" data-group-id="4597518442-3">(</span><span class="n">Fun</span><span class="p">,</span><span class="w"> </span><span class="n">Ordset1</span><span class="p" data-group-id="4597518442-3">)</span><span class="p" data-group-id="4597518442-2">)</span><span class="p">.</span></code></pre><h2 id="filtermap/2-examples" class="section-heading"><a href="#filtermap/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="9553452529-1">(</span><span class="p" data-group-id="9553452529-2">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p" data-group-id="9553452529-2">]</span><span class="p" data-group-id="9553452529-1">)</span><span class="gp unselectable">
-2&gt; </span><span class="n">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">fun</span><span class="p" data-group-id="9553452529-3">(</span><span class="n">X</span><span class="p" data-group-id="9553452529-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+value, with <code class="inline">true</code> being equivalent to <code class="inline">{true, Elem}</code>.</p><p><a href="#filtermap/2"><code class="inline">ordsets:filtermap/2</code></a> behaves as if it were defined as follows:</p><pre><code class="makeup erlang" translate="no"><span class="nf">filtermap</span><span class="p" data-group-id="2879687282-1">(</span><span class="n">Fun</span><span class="p">,</span><span class="w"> </span><span class="n">Ordset1</span><span class="p" data-group-id="2879687282-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="2879687282-2">(</span><span class="nc">lists</span><span class="p">:</span><span class="nf">filtermap</span><span class="p" data-group-id="2879687282-3">(</span><span class="n">Fun</span><span class="p">,</span><span class="w"> </span><span class="n">Ordset1</span><span class="p" data-group-id="2879687282-3">)</span><span class="p" data-group-id="2879687282-2">)</span><span class="p">.</span></code></pre><h2 id="filtermap/2-examples" class="section-heading"><a href="#filtermap/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="5324542368-1">(</span><span class="p" data-group-id="5324542368-2">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p" data-group-id="5324542368-2">]</span><span class="p" data-group-id="5324542368-1">)</span><span class="gp unselectable">
+2&gt; </span><span class="n">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">fun</span><span class="p" data-group-id="5324542368-3">(</span><span class="n">X</span><span class="p" data-group-id="5324542368-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
            </span><span class="k">case</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="ow">rem</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">of</span><span class="w">
-               </span><span class="mi">0</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="9553452529-4">{</span><span class="ss">true</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="ow">div</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="9553452529-4">}</span><span class="p">;</span><span class="w">
+               </span><span class="mi">0</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="5324542368-4">{</span><span class="ss">true</span><span class="p">,</span><span class="w"> </span><span class="n">X</span><span class="w"> </span><span class="ow">div</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="5324542368-4">}</span><span class="p">;</span><span class="w">
                </span><span class="mi">1</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="ss">false</span><span class="w">
            </span><span class="k">end</span><span class="w">
         </span><span class="k">end</span><span class="p">.</span><span class="gp unselectable">
-3&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">filtermap</span><span class="p" data-group-id="9553452529-5">(</span><span class="n">F</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p" data-group-id="9553452529-5">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="9553452529-6">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="9553452529-6">]</span></code></pre>
+3&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">filtermap</span><span class="p" data-group-id="5324542368-5">(</span><span class="n">F</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p" data-group-id="5324542368-5">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="5324542368-6">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="5324542368-6">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="fold/3">
@@ -565,7 +585,7 @@ value, with <code class="inline">true</code> being equivalent to <code class="in
       <h1 class="signature" translate="no">fold(Function, Acc0, Ordset)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/ordsets.erl#L502" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/ordsets.erl#L502" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -586,9 +606,9 @@ value, with <code class="inline">true</code> being equivalent to <code class="in
       </div>
 
 <p>Folds <code class="inline">Function</code> over every element in <code class="inline">Ordset</code> and returns the final value of
-the accumulator.</p><h2 id="fold/3-examples" class="section-heading"><a href="#fold/3-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="6339479158-1">(</span><span class="p" data-group-id="6339479158-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="6339479158-2">]</span><span class="p" data-group-id="6339479158-1">)</span><span class="p">.</span><span class="gp unselectable">
+the accumulator.</p><h2 id="fold/3-examples" class="section-heading"><a href="#fold/3-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="4679603668-1">(</span><span class="p" data-group-id="4679603668-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="4679603668-2">]</span><span class="p" data-group-id="4679603668-1">)</span><span class="p">.</span><span class="gp unselectable">
 2&gt; </span><span class="n">Plus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">fun</span><span class="w"> </span><span class="nc">erlang</span><span class="p">:</span><span class="ss">&#39;+&#39;</span><span class="p">/</span><span class="mi">2</span><span class="p">.</span><span class="gp unselectable">
-3&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">fold</span><span class="p" data-group-id="6339479158-3">(</span><span class="n">Plus</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p" data-group-id="6339479158-3">)</span><span class="p">.</span><span class="w">
+3&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">fold</span><span class="p" data-group-id="4679603668-3">(</span><span class="n">Plus</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p" data-group-id="4679603668-3">)</span><span class="p">.</span><span class="w">
 </span><span class="mi">10</span></code></pre>
   </section>
 </section>
@@ -602,7 +622,7 @@ the accumulator.</p><h2 id="fold/3-examples" class="section-heading"><a href="#f
       <h1 class="signature" translate="no">from_list(List)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/ordsets.erl#L194" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/ordsets.erl#L194" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -617,8 +637,8 @@ the accumulator.</p><h2 id="fold/3-examples" class="section-heading"><a href="#f
 
       </div>
 
-<p>Returns an ordered set of the elements in <code class="inline">List</code>.</p><h2 id="from_list/1-examples" class="section-heading"><a href="#from_list/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="7027291157-1">(</span><span class="p" data-group-id="7027291157-2">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p" data-group-id="7027291157-2">]</span><span class="p" data-group-id="7027291157-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="7027291157-3">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p" data-group-id="7027291157-3">]</span></code></pre>
+<p>Returns an ordered set of the elements in <code class="inline">List</code>.</p><h2 id="from_list/1-examples" class="section-heading"><a href="#from_list/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="8459369179-1">(</span><span class="p" data-group-id="8459369179-2">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p" data-group-id="8459369179-2">]</span><span class="p" data-group-id="8459369179-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="8459369179-3">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p" data-group-id="8459369179-3">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="intersection/1">
@@ -631,7 +651,7 @@ the accumulator.</p><h2 id="fold/3-examples" class="section-heading"><a href="#f
       <h1 class="signature" translate="no">intersection(OrdsetList)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/ordsets.erl#L380" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/ordsets.erl#L380" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -647,15 +667,15 @@ the accumulator.</p><h2 id="fold/3-examples" class="section-heading"><a href="#f
       </div>
 
 <p>Returns the intersection of the non-empty list of sets.</p><p>The intersection of multiple sets is a new set that contains only the
-elements that are present in all sets.</p><h2 id="intersection/1-examples" class="section-heading"><a href="#intersection/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="1811230309-1">(</span><span class="p" data-group-id="1811230309-2">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p" data-group-id="1811230309-2">]</span><span class="p" data-group-id="1811230309-1">)</span><span class="p">.</span><span class="gp unselectable">
-2&gt; </span><span class="n">S1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="1811230309-3">(</span><span class="p" data-group-id="1811230309-4">[</span><span class="ss">d</span><span class="p">,</span><span class="ss">e</span><span class="p">,</span><span class="ss">f</span><span class="p" data-group-id="1811230309-4">]</span><span class="p" data-group-id="1811230309-3">)</span><span class="p">.</span><span class="gp unselectable">
-3&gt; </span><span class="n">S2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="1811230309-5">(</span><span class="p" data-group-id="1811230309-6">[</span><span class="ss">q</span><span class="p">,</span><span class="ss">r</span><span class="p" data-group-id="1811230309-6">]</span><span class="p" data-group-id="1811230309-5">)</span><span class="gp unselectable">
-4&gt; </span><span class="n">Sets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="1811230309-7">[</span><span class="n">S0</span><span class="p">,</span><span class="w"> </span><span class="n">S1</span><span class="p">,</span><span class="w"> </span><span class="n">S2</span><span class="p" data-group-id="1811230309-7">]</span><span class="p">.</span><span class="gp unselectable">
-5&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">intersection</span><span class="p" data-group-id="1811230309-8">(</span><span class="p" data-group-id="1811230309-9">[</span><span class="n">S0</span><span class="p">,</span><span class="w"> </span><span class="n">S1</span><span class="p">,</span><span class="w"> </span><span class="n">S2</span><span class="p" data-group-id="1811230309-9">]</span><span class="p" data-group-id="1811230309-8">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="1811230309-10">[</span><span class="p" data-group-id="1811230309-10">]</span><span class="gp unselectable">
-6&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">intersection</span><span class="p" data-group-id="1811230309-11">(</span><span class="p" data-group-id="1811230309-12">[</span><span class="n">S0</span><span class="p">,</span><span class="w"> </span><span class="n">S1</span><span class="p" data-group-id="1811230309-12">]</span><span class="p" data-group-id="1811230309-11">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="1811230309-13">[</span><span class="ss">d</span><span class="p" data-group-id="1811230309-13">]</span><span class="gp unselectable">
-7&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">intersection</span><span class="p" data-group-id="1811230309-14">(</span><span class="p" data-group-id="1811230309-15">[</span><span class="p" data-group-id="1811230309-15">]</span><span class="p" data-group-id="1811230309-14">)</span><span class="p">.</span><span class="w">
+elements that are present in all sets.</p><h2 id="intersection/1-examples" class="section-heading"><a href="#intersection/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="6463576295-1">(</span><span class="p" data-group-id="6463576295-2">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p" data-group-id="6463576295-2">]</span><span class="p" data-group-id="6463576295-1">)</span><span class="p">.</span><span class="gp unselectable">
+2&gt; </span><span class="n">S1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="6463576295-3">(</span><span class="p" data-group-id="6463576295-4">[</span><span class="ss">d</span><span class="p">,</span><span class="ss">e</span><span class="p">,</span><span class="ss">f</span><span class="p" data-group-id="6463576295-4">]</span><span class="p" data-group-id="6463576295-3">)</span><span class="p">.</span><span class="gp unselectable">
+3&gt; </span><span class="n">S2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="6463576295-5">(</span><span class="p" data-group-id="6463576295-6">[</span><span class="ss">q</span><span class="p">,</span><span class="ss">r</span><span class="p" data-group-id="6463576295-6">]</span><span class="p" data-group-id="6463576295-5">)</span><span class="gp unselectable">
+4&gt; </span><span class="n">Sets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="6463576295-7">[</span><span class="n">S0</span><span class="p">,</span><span class="w"> </span><span class="n">S1</span><span class="p">,</span><span class="w"> </span><span class="n">S2</span><span class="p" data-group-id="6463576295-7">]</span><span class="p">.</span><span class="gp unselectable">
+5&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">intersection</span><span class="p" data-group-id="6463576295-8">(</span><span class="p" data-group-id="6463576295-9">[</span><span class="n">S0</span><span class="p">,</span><span class="w"> </span><span class="n">S1</span><span class="p">,</span><span class="w"> </span><span class="n">S2</span><span class="p" data-group-id="6463576295-9">]</span><span class="p" data-group-id="6463576295-8">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="6463576295-10">[</span><span class="p" data-group-id="6463576295-10">]</span><span class="gp unselectable">
+6&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">intersection</span><span class="p" data-group-id="6463576295-11">(</span><span class="p" data-group-id="6463576295-12">[</span><span class="n">S0</span><span class="p">,</span><span class="w"> </span><span class="n">S1</span><span class="p" data-group-id="6463576295-12">]</span><span class="p" data-group-id="6463576295-11">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="6463576295-13">[</span><span class="ss">d</span><span class="p" data-group-id="6463576295-13">]</span><span class="gp unselectable">
+7&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">intersection</span><span class="p" data-group-id="6463576295-14">(</span><span class="p" data-group-id="6463576295-15">[</span><span class="p" data-group-id="6463576295-15">]</span><span class="p" data-group-id="6463576295-14">)</span><span class="p">.</span><span class="w">
 </span><span class="gt">** exception error: no function clause matching ordsets:intersection([])</span></code></pre>
   </section>
 </section>
@@ -669,7 +689,7 @@ elements that are present in all sets.</p><h2 id="intersection/1-examples" class
       <h1 class="signature" translate="no">intersection(Ordset1, Ordset2)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/ordsets.erl#L344" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/ordsets.erl#L344" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -686,13 +706,13 @@ elements that are present in all sets.</p><h2 id="intersection/1-examples" class
       </div>
 
 <p>Returns the intersection of <code class="inline">Ordset1</code> and <code class="inline">Ordset2</code>.</p><p>The intersection of two sets is a new set that contains only the
-elements that are present in both sets.</p><h2 id="intersection/2-examples" class="section-heading"><a href="#intersection/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="6611067419-1">(</span><span class="p" data-group-id="6611067419-2">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p" data-group-id="6611067419-2">]</span><span class="p" data-group-id="6611067419-1">)</span><span class="p">.</span><span class="gp unselectable">
-2&gt; </span><span class="n">S1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="6611067419-3">(</span><span class="p" data-group-id="6611067419-4">[</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p">,</span><span class="ss">e</span><span class="p">,</span><span class="ss">f</span><span class="p" data-group-id="6611067419-4">]</span><span class="p" data-group-id="6611067419-3">)</span><span class="p">.</span><span class="gp unselectable">
-3&gt; </span><span class="n">S2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="6611067419-5">(</span><span class="p" data-group-id="6611067419-6">[</span><span class="ss">q</span><span class="p">,</span><span class="ss">r</span><span class="p" data-group-id="6611067419-6">]</span><span class="p" data-group-id="6611067419-5">)</span><span class="p">.</span><span class="gp unselectable">
-4&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">intersection</span><span class="p" data-group-id="6611067419-7">(</span><span class="n">S0</span><span class="p">,</span><span class="w"> </span><span class="n">S1</span><span class="p" data-group-id="6611067419-7">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="6611067419-8">[</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p" data-group-id="6611067419-8">]</span><span class="gp unselectable">
-5&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">intersection</span><span class="p" data-group-id="6611067419-9">(</span><span class="n">S1</span><span class="p">,</span><span class="w"> </span><span class="n">S2</span><span class="p" data-group-id="6611067419-9">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="6611067419-10">[</span><span class="p" data-group-id="6611067419-10">]</span></code></pre>
+elements that are present in both sets.</p><h2 id="intersection/2-examples" class="section-heading"><a href="#intersection/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="8528386930-1">(</span><span class="p" data-group-id="8528386930-2">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p" data-group-id="8528386930-2">]</span><span class="p" data-group-id="8528386930-1">)</span><span class="p">.</span><span class="gp unselectable">
+2&gt; </span><span class="n">S1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="8528386930-3">(</span><span class="p" data-group-id="8528386930-4">[</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p">,</span><span class="ss">e</span><span class="p">,</span><span class="ss">f</span><span class="p" data-group-id="8528386930-4">]</span><span class="p" data-group-id="8528386930-3">)</span><span class="p">.</span><span class="gp unselectable">
+3&gt; </span><span class="n">S2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="8528386930-5">(</span><span class="p" data-group-id="8528386930-6">[</span><span class="ss">q</span><span class="p">,</span><span class="ss">r</span><span class="p" data-group-id="8528386930-6">]</span><span class="p" data-group-id="8528386930-5">)</span><span class="p">.</span><span class="gp unselectable">
+4&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">intersection</span><span class="p" data-group-id="8528386930-7">(</span><span class="n">S0</span><span class="p">,</span><span class="w"> </span><span class="n">S1</span><span class="p" data-group-id="8528386930-7">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="8528386930-8">[</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p" data-group-id="8528386930-8">]</span><span class="gp unselectable">
+5&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">intersection</span><span class="p" data-group-id="8528386930-9">(</span><span class="n">S1</span><span class="p">,</span><span class="w"> </span><span class="n">S2</span><span class="p" data-group-id="8528386930-9">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="8528386930-10">[</span><span class="p" data-group-id="8528386930-10">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="is_disjoint/2">
@@ -705,7 +725,7 @@ elements that are present in both sets.</p><h2 id="intersection/2-examples" clas
       <h1 class="signature" translate="no">is_disjoint(Ordset1, Ordset2)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/ordsets.erl#L413" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/ordsets.erl#L413" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -721,12 +741,12 @@ elements that are present in both sets.</p><h2 id="intersection/2-examples" clas
       </div>
 
 <p>Returns <code class="inline">true</code> if <code class="inline">Ordset1</code> and <code class="inline">Ordset2</code> are disjoint; otherwise,
-returns <code class="inline">false</code>.</p><p>Two sets are disjoint if they have no elements in common.</p><p>This function is equivalent to <code class="inline">ordsets:intersection(Ordset1, Ordset2) =:= []</code>, but faster.</p><h2 id="is_disjoint/2-examples" class="section-heading"><a href="#is_disjoint/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="5466006019-1">(</span><span class="p" data-group-id="5466006019-2">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p" data-group-id="5466006019-2">]</span><span class="p" data-group-id="5466006019-1">)</span><span class="p">.</span><span class="gp unselectable">
-2&gt; </span><span class="n">S1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="5466006019-3">(</span><span class="p" data-group-id="5466006019-4">[</span><span class="ss">d</span><span class="p">,</span><span class="ss">e</span><span class="p">,</span><span class="ss">f</span><span class="p" data-group-id="5466006019-4">]</span><span class="p" data-group-id="5466006019-3">)</span><span class="p">.</span><span class="gp unselectable">
-3&gt; </span><span class="n">S2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="5466006019-5">(</span><span class="p" data-group-id="5466006019-6">[</span><span class="ss">q</span><span class="p">,</span><span class="ss">r</span><span class="p" data-group-id="5466006019-6">]</span><span class="p" data-group-id="5466006019-5">)</span><span class="gp unselectable">
-4&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_disjoint</span><span class="p" data-group-id="5466006019-7">(</span><span class="n">S0</span><span class="p">,</span><span class="w"> </span><span class="n">S1</span><span class="p" data-group-id="5466006019-7">)</span><span class="p">.</span><span class="w">
+returns <code class="inline">false</code>.</p><p>Two sets are disjoint if they have no elements in common.</p><p>This function is equivalent to <code class="inline">ordsets:intersection(Ordset1, Ordset2) =:= []</code>, but faster.</p><h2 id="is_disjoint/2-examples" class="section-heading"><a href="#is_disjoint/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="9049061709-1">(</span><span class="p" data-group-id="9049061709-2">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p" data-group-id="9049061709-2">]</span><span class="p" data-group-id="9049061709-1">)</span><span class="p">.</span><span class="gp unselectable">
+2&gt; </span><span class="n">S1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="9049061709-3">(</span><span class="p" data-group-id="9049061709-4">[</span><span class="ss">d</span><span class="p">,</span><span class="ss">e</span><span class="p">,</span><span class="ss">f</span><span class="p" data-group-id="9049061709-4">]</span><span class="p" data-group-id="9049061709-3">)</span><span class="p">.</span><span class="gp unselectable">
+3&gt; </span><span class="n">S2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="9049061709-5">(</span><span class="p" data-group-id="9049061709-6">[</span><span class="ss">q</span><span class="p">,</span><span class="ss">r</span><span class="p" data-group-id="9049061709-6">]</span><span class="p" data-group-id="9049061709-5">)</span><span class="gp unselectable">
+4&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_disjoint</span><span class="p" data-group-id="9049061709-7">(</span><span class="n">S0</span><span class="p">,</span><span class="w"> </span><span class="n">S1</span><span class="p" data-group-id="9049061709-7">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">false</span><span class="gp unselectable">
-5&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_disjoint</span><span class="p" data-group-id="5466006019-8">(</span><span class="n">S1</span><span class="p">,</span><span class="w"> </span><span class="n">S2</span><span class="p" data-group-id="5466006019-8">)</span><span class="p">.</span><span class="w">
+5&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_disjoint</span><span class="p" data-group-id="9049061709-8">(</span><span class="n">S1</span><span class="p">,</span><span class="w"> </span><span class="n">S2</span><span class="p" data-group-id="9049061709-8">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">true</span></code></pre>
   </section>
 </section>
@@ -740,7 +760,7 @@ returns <code class="inline">false</code>.</p><p>Two sets are disjoint if they h
       <h1 class="signature" translate="no">is_element(Element, Ordset)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/ordsets.erl#L214" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/ordsets.erl#L214" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -755,10 +775,10 @@ returns <code class="inline">false</code>.</p><p>Two sets are disjoint if they h
 
       </div>
 
-<p>Returns <code class="inline">true</code> if <code class="inline">Element</code> is an element of <code class="inline">Ordset</code>; otherwise, returns <code class="inline">false</code>.</p><h2 id="is_element/2-examples" class="section-heading"><a href="#is_element/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="2694066744-1">(</span><span class="p" data-group-id="2694066744-2">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p" data-group-id="2694066744-2">]</span><span class="p" data-group-id="2694066744-1">)</span><span class="p">.</span><span class="gp unselectable">
-2&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_element</span><span class="p" data-group-id="2694066744-3">(</span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p" data-group-id="2694066744-3">)</span><span class="p">.</span><span class="w">
+<p>Returns <code class="inline">true</code> if <code class="inline">Element</code> is an element of <code class="inline">Ordset</code>; otherwise, returns <code class="inline">false</code>.</p><h2 id="is_element/2-examples" class="section-heading"><a href="#is_element/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="3812686356-1">(</span><span class="p" data-group-id="3812686356-2">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p" data-group-id="3812686356-2">]</span><span class="p" data-group-id="3812686356-1">)</span><span class="p">.</span><span class="gp unselectable">
+2&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_element</span><span class="p" data-group-id="3812686356-3">(</span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p" data-group-id="3812686356-3">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">false</span><span class="gp unselectable">
-3&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_element</span><span class="p" data-group-id="2694066744-4">(</span><span class="ss">b</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p" data-group-id="2694066744-4">)</span><span class="p">.</span><span class="w">
+3&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_element</span><span class="p" data-group-id="3812686356-4">(</span><span class="ss">b</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p" data-group-id="3812686356-4">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">true</span></code></pre>
   </section>
 </section>
@@ -774,7 +794,7 @@ returns <code class="inline">false</code>.</p><p>Two sets are disjoint if they h
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/ordsets.erl#L138" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/ordsets.erl#L138" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -789,9 +809,9 @@ returns <code class="inline">false</code>.</p><p>Two sets are disjoint if they h
 
       </div>
 
-<p>Returns <code class="inline">true</code> if <code class="inline">Ordset</code> is an empty set; otherwise, returns <code class="inline">false</code>.</p><h2 id="is_empty/1-examples" class="section-heading"><a href="#is_empty/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_empty</span><span class="p" data-group-id="8786653162-1">(</span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">new</span><span class="p" data-group-id="8786653162-2">(</span><span class="p" data-group-id="8786653162-2">)</span><span class="p" data-group-id="8786653162-1">)</span><span class="p">.</span><span class="w">
+<p>Returns <code class="inline">true</code> if <code class="inline">Ordset</code> is an empty set; otherwise, returns <code class="inline">false</code>.</p><h2 id="is_empty/1-examples" class="section-heading"><a href="#is_empty/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_empty</span><span class="p" data-group-id="9511695910-1">(</span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">new</span><span class="p" data-group-id="9511695910-2">(</span><span class="p" data-group-id="9511695910-2">)</span><span class="p" data-group-id="9511695910-1">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">true</span><span class="gp unselectable">
-2&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_empty</span><span class="p" data-group-id="8786653162-3">(</span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="8786653162-4">(</span><span class="p" data-group-id="8786653162-5">[</span><span class="mi">1</span><span class="p" data-group-id="8786653162-5">]</span><span class="p" data-group-id="8786653162-4">)</span><span class="p" data-group-id="8786653162-3">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_empty</span><span class="p" data-group-id="9511695910-3">(</span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="9511695910-4">(</span><span class="p" data-group-id="9511695910-5">[</span><span class="mi">1</span><span class="p" data-group-id="9511695910-5">]</span><span class="p" data-group-id="9511695910-4">)</span><span class="p" data-group-id="9511695910-3">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">false</span></code></pre>
   </section>
 </section>
@@ -807,7 +827,7 @@ returns <code class="inline">false</code>.</p><p>Two sets are disjoint if they h
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/ordsets.erl#L160" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/ordsets.erl#L160" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -823,11 +843,11 @@ returns <code class="inline">false</code>.</p><p>Two sets are disjoint if they h
       </div>
 
 <p>Returns <code class="inline">true</code> if <code class="inline">Ordset1</code> and <code class="inline">Ordset2</code> are equal, that is, if every element
-of one set is also a member of the other set; otherwise, returns <code class="inline">false</code>.</p><h2 id="is_equal/2-examples" class="section-heading"><a href="#is_equal/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">Empty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">new</span><span class="p" data-group-id="4409293852-1">(</span><span class="p" data-group-id="4409293852-1">)</span><span class="p">.</span><span class="gp unselectable">
-2&gt; </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="4409293852-2">(</span><span class="p" data-group-id="4409293852-3">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p" data-group-id="4409293852-3">]</span><span class="p" data-group-id="4409293852-2">)</span><span class="p">.</span><span class="gp unselectable">
-3&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_equal</span><span class="p" data-group-id="4409293852-4">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p" data-group-id="4409293852-4">)</span><span class="w">
+of one set is also a member of the other set; otherwise, returns <code class="inline">false</code>.</p><h2 id="is_equal/2-examples" class="section-heading"><a href="#is_equal/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">Empty</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">new</span><span class="p" data-group-id="5312340718-1">(</span><span class="p" data-group-id="5312340718-1">)</span><span class="p">.</span><span class="gp unselectable">
+2&gt; </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="5312340718-2">(</span><span class="p" data-group-id="5312340718-3">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p" data-group-id="5312340718-3">]</span><span class="p" data-group-id="5312340718-2">)</span><span class="p">.</span><span class="gp unselectable">
+3&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_equal</span><span class="p" data-group-id="5312340718-4">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p" data-group-id="5312340718-4">)</span><span class="w">
 </span><span class="ss">true</span><span class="gp unselectable">
-4&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_equal</span><span class="p" data-group-id="4409293852-5">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Empty</span><span class="p" data-group-id="4409293852-5">)</span><span class="w">
+4&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_equal</span><span class="p" data-group-id="5312340718-5">(</span><span class="n">S</span><span class="p">,</span><span class="w"> </span><span class="n">Empty</span><span class="p" data-group-id="5312340718-5">)</span><span class="w">
 </span><span class="ss">false</span></code></pre>
   </section>
 </section>
@@ -841,7 +861,7 @@ of one set is also a member of the other set; otherwise, returns <code class="in
       <h1 class="signature" translate="no">is_set(Ordset)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/ordsets.erl#L96" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/ordsets.erl#L96" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -858,13 +878,13 @@ of one set is also a member of the other set; otherwise, returns <code class="in
 
 <p>Returns <code class="inline">true</code> if <code class="inline">Ordset</code> is an ordered set of elements; otherwise,
 returns <code class="inline">false</code>.</p><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>This function returns true for any ordered list, even if it was not
-constructed using the functions in this module.</p></section><h2 id="is_set/1-examples" class="section-heading"><a href="#is_set/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_set</span><span class="p" data-group-id="1166442202-1">(</span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="1166442202-2">(</span><span class="p" data-group-id="1166442202-3">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">x</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="p" data-group-id="1166442202-4">{</span><span class="ss">p</span><span class="p">,</span><span class="ss">q</span><span class="p" data-group-id="1166442202-4">}</span><span class="p" data-group-id="1166442202-3">]</span><span class="p" data-group-id="1166442202-2">)</span><span class="p" data-group-id="1166442202-1">)</span><span class="p">.</span><span class="w">
+constructed using the functions in this module.</p></section><h2 id="is_set/1-examples" class="section-heading"><a href="#is_set/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_set</span><span class="p" data-group-id="1223113630-1">(</span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="1223113630-2">(</span><span class="p" data-group-id="1223113630-3">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">x</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="p" data-group-id="1223113630-4">{</span><span class="ss">p</span><span class="p">,</span><span class="ss">q</span><span class="p" data-group-id="1223113630-4">}</span><span class="p" data-group-id="1223113630-3">]</span><span class="p" data-group-id="1223113630-2">)</span><span class="p" data-group-id="1223113630-1">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">true</span><span class="gp unselectable">
-2&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_set</span><span class="p" data-group-id="1166442202-5">(</span><span class="p" data-group-id="1166442202-6">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p" data-group-id="1166442202-6">]</span><span class="p" data-group-id="1166442202-5">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_set</span><span class="p" data-group-id="1223113630-5">(</span><span class="p" data-group-id="1223113630-6">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p" data-group-id="1223113630-6">]</span><span class="p" data-group-id="1223113630-5">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">true</span><span class="gp unselectable">
-3&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_set</span><span class="p" data-group-id="1166442202-7">(</span><span class="p" data-group-id="1166442202-8">[</span><span class="ss">z</span><span class="p">,</span><span class="ss">a</span><span class="p" data-group-id="1166442202-8">]</span><span class="p" data-group-id="1166442202-7">)</span><span class="p">.</span><span class="w">
+3&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_set</span><span class="p" data-group-id="1223113630-7">(</span><span class="p" data-group-id="1223113630-8">[</span><span class="ss">z</span><span class="p">,</span><span class="ss">a</span><span class="p" data-group-id="1223113630-8">]</span><span class="p" data-group-id="1223113630-7">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">false</span><span class="gp unselectable">
-4&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_set</span><span class="p" data-group-id="1166442202-9">(</span><span class="p" data-group-id="1166442202-10">{</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p" data-group-id="1166442202-10">}</span><span class="p" data-group-id="1166442202-9">)</span><span class="p">.</span><span class="w">
+4&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_set</span><span class="p" data-group-id="1223113630-9">(</span><span class="p" data-group-id="1223113630-10">{</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p" data-group-id="1223113630-10">}</span><span class="p" data-group-id="1223113630-9">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">false</span></code></pre>
   </section>
 </section>
@@ -878,7 +898,7 @@ constructed using the functions in this module.</p></section><h2 id="is_set/1-ex
       <h1 class="signature" translate="no">is_subset(Ordset1, Ordset2)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/ordsets.erl#L474" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/ordsets.erl#L474" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -894,13 +914,13 @@ constructed using the functions in this module.</p></section><h2 id="is_set/1-ex
       </div>
 
 <p>Returns <code class="inline">true</code> when every element of <code class="inline">Ordset1</code> is also a member of <code class="inline">Ordset2</code>;
-otherwise, returns <code class="inline">false</code>.</p><h2 id="is_subset/2-examples" class="section-heading"><a href="#is_subset/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="0018091883-1">(</span><span class="p" data-group-id="0018091883-2">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p" data-group-id="0018091883-2">]</span><span class="p" data-group-id="0018091883-1">)</span><span class="p">.</span><span class="gp unselectable">
-2&gt; </span><span class="n">S1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="0018091883-3">(</span><span class="p" data-group-id="0018091883-4">[</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p" data-group-id="0018091883-4">]</span><span class="p" data-group-id="0018091883-3">)</span><span class="p">.</span><span class="gp unselectable">
-3&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_subset</span><span class="p" data-group-id="0018091883-5">(</span><span class="n">S1</span><span class="p">,</span><span class="w"> </span><span class="n">S0</span><span class="p" data-group-id="0018091883-5">)</span><span class="p">.</span><span class="w">
+otherwise, returns <code class="inline">false</code>.</p><h2 id="is_subset/2-examples" class="section-heading"><a href="#is_subset/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="9499952767-1">(</span><span class="p" data-group-id="9499952767-2">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p" data-group-id="9499952767-2">]</span><span class="p" data-group-id="9499952767-1">)</span><span class="p">.</span><span class="gp unselectable">
+2&gt; </span><span class="n">S1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="9499952767-3">(</span><span class="p" data-group-id="9499952767-4">[</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p" data-group-id="9499952767-4">]</span><span class="p" data-group-id="9499952767-3">)</span><span class="p">.</span><span class="gp unselectable">
+3&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_subset</span><span class="p" data-group-id="9499952767-5">(</span><span class="n">S1</span><span class="p">,</span><span class="w"> </span><span class="n">S0</span><span class="p" data-group-id="9499952767-5">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">true</span><span class="gp unselectable">
-4&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_subset</span><span class="p" data-group-id="0018091883-6">(</span><span class="n">S0</span><span class="p">,</span><span class="w"> </span><span class="n">S1</span><span class="p" data-group-id="0018091883-6">)</span><span class="p">.</span><span class="w">
+4&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_subset</span><span class="p" data-group-id="9499952767-6">(</span><span class="n">S0</span><span class="p">,</span><span class="w"> </span><span class="n">S1</span><span class="p" data-group-id="9499952767-6">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">false</span><span class="gp unselectable">
-5&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_subset</span><span class="p" data-group-id="0018091883-7">(</span><span class="n">S0</span><span class="p">,</span><span class="w"> </span><span class="n">S0</span><span class="p" data-group-id="0018091883-7">)</span><span class="p">.</span><span class="w">
+5&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">is_subset</span><span class="p" data-group-id="9499952767-7">(</span><span class="n">S0</span><span class="p">,</span><span class="w"> </span><span class="n">S0</span><span class="p" data-group-id="9499952767-7">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">true</span></code></pre>
   </section>
 </section>
@@ -916,7 +936,7 @@ otherwise, returns <code class="inline">false</code>.</p><h2 id="is_subset/2-exa
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/ordsets.erl#L543" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/ordsets.erl#L543" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -935,10 +955,10 @@ otherwise, returns <code class="inline">false</code>.</p><h2 id="is_subset/2-exa
 
       </div>
 
-<p>Maps elements in <code class="inline">Ordset1</code> with mapping function <code class="inline">Fun</code>.</p><h2 id="map/2-examples" class="section-heading"><a href="#map/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="5736599025-1">(</span><span class="p" data-group-id="5736599025-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p" data-group-id="5736599025-2">]</span><span class="p" data-group-id="5736599025-1">)</span><span class="p">.</span><span class="gp unselectable">
-2&gt; </span><span class="n">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">fun</span><span class="p" data-group-id="5736599025-3">(</span><span class="n">N</span><span class="p" data-group-id="5736599025-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="ow">div</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">end</span><span class="p">.</span><span class="gp unselectable">
-3&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">map</span><span class="p" data-group-id="5736599025-4">(</span><span class="n">F</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p" data-group-id="5736599025-4">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="5736599025-5">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="5736599025-5">]</span></code></pre>
+<p>Maps elements in <code class="inline">Ordset1</code> with mapping function <code class="inline">Fun</code>.</p><h2 id="map/2-examples" class="section-heading"><a href="#map/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="9523983649-1">(</span><span class="p" data-group-id="9523983649-2">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p" data-group-id="9523983649-2">]</span><span class="p" data-group-id="9523983649-1">)</span><span class="p">.</span><span class="gp unselectable">
+2&gt; </span><span class="n">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">fun</span><span class="p" data-group-id="9523983649-3">(</span><span class="n">N</span><span class="p" data-group-id="9523983649-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="ow">div</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">end</span><span class="p">.</span><span class="gp unselectable">
+3&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">map</span><span class="p" data-group-id="9523983649-4">(</span><span class="n">F</span><span class="p">,</span><span class="w"> </span><span class="n">S</span><span class="p" data-group-id="9523983649-4">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="9523983649-5">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="9523983649-5">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="new/0">
@@ -951,7 +971,7 @@ otherwise, returns <code class="inline">false</code>.</p><h2 id="is_subset/2-exa
       <h1 class="signature" translate="no">new()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/ordsets.erl#L69" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/ordsets.erl#L69" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -966,8 +986,8 @@ otherwise, returns <code class="inline">false</code>.</p><h2 id="is_subset/2-exa
 
       </div>
 
-<p>Returns a new empty ordered set.</p><h2 id="new/0-examples" class="section-heading"><a href="#new/0-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">new</span><span class="p" data-group-id="0222760785-1">(</span><span class="p" data-group-id="0222760785-1">)</span><span class="w">
-</span><span class="p" data-group-id="0222760785-2">[</span><span class="p" data-group-id="0222760785-2">]</span></code></pre>
+<p>Returns a new empty ordered set.</p><h2 id="new/0-examples" class="section-heading"><a href="#new/0-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">new</span><span class="p" data-group-id="3194127958-1">(</span><span class="p" data-group-id="3194127958-1">)</span><span class="w">
+</span><span class="p" data-group-id="3194127958-2">[</span><span class="p" data-group-id="3194127958-2">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="size/1">
@@ -980,7 +1000,7 @@ otherwise, returns <code class="inline">false</code>.</p><h2 id="is_subset/2-exa
       <h1 class="signature" translate="no">size(Ordset)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/ordsets.erl#L120" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/ordsets.erl#L120" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -995,9 +1015,9 @@ otherwise, returns <code class="inline">false</code>.</p><h2 id="is_subset/2-exa
 
       </div>
 
-<p>Returns the number of elements in <code class="inline">Ordset</code>.</p><h2 id="size/1-examples" class="section-heading"><a href="#size/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">size</span><span class="p" data-group-id="6277242467-1">(</span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">new</span><span class="p" data-group-id="6277242467-2">(</span><span class="p" data-group-id="6277242467-2">)</span><span class="p" data-group-id="6277242467-1">)</span><span class="p">.</span><span class="w">
+<p>Returns the number of elements in <code class="inline">Ordset</code>.</p><h2 id="size/1-examples" class="section-heading"><a href="#size/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">size</span><span class="p" data-group-id="0203612752-1">(</span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">new</span><span class="p" data-group-id="0203612752-2">(</span><span class="p" data-group-id="0203612752-2">)</span><span class="p" data-group-id="0203612752-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mi">0</span><span class="gp unselectable">
-2&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">size</span><span class="p" data-group-id="6277242467-3">(</span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="6277242467-4">(</span><span class="p" data-group-id="6277242467-5">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p" data-group-id="6277242467-5">]</span><span class="p" data-group-id="6277242467-4">)</span><span class="p" data-group-id="6277242467-3">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">size</span><span class="p" data-group-id="0203612752-3">(</span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="0203612752-4">(</span><span class="p" data-group-id="0203612752-5">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p" data-group-id="0203612752-5">]</span><span class="p" data-group-id="0203612752-4">)</span><span class="p" data-group-id="0203612752-3">)</span><span class="p">.</span><span class="w">
 </span><span class="mi">3</span></code></pre>
   </section>
 </section>
@@ -1011,7 +1031,7 @@ otherwise, returns <code class="inline">false</code>.</p><h2 id="is_subset/2-exa
       <h1 class="signature" translate="no">subtract(Ordset1, Ordset2)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/ordsets.erl#L444" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/ordsets.erl#L444" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1028,12 +1048,12 @@ otherwise, returns <code class="inline">false</code>.</p><h2 id="is_subset/2-exa
       </div>
 
 <p>Returns a new ordered set containing the elements of <code class="inline">Ordset1</code>
-that are not elements in <code class="inline">Ordset2</code>.</p><h2 id="subtract/2-examples" class="section-heading"><a href="#subtract/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="2756960131-1">(</span><span class="p" data-group-id="2756960131-2">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p" data-group-id="2756960131-2">]</span><span class="p" data-group-id="2756960131-1">)</span><span class="p">.</span><span class="gp unselectable">
-2&gt; </span><span class="n">S1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="2756960131-3">(</span><span class="p" data-group-id="2756960131-4">[</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p">,</span><span class="ss">e</span><span class="p">,</span><span class="ss">f</span><span class="p" data-group-id="2756960131-4">]</span><span class="p" data-group-id="2756960131-3">)</span><span class="p">.</span><span class="gp unselectable">
-3&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">subtract</span><span class="p" data-group-id="2756960131-5">(</span><span class="n">S0</span><span class="p">,</span><span class="w"> </span><span class="n">S1</span><span class="p" data-group-id="2756960131-5">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="2756960131-6">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p" data-group-id="2756960131-6">]</span><span class="gp unselectable">
-4&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">subtract</span><span class="p" data-group-id="2756960131-7">(</span><span class="n">S1</span><span class="p">,</span><span class="w"> </span><span class="n">S0</span><span class="p" data-group-id="2756960131-7">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="2756960131-8">[</span><span class="ss">e</span><span class="p">,</span><span class="ss">f</span><span class="p" data-group-id="2756960131-8">]</span></code></pre>
+that are not elements in <code class="inline">Ordset2</code>.</p><h2 id="subtract/2-examples" class="section-heading"><a href="#subtract/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="8075355365-1">(</span><span class="p" data-group-id="8075355365-2">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p" data-group-id="8075355365-2">]</span><span class="p" data-group-id="8075355365-1">)</span><span class="p">.</span><span class="gp unselectable">
+2&gt; </span><span class="n">S1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="8075355365-3">(</span><span class="p" data-group-id="8075355365-4">[</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p">,</span><span class="ss">e</span><span class="p">,</span><span class="ss">f</span><span class="p" data-group-id="8075355365-4">]</span><span class="p" data-group-id="8075355365-3">)</span><span class="p">.</span><span class="gp unselectable">
+3&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">subtract</span><span class="p" data-group-id="8075355365-5">(</span><span class="n">S0</span><span class="p">,</span><span class="w"> </span><span class="n">S1</span><span class="p" data-group-id="8075355365-5">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="8075355365-6">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p" data-group-id="8075355365-6">]</span><span class="gp unselectable">
+4&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">subtract</span><span class="p" data-group-id="8075355365-7">(</span><span class="n">S1</span><span class="p">,</span><span class="w"> </span><span class="n">S0</span><span class="p" data-group-id="8075355365-7">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="8075355365-8">[</span><span class="ss">e</span><span class="p">,</span><span class="ss">f</span><span class="p" data-group-id="8075355365-8">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="to_list/1">
@@ -1046,7 +1066,7 @@ that are not elements in <code class="inline">Ordset2</code>.</p><h2 id="subtrac
       <h1 class="signature" translate="no">to_list(Ordset)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/ordsets.erl#L178" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/ordsets.erl#L178" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1061,9 +1081,9 @@ that are not elements in <code class="inline">Ordset2</code>.</p><h2 id="subtrac
 
       </div>
 
-<p>Returns the elements of <code class="inline">Ordset</code> as a list.</p><h2 id="to_list/1-examples" class="section-heading"><a href="#to_list/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="9338278698-1">(</span><span class="p" data-group-id="9338278698-2">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p" data-group-id="9338278698-2">]</span><span class="p" data-group-id="9338278698-1">)</span><span class="p">.</span><span class="gp unselectable">
-2&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">to_list</span><span class="p" data-group-id="9338278698-3">(</span><span class="n">S</span><span class="p" data-group-id="9338278698-3">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="9338278698-4">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p" data-group-id="9338278698-4">]</span></code></pre>
+<p>Returns the elements of <code class="inline">Ordset</code> as a list.</p><h2 id="to_list/1-examples" class="section-heading"><a href="#to_list/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="4526141543-1">(</span><span class="p" data-group-id="4526141543-2">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p" data-group-id="4526141543-2">]</span><span class="p" data-group-id="4526141543-1">)</span><span class="p">.</span><span class="gp unselectable">
+2&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">to_list</span><span class="p" data-group-id="4526141543-3">(</span><span class="n">S</span><span class="p" data-group-id="4526141543-3">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4526141543-4">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p" data-group-id="4526141543-4">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="union/1">
@@ -1076,7 +1096,7 @@ that are not elements in <code class="inline">Ordset2</code>.</p><h2 id="subtrac
       <h1 class="signature" translate="no">union(OrdsetList)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/ordsets.erl#L318" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/ordsets.erl#L318" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1092,12 +1112,12 @@ that are not elements in <code class="inline">Ordset2</code>.</p><h2 id="subtrac
       </div>
 
 <p>Returns the union of a list of sets.</p><p>The union of multiple sets is a new set that contains all the elements from
-all sets, without duplicates.</p><h2 id="union/1-examples" class="section-heading"><a href="#union/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="1904226843-1">(</span><span class="p" data-group-id="1904226843-2">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p" data-group-id="1904226843-2">]</span><span class="p" data-group-id="1904226843-1">)</span><span class="p">.</span><span class="gp unselectable">
-2&gt; </span><span class="n">S1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="1904226843-3">(</span><span class="p" data-group-id="1904226843-4">[</span><span class="ss">d</span><span class="p">,</span><span class="ss">e</span><span class="p">,</span><span class="ss">f</span><span class="p" data-group-id="1904226843-4">]</span><span class="p" data-group-id="1904226843-3">)</span><span class="p">.</span><span class="gp unselectable">
-3&gt; </span><span class="n">S2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="1904226843-5">(</span><span class="p" data-group-id="1904226843-6">[</span><span class="ss">q</span><span class="p">,</span><span class="ss">r</span><span class="p" data-group-id="1904226843-6">]</span><span class="p" data-group-id="1904226843-5">)</span><span class="gp unselectable">
-4&gt; </span><span class="n">Sets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="1904226843-7">[</span><span class="n">S0</span><span class="p">,</span><span class="w"> </span><span class="n">S1</span><span class="p">,</span><span class="w"> </span><span class="n">S2</span><span class="p" data-group-id="1904226843-7">]</span><span class="p">.</span><span class="gp unselectable">
-5&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">union</span><span class="p" data-group-id="1904226843-8">(</span><span class="n">Sets</span><span class="p" data-group-id="1904226843-8">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="1904226843-9">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p">,</span><span class="ss">e</span><span class="p">,</span><span class="ss">f</span><span class="p">,</span><span class="ss">q</span><span class="p">,</span><span class="ss">r</span><span class="p" data-group-id="1904226843-9">]</span></code></pre>
+all sets, without duplicates.</p><h2 id="union/1-examples" class="section-heading"><a href="#union/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="5880806811-1">(</span><span class="p" data-group-id="5880806811-2">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p" data-group-id="5880806811-2">]</span><span class="p" data-group-id="5880806811-1">)</span><span class="p">.</span><span class="gp unselectable">
+2&gt; </span><span class="n">S1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="5880806811-3">(</span><span class="p" data-group-id="5880806811-4">[</span><span class="ss">d</span><span class="p">,</span><span class="ss">e</span><span class="p">,</span><span class="ss">f</span><span class="p" data-group-id="5880806811-4">]</span><span class="p" data-group-id="5880806811-3">)</span><span class="p">.</span><span class="gp unselectable">
+3&gt; </span><span class="n">S2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="5880806811-5">(</span><span class="p" data-group-id="5880806811-6">[</span><span class="ss">q</span><span class="p">,</span><span class="ss">r</span><span class="p" data-group-id="5880806811-6">]</span><span class="p" data-group-id="5880806811-5">)</span><span class="gp unselectable">
+4&gt; </span><span class="n">Sets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="5880806811-7">[</span><span class="n">S0</span><span class="p">,</span><span class="w"> </span><span class="n">S1</span><span class="p">,</span><span class="w"> </span><span class="n">S2</span><span class="p" data-group-id="5880806811-7">]</span><span class="p">.</span><span class="gp unselectable">
+5&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">union</span><span class="p" data-group-id="5880806811-8">(</span><span class="n">Sets</span><span class="p" data-group-id="5880806811-8">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="5880806811-9">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p">,</span><span class="ss">e</span><span class="p">,</span><span class="ss">f</span><span class="p">,</span><span class="ss">q</span><span class="p">,</span><span class="ss">r</span><span class="p" data-group-id="5880806811-9">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="union/2">
@@ -1110,7 +1130,7 @@ all sets, without duplicates.</p><h2 id="union/1-examples" class="section-headin
       <h1 class="signature" translate="no">union(Ordset1, Ordset2)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/ordsets.erl#L288" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/ordsets.erl#L288" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1127,10 +1147,10 @@ all sets, without duplicates.</p><h2 id="union/1-examples" class="section-headin
       </div>
 
 <p>Returns the union of <code class="inline">Ordset1</code> and <code class="inline">Ordset2</code>.</p><p>The union of two sets is a new set that contains all the elements from
-both sets, without duplicates.</p><h2 id="union/2-examples" class="section-heading"><a href="#union/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="7620158965-1">(</span><span class="p" data-group-id="7620158965-2">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p" data-group-id="7620158965-2">]</span><span class="p" data-group-id="7620158965-1">)</span><span class="p">.</span><span class="gp unselectable">
-2&gt; </span><span class="n">S1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="7620158965-3">(</span><span class="p" data-group-id="7620158965-4">[</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p">,</span><span class="ss">e</span><span class="p">,</span><span class="ss">f</span><span class="p" data-group-id="7620158965-4">]</span><span class="p" data-group-id="7620158965-3">)</span><span class="p">.</span><span class="gp unselectable">
-3&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">union</span><span class="p" data-group-id="7620158965-5">(</span><span class="n">S0</span><span class="p">,</span><span class="w"> </span><span class="n">S1</span><span class="p" data-group-id="7620158965-5">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="7620158965-6">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p">,</span><span class="ss">e</span><span class="p">,</span><span class="ss">f</span><span class="p" data-group-id="7620158965-6">]</span></code></pre>
+both sets, without duplicates.</p><h2 id="union/2-examples" class="section-heading"><a href="#union/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">S0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="4600169454-1">(</span><span class="p" data-group-id="4600169454-2">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p" data-group-id="4600169454-2">]</span><span class="p" data-group-id="4600169454-1">)</span><span class="p">.</span><span class="gp unselectable">
+2&gt; </span><span class="n">S1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">from_list</span><span class="p" data-group-id="4600169454-3">(</span><span class="p" data-group-id="4600169454-4">[</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p">,</span><span class="ss">e</span><span class="p">,</span><span class="ss">f</span><span class="p" data-group-id="4600169454-4">]</span><span class="p" data-group-id="4600169454-3">)</span><span class="p">.</span><span class="gp unselectable">
+3&gt; </span><span class="nc">ordsets</span><span class="p">:</span><span class="nf">union</span><span class="p" data-group-id="4600169454-5">(</span><span class="n">S0</span><span class="p">,</span><span class="w"> </span><span class="n">S1</span><span class="p" data-group-id="4600169454-5">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4600169454-6">[</span><span class="ss">a</span><span class="p">,</span><span class="ss">b</span><span class="p">,</span><span class="ss">c</span><span class="p">,</span><span class="ss">d</span><span class="p">,</span><span class="ss">e</span><span class="p">,</span><span class="ss">f</span><span class="p" data-group-id="4600169454-6">]</span></code></pre>
   </section>
 </section>
 
@@ -1141,8 +1161,8 @@ both sets, without duplicates.</p><h2 id="union/2-examples" class="section-headi
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="stdlib.epub" title="ePub version">
@@ -1154,7 +1174,7 @@ both sets, without duplicates.</p><h2 id="union/2-examples" class="section-headi
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

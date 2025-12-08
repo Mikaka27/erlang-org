@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="wx v2.5.2-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/wx/wxTreeCtrl.html" />
     <title>wxTreeCtrl — wx v2.5.2-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-E2170433.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ wx
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of wx</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ wx
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L62" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L62" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -158,7 +176,7 @@ comctl32.dll to a newer version: see <a href="http://www.microsoft.com/downloads
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">addRoot(This, Text, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#addRoot/3"><code class="inline">addRoot(This, Text, [])</code></a>.</p></div>
 
     </div>
 
@@ -178,7 +196,7 @@ comctl32.dll to a newer version: see <a href="http://www.microsoft.com/downloads
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">appendItem(This, Parent, Text, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#appendItem/4"><code class="inline">appendItem(This, Parent, Text, [])</code></a>.</p></div>
 
     </div>
 
@@ -238,7 +256,7 @@ comctl32.dll to a newer version: see <a href="http://www.microsoft.com/downloads
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">create(This, Parent, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#create/3"><code class="inline">create(This, Parent, [])</code></a>.</p></div>
 
     </div>
 
@@ -328,7 +346,7 @@ comctl32.dll to a newer version: see <a href="http://www.microsoft.com/downloads
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">getBoundingRect(This, Item, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#getBoundingRect/3"><code class="inline">getBoundingRect(This, Item, [])</code></a>.</p></div>
 
     </div>
 
@@ -348,7 +366,7 @@ comctl32.dll to a newer version: see <a href="http://www.microsoft.com/downloads
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">getChildrenCount(This, Item, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#getChildrenCount/3"><code class="inline">getChildrenCount(This, Item, [])</code></a>.</p></div>
 
     </div>
 
@@ -388,7 +406,7 @@ comctl32.dll to a newer version: see <a href="http://www.microsoft.com/downloads
 
       </div>
 
-        <div class="summary-synopsis"><p>Returns the first child; call <a><code class="inline">getNextChild/3</code></a> for the next child.</p></div>
+        <div class="summary-synopsis"><p>Returns the first child; call <a href="#getNextChild/3"><code class="inline">getNextChild/3</code></a> for the next child.</p></div>
 
     </div>
 
@@ -458,7 +476,7 @@ comctl32.dll to a newer version: see <a href="http://www.microsoft.com/downloads
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">getItemImage(This, Item, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#getItemImage/3"><code class="inline">getItemImage(This, Item, [])</code></a>.</p></div>
 
     </div>
 
@@ -519,7 +537,7 @@ children).</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Returns the next child; call <a><code class="inline">getFirstChild/2</code></a> for the first child.</p></div>
+        <div class="summary-synopsis"><p>Returns the next child; call <a href="#getFirstChild/2"><code class="inline">getFirstChild/2</code></a> for the first child.</p></div>
 
     </div>
 
@@ -529,7 +547,7 @@ children).</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Returns the next sibling of the specified item; call <a><code class="inline">getPrevSibling/2</code></a> for the previous
+        <div class="summary-synopsis"><p>Returns the next sibling of the specified item; call <a href="#getPrevSibling/2"><code class="inline">getPrevSibling/2</code></a> for the previous
 sibling.</p></div>
 
     </div>
@@ -550,7 +568,7 @@ sibling.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Returns the previous sibling of the specified item; call <a><code class="inline">getNextSibling/2</code></a> for the next
+        <div class="summary-synopsis"><p>Returns the previous sibling of the specified item; call <a href="#getNextSibling/2"><code class="inline">getNextSibling/2</code></a> for the next
 sibling.</p></div>
 
     </div>
@@ -623,7 +641,7 @@ this point plus extra information <code class="inline">flags</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">insertItem(This, Parent, Previous, Text, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#insertItem/5"><code class="inline">insertItem(This, Parent, Previous, Text, [])</code></a>.</p></div>
 
     </div>
 
@@ -713,7 +731,7 @@ this point plus extra information <code class="inline">flags</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">new(Parent, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#new/2"><code class="inline">new(Parent, [])</code></a>.</p></div>
 
     </div>
 
@@ -733,7 +751,7 @@ this point plus extra information <code class="inline">flags</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">prependItem(This, Parent, Text, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#prependItem/4"><code class="inline">prependItem(This, Parent, Text, [])</code></a>.</p></div>
 
     </div>
 
@@ -763,7 +781,7 @@ this point plus extra information <code class="inline">flags</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">selectItem(This, Item, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#selectItem/3"><code class="inline">selectItem(This, Item, [])</code></a>.</p></div>
 
     </div>
 
@@ -813,7 +831,7 @@ this point plus extra information <code class="inline">flags</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">setItemBold(This, Item, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#setItemBold/3"><code class="inline">setItemBold(This, Item, [])</code></a>.</p></div>
 
     </div>
 
@@ -844,7 +862,7 @@ state.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">setItemDropHighlight(This, Item, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#setItemDropHighlight/3"><code class="inline">setItemDropHighlight(This, Item, [])</code></a>.</p></div>
 
     </div>
 
@@ -876,7 +894,7 @@ the tree control, which already is implemented internally).</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">setItemHasChildren(This, Item, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#setItemHasChildren/3"><code class="inline">setItemHasChildren(This, Item, [])</code></a>.</p></div>
 
     </div>
 
@@ -896,7 +914,7 @@ the tree control, which already is implemented internally).</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">setItemImage(This, Item, Image, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#setItemImage/4"><code class="inline">setItemImage(This, Item, Image, [])</code></a>.</p></div>
 
     </div>
 
@@ -996,7 +1014,7 @@ the tree control, which already is implemented internally).</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>This function either behaves the same as <a><code class="inline">unselect/1</code></a> if the control doesn't have <code class="inline">wxTR\_MULTIPLE</code>
+        <div class="summary-synopsis"><p>This function either behaves the same as <a href="#unselect/1"><code class="inline">unselect/1</code></a> if the control doesn't have <code class="inline">wxTR\_MULTIPLE</code>
 style, or removes the selection from all items if it does have this style.</p></div>
 
     </div>
@@ -1023,6 +1041,7 @@ style, or removes the selection from all items if it does have this style.</p></
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:wxTreeCtrl/0">
 
@@ -1034,7 +1053,7 @@ style, or removes the selection from all items if it does have this style.</p></
       <h1 class="signature" translate="no">wxTreeCtrl()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L259" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L259" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1063,6 +1082,7 @@ style, or removes the selection from all items if it does have this style.</p></
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="addRoot/2">
 
@@ -1074,7 +1094,7 @@ style, or removes the selection from all items if it does have this style.</p></
       <h1 class="signature" translate="no">addRoot(This, Text)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L310" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L310" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1102,7 +1122,7 @@ style, or removes the selection from all items if it does have this style.</p></
       <h1 class="signature" translate="no">addRoot/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L326" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L326" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1136,7 +1156,7 @@ specifying the image to use for unselected and selected items, respectively. If 
       <h1 class="signature" translate="no">appendItem(This, Parent, Text)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L342" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L342" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1165,7 +1185,7 @@ specifying the image to use for unselected and selected items, respectively. If 
       <h1 class="signature" translate="no">appendItem/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L358" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L358" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1200,7 +1220,7 @@ specifying the image to use for unselected and selected items, respectively. If 
       <h1 class="signature" translate="no">assignImageList(This, ImageList)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L380" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L380" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1230,7 +1250,7 @@ as appropriate (i.e. it takes ownership of the list).</p><p>See: <a href="#setIm
       <h1 class="signature" translate="no">assignStateImageList(This, ImageList)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L395" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L395" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1260,7 +1280,7 @@ appropriate (i.e. it takes ownership of the list).</p><p>See: <a href="#setState
       <h1 class="signature" translate="no">collapse(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L403" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L403" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1288,7 +1308,7 @@ appropriate (i.e. it takes ownership of the list).</p><p>See: <a href="#setState
       <h1 class="signature" translate="no">collapseAndReset(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L411" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L411" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1316,7 +1336,7 @@ appropriate (i.e. it takes ownership of the list).</p><p>See: <a href="#setState
       <h1 class="signature" translate="no">create(This, Parent)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L420" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L420" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1344,7 +1364,7 @@ appropriate (i.e. it takes ownership of the list).</p><p>See: <a href="#setState
       <h1 class="signature" translate="no">create/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L436" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L436" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1381,7 +1401,7 @@ appropriate (i.e. it takes ownership of the list).</p><p>See: <a href="#setState
       <h1 class="signature" translate="no">delete(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L459" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L459" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1409,7 +1429,7 @@ appropriate (i.e. it takes ownership of the list).</p><p>See: <a href="#setState
       <h1 class="signature" translate="no">deleteAllItems(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L472" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L472" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1438,7 +1458,7 @@ including the root one if it is shown, i.e. unless wxTR_HIDE_ROOT style is used.
       <h1 class="signature" translate="no">deleteChildren(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L486" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L486" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1467,7 +1487,7 @@ the setting.</p>
       <h1 class="signature" translate="no">destroy(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1375" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1375" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1495,7 +1515,7 @@ the setting.</p>
       <h1 class="signature" translate="no">editLabel(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L504" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L504" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1525,7 +1545,7 @@ without changes, a <code class="inline">EVT_TREE_END_LABEL_EDIT</code> event wil
       <h1 class="signature" translate="no">ensureVisible(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L517" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L517" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1553,7 +1573,7 @@ without changes, a <code class="inline">EVT_TREE_END_LABEL_EDIT</code> event wil
       <h1 class="signature" translate="no">expand(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L525" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L525" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1581,7 +1601,7 @@ without changes, a <code class="inline">EVT_TREE_END_LABEL_EDIT</code> event wil
       <h1 class="signature" translate="no">getBoundingRect(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L535" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L535" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1616,7 +1636,7 @@ without changes, a <code class="inline">EVT_TREE_END_LABEL_EDIT</code> event wil
       <h1 class="signature" translate="no">getBoundingRect/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L556" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L556" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1656,7 +1676,7 @@ is not 0.</p>
       <h1 class="signature" translate="no">getChildrenCount(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L569" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L569" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1684,7 +1704,7 @@ is not 0.</p>
       <h1 class="signature" translate="no">getChildrenCount/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L582" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L582" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1717,7 +1737,7 @@ level of children is counted.</p>
       <h1 class="signature" translate="no">getCount(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L594" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L594" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1745,7 +1765,7 @@ level of children is counted.</p>
       <h1 class="signature" translate="no">getEditControl(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L608" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L608" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1773,7 +1793,7 @@ level of children is counted.</p>
       <h1 class="signature" translate="no">getFirstChild(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L632" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L632" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1809,7 +1829,7 @@ false) if there are no further children.</p><p>See:</p><ul><li><p><a href="#getN
       <h1 class="signature" translate="no">getFirstVisibleItem(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L662" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L662" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1837,7 +1857,7 @@ false) if there are no further children.</p><p>See:</p><ul><li><p><a href="#getN
       <h1 class="signature" translate="no">getImageList(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L670" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L670" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1865,7 +1885,7 @@ false) if there are no further children.</p><p>See:</p><ul><li><p><a href="#getN
       <h1 class="signature" translate="no">getIndent(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L678" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L678" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1893,7 +1913,7 @@ false) if there are no further children.</p><p>See:</p><ul><li><p><a href="#getN
       <h1 class="signature" translate="no">getItemBackgroundColour(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L686" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L686" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1922,7 +1942,7 @@ false) if there are no further children.</p><p>See:</p><ul><li><p><a href="#getN
       <h1 class="signature" translate="no">getItemData(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L695" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L695" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1950,7 +1970,7 @@ false) if there are no further children.</p><p>See:</p><ul><li><p><a href="#getN
       <h1 class="signature" translate="no">getItemFont(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L710" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L710" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1980,7 +2000,7 @@ without any specific font.</p>
       <h1 class="signature" translate="no">getItemImage(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L720" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L720" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2008,7 +2028,7 @@ without any specific font.</p>
       <h1 class="signature" translate="no">getItemImage/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L745" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L745" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2041,7 +2061,7 @@ when an expanded item is currently selected).</p></li></ul>
       <h1 class="signature" translate="no">getItemParent(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L823" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L823" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2069,7 +2089,7 @@ when an expanded item is currently selected).</p></li></ul>
       <h1 class="signature" translate="no">getItemText(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L757" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L757" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2097,7 +2117,7 @@ when an expanded item is currently selected).</p></li></ul>
       <h1 class="signature" translate="no">getItemTextColour(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L766" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L766" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2125,7 +2145,7 @@ when an expanded item is currently selected).</p></li></ul>
       <h1 class="signature" translate="no">getLastChild(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L785" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L785" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2154,7 +2174,7 @@ children).</p><p>See:</p><ul><li><p><a href="#getFirstChild/2"><code class="inli
       <h1 class="signature" translate="no">getNextChild(This, Item, Cookie)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L653" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L653" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2190,7 +2210,7 @@ passed to <a href="#getFirstChild/2"><code class="inline">getFirstChild/2</code>
       <h1 class="signature" translate="no">getNextSibling(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L801" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L801" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2219,7 +2239,7 @@ sibling.</p><p>Returns an invalid tree item if there are no further siblings.</p
       <h1 class="signature" translate="no">getNextVisible(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L814" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L814" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2247,7 +2267,7 @@ sibling.</p><p>Returns an invalid tree item if there are no further siblings.</p
       <h1 class="signature" translate="no">getPrevSibling(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L839" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L839" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2276,7 +2296,7 @@ sibling.</p><p>Returns an invalid tree item if there are no further children.</p
       <h1 class="signature" translate="no">getPrevVisible(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L853" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L853" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2305,7 +2325,7 @@ one.</p><p>Note: The <code class="inline">item</code> itself must be visible.</p
       <h1 class="signature" translate="no">getRootItem(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L862" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L862" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2333,7 +2353,7 @@ one.</p><p>Note: The <code class="inline">item</code> itself must be visible.</p
       <h1 class="signature" translate="no">getSelection(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L876" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L876" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2363,7 +2383,7 @@ controls which do have this style or, if a single item is wanted, use <code clas
       <h1 class="signature" translate="no">getSelections(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L891" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L891" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2392,7 +2412,7 @@ controls which do have this style or, if a single item is wanted, use <code clas
       <h1 class="signature" translate="no">getStateImageList(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L899" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L899" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2420,7 +2440,7 @@ controls which do have this style or, if a single item is wanted, use <code clas
       <h1 class="signature" translate="no">hitTest(This, Point)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L936" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L936" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2454,7 +2474,7 @@ user-defined state.</p></li><li><p><code class="inline">wxTREE_HITTEST_TOLEFT:</
       <h1 class="signature" translate="no">insertItem(This, Parent, Previous, Text)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L946" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L946" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2487,7 +2507,7 @@ user-defined state.</p></li><li><p><code class="inline">wxTREE_HITTEST_TOLEFT:</
       <h1 class="signature" translate="no">insertItem/5</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L962" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L962" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2523,7 +2543,7 @@ specifying the image to use for unselected and selected items, respectively. If 
       <h1 class="signature" translate="no">isBold(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L981" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L981" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2551,7 +2571,7 @@ specifying the image to use for unselected and selected items, respectively. If 
       <h1 class="signature" translate="no">isExpanded(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L990" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L990" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2579,7 +2599,7 @@ specifying the image to use for unselected and selected items, respectively. If 
       <h1 class="signature" translate="no">isSelected(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L999" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L999" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2607,7 +2627,7 @@ specifying the image to use for unselected and selected items, respectively. If 
       <h1 class="signature" translate="no">isTreeItemIdOk(Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1026" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1026" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2635,7 +2655,7 @@ specifying the image to use for unselected and selected items, respectively. If 
       <h1 class="signature" translate="no">isVisible(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1008" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1008" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2663,7 +2683,7 @@ specifying the image to use for unselected and selected items, respectively. If 
       <h1 class="signature" translate="no">itemHasChildren(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1017" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1017" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2691,7 +2711,7 @@ specifying the image to use for unselected and selected items, respectively. If 
       <h1 class="signature" translate="no">new()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L269" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L269" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2719,7 +2739,7 @@ specifying the image to use for unselected and selected items, respectively. If 
       <h1 class="signature" translate="no">new(Parent)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L277" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L277" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2747,7 +2767,7 @@ specifying the image to use for unselected and selected items, respectively. If 
       <h1 class="signature" translate="no">new/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L293" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L293" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2783,7 +2803,7 @@ specifying the image to use for unselected and selected items, respectively. If 
       <h1 class="signature" translate="no">prependItem(This, Parent, Text)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1035" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1035" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2812,7 +2832,7 @@ specifying the image to use for unselected and selected items, respectively. If 
       <h1 class="signature" translate="no">prependItem/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1051" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1051" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2847,7 +2867,7 @@ specifying the image to use for unselected and selected items, respectively. If 
       <h1 class="signature" translate="no">scrollTo(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1072" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1072" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2875,7 +2895,7 @@ specifying the image to use for unselected and selected items, respectively. If 
       <h1 class="signature" translate="no">selectItem(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1081" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1081" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2903,7 +2923,7 @@ specifying the image to use for unselected and selected items, respectively. If 
       <h1 class="signature" translate="no">selectItem/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1097" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1097" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2934,7 +2954,7 @@ events and that the change could be vetoed by the former event handler.</p>
       <h1 class="signature" translate="no">setImageList(This, ImageList)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1123" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1123" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2964,7 +2984,7 @@ destructor, you must delete it yourself.</p><p>See: <a href="#assignImageList/2"
       <h1 class="signature" translate="no">setIndent(This, Indent)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1108" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1108" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2992,7 +3012,7 @@ destructor, you must delete it yourself.</p><p>See: <a href="#assignImageList/2"
       <h1 class="signature" translate="no">setItemBackgroundColour(This, Item, Col)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1131" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1131" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3021,7 +3041,7 @@ destructor, you must delete it yourself.</p><p>See: <a href="#assignImageList/2"
       <h1 class="signature" translate="no">setItemBold(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1140" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1140" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3049,7 +3069,7 @@ destructor, you must delete it yourself.</p><p>See: <a href="#assignImageList/2"
       <h1 class="signature" translate="no">setItemBold/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1153" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1153" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3079,7 +3099,7 @@ state.</p><p>See: <a href="#isBold/2"><code class="inline">isBold/2</code></a></
       <h1 class="signature" translate="no">setItemData(This, Item, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1170" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1170" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3109,7 +3129,7 @@ in memory leaks unless you delete the old item data pointer yourself.</p>
       <h1 class="signature" translate="no">setItemDropHighlight(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1179" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1179" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3137,7 +3157,7 @@ in memory leaks unless you delete the old item data pointer yourself.</p>
       <h1 class="signature" translate="no">setItemDropHighlight/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1191" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1191" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3171,7 +3191,7 @@ the tree control, which already is implemented internally).</p>
       <h1 class="signature" translate="no">setItemFont(This, Item, Font)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1209" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1209" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3201,7 +3221,7 @@ height should be the same for all of them, although font attributes may vary.</p
       <h1 class="signature" translate="no">setItemHasChildren(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1219" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1219" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3229,7 +3249,7 @@ height should be the same for all of them, although font attributes may vary.</p
       <h1 class="signature" translate="no">setItemHasChildren/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1232" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1232" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3259,7 +3279,7 @@ but instead adding them only when needed, thus minimizing memory usage and loadi
       <h1 class="signature" translate="no">setItemImage(This, Item, Image)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1244" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1244" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3288,7 +3308,7 @@ but instead adding them only when needed, thus minimizing memory usage and loadi
       <h1 class="signature" translate="no">setItemImage/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1257" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1257" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3321,7 +3341,7 @@ but instead adding them only when needed, thus minimizing memory usage and loadi
       <h1 class="signature" translate="no">setItemText(This, Item, Text)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1268" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1268" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3350,7 +3370,7 @@ but instead adding them only when needed, thus minimizing memory usage and loadi
       <h1 class="signature" translate="no">setItemTextColour(This, Item, Col)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1277" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1277" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3379,7 +3399,7 @@ but instead adding them only when needed, thus minimizing memory usage and loadi
       <h1 class="signature" translate="no">setStateImageList(This, ImageList)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1292" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1292" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3409,7 +3429,7 @@ destructor, you must delete it yourself.</p><p>See: <a href="#assignStateImageLi
       <h1 class="signature" translate="no">setWindowStyle(This, Styles)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1306" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1306" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3437,7 +3457,7 @@ destructor, you must delete it yourself.</p><p>See: <a href="#assignStateImageLi
       <h1 class="signature" translate="no">sortChildren(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1319" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1319" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3466,7 +3486,7 @@ case-sensitive alphabetical order).</p>
       <h1 class="signature" translate="no">toggle(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1327" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1327" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3494,7 +3514,7 @@ case-sensitive alphabetical order).</p>
       <h1 class="signature" translate="no">toggleItemSelection(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1339" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1339" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3522,7 +3542,7 @@ case-sensitive alphabetical order).</p>
       <h1 class="signature" translate="no">unselect(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1347" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1347" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3550,7 +3570,7 @@ case-sensitive alphabetical order).</p>
       <h1 class="signature" translate="no">unselectAll(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1357" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1357" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3579,7 +3599,7 @@ style, or removes the selection from all items if it does have this style.</p>
       <h1 class="signature" translate="no">unselectItem(This, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxTreeCtrl.erl#L1368" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxTreeCtrl.erl#L1368" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3605,8 +3625,8 @@ style, or removes the selection from all items if it does have this style.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="wx.epub" title="ePub version">
@@ -3618,7 +3638,7 @@ style, or removes the selection from all items if it does have this style.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

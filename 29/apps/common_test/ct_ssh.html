@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="common_test v1.29-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/common_test/ct_ssh.html" />
     <title>ct_ssh — common_test v1.29-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-3DCB9B8F.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ common_test
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of common_test</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ common_test
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L23" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L23" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -101,14 +119,14 @@ for example, functions, types, and options.</p><p>Argument <code class="inline">
 that have been started on existing SSH connections (that is, when the original
 connection type is <code class="inline">ssh</code>). Whenever the connection type is <code class="inline">sftp</code>, use the SSH
 connection reference only.</p><p>The following options are valid for specifying an SSH/SFTP connection (that is,
-can be used as configuration elements):</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="6442341459-1">[</span><span class="p" data-group-id="6442341459-2">{</span><span class="n">ConnType</span><span class="p">,</span><span class="w"> </span><span class="n">Addr</span><span class="p" data-group-id="6442341459-2">}</span><span class="p">,</span><span class="w">
- </span><span class="p" data-group-id="6442341459-3">{</span><span class="ss">port</span><span class="p">,</span><span class="w"> </span><span class="n">Port</span><span class="p" data-group-id="6442341459-3">}</span><span class="p">,</span><span class="w">
- </span><span class="p" data-group-id="6442341459-4">{</span><span class="ss">user</span><span class="p">,</span><span class="w"> </span><span class="n">UserName</span><span class="p" data-group-id="6442341459-4">}</span><span class="w">
- </span><span class="p" data-group-id="6442341459-5">{</span><span class="ss">password</span><span class="p">,</span><span class="w"> </span><span class="n">Pwd</span><span class="p" data-group-id="6442341459-5">}</span><span class="w">
- </span><span class="p" data-group-id="6442341459-6">{</span><span class="ss">user_dir</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p" data-group-id="6442341459-6">}</span><span class="w">
- </span><span class="p" data-group-id="6442341459-7">{</span><span class="ss">public_key_alg</span><span class="p">,</span><span class="w"> </span><span class="n">PubKeyAlg</span><span class="p" data-group-id="6442341459-7">}</span><span class="w">
- </span><span class="p" data-group-id="6442341459-8">{</span><span class="ss">connect_timeout</span><span class="p">,</span><span class="w"> </span><span class="n">Timeout</span><span class="p" data-group-id="6442341459-8">}</span><span class="w">
- </span><span class="p" data-group-id="6442341459-9">{</span><span class="ss">key_cb</span><span class="p">,</span><span class="w"> </span><span class="n">KeyCallbackMod</span><span class="p" data-group-id="6442341459-9">}</span><span class="p" data-group-id="6442341459-1">]</span></code></pre><p><code class="inline">ConnType = ssh | sftp</code>.</p><p>For other types, see <a href="../../apps/ssh/ssh.html"><code class="inline">ssh</code></a>.</p><p>All time-out parameters in <code class="inline">ct_ssh</code> functions are values in milliseconds.</p>
+can be used as configuration elements):</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="6988630133-1">[</span><span class="p" data-group-id="6988630133-2">{</span><span class="n">ConnType</span><span class="p">,</span><span class="w"> </span><span class="n">Addr</span><span class="p" data-group-id="6988630133-2">}</span><span class="p">,</span><span class="w">
+ </span><span class="p" data-group-id="6988630133-3">{</span><span class="ss">port</span><span class="p">,</span><span class="w"> </span><span class="n">Port</span><span class="p" data-group-id="6988630133-3">}</span><span class="p">,</span><span class="w">
+ </span><span class="p" data-group-id="6988630133-4">{</span><span class="ss">user</span><span class="p">,</span><span class="w"> </span><span class="n">UserName</span><span class="p" data-group-id="6988630133-4">}</span><span class="w">
+ </span><span class="p" data-group-id="6988630133-5">{</span><span class="ss">password</span><span class="p">,</span><span class="w"> </span><span class="n">Pwd</span><span class="p" data-group-id="6988630133-5">}</span><span class="w">
+ </span><span class="p" data-group-id="6988630133-6">{</span><span class="ss">user_dir</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="p" data-group-id="6988630133-6">}</span><span class="w">
+ </span><span class="p" data-group-id="6988630133-7">{</span><span class="ss">public_key_alg</span><span class="p">,</span><span class="w"> </span><span class="n">PubKeyAlg</span><span class="p" data-group-id="6988630133-7">}</span><span class="w">
+ </span><span class="p" data-group-id="6988630133-8">{</span><span class="ss">connect_timeout</span><span class="p">,</span><span class="w"> </span><span class="n">Timeout</span><span class="p" data-group-id="6988630133-8">}</span><span class="w">
+ </span><span class="p" data-group-id="6988630133-9">{</span><span class="ss">key_cb</span><span class="p">,</span><span class="w"> </span><span class="n">KeyCallbackMod</span><span class="p" data-group-id="6988630133-9">}</span><span class="p" data-group-id="6988630133-1">]</span></code></pre><p><code class="inline">ConnType = ssh | sftp</code>.</p><p>For other types, see <a href="../../apps/ssh/ssh.html"><code class="inline">ssh</code></a>.</p><p>All time-out parameters in <code class="inline">ct_ssh</code> functions are values in milliseconds.</p>
     </section>
 
 </div>
@@ -151,7 +169,7 @@ can be used as configuration elements):</p><pre><code class="makeup erlang" tran
 
       </div>
 
-        <div class="summary-synopsis"><p>Handle for a specific SSH/SFTP connection, see module <a><code class="inline">ct</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Handle for a specific SSH/SFTP connection, see module <a href="ct.html"><code class="inline">ct</code></a>.</p></div>
 
     </div>
 
@@ -172,7 +190,7 @@ can be used as configuration elements):</p><pre><code class="makeup erlang" tran
       </div>
 
         <div class="summary-synopsis"><p>The valid values are <code class="inline">0</code> (&quot;normal&quot;) and <code class="inline">1</code> (&quot;stderr&quot;), see
-<a>RFC 4254, Section 5.2</a>.</p></div>
+<a href="https://tools.ietf.org/html/rfc4254#page-8">RFC 4254, Section 5.2</a>.</p></div>
 
     </div>
 
@@ -188,7 +206,7 @@ can be used as configuration elements):</p><pre><code class="makeup erlang" tran
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -198,7 +216,7 @@ can be used as configuration elements):</p><pre><code class="makeup erlang" tran
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -208,7 +226,7 @@ can be used as configuration elements):</p><pre><code class="makeup erlang" tran
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -218,7 +236,7 @@ can be used as configuration elements):</p><pre><code class="makeup erlang" tran
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -228,7 +246,7 @@ can be used as configuration elements):</p><pre><code class="makeup erlang" tran
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -238,7 +256,7 @@ can be used as configuration elements):</p><pre><code class="makeup erlang" tran
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -248,7 +266,7 @@ can be used as configuration elements):</p><pre><code class="makeup erlang" tran
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -258,7 +276,7 @@ can be used as configuration elements):</p><pre><code class="makeup erlang" tran
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -268,7 +286,7 @@ can be used as configuration elements):</p><pre><code class="makeup erlang" tran
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -278,7 +296,7 @@ can be used as configuration elements):</p><pre><code class="makeup erlang" tran
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -288,7 +306,7 @@ can be used as configuration elements):</p><pre><code class="makeup erlang" tran
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">connect(KeyOrName, host, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#connect/3"><code class="inline">connect(KeyOrName, host, [])</code></a>.</p></div>
 
     </div>
 
@@ -299,7 +317,7 @@ can be used as configuration elements):</p><pre><code class="makeup erlang" tran
       </div>
 
         <div class="summary-synopsis"><p>Opens an SSH or SFTP connection using the information associated with <code class="inline">KeyOrName</code>
-(see <a><code class="inline">connect/3</code></a>).</p></div>
+(see <a href="#connect/3"><code class="inline">connect/3</code></a>).</p></div>
 
     </div>
 
@@ -320,7 +338,7 @@ can be used as configuration elements):</p><pre><code class="makeup erlang" tran
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -330,7 +348,7 @@ can be used as configuration elements):</p><pre><code class="makeup erlang" tran
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -340,7 +358,7 @@ can be used as configuration elements):</p><pre><code class="makeup erlang" tran
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -350,7 +368,7 @@ can be used as configuration elements):</p><pre><code class="makeup erlang" tran
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -370,7 +388,7 @@ can be used as configuration elements):</p><pre><code class="makeup erlang" tran
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">exec(SSH, Command, DefaultTimeout)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#exec/3"><code class="inline">exec(SSH, Command, DefaultTimeout)</code></a>.</p></div>
 
     </div>
 
@@ -380,7 +398,7 @@ can be used as configuration elements):</p><pre><code class="makeup erlang" tran
 
       </div>
 
-        <div class="summary-synopsis"><p>Requests server to perform <code class="inline">Command</code>, (see <a><code class="inline">exec/4</code></a>).</p></div>
+        <div class="summary-synopsis"><p>Requests server to perform <code class="inline">Command</code>, (see <a href="#exec/4"><code class="inline">exec/4</code></a>).</p></div>
 
     </div>
 
@@ -402,7 +420,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -412,7 +430,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -422,7 +440,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -432,7 +450,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -442,7 +460,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -452,7 +470,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -462,7 +480,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -472,7 +490,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -482,7 +500,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -492,7 +510,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -502,7 +520,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -512,7 +530,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -522,7 +540,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -532,7 +550,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -542,7 +560,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -552,7 +570,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -562,7 +580,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -572,7 +590,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -582,7 +600,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -592,7 +610,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -602,7 +620,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -612,7 +630,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -622,7 +640,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -632,7 +650,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -642,7 +660,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -652,7 +670,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -662,7 +680,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -672,7 +690,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -682,7 +700,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">receive_response(SSH, ChannelId, close, DefaultTimeout)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#receive_response/4"><code class="inline">receive_response(SSH, ChannelId, close, DefaultTimeout)</code></a>.</p></div>
 
     </div>
 
@@ -693,7 +711,7 @@ command.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Receives expected data from server on the specified session channel
-(see <a><code class="inline">receive_response/4</code></a>).</p></div>
+(see <a href="#receive_response/4"><code class="inline">receive_response/4</code></a>).</p></div>
 
     </div>
 
@@ -713,7 +731,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -723,7 +741,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -733,7 +751,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">send(SSH, ChannelId, 0, Data, DefaultTimeout)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#send/5"><code class="inline">send(SSH, ChannelId, 0, Data, DefaultTimeout)</code></a>.</p></div>
 
     </div>
 
@@ -743,7 +761,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Sends data to server on specified session channel (see <a><code class="inline">send/5</code></a>).</p></div>
+        <div class="summary-synopsis"><p>Sends data to server on specified session channel (see <a href="#send/5"><code class="inline">send/5</code></a>).</p></div>
 
     </div>
 
@@ -763,7 +781,7 @@ command.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">send_and_receive(SSH, ChannelId, 0, Data, close, DefaultTimeout)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#send_and_receive/6"><code class="inline">send_and_receive(SSH, ChannelId, 0, Data, close, DefaultTimeout)</code></a>.</p></div>
 
     </div>
 
@@ -774,7 +792,7 @@ command.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Sends data to server on specified session channel and waits to receive the
-server response (see <a><code class="inline">send_and_receive/6</code></a>).</p></div>
+server response (see <a href="#send_and_receive/6"><code class="inline">send_and_receive/6</code></a>).</p></div>
 
     </div>
 
@@ -785,7 +803,7 @@ server response (see <a><code class="inline">send_and_receive/6</code></a>).</p>
       </div>
 
         <div class="summary-synopsis"><p>Sends data to server on specified session channel and waits to receive the
-server response (see <a><code class="inline">send_and_receive/6</code></a>).</p></div>
+server response (see <a href="#send_and_receive/6"><code class="inline">send_and_receive/6</code></a>).</p></div>
 
     </div>
 
@@ -816,7 +834,7 @@ server response.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">session_open(SSH, DefaultTimeout)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#session_open/2"><code class="inline">session_open(SSH, DefaultTimeout)</code></a>.</p></div>
 
     </div>
 
@@ -848,7 +866,7 @@ be sent.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">shell(SSH, ChannelId, DefaultTimeout)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#shell/3"><code class="inline">shell(SSH, ChannelId, DefaultTimeout)</code></a>.</p></div>
 
     </div>
 
@@ -869,7 +887,7 @@ systems) is executed at the server end.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">subsystem(SSH, Channel, Subsystem, DefaultTimeout)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#subsystem/4"><code class="inline">subsystem(SSH, Channel, Subsystem, DefaultTimeout)</code></a>.</p></div>
 
     </div>
 
@@ -889,7 +907,7 @@ systems) is executed at the server end.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -899,7 +917,7 @@ systems) is executed at the server end.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -909,7 +927,7 @@ systems) is executed at the server end.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -919,7 +937,7 @@ systems) is executed at the server end.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -929,7 +947,7 @@ systems) is executed at the server end.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -939,7 +957,7 @@ systems) is executed at the server end.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For information and other types, see <a><code class="inline">ssh_sftp</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For information and other types, see <a href="../../apps/ssh/ssh_sftp.html"><code class="inline">ssh_sftp</code></a>.</p></div>
 
     </div>
 
@@ -955,6 +973,7 @@ systems) is executed at the server end.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:connection/0">
 
@@ -968,7 +987,7 @@ systems) is executed at the server end.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L96" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L96" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -998,7 +1017,7 @@ systems) is executed at the server end.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L98" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L98" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1028,7 +1047,7 @@ systems) is executed at the server end.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L94" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L94" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1058,7 +1077,7 @@ systems) is executed at the server end.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L109" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L109" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1088,7 +1107,7 @@ systems) is executed at the server end.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L103" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L103" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1118,6 +1137,7 @@ systems) is executed at the server end.</p></div>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="apread/4">
 
@@ -1129,7 +1149,7 @@ systems) is executed at the server end.</p></div>
       <h1 class="signature" translate="no">apread(SSH, Handle, Position, Length)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L910" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L910" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1165,7 +1185,7 @@ systems) is executed at the server end.</p></div>
       <h1 class="signature" translate="no">apread(SSH, Server, Handle, Position, Length)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L925" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L925" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1202,7 +1222,7 @@ systems) is executed at the server end.</p></div>
       <h1 class="signature" translate="no">apwrite(SSH, Handle, Position, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L1018" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L1018" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1238,7 +1258,7 @@ systems) is executed at the server end.</p></div>
       <h1 class="signature" translate="no">apwrite(SSH, Server, Handle, Position, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L1033" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L1033" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1275,7 +1295,7 @@ systems) is executed at the server end.</p></div>
       <h1 class="signature" translate="no">aread(SSH, Handle, Len)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L882" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L882" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1310,7 +1330,7 @@ systems) is executed at the server end.</p></div>
       <h1 class="signature" translate="no">aread(SSH, Server, Handle, Len)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L896" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L896" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1346,7 +1366,7 @@ systems) is executed at the server end.</p></div>
       <h1 class="signature" translate="no">awrite(SSH, Handle, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L990" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L990" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1381,7 +1401,7 @@ systems) is executed at the server end.</p></div>
       <h1 class="signature" translate="no">awrite(SSH, Server, Handle, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L1004" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L1004" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1417,7 +1437,7 @@ systems) is executed at the server end.</p></div>
       <h1 class="signature" translate="no">close(SSH, Handle)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L801" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L801" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1450,7 +1470,7 @@ systems) is executed at the server end.</p></div>
       <h1 class="signature" translate="no">close(SSH, Server, Handle)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L813" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L813" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1484,7 +1504,7 @@ systems) is executed at the server end.</p></div>
       <h1 class="signature" translate="no">connect(KeyOrName)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L119" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L119" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1513,7 +1533,7 @@ systems) is executed at the server end.</p></div>
       <h1 class="signature" translate="no">connect/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L145" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L145" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1558,7 +1578,7 @@ called with ExtraOpts being list.</p>
       <h1 class="signature" translate="no">connect(KeyOrName, ConnType, ExtraOpts)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L183" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L183" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1607,7 +1627,7 @@ application <a href="../../apps/ssh/index.html"><code class="inline">SSH</code><
       <h1 class="signature" translate="no">del_dir(SSH, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L1297" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L1297" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1640,7 +1660,7 @@ application <a href="../../apps/ssh/index.html"><code class="inline">SSH</code><
       <h1 class="signature" translate="no">del_dir(SSH, Server, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L1309" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L1309" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1674,7 +1694,7 @@ application <a href="../../apps/ssh/index.html"><code class="inline">SSH</code><
       <h1 class="signature" translate="no">delete(SSH, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L1251" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L1251" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1707,7 +1727,7 @@ application <a href="../../apps/ssh/index.html"><code class="inline">SSH</code><
       <h1 class="signature" translate="no">delete(SSH, Server, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L1263" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L1263" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1741,7 +1761,7 @@ application <a href="../../apps/ssh/index.html"><code class="inline">SSH</code><
       <h1 class="signature" translate="no">disconnect(SSH)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L263" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L263" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1769,7 +1789,7 @@ application <a href="../../apps/ssh/index.html"><code class="inline">SSH</code><
       <h1 class="signature" translate="no">exec(SSH, Command)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L312" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L312" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1798,7 +1818,7 @@ application <a href="../../apps/ssh/index.html"><code class="inline">SSH</code><
       <h1 class="signature" translate="no">exec/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L336" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L336" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1841,7 +1861,7 @@ called with ChannelId being integer.</p>
       <h1 class="signature" translate="no">exec(SSH, ChannelId, Command, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L354" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L354" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1878,7 +1898,7 @@ command.</p>
       <h1 class="signature" translate="no">get_file_info(SSH, Handle)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L1101" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L1101" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1912,7 +1932,7 @@ command.</p>
       <h1 class="signature" translate="no">get_file_info(SSH, Server, Handle)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L1114" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L1114" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1947,7 +1967,7 @@ command.</p>
       <h1 class="signature" translate="no">list_dir(SSH, Path)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L724" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L724" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1982,7 +2002,7 @@ command.</p>
       <h1 class="signature" translate="no">list_dir(SSH, Server, Path)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L738" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L738" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2018,7 +2038,7 @@ command.</p>
       <h1 class="signature" translate="no">make_dir(SSH, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L1274" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L1274" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2051,7 +2071,7 @@ command.</p>
       <h1 class="signature" translate="no">make_dir(SSH, Server, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L1286" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L1286" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2085,7 +2105,7 @@ command.</p>
       <h1 class="signature" translate="no">make_symlink(SSH, Name, Target)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L1201" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L1201" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2119,7 +2139,7 @@ command.</p>
       <h1 class="signature" translate="no">make_symlink(SSH, Server, Name, Target)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L1214" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L1214" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2154,7 +2174,7 @@ command.</p>
       <h1 class="signature" translate="no">open(SSH, File, Mode)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L751" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L751" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2189,7 +2209,7 @@ command.</p>
       <h1 class="signature" translate="no">open(SSH, Server, File, Mode)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L765" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L765" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2225,7 +2245,7 @@ command.</p>
       <h1 class="signature" translate="no">opendir(SSH, Path)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L777" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L777" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2259,7 +2279,7 @@ command.</p>
       <h1 class="signature" translate="no">opendir(SSH, Server, Path)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L790" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L790" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2294,7 +2314,7 @@ command.</p>
       <h1 class="signature" translate="no">position(SSH, Handle, Location)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L1048" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L1048" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2331,7 +2351,7 @@ command.</p>
       <h1 class="signature" translate="no">position(SSH, Server, Handle, Location)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L1064" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L1064" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2369,7 +2389,7 @@ command.</p>
       <h1 class="signature" translate="no">pread(SSH, Handle, Position, Length)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L854" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L854" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2405,7 +2425,7 @@ command.</p>
       <h1 class="signature" translate="no">pread(SSH, Server, Handle, Position, Length)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L869" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L869" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2442,7 +2462,7 @@ command.</p>
       <h1 class="signature" translate="no">pwrite(SSH, Handle, Position, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L963" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L963" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2477,7 +2497,7 @@ command.</p>
       <h1 class="signature" translate="no">pwrite(SSH, Server, Handle, Position, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L977" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L977" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2513,7 +2533,7 @@ command.</p>
       <h1 class="signature" translate="no">read(SSH, Handle, Len)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L826" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L826" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2548,7 +2568,7 @@ command.</p>
       <h1 class="signature" translate="no">read(SSH, Server, Handle, Len)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L840" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L840" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2584,7 +2604,7 @@ command.</p>
       <h1 class="signature" translate="no">read_file(SSH, File)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L673" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L673" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2618,7 +2638,7 @@ command.</p>
       <h1 class="signature" translate="no">read_file(SSH, Server, File)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L686" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L686" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2653,7 +2673,7 @@ command.</p>
       <h1 class="signature" translate="no">read_file_info(SSH, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L1076" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L1076" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2687,7 +2707,7 @@ command.</p>
       <h1 class="signature" translate="no">read_file_info(SSH, Server, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L1089" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L1089" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2722,7 +2742,7 @@ command.</p>
       <h1 class="signature" translate="no">read_link(SSH, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L1176" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L1176" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2756,7 +2776,7 @@ command.</p>
       <h1 class="signature" translate="no">read_link(SSH, Server, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L1189" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L1189" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2791,7 +2811,7 @@ command.</p>
       <h1 class="signature" translate="no">read_link_info(SSH, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L1126" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L1126" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2825,7 +2845,7 @@ command.</p>
       <h1 class="signature" translate="no">read_link_info(SSH, Server, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L1139" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L1139" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2860,7 +2880,7 @@ command.</p>
       <h1 class="signature" translate="no">receive_response(SSH, ChannelId)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L363" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L363" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2893,7 +2913,7 @@ command.</p>
       <h1 class="signature" translate="no">receive_response/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L389" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L389" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2937,7 +2957,7 @@ called with Timeout being integer.</p>
       <h1 class="signature" translate="no">receive_response(SSH, ChannelId, End, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L419" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L419" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2979,7 +2999,7 @@ supplied, the function returns immediately if the server closes the channel).</p
       <h1 class="signature" translate="no">rename(SSH, OldName, NewName)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L1226" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L1226" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3013,7 +3033,7 @@ supplied, the function returns immediately if the server closes the channel).</p
       <h1 class="signature" translate="no">rename(SSH, Server, OldName, NewName)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L1239" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L1239" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3048,7 +3068,7 @@ supplied, the function returns immediately if the server closes the channel).</p
       <h1 class="signature" translate="no">send(SSH, ChannelId, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L428" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L428" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3078,7 +3098,7 @@ supplied, the function returns immediately if the server closes the channel).</p
       <h1 class="signature" translate="no">send/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L452" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L452" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3121,7 +3141,7 @@ called with Type being integer.</p>
       <h1 class="signature" translate="no">send(SSH, ChannelId, Type, Data, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L468" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L468" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3156,7 +3176,7 @@ called with Type being integer.</p>
       <h1 class="signature" translate="no">send_and_receive(SSH, ChannelId, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L479" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L479" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3191,7 +3211,7 @@ called with Type being integer.</p>
       <h1 class="signature" translate="no">send_and_receive/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L522" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L522" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3252,7 +3272,7 @@ if called with Type being integer.</p>
       <h1 class="signature" translate="no">send_and_receive/5</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L574" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L574" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3316,7 +3336,7 @@ called with End being function.</p>
       <h1 class="signature" translate="no">send_and_receive(SSH, ChannelId, Type, Data, End, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L600" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L600" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3356,7 +3376,7 @@ server response.</p><p>For details on argument <code class="inline">End</code>, 
       <h1 class="signature" translate="no">session_close(SSH, ChannelId)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L303" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L303" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3385,7 +3405,7 @@ server response.</p><p>For details on argument <code class="inline">End</code>, 
       <h1 class="signature" translate="no">session_open(SSH)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L282" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L282" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3414,7 +3434,7 @@ server response.</p><p>For details on argument <code class="inline">End</code>, 
       <h1 class="signature" translate="no">session_open(SSH, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L293" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L293" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3447,7 +3467,7 @@ server response.</p><p>For details on argument <code class="inline">End</code>, 
       <h1 class="signature" translate="no">sftp_connect(SSH)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L661" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L661" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3480,7 +3500,7 @@ be sent.</p>
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L632" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L632" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3514,7 +3534,7 @@ be sent.</p>
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L645" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L645" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3548,7 +3568,7 @@ systems) is executed at the server end.</p>
       <h1 class="signature" translate="no">subsystem(SSH, ChannelId, Subsystem)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L610" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L610" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3582,7 +3602,7 @@ systems) is executed at the server end.</p>
       <h1 class="signature" translate="no">subsystem(SSH, ChannelId, Subsystem, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L623" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L623" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3617,7 +3637,7 @@ systems) is executed at the server end.</p>
       <h1 class="signature" translate="no">write(SSH, Handle, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L937" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L937" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3651,7 +3671,7 @@ systems) is executed at the server end.</p>
       <h1 class="signature" translate="no">write(SSH, Server, Handle, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L950" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L950" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3686,7 +3706,7 @@ systems) is executed at the server end.</p>
       <h1 class="signature" translate="no">write_file(SSH, File, Iolist)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L698" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L698" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3720,7 +3740,7 @@ systems) is executed at the server end.</p>
       <h1 class="signature" translate="no">write_file(SSH, Server, File, Iolist)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L711" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L711" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3755,7 +3775,7 @@ systems) is executed at the server end.</p>
       <h1 class="signature" translate="no">write_file_info(SSH, Name, Info)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L1151" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L1151" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3789,7 +3809,7 @@ systems) is executed at the server end.</p>
       <h1 class="signature" translate="no">write_file_info(SSH, Server, Name, Info)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_ssh.erl#L1164" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_ssh.erl#L1164" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3822,8 +3842,8 @@ systems) is executed at the server end.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="common_test.epub" title="ePub version">
@@ -3835,7 +3855,7 @@ systems) is executed at the server end.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

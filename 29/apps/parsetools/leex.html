@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="parsetools v2.7-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/parsetools/leex.html" />
     <title>leex — parsetools v2.7-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-54E776FB.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ parsetools
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of parsetools</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ parsetools
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/parsetools/src/leex.erl#L42" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/parsetools/src/leex.erl#L42" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -129,13 +147,13 @@ following returns:</p><ul><li><code class="inline">{token,Token,PushBackList}</c
 next token. Note that pushing back a newline will mean the line numbering will
 no longer be correct.</p><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>Pushing back characters gives you unexpected possibilities to cause the
 scanner to loop!</p></section><p>The following example would match a simple Erlang integer or float and return a
-token which could be sent to the Erlang parser:</p><pre><code class="makeup erlang" translate="no"><span class="n">D</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="1455045133-1">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p" data-group-id="1455045133-1">]</span><span class="w">
+token which could be sent to the Erlang parser:</p><pre><code class="makeup erlang" translate="no"><span class="n">D</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="1057268989-1">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p" data-group-id="1057268989-1">]</span><span class="w">
 
-</span><span class="p" data-group-id="1455045133-2">{</span><span class="n">D</span><span class="p" data-group-id="1455045133-2">}</span><span class="o">+</span><span class="w"> </span><span class="p">:</span><span class="w">
-  </span><span class="p" data-group-id="1455045133-3">{</span><span class="ss">token</span><span class="p">,</span><span class="p" data-group-id="1455045133-4">{</span><span class="ss">integer</span><span class="p">,</span><span class="n">TokenLine</span><span class="p">,</span><span class="nf">list_to_integer</span><span class="p" data-group-id="1455045133-5">(</span><span class="n">TokenChars</span><span class="p" data-group-id="1455045133-5">)</span><span class="p" data-group-id="1455045133-4">}</span><span class="p" data-group-id="1455045133-3">}</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="1057268989-2">{</span><span class="n">D</span><span class="p" data-group-id="1057268989-2">}</span><span class="o">+</span><span class="w"> </span><span class="p">:</span><span class="w">
+  </span><span class="p" data-group-id="1057268989-3">{</span><span class="ss">token</span><span class="p">,</span><span class="p" data-group-id="1057268989-4">{</span><span class="ss">integer</span><span class="p">,</span><span class="n">TokenLine</span><span class="p">,</span><span class="nf">list_to_integer</span><span class="p" data-group-id="1057268989-5">(</span><span class="n">TokenChars</span><span class="p" data-group-id="1057268989-5">)</span><span class="p" data-group-id="1057268989-4">}</span><span class="p" data-group-id="1057268989-3">}</span><span class="p">.</span><span class="w">
 
-</span><span class="p" data-group-id="1455045133-6">{</span><span class="n">D</span><span class="p" data-group-id="1455045133-6">}</span><span class="o">+</span><span class="err">\</span><span class="p">.</span><span class="p" data-group-id="1455045133-7">{</span><span class="n">D</span><span class="p" data-group-id="1455045133-7">}</span><span class="o">+</span><span class="p" data-group-id="1455045133-8">(</span><span class="p" data-group-id="1455045133-9">(</span><span class="n">E</span><span class="p">|</span><span class="ss">e</span><span class="p" data-group-id="1455045133-9">)</span><span class="p" data-group-id="1455045133-10">(</span><span class="err">\</span><span class="o">+</span><span class="p">|</span><span class="err">\</span><span class="o">-</span><span class="p" data-group-id="1455045133-10">)</span><span class="o">?</span><span class="p" data-group-id="1455045133-11">{</span><span class="n">D</span><span class="p" data-group-id="1455045133-11">}</span><span class="o">+</span><span class="p" data-group-id="1455045133-8">)</span><span class="o">?</span><span class="w"> </span><span class="p">:</span><span class="w">
-  </span><span class="p" data-group-id="1455045133-12">{</span><span class="ss">token</span><span class="p">,</span><span class="p" data-group-id="1455045133-13">{</span><span class="nb">float</span><span class="p">,</span><span class="n">TokenLine</span><span class="p">,</span><span class="nf">list_to_float</span><span class="p" data-group-id="1455045133-14">(</span><span class="n">TokenChars</span><span class="p" data-group-id="1455045133-14">)</span><span class="p" data-group-id="1455045133-13">}</span><span class="p" data-group-id="1455045133-12">}</span><span class="p">.</span></code></pre><p>The Erlang code in the <code class="inline">Erlang code.</code> section is written into the output file
+</span><span class="p" data-group-id="1057268989-6">{</span><span class="n">D</span><span class="p" data-group-id="1057268989-6">}</span><span class="o">+</span><span class="err">\</span><span class="p">.</span><span class="p" data-group-id="1057268989-7">{</span><span class="n">D</span><span class="p" data-group-id="1057268989-7">}</span><span class="o">+</span><span class="p" data-group-id="1057268989-8">(</span><span class="p" data-group-id="1057268989-9">(</span><span class="n">E</span><span class="p">|</span><span class="ss">e</span><span class="p" data-group-id="1057268989-9">)</span><span class="p" data-group-id="1057268989-10">(</span><span class="err">\</span><span class="o">+</span><span class="p">|</span><span class="err">\</span><span class="o">-</span><span class="p" data-group-id="1057268989-10">)</span><span class="o">?</span><span class="p" data-group-id="1057268989-11">{</span><span class="n">D</span><span class="p" data-group-id="1057268989-11">}</span><span class="o">+</span><span class="p" data-group-id="1057268989-8">)</span><span class="o">?</span><span class="w"> </span><span class="p">:</span><span class="w">
+  </span><span class="p" data-group-id="1057268989-12">{</span><span class="ss">token</span><span class="p">,</span><span class="p" data-group-id="1057268989-13">{</span><span class="nb">float</span><span class="p">,</span><span class="n">TokenLine</span><span class="p">,</span><span class="nf">list_to_float</span><span class="p" data-group-id="1057268989-14">(</span><span class="n">TokenChars</span><span class="p" data-group-id="1057268989-14">)</span><span class="p" data-group-id="1057268989-13">}</span><span class="p" data-group-id="1057268989-12">}</span><span class="p">.</span></code></pre><p>The Erlang code in the <code class="inline">Erlang code.</code> section is written into the output file
 directly after the module declaration and predefined exports declaration, making
 it possible to add extra exports, define imports, and other attributes, which are
 visible in the whole file.</p><h2 id="module-regular-expressions" class="section-heading"><a href="#module-regular-expressions" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Regular Expressions</span></h2><p>The regular expressions allowed here is a subset of the set found in <code class="inline">egrep</code> and
@@ -173,8 +191,8 @@ current version of <code class="inline">leex</code> and generates a parse error.
 
       </div>
 
-        <div class="summary-synopsis"><p>The standard <a><code class="inline">error_info/0</code></a> structure that is returned from all I/O modules.
-<code class="inline">ErrorDescriptor</code> is formattable by <a><code class="inline">format_error/1</code></a>.</p></div>
+        <div class="summary-synopsis"><p>The standard <a href="#t:error_info/0"><code class="inline">error_info/0</code></a> structure that is returned from all I/O modules.
+<code class="inline">ErrorDescriptor</code> is formattable by <a href="#format_error/1"><code class="inline">format_error/1</code></a>.</p></div>
 
     </div>
 
@@ -230,7 +248,7 @@ current version of <code class="inline">leex</code> and generates a parse error.
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">string(String, 1)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#string/2"><code class="inline">string(String, 1)</code></a>.</p></div>
 
     </div>
 
@@ -250,7 +268,7 @@ current version of <code class="inline">leex</code> and generates a parse error.
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">token(Cont, Chars, 1)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#token/3"><code class="inline">token(Cont, Chars, 1)</code></a>.</p></div>
 
     </div>
 
@@ -270,7 +288,7 @@ current version of <code class="inline">leex</code> and generates a parse error.
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">tokens(Cont, Chars, 1)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#tokens/3"><code class="inline">tokens(Cont, Chars, 1)</code></a>.</p></div>
 
     </div>
 
@@ -296,7 +314,7 @@ current version of <code class="inline">leex</code> and generates a parse error.
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">file(File, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#file/2"><code class="inline">file(File, [])</code></a>.</p></div>
 
     </div>
 
@@ -317,7 +335,7 @@ current version of <code class="inline">leex</code> and generates a parse error.
       </div>
 
         <div class="summary-synopsis"><p>Returns a descriptive string in English of an error reason <code class="inline">ErrorDescriptor</code>
-returned by <a><code class="inline">leex:file/1,2</code></a> when there is an error in a regular
+returned by <a href="#file/1"><code class="inline">leex:file/1,2</code></a> when there is an error in a regular
 expression.</p></div>
 
     </div>
@@ -334,6 +352,7 @@ expression.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:error_info/0">
 
@@ -347,7 +366,7 @@ expression.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/parsetools/src/leex.erl#L461" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/parsetools/src/leex.erl#L461" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -378,7 +397,7 @@ expression.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/parsetools/src/leex.erl#L467" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/parsetools/src/leex.erl#L467" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -408,7 +427,7 @@ expression.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/parsetools/src/leex.erl#L463" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/parsetools/src/leex.erl#L463" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -438,7 +457,7 @@ expression.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/parsetools/src/leex.erl#L469" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/parsetools/src/leex.erl#L469" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -468,7 +487,7 @@ expression.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/parsetools/src/leex.erl#L465" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/parsetools/src/leex.erl#L465" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -499,7 +518,7 @@ expression.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/parsetools/src/leex.erl#L464" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/parsetools/src/leex.erl#L464" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -528,6 +547,7 @@ expression.</p></div>
       </a>
       <span class="text">Generated Scanner Exports</span>
     </h1>
+
     <div class="generated-scanner-exports-list">
 <section class="detail" id="string/1">
 
@@ -539,7 +559,7 @@ expression.</p></div>
       <h1 class="signature" translate="no">string(String)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/parsetools/src/leex.erl#L300" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/parsetools/src/leex.erl#L300" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -574,7 +594,7 @@ expression.</p></div>
       <h1 class="signature" translate="no">string(String, StartLoc)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/parsetools/src/leex.erl#L321" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/parsetools/src/leex.erl#L321" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -612,7 +632,7 @@ or <a href="../../apps/stdlib/erl_anno.html#t:location/0"><code class="inline">e
       <h1 class="signature" translate="no">token(Cont, Chars)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/parsetools/src/leex.erl#L337" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/parsetools/src/leex.erl#L337" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -649,7 +669,7 @@ or <a href="../../apps/stdlib/erl_anno.html#t:location/0"><code class="inline">e
       <h1 class="signature" translate="no">token(Cont, Chars, StartLoc)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/parsetools/src/leex.erl#L372" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/parsetools/src/leex.erl#L372" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -681,7 +701,7 @@ used in the next call to <code class="inline">token()</code> with more character
 the token. This is continued until a token has been scanned. <code class="inline">Cont</code> is
 initially <code class="inline">[]</code>.</p><p>It is not designed to be called directly by an application, but is
 used through the I/O system where it can typically be called in an
-application by:</p><pre><code class="makeup erlang" translate="no"><span class="nc">io</span><span class="p">:</span><span class="nf">request</span><span class="p" data-group-id="8459473054-1">(</span><span class="n">InFile</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8459473054-2">{</span><span class="ss">get_until</span><span class="p">,</span><span class="ss">unicode</span><span class="p">,</span><span class="n">Prompt</span><span class="p">,</span><span class="n">Module</span><span class="p">,</span><span class="ss">token</span><span class="p">,</span><span class="p" data-group-id="8459473054-3">[</span><span class="n">Loc</span><span class="p" data-group-id="8459473054-3">]</span><span class="p" data-group-id="8459473054-2">}</span><span class="p" data-group-id="8459473054-1">)</span><span class="w">
+application by:</p><pre><code class="makeup erlang" translate="no"><span class="nc">io</span><span class="p">:</span><span class="nf">request</span><span class="p" data-group-id="3974015843-1">(</span><span class="n">InFile</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3974015843-2">{</span><span class="ss">get_until</span><span class="p">,</span><span class="ss">unicode</span><span class="p">,</span><span class="n">Prompt</span><span class="p">,</span><span class="n">Module</span><span class="p">,</span><span class="ss">token</span><span class="p">,</span><span class="p" data-group-id="3974015843-3">[</span><span class="n">Loc</span><span class="p" data-group-id="3974015843-3">]</span><span class="p" data-group-id="3974015843-2">}</span><span class="p" data-group-id="3974015843-1">)</span><span class="w">
   </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">TokenRet</span></code></pre>
   </section>
 </section>
@@ -695,7 +715,7 @@ application by:</p><pre><code class="makeup erlang" translate="no"><span class="
       <h1 class="signature" translate="no">tokens(Cont, Chars)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/parsetools/src/leex.erl#L389" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/parsetools/src/leex.erl#L389" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -733,7 +753,7 @@ application by:</p><pre><code class="makeup erlang" translate="no"><span class="
       <h1 class="signature" translate="no">tokens(Cont, Chars, StartLoc)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/parsetools/src/leex.erl#L430" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/parsetools/src/leex.erl#L430" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -770,7 +790,7 @@ will then return all the tokens. This is typically used for scanning grammars
 like Erlang where there is an explicit end token, <code class="inline">'.'</code>. If no end token is
 found then the whole file will be scanned and returned. If an error occurs then
 all tokens up to and including the next end token will be skipped.</p><p>It is not designed to be called directly by an application, but used through the
-I/O system where it can typically be called in an application by:</p><pre><code class="makeup erlang" translate="no"><span class="nc">io</span><span class="p">:</span><span class="nf">request</span><span class="p" data-group-id="1724815887-1">(</span><span class="n">InFile</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1724815887-2">{</span><span class="ss">get_until</span><span class="p">,</span><span class="ss">unicode</span><span class="p">,</span><span class="n">Prompt</span><span class="p">,</span><span class="n">Module</span><span class="p">,</span><span class="ss">tokens</span><span class="p">,</span><span class="p" data-group-id="1724815887-3">[</span><span class="n">Loc</span><span class="p" data-group-id="1724815887-3">]</span><span class="p" data-group-id="1724815887-2">}</span><span class="p" data-group-id="1724815887-1">)</span><span class="w">
+I/O system where it can typically be called in an application by:</p><pre><code class="makeup erlang" translate="no"><span class="nc">io</span><span class="p">:</span><span class="nf">request</span><span class="p" data-group-id="8592015780-1">(</span><span class="n">InFile</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8592015780-2">{</span><span class="ss">get_until</span><span class="p">,</span><span class="ss">unicode</span><span class="p">,</span><span class="n">Prompt</span><span class="p">,</span><span class="n">Module</span><span class="p">,</span><span class="ss">tokens</span><span class="p">,</span><span class="p" data-group-id="8592015780-3">[</span><span class="n">Loc</span><span class="p" data-group-id="8592015780-3">]</span><span class="p" data-group-id="8592015780-2">}</span><span class="p" data-group-id="8592015780-1">)</span><span class="w">
   </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">TokensRet</span></code></pre>
   </section>
 </section>
@@ -785,6 +805,7 @@ I/O system where it can typically be called in an application by:</p><pre><code 
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="file/1">
 
@@ -796,7 +817,7 @@ I/O system where it can typically be called in an application by:</p><pre><code 
       <h1 class="signature" translate="no">file(FileName)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/parsetools/src/leex.erl#L475" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/parsetools/src/leex.erl#L475" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -826,7 +847,7 @@ I/O system where it can typically be called in an application by:</p><pre><code 
         <span class="note">(since OTP R16B02)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/parsetools/src/leex.erl#L567" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/parsetools/src/leex.erl#L567" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -900,7 +921,7 @@ option. For example, <code class="inline">verbose</code> is equivalent to <code 
       <h1 class="signature" translate="no">format_error(ErrorDescriptor)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/parsetools/src/leex.erl#L611" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/parsetools/src/leex.erl#L611" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -928,8 +949,8 @@ expression.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="parsetools.epub" title="ePub version">
@@ -941,7 +962,7 @@ expression.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

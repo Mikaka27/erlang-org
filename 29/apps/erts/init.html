@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="erts v16.1.2-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/erts/init.html" />
     <title>init — erts v16.1.2-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-25752129.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ erts
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of erts</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ erts
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/init.erl#L52" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/init.erl#L52" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -123,8 +141,8 @@ in the order specified. <code class="inline">-eval</code> expressions are evalua
 initialization process.</p></li><li><p><strong><code class="inline">-extra</code></strong> - Everything following <code class="inline">-extra</code> is considered plain arguments and
 can be retrieved using <a href="#get_plain_arguments/0"><code class="inline">get_plain_arguments/0</code></a>.</p><p>Example:</p><pre><code class="makeup erlang" translate="no"><span class="c1">% erl -extra +A 1 --</span><span class="w">
 </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="gp unselectable">
-1&gt; </span><span class="nc">init</span><span class="p">:</span><span class="nf">get_plain_arguments</span><span class="p" data-group-id="6931809395-1">(</span><span class="p" data-group-id="6931809395-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="6931809395-2">[</span><span class="s">&quot;+A&quot;</span><span class="p">,</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="s">&quot;--&quot;</span><span class="p" data-group-id="6931809395-2">]</span></code></pre><p>The <code class="inline">-extra</code> flag can be passed on the command line, through <code class="inline">ERL_*FLAGS</code> or
+1&gt; </span><span class="nc">init</span><span class="p">:</span><span class="nf">get_plain_arguments</span><span class="p" data-group-id="7890480917-1">(</span><span class="p" data-group-id="7890480917-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="7890480917-2">[</span><span class="s">&quot;+A&quot;</span><span class="p">,</span><span class="s">&quot;1&quot;</span><span class="p">,</span><span class="s">&quot;--&quot;</span><span class="p" data-group-id="7890480917-2">]</span></code></pre><p>The <code class="inline">-extra</code> flag can be passed on the command line, through <code class="inline">ERL_*FLAGS</code> or
 <code class="inline">-args_file</code>. It only effects the remaining command-line flags in the entity
 in which it is passed. If multiple <code class="inline">-extra</code> flags are passed they are
 concatenated using the same order rules as <code class="inline">ERL_*FLAGS</code> or <code class="inline">-args_file</code> in
@@ -172,13 +190,13 @@ with the additional caveat that arguments are passed as strings instead of
 atoms.</p></section></li></ul><h2 id="module-example" class="section-heading"><a href="#module-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Example</span></h2><pre><code class="makeup erlang" translate="no"><span class="c1">% erl -- a b -children thomas claire -ages 7 3 -- x y</span><span class="w">
 </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="w">
 
-</span><span class="mi">1</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">init</span><span class="p">:</span><span class="nf">get_plain_arguments</span><span class="p" data-group-id="5517426601-1">(</span><span class="p" data-group-id="5517426601-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="5517426601-2">[</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="s">&quot;y&quot;</span><span class="p" data-group-id="5517426601-2">]</span><span class="gp unselectable">
-2&gt; </span><span class="nc">init</span><span class="p">:</span><span class="nf">get_argument</span><span class="p" data-group-id="5517426601-3">(</span><span class="ss">children</span><span class="p" data-group-id="5517426601-3">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="5517426601-4">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="5517426601-5">[</span><span class="p" data-group-id="5517426601-6">[</span><span class="s">&quot;thomas&quot;</span><span class="p">,</span><span class="s">&quot;claire&quot;</span><span class="p" data-group-id="5517426601-6">]</span><span class="p" data-group-id="5517426601-5">]</span><span class="p" data-group-id="5517426601-4">}</span><span class="gp unselectable">
-3&gt; </span><span class="nc">init</span><span class="p">:</span><span class="nf">get_argument</span><span class="p" data-group-id="5517426601-7">(</span><span class="ss">ages</span><span class="p" data-group-id="5517426601-7">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="5517426601-8">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5517426601-9">[</span><span class="p" data-group-id="5517426601-10">[</span><span class="s">&quot;7&quot;</span><span class="p">,</span><span class="s">&quot;3&quot;</span><span class="p" data-group-id="5517426601-10">]</span><span class="p" data-group-id="5517426601-9">]</span><span class="p" data-group-id="5517426601-8">}</span><span class="gp unselectable">
-4&gt; </span><span class="nc">init</span><span class="p">:</span><span class="nf">get_argument</span><span class="p" data-group-id="5517426601-11">(</span><span class="ss">silly</span><span class="p" data-group-id="5517426601-11">)</span><span class="p">.</span><span class="w">
+</span><span class="mi">1</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">init</span><span class="p">:</span><span class="nf">get_plain_arguments</span><span class="p" data-group-id="8152804364-1">(</span><span class="p" data-group-id="8152804364-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="8152804364-2">[</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="s">&quot;y&quot;</span><span class="p" data-group-id="8152804364-2">]</span><span class="gp unselectable">
+2&gt; </span><span class="nc">init</span><span class="p">:</span><span class="nf">get_argument</span><span class="p" data-group-id="8152804364-3">(</span><span class="ss">children</span><span class="p" data-group-id="8152804364-3">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="8152804364-4">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="8152804364-5">[</span><span class="p" data-group-id="8152804364-6">[</span><span class="s">&quot;thomas&quot;</span><span class="p">,</span><span class="s">&quot;claire&quot;</span><span class="p" data-group-id="8152804364-6">]</span><span class="p" data-group-id="8152804364-5">]</span><span class="p" data-group-id="8152804364-4">}</span><span class="gp unselectable">
+3&gt; </span><span class="nc">init</span><span class="p">:</span><span class="nf">get_argument</span><span class="p" data-group-id="8152804364-7">(</span><span class="ss">ages</span><span class="p" data-group-id="8152804364-7">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="8152804364-8">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8152804364-9">[</span><span class="p" data-group-id="8152804364-10">[</span><span class="s">&quot;7&quot;</span><span class="p">,</span><span class="s">&quot;3&quot;</span><span class="p" data-group-id="8152804364-10">]</span><span class="p" data-group-id="8152804364-9">]</span><span class="p" data-group-id="8152804364-8">}</span><span class="gp unselectable">
+4&gt; </span><span class="nc">init</span><span class="p">:</span><span class="nf">get_argument</span><span class="p" data-group-id="8152804364-11">(</span><span class="ss">silly</span><span class="p" data-group-id="8152804364-11">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">error</span></code></pre><h2 id="module-see-also" class="section-heading"><a href="#module-see-also" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">See Also</span></h2><p><a href="erl_prim_loader.html"><code class="inline">erl_prim_loader</code></a>, <a href="../../apps/kernel/heart.html"><code class="inline">heart</code></a></p>
     </section>
 
@@ -249,7 +267,7 @@ atoms.</p></section></li></ul><h2 id="module-example" class="section-heading"><a
       </div>
 
         <div class="summary-synopsis"><p>Returns all command-line flags and the system-defined flags, see
-<a><code class="inline">get_argument/1</code></a>.</p></div>
+<a href="#get_argument/1"><code class="inline">get_argument/1</code></a>.</p></div>
 
     </div>
 
@@ -289,7 +307,7 @@ atoms.</p></section></li></ul><h2 id="module-example" class="section-heading"><a
 
       </div>
 
-        <div class="summary-synopsis"><p>The same as <a><code class="inline">restart([])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>The same as <a href="#restart/1"><code class="inline">restart([])</code></a>.</p></div>
 
     </div>
 
@@ -319,7 +337,7 @@ atoms.</p></section></li></ul><h2 id="module-example" class="section-heading"><a
 
       </div>
 
-        <div class="summary-synopsis"><p>The same as <a><code class="inline">stop(0)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>The same as <a href="#stop/1"><code class="inline">stop(0)</code></a>.</p></div>
 
     </div>
 
@@ -345,6 +363,7 @@ atoms.</p></section></li></ul><h2 id="module-example" class="section-heading"><a
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:internal_status/0">
 
@@ -356,7 +375,7 @@ atoms.</p></section></li></ul><h2 id="module-example" class="section-heading"><a
       <h1 class="signature" translate="no">internal_status()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/init.erl#L273" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/init.erl#L273" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -384,7 +403,7 @@ atoms.</p></section></li></ul><h2 id="module-example" class="section-heading"><a
       <h1 class="signature" translate="no">mode()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/init.erl#L275" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/init.erl#L275" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -413,6 +432,7 @@ atoms.</p></section></li></ul><h2 id="module-example" class="section-heading"><a
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="boot/1">
 
@@ -424,7 +444,7 @@ atoms.</p></section></li></ul><h2 id="module-example" class="section-heading"><a
       <h1 class="signature" translate="no">boot(BootArgs)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/init.erl#L583" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/init.erl#L583" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -456,7 +476,7 @@ calling <a href="#get_arguments/0"><code class="inline">get_arguments/0</code></
       <h1 class="signature" translate="no">get_argument(Flag)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/init.erl#L388" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/init.erl#L388" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -474,12 +494,12 @@ calling <a href="#get_arguments/0"><code class="inline">get_arguments/0</code></
 <p>Returns all values associated with the command-line user flag <code class="inline">Flag</code>.</p><p>If <code class="inline">Flag</code> is provided several times, each <code class="inline">Values</code> is returned in preserved order.
 Example:</p><pre><code class="makeup erlang" translate="no"><span class="c1">% erl -a b c -a d</span><span class="w">
 </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="gp unselectable">
-1&gt; </span><span class="nc">init</span><span class="p">:</span><span class="nf">get_argument</span><span class="p" data-group-id="0875069429-1">(</span><span class="ss">a</span><span class="p" data-group-id="0875069429-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="0875069429-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="0875069429-3">[</span><span class="p" data-group-id="0875069429-4">[</span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="s">&quot;c&quot;</span><span class="p" data-group-id="0875069429-4">]</span><span class="p">,</span><span class="p" data-group-id="0875069429-5">[</span><span class="s">&quot;d&quot;</span><span class="p" data-group-id="0875069429-5">]</span><span class="p" data-group-id="0875069429-3">]</span><span class="p" data-group-id="0875069429-2">}</span></code></pre><p>The following flags are defined automatically and can be retrieved using this
+1&gt; </span><span class="nc">init</span><span class="p">:</span><span class="nf">get_argument</span><span class="p" data-group-id="8346982669-1">(</span><span class="ss">a</span><span class="p" data-group-id="8346982669-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="8346982669-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="8346982669-3">[</span><span class="p" data-group-id="8346982669-4">[</span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="s">&quot;c&quot;</span><span class="p" data-group-id="8346982669-4">]</span><span class="p">,</span><span class="p" data-group-id="8346982669-5">[</span><span class="s">&quot;d&quot;</span><span class="p" data-group-id="8346982669-5">]</span><span class="p" data-group-id="8346982669-3">]</span><span class="p" data-group-id="8346982669-2">}</span></code></pre><p>The following flags are defined automatically and can be retrieved using this
 function:</p><ul><li><p><strong><code class="inline">root</code></strong> - The installation directory of Erlang/OTP, <code class="inline">$ROOT</code>:</p><pre><code class="text">2&gt; init:get_argument(root).
-{ok,[[&quot;/usr/local/otp/releases/otp_beam_solaris8_r10b_patched&quot;]]}</code></pre></li><li><p><strong><code class="inline">progname</code></strong> - The name of the program which started Erlang:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">3&gt; </span><span class="nc">init</span><span class="p">:</span><span class="nf">get_argument</span><span class="p" data-group-id="5318393810-1">(</span><span class="ss">progname</span><span class="p" data-group-id="5318393810-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="5318393810-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="5318393810-3">[</span><span class="p" data-group-id="5318393810-4">[</span><span class="s">&quot;erl&quot;</span><span class="p" data-group-id="5318393810-4">]</span><span class="p" data-group-id="5318393810-3">]</span><span class="p" data-group-id="5318393810-2">}</span></code></pre></li><li><p><strong><code class="inline" id="home">home</code></strong> - The home directory (on Unix, the value of $HOME):</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">4&gt; </span><span class="nc">init</span><span class="p">:</span><span class="nf">get_argument</span><span class="p" data-group-id="8271279144-1">(</span><span class="ss">home</span><span class="p" data-group-id="8271279144-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="8271279144-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="8271279144-3">[</span><span class="p" data-group-id="8271279144-4">[</span><span class="s">&quot;/home/harry&quot;</span><span class="p" data-group-id="8271279144-4">]</span><span class="p" data-group-id="8271279144-3">]</span><span class="p" data-group-id="8271279144-2">}</span></code></pre></li></ul><p>Returns <code class="inline">error</code> if no value is associated with <code class="inline">Flag</code>.</p>
+{ok,[[&quot;/usr/local/otp/releases/otp_beam_solaris8_r10b_patched&quot;]]}</code></pre></li><li><p><strong><code class="inline">progname</code></strong> - The name of the program which started Erlang:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">3&gt; </span><span class="nc">init</span><span class="p">:</span><span class="nf">get_argument</span><span class="p" data-group-id="4093750213-1">(</span><span class="ss">progname</span><span class="p" data-group-id="4093750213-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4093750213-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="4093750213-3">[</span><span class="p" data-group-id="4093750213-4">[</span><span class="s">&quot;erl&quot;</span><span class="p" data-group-id="4093750213-4">]</span><span class="p" data-group-id="4093750213-3">]</span><span class="p" data-group-id="4093750213-2">}</span></code></pre></li><li><p><strong><code class="inline" id="home">home</code></strong> - The home directory (on Unix, the value of $HOME):</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">4&gt; </span><span class="nc">init</span><span class="p">:</span><span class="nf">get_argument</span><span class="p" data-group-id="0958802398-1">(</span><span class="ss">home</span><span class="p" data-group-id="0958802398-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="0958802398-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="0958802398-3">[</span><span class="p" data-group-id="0958802398-4">[</span><span class="s">&quot;/home/harry&quot;</span><span class="p" data-group-id="0958802398-4">]</span><span class="p" data-group-id="0958802398-3">]</span><span class="p" data-group-id="0958802398-2">}</span></code></pre></li></ul><p>Returns <code class="inline">error</code> if no value is associated with <code class="inline">Flag</code>.</p>
   </section>
 </section>
 <section class="detail" id="get_arguments/0">
@@ -492,7 +512,7 @@ function:</p><ul><li><p><strong><code class="inline">root</code></strong> - The 
       <h1 class="signature" translate="no">get_arguments()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/init.erl#L337" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/init.erl#L337" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -521,7 +541,7 @@ function:</p><ul><li><p><strong><code class="inline">root</code></strong> - The 
       <h1 class="signature" translate="no">get_plain_arguments()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/init.erl#L343" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/init.erl#L343" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -549,7 +569,7 @@ function:</p><ul><li><p><strong><code class="inline">root</code></strong> - The 
       <h1 class="signature" translate="no">get_status()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/init.erl#L448" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/init.erl#L448" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -581,7 +601,7 @@ that is, <code class="inline">ProvidedStatus</code> gets the value of <code clas
       <h1 class="signature" translate="no">reboot()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/init.erl#L529" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/init.erl#L529" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -612,7 +632,7 @@ applications, command-line flag <code class="inline">-shutdown_time</code> is to
       <h1 class="signature" translate="no">restart()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/init.erl#L490" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/init.erl#L490" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -642,7 +662,7 @@ applications, command-line flag <code class="inline">-shutdown_time</code> is to
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/init.erl#L509" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/init.erl#L509" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -676,7 +696,7 @@ applications, command-line flag <code class="inline">-shutdown_time</code> is to
       <h1 class="signature" translate="no">script_id()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/init.erl#L399" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/init.erl#L399" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -705,7 +725,7 @@ applications, command-line flag <code class="inline">-shutdown_time</code> is to
       <h1 class="signature" translate="no">stop()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/init.erl#L533" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/init.erl#L533" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -733,7 +753,7 @@ applications, command-line flag <code class="inline">-shutdown_time</code> is to
       <h1 class="signature" translate="no">stop(Status)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/erts/preloaded/src/init.erl#L548" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/erts/preloaded/src/init.erl#L548" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -763,8 +783,8 @@ applications, command-line flag <code class="inline">-shutdown_time</code> is to
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
         </span>
@@ -772,7 +792,7 @@ applications, command-line flag <code class="inline">-shutdown_time</code> is to
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

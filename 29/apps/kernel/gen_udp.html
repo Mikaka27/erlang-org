@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="kernel v10.4.2-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/kernel/gen_udp.html" />
     <title>gen_udp — kernel v10.4.2-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-4B8F4164.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ kernel
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of kernel</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ kernel
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/gen_udp.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/gen_udp.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -206,7 +224,7 @@ be bound. If the user does not provide an address, gen_udp will try to
 
       </div>
 
-        <div class="summary-synopsis"><p>A socket as returned by <a><code class="inline">open/1,2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>A socket as returned by <a href="#open/1"><code class="inline">open/1,2</code></a>.</p></div>
 
     </div>
 
@@ -262,7 +280,7 @@ be bound. If the user does not provide an address, gen_udp will try to
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">open(Port, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#open/2"><code class="inline">open(Port, [])</code></a>.</p></div>
 
     </div>
 
@@ -282,7 +300,7 @@ be bound. If the user does not provide an address, gen_udp will try to
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">recv(Socket, Length, infinity)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#recv/3"><code class="inline">recv(Socket, Length, infinity)</code></a>.</p></div>
 
     </div>
 
@@ -312,7 +330,7 @@ be bound. If the user does not provide an address, gen_udp will try to
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">send(Socket, Destination, [], Packet)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#send-4-AncData"><code class="inline">send(Socket, Destination, [], Packet)</code></a>.</p></div>
 
     </div>
 
@@ -348,6 +366,7 @@ be bound. If the user does not provide an address, gen_udp will try to
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:ip6_membership/0">
 
@@ -359,7 +378,7 @@ be bound. If the user does not provide an address, gen_udp will try to
       <h1 class="signature" translate="no">ip6_membership()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/gen_udp.erl#L175" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/gen_udp.erl#L175" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -387,7 +406,7 @@ be bound. If the user does not provide an address, gen_udp will try to
       <h1 class="signature" translate="no">ip6_multicast_if()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/gen_udp.erl#L156" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/gen_udp.erl#L156" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -415,7 +434,7 @@ be bound. If the user does not provide an address, gen_udp will try to
       <h1 class="signature" translate="no">ip_membership()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/gen_udp.erl#L170" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/gen_udp.erl#L170" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -446,7 +465,7 @@ be bound. If the user does not provide an address, gen_udp will try to
       <h1 class="signature" translate="no">ip_multicast_if()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/gen_udp.erl#L154" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/gen_udp.erl#L154" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -474,7 +493,7 @@ be bound. If the user does not provide an address, gen_udp will try to
       <h1 class="signature" translate="no">membership()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/gen_udp.erl#L177" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/gen_udp.erl#L177" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -502,7 +521,7 @@ be bound. If the user does not provide an address, gen_udp will try to
       <h1 class="signature" translate="no">multicast_if()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/gen_udp.erl#L157" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/gen_udp.erl#L157" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -530,7 +549,7 @@ be bound. If the user does not provide an address, gen_udp will try to
       <h1 class="signature" translate="no">open_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/gen_udp.erl#L140" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/gen_udp.erl#L140" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -566,7 +585,7 @@ be bound. If the user does not provide an address, gen_udp will try to
       <h1 class="signature" translate="no">option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/gen_udp.erl#L69" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/gen_udp.erl#L69" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -626,7 +645,7 @@ be bound. If the user does not provide an address, gen_udp will try to
       <h1 class="signature" translate="no">option_name()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/gen_udp.erl#L104" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/gen_udp.erl#L104" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -663,7 +682,7 @@ be bound. If the user does not provide an address, gen_udp will try to
       <h1 class="signature" translate="no">socket()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/gen_udp.erl#L152" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/gen_udp.erl#L152" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -692,6 +711,7 @@ be bound. If the user does not provide an address, gen_udp will try to
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="close/1">
 
@@ -703,7 +723,7 @@ be bound. If the user does not provide an address, gen_udp will try to
       <h1 class="signature" translate="no">close(Socket)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/gen_udp.erl#L331" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/gen_udp.erl#L331" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -733,7 +753,7 @@ be bound. If the user does not provide an address, gen_udp will try to
         <span class="note">(since OTP 24.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/gen_udp.erl#L600" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/gen_udp.erl#L600" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -773,7 +793,7 @@ by the OS protocol stack.</p>
         <span class="note">(since OTP 24.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/gen_udp.erl#L625" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/gen_udp.erl#L625" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -809,7 +829,7 @@ or a <a href="inet.html#t:hostname/0">host name</a>.</p>
       <h1 class="signature" translate="no">controlling_process(Socket, Pid)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/gen_udp.erl#L675" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/gen_udp.erl#L675" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -850,7 +870,7 @@ could cause this.</p>
       <h1 class="signature" translate="no">open(Port)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/gen_udp.erl#L192" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/gen_udp.erl#L192" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -879,7 +899,7 @@ could cause this.</p>
       <h1 class="signature" translate="no">open(Port, Opts)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/gen_udp.erl#L307" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/gen_udp.erl#L307" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -922,8 +942,8 @@ Joins a multicast group.</p></li><li><p><strong><code class="inline">{drop_membe
 Leaves a multicast group.</p></li><li><p><strong><a href="#t:option/0"><code class="inline">option/0</code></a></strong> - See <a href="inet.html#setopts/2"><code class="inline">inet:setopts/2</code></a>.</p></li></ul><p>UDP packets are sent with this socket using <a href="#send/3"><code class="inline">send(Socket, ...)</code></a>.
 When UDP packets arrive to the <code class="inline">Socket</code>'s UDP port, and the socket is in
 an <em>active mode</em>, the packets are delivered as messages to the
-controlling process (socket owner):</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="2496646452-1">{</span><span class="ss">udp</span><span class="p">,</span><span class="err"> </span><span class="n">Socket</span><span class="p">,</span><span class="err"> </span><span class="n">PeerIP</span><span class="p">,</span><span class="err"> </span><span class="n">PeerPort</span><span class="p">,</span><span class="err"> </span><span class="n">Packet</span><span class="p" data-group-id="2496646452-1">}</span><span class="w"> </span><span class="c1">% Without ancillary data</span><span class="w">
-</span><span class="p" data-group-id="2496646452-2">{</span><span class="ss">udp</span><span class="p">,</span><span class="err"> </span><span class="n">Socket</span><span class="p">,</span><span class="err"> </span><span class="n">PeerIP</span><span class="p">,</span><span class="err"> </span><span class="n">PeerPort</span><span class="p">,</span><span class="err"> </span><span class="n">AncData</span><span class="p">,</span><span class="err"> </span><span class="n">Packet</span><span class="p" data-group-id="2496646452-2">}</span><span class="w"> </span><span class="c1">% With ancillary data</span></code></pre><p><code class="inline">PeerIP</code> and <code class="inline">PeerPort</code> are the address from which <code class="inline">Packet</code> was sent.
+controlling process (socket owner):</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="7552784049-1">{</span><span class="ss">udp</span><span class="p">,</span><span class="err"> </span><span class="n">Socket</span><span class="p">,</span><span class="err"> </span><span class="n">PeerIP</span><span class="p">,</span><span class="err"> </span><span class="n">PeerPort</span><span class="p">,</span><span class="err"> </span><span class="n">Packet</span><span class="p" data-group-id="7552784049-1">}</span><span class="w"> </span><span class="c1">% Without ancillary data</span><span class="w">
+</span><span class="p" data-group-id="7552784049-2">{</span><span class="ss">udp</span><span class="p">,</span><span class="err"> </span><span class="n">Socket</span><span class="p">,</span><span class="err"> </span><span class="n">PeerIP</span><span class="p">,</span><span class="err"> </span><span class="n">PeerPort</span><span class="p">,</span><span class="err"> </span><span class="n">AncData</span><span class="p">,</span><span class="err"> </span><span class="n">Packet</span><span class="p" data-group-id="7552784049-2">}</span><span class="w"> </span><span class="c1">% With ancillary data</span></code></pre><p><code class="inline">PeerIP</code> and <code class="inline">PeerPort</code> are the address from which <code class="inline">Packet</code> was sent.
 <code class="inline">Packet</code> is a list of bytes (<code class="inline">[</code><a href="../../apps/erts/erlang.html#t:byte/0"><code class="inline">byte/0</code></a><code class="inline">]</code> if option <code class="inline">list</code>
 is active and a <a href="../../apps/erts/erlang.html#t:binary/0"><code class="inline">binary/0</code></a> if option <code class="inline">binary</code>is active
 (they are mutually exclusive).</p><p>The message contains an <code class="inline">AncData</code> field only if any of the socket
@@ -931,8 +951,8 @@ is active and a <a href="../../apps/erts/erlang.html#t:binary/0"><code class="in
 <a href="inet.html#option-recvtclass"><code class="inline">recvtclass</code></a> or
 <a href="inet.html#option-recvttl"><code class="inline">recvttl</code></a> are active.</p><p>When a socket in <code class="inline">{active, N}</code> mode (see <a href="inet.html#setopts/2"><code class="inline">inet:setopts/2</code></a> for details),
 transitions to passive (<code class="inline">{active, false}</code>) mode (<code class="inline">N</code> counts down to <code class="inline">0</code>),
-the controlling process is notified by a message on this form:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="1428761665-1">{</span><span class="ss">udp_passive</span><span class="p">,</span><span class="err"> </span><span class="n">Socket</span><span class="p" data-group-id="1428761665-1">}</span></code></pre><p>If the OS protocol stack reports an error for the socket, the following
-message is sent to the controlling process:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="2755295766-1">{</span><span class="ss">udp_error</span><span class="p">,</span><span class="err"> </span><span class="n">Socket</span><span class="p">,</span><span class="err"> </span><span class="n">Reason</span><span class="p" data-group-id="2755295766-1">}</span></code></pre><p><code class="inline">Reason</code> is mostly a <a href="inet.html#posix-error-codes">POSIX Error Code</a>.</p><p>If the socket is in <em>passive mode</em> (not in an <em>active mode</em>), received data
+the controlling process is notified by a message on this form:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="4669987354-1">{</span><span class="ss">udp_passive</span><span class="p">,</span><span class="err"> </span><span class="n">Socket</span><span class="p" data-group-id="4669987354-1">}</span></code></pre><p>If the OS protocol stack reports an error for the socket, the following
+message is sent to the controlling process:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="3128761822-1">{</span><span class="ss">udp_error</span><span class="p">,</span><span class="err"> </span><span class="n">Socket</span><span class="p">,</span><span class="err"> </span><span class="n">Reason</span><span class="p" data-group-id="3128761822-1">}</span></code></pre><p><code class="inline">Reason</code> is mostly a <a href="inet.html#posix-error-codes">POSIX Error Code</a>.</p><p>If the socket is in <em>passive mode</em> (not in an <em>active mode</em>), received data
 can be retrieved with the<code class="inline">recv/2,3</code>](<a href="#recv/2"><code class="inline">recv/2</code></a>) calls. Note that incoming
 UDP packets that are longer than the receive buffer option specifies
 can be truncated without warning.</p><p>The default value for the receive buffer option is <code class="inline">{recbuf, 9216}</code>.</p>
@@ -948,7 +968,7 @@ can be truncated without warning.</p><p>The default value for the receive buffer
       <h1 class="signature" translate="no">recv(Socket, Length)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/gen_udp.erl#L530" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/gen_udp.erl#L530" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -985,7 +1005,7 @@ can be truncated without warning.</p><p>The default value for the receive buffer
       <h1 class="signature" translate="no">recv(Socket, Length, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/gen_udp.erl#L565" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/gen_udp.erl#L565" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1030,7 +1050,7 @@ otherwise it doesn't.</p>
         <span class="note">(since OTP 24.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/gen_udp.erl#L352" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/gen_udp.erl#L352" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1061,7 +1081,7 @@ otherwise it doesn't.</p>
         <span class="note">(since OTP 22.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/gen_udp.erl#L375" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/gen_udp.erl#L375" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1098,7 +1118,7 @@ otherwise it doesn't.</p>
       <h1 class="signature" translate="no">send/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/gen_udp.erl#L437" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/gen_udp.erl#L437" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1163,7 +1183,7 @@ where <code class="inline">PortZero</code> is superfluous. Equivalent to
         <span class="note">(since OTP 22.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/gen_udp.erl#L493" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/gen_udp.erl#L493" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1199,8 +1219,8 @@ regarding the ancillary data: <code class="inline">AncData</code>.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="kernel.epub" title="ePub version">
@@ -1212,7 +1232,7 @@ regarding the ancillary data: <code class="inline">AncData</code>.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

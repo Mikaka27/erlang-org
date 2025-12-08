@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="stdlib v7.1-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/dict.html" />
     <title>dict — stdlib v7.1-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-4F7E9F36.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ stdlib
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of stdlib</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ stdlib
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dict.erl#L39" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dict.erl#L39" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -100,13 +118,13 @@ stdlib
 difference is that while this module considers two keys as different if they do
 not match (<code class="inline">=:=</code>), <code class="inline">orddict</code> considers two keys as different if and only if they
 do not compare equal (<code class="inline">==</code>).</p><h2 id="module-notes" class="section-heading"><a href="#module-notes" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Notes</span></h2><p><a href="" id="notes"></a></p><p>Functions <code class="inline">append</code> and <code class="inline">append_list</code> are included so that keyed values can be
-stored in a list <em>accumulator</em>, for example:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="n">D0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">dict</span><span class="p">:</span><span class="nf">new</span><span class="p" data-group-id="9026570170-1">(</span><span class="p" data-group-id="9026570170-1">)</span><span class="p">,</span><span class="w">
-  </span><span class="n">D1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">dict</span><span class="p">:</span><span class="nf">store</span><span class="p" data-group-id="9026570170-2">(</span><span class="ss">files</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9026570170-3">[</span><span class="p" data-group-id="9026570170-3">]</span><span class="p">,</span><span class="w"> </span><span class="n">D0</span><span class="p" data-group-id="9026570170-2">)</span><span class="p">,</span><span class="w">
-  </span><span class="n">D2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">dict</span><span class="p">:</span><span class="nf">append</span><span class="p" data-group-id="9026570170-4">(</span><span class="ss">files</span><span class="p">,</span><span class="w"> </span><span class="ss">f1</span><span class="p">,</span><span class="w"> </span><span class="n">D1</span><span class="p" data-group-id="9026570170-4">)</span><span class="p">,</span><span class="w">
-  </span><span class="n">D3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">dict</span><span class="p">:</span><span class="nf">append</span><span class="p" data-group-id="9026570170-5">(</span><span class="ss">files</span><span class="p">,</span><span class="w"> </span><span class="ss">f2</span><span class="p">,</span><span class="w"> </span><span class="n">D2</span><span class="p" data-group-id="9026570170-5">)</span><span class="p">,</span><span class="w">
-  </span><span class="n">D4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">dict</span><span class="p">:</span><span class="nf">append</span><span class="p" data-group-id="9026570170-6">(</span><span class="ss">files</span><span class="p">,</span><span class="w"> </span><span class="ss">f3</span><span class="p">,</span><span class="w"> </span><span class="n">D3</span><span class="p" data-group-id="9026570170-6">)</span><span class="p">,</span><span class="w">
-  </span><span class="nc">dict</span><span class="p">:</span><span class="nf">fetch</span><span class="p" data-group-id="9026570170-7">(</span><span class="ss">files</span><span class="p">,</span><span class="w"> </span><span class="n">D4</span><span class="p" data-group-id="9026570170-7">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="9026570170-8">[</span><span class="ss">f1</span><span class="p">,</span><span class="ss">f2</span><span class="p">,</span><span class="ss">f3</span><span class="p" data-group-id="9026570170-8">]</span></code></pre><p>This saves the trouble of first fetching a keyed value, appending a new value to
+stored in a list <em>accumulator</em>, for example:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="n">D0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">dict</span><span class="p">:</span><span class="nf">new</span><span class="p" data-group-id="2686282557-1">(</span><span class="p" data-group-id="2686282557-1">)</span><span class="p">,</span><span class="w">
+  </span><span class="n">D1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">dict</span><span class="p">:</span><span class="nf">store</span><span class="p" data-group-id="2686282557-2">(</span><span class="ss">files</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2686282557-3">[</span><span class="p" data-group-id="2686282557-3">]</span><span class="p">,</span><span class="w"> </span><span class="n">D0</span><span class="p" data-group-id="2686282557-2">)</span><span class="p">,</span><span class="w">
+  </span><span class="n">D2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">dict</span><span class="p">:</span><span class="nf">append</span><span class="p" data-group-id="2686282557-4">(</span><span class="ss">files</span><span class="p">,</span><span class="w"> </span><span class="ss">f1</span><span class="p">,</span><span class="w"> </span><span class="n">D1</span><span class="p" data-group-id="2686282557-4">)</span><span class="p">,</span><span class="w">
+  </span><span class="n">D3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">dict</span><span class="p">:</span><span class="nf">append</span><span class="p" data-group-id="2686282557-5">(</span><span class="ss">files</span><span class="p">,</span><span class="w"> </span><span class="ss">f2</span><span class="p">,</span><span class="w"> </span><span class="n">D2</span><span class="p" data-group-id="2686282557-5">)</span><span class="p">,</span><span class="w">
+  </span><span class="n">D4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">dict</span><span class="p">:</span><span class="nf">append</span><span class="p" data-group-id="2686282557-6">(</span><span class="ss">files</span><span class="p">,</span><span class="w"> </span><span class="ss">f3</span><span class="p">,</span><span class="w"> </span><span class="n">D3</span><span class="p" data-group-id="2686282557-6">)</span><span class="p">,</span><span class="w">
+  </span><span class="nc">dict</span><span class="p">:</span><span class="nf">fetch</span><span class="p" data-group-id="2686282557-7">(</span><span class="ss">files</span><span class="p">,</span><span class="w"> </span><span class="n">D4</span><span class="p" data-group-id="2686282557-7">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="2686282557-8">[</span><span class="ss">f1</span><span class="p">,</span><span class="ss">f2</span><span class="p">,</span><span class="ss">f3</span><span class="p" data-group-id="2686282557-8">]</span></code></pre><p>This saves the trouble of first fetching a keyed value, appending a new value to
 the list of stored values, and storing the result.</p><p>Function <code class="inline">fetch</code> is to be used if the key is known to be in the dictionary,
 otherwise function <code class="inline">find</code>.</p><h2 id="module-see-also" class="section-heading"><a href="#module-see-also" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">See Also</span></h2><p><a href="gb_trees.html"><code class="inline">gb_trees</code></a>, <a href="orddict.html"><code class="inline">orddict</code></a></p>
     </section>
@@ -139,7 +157,7 @@ otherwise function <code class="inline">find</code>.</p><h2 id="module-see-also"
 
       </div>
 
-        <div class="summary-synopsis"><p>Dictionary as returned by <a><code class="inline">new/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Dictionary as returned by <a href="#new/0"><code class="inline">new/0</code></a>.</p></div>
 
     </div>
 
@@ -365,7 +383,7 @@ value. An exception is generated if <code class="inline">Key</code> is not prese
 
         <div class="summary-synopsis"><p>Updates a value in a dictionary by calling <code class="inline">Fun</code> on the value to get a new
 value. If <code class="inline">Key</code> is not present in the dictionary, <code class="inline">Initial</code> is stored as the
-first value. For example, <a><code class="inline">append/3</code></a> can be defined as</p></div>
+first value. For example, <a href="#append/3"><code class="inline">append/3</code></a> can be defined as</p></div>
 
     </div>
 
@@ -393,6 +411,7 @@ value.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:dict/0">
 
@@ -404,7 +423,7 @@ value.</p></div>
       <h1 class="signature" translate="no">dict()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dict.erl#L114" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dict.erl#L114" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -432,7 +451,7 @@ value.</p></div>
       <h1 class="signature" translate="no">dict(Key, Value)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dict.erl#L117" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dict.erl#L117" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -461,6 +480,7 @@ value.</p></div>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="append/3">
 
@@ -472,7 +492,7 @@ value.</p></div>
       <h1 class="signature" translate="no">append(Key, Value, Dict1)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dict.erl#L296" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dict.erl#L296" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -500,7 +520,7 @@ value.</p></div>
       <h1 class="signature" translate="no">append_list(Key, ValList, Dict1)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dict.erl#L322" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dict.erl#L322" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -531,7 +551,7 @@ not a list of values.</p><p>See also section <a href="dict.html#module-notes">No
       <h1 class="signature" translate="no">erase(Key, Dict1)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dict.erl#L227" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dict.erl#L227" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -559,7 +579,7 @@ not a list of values.</p><p>See also section <a href="dict.html#module-notes">No
       <h1 class="signature" translate="no">fetch(Key, Dict)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dict.erl#L181" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dict.erl#L181" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -589,7 +609,7 @@ generated if <code class="inline">Key</code> is not in the dictionary.</p><p>See
       <h1 class="signature" translate="no">fetch_keys(Dict)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dict.erl#L217" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dict.erl#L217" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -617,7 +637,7 @@ generated if <code class="inline">Key</code> is not in the dictionary.</p><p>See
       <h1 class="signature" translate="no">filter(Pred, Dict1)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dict.erl#L515" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dict.erl#L515" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -650,7 +670,7 @@ generated if <code class="inline">Key</code> is not in the dictionary.</p><p>See
       <h1 class="signature" translate="no">find(Key, Dict)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dict.erl#L203" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dict.erl#L203" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -680,7 +700,7 @@ dictionary.</p><p>See also section <a href="dict.html#module-notes">Notes</a>.</
       <h1 class="signature" translate="no">fold(Fun, Acc0, Dict)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dict.erl#L493" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dict.erl#L493" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -718,7 +738,7 @@ dictionary is empty. The evaluation order is undefined.</p>
       <h1 class="signature" translate="no">from_list(List)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dict.erl#L155" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dict.erl#L155" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -748,7 +768,7 @@ dictionary is empty. The evaluation order is undefined.</p>
         <span class="note">(since OTP 17.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dict.erl#L169" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dict.erl#L169" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -776,7 +796,7 @@ dictionary is empty. The evaluation order is undefined.</p>
       <h1 class="signature" translate="no">is_key(Key, Dict)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dict.erl#L133" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dict.erl#L133" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -804,7 +824,7 @@ dictionary is empty. The evaluation order is undefined.</p>
       <h1 class="signature" translate="no">map(Fun, Dict1)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dict.erl#L504" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dict.erl#L504" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -837,7 +857,7 @@ value for each key. The evaluation order is undefined.</p>
       <h1 class="signature" translate="no">merge(Fun, Dict1, Dict2)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dict.erl#L537" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dict.erl#L537" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -861,10 +881,10 @@ value for each key. The evaluation order is undefined.</p>
 the <code class="inline">Key</code>-<code class="inline">Value</code> pairs from both dictionaries are included in the new
 dictionary. If a key occurs in both dictionaries, <code class="inline">Fun</code> is called with the key
 and both values to return a new value. <code class="inline">merge</code> can be defined as follows, but is
-faster:</p><pre><code class="makeup erlang" translate="no"><span class="nf">merge</span><span class="p" data-group-id="1073052651-1">(</span><span class="n">Fun</span><span class="p">,</span><span class="w"> </span><span class="n">D1</span><span class="p">,</span><span class="w"> </span><span class="n">D2</span><span class="p" data-group-id="1073052651-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="nf">fold</span><span class="p" data-group-id="1073052651-2">(</span><span class="nf">fun</span><span class="w"> </span><span class="p" data-group-id="1073052651-3">(</span><span class="n">K</span><span class="p">,</span><span class="w"> </span><span class="n">V1</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="p" data-group-id="1073052651-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-                 </span><span class="nf">update</span><span class="p" data-group-id="1073052651-4">(</span><span class="n">K</span><span class="p">,</span><span class="w"> </span><span class="nf">fun</span><span class="w"> </span><span class="p" data-group-id="1073052651-5">(</span><span class="n">V2</span><span class="p" data-group-id="1073052651-5">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">Fun</span><span class="p" data-group-id="1073052651-6">(</span><span class="n">K</span><span class="p">,</span><span class="w"> </span><span class="n">V1</span><span class="p">,</span><span class="w"> </span><span class="n">V2</span><span class="p" data-group-id="1073052651-6">)</span><span class="w"> </span><span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="n">V1</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="p" data-group-id="1073052651-4">)</span><span class="w">
-         </span><span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="n">D2</span><span class="p">,</span><span class="w"> </span><span class="n">D1</span><span class="p" data-group-id="1073052651-2">)</span><span class="p">.</span></code></pre>
+faster:</p><pre><code class="makeup erlang" translate="no"><span class="nf">merge</span><span class="p" data-group-id="7702066592-1">(</span><span class="n">Fun</span><span class="p">,</span><span class="w"> </span><span class="n">D1</span><span class="p">,</span><span class="w"> </span><span class="n">D2</span><span class="p" data-group-id="7702066592-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="nf">fold</span><span class="p" data-group-id="7702066592-2">(</span><span class="nf">fun</span><span class="w"> </span><span class="p" data-group-id="7702066592-3">(</span><span class="n">K</span><span class="p">,</span><span class="w"> </span><span class="n">V1</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="p" data-group-id="7702066592-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+                 </span><span class="nf">update</span><span class="p" data-group-id="7702066592-4">(</span><span class="n">K</span><span class="p">,</span><span class="w"> </span><span class="nf">fun</span><span class="w"> </span><span class="p" data-group-id="7702066592-5">(</span><span class="n">V2</span><span class="p" data-group-id="7702066592-5">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">Fun</span><span class="p" data-group-id="7702066592-6">(</span><span class="n">K</span><span class="p">,</span><span class="w"> </span><span class="n">V1</span><span class="p">,</span><span class="w"> </span><span class="n">V2</span><span class="p" data-group-id="7702066592-6">)</span><span class="w"> </span><span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="n">V1</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="p" data-group-id="7702066592-4">)</span><span class="w">
+         </span><span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="n">D2</span><span class="p">,</span><span class="w"> </span><span class="n">D1</span><span class="p" data-group-id="7702066592-2">)</span><span class="p">.</span></code></pre>
   </section>
 </section>
 <section class="detail" id="new/0">
@@ -877,7 +897,7 @@ faster:</p><pre><code class="makeup erlang" translate="no"><span class="nf">merg
       <h1 class="signature" translate="no">new()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dict.erl#L125" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dict.erl#L125" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -905,7 +925,7 @@ faster:</p><pre><code class="makeup erlang" translate="no"><span class="nf">merg
       <h1 class="signature" translate="no">size(Dict)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dict.erl#L162" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dict.erl#L162" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -933,7 +953,7 @@ faster:</p><pre><code class="makeup erlang" translate="no"><span class="nf">merg
       <h1 class="signature" translate="no">store(Key, Value, Dict1)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dict.erl#L273" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dict.erl#L273" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -964,7 +984,7 @@ faster:</p><pre><code class="makeup erlang" translate="no"><span class="nf">merg
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dict.erl#L250" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dict.erl#L250" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -994,7 +1014,7 @@ value. Returns <code class="inline">error</code> if the key is not present in th
       <h1 class="signature" translate="no">to_list(Dict)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dict.erl#L147" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dict.erl#L147" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1022,7 +1042,7 @@ value. Returns <code class="inline">error</code> if the key is not present in th
       <h1 class="signature" translate="no">update(Key, Fun, Dict1)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dict.erl#L399" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dict.erl#L399" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1055,7 +1075,7 @@ value. An exception is generated if <code class="inline">Key</code> is not prese
       <h1 class="signature" translate="no">update(Key, Fun, Initial, Dict1)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dict.erl#L432" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dict.erl#L432" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1077,8 +1097,8 @@ value. An exception is generated if <code class="inline">Key</code> is not prese
 
 <p>Updates a value in a dictionary by calling <code class="inline">Fun</code> on the value to get a new
 value. If <code class="inline">Key</code> is not present in the dictionary, <code class="inline">Initial</code> is stored as the
-first value. For example, <a href="#append/3"><code class="inline">append/3</code></a> can be defined as:</p><pre><code class="makeup erlang" translate="no"><span class="nf">append</span><span class="p" data-group-id="1030658309-1">(</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">Val</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="p" data-group-id="1030658309-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="nf">update</span><span class="p" data-group-id="1030658309-2">(</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="nf">fun</span><span class="w"> </span><span class="p" data-group-id="1030658309-3">(</span><span class="n">Old</span><span class="p" data-group-id="1030658309-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">Old</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="p" data-group-id="1030658309-4">[</span><span class="n">Val</span><span class="p" data-group-id="1030658309-4">]</span><span class="w"> </span><span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1030658309-5">[</span><span class="n">Val</span><span class="p" data-group-id="1030658309-5">]</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="p" data-group-id="1030658309-2">)</span><span class="p">.</span></code></pre>
+first value. For example, <a href="#append/3"><code class="inline">append/3</code></a> can be defined as:</p><pre><code class="makeup erlang" translate="no"><span class="nf">append</span><span class="p" data-group-id="9055026287-1">(</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">Val</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="p" data-group-id="9055026287-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="nf">update</span><span class="p" data-group-id="9055026287-2">(</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="nf">fun</span><span class="w"> </span><span class="p" data-group-id="9055026287-3">(</span><span class="n">Old</span><span class="p" data-group-id="9055026287-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">Old</span><span class="w"> </span><span class="o">++</span><span class="w"> </span><span class="p" data-group-id="9055026287-4">[</span><span class="n">Val</span><span class="p" data-group-id="9055026287-4">]</span><span class="w"> </span><span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9055026287-5">[</span><span class="n">Val</span><span class="p" data-group-id="9055026287-5">]</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="p" data-group-id="9055026287-2">)</span><span class="p">.</span></code></pre>
   </section>
 </section>
 <section class="detail" id="update_counter/3">
@@ -1091,7 +1111,7 @@ first value. For example, <a href="#append/3"><code class="inline">append/3</cod
       <h1 class="signature" translate="no">update_counter(Key, Increment, Dict1)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dict.erl#L462" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dict.erl#L462" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1109,8 +1129,8 @@ first value. For example, <a href="#append/3"><code class="inline">append/3</cod
 
 <p>Adds <code class="inline">Increment</code> to the value associated with <code class="inline">Key</code> and stores this value. If
 <code class="inline">Key</code> is not present in the dictionary, <code class="inline">Increment</code> is stored as the first
-value.</p><p>This can be defined as follows, but is faster:</p><pre><code class="makeup erlang" translate="no"><span class="nf">update_counter</span><span class="p" data-group-id="3183980600-1">(</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">Incr</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="p" data-group-id="3183980600-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="nf">update</span><span class="p" data-group-id="3183980600-2">(</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="nf">fun</span><span class="w"> </span><span class="p" data-group-id="3183980600-3">(</span><span class="n">Old</span><span class="p" data-group-id="3183980600-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">Old</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Incr</span><span class="w"> </span><span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="n">Incr</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="p" data-group-id="3183980600-2">)</span><span class="p">.</span></code></pre>
+value.</p><p>This can be defined as follows, but is faster:</p><pre><code class="makeup erlang" translate="no"><span class="nf">update_counter</span><span class="p" data-group-id="0824454859-1">(</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">Incr</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="p" data-group-id="0824454859-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="nf">update</span><span class="p" data-group-id="0824454859-2">(</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="nf">fun</span><span class="w"> </span><span class="p" data-group-id="0824454859-3">(</span><span class="n">Old</span><span class="p" data-group-id="0824454859-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">Old</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Incr</span><span class="w"> </span><span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="n">Incr</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="p" data-group-id="0824454859-2">)</span><span class="p">.</span></code></pre>
   </section>
 </section>
 
@@ -1121,8 +1141,8 @@ value.</p><p>This can be defined as follows, but is faster:</p><pre><code class=
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="stdlib.epub" title="ePub version">
@@ -1134,7 +1154,7 @@ value.</p><p>This can be defined as follows, but is faster:</p><pre><code class=
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

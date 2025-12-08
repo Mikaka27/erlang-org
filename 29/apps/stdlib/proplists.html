@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="stdlib v7.1-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/proplists.html" />
     <title>proplists — stdlib v7.1-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-4F7E9F36.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ stdlib
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of stdlib</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ stdlib
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/proplists.erl#L23" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/proplists.erl#L23" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -138,7 +156,7 @@ different keys.</p>
 
       </div>
 
-        <div class="summary-synopsis"><p>A list of <a><code class="inline">property/0</code></a>, also knows as a proplist.</p></div>
+        <div class="summary-synopsis"><p>A list of <a href="#t:property/0"><code class="inline">property/0</code></a>, also knows as a proplist.</p></div>
 
     </div>
 
@@ -154,7 +172,7 @@ different keys.</p>
 
       </div>
 
-        <div class="summary-synopsis"><p>Similar to <a><code class="inline">get_all_values/2</code></a>, but each value is wrapped in a list unless it is
+        <div class="summary-synopsis"><p>Similar to <a href="#get_all_values/2"><code class="inline">get_all_values/2</code></a>, but each value is wrapped in a list unless it is
 already itself a list. The resulting list of lists is concatenated. This is
 often useful for &quot;incremental&quot; options.</p></div>
 
@@ -208,7 +226,7 @@ terms).</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Similar to <a><code class="inline">get_value/2</code></a>, but returns the list of values for <em>all</em> entries
+        <div class="summary-synopsis"><p>Similar to <a href="#get_value/2"><code class="inline">get_value/2</code></a>, but returns the list of values for <em>all</em> entries
 <code class="inline">{Key, Value}</code> in <code class="inline">List</code>. If no such entry exists, the result is the empty list.</p></div>
 
     </div>
@@ -220,7 +238,7 @@ terms).</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Returns the value of a boolean key/value option. If
-<a><code class="inline">lookup(Key, List)</code></a> would yield <code class="inline">{Key, true}</code>, this function
+<a href="#lookup/2"><code class="inline">lookup(Key, List)</code></a> would yield <code class="inline">{Key, true}</code>, this function
 returns <code class="inline">true</code>, otherwise <code class="inline">false</code>.</p></div>
 
     </div>
@@ -241,7 +259,7 @@ returns <code class="inline">true</code>, otherwise <code class="inline">false</
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">get_value(Key, List, undefined)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#get_value/3"><code class="inline">get_value(Key, List, undefined)</code></a>.</p></div>
 
     </div>
 
@@ -252,7 +270,7 @@ returns <code class="inline">true</code>, otherwise <code class="inline">false</
       </div>
 
         <div class="summary-synopsis"><p>Returns the value of a simple key/value property in <code class="inline">List</code>. If
-<a><code class="inline">lookup(Key, List)</code></a> would yield <code class="inline">{Key, Value}</code>, this function
+<a href="#lookup/2"><code class="inline">lookup(Key, List)</code></a> would yield <code class="inline">{Key, Value}</code>, this function
 returns the corresponding <code class="inline">Value</code>, otherwise <code class="inline">Default</code>.</p></div>
 
     </div>
@@ -298,7 +316,7 @@ entry exists, the result is the empty list.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Passes <code class="inline">ListIn</code> through a sequence of substitution/expansion stages. For an
-<code class="inline">aliases</code> operation, function <a><code class="inline">substitute_aliases/2</code></a> is applied using the
+<code class="inline">aliases</code> operation, function <a href="#substitute_aliases/2"><code class="inline">substitute_aliases/2</code></a> is applied using the
 specified list of aliases</p></div>
 
     </div>
@@ -404,6 +422,7 @@ given in <code class="inline">Stages</code>.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:property/0">
 
@@ -415,7 +434,7 @@ given in <code class="inline">Stages</code>.</p></div>
       <h1 class="signature" translate="no">property()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/proplists.erl#L56" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/proplists.erl#L56" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -443,7 +462,7 @@ given in <code class="inline">Stages</code>.</p></div>
       <h1 class="signature" translate="no">proplist()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/proplists.erl#L58" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/proplists.erl#L58" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -472,6 +491,7 @@ given in <code class="inline">Stages</code>.</p></div>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="append_values/2">
 
@@ -483,7 +503,7 @@ given in <code class="inline">Stages</code>.</p></div>
       <h1 class="signature" translate="no">append_values(Key, ListIn)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/proplists.erl#L285" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/proplists.erl#L285" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -500,7 +520,7 @@ given in <code class="inline">Stages</code>.</p></div>
 
 <p>Similar to <a href="#get_all_values/2"><code class="inline">get_all_values/2</code></a>, but each value is wrapped in a list unless it is
 already itself a list. The resulting list of lists is concatenated. This is
-often useful for &quot;incremental&quot; options.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="nf">append_values</span><span class="p" data-group-id="7677990698-1">(</span><span class="ss">a</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7677990698-2">[</span><span class="p" data-group-id="7677990698-3">{</span><span class="ss">a</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7677990698-4">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p" data-group-id="7677990698-4">]</span><span class="p" data-group-id="7677990698-3">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7677990698-5">{</span><span class="ss">b</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="7677990698-5">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7677990698-6">{</span><span class="ss">a</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="7677990698-6">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7677990698-7">{</span><span class="ss">c</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p" data-group-id="7677990698-7">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7677990698-8">{</span><span class="ss">a</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7677990698-9">[</span><span class="mi">4</span><span class="p" data-group-id="7677990698-9">]</span><span class="p" data-group-id="7677990698-8">}</span><span class="p" data-group-id="7677990698-2">]</span><span class="p" data-group-id="7677990698-1">)</span></code></pre><p>returns:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="4050665202-1">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="4050665202-1">]</span></code></pre>
+often useful for &quot;incremental&quot; options.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="nf">append_values</span><span class="p" data-group-id="8820183098-1">(</span><span class="ss">a</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8820183098-2">[</span><span class="p" data-group-id="8820183098-3">{</span><span class="ss">a</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8820183098-4">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p" data-group-id="8820183098-4">]</span><span class="p" data-group-id="8820183098-3">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8820183098-5">{</span><span class="ss">b</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="8820183098-5">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8820183098-6">{</span><span class="ss">a</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="8820183098-6">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8820183098-7">{</span><span class="ss">c</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p" data-group-id="8820183098-7">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8820183098-8">{</span><span class="ss">a</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8820183098-9">[</span><span class="mi">4</span><span class="p" data-group-id="8820183098-9">]</span><span class="p" data-group-id="8820183098-8">}</span><span class="p" data-group-id="8820183098-2">]</span><span class="p" data-group-id="8820183098-1">)</span></code></pre><p>returns:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="1028514394-1">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="1028514394-1">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="compact/1">
@@ -513,7 +533,7 @@ often useful for &quot;incremental&quot; options.</p><p><em>Example:</em></p><pr
       <h1 class="signature" translate="no">compact(ListIn)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/proplists.erl#L127" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/proplists.erl#L127" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -542,7 +562,7 @@ often useful for &quot;incremental&quot; options.</p><p><em>Example:</em></p><pr
       <h1 class="signature" translate="no">delete(Key, List)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/proplists.erl#L363" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/proplists.erl#L363" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -570,7 +590,7 @@ often useful for &quot;incremental&quot; options.</p><p><em>Example:</em></p><pr
       <h1 class="signature" translate="no">expand(Expansions, ListIn)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/proplists.erl#L502" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/proplists.erl#L502" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -594,10 +614,10 @@ terms).</p><p>For each pair <code class="inline">{Property, Expansion}</code> in
 first entry in <code class="inline">ListIn</code> with the same key as <code class="inline">Property</code>, and <code class="inline">E</code> and <code class="inline">Property</code>
 have equivalent normal forms, then <code class="inline">E</code> is replaced with the terms in
 <code class="inline">Expansion</code>, and any following entries with the same key are deleted from
-<code class="inline">ListIn</code>.</p><p>For example, the following expressions all return <code class="inline">[fie, bar, baz, fum]</code>:</p><pre><code class="makeup erlang" translate="no"><span class="nf">expand</span><span class="p" data-group-id="2464460177-1">(</span><span class="p" data-group-id="2464460177-2">[</span><span class="p" data-group-id="2464460177-3">{</span><span class="ss">foo</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2464460177-4">[</span><span class="ss">bar</span><span class="p">,</span><span class="w"> </span><span class="ss">baz</span><span class="p" data-group-id="2464460177-4">]</span><span class="p" data-group-id="2464460177-3">}</span><span class="p" data-group-id="2464460177-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2464460177-5">[</span><span class="ss">fie</span><span class="p">,</span><span class="w"> </span><span class="ss">foo</span><span class="p">,</span><span class="w"> </span><span class="ss">fum</span><span class="p" data-group-id="2464460177-5">]</span><span class="p" data-group-id="2464460177-1">)</span><span class="w">
-</span><span class="nf">expand</span><span class="p" data-group-id="2464460177-6">(</span><span class="p" data-group-id="2464460177-7">[</span><span class="p" data-group-id="2464460177-8">{</span><span class="p" data-group-id="2464460177-9">{</span><span class="ss">foo</span><span class="p">,</span><span class="w"> </span><span class="ss">true</span><span class="p" data-group-id="2464460177-9">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2464460177-10">[</span><span class="ss">bar</span><span class="p">,</span><span class="w"> </span><span class="ss">baz</span><span class="p" data-group-id="2464460177-10">]</span><span class="p" data-group-id="2464460177-8">}</span><span class="p" data-group-id="2464460177-7">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2464460177-11">[</span><span class="ss">fie</span><span class="p">,</span><span class="w"> </span><span class="ss">foo</span><span class="p">,</span><span class="w"> </span><span class="ss">fum</span><span class="p" data-group-id="2464460177-11">]</span><span class="p" data-group-id="2464460177-6">)</span><span class="w">
-</span><span class="nf">expand</span><span class="p" data-group-id="2464460177-12">(</span><span class="p" data-group-id="2464460177-13">[</span><span class="p" data-group-id="2464460177-14">{</span><span class="p" data-group-id="2464460177-15">{</span><span class="ss">foo</span><span class="p">,</span><span class="w"> </span><span class="ss">false</span><span class="p" data-group-id="2464460177-15">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2464460177-16">[</span><span class="ss">bar</span><span class="p">,</span><span class="w"> </span><span class="ss">baz</span><span class="p" data-group-id="2464460177-16">]</span><span class="p" data-group-id="2464460177-14">}</span><span class="p" data-group-id="2464460177-13">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2464460177-17">[</span><span class="ss">fie</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2464460177-18">{</span><span class="ss">foo</span><span class="p">,</span><span class="w"> </span><span class="ss">false</span><span class="p" data-group-id="2464460177-18">}</span><span class="p">,</span><span class="w"> </span><span class="ss">fum</span><span class="p" data-group-id="2464460177-17">]</span><span class="p" data-group-id="2464460177-12">)</span></code></pre><p>However, no expansion is done in the following call because <code class="inline">{foo, false}</code>
-shadows <code class="inline">foo</code>:</p><pre><code class="makeup erlang" translate="no"><span class="nf">expand</span><span class="p" data-group-id="5321113624-1">(</span><span class="p" data-group-id="5321113624-2">[</span><span class="p" data-group-id="5321113624-3">{</span><span class="p" data-group-id="5321113624-4">{</span><span class="ss">foo</span><span class="p">,</span><span class="w"> </span><span class="ss">true</span><span class="p" data-group-id="5321113624-4">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5321113624-5">[</span><span class="ss">bar</span><span class="p">,</span><span class="w"> </span><span class="ss">baz</span><span class="p" data-group-id="5321113624-5">]</span><span class="p" data-group-id="5321113624-3">}</span><span class="p" data-group-id="5321113624-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5321113624-6">[</span><span class="p" data-group-id="5321113624-7">{</span><span class="ss">foo</span><span class="p">,</span><span class="w"> </span><span class="ss">false</span><span class="p" data-group-id="5321113624-7">}</span><span class="p">,</span><span class="w"> </span><span class="ss">fie</span><span class="p">,</span><span class="w"> </span><span class="ss">foo</span><span class="p">,</span><span class="w"> </span><span class="ss">fum</span><span class="p" data-group-id="5321113624-6">]</span><span class="p" data-group-id="5321113624-1">)</span></code></pre><p>Notice that if the original property term is to be preserved in the result when
+<code class="inline">ListIn</code>.</p><p>For example, the following expressions all return <code class="inline">[fie, bar, baz, fum]</code>:</p><pre><code class="makeup erlang" translate="no"><span class="nf">expand</span><span class="p" data-group-id="8583276414-1">(</span><span class="p" data-group-id="8583276414-2">[</span><span class="p" data-group-id="8583276414-3">{</span><span class="ss">foo</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8583276414-4">[</span><span class="ss">bar</span><span class="p">,</span><span class="w"> </span><span class="ss">baz</span><span class="p" data-group-id="8583276414-4">]</span><span class="p" data-group-id="8583276414-3">}</span><span class="p" data-group-id="8583276414-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8583276414-5">[</span><span class="ss">fie</span><span class="p">,</span><span class="w"> </span><span class="ss">foo</span><span class="p">,</span><span class="w"> </span><span class="ss">fum</span><span class="p" data-group-id="8583276414-5">]</span><span class="p" data-group-id="8583276414-1">)</span><span class="w">
+</span><span class="nf">expand</span><span class="p" data-group-id="8583276414-6">(</span><span class="p" data-group-id="8583276414-7">[</span><span class="p" data-group-id="8583276414-8">{</span><span class="p" data-group-id="8583276414-9">{</span><span class="ss">foo</span><span class="p">,</span><span class="w"> </span><span class="ss">true</span><span class="p" data-group-id="8583276414-9">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8583276414-10">[</span><span class="ss">bar</span><span class="p">,</span><span class="w"> </span><span class="ss">baz</span><span class="p" data-group-id="8583276414-10">]</span><span class="p" data-group-id="8583276414-8">}</span><span class="p" data-group-id="8583276414-7">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8583276414-11">[</span><span class="ss">fie</span><span class="p">,</span><span class="w"> </span><span class="ss">foo</span><span class="p">,</span><span class="w"> </span><span class="ss">fum</span><span class="p" data-group-id="8583276414-11">]</span><span class="p" data-group-id="8583276414-6">)</span><span class="w">
+</span><span class="nf">expand</span><span class="p" data-group-id="8583276414-12">(</span><span class="p" data-group-id="8583276414-13">[</span><span class="p" data-group-id="8583276414-14">{</span><span class="p" data-group-id="8583276414-15">{</span><span class="ss">foo</span><span class="p">,</span><span class="w"> </span><span class="ss">false</span><span class="p" data-group-id="8583276414-15">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8583276414-16">[</span><span class="ss">bar</span><span class="p">,</span><span class="w"> </span><span class="ss">baz</span><span class="p" data-group-id="8583276414-16">]</span><span class="p" data-group-id="8583276414-14">}</span><span class="p" data-group-id="8583276414-13">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8583276414-17">[</span><span class="ss">fie</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8583276414-18">{</span><span class="ss">foo</span><span class="p">,</span><span class="w"> </span><span class="ss">false</span><span class="p" data-group-id="8583276414-18">}</span><span class="p">,</span><span class="w"> </span><span class="ss">fum</span><span class="p" data-group-id="8583276414-17">]</span><span class="p" data-group-id="8583276414-12">)</span></code></pre><p>However, no expansion is done in the following call because <code class="inline">{foo, false}</code>
+shadows <code class="inline">foo</code>:</p><pre><code class="makeup erlang" translate="no"><span class="nf">expand</span><span class="p" data-group-id="0089734352-1">(</span><span class="p" data-group-id="0089734352-2">[</span><span class="p" data-group-id="0089734352-3">{</span><span class="p" data-group-id="0089734352-4">{</span><span class="ss">foo</span><span class="p">,</span><span class="w"> </span><span class="ss">true</span><span class="p" data-group-id="0089734352-4">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0089734352-5">[</span><span class="ss">bar</span><span class="p">,</span><span class="w"> </span><span class="ss">baz</span><span class="p" data-group-id="0089734352-5">]</span><span class="p" data-group-id="0089734352-3">}</span><span class="p" data-group-id="0089734352-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0089734352-6">[</span><span class="p" data-group-id="0089734352-7">{</span><span class="ss">foo</span><span class="p">,</span><span class="w"> </span><span class="ss">false</span><span class="p" data-group-id="0089734352-7">}</span><span class="p">,</span><span class="w"> </span><span class="ss">fie</span><span class="p">,</span><span class="w"> </span><span class="ss">foo</span><span class="p">,</span><span class="w"> </span><span class="ss">fum</span><span class="p" data-group-id="0089734352-6">]</span><span class="p" data-group-id="0089734352-1">)</span></code></pre><p>Notice that if the original property term is to be preserved in the result when
 expanded, it must be included in the expansion list. The inserted terms are not
 expanded recursively. If <code class="inline">Expansions</code> contains more than one property with the
 same key, only the first occurrence is used.</p><p>See also <a href="#normalize/2"><code class="inline">normalize/2</code></a>.</p>
@@ -615,7 +635,7 @@ same key, only the first occurrence is used.</p><p>See also <a href="#normalize/
         <span class="note">(since OTP 24.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/proplists.erl#L763" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/proplists.erl#L763" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -644,7 +664,7 @@ same key, only the first occurrence is used.</p><p>See also <a href="#normalize/
       <h1 class="signature" translate="no">get_all_values(Key, List)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/proplists.erl#L247" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/proplists.erl#L247" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -673,7 +693,7 @@ same key, only the first occurrence is used.</p><p>See also <a href="#normalize/
       <h1 class="signature" translate="no">get_bool(Key, List)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/proplists.erl#L317" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/proplists.erl#L317" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -703,7 +723,7 @@ returns <code class="inline">true</code>, otherwise <code class="inline">false</
       <h1 class="signature" translate="no">get_keys(List)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/proplists.erl#L341" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/proplists.erl#L341" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -731,7 +751,7 @@ returns <code class="inline">true</code>, otherwise <code class="inline">false</
       <h1 class="signature" translate="no">get_value(Key, List)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/proplists.erl#L207" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/proplists.erl#L207" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -759,7 +779,7 @@ returns <code class="inline">true</code>, otherwise <code class="inline">false</
       <h1 class="signature" translate="no">get_value(Key, List, Default)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/proplists.erl#L222" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/proplists.erl#L222" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -789,7 +809,7 @@ returns the corresponding <code class="inline">Value</code>, otherwise <code cla
       <h1 class="signature" translate="no">is_defined(Key, List)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/proplists.erl#L188" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/proplists.erl#L188" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -818,7 +838,7 @@ otherwise <code class="inline">false</code>.</p>
       <h1 class="signature" translate="no">lookup(Key, List)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/proplists.erl#L144" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/proplists.erl#L144" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -848,7 +868,7 @@ the entry associated with <code class="inline">A</code>.</p><p>See also <a href=
       <h1 class="signature" translate="no">lookup_all(Key, List)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/proplists.erl#L166" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/proplists.erl#L166" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -877,7 +897,7 @@ entry exists, the result is the empty list.</p><p>See also <a href="#lookup/2"><
       <h1 class="signature" translate="no">normalize(ListIn, Stages)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/proplists.erl#L611" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/proplists.erl#L611" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -922,7 +942,7 @@ lists.</p><p>See also <a href="#substitute_negations/2"><code class="inline">sub
       <h1 class="signature" translate="no">property(PropertyIn)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/proplists.erl#L73" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/proplists.erl#L73" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -952,7 +972,7 @@ term <code class="inline">PropertyIn</code> is returned.</p><p>See also <a href=
       <h1 class="signature" translate="no">property(Key, Value)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/proplists.erl#L91" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/proplists.erl#L91" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -983,7 +1003,7 @@ Returns <code class="inline">Key</code> if <code class="inline">Value</code> is 
       <h1 class="signature" translate="no">split(List, Keys)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/proplists.erl#L651" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/proplists.erl#L651" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1002,7 +1022,7 @@ Returns <code class="inline">Key</code> if <code class="inline">Value</code> is 
 <p>Partitions <code class="inline">List</code> into a list of sublists and a remainder.</p><p><code class="inline">Lists</code> contains one sublist for each key in <code class="inline">Keys</code>, in the corresponding order.
 The relative order of the elements in each sublist is preserved from the original <code class="inline">List</code>.
 <code class="inline">Rest</code> contains the elements in <code class="inline">List</code> that are not associated with any of the
-specified keys, also with their original relative order preserved.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="nf">split</span><span class="p" data-group-id="6392485527-1">(</span><span class="p" data-group-id="6392485527-2">[</span><span class="p" data-group-id="6392485527-3">{</span><span class="ss">c</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="6392485527-3">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6392485527-4">{</span><span class="ss">e</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="6392485527-4">}</span><span class="p">,</span><span class="w"> </span><span class="ss">a</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6392485527-5">{</span><span class="ss">c</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="6392485527-5">}</span><span class="p">,</span><span class="w"> </span><span class="ss">d</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6392485527-6">{</span><span class="ss">b</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="6392485527-6">}</span><span class="p">,</span><span class="w"> </span><span class="ss">b</span><span class="p" data-group-id="6392485527-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6392485527-7">[</span><span class="ss">a</span><span class="p">,</span><span class="w"> </span><span class="ss">b</span><span class="p">,</span><span class="w"> </span><span class="ss">c</span><span class="p" data-group-id="6392485527-7">]</span><span class="p" data-group-id="6392485527-1">)</span></code></pre><p>returns:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="9759827209-1">{</span><span class="p" data-group-id="9759827209-2">[</span><span class="p" data-group-id="9759827209-3">[</span><span class="ss">a</span><span class="p" data-group-id="9759827209-3">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9759827209-4">[</span><span class="p" data-group-id="9759827209-5">{</span><span class="ss">b</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="9759827209-5">}</span><span class="p">,</span><span class="w"> </span><span class="ss">b</span><span class="p" data-group-id="9759827209-4">]</span><span class="p">,</span><span class="p" data-group-id="9759827209-6">[</span><span class="p" data-group-id="9759827209-7">{</span><span class="ss">c</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="9759827209-7">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9759827209-8">{</span><span class="ss">c</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="9759827209-8">}</span><span class="p" data-group-id="9759827209-6">]</span><span class="p" data-group-id="9759827209-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9759827209-9">[</span><span class="p" data-group-id="9759827209-10">{</span><span class="ss">e</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="9759827209-10">}</span><span class="p">,</span><span class="w"> </span><span class="ss">d</span><span class="p" data-group-id="9759827209-9">]</span><span class="p" data-group-id="9759827209-1">}</span></code></pre>
+specified keys, also with their original relative order preserved.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="nf">split</span><span class="p" data-group-id="2844630421-1">(</span><span class="p" data-group-id="2844630421-2">[</span><span class="p" data-group-id="2844630421-3">{</span><span class="ss">c</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="2844630421-3">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2844630421-4">{</span><span class="ss">e</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="2844630421-4">}</span><span class="p">,</span><span class="w"> </span><span class="ss">a</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2844630421-5">{</span><span class="ss">c</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="2844630421-5">}</span><span class="p">,</span><span class="w"> </span><span class="ss">d</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2844630421-6">{</span><span class="ss">b</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="2844630421-6">}</span><span class="p">,</span><span class="w"> </span><span class="ss">b</span><span class="p" data-group-id="2844630421-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2844630421-7">[</span><span class="ss">a</span><span class="p">,</span><span class="w"> </span><span class="ss">b</span><span class="p">,</span><span class="w"> </span><span class="ss">c</span><span class="p" data-group-id="2844630421-7">]</span><span class="p" data-group-id="2844630421-1">)</span></code></pre><p>returns:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="9635960241-1">{</span><span class="p" data-group-id="9635960241-2">[</span><span class="p" data-group-id="9635960241-3">[</span><span class="ss">a</span><span class="p" data-group-id="9635960241-3">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9635960241-4">[</span><span class="p" data-group-id="9635960241-5">{</span><span class="ss">b</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="9635960241-5">}</span><span class="p">,</span><span class="w"> </span><span class="ss">b</span><span class="p" data-group-id="9635960241-4">]</span><span class="p">,</span><span class="p" data-group-id="9635960241-6">[</span><span class="p" data-group-id="9635960241-7">{</span><span class="ss">c</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="9635960241-7">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9635960241-8">{</span><span class="ss">c</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p" data-group-id="9635960241-8">}</span><span class="p" data-group-id="9635960241-6">]</span><span class="p" data-group-id="9635960241-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9635960241-9">[</span><span class="p" data-group-id="9635960241-10">{</span><span class="ss">e</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="9635960241-10">}</span><span class="p">,</span><span class="w"> </span><span class="ss">d</span><span class="p" data-group-id="9635960241-9">]</span><span class="p" data-group-id="9635960241-1">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="substitute_aliases/2">
@@ -1015,7 +1035,7 @@ specified keys, also with their original relative order preserved.</p><p><em>Exa
       <h1 class="signature" translate="no">substitute_aliases(Aliases, ListIn)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/proplists.erl#L396" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/proplists.erl#L396" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1054,7 +1074,7 @@ with <code class="inline">colour</code>.</p><p>See also <a href="#normalize/2"><
       <h1 class="signature" translate="no">substitute_negations(Negations, ListIn)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/proplists.erl#L438" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/proplists.erl#L438" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1099,7 +1119,7 @@ other tuple <code class="inline">{no_foo, ...}</code> with <code class="inline">
         <span class="note">(since OTP 24.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/proplists.erl#L716" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/proplists.erl#L716" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1125,7 +1145,7 @@ other tuple <code class="inline">{no_foo, ...}</code> with <code class="inline">
 an association of the form <code class="inline">Key =&gt; Value</code>. Anything else will be silently
 ignored.</p><p>If the same key appears in <code class="inline">List</code> multiple times, the value of the one appearing
 nearest to the head of <code class="inline">List</code> will be in the result map, that is the value that
-would be returned by a call to <a href="#get_value/2"><code class="inline">get_value(Key, List)</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="nf">to_map</span><span class="p" data-group-id="9142844636-1">(</span><span class="p" data-group-id="9142844636-2">[</span><span class="ss">a</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9142844636-3">{</span><span class="ss">b</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="9142844636-3">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9142844636-4">{</span><span class="ss">c</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="9142844636-4">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9142844636-5">{</span><span class="ss">c</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="9142844636-5">}</span><span class="p" data-group-id="9142844636-2">]</span><span class="p" data-group-id="9142844636-1">)</span></code></pre><p>returns:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="4672480344-1">#{</span><span class="ss">a</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">true</span><span class="p">,</span><span class="w"> </span><span class="ss">b</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">c</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="4672480344-1">}</span></code></pre>
+would be returned by a call to <a href="#get_value/2"><code class="inline">get_value(Key, List)</code></a>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="nf">to_map</span><span class="p" data-group-id="7604248472-1">(</span><span class="p" data-group-id="7604248472-2">[</span><span class="ss">a</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7604248472-3">{</span><span class="ss">b</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="7604248472-3">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7604248472-4">{</span><span class="ss">c</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="7604248472-4">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7604248472-5">{</span><span class="ss">c</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="7604248472-5">}</span><span class="p" data-group-id="7604248472-2">]</span><span class="p" data-group-id="7604248472-1">)</span></code></pre><p>returns:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="3331615461-1">#{</span><span class="ss">a</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">true</span><span class="p">,</span><span class="w"> </span><span class="ss">b</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">c</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="3331615461-1">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="to_map/2">
@@ -1140,7 +1160,7 @@ would be returned by a call to <a href="#get_value/2"><code class="inline">get_v
         <span class="note">(since OTP 24.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/proplists.erl#L752" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/proplists.erl#L752" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1177,7 +1197,7 @@ given in <code class="inline">Stages</code>.</p><p>See also <a href="#normalize/
       <h1 class="signature" translate="no">unfold(ListIn)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/proplists.erl#L108" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/proplists.erl#L108" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1203,8 +1223,8 @@ given in <code class="inline">Stages</code>.</p><p>See also <a href="#normalize/
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="stdlib.epub" title="ePub version">
@@ -1216,7 +1236,7 @@ given in <code class="inline">Stages</code>.</p><p>See also <a href="#normalize/
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

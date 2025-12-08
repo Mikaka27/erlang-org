@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="wx v2.5.2-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/wx/wxMenu.html" />
     <title>wxMenu — wx v2.5.2-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-E2170433.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ wx
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of wx</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ wx
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L58" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L58" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -171,7 +189,7 @@ the popup menus.</p><p>See overview_events_bind for how to bind event handlers t
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">append(This, Id, Item, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#append/4"><code class="inline">append(This, Id, Item, [])</code></a>.</p></div>
 
     </div>
 
@@ -201,7 +219,7 @@ the popup menus.</p><p>See overview_events_bind for how to bind event handlers t
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">appendCheckItem(This, Id, Item, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#appendCheckItem/4"><code class="inline">appendCheckItem(This, Id, Item, [])</code></a>.</p></div>
 
     </div>
 
@@ -221,7 +239,7 @@ the popup menus.</p><p>See overview_events_bind for how to bind event handlers t
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">appendRadioItem(This, Id, Item, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#appendRadioItem/4"><code class="inline">appendRadioItem(This, Id, Item, [])</code></a>.</p></div>
 
     </div>
 
@@ -321,7 +339,7 @@ the popup menus.</p><p>See overview_events_bind for how to bind event handlers t
 
       </div>
 
-        <div class="summary-synopsis"><p>Returns the <a><code class="inline">wxMenuItem</code></a> given a position in the menu.</p></div>
+        <div class="summary-synopsis"><p>Returns the <a href="wxMenuItem.html"><code class="inline">wxMenuItem</code></a> given a position in the menu.</p></div>
 
     </div>
 
@@ -401,7 +419,7 @@ the popup menus.</p><p>See overview_events_bind for how to bind event handlers t
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">insert(This, Pos, Id, Text, Submenu, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#insert/6"><code class="inline">insert(This, Pos, Id, Text, Submenu, [])</code></a>.</p></div>
 
     </div>
 
@@ -421,7 +439,7 @@ the popup menus.</p><p>See overview_events_bind for how to bind event handlers t
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">insertCheckItem(This, Pos, Id, Item, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#insertCheckItem/5"><code class="inline">insertCheckItem(This, Pos, Id, Item, [])</code></a>.</p></div>
 
     </div>
 
@@ -441,7 +459,7 @@ the popup menus.</p><p>See overview_events_bind for how to bind event handlers t
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">insertRadioItem(This, Pos, Id, Item, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#insertRadioItem/5"><code class="inline">insertRadioItem(This, Pos, Id, Item, [])</code></a>.</p></div>
 
     </div>
 
@@ -491,7 +509,7 @@ the popup menus.</p><p>See overview_events_bind for how to bind event handlers t
 
       </div>
 
-        <div class="summary-synopsis"><p>Constructs a <a><code class="inline">wxMenu</code></a> object.</p></div>
+        <div class="summary-synopsis"><p>Constructs a <a href="wxMenu.html"><code class="inline">wxMenu</code></a> object.</p></div>
 
     </div>
 
@@ -501,7 +519,7 @@ the popup menus.</p><p>See overview_events_bind for how to bind event handlers t
 
       </div>
 
-        <div class="summary-synopsis"><p>Constructs a <a><code class="inline">wxMenu</code></a> object.</p></div>
+        <div class="summary-synopsis"><p>Constructs a <a href="wxMenu.html"><code class="inline">wxMenu</code></a> object.</p></div>
 
     </div>
 
@@ -511,7 +529,7 @@ the popup menus.</p><p>See overview_events_bind for how to bind event handlers t
 
       </div>
 
-        <div class="summary-synopsis"><p>Constructs a <a><code class="inline">wxMenu</code></a> object with a title.</p></div>
+        <div class="summary-synopsis"><p>Constructs a <a href="wxMenu.html"><code class="inline">wxMenu</code></a> object with a title.</p></div>
 
     </div>
 
@@ -541,7 +559,7 @@ the popup menus.</p><p>See overview_events_bind for how to bind event handlers t
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">prepend(This, Id, Text, Submenu, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#prepend/5"><code class="inline">prepend(This, Id, Text, Submenu, [])</code></a>.</p></div>
 
     </div>
 
@@ -561,7 +579,7 @@ the popup menus.</p><p>See overview_events_bind for how to bind event handlers t
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">prependCheckItem(This, Id, Item, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#prependCheckItem/4"><code class="inline">prependCheckItem(This, Id, Item, [])</code></a>.</p></div>
 
     </div>
 
@@ -581,7 +599,7 @@ the popup menus.</p><p>See overview_events_bind for how to bind event handlers t
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">prependRadioItem(This, Id, Item, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#prependRadioItem/4"><code class="inline">prependRadioItem(This, Id, Item, [])</code></a>.</p></div>
 
     </div>
 
@@ -657,6 +675,7 @@ the popup menus.</p><p>See overview_events_bind for how to bind event handlers t
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:wxMenu/0">
 
@@ -668,7 +687,7 @@ the popup menus.</p><p>See overview_events_bind for how to bind event handlers t
       <h1 class="signature" translate="no">wxMenu()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L143" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L143" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -697,6 +716,7 @@ the popup menus.</p><p>See overview_events_bind for how to bind event handlers t
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="append/2">
 
@@ -708,7 +728,7 @@ the popup menus.</p><p>See overview_events_bind for how to bind event handlers t
       <h1 class="signature" translate="no">append(This, MenuItem)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L207" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L207" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -739,7 +759,7 @@ properties of a menu item this way, such as bitmaps and fonts.</p><p>Remark: See
       <h1 class="signature" translate="no">append(This, Id, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L217" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L217" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -768,7 +788,7 @@ properties of a menu item this way, such as bitmaps and fonts.</p><p>Remark: See
       <h1 class="signature" translate="no">append/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L254" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L254" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -804,7 +824,7 @@ creation of a menu or menubar.</p><p>See:</p><ul><li><p><a href="#appendSeparato
       <h1 class="signature" translate="no">append/5</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L295" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L295" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -838,7 +858,7 @@ creation of a menu or menubar.</p><p>See:</p><ul><li><p><a href="#appendSeparato
       <h1 class="signature" translate="no">appendCheckItem(This, Id, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L310" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L310" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -867,7 +887,7 @@ creation of a menu or menubar.</p><p>See:</p><ul><li><p><a href="#appendSeparato
       <h1 class="signature" translate="no">appendCheckItem/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L325" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L325" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -900,7 +920,7 @@ creation of a menu or menubar.</p><p>See:</p><ul><li><p><a href="#appendSeparato
       <h1 class="signature" translate="no">appendRadioItem(This, Id, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L339" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L339" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -929,7 +949,7 @@ creation of a menu or menubar.</p><p>See:</p><ul><li><p><a href="#appendSeparato
       <h1 class="signature" translate="no">appendRadioItem/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L359" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L359" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -963,7 +983,7 @@ others are automatically unchecked.</p><p>Note: Radio items are not supported un
       <h1 class="signature" translate="no">appendSeparator(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L379" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L379" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -991,7 +1011,7 @@ others are automatically unchecked.</p><p>Note: Radio items are not supported un
       <h1 class="signature" translate="no">break(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L392" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L392" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1020,7 +1040,7 @@ platforms.</p>
       <h1 class="signature" translate="no">check(This, Id, Check)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L403" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L403" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1048,7 +1068,7 @@ platforms.</p>
       <h1 class="signature" translate="no">'Destroy'/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L452" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L452" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1078,7 +1098,7 @@ example, to reuse it later).</p><p>See:</p><ul><li><p><a href="#findItem/2"><cod
       <h1 class="signature" translate="no">delete/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L424" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L424" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1107,7 +1127,7 @@ example, to reuse it later).</p><p>See:</p><ul><li><p><a href="#findItem/2"><cod
       <h1 class="signature" translate="no">destroy(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L975" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L975" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1135,7 +1155,7 @@ example, to reuse it later).</p><p>See:</p><ul><li><p><a href="#findItem/2"><cod
       <h1 class="signature" translate="no">enable(This, Id, Enable)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L470" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L470" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1163,7 +1183,7 @@ example, to reuse it later).</p><p>See:</p><ul><li><p><a href="#findItem/2"><cod
       <h1 class="signature" translate="no">findItem/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L487" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L487" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1193,7 +1213,7 @@ matching.</p>
       <h1 class="signature" translate="no">findItemByPosition(This, Position)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L502" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L502" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1222,7 +1242,7 @@ matching.</p>
       <h1 class="signature" translate="no">getHelpString(This, Id)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L521" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L521" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1251,7 +1271,7 @@ not found.</p><p>See:</p><ul><li><p><a href="#setHelpString/3"><code class="inli
       <h1 class="signature" translate="no">getLabel(This, Id)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L536" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L536" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1279,7 +1299,7 @@ not found.</p><p>See:</p><ul><li><p><a href="#setHelpString/3"><code class="inli
       <h1 class="signature" translate="no">getMenuItemCount(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L545" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L545" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1307,7 +1327,7 @@ not found.</p><p>See:</p><ul><li><p><a href="#setHelpString/3"><code class="inli
       <h1 class="signature" translate="no">getMenuItems(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L553" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L553" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1335,7 +1355,7 @@ not found.</p><p>See:</p><ul><li><p><a href="#setHelpString/3"><code class="inli
       <h1 class="signature" translate="no">getTitle(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L565" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L565" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1363,7 +1383,7 @@ not found.</p><p>See:</p><ul><li><p><a href="#setHelpString/3"><code class="inli
       <h1 class="signature" translate="no">insert/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L586" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L586" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1394,7 +1414,7 @@ not found.</p><p>See:</p><ul><li><p><a href="#setHelpString/3"><code class="inli
       <h1 class="signature" translate="no">insert/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L612" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L612" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1428,7 +1448,7 @@ not found.</p><p>See:</p><ul><li><p><a href="#setHelpString/3"><code class="inli
       <h1 class="signature" translate="no">insert(This, Pos, Id, Text, Submenu)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L627" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L627" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1462,7 +1482,7 @@ not found.</p><p>See:</p><ul><li><p><a href="#setHelpString/3"><code class="inli
       <h1 class="signature" translate="no">insert/6</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L642" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L642" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1498,7 +1518,7 @@ status bar when the submenu item is selected.</p><p>See: <a href="#prepend/5"><c
       <h1 class="signature" translate="no">insertCheckItem(This, Pos, Id, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L657" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L657" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1531,7 +1551,7 @@ status bar when the submenu item is selected.</p><p>See: <a href="#prepend/5"><c
       <h1 class="signature" translate="no">insertCheckItem/5</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L672" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L672" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1565,7 +1585,7 @@ status bar when the submenu item is selected.</p><p>See: <a href="#prepend/5"><c
       <h1 class="signature" translate="no">insertRadioItem(This, Pos, Id, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L686" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L686" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1598,7 +1618,7 @@ status bar when the submenu item is selected.</p><p>See: <a href="#prepend/5"><c
       <h1 class="signature" translate="no">insertRadioItem/5</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L701" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L701" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1632,7 +1652,7 @@ status bar when the submenu item is selected.</p><p>See: <a href="#prepend/5"><c
       <h1 class="signature" translate="no">insertSeparator(This, Pos)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L721" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L721" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1660,7 +1680,7 @@ status bar when the submenu item is selected.</p><p>See: <a href="#prepend/5"><c
       <h1 class="signature" translate="no">isChecked(This, Id)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L736" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L736" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1688,7 +1708,7 @@ status bar when the submenu item is selected.</p><p>See: <a href="#prepend/5"><c
       <h1 class="signature" translate="no">isEnabled(This, Id)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L751" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L751" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1716,7 +1736,7 @@ status bar when the submenu item is selected.</p><p>See: <a href="#prepend/5"><c
       <h1 class="signature" translate="no">new()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L151" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L151" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1744,7 +1764,7 @@ status bar when the submenu item is selected.</p><p>See: <a href="#prepend/5"><c
       <h1 class="signature" translate="no">new(Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L158" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L158" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1772,7 +1792,7 @@ status bar when the submenu item is selected.</p><p>See: <a href="#prepend/5"><c
       <h1 class="signature" translate="no">new(Title, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L170" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L170" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1800,7 +1820,7 @@ status bar when the submenu item is selected.</p><p>See: <a href="#prepend/5"><c
       <h1 class="signature" translate="no">prepend/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L771" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L771" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1830,7 +1850,7 @@ status bar when the submenu item is selected.</p><p>See: <a href="#prepend/5"><c
       <h1 class="signature" translate="no">prepend/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L794" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L794" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1863,7 +1883,7 @@ status bar when the submenu item is selected.</p><p>See: <a href="#prepend/5"><c
       <h1 class="signature" translate="no">prepend(This, Id, Text, Submenu)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L809" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L809" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1892,7 +1912,7 @@ status bar when the submenu item is selected.</p><p>See: <a href="#prepend/5"><c
       <h1 class="signature" translate="no">prepend/5</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L821" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L821" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1926,7 +1946,7 @@ status bar when the submenu item is selected.</p><p>See: <a href="#prepend/5"><c
       <h1 class="signature" translate="no">prependCheckItem(This, Id, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L836" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L836" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1955,7 +1975,7 @@ status bar when the submenu item is selected.</p><p>See: <a href="#prepend/5"><c
       <h1 class="signature" translate="no">prependCheckItem/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L851" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L851" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1988,7 +2008,7 @@ status bar when the submenu item is selected.</p><p>See: <a href="#prepend/5"><c
       <h1 class="signature" translate="no">prependRadioItem(This, Id, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L865" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L865" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2017,7 +2037,7 @@ status bar when the submenu item is selected.</p><p>See: <a href="#prepend/5"><c
       <h1 class="signature" translate="no">prependRadioItem/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L880" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L880" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2050,7 +2070,7 @@ status bar when the submenu item is selected.</p><p>See: <a href="#prepend/5"><c
       <h1 class="signature" translate="no">prependSeparator(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L900" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L900" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2078,7 +2098,7 @@ status bar when the submenu item is selected.</p><p>See: <a href="#prepend/5"><c
       <h1 class="signature" translate="no">remove/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L917" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L917" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2109,7 +2129,7 @@ useful with submenus).</p><p>Return: A pointer to the item which was detached fr
       <h1 class="signature" translate="no">setHelpString(This, Id, HelpString)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L935" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L935" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2138,7 +2158,7 @@ useful with submenus).</p><p>Return: A pointer to the item which was detached fr
       <h1 class="signature" translate="no">setLabel(This, Id, Label)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L951" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L951" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2167,7 +2187,7 @@ useful with submenus).</p><p>Return: A pointer to the item which was detached fr
       <h1 class="signature" translate="no">setTitle(This, Title)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxMenu.erl#L967" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxMenu.erl#L967" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2194,8 +2214,8 @@ the title of a menu that is part of a menu bar you need to use <a href="wxMenuBa
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="wx.epub" title="ePub version">
@@ -2207,7 +2227,7 @@ the title of a menu that is part of a menu bar you need to use <a href="wxMenuBa
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

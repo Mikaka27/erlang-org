@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="stdlib v7.1-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/supervisor.html" />
     <title>supervisor — stdlib v7.1-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-4F7E9F36.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ stdlib
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of stdlib</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ stdlib
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -114,11 +132,11 @@ When the supervisor is started, the child processes are started in order from
 left to right according to this list. When the supervisor is going to terminate,
 it first terminates its child processes in reversed start order, from right to
 left.</p><p><a href="" id="sup_flags"></a></p><h3 id="module-supervisor-flags" class="section-heading"><a href="#module-supervisor-flags" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Supervisor flags</span></h3><p>The supervisor properties are defined by the supervisor flags. The type
-definition for the supervisor flags is as follows:</p><pre><code class="makeup erlang" translate="no"><span class="nf">sup_flags</span><span class="p" data-group-id="3320515340-1">(</span><span class="p" data-group-id="3320515340-1">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="3320515340-2">#{</span><span class="ss">strategy</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">strategy</span><span class="p" data-group-id="3320515340-3">(</span><span class="p" data-group-id="3320515340-3">)</span><span class="p">,</span><span class="w">           </span><span class="c1">% optional</span><span class="w">
-                </span><span class="ss">intensity</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">non_neg_integer</span><span class="p" data-group-id="3320515340-4">(</span><span class="p" data-group-id="3320515340-4">)</span><span class="p">,</span><span class="w">   </span><span class="c1">% optional</span><span class="w">
-                </span><span class="ss">period</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">pos_integer</span><span class="p" data-group-id="3320515340-5">(</span><span class="p" data-group-id="3320515340-5">)</span><span class="p">,</span><span class="w">          </span><span class="c1">% optional</span><span class="w">
-                </span><span class="ss">hibernate_after</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">timeout</span><span class="p" data-group-id="3320515340-6">(</span><span class="p" data-group-id="3320515340-6">)</span><span class="p">,</span><span class="w">     </span><span class="c1">% optional, available since OTP 28.0</span><span class="w">
-                </span><span class="ss">auto_shutdown</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">auto_shutdown</span><span class="p" data-group-id="3320515340-7">(</span><span class="p" data-group-id="3320515340-7">)</span><span class="p" data-group-id="3320515340-2">}</span><span class="w"> </span><span class="c1">% optional</span></code></pre><h4>Restart Strategies</h4><p>A supervisor can have one of the following <em>restart strategies</em> specified with
+definition for the supervisor flags is as follows:</p><pre><code class="makeup erlang" translate="no"><span class="nf">sup_flags</span><span class="p" data-group-id="2753139771-1">(</span><span class="p" data-group-id="2753139771-1">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="2753139771-2">#{</span><span class="ss">strategy</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">strategy</span><span class="p" data-group-id="2753139771-3">(</span><span class="p" data-group-id="2753139771-3">)</span><span class="p">,</span><span class="w">           </span><span class="c1">% optional</span><span class="w">
+                </span><span class="ss">intensity</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">non_neg_integer</span><span class="p" data-group-id="2753139771-4">(</span><span class="p" data-group-id="2753139771-4">)</span><span class="p">,</span><span class="w">   </span><span class="c1">% optional</span><span class="w">
+                </span><span class="ss">period</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">pos_integer</span><span class="p" data-group-id="2753139771-5">(</span><span class="p" data-group-id="2753139771-5">)</span><span class="p">,</span><span class="w">          </span><span class="c1">% optional</span><span class="w">
+                </span><span class="ss">hibernate_after</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">timeout</span><span class="p" data-group-id="2753139771-6">(</span><span class="p" data-group-id="2753139771-6">)</span><span class="p">,</span><span class="w">     </span><span class="c1">% optional, available since OTP 28.0</span><span class="w">
+                </span><span class="ss">auto_shutdown</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">auto_shutdown</span><span class="p" data-group-id="2753139771-7">(</span><span class="p" data-group-id="2753139771-7">)</span><span class="p" data-group-id="2753139771-2">}</span><span class="w"> </span><span class="c1">% optional</span></code></pre><h4>Restart Strategies</h4><p>A supervisor can have one of the following <em>restart strategies</em> specified with
 the <code class="inline">strategy</code> key in the above map:</p><ul><li><p><code class="inline">one_for_one</code> - If one child process terminates and is to be restarted, only
 that child process is affected. This is the default restart strategy.</p></li><li><p><code class="inline">one_for_all</code> - If one child process terminates and is to be restarted, all
 other child processes are terminated and then all child processes are
@@ -164,13 +182,13 @@ Behavior in OTP Design Principles.</p><section role="note" class="admonition war
 this feature will also compile and run with older OTP versions.</p><p>However, such applications, when compiled with an OTP version that predates
 the appearance of the automatic shutdown feature, will leak processes because
 the automatic shutdowns they rely on will not happen.</p><p>It is up to implementors to take proper precautions if they expect that their
-applications may be compiled with older OTP versions.</p></section><p><a href="" id="child_spec"></a></p><h3 id="module-child-specification" class="section-heading"><a href="#module-child-specification" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Child specification</span></h3><p>The type definition of a child specification is as follows:</p><pre><code class="makeup erlang" translate="no"><span class="nf">child_spec</span><span class="p" data-group-id="1703009840-1">(</span><span class="p" data-group-id="1703009840-1">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="1703009840-2">#{</span><span class="ss">id</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">child_id</span><span class="p" data-group-id="1703009840-3">(</span><span class="p" data-group-id="1703009840-3">)</span><span class="p">,</span><span class="w">             </span><span class="c1">% mandatory</span><span class="w">
-                 </span><span class="ss">start</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">mfargs</span><span class="p" data-group-id="1703009840-4">(</span><span class="p" data-group-id="1703009840-4">)</span><span class="p">,</span><span class="w">            </span><span class="c1">% mandatory</span><span class="w">
-                 </span><span class="ss">restart</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">restart</span><span class="p" data-group-id="1703009840-5">(</span><span class="p" data-group-id="1703009840-5">)</span><span class="p">,</span><span class="w">         </span><span class="c1">% optional</span><span class="w">
-                 </span><span class="ss">significant</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">significant</span><span class="p" data-group-id="1703009840-6">(</span><span class="p" data-group-id="1703009840-6">)</span><span class="p">,</span><span class="w"> </span><span class="c1">% optional</span><span class="w">
-                 </span><span class="ss">shutdown</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">shutdown</span><span class="p" data-group-id="1703009840-7">(</span><span class="p" data-group-id="1703009840-7">)</span><span class="p">,</span><span class="w">       </span><span class="c1">% optional</span><span class="w">
-                 </span><span class="ss">type</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">worker</span><span class="p" data-group-id="1703009840-8">(</span><span class="p" data-group-id="1703009840-8">)</span><span class="p">,</span><span class="w">             </span><span class="c1">% optional</span><span class="w">
-                 </span><span class="ss">modules</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">modules</span><span class="p" data-group-id="1703009840-9">(</span><span class="p" data-group-id="1703009840-9">)</span><span class="p" data-group-id="1703009840-2">}</span><span class="w">         </span><span class="c1">% optional</span></code></pre><p>The old tuple format is kept for backwards compatibility, see <a href="#t:child_spec/0"><code class="inline">child_spec/0</code></a>,
+applications may be compiled with older OTP versions.</p></section><p><a href="" id="child_spec"></a></p><h3 id="module-child-specification" class="section-heading"><a href="#module-child-specification" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Child specification</span></h3><p>The type definition of a child specification is as follows:</p><pre><code class="makeup erlang" translate="no"><span class="nf">child_spec</span><span class="p" data-group-id="3018060736-1">(</span><span class="p" data-group-id="3018060736-1">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="3018060736-2">#{</span><span class="ss">id</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">child_id</span><span class="p" data-group-id="3018060736-3">(</span><span class="p" data-group-id="3018060736-3">)</span><span class="p">,</span><span class="w">             </span><span class="c1">% mandatory</span><span class="w">
+                 </span><span class="ss">start</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">mfargs</span><span class="p" data-group-id="3018060736-4">(</span><span class="p" data-group-id="3018060736-4">)</span><span class="p">,</span><span class="w">            </span><span class="c1">% mandatory</span><span class="w">
+                 </span><span class="ss">restart</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">restart</span><span class="p" data-group-id="3018060736-5">(</span><span class="p" data-group-id="3018060736-5">)</span><span class="p">,</span><span class="w">         </span><span class="c1">% optional</span><span class="w">
+                 </span><span class="ss">significant</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">significant</span><span class="p" data-group-id="3018060736-6">(</span><span class="p" data-group-id="3018060736-6">)</span><span class="p">,</span><span class="w"> </span><span class="c1">% optional</span><span class="w">
+                 </span><span class="ss">shutdown</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">shutdown</span><span class="p" data-group-id="3018060736-7">(</span><span class="p" data-group-id="3018060736-7">)</span><span class="p">,</span><span class="w">       </span><span class="c1">% optional</span><span class="w">
+                 </span><span class="ss">type</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">worker</span><span class="p" data-group-id="3018060736-8">(</span><span class="p" data-group-id="3018060736-8">)</span><span class="p">,</span><span class="w">             </span><span class="c1">% optional</span><span class="w">
+                 </span><span class="ss">modules</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nf">modules</span><span class="p" data-group-id="3018060736-9">(</span><span class="p" data-group-id="3018060736-9">)</span><span class="p" data-group-id="3018060736-2">}</span><span class="w">         </span><span class="c1">% optional</span></code></pre><p>The old tuple format is kept for backwards compatibility, see <a href="#t:child_spec/0"><code class="inline">child_spec/0</code></a>,
 but the map is preferred.</p><ul><li><p><code class="inline">id</code> is used to identify the child specification internally by the supervisor.</p><p>The <code class="inline">id</code> key is mandatory.</p><p>Notice that this identifier on occations has been called &quot;name&quot;. As far as
 possible, the terms &quot;identifier&quot; or &quot;id&quot; are now used but to keep backward
 compatibility, some occurences of &quot;name&quot; can still be found, for example in
@@ -261,7 +279,7 @@ process, or <code class="inline">undefined</code> if no pid exists.</p></li></ul
 
       </div>
 
-        <div class="summary-synopsis"><p>Not a <a><code class="inline">pid/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Not a <a href="../../apps/erts/erlang.html#t:pid/0"><code class="inline">pid/0</code></a>.</p></div>
 
     </div>
 
@@ -280,7 +298,7 @@ process, or <code class="inline">undefined</code> if no pid exists.</p></li></ul
       </div>
 
         <div class="summary-synopsis"><p>The tuple format is kept for backward compatibility only. A map is preferred;
-see more details <a>above</a>.</p></div>
+see more details <a href="supervisor.html#child_spec">above</a>.</p></div>
 
     </div>
 
@@ -299,7 +317,7 @@ see more details <a>above</a>.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Value <code class="inline">undefined</code> for <code class="inline">A</code> (the argument list) is only to be used internally in
-<a><code class="inline">supervisor</code></a>. If the restart type of the child is <code class="inline">temporary</code>, the process is
+<a href="supervisor.html"><code class="inline">supervisor</code></a>. If the restart type of the child is <code class="inline">temporary</code>, the process is
 never to be restarted and therefore there is no need to store the real argument
 list. Value <code class="inline">undefined</code> is then stored instead.</p></div>
 
@@ -384,7 +402,7 @@ list. Value <code class="inline">undefined</code> is then stored instead.</p></d
       </div>
 
         <div class="summary-synopsis"><p>The tuple format is kept for backward compatibility only. A map is preferred;
-see more details <a>above</a>.</p></div>
+see more details <a href="supervisor.html#sup_flags">above</a>.</p></div>
 
     </div>
 
@@ -395,7 +413,7 @@ see more details <a>above</a>.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Name specification to use when starting a <code class="inline">supervisor</code>. See function
-<a><code class="inline">start_link/2,3</code></a> and the type <a><code class="inline">sup_ref/0</code></a> below.</p></div>
+<a href="#start_link/2"><code class="inline">start_link/2,3</code></a> and the type <a href="#t:sup_ref/0"><code class="inline">sup_ref/0</code></a> below.</p></div>
 
     </div>
 
@@ -406,10 +424,10 @@ see more details <a>above</a>.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Supervisor specification to use when addressing a <code class="inline">supervisor</code>. See
-<a><code class="inline">count_children/1</code></a>, <a><code class="inline">delete_child/2</code></a>,
-<a><code class="inline">get_childspec/2</code></a>, <a><code class="inline">restart_child/2</code></a>,
-<a><code class="inline">start_child/2</code></a>, <a><code class="inline">terminate_child/2</code></a>,
-<a><code class="inline">which_children/1</code></a> and the type <a><code class="inline">sup_name/0</code></a> above.</p></div>
+<a href="#count_children/1"><code class="inline">count_children/1</code></a>, <a href="#delete_child/2"><code class="inline">delete_child/2</code></a>,
+<a href="#get_childspec/2"><code class="inline">get_childspec/2</code></a>, <a href="#restart_child/2"><code class="inline">restart_child/2</code></a>,
+<a href="#start_child/2"><code class="inline">start_child/2</code></a>, <a href="#terminate_child/2"><code class="inline">terminate_child/2</code></a>,
+<a href="#which_children/1"><code class="inline">which_children/1</code></a> and the type <a href="#t:sup_name/0"><code class="inline">sup_name/0</code></a> above.</p></div>
 
     </div>
 
@@ -433,7 +451,7 @@ see more details <a>above</a>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Whenever a supervisor is started using <a><code class="inline">start_link/2,3</code></a>, this
+        <div class="summary-synopsis"><p>Whenever a supervisor is started using <a href="#start_link/2"><code class="inline">start_link/2,3</code></a>, this
 function is called by the new process to find out about restart strategy,
 maximum restart intensity, and child specifications.</p></div>
 
@@ -451,7 +469,7 @@ maximum restart intensity, and child specifications.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">check_childspecs(ChildSpecs, undefined)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#check_childspecs/2"><code class="inline">check_childspecs(ChildSpecs, undefined)</code></a>.</p></div>
 
     </div>
 
@@ -472,7 +490,7 @@ are syntactically correct, otherwise <code class="inline">{error,Error}</code>.<
 
       </div>
 
-        <div class="summary-synopsis"><p>Returns a <a>property list</a> containing the counts for each of
+        <div class="summary-synopsis"><p>Returns a <a href="proplists.html#t:proplist/0">property list</a> containing the counts for each of
 the following elements of the supervisor's child specifications and managed
 processes</p></div>
 
@@ -485,7 +503,7 @@ processes</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Tells supervisor <code class="inline">SupRef</code> to delete the child specification identified by <code class="inline">Id</code>.
-The corresponding child process must not be running. Use <a><code class="inline">terminate_child/2</code></a> to
+The corresponding child process must not be running. Use <a href="#terminate_child/2"><code class="inline">terminate_child/2</code></a> to
 terminate it.</p></div>
 
     </div>
@@ -551,7 +569,7 @@ corresponding child process.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">stop(SupRef, normal, infinity)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#stop/3"><code class="inline">stop(SupRef, normal, infinity)</code></a>.</p></div>
 
     </div>
 
@@ -609,6 +627,7 @@ child processes belonging to supervisor <code class="inline">SupRef</code>.</p><
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:auto_shutdown/0">
 
@@ -622,7 +641,7 @@ child processes belonging to supervisor <code class="inline">SupRef</code>.</p><
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L342" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L342" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -652,7 +671,7 @@ child processes belonging to supervisor <code class="inline">SupRef</code>.</p><
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L343" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L343" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -682,7 +701,7 @@ child processes belonging to supervisor <code class="inline">SupRef</code>.</p><
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L345" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L345" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -712,7 +731,7 @@ child processes belonging to supervisor <code class="inline">SupRef</code>.</p><
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L467" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L467" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -748,7 +767,7 @@ child processes belonging to supervisor <code class="inline">SupRef</code>.</p><
       <h1 class="signature" translate="no">child_spec()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L412" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L412" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -792,7 +811,7 @@ see more details <a href="supervisor.html#child_spec">above</a>.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L441" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L441" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -822,7 +841,7 @@ see more details <a href="supervisor.html#child_spec">above</a>.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L352" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L352" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -855,7 +874,7 @@ list. Value <code class="inline">undefined</code> is then stored instead.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L353" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L353" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -885,7 +904,7 @@ list. Value <code class="inline">undefined</code> is then stored instead.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L354" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L354" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -915,7 +934,7 @@ list. Value <code class="inline">undefined</code> is then stored instead.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L356" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L356" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -945,7 +964,7 @@ list. Value <code class="inline">undefined</code> is then stored instead.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L355" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L355" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -973,7 +992,7 @@ list. Value <code class="inline">undefined</code> is then stored instead.</p>
       <h1 class="signature" translate="no">startchild_err()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L607" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L607" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1001,7 +1020,7 @@ list. Value <code class="inline">undefined</code> is then stored instead.</p>
       <h1 class="signature" translate="no">startchild_ret()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L609" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L609" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1030,7 +1049,7 @@ list. Value <code class="inline">undefined</code> is then stored instead.</p>
       <h1 class="signature" translate="no">startlink_err()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L535" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L535" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1058,7 +1077,7 @@ list. Value <code class="inline">undefined</code> is then stored instead.</p>
       <h1 class="signature" translate="no">startlink_ret()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L538" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L538" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1086,7 +1105,7 @@ list. Value <code class="inline">undefined</code> is then stored instead.</p>
       <h1 class="signature" translate="no">strategy()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L426" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L426" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1114,7 +1133,7 @@ list. Value <code class="inline">undefined</code> is then stored instead.</p>
       <h1 class="signature" translate="no">sup_flags()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L433" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L433" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1149,7 +1168,7 @@ see more details <a href="supervisor.html#sup_flags">above</a>.</p>
       <h1 class="signature" translate="no">sup_name()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L375" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L375" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1186,7 +1205,7 @@ Thus, <code class="inline">{via,global,GlobalName}</code> is a valid reference e
       <h1 class="signature" translate="no">sup_ref()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L403" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L403" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1231,7 +1250,7 @@ are to behave like the corresponding functions in <a href="../../apps/kernel/glo
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L357" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L357" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1260,6 +1279,7 @@ are to behave like the corresponding functions in <a href="../../apps/kernel/glo
       </a>
       <span class="text">Callbacks</span>
     </h1>
+
     <div class="callbacks-list">
 <section class="detail" id="c:init/1">
 
@@ -1271,7 +1291,7 @@ are to behave like the corresponding functions in <a href="../../apps/kernel/glo
       <h1 class="signature" translate="no">init(Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L523" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L523" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1314,6 +1334,7 @@ Principles.</p>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="check_childspecs/1">
 
@@ -1325,7 +1346,7 @@ Principles.</p>
       <h1 class="signature" translate="no">check_childspecs(ChildSpecs)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L880" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L880" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1356,7 +1377,7 @@ Principles.</p>
         <span class="note">(since OTP 24.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L896" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L896" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1393,7 +1414,7 @@ checks if the child specifications are allowed for the given
         <span class="note">(since OTP R13B04)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L831" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L831" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1436,7 +1457,7 @@ specification list, regardless if the child process is still alive.</li></ul>
       <h1 class="signature" translate="no">delete_child(SupRef, Id)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L706" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L706" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1477,7 +1498,7 @@ function returns <code class="inline">{error,not_found}</code>.</p>
         <span class="note">(since OTP 18.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L759" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L759" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1512,7 +1533,7 @@ optional.</p>
       <h1 class="signature" translate="no">restart_child(SupRef, Id)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L687" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L687" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1559,7 +1580,7 @@ term containing information about the error.</p>
       <h1 class="signature" translate="no">start_child(Supervisor, ChildSpecOrExtraArgs)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L652" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L652" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1609,7 +1630,7 @@ the error and child specification.</p>
       <h1 class="signature" translate="no">start_link(Module, Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L549" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L549" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1638,7 +1659,7 @@ the error and child specification.</p>
       <h1 class="signature" translate="no">start_link(SupName, Module, Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L600" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L600" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1692,7 +1713,7 @@ processes with reason <code class="inline">shutdown</code> and then terminate it
         <span class="note">(since OTP 29.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L837" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L837" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1722,7 +1743,7 @@ processes with reason <code class="inline">shutdown</code> and then terminate it
         <span class="note">(since OTP 29.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L870" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L870" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1763,7 +1784,7 @@ of the child or the timeout given to <a href="#stop/3"><code class="inline">stop
       <h1 class="signature" translate="no">terminate_child(SupRef, Id)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L745" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L745" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1811,7 +1832,7 @@ with the specified <code class="inline">Id</code>, the function returns <code cl
         <span class="note">(since OTP 28.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L805" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L805" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1848,7 +1869,7 @@ by the given <code class="inline">Id</code>.</p><p>See <a href="#which_children/
       <h1 class="signature" translate="no">which_children(SupRef)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/supervisor.erl#L785" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/supervisor.erl#L785" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1885,8 +1906,8 @@ process.</li><li><code class="inline">Type</code> - As defined in the child spec
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="stdlib.epub" title="ePub version">
@@ -1898,7 +1919,7 @@ process.</li><li><code class="inline">Type</code> - As defined in the child spec
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

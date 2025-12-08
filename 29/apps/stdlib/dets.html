@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="stdlib v7.1-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/dets.html" />
     <title>dets — stdlib v7.1-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-4F7E9F36.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ stdlib
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of stdlib</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ stdlib
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -171,7 +189,7 @@ message.</p><h2 id="module-see-also" class="section-heading"><a href="#module-se
 
       </div>
 
-        <div class="summary-synopsis"><p>Opaque continuation used by <a><code class="inline">match/1</code></a> and <a><code class="inline">match/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Opaque continuation used by <a href="#match/1"><code class="inline">match/1</code></a> and <a href="#match/3"><code class="inline">match/3</code></a>.</p></div>
 
     </div>
 
@@ -181,7 +199,7 @@ message.</p><h2 id="module-see-also" class="section-heading"><a href="#module-se
 
       </div>
 
-        <div class="summary-synopsis"><p>Opaque continuation used by <a><code class="inline">bchunk/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Opaque continuation used by <a href="#bchunk/2"><code class="inline">bchunk/2</code></a>.</p></div>
 
     </div>
 
@@ -200,8 +218,8 @@ message.</p><h2 id="module-see-also" class="section-heading"><a href="#module-se
       </div>
 
         <div class="summary-synopsis"><p>Match specifications, see section
-<a>Match Specification in Erlang</a> in ERTS User's Guide and
-the <a><code class="inline">ms_transform</code></a> module.</p></div>
+<a href="../../apps/erts/match_spec.html">Match Specification in Erlang</a> in ERTS User's Guide and
+the <a href="ms_transform.html"><code class="inline">ms_transform</code></a> module.</p></div>
 
     </div>
 
@@ -227,7 +245,7 @@ the <a><code class="inline">ms_transform</code></a> module.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Opaque continuation used by <a><code class="inline">match_object/1</code></a> and <a><code class="inline">match_object/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Opaque continuation used by <a href="#match_object/1"><code class="inline">match_object/1</code></a> and <a href="#match_object/3"><code class="inline">match_object/3</code></a>.</p></div>
 
     </div>
 
@@ -237,7 +255,7 @@ the <a><code class="inline">ms_transform</code></a> module.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For a description of patterns, see <a><code class="inline">ets:match/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For a description of patterns, see <a href="ets.html#match/2"><code class="inline">ets:match/2</code></a>.</p></div>
 
     </div>
 
@@ -247,7 +265,7 @@ the <a><code class="inline">ms_transform</code></a> module.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Opaque continuation used by <a><code class="inline">select/1</code></a> and <a><code class="inline">select/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Opaque continuation used by <a href="#select/1"><code class="inline">select/1</code></a> and <a href="#select/3"><code class="inline">select/3</code></a>.</p></div>
 
     </div>
 
@@ -321,8 +339,8 @@ returned objects is not public.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Deletes all objects from a table in almost constant time. However, if the table
-if fixed, <a><code class="inline">delete_all_objects(T)</code></a> is equivalent to
-<a><code class="inline">match_delete(T, '_')</code></a>.</p></div>
+if fixed, <a href="#delete_all_objects/1"><code class="inline">delete_all_objects(T)</code></a> is equivalent to
+<a href="#match_delete/2"><code class="inline">match_delete(T, '_')</code></a>.</p></div>
 
     </div>
 
@@ -355,7 +373,7 @@ the table, or <code class="inline">'$end_of_table'</code> if the table is empty.
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">foldr/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#foldr/3"><code class="inline">foldr/3</code></a>.</p></div>
 
     </div>
 
@@ -380,7 +398,7 @@ is returned if the table is empty.</p></div>
 
         <div class="summary-synopsis"><p>Deletes all objects of table <code class="inline">Name</code> and then inserts all the objects of the ETS
 table <code class="inline">EtsTab</code>. The objects are inserted in unspecified order. As
-<a><code class="inline">ets:safe_fixtable/2</code></a> is called, the ETS table must be public or owned by the
+<a href="ets.html#safe_fixtable/2"><code class="inline">ets:safe_fixtable/2</code></a> is called, the ETS table must be public or owned by the
 calling process.</p></div>
 
     </div>
@@ -402,7 +420,7 @@ calling process.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Returns the information associated with <code class="inline">Item</code> for table <code class="inline">Name</code>. In addition to
-the <code class="inline">{Item, Value}</code> pairs defined for <a><code class="inline">info/1</code></a>, the following items are allowed</p></div>
+the <code class="inline">{Item, Value}</code> pairs defined for <a href="#info/1"><code class="inline">info/1</code></a>, the following items are allowed</p></div>
 
     </div>
 
@@ -412,7 +430,7 @@ the <code class="inline">{Item, Value}</code> pairs defined for <a><code class="
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">init_table(Name, InitFun, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#init_table/3"><code class="inline">init_table(Name, InitFun, [])</code></a>.</p></div>
 
     </div>
 
@@ -459,8 +477,8 @@ not updated and <code class="inline">false</code> is returned. Otherwise the obj
       </div>
 
         <div class="summary-synopsis"><p>Returns <code class="inline">true</code> if it would be possible to initialize table <code class="inline">Name</code>, using
-<a><code class="inline">init_table/3</code></a> with option <code class="inline">{format, bchunk}</code>, with objects read with <a><code class="inline">bchunk/2</code></a>
-from some table <code class="inline">T</code>, such that calling <a><code class="inline">info(T, bchunk_format)</code></a>
+<a href="#init_table/3"><code class="inline">init_table/3</code></a> with option <code class="inline">{format, bchunk}</code>, with objects read with <a href="#bchunk/2"><code class="inline">bchunk/2</code></a>
+from some table <code class="inline">T</code>, such that calling <a href="#info/2"><code class="inline">info(T, bchunk_format)</code></a>
 returns <code class="inline">BchunkFormat</code>.</p></div>
 
     </div>
@@ -496,7 +514,7 @@ example</p></div>
 bindings matching a specified pattern in some unspecified order. The table, the
 pattern, and the number of objects that are matched are all defined by
 <code class="inline">Continuation</code>, which has been returned by a previous call to
-<a><code class="inline">match/1</code></a> or <a><code class="inline">match/3</code></a>.</p></div>
+<a href="#match/1"><code class="inline">match/1</code></a> or <a href="#match/3"><code class="inline">match/3</code></a>.</p></div>
 
     </div>
 
@@ -508,7 +526,7 @@ pattern, and the number of objects that are matched are all defined by
 
         <div class="summary-synopsis"><p>Returns for each object of table <code class="inline">Name</code> that matches <code class="inline">Pattern</code> a list of
 bindings in some unspecified order. For a description of patterns, see
-<a><code class="inline">ets:match/2</code></a>. If the keypos'th element of <code class="inline">Pattern</code> is unbound, all table
+<a href="ets.html#match/2"><code class="inline">ets:match/2</code></a>. If the keypos'th element of <code class="inline">Pattern</code> is unbound, all table
 objects are matched. If the keypos'th element is bound, only the objects with
 the correct key are matched.</p></div>
 
@@ -522,7 +540,7 @@ the correct key are matched.</p></div>
 
         <div class="summary-synopsis"><p>Matches some or all objects of table <code class="inline">Name</code> and returns a non-empty list of the
 bindings that match <code class="inline">Pattern</code> in some unspecified order. For a description of
-patterns, see <a><code class="inline">ets:match/2</code></a>.</p></div>
+patterns, see <a href="ets.html#match/2"><code class="inline">ets:match/2</code></a>.</p></div>
 
     </div>
 
@@ -533,7 +551,7 @@ patterns, see <a><code class="inline">ets:match/2</code></a>.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Deletes all objects that match <code class="inline">Pattern</code> from table <code class="inline">Name</code>. For a description of
-patterns, see <a><code class="inline">ets:match/2</code></a>.</p></div>
+patterns, see <a href="ets.html#match/2"><code class="inline">ets:match/2</code></a>.</p></div>
 
     </div>
 
@@ -546,8 +564,8 @@ patterns, see <a><code class="inline">ets:match/2</code></a>.</p></div>
         <div class="summary-synopsis"><p>Returns a non-empty list of some objects stored in a table that match a given
 pattern in some unspecified order. The table, the pattern, and the number of
 objects that are matched are all defined by <code class="inline">Continuation</code>, which has been
-returned by a previous call to <a><code class="inline">match_object/1</code></a> or
-<a><code class="inline">match_object/3</code></a>.</p></div>
+returned by a previous call to <a href="#match_object/1"><code class="inline">match_object/1</code></a> or
+<a href="#match_object/3"><code class="inline">match_object/3</code></a>.</p></div>
 
     </div>
 
@@ -558,7 +576,7 @@ returned by a previous call to <a><code class="inline">match_object/1</code></a>
       </div>
 
         <div class="summary-synopsis"><p>Returns a list of all objects of table <code class="inline">Name</code> that match <code class="inline">Pattern</code> in some
-unspecified order. For a description of patterns, see <a><code class="inline">ets:match/2</code></a>.</p></div>
+unspecified order. For a description of patterns, see <a href="ets.html#match/2"><code class="inline">ets:match/2</code></a>.</p></div>
 
     </div>
 
@@ -570,7 +588,7 @@ unspecified order. For a description of patterns, see <a><code class="inline">et
 
         <div class="summary-synopsis"><p>Matches some or all objects stored in table <code class="inline">Name</code> and returns a non-empty list
 of the objects that match <code class="inline">Pattern</code> in some unspecified order. For a description
-of patterns, see <a><code class="inline">ets:match/2</code></a>.</p></div>
+of patterns, see <a href="ets.html#match/2"><code class="inline">ets:match/2</code></a>.</p></div>
 
     </div>
 
@@ -580,7 +598,7 @@ of patterns, see <a><code class="inline">ets:match/2</code></a>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Works like <a><code class="inline">lookup/2</code></a>, but does not return the objects. Returns <code class="inline">true</code> if one or
+        <div class="summary-synopsis"><p>Works like <a href="#lookup/2"><code class="inline">lookup/2</code></a>, but does not return the objects. Returns <code class="inline">true</code> if one or
 more table elements has key <code class="inline">Key</code>, otherwise <code class="inline">false</code>.</p></div>
 
     </div>
@@ -636,7 +654,7 @@ table, or <code class="inline">undefined</code> if there is no such table.</p></
       </div>
 
         <div class="summary-synopsis"><p>This function can be used to restore an opaque continuation returned by
-<a><code class="inline">select/3</code></a> or <a><code class="inline">select/1</code></a> if the continuation has passed through external term
+<a href="#select/3"><code class="inline">select/3</code></a> or <a href="#select/1"><code class="inline">select/1</code></a> if the continuation has passed through external term
 format (been sent between nodes or stored on disk).</p></div>
 
     </div>
@@ -662,7 +680,7 @@ process terminates.</p></div>
         <div class="summary-synopsis"><p>Applies a match specification to some objects stored in a table and returns a
 non-empty list of the results. The table, the match specification, and the
 number of objects that are matched are all defined by <code class="inline">Continuation</code>, which is
-returned by a previous call to <a><code class="inline">select/1</code></a> or <a><code class="inline">select/3</code></a>.</p></div>
+returned by a previous call to <a href="#select/1"><code class="inline">select/1</code></a> or <a href="#select/3"><code class="inline">select/3</code></a>.</p></div>
 
     </div>
 
@@ -675,7 +693,7 @@ returned by a previous call to <a><code class="inline">select/1</code></a> or <a
         <div class="summary-synopsis"><p>Returns the results of applying match specification <code class="inline">MatchSpec</code> to all or some
 objects stored in table <code class="inline">Name</code>. The order of the objects is not specified. For a
 description of match specifications, see the
-<a>ERTS User's Guide</a>.</p></div>
+<a href="../../apps/erts/match_spec.html">ERTS User's Guide</a>.</p></div>
 
     </div>
 
@@ -688,7 +706,7 @@ description of match specifications, see the
         <div class="summary-synopsis"><p>Returns the results of applying match specification <code class="inline">MatchSpec</code> to some or all
 objects stored in table <code class="inline">Name</code>. The order of the objects is not specified. For a
 description of match specifications, see the
-<a>ERTS User's Guide</a>.</p></div>
+<a href="../../apps/erts/match_spec.html">ERTS User's Guide</a>.</p></div>
 
     </div>
 
@@ -700,7 +718,7 @@ description of match specifications, see the
 
         <div class="summary-synopsis"><p>Deletes each object from table <code class="inline">Name</code> such that applying match specification
 <code class="inline">MatchSpec</code> to the object returns value <code class="inline">true</code>. For a description of match
-specifications, see the <a>ERTS User's Guide</a>. Returns the
+specifications, see the <a href="../../apps/erts/match_spec.html">ERTS User's Guide</a>. Returns the
 number of deleted objects.</p></div>
 
     </div>
@@ -735,7 +753,7 @@ this case, the contents of the RAM file are flushed to disk.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">table(Name, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#table/2"><code class="inline">table(Name, [])</code></a>.</p></div>
 
     </div>
 
@@ -745,10 +763,10 @@ this case, the contents of the RAM file are flushed to disk.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Returns a Query List Comprehension (QLC) query handle. The <a><code class="inline">qlc</code></a> module
+        <div class="summary-synopsis"><p>Returns a Query List Comprehension (QLC) query handle. The <a href="qlc.html"><code class="inline">qlc</code></a> module
 provides a query language aimed mainly for Mnesia, but ETS tables, Dets tables,
 and lists are also recognized by <code class="inline">qlc</code> as sources of data. Calling
-<a><code class="inline">dets:table/1,2</code></a> is the means to make Dets table <code class="inline">Name</code> usable to
+<a href="#table/1"><code class="inline">dets:table/1,2</code></a> is the means to make Dets table <code class="inline">Name</code> usable to
 <code class="inline">qlc</code>.</p></div>
 
     </div>
@@ -802,6 +820,7 @@ updated.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:access/0">
 
@@ -815,7 +834,7 @@ updated.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.hrl#L51" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.hrl#L51" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -845,7 +864,7 @@ updated.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.hrl#L52" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.hrl#L52" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -873,7 +892,7 @@ updated.</p></div>
       <h1 class="signature" translate="no">bindings_cont()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L255" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L255" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -901,7 +920,7 @@ updated.</p></div>
       <h1 class="signature" translate="no">cont()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L257" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L257" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -931,7 +950,7 @@ updated.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.hrl#L54" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.hrl#L54" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -961,7 +980,7 @@ updated.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L263" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L263" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -993,7 +1012,7 @@ the <a href="ms_transform.html"><code class="inline">ms_transform</code></a> mod
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.hrl#L57" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.hrl#L57" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1023,7 +1042,7 @@ the <a href="ms_transform.html"><code class="inline">ms_transform</code></a> mod
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L264" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L264" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1051,7 +1070,7 @@ the <a href="ms_transform.html"><code class="inline">ms_transform</code></a> mod
       <h1 class="signature" translate="no">object_cont()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L266" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L266" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1081,7 +1100,7 @@ the <a href="ms_transform.html"><code class="inline">ms_transform</code></a> mod
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L268" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L268" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1109,7 +1128,7 @@ the <a href="ms_transform.html"><code class="inline">ms_transform</code></a> mod
       <h1 class="signature" translate="no">select_cont()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L270" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L270" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1137,7 +1156,7 @@ the <a href="ms_transform.html"><code class="inline">ms_transform</code></a> mod
       <h1 class="signature" translate="no">tab_name()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.hrl#L58" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.hrl#L58" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1167,7 +1186,7 @@ the <a href="ms_transform.html"><code class="inline">ms_transform</code></a> mod
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.hrl#L59" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.hrl#L59" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1196,6 +1215,7 @@ the <a href="ms_transform.html"><code class="inline">ms_transform</code></a> mod
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="all/0">
 
@@ -1207,7 +1227,7 @@ the <a href="ms_transform.html"><code class="inline">ms_transform</code></a> mod
       <h1 class="signature" translate="no">all()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L295" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L295" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1235,7 +1255,7 @@ the <a href="ms_transform.html"><code class="inline">ms_transform</code></a> mod
       <h1 class="signature" translate="no">bchunk(Name, Continuation)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L329" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L329" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1279,7 +1299,7 @@ returned, or <code class="inline">{error, Reason}</code> if an error occurs.</p>
       <h1 class="signature" translate="no">close(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L347" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L347" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1309,7 +1329,7 @@ repair it.</p>
       <h1 class="signature" translate="no">delete(Name, Key)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L361" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L361" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1337,7 +1357,7 @@ repair it.</p>
       <h1 class="signature" translate="no">delete_all_objects(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L373" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L373" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1367,7 +1387,7 @@ if fixed, <a href="#delete_all_objects/1"><code class="inline">delete_all_object
       <h1 class="signature" translate="no">delete_object(Name, Object)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L393" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L393" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1398,7 +1418,7 @@ objects with a specified key.</p>
       <h1 class="signature" translate="no">first(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L439" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L439" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1435,7 +1455,7 @@ tables.</p>
       <h1 class="signature" translate="no">foldl(Function, Acc0, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L470" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L470" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1471,7 +1491,7 @@ tables.</p>
       <h1 class="signature" translate="no">foldr(Function, Acc0, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L457" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L457" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1510,7 +1530,7 @@ is returned if the table is empty.</p>
       <h1 class="signature" translate="no">from_ets(Name, EtsTab)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L485" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L485" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1542,7 +1562,7 @@ calling process.</p>
       <h1 class="signature" translate="no">info(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L526" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L526" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1580,7 +1600,7 @@ stored.</li><li><code class="inline">{keypos,</code> <a href="#t:keypos/0"><code
       <h1 class="signature" translate="no">info(Name, Item)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L590" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L590" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1638,7 +1658,7 @@ safe code must use <code class="inline">safe_fixed_monotonic_time</code> instead
       <h1 class="signature" translate="no">init_table(Name, InitFun)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L621" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L621" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1673,7 +1693,7 @@ safe code must use <code class="inline">safe_fixed_monotonic_time</code> instead
       <h1 class="signature" translate="no">init_table(Name, InitFun, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L675" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L675" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1735,7 +1755,7 @@ a list of tuples. If <code class="inline">Format</code> is <code class="inline">
       <h1 class="signature" translate="no">insert(Name, Objects)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L698" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L698" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1766,7 +1786,7 @@ type is <code class="inline">set</code>, the old object will be replaced.</p>
       <h1 class="signature" translate="no">insert_new(Name, Objects)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L714" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L714" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1798,7 +1818,7 @@ not updated and <code class="inline">false</code> is returned. Otherwise the obj
       <h1 class="signature" translate="no">is_compatible_bchunk_format(Name, BchunkFormat)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L737" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L737" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1830,7 +1850,7 @@ returns <code class="inline">BchunkFormat</code>.</p>
       <h1 class="signature" translate="no">is_dets_file(Filename)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L745" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L745" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1859,7 +1879,7 @@ returns <code class="inline">BchunkFormat</code>.</p>
       <h1 class="signature" translate="no">lookup(Name, Key)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L787" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L787" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1876,14 +1896,14 @@ returns <code class="inline">BchunkFormat</code>.</p>
       </div>
 
 <p>Returns a list of all objects with key <code class="inline">Key</code> stored in table <code class="inline">Name</code>, for
-example:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">2&gt; </span><span class="nc">dets</span><span class="p">:</span><span class="nf">open_file</span><span class="p" data-group-id="1122620238-1">(</span><span class="ss">abc</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1122620238-2">[</span><span class="p" data-group-id="1122620238-3">{</span><span class="ss">type</span><span class="p">,</span><span class="w"> </span><span class="ss">bag</span><span class="p" data-group-id="1122620238-3">}</span><span class="p" data-group-id="1122620238-2">]</span><span class="p" data-group-id="1122620238-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="1122620238-4">{</span><span class="ss">ok</span><span class="p">,</span><span class="ss">abc</span><span class="p" data-group-id="1122620238-4">}</span><span class="gp unselectable">
-3&gt; </span><span class="nc">dets</span><span class="p">:</span><span class="nf">insert</span><span class="p" data-group-id="1122620238-5">(</span><span class="ss">abc</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1122620238-6">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="1122620238-6">}</span><span class="p" data-group-id="1122620238-5">)</span><span class="p">.</span><span class="w">
+example:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">2&gt; </span><span class="nc">dets</span><span class="p">:</span><span class="nf">open_file</span><span class="p" data-group-id="1502843089-1">(</span><span class="ss">abc</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1502843089-2">[</span><span class="p" data-group-id="1502843089-3">{</span><span class="ss">type</span><span class="p">,</span><span class="w"> </span><span class="ss">bag</span><span class="p" data-group-id="1502843089-3">}</span><span class="p" data-group-id="1502843089-2">]</span><span class="p" data-group-id="1502843089-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="1502843089-4">{</span><span class="ss">ok</span><span class="p">,</span><span class="ss">abc</span><span class="p" data-group-id="1502843089-4">}</span><span class="gp unselectable">
+3&gt; </span><span class="nc">dets</span><span class="p">:</span><span class="nf">insert</span><span class="p" data-group-id="1502843089-5">(</span><span class="ss">abc</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1502843089-6">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="1502843089-6">}</span><span class="p" data-group-id="1502843089-5">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">ok</span><span class="gp unselectable">
-4&gt; </span><span class="nc">dets</span><span class="p">:</span><span class="nf">insert</span><span class="p" data-group-id="1122620238-7">(</span><span class="ss">abc</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1122620238-8">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="1122620238-8">}</span><span class="p" data-group-id="1122620238-7">)</span><span class="p">.</span><span class="w">
+4&gt; </span><span class="nc">dets</span><span class="p">:</span><span class="nf">insert</span><span class="p" data-group-id="1502843089-7">(</span><span class="ss">abc</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1502843089-8">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="1502843089-8">}</span><span class="p" data-group-id="1502843089-7">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">ok</span><span class="gp unselectable">
-5&gt; </span><span class="nc">dets</span><span class="p">:</span><span class="nf">lookup</span><span class="p" data-group-id="1122620238-9">(</span><span class="ss">abc</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="1122620238-9">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="1122620238-10">[</span><span class="p" data-group-id="1122620238-11">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="1122620238-11">}</span><span class="p">,</span><span class="p" data-group-id="1122620238-12">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="1122620238-12">}</span><span class="p" data-group-id="1122620238-10">]</span></code></pre><p>If the table type is <code class="inline">set</code>, the function returns either the empty list or a list
+5&gt; </span><span class="nc">dets</span><span class="p">:</span><span class="nf">lookup</span><span class="p" data-group-id="1502843089-9">(</span><span class="ss">abc</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="1502843089-9">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="1502843089-10">[</span><span class="p" data-group-id="1502843089-11">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="1502843089-11">}</span><span class="p">,</span><span class="p" data-group-id="1502843089-12">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="1502843089-12">}</span><span class="p" data-group-id="1502843089-10">]</span></code></pre><p>If the table type is <code class="inline">set</code>, the function returns either the empty list or a list
 with one object, as there cannot be more than one object with a given key. If
 the table type is <code class="inline">bag</code> or <code class="inline">duplicate_bag</code>, the function returns a list of
 arbitrary length.</p><p>Notice that the order of objects returned is unspecified. In particular, the
@@ -1900,7 +1920,7 @@ order in which objects were inserted is not reflected.</p>
       <h1 class="signature" translate="no">match(Continuation)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L865" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L865" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1937,7 +1957,7 @@ pattern, and the number of objects that are matched are all defined by
       <h1 class="signature" translate="no">match(Name, Pattern)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L813" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L813" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1970,7 +1990,7 @@ the correct key are matched.</p>
       <h1 class="signature" translate="no">match(Name, Pattern, N)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L846" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L846" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2017,7 +2037,7 @@ can sometimes be matched.</p><p>The table is always to be protected using <a hre
       <h1 class="signature" translate="no">match_delete(Name, Pattern)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L882" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L882" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2048,7 +2068,7 @@ correct key are matched.</p>
       <h1 class="signature" translate="no">match_object(Continuation)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L978" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L978" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2085,7 +2105,7 @@ returned by a previous call to <a href="#match_object/1"><code class="inline">ma
       <h1 class="signature" translate="no">match_object(Name, Pattern)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L926" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L926" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2123,7 +2143,7 @@ efficient than calling <a href="#first/1"><code class="inline">first/1</code></a
       <h1 class="signature" translate="no">match_object(Name, Pattern, N)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L959" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L959" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2170,7 +2190,7 @@ N objects can sometimes be returned.</p><p>The table is always to be protected u
       <h1 class="signature" translate="no">member(Name, Key)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L992" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L992" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2200,7 +2220,7 @@ more table elements has key <code class="inline">Key</code>, otherwise <code cla
       <h1 class="signature" translate="no">next(Name, Key1)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L1008" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L1008" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2229,7 +2249,7 @@ internal order of the table, or <code class="inline">'$end_of_table'</code> if t
       <h1 class="signature" translate="no">open_file(Filename)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L1024" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L1024" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2260,7 +2280,7 @@ useful for debugging purposes.</p>
       <h1 class="signature" translate="no">open_file(Name, Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L1110" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L1110" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2335,7 +2355,7 @@ closed. This is a seldom needed option.</p><p>Option <code class="inline">repair
       <h1 class="signature" translate="no">pid2name(Pid)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L1135" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L1135" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2364,7 +2384,7 @@ table, or <code class="inline">undefined</code> if there is no such table.</p><p
       <h1 class="signature" translate="no">repair_continuation(Continuation, MatchSpec)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L1172" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L1172" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2408,7 +2428,7 @@ while this interface remains for backward compatibility.</p></section>
       <h1 class="signature" translate="no">safe_fixtable(Name, Fix)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L1208" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L1208" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2446,7 +2466,7 @@ table for a period of time.</p>
       <h1 class="signature" translate="no">select(Continuation)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L1288" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L1288" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2482,7 +2502,7 @@ returned by a previous call to <a href="#select/1"><code class="inline">select/1
       <h1 class="signature" translate="no">select(Name, MatchSpec)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L1233" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L1233" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2522,7 +2542,7 @@ efficient than calling <a href="#first/1"><code class="inline">first/1</code></a
       <h1 class="signature" translate="no">select(Name, MatchSpec, N)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L1270" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L1270" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2573,7 +2593,7 @@ objects.</p><p>The table is always to be protected using <a href="#safe_fixtable
       <h1 class="signature" translate="no">select_delete(Name, MatchSpec)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L1308" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L1308" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2610,7 +2630,7 @@ applied to the objects with the correct key(s) only.</p>
       <h1 class="signature" translate="no">slot(Name, I)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L1322" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L1322" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2641,7 +2661,7 @@ ending with slot <code class="inline">n</code>. Returns the list of objects asso
       <h1 class="signature" translate="no">sync(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L1351" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L1351" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2672,7 +2692,7 @@ is also written to the disk. This can take some time if the table is fragmented.
       <h1 class="signature" translate="no">table(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L1359" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L1359" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2700,7 +2720,7 @@ is also written to the disk. This can take some time if the table is fragmented.
       <h1 class="signature" translate="no">table(Name, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L1428" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L1428" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2740,11 +2760,11 @@ calling <a href="#select/3"><code class="inline">dets:select/3</code></a> and <a
 specification is specified explicitly. This is how to state match
 specifications that cannot easily be expressed within the syntax provided by
 <code class="inline">qlc</code>.</p></li></ul><p>The following example uses an explicit match specification to traverse the
-table:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">dets</span><span class="p">:</span><span class="nf">open_file</span><span class="p" data-group-id="0150457252-1">(</span><span class="ss">t</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0150457252-2">[</span><span class="p" data-group-id="0150457252-2">]</span><span class="p" data-group-id="0150457252-1">)</span><span class="p">,</span><span class="w">
-</span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">dets</span><span class="p">:</span><span class="nf">insert</span><span class="p" data-group-id="0150457252-3">(</span><span class="ss">t</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0150457252-4">[</span><span class="p" data-group-id="0150457252-5">{</span><span class="mi">1</span><span class="p">,</span><span class="ss">a</span><span class="p" data-group-id="0150457252-5">}</span><span class="p">,</span><span class="p" data-group-id="0150457252-6">{</span><span class="mi">2</span><span class="p">,</span><span class="ss">b</span><span class="p" data-group-id="0150457252-6">}</span><span class="p">,</span><span class="p" data-group-id="0150457252-7">{</span><span class="mi">3</span><span class="p">,</span><span class="ss">c</span><span class="p" data-group-id="0150457252-7">}</span><span class="p">,</span><span class="p" data-group-id="0150457252-8">{</span><span class="mi">4</span><span class="p">,</span><span class="ss">d</span><span class="p" data-group-id="0150457252-8">}</span><span class="p" data-group-id="0150457252-4">]</span><span class="p" data-group-id="0150457252-3">)</span><span class="p">,</span><span class="w">
-</span><span class="n">MS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ets</span><span class="p">:</span><span class="nf">fun2ms</span><span class="p" data-group-id="0150457252-9">(</span><span class="nf">fun</span><span class="p" data-group-id="0150457252-10">(</span><span class="p" data-group-id="0150457252-11">{</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p" data-group-id="0150457252-11">}</span><span class="p" data-group-id="0150457252-10">)</span><span class="w"> </span><span class="nf">when</span><span class="w"> </span><span class="p" data-group-id="0150457252-12">(</span><span class="n">X</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="0150457252-12">)</span><span class="w"> </span><span class="nf">or</span><span class="w"> </span><span class="p" data-group-id="0150457252-13">(</span><span class="n">X</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="0150457252-13">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="0150457252-14">{</span><span class="n">Y</span><span class="p" data-group-id="0150457252-14">}</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="0150457252-9">)</span><span class="p">,</span><span class="w">
-</span><span class="n">QH1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">dets</span><span class="p">:</span><span class="nf">table</span><span class="p" data-group-id="0150457252-15">(</span><span class="ss">t</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0150457252-16">[</span><span class="p" data-group-id="0150457252-17">{</span><span class="ss">traverse</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0150457252-18">{</span><span class="ss">select</span><span class="p">,</span><span class="w"> </span><span class="n">MS</span><span class="p" data-group-id="0150457252-18">}</span><span class="p" data-group-id="0150457252-17">}</span><span class="p" data-group-id="0150457252-16">]</span><span class="p" data-group-id="0150457252-15">)</span><span class="p">.</span></code></pre><p>An example with implicit match specification:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">2&gt; </span><span class="n">QH2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">qlc</span><span class="p">:</span><span class="nf">q</span><span class="p" data-group-id="6650288682-1">(</span><span class="p" data-group-id="6650288682-2">[</span><span class="p" data-group-id="6650288682-3">{</span><span class="n">Y</span><span class="p" data-group-id="6650288682-3">}</span><span class="w"> </span><span class="p">||</span><span class="w"> </span><span class="p" data-group-id="6650288682-4">{</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p" data-group-id="6650288682-4">}</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nc">dets</span><span class="p">:</span><span class="nf">table</span><span class="p" data-group-id="6650288682-5">(</span><span class="ss">t</span><span class="p" data-group-id="6650288682-5">)</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6650288682-6">(</span><span class="n">X</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="6650288682-6">)</span><span class="w"> </span><span class="nf">or</span><span class="w"> </span><span class="p" data-group-id="6650288682-7">(</span><span class="n">X</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="6650288682-7">)</span><span class="p" data-group-id="6650288682-2">]</span><span class="p" data-group-id="6650288682-1">)</span><span class="p">.</span></code></pre><p>The latter example is equivalent to the former, which can be verified using
-function <a href="qlc.html#info/1"><code class="inline">qlc:info/1</code></a>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">3&gt; </span><span class="nc">qlc</span><span class="p">:</span><span class="nf">info</span><span class="p" data-group-id="5546132432-1">(</span><span class="n">QH1</span><span class="p" data-group-id="5546132432-1">)</span><span class="w"> </span><span class="o">=:=</span><span class="w"> </span><span class="nc">qlc</span><span class="p">:</span><span class="nf">info</span><span class="p" data-group-id="5546132432-2">(</span><span class="n">QH2</span><span class="p" data-group-id="5546132432-2">)</span><span class="p">.</span><span class="w">
+table:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">dets</span><span class="p">:</span><span class="nf">open_file</span><span class="p" data-group-id="4890207198-1">(</span><span class="ss">t</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4890207198-2">[</span><span class="p" data-group-id="4890207198-2">]</span><span class="p" data-group-id="4890207198-1">)</span><span class="p">,</span><span class="w">
+</span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">dets</span><span class="p">:</span><span class="nf">insert</span><span class="p" data-group-id="4890207198-3">(</span><span class="ss">t</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4890207198-4">[</span><span class="p" data-group-id="4890207198-5">{</span><span class="mi">1</span><span class="p">,</span><span class="ss">a</span><span class="p" data-group-id="4890207198-5">}</span><span class="p">,</span><span class="p" data-group-id="4890207198-6">{</span><span class="mi">2</span><span class="p">,</span><span class="ss">b</span><span class="p" data-group-id="4890207198-6">}</span><span class="p">,</span><span class="p" data-group-id="4890207198-7">{</span><span class="mi">3</span><span class="p">,</span><span class="ss">c</span><span class="p" data-group-id="4890207198-7">}</span><span class="p">,</span><span class="p" data-group-id="4890207198-8">{</span><span class="mi">4</span><span class="p">,</span><span class="ss">d</span><span class="p" data-group-id="4890207198-8">}</span><span class="p" data-group-id="4890207198-4">]</span><span class="p" data-group-id="4890207198-3">)</span><span class="p">,</span><span class="w">
+</span><span class="n">MS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">ets</span><span class="p">:</span><span class="nf">fun2ms</span><span class="p" data-group-id="4890207198-9">(</span><span class="nf">fun</span><span class="p" data-group-id="4890207198-10">(</span><span class="p" data-group-id="4890207198-11">{</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p" data-group-id="4890207198-11">}</span><span class="p" data-group-id="4890207198-10">)</span><span class="w"> </span><span class="nf">when</span><span class="w"> </span><span class="p" data-group-id="4890207198-12">(</span><span class="n">X</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="4890207198-12">)</span><span class="w"> </span><span class="nf">or</span><span class="w"> </span><span class="p" data-group-id="4890207198-13">(</span><span class="n">X</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="4890207198-13">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="4890207198-14">{</span><span class="n">Y</span><span class="p" data-group-id="4890207198-14">}</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="4890207198-9">)</span><span class="p">,</span><span class="w">
+</span><span class="n">QH1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">dets</span><span class="p">:</span><span class="nf">table</span><span class="p" data-group-id="4890207198-15">(</span><span class="ss">t</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4890207198-16">[</span><span class="p" data-group-id="4890207198-17">{</span><span class="ss">traverse</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4890207198-18">{</span><span class="ss">select</span><span class="p">,</span><span class="w"> </span><span class="n">MS</span><span class="p" data-group-id="4890207198-18">}</span><span class="p" data-group-id="4890207198-17">}</span><span class="p" data-group-id="4890207198-16">]</span><span class="p" data-group-id="4890207198-15">)</span><span class="p">.</span></code></pre><p>An example with implicit match specification:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">2&gt; </span><span class="n">QH2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">qlc</span><span class="p">:</span><span class="nf">q</span><span class="p" data-group-id="6498516410-1">(</span><span class="p" data-group-id="6498516410-2">[</span><span class="p" data-group-id="6498516410-3">{</span><span class="n">Y</span><span class="p" data-group-id="6498516410-3">}</span><span class="w"> </span><span class="p">||</span><span class="w"> </span><span class="p" data-group-id="6498516410-4">{</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p" data-group-id="6498516410-4">}</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nc">dets</span><span class="p">:</span><span class="nf">table</span><span class="p" data-group-id="6498516410-5">(</span><span class="ss">t</span><span class="p" data-group-id="6498516410-5">)</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6498516410-6">(</span><span class="n">X</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="6498516410-6">)</span><span class="w"> </span><span class="nf">or</span><span class="w"> </span><span class="p" data-group-id="6498516410-7">(</span><span class="n">X</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="6498516410-7">)</span><span class="p" data-group-id="6498516410-2">]</span><span class="p" data-group-id="6498516410-1">)</span><span class="p">.</span></code></pre><p>The latter example is equivalent to the former, which can be verified using
+function <a href="qlc.html#info/1"><code class="inline">qlc:info/1</code></a>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">3&gt; </span><span class="nc">qlc</span><span class="p">:</span><span class="nf">info</span><span class="p" data-group-id="7893085463-1">(</span><span class="n">QH1</span><span class="p" data-group-id="7893085463-1">)</span><span class="w"> </span><span class="o">=:=</span><span class="w"> </span><span class="nc">qlc</span><span class="p">:</span><span class="nf">info</span><span class="p" data-group-id="7893085463-2">(</span><span class="n">QH2</span><span class="p" data-group-id="7893085463-2">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">true</span></code></pre><p><a href="qlc.html#info/1"><code class="inline">qlc:info/1</code></a> returns information about a query handle. In this case identical
 information is returned for the two query handles.</p>
   </section>
@@ -2759,7 +2779,7 @@ information is returned for the two query handles.</p>
       <h1 class="signature" translate="no">to_ets(Name, EtsTab)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L1515" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L1515" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2790,7 +2810,7 @@ of the ETS table are kept unless overwritten.</p>
       <h1 class="signature" translate="no">traverse(Name, Fun)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L1562" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L1562" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2818,7 +2838,7 @@ of the ETS table are kept unless overwritten.</p>
 <p>Applies <code class="inline">Fun</code> to each object stored in table <code class="inline">Name</code> in some unspecified order.
 Different actions are taken depending on the return value of <code class="inline">Fun</code>. The
 following <code class="inline">Fun</code> return values are allowed:</p><ul><li><p><strong><code class="inline">continue</code></strong> - Continue to perform the traversal. For example, the following
-function can be used to print the contents of a table:</p><pre><code class="makeup erlang" translate="no"><span class="nf">fun</span><span class="p" data-group-id="4689916879-1">(</span><span class="n">X</span><span class="p" data-group-id="4689916879-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="4689916879-2">(</span><span class="s">&quot;</span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4689916879-3">[</span><span class="n">X</span><span class="p" data-group-id="4689916879-3">]</span><span class="p" data-group-id="4689916879-2">)</span><span class="p">,</span><span class="w"> </span><span class="ss">continue</span><span class="w"> </span><span class="k">end</span><span class="p">.</span></code></pre></li><li><p><strong><code class="inline">{continue, Val}</code></strong> - Continue the traversal and accumulate <code class="inline">Val</code>. The
+function can be used to print the contents of a table:</p><pre><code class="makeup erlang" translate="no"><span class="nf">fun</span><span class="p" data-group-id="2694258174-1">(</span><span class="n">X</span><span class="p" data-group-id="2694258174-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="2694258174-2">(</span><span class="s">&quot;</span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2694258174-3">[</span><span class="n">X</span><span class="p" data-group-id="2694258174-3">]</span><span class="p" data-group-id="2694258174-2">)</span><span class="p">,</span><span class="w"> </span><span class="ss">continue</span><span class="w"> </span><span class="k">end</span><span class="p">.</span></code></pre></li><li><p><strong><code class="inline">{continue, Val}</code></strong> - Continue the traversal and accumulate <code class="inline">Val</code>. The
 following function is supplied to collect all objects of a table in a list:</p><pre><code class="text">fun(X) -&gt; {continue, X} end.</code></pre></li><li><p><strong><code class="inline">{done, Value}</code></strong> - Terminate the traversal and return <code class="inline">[Value | Acc]</code>.</p></li></ul><p>Any other value <code class="inline">OtherValue</code> returned by <code class="inline">Fun</code> terminates the traversal and is
 returned immediately.</p>
   </section>
@@ -2833,7 +2853,7 @@ returned immediately.</p>
       <h1 class="signature" translate="no">update_counter(Name, Key, Increment)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/dets.erl#L1597" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/dets.erl#L1597" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2871,8 +2891,8 @@ resulting object into the table again.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="stdlib.epub" title="ePub version">
@@ -2884,7 +2904,7 @@ resulting object into the table again.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

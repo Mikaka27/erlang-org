@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="common_test v1.29-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/common_test/example_chapter.html" />
     <title>Examples and Templates — common_test v1.29-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-3DCB9B8F.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ common_test
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of common_test</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -84,7 +102,7 @@ common_test
     <h1>Examples and Templates</h1>
 
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/common_test/doc/guides/example_chapter.md#L1" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/doc/guides/example_chapter.md#L1" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -92,19 +110,19 @@ common_test
   </div>
 
 
-<p><a href="" id="top"></a></p><h2 id="test-suite-example" class="section-heading"><a href="#test-suite-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Test Suite Example</span></h2><p>The following example test suite shows some tests of a database server:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="9116586796-1">(</span><span class="ss">db_data_type_SUITE</span><span class="p" data-group-id="9116586796-1">)</span><span class="p">.</span><span class="w">
+<p><a href="" id="top"></a></p><h2 id="test-suite-example" class="section-heading"><a href="#test-suite-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Test Suite Example</span></h2><p>The following example test suite shows some tests of a database server:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="3959569114-1">(</span><span class="ss">db_data_type_SUITE</span><span class="p" data-group-id="3959569114-1">)</span><span class="p">.</span><span class="w">
 </span><span class="w">
-</span><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="9116586796-2">(</span><span class="s">&quot;common_test/include/ct.hrl&quot;</span><span class="p" data-group-id="9116586796-2">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="3959569114-2">(</span><span class="s">&quot;common_test/include/ct.hrl&quot;</span><span class="p" data-group-id="3959569114-2">)</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%% Test server callbacks</span><span class="w">
-</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="9116586796-3">(</span><span class="p" data-group-id="9116586796-4">[</span><span class="ss">suite</span><span class="p">/</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="ss">all</span><span class="p">/</span><span class="mi">0</span><span class="p">,</span><span class="w">
+</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="3959569114-3">(</span><span class="p" data-group-id="3959569114-4">[</span><span class="ss">suite</span><span class="p">/</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="ss">all</span><span class="p">/</span><span class="mi">0</span><span class="p">,</span><span class="w">
          </span><span class="ss">init_per_suite</span><span class="p">/</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">end_per_suite</span><span class="p">/</span><span class="mi">1</span><span class="p">,</span><span class="w">
-         </span><span class="ss">init_per_testcase</span><span class="p">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="ss">end_per_testcase</span><span class="p">/</span><span class="mi">2</span><span class="p" data-group-id="9116586796-4">]</span><span class="p" data-group-id="9116586796-3">)</span><span class="p">.</span><span class="w">
+         </span><span class="ss">init_per_testcase</span><span class="p">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="ss">end_per_testcase</span><span class="p">/</span><span class="mi">2</span><span class="p" data-group-id="3959569114-4">]</span><span class="p" data-group-id="3959569114-3">)</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%% Test cases</span><span class="w">
-</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="9116586796-5">(</span><span class="p" data-group-id="9116586796-6">[</span><span class="ss">string</span><span class="p">/</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">integer</span><span class="p">/</span><span class="mi">1</span><span class="p" data-group-id="9116586796-6">]</span><span class="p" data-group-id="9116586796-5">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="3959569114-5">(</span><span class="p" data-group-id="3959569114-6">[</span><span class="ss">string</span><span class="p">/</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="ss">integer</span><span class="p">/</span><span class="mi">1</span><span class="p" data-group-id="3959569114-6">]</span><span class="p" data-group-id="3959569114-5">)</span><span class="p">.</span><span class="w">
 </span><span class="w">
-</span><span class="p">-</span><span class="na">define</span><span class="p" data-group-id="9116586796-7">(</span><span class="n">CONNECT_STR</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;DSN=sqlserver;UID=alladin;PWD=sesame&quot;</span><span class="p" data-group-id="9116586796-7">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">define</span><span class="p" data-group-id="3959569114-7">(</span><span class="n">CONNECT_STR</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;DSN=sqlserver;UID=alladin;PWD=sesame&quot;</span><span class="p" data-group-id="3959569114-7">)</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
 </span><span class="c1">%% COMMON TEST CALLBACK FUNCTIONS</span><span class="w">
@@ -119,8 +137,8 @@ common_test
 </span><span class="c1">%% Description: Returns list of tuples to set default properties</span><span class="w">
 </span><span class="c1">%%              for the suite.</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">suite</span><span class="p" data-group-id="9116586796-8">(</span><span class="p" data-group-id="9116586796-8">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="p" data-group-id="9116586796-9">[</span><span class="p" data-group-id="9116586796-10">{</span><span class="ss">timetrap</span><span class="p">,</span><span class="p" data-group-id="9116586796-11">{</span><span class="ss">minutes</span><span class="p">,</span><span class="mi">1</span><span class="p" data-group-id="9116586796-11">}</span><span class="p" data-group-id="9116586796-10">}</span><span class="p" data-group-id="9116586796-9">]</span><span class="p">.</span><span class="w">
+</span><span class="nf">suite</span><span class="p" data-group-id="3959569114-8">(</span><span class="p" data-group-id="3959569114-8">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="p" data-group-id="3959569114-9">[</span><span class="p" data-group-id="3959569114-10">{</span><span class="ss">timetrap</span><span class="p">,</span><span class="p" data-group-id="3959569114-11">{</span><span class="ss">minutes</span><span class="p">,</span><span class="mi">1</span><span class="p" data-group-id="3959569114-11">}</span><span class="p" data-group-id="3959569114-10">}</span><span class="p" data-group-id="3959569114-9">]</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
 </span><span class="c1">%% Function: init_per_suite(Config0) -&gt; Config1</span><span class="w">
@@ -130,10 +148,10 @@ common_test
 </span><span class="c1">%%</span><span class="w">
 </span><span class="c1">%% Description: Initialization before the suite.</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">init_per_suite</span><span class="p" data-group-id="9116586796-12">(</span><span class="n">Config</span><span class="p" data-group-id="9116586796-12">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="p" data-group-id="9116586796-13">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">Ref</span><span class="p" data-group-id="9116586796-13">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">db</span><span class="p">:</span><span class="nf">connect</span><span class="p" data-group-id="9116586796-14">(</span><span class="o">?</span><span class="n">CONNECT_STR</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9116586796-15">[</span><span class="p" data-group-id="9116586796-15">]</span><span class="p" data-group-id="9116586796-14">)</span><span class="p">,</span><span class="w">
-    </span><span class="n">TableName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">db_lib</span><span class="p">:</span><span class="nf">unique_table_name</span><span class="p" data-group-id="9116586796-16">(</span><span class="p" data-group-id="9116586796-16">)</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="9116586796-17">[</span><span class="p" data-group-id="9116586796-18">{</span><span class="ss">con_ref</span><span class="p">,</span><span class="w"> </span><span class="n">Ref</span><span class="w"> </span><span class="p" data-group-id="9116586796-18">}</span><span class="p">,</span><span class="p" data-group-id="9116586796-19">{</span><span class="ss">table_name</span><span class="p">,</span><span class="w"> </span><span class="n">TableName</span><span class="p" data-group-id="9116586796-19">}</span><span class="p">|</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="9116586796-17">]</span><span class="p">.</span><span class="w">
+</span><span class="nf">init_per_suite</span><span class="p" data-group-id="3959569114-12">(</span><span class="n">Config</span><span class="p" data-group-id="3959569114-12">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="p" data-group-id="3959569114-13">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">Ref</span><span class="p" data-group-id="3959569114-13">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">db</span><span class="p">:</span><span class="nf">connect</span><span class="p" data-group-id="3959569114-14">(</span><span class="o">?</span><span class="n">CONNECT_STR</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3959569114-15">[</span><span class="p" data-group-id="3959569114-15">]</span><span class="p" data-group-id="3959569114-14">)</span><span class="p">,</span><span class="w">
+    </span><span class="n">TableName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">db_lib</span><span class="p">:</span><span class="nf">unique_table_name</span><span class="p" data-group-id="3959569114-16">(</span><span class="p" data-group-id="3959569114-16">)</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="3959569114-17">[</span><span class="p" data-group-id="3959569114-18">{</span><span class="ss">con_ref</span><span class="p">,</span><span class="w"> </span><span class="n">Ref</span><span class="w"> </span><span class="p" data-group-id="3959569114-18">}</span><span class="p">,</span><span class="p" data-group-id="3959569114-19">{</span><span class="ss">table_name</span><span class="p">,</span><span class="w"> </span><span class="n">TableName</span><span class="p" data-group-id="3959569114-19">}</span><span class="p">|</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="3959569114-17">]</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
 </span><span class="c1">%% Function: end_per_suite(Config) -&gt; term()</span><span class="w">
@@ -143,9 +161,9 @@ common_test
 </span><span class="c1">%%</span><span class="w">
 </span><span class="c1">%% Description: Cleanup after the suite.</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">end_per_suite</span><span class="p" data-group-id="9116586796-20">(</span><span class="n">Config</span><span class="p" data-group-id="9116586796-20">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="n">Ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">proplists</span><span class="p">:</span><span class="nf">get_value</span><span class="p" data-group-id="9116586796-21">(</span><span class="ss">con_ref</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="9116586796-21">)</span><span class="p">,</span><span class="w">
-    </span><span class="nc">db</span><span class="p">:</span><span class="nf">disconnect</span><span class="p" data-group-id="9116586796-22">(</span><span class="n">Ref</span><span class="p" data-group-id="9116586796-22">)</span><span class="p">,</span><span class="w">
+</span><span class="nf">end_per_suite</span><span class="p" data-group-id="3959569114-20">(</span><span class="n">Config</span><span class="p" data-group-id="3959569114-20">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="n">Ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">proplists</span><span class="p">:</span><span class="nf">get_value</span><span class="p" data-group-id="3959569114-21">(</span><span class="ss">con_ref</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="3959569114-21">)</span><span class="p">,</span><span class="w">
+    </span><span class="nc">db</span><span class="p">:</span><span class="nf">disconnect</span><span class="p" data-group-id="3959569114-22">(</span><span class="n">Ref</span><span class="p" data-group-id="3959569114-22">)</span><span class="p">,</span><span class="w">
     </span><span class="ss">ok</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
@@ -158,10 +176,10 @@ common_test
 </span><span class="c1">%%</span><span class="w">
 </span><span class="c1">%% Description: Initialization before each test case.</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">init_per_testcase</span><span class="p" data-group-id="9116586796-23">(</span><span class="n">Case</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="9116586796-23">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="n">Ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">proplists</span><span class="p">:</span><span class="nf">get_value</span><span class="p" data-group-id="9116586796-24">(</span><span class="ss">con_ref</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="9116586796-24">)</span><span class="p">,</span><span class="w">
-    </span><span class="n">TableName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">proplists</span><span class="p">:</span><span class="nf">get_value</span><span class="p" data-group-id="9116586796-25">(</span><span class="ss">table_name</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="9116586796-25">)</span><span class="p">,</span><span class="w">
-    </span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">db</span><span class="p">:</span><span class="nf">create_table</span><span class="p" data-group-id="9116586796-26">(</span><span class="n">Ref</span><span class="p">,</span><span class="w"> </span><span class="n">TableName</span><span class="p">,</span><span class="w"> </span><span class="nf">table_type</span><span class="p" data-group-id="9116586796-27">(</span><span class="n">Case</span><span class="p" data-group-id="9116586796-27">)</span><span class="p" data-group-id="9116586796-26">)</span><span class="p">,</span><span class="w">
+</span><span class="nf">init_per_testcase</span><span class="p" data-group-id="3959569114-23">(</span><span class="n">Case</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="3959569114-23">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="n">Ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">proplists</span><span class="p">:</span><span class="nf">get_value</span><span class="p" data-group-id="3959569114-24">(</span><span class="ss">con_ref</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="3959569114-24">)</span><span class="p">,</span><span class="w">
+    </span><span class="n">TableName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">proplists</span><span class="p">:</span><span class="nf">get_value</span><span class="p" data-group-id="3959569114-25">(</span><span class="ss">table_name</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="3959569114-25">)</span><span class="p">,</span><span class="w">
+    </span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">db</span><span class="p">:</span><span class="nf">create_table</span><span class="p" data-group-id="3959569114-26">(</span><span class="n">Ref</span><span class="p">,</span><span class="w"> </span><span class="n">TableName</span><span class="p">,</span><span class="w"> </span><span class="nf">table_type</span><span class="p" data-group-id="3959569114-27">(</span><span class="n">Case</span><span class="p" data-group-id="3959569114-27">)</span><span class="p" data-group-id="3959569114-26">)</span><span class="p">,</span><span class="w">
     </span><span class="n">Config</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
@@ -174,10 +192,10 @@ common_test
 </span><span class="c1">%%</span><span class="w">
 </span><span class="c1">%% Description: Cleanup after each test case.</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">end_per_testcase</span><span class="p" data-group-id="9116586796-28">(</span><span class="p">_</span><span class="n">Case</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="9116586796-28">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="n">Ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">proplists</span><span class="p">:</span><span class="nf">get_value</span><span class="p" data-group-id="9116586796-29">(</span><span class="ss">con_ref</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="9116586796-29">)</span><span class="p">,</span><span class="w">
-    </span><span class="n">TableName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">proplists</span><span class="p">:</span><span class="nf">get_value</span><span class="p" data-group-id="9116586796-30">(</span><span class="ss">table_name</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="9116586796-30">)</span><span class="p">,</span><span class="w">
-    </span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">db</span><span class="p">:</span><span class="nf">delete_table</span><span class="p" data-group-id="9116586796-31">(</span><span class="n">Ref</span><span class="p">,</span><span class="w"> </span><span class="n">TableName</span><span class="p" data-group-id="9116586796-31">)</span><span class="p">,</span><span class="w">
+</span><span class="nf">end_per_testcase</span><span class="p" data-group-id="3959569114-28">(</span><span class="p">_</span><span class="n">Case</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="3959569114-28">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="n">Ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">proplists</span><span class="p">:</span><span class="nf">get_value</span><span class="p" data-group-id="3959569114-29">(</span><span class="ss">con_ref</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="3959569114-29">)</span><span class="p">,</span><span class="w">
+    </span><span class="n">TableName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">proplists</span><span class="p">:</span><span class="nf">get_value</span><span class="p" data-group-id="3959569114-30">(</span><span class="ss">table_name</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="3959569114-30">)</span><span class="p">,</span><span class="w">
+    </span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">db</span><span class="p">:</span><span class="nf">delete_table</span><span class="p" data-group-id="3959569114-31">(</span><span class="n">Ref</span><span class="p">,</span><span class="w"> </span><span class="n">TableName</span><span class="p" data-group-id="3959569114-31">)</span><span class="p">,</span><span class="w">
     </span><span class="ss">ok</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
@@ -192,28 +210,28 @@ common_test
 </span><span class="c1">%% Description: Returns the list of groups and test cases that</span><span class="w">
 </span><span class="c1">%%              are to be executed.</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">all</span><span class="p" data-group-id="9116586796-32">(</span><span class="p" data-group-id="9116586796-32">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="p" data-group-id="9116586796-33">[</span><span class="ss">string</span><span class="p">,</span><span class="w"> </span><span class="ss">integer</span><span class="p" data-group-id="9116586796-33">]</span><span class="p">.</span><span class="w">
+</span><span class="nf">all</span><span class="p" data-group-id="3959569114-32">(</span><span class="p" data-group-id="3959569114-32">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="p" data-group-id="3959569114-33">[</span><span class="ss">string</span><span class="p">,</span><span class="w"> </span><span class="ss">integer</span><span class="p" data-group-id="3959569114-33">]</span><span class="p">.</span><span class="w">
 
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
 </span><span class="c1">%% TEST CASES</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
 
-</span><span class="nf">string</span><span class="p" data-group-id="9116586796-34">(</span><span class="n">Config</span><span class="p" data-group-id="9116586796-34">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="nf">insert_and_lookup</span><span class="p" data-group-id="9116586796-35">(</span><span class="ss">dummy_key</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Dummy string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="9116586796-35">)</span><span class="p">.</span><span class="w">
+</span><span class="nf">string</span><span class="p" data-group-id="3959569114-34">(</span><span class="n">Config</span><span class="p" data-group-id="3959569114-34">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="nf">insert_and_lookup</span><span class="p" data-group-id="3959569114-35">(</span><span class="ss">dummy_key</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Dummy string&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="3959569114-35">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">integer</span><span class="p" data-group-id="9116586796-36">(</span><span class="n">Config</span><span class="p" data-group-id="9116586796-36">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="nf">insert_and_lookup</span><span class="p" data-group-id="9116586796-37">(</span><span class="ss">dummy_key</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="9116586796-37">)</span><span class="p">.</span><span class="w">
+</span><span class="nf">integer</span><span class="p" data-group-id="3959569114-36">(</span><span class="n">Config</span><span class="p" data-group-id="3959569114-36">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="nf">insert_and_lookup</span><span class="p" data-group-id="3959569114-37">(</span><span class="ss">dummy_key</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="3959569114-37">)</span><span class="p">.</span><span class="w">
 
 
-</span><span class="nf">insert_and_lookup</span><span class="p" data-group-id="9116586796-38">(</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="9116586796-38">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="n">Ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">proplists</span><span class="p">:</span><span class="nf">get_value</span><span class="p" data-group-id="9116586796-39">(</span><span class="ss">con_ref</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="9116586796-39">)</span><span class="p">,</span><span class="w">
-    </span><span class="n">TableName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">proplists</span><span class="p">:</span><span class="nf">get_value</span><span class="p" data-group-id="9116586796-40">(</span><span class="ss">table_name</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="9116586796-40">)</span><span class="p">,</span><span class="w">
-    </span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">db</span><span class="p">:</span><span class="nf">insert</span><span class="p" data-group-id="9116586796-41">(</span><span class="n">Ref</span><span class="p">,</span><span class="w"> </span><span class="n">TableName</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="p" data-group-id="9116586796-41">)</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="9116586796-42">[</span><span class="n">Value</span><span class="p" data-group-id="9116586796-42">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">db</span><span class="p">:</span><span class="nf">lookup</span><span class="p" data-group-id="9116586796-43">(</span><span class="n">Ref</span><span class="p">,</span><span class="w"> </span><span class="n">TableName</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="p" data-group-id="9116586796-43">)</span><span class="p">,</span><span class="w">
-    </span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">db</span><span class="p">:</span><span class="nf">delete</span><span class="p" data-group-id="9116586796-44">(</span><span class="n">Ref</span><span class="p">,</span><span class="w"> </span><span class="n">TableName</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="p" data-group-id="9116586796-44">)</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="9116586796-45">[</span><span class="p" data-group-id="9116586796-45">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">db</span><span class="p">:</span><span class="nf">lookup</span><span class="p" data-group-id="9116586796-46">(</span><span class="n">Ref</span><span class="p">,</span><span class="w"> </span><span class="n">TableName</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="p" data-group-id="9116586796-46">)</span><span class="p">,</span><span class="w">
+</span><span class="nf">insert_and_lookup</span><span class="p" data-group-id="3959569114-38">(</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="3959569114-38">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="n">Ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">proplists</span><span class="p">:</span><span class="nf">get_value</span><span class="p" data-group-id="3959569114-39">(</span><span class="ss">con_ref</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="3959569114-39">)</span><span class="p">,</span><span class="w">
+    </span><span class="n">TableName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">proplists</span><span class="p">:</span><span class="nf">get_value</span><span class="p" data-group-id="3959569114-40">(</span><span class="ss">table_name</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="3959569114-40">)</span><span class="p">,</span><span class="w">
+    </span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">db</span><span class="p">:</span><span class="nf">insert</span><span class="p" data-group-id="3959569114-41">(</span><span class="n">Ref</span><span class="p">,</span><span class="w"> </span><span class="n">TableName</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="p" data-group-id="3959569114-41">)</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="3959569114-42">[</span><span class="n">Value</span><span class="p" data-group-id="3959569114-42">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">db</span><span class="p">:</span><span class="nf">lookup</span><span class="p" data-group-id="3959569114-43">(</span><span class="n">Ref</span><span class="p">,</span><span class="w"> </span><span class="n">TableName</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="p" data-group-id="3959569114-43">)</span><span class="p">,</span><span class="w">
+    </span><span class="ss">ok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">db</span><span class="p">:</span><span class="nf">delete</span><span class="p" data-group-id="3959569114-44">(</span><span class="n">Ref</span><span class="p">,</span><span class="w"> </span><span class="n">TableName</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="p" data-group-id="3959569114-44">)</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="3959569114-45">[</span><span class="p" data-group-id="3959569114-45">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">db</span><span class="p">:</span><span class="nf">lookup</span><span class="p" data-group-id="3959569114-46">(</span><span class="n">Ref</span><span class="p">,</span><span class="w"> </span><span class="n">TableName</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="p" data-group-id="3959569114-46">)</span><span class="p">,</span><span class="w">
     </span><span class="ss">ok</span><span class="p">.</span></code></pre><h2 id="test-suite-templates" class="section-heading"><a href="#test-suite-templates" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Test Suite Templates</span></h2><p>The Erlang mode for the Emacs editor includes two <code class="inline">Common Test</code> test suite
 templates, one with extensive information in the function headers, and one with
 minimal information. A test suite template provides a quick start for
@@ -225,12 +243,12 @@ callback functions. The two templates follows:</p><p><em>Large Common Test Suite
 </span><span class="c1">%%%</span><span class="w">
 </span><span class="c1">%%% Created :</span><span class="w">
 </span><span class="c1">%%%-------------------------------------------------------------------</span><span class="w">
-</span><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="5089920710-1">(</span><span class="ss">example_SUITE</span><span class="p" data-group-id="5089920710-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="0633960893-1">(</span><span class="ss">example_SUITE</span><span class="p" data-group-id="0633960893-1">)</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%% Note: This directive should only be used in test suites.</span><span class="w">
-</span><span class="p">-</span><span class="na">compile</span><span class="p" data-group-id="5089920710-2">(</span><span class="ss">export_all</span><span class="p" data-group-id="5089920710-2">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">compile</span><span class="p" data-group-id="0633960893-2">(</span><span class="ss">export_all</span><span class="p" data-group-id="0633960893-2">)</span><span class="p">.</span><span class="w">
 </span><span class="w">
-</span><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="5089920710-3">(</span><span class="s">&quot;common_test/include/ct.hrl&quot;</span><span class="p" data-group-id="5089920710-3">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="0633960893-3">(</span><span class="s">&quot;common_test/include/ct.hrl&quot;</span><span class="p" data-group-id="0633960893-3">)</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
 </span><span class="c1">%% COMMON TEST CALLBACK FUNCTIONS</span><span class="w">
@@ -248,8 +266,8 @@ callback functions. The two templates follows:</p><p><em>Large Common Test Suite
 </span><span class="c1">%% Note: The suite/0 function is only meant to be used to return</span><span class="w">
 </span><span class="c1">%% default data values, not perform any other operations.</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">suite</span><span class="p" data-group-id="5089920710-4">(</span><span class="p" data-group-id="5089920710-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="p" data-group-id="5089920710-5">[</span><span class="p" data-group-id="5089920710-6">{</span><span class="ss">timetrap</span><span class="p">,</span><span class="p" data-group-id="5089920710-7">{</span><span class="ss">minutes</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="5089920710-7">}</span><span class="p" data-group-id="5089920710-6">}</span><span class="p" data-group-id="5089920710-5">]</span><span class="p">.</span><span class="w">
+</span><span class="nf">suite</span><span class="p" data-group-id="0633960893-4">(</span><span class="p" data-group-id="0633960893-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="p" data-group-id="0633960893-5">[</span><span class="p" data-group-id="0633960893-6">{</span><span class="ss">timetrap</span><span class="p">,</span><span class="p" data-group-id="0633960893-7">{</span><span class="ss">minutes</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="0633960893-7">}</span><span class="p" data-group-id="0633960893-6">}</span><span class="p" data-group-id="0633960893-5">]</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
 </span><span class="c1">%% Function: init_per_suite(Config0) -&gt;</span><span class="w">
@@ -265,7 +283,7 @@ callback functions. The two templates follows:</p><p><em>Large Common Test Suite
 </span><span class="c1">%% Note: This function is free to add any key/value pairs to the Config</span><span class="w">
 </span><span class="c1">%% variable, but should NOT alter/remove any existing entries.</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">init_per_suite</span><span class="p" data-group-id="5089920710-8">(</span><span class="n">Config</span><span class="p" data-group-id="5089920710-8">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+</span><span class="nf">init_per_suite</span><span class="p" data-group-id="0633960893-8">(</span><span class="n">Config</span><span class="p" data-group-id="0633960893-8">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
     </span><span class="n">Config</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
@@ -276,7 +294,7 @@ callback functions. The two templates follows:</p><p><em>Large Common Test Suite
 </span><span class="c1">%%</span><span class="w">
 </span><span class="c1">%% Description: Cleanup after the suite.</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">end_per_suite</span><span class="p" data-group-id="5089920710-9">(</span><span class="p">_</span><span class="n">Config</span><span class="p" data-group-id="5089920710-9">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+</span><span class="nf">end_per_suite</span><span class="p" data-group-id="0633960893-9">(</span><span class="p">_</span><span class="n">Config</span><span class="p" data-group-id="0633960893-9">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
     </span><span class="ss">ok</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
@@ -292,7 +310,7 @@ callback functions. The two templates follows:</p><p><em>Large Common Test Suite
 </span><span class="c1">%%</span><span class="w">
 </span><span class="c1">%% Description: Initialization before each test case group.</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">init_per_group</span><span class="p" data-group-id="5089920710-10">(</span><span class="p">_</span><span class="n">GroupName</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="5089920710-10">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+</span><span class="nf">init_per_group</span><span class="p" data-group-id="0633960893-10">(</span><span class="p">_</span><span class="n">GroupName</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="0633960893-10">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
     </span><span class="n">Config</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
@@ -306,7 +324,7 @@ callback functions. The two templates follows:</p><p><em>Large Common Test Suite
 </span><span class="c1">%%</span><span class="w">
 </span><span class="c1">%% Description: Cleanup after each test case group.</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">end_per_group</span><span class="p" data-group-id="5089920710-11">(</span><span class="p">_</span><span class="n">GroupName</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="n">Config</span><span class="p" data-group-id="5089920710-11">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+</span><span class="nf">end_per_group</span><span class="p" data-group-id="0633960893-11">(</span><span class="p">_</span><span class="n">GroupName</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="n">Config</span><span class="p" data-group-id="0633960893-11">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
     </span><span class="ss">ok</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
@@ -325,7 +343,7 @@ callback functions. The two templates follows:</p><p><em>Large Common Test Suite
 </span><span class="c1">%% Note: This function is free to add any key/value pairs to the Config</span><span class="w">
 </span><span class="c1">%% variable, but should NOT alter/remove any existing entries.</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">init_per_testcase</span><span class="p" data-group-id="5089920710-12">(</span><span class="p">_</span><span class="n">TestCase</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="5089920710-12">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+</span><span class="nf">init_per_testcase</span><span class="p" data-group-id="0633960893-12">(</span><span class="p">_</span><span class="n">TestCase</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="0633960893-12">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
     </span><span class="n">Config</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
@@ -341,7 +359,7 @@ callback functions. The two templates follows:</p><p><em>Large Common Test Suite
 </span><span class="c1">%%</span><span class="w">
 </span><span class="c1">%% Description: Cleanup after each test case.</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">end_per_testcase</span><span class="p" data-group-id="5089920710-13">(</span><span class="p">_</span><span class="n">TestCase</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="n">Config</span><span class="p" data-group-id="5089920710-13">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+</span><span class="nf">end_per_testcase</span><span class="p" data-group-id="0633960893-13">(</span><span class="p">_</span><span class="n">TestCase</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="n">Config</span><span class="p" data-group-id="0633960893-13">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
     </span><span class="ss">ok</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
@@ -365,8 +383,8 @@ callback functions. The two templates follows:</p><p><em>Large Common Test Suite
 </span><span class="c1">%%</span><span class="w">
 </span><span class="c1">%% Description: Returns a list of test case group definitions.</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">groups</span><span class="p" data-group-id="5089920710-14">(</span><span class="p" data-group-id="5089920710-14">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="p" data-group-id="5089920710-15">[</span><span class="p" data-group-id="5089920710-15">]</span><span class="p">.</span><span class="w">
+</span><span class="nf">groups</span><span class="p" data-group-id="0633960893-14">(</span><span class="p" data-group-id="0633960893-14">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="p" data-group-id="0633960893-15">[</span><span class="p" data-group-id="0633960893-15">]</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
 </span><span class="c1">%% Function: all() -&gt; GroupsAndTestCases | {skip,Reason}</span><span class="w">
@@ -382,8 +400,8 @@ callback functions. The two templates follows:</p><p><em>Large Common Test Suite
 </span><span class="c1">%% Description: Returns the list of groups and test cases that</span><span class="w">
 </span><span class="c1">%%              are to be executed.</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">all</span><span class="p" data-group-id="5089920710-16">(</span><span class="p" data-group-id="5089920710-16">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="p" data-group-id="5089920710-17">[</span><span class="ss">my_test_case</span><span class="p" data-group-id="5089920710-17">]</span><span class="p">.</span><span class="w">
+</span><span class="nf">all</span><span class="p" data-group-id="0633960893-16">(</span><span class="p" data-group-id="0633960893-16">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="p" data-group-id="0633960893-17">[</span><span class="ss">my_test_case</span><span class="p" data-group-id="0633960893-17">]</span><span class="p">.</span><span class="w">
 
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
@@ -402,8 +420,8 @@ callback functions. The two templates follows:</p><p><em>Large Common Test Suite
 </span><span class="c1">%% Note: This function is only meant to be used to return a list of</span><span class="w">
 </span><span class="c1">%% values, not perform any other operations.</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">my_test_case</span><span class="p" data-group-id="5089920710-18">(</span><span class="p" data-group-id="5089920710-18">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="p" data-group-id="5089920710-19">[</span><span class="p" data-group-id="5089920710-19">]</span><span class="p">.</span><span class="w">
+</span><span class="nf">my_test_case</span><span class="p" data-group-id="0633960893-18">(</span><span class="p" data-group-id="0633960893-18">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="p" data-group-id="0633960893-19">[</span><span class="p" data-group-id="0633960893-19">]</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
 </span><span class="c1">%% Function: TestCase(Config0) -&gt;</span><span class="w">
@@ -421,7 +439,7 @@ callback functions. The two templates follows:</p><p><em>Large Common Test Suite
 </span><span class="c1">%%              the all/0 list or in a test case group for the test case</span><span class="w">
 </span><span class="c1">%%              to be executed).</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">my_test_case</span><span class="p" data-group-id="5089920710-20">(</span><span class="p">_</span><span class="n">Config</span><span class="p" data-group-id="5089920710-20">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+</span><span class="nf">my_test_case</span><span class="p" data-group-id="0633960893-20">(</span><span class="p">_</span><span class="n">Config</span><span class="p" data-group-id="0633960893-20">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
     </span><span class="ss">ok</span><span class="p">.</span></code></pre><p><em>Small Common Test Suite</em></p><pre><code class="makeup erlang" translate="no"><span class="c1">%%%-------------------------------------------------------------------</span><span class="w">
 </span><span class="c1">%%% File    : example_SUITE.erl</span><span class="w">
 </span><span class="c1">%%% Author  :</span><span class="w">
@@ -429,18 +447,18 @@ callback functions. The two templates follows:</p><p><em>Large Common Test Suite
 </span><span class="c1">%%%</span><span class="w">
 </span><span class="c1">%%% Created :</span><span class="w">
 </span><span class="c1">%%%-------------------------------------------------------------------</span><span class="w">
-</span><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="1858943583-1">(</span><span class="ss">example_SUITE</span><span class="p" data-group-id="1858943583-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="5169943528-1">(</span><span class="ss">example_SUITE</span><span class="p" data-group-id="5169943528-1">)</span><span class="p">.</span><span class="w">
 </span><span class="w">
-</span><span class="p">-</span><span class="na">compile</span><span class="p" data-group-id="1858943583-2">(</span><span class="ss">export_all</span><span class="p" data-group-id="1858943583-2">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">compile</span><span class="p" data-group-id="5169943528-2">(</span><span class="ss">export_all</span><span class="p" data-group-id="5169943528-2">)</span><span class="p">.</span><span class="w">
 </span><span class="w">
-</span><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="1858943583-3">(</span><span class="s">&quot;common_test/include/ct.hrl&quot;</span><span class="p" data-group-id="1858943583-3">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="5169943528-3">(</span><span class="s">&quot;common_test/include/ct.hrl&quot;</span><span class="p" data-group-id="5169943528-3">)</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
 </span><span class="c1">%% Function: suite() -&gt; Info</span><span class="w">
 </span><span class="c1">%% Info = [tuple()]</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">suite</span><span class="p" data-group-id="1858943583-4">(</span><span class="p" data-group-id="1858943583-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="p" data-group-id="1858943583-5">[</span><span class="p" data-group-id="1858943583-6">{</span><span class="ss">timetrap</span><span class="p">,</span><span class="p" data-group-id="1858943583-7">{</span><span class="ss">seconds</span><span class="p">,</span><span class="mi">30</span><span class="p" data-group-id="1858943583-7">}</span><span class="p" data-group-id="1858943583-6">}</span><span class="p" data-group-id="1858943583-5">]</span><span class="p">.</span><span class="w">
+</span><span class="nf">suite</span><span class="p" data-group-id="5169943528-4">(</span><span class="p" data-group-id="5169943528-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="p" data-group-id="5169943528-5">[</span><span class="p" data-group-id="5169943528-6">{</span><span class="ss">timetrap</span><span class="p">,</span><span class="p" data-group-id="5169943528-7">{</span><span class="ss">seconds</span><span class="p">,</span><span class="mi">30</span><span class="p" data-group-id="5169943528-7">}</span><span class="p" data-group-id="5169943528-6">}</span><span class="p" data-group-id="5169943528-5">]</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
 </span><span class="c1">%% Function: init_per_suite(Config0) -&gt;</span><span class="w">
@@ -448,14 +466,14 @@ callback functions. The two templates follows:</p><p><em>Large Common Test Suite
 </span><span class="c1">%% Config0 = Config1 = [tuple()]</span><span class="w">
 </span><span class="c1">%% Reason = term()</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">init_per_suite</span><span class="p" data-group-id="1858943583-8">(</span><span class="n">Config</span><span class="p" data-group-id="1858943583-8">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+</span><span class="nf">init_per_suite</span><span class="p" data-group-id="5169943528-8">(</span><span class="n">Config</span><span class="p" data-group-id="5169943528-8">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
     </span><span class="n">Config</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
 </span><span class="c1">%% Function: end_per_suite(Config0) -&gt; term() | {save_config,Config1}</span><span class="w">
 </span><span class="c1">%% Config0 = Config1 = [tuple()]</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">end_per_suite</span><span class="p" data-group-id="1858943583-9">(</span><span class="p">_</span><span class="n">Config</span><span class="p" data-group-id="1858943583-9">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+</span><span class="nf">end_per_suite</span><span class="p" data-group-id="5169943528-9">(</span><span class="p">_</span><span class="n">Config</span><span class="p" data-group-id="5169943528-9">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
     </span><span class="ss">ok</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
@@ -465,7 +483,7 @@ callback functions. The two templates follows:</p><p><em>Large Common Test Suite
 </span><span class="c1">%% Config0 = Config1 = [tuple()]</span><span class="w">
 </span><span class="c1">%% Reason = term()</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">init_per_group</span><span class="p" data-group-id="1858943583-10">(</span><span class="p">_</span><span class="n">GroupName</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="1858943583-10">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+</span><span class="nf">init_per_group</span><span class="p" data-group-id="5169943528-10">(</span><span class="p">_</span><span class="n">GroupName</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="5169943528-10">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
     </span><span class="n">Config</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
@@ -474,7 +492,7 @@ callback functions. The two templates follows:</p><p><em>Large Common Test Suite
 </span><span class="c1">%% GroupName = atom()</span><span class="w">
 </span><span class="c1">%% Config0 = Config1 = [tuple()]</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">end_per_group</span><span class="p" data-group-id="1858943583-11">(</span><span class="p">_</span><span class="n">GroupName</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="n">Config</span><span class="p" data-group-id="1858943583-11">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+</span><span class="nf">end_per_group</span><span class="p" data-group-id="5169943528-11">(</span><span class="p">_</span><span class="n">GroupName</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="n">Config</span><span class="p" data-group-id="5169943528-11">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
     </span><span class="ss">ok</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
@@ -484,7 +502,7 @@ callback functions. The two templates follows:</p><p><em>Large Common Test Suite
 </span><span class="c1">%% Config0 = Config1 = [tuple()]</span><span class="w">
 </span><span class="c1">%% Reason = term()</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">init_per_testcase</span><span class="p" data-group-id="1858943583-12">(</span><span class="p">_</span><span class="n">TestCase</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="1858943583-12">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+</span><span class="nf">init_per_testcase</span><span class="p" data-group-id="5169943528-12">(</span><span class="p">_</span><span class="n">TestCase</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="5169943528-12">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
     </span><span class="n">Config</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
@@ -494,7 +512,7 @@ callback functions. The two templates follows:</p><p><em>Large Common Test Suite
 </span><span class="c1">%% Config0 = Config1 = [tuple()]</span><span class="w">
 </span><span class="c1">%% Reason = term()</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">end_per_testcase</span><span class="p" data-group-id="1858943583-13">(</span><span class="p">_</span><span class="n">TestCase</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="n">Config</span><span class="p" data-group-id="1858943583-13">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+</span><span class="nf">end_per_testcase</span><span class="p" data-group-id="5169943528-13">(</span><span class="p">_</span><span class="n">TestCase</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="n">Config</span><span class="p" data-group-id="5169943528-13">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
     </span><span class="ss">ok</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
@@ -509,8 +527,8 @@ callback functions. The two templates follows:</p><p><em>Large Common Test Suite
 </span><span class="c1">%%              repeat_until_any_ok | repeat_until_any_fail</span><span class="w">
 </span><span class="c1">%% N = integer() | forever</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">groups</span><span class="p" data-group-id="1858943583-14">(</span><span class="p" data-group-id="1858943583-14">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="p" data-group-id="1858943583-15">[</span><span class="p" data-group-id="1858943583-15">]</span><span class="p">.</span><span class="w">
+</span><span class="nf">groups</span><span class="p" data-group-id="5169943528-14">(</span><span class="p" data-group-id="5169943528-14">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="p" data-group-id="5169943528-15">[</span><span class="p" data-group-id="5169943528-15">]</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
 </span><span class="c1">%% Function: all() -&gt; GroupsAndTestCases | {skip,Reason}</span><span class="w">
@@ -519,15 +537,15 @@ callback functions. The two templates follows:</p><p><em>Large Common Test Suite
 </span><span class="c1">%% TestCase = atom()</span><span class="w">
 </span><span class="c1">%% Reason = term()</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">all</span><span class="p" data-group-id="1858943583-16">(</span><span class="p" data-group-id="1858943583-16">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="p" data-group-id="1858943583-17">[</span><span class="ss">my_test_case</span><span class="p" data-group-id="1858943583-17">]</span><span class="p">.</span><span class="w">
+</span><span class="nf">all</span><span class="p" data-group-id="5169943528-16">(</span><span class="p" data-group-id="5169943528-16">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="p" data-group-id="5169943528-17">[</span><span class="ss">my_test_case</span><span class="p" data-group-id="5169943528-17">]</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
 </span><span class="c1">%% Function: TestCase() -&gt; Info</span><span class="w">
 </span><span class="c1">%% Info = [tuple()]</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">my_test_case</span><span class="p" data-group-id="1858943583-18">(</span><span class="p" data-group-id="1858943583-18">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="p" data-group-id="1858943583-19">[</span><span class="p" data-group-id="1858943583-19">]</span><span class="p">.</span><span class="w">
+</span><span class="nf">my_test_case</span><span class="p" data-group-id="5169943528-18">(</span><span class="p" data-group-id="5169943528-18">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="p" data-group-id="5169943528-19">[</span><span class="p" data-group-id="5169943528-19">]</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
 </span><span class="c1">%% Function: TestCase(Config0) -&gt;</span><span class="w">
@@ -537,7 +555,7 @@ callback functions. The two templates follows:</p><p><em>Large Common Test Suite
 </span><span class="c1">%% Reason = term()</span><span class="w">
 </span><span class="c1">%% Comment = term()</span><span class="w">
 </span><span class="c1">%%--------------------------------------------------------------------</span><span class="w">
-</span><span class="nf">my_test_case</span><span class="p" data-group-id="1858943583-20">(</span><span class="p">_</span><span class="n">Config</span><span class="p" data-group-id="1858943583-20">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+</span><span class="nf">my_test_case</span><span class="p" data-group-id="5169943528-20">(</span><span class="p">_</span><span class="n">Config</span><span class="p" data-group-id="5169943528-20">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
     </span><span class="ss">ok</span><span class="p">.</span></code></pre>
 
 </div>
@@ -572,8 +590,8 @@ Running Tests and Analyzing Results
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="common_test.epub" title="ePub version">
@@ -585,7 +603,7 @@ Running Tests and Analyzing Results
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

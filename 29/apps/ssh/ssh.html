@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="ssh v5.3.4-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/ssh/ssh.html" />
     <title>ssh — ssh v5.3.4-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-F5655088.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ ssh
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of ssh</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ ssh
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L25" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L25" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -189,7 +207,7 @@ authorization. The default files are</p><ul><li><code class="inline">id_dsa</cod
 
       </div>
 
-        <div class="summary-synopsis"><p>Options for <a>clients</a>. The individual options are further explained
+        <div class="summary-synopsis"><p>Options for <a href="#connect/3">clients</a>. The individual options are further explained
 below or by following the hyperlinks.</p></div>
 
     </div>
@@ -208,7 +226,7 @@ below or by following the hyperlinks.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Sets a timeout on the transport layer connect time. For <a><code class="inline">gen_tcp</code></a> the time is
+        <div class="summary-synopsis"><p>Sets a timeout on the transport layer connect time. For <a href="../../apps/kernel/gen_tcp.html"><code class="inline">gen_tcp</code></a> the time is
 in milli-seconds and the default value is <code class="inline">infinity</code>.</p></div>
 
     </div>
@@ -221,7 +239,7 @@ in milli-seconds and the default value is <code class="inline">infinity</code>.<
 
         <div class="summary-synopsis"><p>Sets the three diffie-hellman-group-exchange parameters that guides the
 connected server in choosing a group. See
-<a>RFC 4419</a> for the details. The default
+<a href="https://tools.ietf.org/html/rfc4419">RFC 4419</a> for the details. The default
 value is <code class="inline">{1024, 6144, 8192}</code>.</p></div>
 
     </div>
@@ -260,8 +278,8 @@ value is <code class="inline">{1024, 6144, 8192}</code>.</p></div>
 
         <div class="summary-synopsis"><p>Make the client tell the server that the client accepts extension negotiation,
 that is, include <code class="inline">ext-info-c</code> in the kexinit message sent. See
-<a>RFC 8308</a> for details and
-<a>ssh</a> for a list of currently implemented
+<a href="https://tools.ietf.org/html/rfc8308">RFC 8308</a> for details and
+<a href="ssh_app.html#supported-ext-info">ssh</a> for a list of currently implemented
 extensions.</p></div>
 
     </div>
@@ -380,7 +398,7 @@ further explained below.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>List of algorithms to use in the algorithm negotiation. The default
-<a><code class="inline">algs_list/0</code></a> can be obtained from <a><code class="inline">default_algorithms/0</code></a>.</p></div>
+<a href="#t:algs_list/0"><code class="inline">algs_list/0</code></a> can be obtained from <a href="#default_algorithms/0"><code class="inline">default_algorithms/0</code></a>.</p></div>
 
     </div>
 
@@ -430,8 +448,8 @@ value is &quot;Erlang/VSN&quot; where VSN is the ssh application version number.
 
       </div>
 
-        <div class="summary-synopsis"><p>Module implementing the behaviour <a><code class="inline">ssh_client_key_api</code></a> and/or
-<a><code class="inline">ssh_server_key_api</code></a>. Can be used to customize the handling of public keys. If
+        <div class="summary-synopsis"><p>Module implementing the behaviour <a href="ssh_client_key_api.html"><code class="inline">ssh_client_key_api</code></a> and/or
+<a href="ssh_server_key_api.html"><code class="inline">ssh_server_key_api</code></a>. Can be used to customize the handling of public keys. If
 callback options are provided along with the module name, they are made
 available to the callback module via the options passed to it under the key
 'key_cb_private'.</p></div>
@@ -563,8 +581,8 @@ identifies the SSH daemon.</p></div>
 
         <div class="summary-synopsis"><p>Provide a fun to implement your own logging of the SSH message SSH_MSG_DEBUG.
 The last three parameters are from the message, see
-<a>RFC 4253, section 11.3</a>. The
-<a><code class="inline">connection_ref/0</code></a> is the reference to the connection on which the message
+<a href="https://tools.ietf.org/html/rfc4253#section-11.3">RFC 4253, section 11.3</a>. The
+<a href="#t:connection_ref/0"><code class="inline">connection_ref/0</code></a> is the reference to the connection on which the message
 arrived. The return value from the fun is not checked.</p></div>
 
     </div>
@@ -611,7 +629,7 @@ if <code class="inline">skip</code> is returned no report is generated.</p></div
 
       </div>
 
-        <div class="summary-synopsis"><p>Options for <a>daemons</a>. The individual options are further explained
+        <div class="summary-synopsis"><p>Options for <a href="#daemon/1">daemons</a>. The individual options are further explained
 below or by following the hyperlinks.</p></div>
 
     </div>
@@ -725,7 +743,7 @@ trailing newline is added in the ok-case.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For more information about hardening, see the <a>Hardening</a> section
+        <div class="summary-synopsis"><p>For more information about hardening, see the <a href="hardening.html">Hardening</a> section
 in the User's Guide chapter.</p></div>
 
     </div>
@@ -803,7 +821,7 @@ connection is closed.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">pwdfun_4/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#t:pwdfun_4/0"><code class="inline">pwdfun_4/0</code></a>.</p></div>
 
     </div>
 
@@ -825,8 +843,8 @@ connection is closed.</p></div>
 
         <div class="summary-synopsis"><p>Make the server (daemon) tell the client that the server accepts extension
 negotiation, that is, include <code class="inline">ext-info-s</code> in the kexinit message sent. See
-<a>RFC 8308</a> for details and
-<a>ssh</a> for a list of currently implemented
+<a href="https://tools.ietf.org/html/rfc8308">RFC 8308</a> for details and
+<a href="ssh_app.html#supported-ext-info">ssh</a> for a list of currently implemented
 extensions.</p></div>
 
     </div>
@@ -837,7 +855,7 @@ extensions.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">'shell_fun/2'/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#t:shell_fun/2/0"><code class="inline">'shell_fun/2'/0</code></a>.</p></div>
 
     </div>
 
@@ -847,7 +865,7 @@ extensions.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">'shell_fun/2'/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#t:shell_fun/2/0"><code class="inline">'shell_fun/2'/0</code></a>.</p></div>
 
     </div>
 
@@ -857,7 +875,7 @@ extensions.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">'shell_fun/2'/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#t:shell_fun/2/0"><code class="inline">'shell_fun/2'/0</code></a>.</p></div>
 
     </div>
 
@@ -933,7 +951,7 @@ the client. The default is to use the Erlang shell: <code class="inline">{shell,
       </div>
 
         <div class="summary-synopsis"><p>Enables (<code class="inline">true</code>) or disables (<code class="inline">false</code>) the possibility to tunnel a TCP/IP
-connection in to a <a>server</a>. Disabled per default.</p></div>
+connection in to a <a href="#daemon/2">server</a>. Disabled per default.</p></div>
 
     </div>
 
@@ -944,7 +962,7 @@ connection in to a <a>server</a>. Disabled per default.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Enables (<code class="inline">true</code>) or disables (<code class="inline">false</code>) the possibility to tunnel a TCP/IP
-connection out of a <a>server</a>. Disabled per default.</p></div>
+connection out of a <a href="#daemon/2">server</a>. Disabled per default.</p></div>
 
     </div>
 
@@ -1054,7 +1072,7 @@ connection out of a <a>server</a>. Disabled per default.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Return values from the <a><code class="inline">connection_info/1</code></a> and <a><code class="inline">connection_info/2</code></a> functions.</p></div>
+        <div class="summary-synopsis"><p>Return values from the <a href="#connection_info/1"><code class="inline">connection_info/1</code></a> and <a href="#connection_info/2"><code class="inline">connection_info/2</code></a> functions.</p></div>
 
     </div>
 
@@ -1075,7 +1093,7 @@ connection out of a <a>server</a>. Disabled per default.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Return values from the <a><code class="inline">daemon_info/1</code></a> and <a><code class="inline">daemon_info/2</code></a> functions.</p></div>
+        <div class="summary-synopsis"><p>Return values from the <a href="#daemon_info/1"><code class="inline">daemon_info/1</code></a> and <a href="#daemon_info/2"><code class="inline">daemon_info/2</code></a> functions.</p></div>
 
     </div>
 
@@ -1157,8 +1175,8 @@ connection out of a <a>server</a>. Disabled per default.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>The socket is supposed to be result of a <a>gen_tcp:connect</a>
-or a <a>gen_tcp:accept</a>. The socket must be in passive mode
+        <div class="summary-synopsis"><p>The socket is supposed to be result of a <a href="../../apps/kernel/gen_tcp.html#connect/3">gen_tcp:connect</a>
+or a <a href="../../apps/kernel/gen_tcp.html#accept/1">gen_tcp:accept</a>. The socket must be in passive mode
 (that is, opened with the option <code class="inline">{active,false})</code>.</p></div>
 
     </div>
@@ -1217,7 +1235,7 @@ or a <a>gen_tcp:accept</a>. The socket must be in passive mode
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">connect/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#connect/4"><code class="inline">connect/4</code></a>.</p></div>
 
     </div>
 
@@ -1227,7 +1245,7 @@ or a <a>gen_tcp:accept</a>. The socket must be in passive mode
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">connect/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#connect/4"><code class="inline">connect/4</code></a>.</p></div>
 
     </div>
 
@@ -1247,7 +1265,7 @@ or a <a>gen_tcp:accept</a>. The socket must be in passive mode
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">connection_info/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#connection_info/2"><code class="inline">connection_info/2</code></a>.</p></div>
 
     </div>
 
@@ -1267,7 +1285,7 @@ or a <a>gen_tcp:accept</a>. The socket must be in passive mode
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">daemon/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#daemon/3"><code class="inline">daemon/3</code></a>.</p></div>
 
     </div>
 
@@ -1277,7 +1295,7 @@ or a <a>gen_tcp:accept</a>. The socket must be in passive mode
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">daemon/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#daemon/3"><code class="inline">daemon/3</code></a>.</p></div>
 
     </div>
 
@@ -1288,7 +1306,7 @@ or a <a>gen_tcp:accept</a>. The socket must be in passive mode
       </div>
 
         <div class="summary-synopsis"><p>Starts a server listening for SSH connections on the given port. If the <code class="inline">Port</code>
-is 0, a random free port is selected. See <a><code class="inline">daemon_info/1</code></a> about how to find the
+is 0, a random free port is selected. See <a href="#daemon_info/1"><code class="inline">daemon_info/1</code></a> about how to find the
 selected port number.</p></div>
 
     </div>
@@ -1299,7 +1317,7 @@ selected port number.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">daemon_info/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#daemon_info/2"><code class="inline">daemon_info/2</code></a>.</p></div>
 
     </div>
 
@@ -1352,7 +1370,7 @@ and the values are the algorithms themselves.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">hostkey_fingerprint/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#hostkey_fingerprint/2"><code class="inline">hostkey_fingerprint/2</code></a>.</p></div>
 
     </div>
 
@@ -1383,7 +1401,7 @@ and the values are the algorithms themselves.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">shell/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#shell/3"><code class="inline">shell/3</code></a>.</p></div>
 
     </div>
 
@@ -1393,7 +1411,7 @@ and the values are the algorithms themselves.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">shell/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#shell/3"><code class="inline">shell/3</code></a>.</p></div>
 
     </div>
 
@@ -1414,7 +1432,7 @@ interactive shell on that remote host.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">start/1</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#start/1"><code class="inline">start/1</code></a>.</p></div>
 
     </div>
 
@@ -1425,7 +1443,7 @@ interactive shell on that remote host.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Utility function that starts the applications <code class="inline">crypto</code>, <code class="inline">public_key</code>, and <code class="inline">ssh</code>.
-Default type is <code class="inline">temporary</code>. For more information, see the <a><code class="inline">application</code></a>
+Default type is <code class="inline">temporary</code>. For more information, see the <a href="../../apps/kernel/application.html"><code class="inline">application</code></a>
 manual page in Kernel.</p></div>
 
     </div>
@@ -1436,7 +1454,7 @@ manual page in Kernel.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Stops the <code class="inline">ssh</code> application. For more information, see the <a><code class="inline">application</code></a>
+        <div class="summary-synopsis"><p>Stops the <code class="inline">ssh</code> application. For more information, see the <a href="../../apps/kernel/application.html"><code class="inline">application</code></a>
 manual page in Kernel.</p></div>
 
     </div>
@@ -1447,7 +1465,7 @@ manual page in Kernel.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">stop_daemon/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#stop_daemon/3"><code class="inline">stop_daemon/3</code></a>.</p></div>
 
     </div>
 
@@ -1457,7 +1475,7 @@ manual page in Kernel.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">stop_daemon/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#stop_daemon/3"><code class="inline">stop_daemon/3</code></a>.</p></div>
 
     </div>
 
@@ -1477,7 +1495,7 @@ manual page in Kernel.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">stop_listener/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#stop_listener/3"><code class="inline">stop_listener/3</code></a>.</p></div>
 
     </div>
 
@@ -1487,7 +1505,7 @@ manual page in Kernel.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">stop_listener/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#stop_listener/3"><code class="inline">stop_listener/3</code></a>.</p></div>
 
     </div>
 
@@ -1508,7 +1526,7 @@ operational.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">tcpip_tunnel_from_server/6</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#tcpip_tunnel_from_server/6"><code class="inline">tcpip_tunnel_from_server/6</code></a>.</p></div>
 
     </div>
 
@@ -1531,7 +1549,7 @@ calls this function) then connects to <code class="inline">ConnectToHost:Connect
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">tcpip_tunnel_to_server/6</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#tcpip_tunnel_to_server/6"><code class="inline">tcpip_tunnel_to_server/6</code></a>.</p></div>
 
     </div>
 
@@ -1560,6 +1578,7 @@ the peer server of <code class="inline">ConnectionRef</code>. That server then c
       </a>
       <span class="text">Types: Client Options</span>
     </h1>
+
     <div class="types-client-options-list">
 <section class="detail" id="t:accept_callback/0">
 
@@ -1571,7 +1590,7 @@ the peer server of <code class="inline">ConnectionRef</code>. That server then c
       <h1 class="signature" translate="no">accept_callback()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L689" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L689" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1601,7 +1620,7 @@ the peer server of <code class="inline">ConnectionRef</code>. That server then c
       <h1 class="signature" translate="no">accept_hosts()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L681" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L681" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1630,7 +1649,7 @@ the peer server of <code class="inline">ConnectionRef</code>. That server then c
       <h1 class="signature" translate="no">authentication_client_options()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L705" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L705" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1661,7 +1680,7 @@ authentication method is attempted.</p></li></ul>
       <h1 class="signature" translate="no">client_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L593" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L593" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1702,7 +1721,7 @@ risk.</p>
       <h1 class="signature" translate="no">client_options()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L359" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L359" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1730,7 +1749,7 @@ risk.</p>
       <h1 class="signature" translate="no">connect_timeout_client_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L727" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L727" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1760,7 +1779,7 @@ phase.</p>
       <h1 class="signature" translate="no">diffie_hellman_group_exchange_client_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L716" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L716" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1792,7 +1811,7 @@ value is <code class="inline">{1024, 6144, 8192}</code>.</p>
       <h1 class="signature" translate="no">fingerprint()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L694" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L694" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1820,7 +1839,7 @@ value is <code class="inline">{1024, 6144, 8192}</code>.</p>
       <h1 class="signature" translate="no">fp_digest_alg()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L686" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L686" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1848,7 +1867,7 @@ value is <code class="inline">{1024, 6144, 8192}</code>.</p>
       <h1 class="signature" translate="no">host_accepting_client_options()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L674" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L674" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1911,7 +1930,7 @@ authorization.</p><p>Defaults to <code class="inline">false</code></p></li></ul>
       <h1 class="signature" translate="no">recv_ext_info_client_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L740" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L740" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1945,6 +1964,7 @@ supporting ext-info.</p>
       </a>
       <span class="text">Types: Common Options</span>
     </h1>
+
     <div class="types-common-options-list">
 <section class="detail" id="t:alg_entry/0">
 
@@ -1956,7 +1976,7 @@ supporting ext-info.</p>
       <h1 class="signature" translate="no">alg_entry()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L165" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L165" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1989,7 +2009,7 @@ supporting ext-info.</p>
       <h1 class="signature" translate="no">algs_list()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L163" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L163" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2017,7 +2037,7 @@ supporting ext-info.</p>
       <h1 class="signature" translate="no">alive_common_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L566" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L566" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2054,7 +2074,7 @@ the alive parameters is set to ensure that unresponsive connections are terminat
       <h1 class="signature" translate="no">auth_methods_common_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L536" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L536" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2084,7 +2104,7 @@ client shall support and in which order they are tried. Defaults to
       <h1 class="signature" translate="no">cipher_alg()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L211" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L211" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2116,7 +2136,7 @@ client shall support and in which order they are tried. Defaults to
       <h1 class="signature" translate="no">common_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L370" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L370" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2162,7 +2182,7 @@ further explained below.</p>
       <h1 class="signature" translate="no">common_options()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L364" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L364" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2190,7 +2210,7 @@ further explained below.</p>
       <h1 class="signature" translate="no">compression_alg()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L258" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L258" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2218,7 +2238,7 @@ further explained below.</p>
       <h1 class="signature" translate="no">disabled_cipher_alg()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L222" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L222" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2246,7 +2266,7 @@ further explained below.</p>
       <h1 class="signature" translate="no">disabled_mac_alg()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L249" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L249" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2274,7 +2294,7 @@ further explained below.</p>
       <h1 class="signature" translate="no">disconnectfun_common_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L471" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L471" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2302,7 +2322,7 @@ further explained below.</p>
       <h1 class="signature" translate="no">double_algs(AlgType)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L302" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L302" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2319,14 +2339,14 @@ further explained below.</p>
 
 <p>List of algorithms to use in the algorithm negotiation. The default
 <a href="#t:algs_list/0"><code class="inline">algs_list/0</code></a> can be obtained from <a href="#default_algorithms/0"><code class="inline">default_algorithms/0</code></a>.</p><p>If an alg_entry() is missing in the algs_list(), the default value is used for
-that entry.</p><p>Here is an example of this option:</p><pre><code class="makeup erlang" translate="no"><span class="w">	  </span><span class="p" data-group-id="8841685918-1">{</span><span class="ss">preferred_algorithms</span><span class="p">,</span><span class="w">
-	  </span><span class="p" data-group-id="8841685918-2">[</span><span class="p" data-group-id="8841685918-3">{</span><span class="ss">public_key</span><span class="p">,</span><span class="p" data-group-id="8841685918-4">[</span><span class="ss">&#39;ssh-rsa&#39;</span><span class="p">,</span><span class="ss">&#39;ssh-dss&#39;</span><span class="p" data-group-id="8841685918-4">]</span><span class="p" data-group-id="8841685918-3">}</span><span class="p">,</span><span class="w">
-	  </span><span class="p" data-group-id="8841685918-5">{</span><span class="ss">cipher</span><span class="p">,</span><span class="p" data-group-id="8841685918-6">[</span><span class="p" data-group-id="8841685918-7">{</span><span class="ss">client2server</span><span class="p">,</span><span class="p" data-group-id="8841685918-8">[</span><span class="ss">&#39;aes128-ctr&#39;</span><span class="p" data-group-id="8841685918-8">]</span><span class="p" data-group-id="8841685918-7">}</span><span class="p">,</span><span class="w">
-          </span><span class="p" data-group-id="8841685918-9">{</span><span class="ss">server2client</span><span class="p">,</span><span class="p" data-group-id="8841685918-10">[</span><span class="ss">&#39;aes128-cbc&#39;</span><span class="p">,</span><span class="ss">&#39;3des-cbc&#39;</span><span class="p" data-group-id="8841685918-10">]</span><span class="p" data-group-id="8841685918-9">}</span><span class="p" data-group-id="8841685918-6">]</span><span class="p" data-group-id="8841685918-5">}</span><span class="p">,</span><span class="w">
-	  </span><span class="p" data-group-id="8841685918-11">{</span><span class="ss">mac</span><span class="p">,</span><span class="p" data-group-id="8841685918-12">[</span><span class="ss">&#39;hmac-sha2-256&#39;</span><span class="p">,</span><span class="ss">&#39;hmac-sha1&#39;</span><span class="p" data-group-id="8841685918-12">]</span><span class="p" data-group-id="8841685918-11">}</span><span class="p">,</span><span class="w">
-	  </span><span class="p" data-group-id="8841685918-13">{</span><span class="ss">compression</span><span class="p">,</span><span class="p" data-group-id="8841685918-14">[</span><span class="ss">none</span><span class="p">,</span><span class="ss">zlib</span><span class="p" data-group-id="8841685918-14">]</span><span class="p" data-group-id="8841685918-13">}</span><span class="w">
-	  </span><span class="p" data-group-id="8841685918-2">]</span><span class="w">
-	  </span><span class="p" data-group-id="8841685918-1">}</span></code></pre><p>The example specifies different algorithms in the two directions (client2server
+that entry.</p><p>Here is an example of this option:</p><pre><code class="makeup erlang" translate="no"><span class="w">	  </span><span class="p" data-group-id="1741107116-1">{</span><span class="ss">preferred_algorithms</span><span class="p">,</span><span class="w">
+	  </span><span class="p" data-group-id="1741107116-2">[</span><span class="p" data-group-id="1741107116-3">{</span><span class="ss">public_key</span><span class="p">,</span><span class="p" data-group-id="1741107116-4">[</span><span class="ss">&#39;ssh-rsa&#39;</span><span class="p">,</span><span class="ss">&#39;ssh-dss&#39;</span><span class="p" data-group-id="1741107116-4">]</span><span class="p" data-group-id="1741107116-3">}</span><span class="p">,</span><span class="w">
+	  </span><span class="p" data-group-id="1741107116-5">{</span><span class="ss">cipher</span><span class="p">,</span><span class="p" data-group-id="1741107116-6">[</span><span class="p" data-group-id="1741107116-7">{</span><span class="ss">client2server</span><span class="p">,</span><span class="p" data-group-id="1741107116-8">[</span><span class="ss">&#39;aes128-ctr&#39;</span><span class="p" data-group-id="1741107116-8">]</span><span class="p" data-group-id="1741107116-7">}</span><span class="p">,</span><span class="w">
+          </span><span class="p" data-group-id="1741107116-9">{</span><span class="ss">server2client</span><span class="p">,</span><span class="p" data-group-id="1741107116-10">[</span><span class="ss">&#39;aes128-cbc&#39;</span><span class="p">,</span><span class="ss">&#39;3des-cbc&#39;</span><span class="p" data-group-id="1741107116-10">]</span><span class="p" data-group-id="1741107116-9">}</span><span class="p" data-group-id="1741107116-6">]</span><span class="p" data-group-id="1741107116-5">}</span><span class="p">,</span><span class="w">
+	  </span><span class="p" data-group-id="1741107116-11">{</span><span class="ss">mac</span><span class="p">,</span><span class="p" data-group-id="1741107116-12">[</span><span class="ss">&#39;hmac-sha2-256&#39;</span><span class="p">,</span><span class="ss">&#39;hmac-sha1&#39;</span><span class="p" data-group-id="1741107116-12">]</span><span class="p" data-group-id="1741107116-11">}</span><span class="p">,</span><span class="w">
+	  </span><span class="p" data-group-id="1741107116-13">{</span><span class="ss">compression</span><span class="p">,</span><span class="p" data-group-id="1741107116-14">[</span><span class="ss">none</span><span class="p">,</span><span class="ss">zlib</span><span class="p" data-group-id="1741107116-14">]</span><span class="p" data-group-id="1741107116-13">}</span><span class="w">
+	  </span><span class="p" data-group-id="1741107116-2">]</span><span class="w">
+	  </span><span class="p" data-group-id="1741107116-1">}</span></code></pre><p>The example specifies different algorithms in the two directions (client2server
 and server2client), for cipher but specifies the same algorithms for mac and
 compression in both directions. The kex (key exchange) is implicit but
 public_key is set explicitly.</p><p>For background and more examples see the
@@ -2347,7 +2367,7 @@ you are not supposed to change them.</p></section>
       <h1 class="signature" translate="no">fd_common_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L546" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L546" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2376,7 +2396,7 @@ protocol).</p>
       <h1 class="signature" translate="no">id_string_common_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L508" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L508" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2409,7 +2429,7 @@ characters and at most <code class="inline">Nmax</code> characters.</p>
       <h1 class="signature" translate="no">inet_common_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L540" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L540" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2437,7 +2457,7 @@ characters and at most <code class="inline">Nmax</code> characters.</p>
       <h1 class="signature" translate="no">kex_alg()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L172" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L172" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2470,7 +2490,7 @@ characters and at most <code class="inline">Nmax</code> characters.</p>
       <h1 class="signature" translate="no">key_cb_common_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L468" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L468" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2505,7 +2525,7 @@ available to the callback module via the options passed to it under the key
       <h1 class="signature" translate="no">limit_bytes()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L424" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L424" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2533,7 +2553,7 @@ available to the callback module via the options passed to it under the key
       <h1 class="signature" translate="no">limit_time()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L443" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L443" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2568,7 +2588,7 @@ initiated by the peer will still be performed.</p>
       <h1 class="signature" translate="no">mac_alg()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L238" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L238" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2600,7 +2620,7 @@ initiated by the peer will still be performed.</p>
       <h1 class="signature" translate="no">max_idle_time_common_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L411" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L411" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2632,7 +2652,7 @@ time from the connection creation to the first channel opening.</p><p>For more i
       <h1 class="signature" translate="no">max_log_item_len_common_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L421" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L421" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2661,7 +2681,7 @@ and the value defaults to 500.</p>
       <h1 class="signature" translate="no">modify_algorithms_common_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L527" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L527" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2689,7 +2709,7 @@ and the value defaults to 500.</p>
       <h1 class="signature" translate="no">modify_algs_list()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L353" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L353" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2732,7 +2752,7 @@ enforced</li></ul><p>For background and more examples see the
       <h1 class="signature" translate="no">pref_public_key_algs_common_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L523" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L523" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2764,7 +2784,7 @@ specifying the path to the user's keys.</p>
       <h1 class="signature" translate="no">preferred_algorithms_common_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L525" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L525" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2792,7 +2812,7 @@ specifying the path to the user's keys.</p>
       <h1 class="signature" translate="no">profile_common_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L398" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L398" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2824,7 +2844,7 @@ identifies the SSH daemon.</p>
       <h1 class="signature" translate="no">pubkey_alg()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L194" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L194" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2855,7 +2875,7 @@ identifies the SSH daemon.</p>
       <h1 class="signature" translate="no">rekey_limit_common_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L413" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L413" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2884,7 +2904,7 @@ identifies the SSH daemon.</p>
       <h1 class="signature" translate="no">ssh_msg_debug_fun_common_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L493" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L493" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2924,7 +2944,7 @@ with <code class="inline">AlwaysDisplay = true</code>, use for example
       <h1 class="signature" translate="no">unexpectedfun_common_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L479" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L479" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2956,6 +2976,7 @@ if <code class="inline">skip</code> is returned no report is generated.</p>
       </a>
       <span class="text">Types: Daemon Options</span>
     </h1>
+
     <div class="types-daemon-options-list">
 <section class="detail" id="t:authentication_daemon_options/0">
 
@@ -2967,7 +2988,7 @@ if <code class="inline">skip</code> is returned no report is generated.</p>
       <h1 class="signature" translate="no">authentication_daemon_options()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L935" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L935" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3002,7 +3023,7 @@ if <code class="inline">skip</code> is returned no report is generated.</p>
       <h1 class="signature" translate="no">callbacks_daemon_options()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L1208" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L1208" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3041,7 +3062,7 @@ not be sent if the function does not return a binary.</p></li></ul>
       <h1 class="signature" translate="no">daemon_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L756" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L756" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3090,7 +3111,7 @@ risk.</p>
       <h1 class="signature" translate="no">daemon_options()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L361" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L361" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3118,7 +3139,7 @@ risk.</p>
       <h1 class="signature" translate="no">deprecated_exec_opt()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L891" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L891" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3147,7 +3168,7 @@ used in new programs</p>
       <h1 class="signature" translate="no">diffie_hellman_group_exchange_daemon_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L1066" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L1066" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3177,7 +3198,7 @@ used in new programs</p>
       <h1 class="signature" translate="no">exec_daemon_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L803" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L803" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3205,7 +3226,7 @@ used in new programs</p>
       <h1 class="signature" translate="no">exec_fun()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L807" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L807" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3233,7 +3254,7 @@ used in new programs</p>
       <h1 class="signature" translate="no">'exec_fun/1'()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L809" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L809" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3261,7 +3282,7 @@ used in new programs</p>
       <h1 class="signature" translate="no">'exec_fun/2'()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L811" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L811" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3289,7 +3310,7 @@ used in new programs</p>
       <h1 class="signature" translate="no">'exec_fun/3'()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L813" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L813" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3318,7 +3339,7 @@ used in new programs</p>
       <h1 class="signature" translate="no">exec_result()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L885" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L885" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3387,7 +3408,7 @@ style should not be used in new programs.</p></section>
       <h1 class="signature" translate="no">exec_spec()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L805" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L805" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3415,7 +3436,7 @@ style should not be used in new programs.</p></section>
       <h1 class="signature" translate="no">explicit_group()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L1071" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L1071" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3443,7 +3464,7 @@ style should not be used in new programs.</p></section>
       <h1 class="signature" translate="no">explicit_group_file()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L1073" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L1073" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3471,7 +3492,7 @@ style should not be used in new programs.</p></section>
       <h1 class="signature" translate="no">hardening_daemon_options()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L1190" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L1190" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3523,7 +3544,7 @@ the client. The default value is 0.</p></li></ul>
       <h1 class="signature" translate="no">hello_timeout_daemon_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L1141" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L1141" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3555,7 +3576,7 @@ to send the first message within this time, the connection is closed.</p><p>For 
       <h1 class="signature" translate="no">kb_int_fun_3()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L951" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L951" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3584,7 +3605,7 @@ to send the first message within this time, the connection is closed.</p><p>For 
       <h1 class="signature" translate="no">kb_int_fun_4()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L953" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L953" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3614,7 +3635,7 @@ to send the first message within this time, the connection is closed.</p><p>For 
       <h1 class="signature" translate="no">kb_int_tuple()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L955" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L955" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3643,7 +3664,7 @@ to send the first message within this time, the connection is closed.</p><p>For 
       <h1 class="signature" translate="no">max_initial_idle_time_daemon_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L1119" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L1119" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3674,7 +3695,7 @@ authentication negotiation. Defaults to <code class="inline">infinity</code>.</p
       <h1 class="signature" translate="no">negotiation_timeout_daemon_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L1130" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L1130" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3706,7 +3727,7 @@ connection is closed.</p><p>For more information about timeouts, see the
       <h1 class="signature" translate="no">prompt_texts()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L945" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L945" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3734,7 +3755,7 @@ connection is closed.</p><p>For more information about timeouts, see the
       <h1 class="signature" translate="no">pwdfun_2()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L959" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L959" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3762,7 +3783,7 @@ connection is closed.</p><p>For more information about timeouts, see the
       <h1 class="signature" translate="no">pwdfun_4()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L1058" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L1058" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3828,7 +3849,7 @@ risk of accepting any connecting client.</p><p>The default value is <code class=
       <h1 class="signature" translate="no">send_ext_info_daemon_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L932" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L932" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3861,7 +3882,7 @@ supporting ext-info.</p>
       <h1 class="signature" translate="no">shell_daemon_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L782" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L782" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3889,7 +3910,7 @@ supporting ext-info.</p>
       <h1 class="signature" translate="no">shell_fun()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L787" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L787" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3917,7 +3938,7 @@ supporting ext-info.</p>
       <h1 class="signature" translate="no">'shell_fun/1'()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L790" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L790" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3945,7 +3966,7 @@ supporting ext-info.</p>
       <h1 class="signature" translate="no">'shell_fun/2'()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L800" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L800" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3976,7 +3997,7 @@ and exec-options.</p>
       <h1 class="signature" translate="no">shell_spec()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L784" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L784" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4004,7 +4025,7 @@ and exec-options.</p>
       <h1 class="signature" translate="no">ssh_cli_daemon_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L904" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L904" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4037,7 +4058,7 @@ disabled and only subsystem channels are allowed.</p>
       <h1 class="signature" translate="no">ssh_moduli_file()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L1108" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L1108" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4079,7 +4100,7 @@ Max and Min values.</p></li></ul>
       <h1 class="signature" translate="no">subsystem_daemon_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L776" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L776" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4107,7 +4128,7 @@ Max and Min values.</p></li></ul>
       <h1 class="signature" translate="no">subsystem_spec()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L160" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L160" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4142,7 +4163,7 @@ to run any subsystems.</p>
       <h1 class="signature" translate="no">subsystem_specs()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L778" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L778" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4170,7 +4191,7 @@ to run any subsystems.</p>
       <h1 class="signature" translate="no">tcpip_tunnel_in_daemon_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L919" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L919" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4202,7 +4223,7 @@ connection in to a <a href="#daemon/2">server</a>. Disabled per default.</p><p>S
       <h1 class="signature" translate="no">tcpip_tunnel_out_daemon_option()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L911" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L911" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4232,6 +4253,7 @@ connection out of a <a href="#daemon/2">server</a>. Disabled per default.</p>
       </a>
       <span class="text">Types: Deprecated</span>
     </h1>
+
     <div class="types-deprecated-list">
 <section class="detail" id="t:ssh_channel_id/0">
 
@@ -4243,7 +4265,7 @@ connection out of a <a href="#daemon/2">server</a>. Disabled per default.</p>
       <h1 class="signature" translate="no">ssh_channel_id()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L180" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L180" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4271,7 +4293,7 @@ connection out of a <a href="#daemon/2">server</a>. Disabled per default.</p>
       <h1 class="signature" translate="no">ssh_connection_ref()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L178" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L178" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4299,7 +4321,7 @@ connection out of a <a href="#daemon/2">server</a>. Disabled per default.</p>
       <h1 class="signature" translate="no">ssh_daemon_ref()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L176" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L176" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4328,6 +4350,7 @@ connection out of a <a href="#daemon/2">server</a>. Disabled per default.</p>
       </a>
       <span class="text">Types: Legacy Algorithms</span>
     </h1>
+
     <div class="types-legacy-algorithms-list">
 <section class="detail" id="t:legacy_cipher_alg/0">
 
@@ -4339,7 +4362,7 @@ connection out of a <a href="#daemon/2">server</a>. Disabled per default.</p>
       <h1 class="signature" translate="no">legacy_cipher_alg()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L230" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L230" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4367,7 +4390,7 @@ connection out of a <a href="#daemon/2">server</a>. Disabled per default.</p>
       <h1 class="signature" translate="no">legacy_kex_alg()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L186" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L186" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4397,7 +4420,7 @@ connection out of a <a href="#daemon/2">server</a>. Disabled per default.</p>
       <h1 class="signature" translate="no">legacy_mac_alg()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L254" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L254" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4425,7 +4448,7 @@ connection out of a <a href="#daemon/2">server</a>. Disabled per default.</p>
       <h1 class="signature" translate="no">legacy_pubkey_alg()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L205" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L205" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4454,6 +4477,7 @@ connection out of a <a href="#daemon/2">server</a>. Disabled per default.</p>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:channel_id/0">
 
@@ -4465,7 +4489,7 @@ connection out of a <a href="#daemon/2">server</a>. Disabled per default.</p>
       <h1 class="signature" translate="no">channel_id()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L219" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L219" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4494,7 +4518,7 @@ connection out of a <a href="#daemon/2">server</a>. Disabled per default.</p>
       <h1 class="signature" translate="no">conn_info_algs()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L431" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L431" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4532,7 +4556,7 @@ connection out of a <a href="#daemon/2">server</a>. Disabled per default.</p>
       <h1 class="signature" translate="no">conn_info_channels()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L442" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L442" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4560,7 +4584,7 @@ connection out of a <a href="#daemon/2">server</a>. Disabled per default.</p>
       <h1 class="signature" translate="no">connection_info_tuple()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L451" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L451" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4596,7 +4620,7 @@ connection out of a <a href="#daemon/2">server</a>. Disabled per default.</p>
       <h1 class="signature" translate="no">connection_ref()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L227" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L227" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4626,7 +4650,7 @@ connection out of a <a href="#daemon/2">server</a>. Disabled per default.</p>
       <h1 class="signature" translate="no">daemon_info_tuple()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L677" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L677" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4658,7 +4682,7 @@ connection out of a <a href="#daemon/2">server</a>. Disabled per default.</p>
       <h1 class="signature" translate="no">daemon_ref()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L212" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L212" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4686,7 +4710,7 @@ connection out of a <a href="#daemon/2">server</a>. Disabled per default.</p>
       <h1 class="signature" translate="no">experimental_client_options()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L607" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L607" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4720,7 +4744,7 @@ connection out of a <a href="#daemon/2">server</a>. Disabled per default.</p>
       <h1 class="signature" translate="no">experimental_common_options()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L572" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L572" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4753,7 +4777,7 @@ connection out of a <a href="#daemon/2">server</a>. Disabled per default.</p>
       <h1 class="signature" translate="no">experimental_daemon_options()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L1216" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L1216" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4781,7 +4805,7 @@ connection out of a <a href="#daemon/2">server</a>. Disabled per default.</p>
       <h1 class="signature" translate="no">host()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L135" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L135" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4809,7 +4833,7 @@ connection out of a <a href="#daemon/2">server</a>. Disabled per default.</p>
       <h1 class="signature" translate="no">ip_port()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L1219" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L1219" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4837,7 +4861,7 @@ connection out of a <a href="#daemon/2">server</a>. Disabled per default.</p>
       <h1 class="signature" translate="no">mod_args()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L1220" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L1220" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4865,7 +4889,7 @@ connection out of a <a href="#daemon/2">server</a>. Disabled per default.</p>
       <h1 class="signature" translate="no">mod_fun_args()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L1221" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L1221" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4893,7 +4917,7 @@ connection out of a <a href="#daemon/2">server</a>. Disabled per default.</p>
       <h1 class="signature" translate="no">open_socket()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L141" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L141" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4923,7 +4947,7 @@ or a <a href="../../apps/kernel/gen_tcp.html#accept/1">gen_tcp:accept</a>. The s
       <h1 class="signature" translate="no">protocol_version()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L429" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L429" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4951,7 +4975,7 @@ or a <a href="../../apps/kernel/gen_tcp.html#accept/1">gen_tcp:accept</a>. The s
       <h1 class="signature" translate="no">role()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.hrl#L133" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.hrl#L133" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -4979,7 +5003,7 @@ or a <a href="../../apps/kernel/gen_tcp.html#accept/1">gen_tcp:accept</a>. The s
       <h1 class="signature" translate="no">software_version()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L430" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L430" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5007,7 +5031,7 @@ or a <a href="../../apps/kernel/gen_tcp.html#accept/1">gen_tcp:accept</a>. The s
       <h1 class="signature" translate="no">version()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L428" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L428" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5036,6 +5060,7 @@ or a <a href="../../apps/kernel/gen_tcp.html#accept/1">gen_tcp:accept</a>. The s
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="close/1">
 
@@ -5047,7 +5072,7 @@ or a <a href="../../apps/kernel/gen_tcp.html#accept/1">gen_tcp:accept</a>. The s
       <h1 class="signature" translate="no">close(ConnectionRef)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L422" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L422" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5077,7 +5102,7 @@ or a <a href="../../apps/kernel/gen_tcp.html#accept/1">gen_tcp:accept</a>. The s
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L289" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L289" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5106,7 +5131,7 @@ or a <a href="../../apps/kernel/gen_tcp.html#accept/1">gen_tcp:accept</a>. The s
       <h1 class="signature" translate="no">connect/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L300" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L300" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5135,7 +5160,7 @@ or a <a href="../../apps/kernel/gen_tcp.html#accept/1">gen_tcp:accept</a>. The s
       <h1 class="signature" translate="no">connect(Host, Port, Options, NegotiationTimeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L345" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L345" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5176,7 +5201,7 @@ option, if present. For connection timeout, use the option
         <span class="note">(since OTP 22.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L469" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L469" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5208,7 +5233,7 @@ option, if present. For connection timeout, use the option
       <h1 class="signature" translate="no">connection_info(ConnectionRef, Key)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L485" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L485" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5244,7 +5269,7 @@ option, if present. For connection timeout, use the option
       <h1 class="signature" translate="no">daemon(Port)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L504" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L504" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5272,7 +5297,7 @@ option, if present. For connection timeout, use the option
       <h1 class="signature" translate="no">daemon/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L511" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L511" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5301,7 +5326,7 @@ option, if present. For connection timeout, use the option
       <h1 class="signature" translate="no">daemon(HostAddress, Port, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L584" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L584" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5344,7 +5369,7 @@ is set to the value of the 'ip'-option</li></ul>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L690" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L690" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5378,7 +5403,7 @@ is set to the value of the 'ip'-option</li></ul>
         <span class="note">(since OTP 22.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L738" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L738" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5416,7 +5441,7 @@ reasons.</p>
         <span class="note">(since OTP 25.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L660" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L660" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5452,7 +5477,7 @@ chapters <a href="configurations.html">Configuration in SSH</a> and
         <span class="note">(since OTP 18.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L920" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L920" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5484,7 +5509,7 @@ example.</p>
         <span class="note">(since OTP 22.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L992" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L992" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5517,7 +5542,7 @@ example.</p>
         <span class="note">(since OTP 24.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L1144" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L1144" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5547,7 +5572,7 @@ example.</p>
         <span class="note">(since OTP 24.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L1184" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L1184" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5569,21 +5594,21 @@ example.</p>
 <p>hostkey_fingerprint([DigestType], HostKey) -&gt;
 [string()]hostkey_fingerprint(DigestType, HostKey) -&gt; string()</p><p>Calculates a ssh fingerprint from a public host key as openssh does.</p><p>The algorithm in <a href="#hostkey_fingerprint/1"><code class="inline">hostkey_fingerprint/1</code></a> is md5 to be
 compatible with older ssh-keygen commands. The string from the second variant is
-prepended by the algorithm name in uppercase as in newer ssh-keygen commands.</p><p>Examples:</p><pre><code class="makeup erlang" translate="no"><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ssh</span><span class="p">:</span><span class="nf">hostkey_fingerprint</span><span class="p" data-group-id="4646736289-1">(</span><span class="n">Key</span><span class="p" data-group-id="4646736289-1">)</span><span class="p">.</span><span class="w">
+prepended by the algorithm name in uppercase as in newer ssh-keygen commands.</p><p>Examples:</p><pre><code class="makeup erlang" translate="no"><span class="w"> </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ssh</span><span class="p">:</span><span class="nf">hostkey_fingerprint</span><span class="p" data-group-id="8259023522-1">(</span><span class="n">Key</span><span class="p" data-group-id="8259023522-1">)</span><span class="p">.</span><span class="w">
  </span><span class="s">&quot;f5:64:a6:c1:5a:cb:9f:0a:10:46:a2:5c:3e:2f:57:84&quot;</span><span class="w">
 
- </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ssh</span><span class="p">:</span><span class="nf">hostkey_fingerprint</span><span class="p" data-group-id="4646736289-2">(</span><span class="nb">md5</span><span class="p">,</span><span class="n">Key</span><span class="p" data-group-id="4646736289-2">)</span><span class="p">.</span><span class="w">
+ </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ssh</span><span class="p">:</span><span class="nf">hostkey_fingerprint</span><span class="p" data-group-id="8259023522-2">(</span><span class="nb">md5</span><span class="p">,</span><span class="n">Key</span><span class="p" data-group-id="8259023522-2">)</span><span class="p">.</span><span class="w">
  </span><span class="s">&quot;MD5:f5:64:a6:c1:5a:cb:9f:0a:10:46:a2:5c:3e:2f:57:84&quot;</span><span class="w">
 
- </span><span class="mi">4</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ssh</span><span class="p">:</span><span class="nf">hostkey_fingerprint</span><span class="p" data-group-id="4646736289-3">(</span><span class="ss">sha</span><span class="p">,</span><span class="n">Key</span><span class="p" data-group-id="4646736289-3">)</span><span class="p">.</span><span class="w">
+ </span><span class="mi">4</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ssh</span><span class="p">:</span><span class="nf">hostkey_fingerprint</span><span class="p" data-group-id="8259023522-3">(</span><span class="ss">sha</span><span class="p">,</span><span class="n">Key</span><span class="p" data-group-id="8259023522-3">)</span><span class="p">.</span><span class="w">
  </span><span class="s">&quot;SHA1:bSLY/C4QXLDL/Iwmhyg0PGW9UbY&quot;</span><span class="w">
 
- </span><span class="mi">5</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ssh</span><span class="p">:</span><span class="nf">hostkey_fingerprint</span><span class="p" data-group-id="4646736289-4">(</span><span class="ss">sha256</span><span class="p">,</span><span class="n">Key</span><span class="p" data-group-id="4646736289-4">)</span><span class="p">.</span><span class="w">
+ </span><span class="mi">5</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ssh</span><span class="p">:</span><span class="nf">hostkey_fingerprint</span><span class="p" data-group-id="8259023522-4">(</span><span class="ss">sha256</span><span class="p">,</span><span class="n">Key</span><span class="p" data-group-id="8259023522-4">)</span><span class="p">.</span><span class="w">
  </span><span class="s">&quot;SHA256:aZGXhabfbf4oxglxltItWeHU7ub3Dc31NcNw2cMJePQ&quot;</span><span class="w">
 
- </span><span class="mi">6</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ssh</span><span class="p">:</span><span class="nf">hostkey_fingerprint</span><span class="p" data-group-id="4646736289-5">(</span><span class="p" data-group-id="4646736289-6">[</span><span class="ss">sha</span><span class="p">,</span><span class="ss">sha256</span><span class="p" data-group-id="4646736289-6">]</span><span class="p">,</span><span class="n">Key</span><span class="p" data-group-id="4646736289-5">)</span><span class="p">.</span><span class="w">
- </span><span class="p" data-group-id="4646736289-7">[</span><span class="s">&quot;SHA1:bSLY/C4QXLDL/Iwmhyg0PGW9UbY&quot;</span><span class="p">,</span><span class="w">
-  </span><span class="s">&quot;SHA256:aZGXhabfbf4oxglxltItWeHU7ub3Dc31NcNw2cMJePQ&quot;</span><span class="p" data-group-id="4646736289-7">]</span></code></pre>
+ </span><span class="mi">6</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">ssh</span><span class="p">:</span><span class="nf">hostkey_fingerprint</span><span class="p" data-group-id="8259023522-5">(</span><span class="p" data-group-id="8259023522-6">[</span><span class="ss">sha</span><span class="p">,</span><span class="ss">sha256</span><span class="p" data-group-id="8259023522-6">]</span><span class="p">,</span><span class="n">Key</span><span class="p" data-group-id="8259023522-5">)</span><span class="p">.</span><span class="w">
+ </span><span class="p" data-group-id="8259023522-7">[</span><span class="s">&quot;SHA1:bSLY/C4QXLDL/Iwmhyg0PGW9UbY&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="s">&quot;SHA256:aZGXhabfbf4oxglxltItWeHU7ub3Dc31NcNw2cMJePQ&quot;</span><span class="p" data-group-id="8259023522-7">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="set_sock_opts/2">
@@ -5598,7 +5623,7 @@ prepended by the algorithm name in uppercase as in newer ssh-keygen commands.</p
         <span class="note">(since OTP 22.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L977" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L977" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5629,7 +5654,7 @@ what effect your option values will have on an TCP stream.</p><p>Some values may
       <h1 class="signature" translate="no">shell/1</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L825" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L825" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5657,7 +5682,7 @@ what effect your option values will have on an TCP stream.</p><p>Some values may
       <h1 class="signature" translate="no">shell(Dest, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L861" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L861" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5685,7 +5710,7 @@ what effect your option values will have on an TCP stream.</p><p>Some values may
       <h1 class="signature" translate="no">shell(Host, Port, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L900" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L900" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5719,7 +5744,7 @@ ended (that is, exit from the shell).</p>
       <h1 class="signature" translate="no">start()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L236" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L236" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5747,7 +5772,7 @@ ended (that is, exit from the shell).</p>
       <h1 class="signature" translate="no">start(Type)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L247" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L247" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5777,7 +5802,7 @@ manual page in Kernel.</p>
       <h1 class="signature" translate="no">stop()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L268" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L268" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5806,7 +5831,7 @@ manual page in Kernel.</p>
       <h1 class="signature" translate="no">stop_daemon(DaemonRef)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L788" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L788" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5834,7 +5859,7 @@ manual page in Kernel.</p>
       <h1 class="signature" translate="no">stop_daemon(Address, Port)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L795" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L795" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5864,7 +5889,7 @@ manual page in Kernel.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L808" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L808" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5893,7 +5918,7 @@ with reason <code class="inline">noproc</code>.</p>
       <h1 class="signature" translate="no">stop_listener(SysSup)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L759" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L759" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5921,7 +5946,7 @@ with reason <code class="inline">noproc</code>.</p>
       <h1 class="signature" translate="no">stop_listener(Address, Port)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L766" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L766" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5951,7 +5976,7 @@ with reason <code class="inline">noproc</code>.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L777" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L777" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -5982,7 +6007,7 @@ operational.</p>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L1084" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L1084" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6020,7 +6045,7 @@ operational.</p>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L1116" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L1116" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6068,7 +6093,7 @@ connection.</p>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L1014" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L1014" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6106,7 +6131,7 @@ connection.</p>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/ssh/src/ssh.erl#L1046" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/ssh/src/ssh.erl#L1046" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -6149,8 +6174,8 @@ have been started with the option
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="ssh.epub" title="ePub version">
@@ -6162,7 +6187,7 @@ have been started with the option
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

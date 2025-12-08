@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="kernel v10.4.2-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/kernel/os.html" />
     <title>os — kernel v10.4.2-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-4B8F4164.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ kernel
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of kernel</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ kernel
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/os.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/os.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -125,7 +143,7 @@ Types&quot; section.</p></section>
       </div>
 
         <div class="summary-synopsis"><p>A string containing valid characters on the specific OS for environment variable
-names using <a><code class="inline">file:native_name_encoding()</code></a>
+names using <a href="file.html#native_name_encoding/0"><code class="inline">file:native_name_encoding()</code></a>
 encoding.</p></div>
 
     </div>
@@ -138,7 +156,7 @@ encoding.</p></div>
 
         <div class="summary-synopsis"><p>Assuming that environment variables has been correctly set, a strings containing
 valid characters on the specific OS for environment variable names and values
-using <a><code class="inline">file:native_name_encoding()</code></a> encoding.</p></div>
+using <a href="file.html#native_name_encoding/0"><code class="inline">file:native_name_encoding()</code></a> encoding.</p></div>
 
     </div>
 
@@ -149,7 +167,7 @@ using <a><code class="inline">file:native_name_encoding()</code></a> encoding.</
       </div>
 
         <div class="summary-synopsis"><p>A string containing valid characters on the specific OS for environment variable
-values using <a><code class="inline">file:native_name_encoding()</code></a>
+values using <a href="file.html#native_name_encoding/0"><code class="inline">file:native_name_encoding()</code></a>
 encoding.</p></div>
 
     </div>
@@ -161,7 +179,7 @@ encoding.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>All characters needs to be valid characters on the specific OS using
-<a><code class="inline">file:native_name_encoding()</code></a> encoding. Null
+<a href="file.html#native_name_encoding/0"><code class="inline">file:native_name_encoding()</code></a> encoding. Null
 characters (integer value zero) are not allowed.</p></div>
 
     </div>
@@ -172,7 +190,7 @@ characters (integer value zero) are not allowed.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Options for <a><code class="inline">os:cmd/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Options for <a href="#cmd/2"><code class="inline">os:cmd/2</code></a>.</p></div>
 
     </div>
 
@@ -188,7 +206,7 @@ characters (integer value zero) are not allowed.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">cmd(Command, #{})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#cmd/2"><code class="inline">cmd(Command, #{})</code></a>.</p></div>
 
     </div>
 
@@ -221,7 +239,7 @@ variable and <code class="inline">Value</code> its value.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">find_executable(Name, Path)</code></a> where
+        <div class="summary-synopsis"><p>Equivalent to <a href="#find_executable/2"><code class="inline">find_executable(Name, Path)</code></a> where
 <code class="inline">Path</code> is the current execution path (that is, the environment variable <code class="inline">PATH</code>
 on Unix and Windows).</p></div>
 
@@ -290,7 +308,7 @@ commonly used by the OS environment.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Returns the current performance counter value in <code class="inline">perf_counter</code>
-<a>time unit</a>. This is a highly optimized call that
+<a href="../../apps/erts/erlang.html#t:time_unit/0">time unit</a>. This is a highly optimized call that
 might not be traceable.</p></div>
 
     </div>
@@ -332,8 +350,8 @@ resolution timestamp.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Returns the current <a>OS system time</a>
-in <code class="inline">native</code> <a>time unit</a>.</p></div>
+        <div class="summary-synopsis"><p>Returns the current <a href="../../apps/erts/time_correction.html#os-system-time">OS system time</a>
+in <code class="inline">native</code> <a href="../../apps/erts/erlang.html#t:time_unit/0">time unit</a>.</p></div>
 
     </div>
 
@@ -343,7 +361,7 @@ in <code class="inline">native</code> <a>time unit</a>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Returns the current <a>OS system time</a>
+        <div class="summary-synopsis"><p>Returns the current <a href="../../apps/erts/time_correction.html#os-system-time">OS system time</a>
 converted into the <code class="inline">Unit</code> passed as argument.</p></div>
 
     </div>
@@ -354,8 +372,8 @@ converted into the <code class="inline">Unit</code> passed as argument.</p></div
 
       </div>
 
-        <div class="summary-synopsis"><p>Returns the current <a>OS system time</a>
-in the same format as <a><code class="inline">erlang:timestamp/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Returns the current <a href="../../apps/erts/time_correction.html#os-system-time">OS system time</a>
+in the same format as <a href="../../apps/erts/erlang.html#timestamp/0"><code class="inline">erlang:timestamp/0</code></a>.</p></div>
 
     </div>
 
@@ -403,6 +421,7 @@ as three numbers.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:env_var_name/0">
 
@@ -414,7 +433,7 @@ as three numbers.</p></div>
       <h1 class="signature" translate="no">env_var_name()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/os.erl#L83" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/os.erl#L83" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -446,7 +465,7 @@ very first character in the string.</p>
       <h1 class="signature" translate="no">env_var_name_value()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/os.erl#L102" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/os.erl#L102" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -477,7 +496,7 @@ name (on the left) from environment variable value (on the right).</p>
       <h1 class="signature" translate="no">env_var_value()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/os.erl#L92" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/os.erl#L92" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -507,7 +526,7 @@ encoding.</p><p>Null characters (integer value zero) are not allowed.</p>
       <h1 class="signature" translate="no">os_command()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/os.erl#L60" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/os.erl#L60" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -537,7 +556,7 @@ characters (integer value zero) are not allowed.</p>
       <h1 class="signature" translate="no">os_command_opts()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/os.erl#L69" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/os.erl#L69" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -569,6 +588,7 @@ the command exits with a non-zero exit code.</li></ul>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="cmd/1">
 
@@ -580,7 +600,7 @@ the command exits with a non-zero exit code.</li></ul>
       <h1 class="signature" translate="no">cmd(Command)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/os.erl#L517" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/os.erl#L517" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -610,7 +630,7 @@ the command exits with a non-zero exit code.</li></ul>
         <span class="note">(since OTP 20.2.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/os.erl#L578" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/os.erl#L578" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -626,19 +646,19 @@ the command exits with a non-zero exit code.</li></ul>
       </div>
 
 <p>Executes <code class="inline">Command</code> in a command shell of the target OS, captures the standard
-output and standard error of the command, and returns this result as a string.</p><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="n">LsOut</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">os</span><span class="p">:</span><span class="nf">cmd</span><span class="p" data-group-id="1313117276-1">(</span><span class="s">&quot;ls&quot;</span><span class="p" data-group-id="1313117276-1">)</span><span class="p">,</span><span class="w"> </span><span class="c1">% on unix platform</span><span class="w">
-</span><span class="n">DirOut</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">os</span><span class="p">:</span><span class="nf">cmd</span><span class="p" data-group-id="1313117276-2">(</span><span class="s">&quot;dir&quot;</span><span class="p" data-group-id="1313117276-2">)</span><span class="p">,</span><span class="w"> </span><span class="c1">% on Win32 platform</span></code></pre><p>Notice that in some cases, standard output of a command when called from another
+output and standard error of the command, and returns this result as a string.</p><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="n">LsOut</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">os</span><span class="p">:</span><span class="nf">cmd</span><span class="p" data-group-id="3883660175-1">(</span><span class="s">&quot;ls&quot;</span><span class="p" data-group-id="3883660175-1">)</span><span class="p">,</span><span class="w"> </span><span class="c1">% on unix platform</span><span class="w">
+</span><span class="n">DirOut</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">os</span><span class="p">:</span><span class="nf">cmd</span><span class="p" data-group-id="3883660175-2">(</span><span class="s">&quot;dir&quot;</span><span class="p" data-group-id="3883660175-2">)</span><span class="p">,</span><span class="w"> </span><span class="c1">% on Win32 platform</span></code></pre><p>Notice that in some cases, standard output of a command when called from another
 program can differ, compared with the standard output of the command when called
 directly from an OS command shell.</p><p>The possible options are:</p><ul><li><p><strong><code class="inline">max_size</code></strong> - The maximum size of the data returned by the <a href="#cmd/2"><code class="inline">os:cmd/2</code></a> call.
 This option is a safety feature that should be used when the command executed
-can return a very large, possibly infinite, result.</p><p><em>Example</em>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nc">os</span><span class="p">:</span><span class="nf">cmd</span><span class="p" data-group-id="2298575217-1">(</span><span class="s">&quot;cat /dev/zero&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2298575217-2">#{</span><span class="w"> </span><span class="ss">max_size</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p" data-group-id="2298575217-2">}</span><span class="p" data-group-id="2298575217-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="2298575217-3">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p" data-group-id="2298575217-3">]</span></code></pre></li><li><p><strong><code class="inline">exception_on_failure</code></strong> - If set to true, <a href="#cmd/2"><code class="inline">os:cmd/2</code></a> will throw an error
+can return a very large, possibly infinite, result.</p><p><em>Example</em>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nc">os</span><span class="p">:</span><span class="nf">cmd</span><span class="p" data-group-id="9621153193-1">(</span><span class="s">&quot;cat /dev/zero&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9621153193-2">#{</span><span class="w"> </span><span class="ss">max_size</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p" data-group-id="9621153193-2">}</span><span class="p" data-group-id="9621153193-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="9621153193-3">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p" data-group-id="9621153193-3">]</span></code></pre></li><li><p><strong><code class="inline">exception_on_failure</code></strong> - If set to true, <a href="#cmd/2"><code class="inline">os:cmd/2</code></a> will throw an error
 exception if the command exits with a non-zero exit code. The exception reason
 looks like this: <code class="inline">{command_failed, ResultBeforeFailure, ExitCode}</code> where
 <code class="inline">ResultBeforeFailure</code> is the result written to stdout by the command before
-the error happened and <code class="inline">ExitCode</code> is the exit code from the command.</p><p><em>Example</em>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="k">catch</span><span class="w"> </span><span class="nc">os</span><span class="p">:</span><span class="nf">cmd</span><span class="p" data-group-id="1010502885-1">(</span><span class="s">&quot;echo hello &amp;&amp; exit 123&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1010502885-2">#{</span><span class="w"> </span><span class="ss">exception_on_failure</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">true</span><span class="w"> </span><span class="p" data-group-id="1010502885-2">}</span><span class="p" data-group-id="1010502885-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="1010502885-3">{</span><span class="ss">&#39;EXIT&#39;</span><span class="p">,</span><span class="p" data-group-id="1010502885-4">{</span><span class="p" data-group-id="1010502885-5">{</span><span class="ss">command_failed</span><span class="p">,</span><span class="s">&quot;hello\n&quot;</span><span class="p">,</span><span class="mi">123</span><span class="p" data-group-id="1010502885-5">}</span><span class="p">,</span><span class="w">
-         </span><span class="p" data-group-id="1010502885-6">[</span><span class="p" data-group-id="1010502885-7">{</span><span class="ss">os</span><span class="p">,</span><span class="ss">cmd</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="p" data-group-id="1010502885-8">[</span><span class="p" data-group-id="1010502885-9">{</span><span class="ss">file</span><span class="p">,</span><span class="s">&quot;os.erl&quot;</span><span class="p" data-group-id="1010502885-9">}</span><span class="p">,</span><span class="p" data-group-id="1010502885-10">{</span><span class="ss">line</span><span class="p">,</span><span class="mi">579</span><span class="p" data-group-id="1010502885-10">}</span><span class="p" data-group-id="1010502885-8">]</span><span class="p" data-group-id="1010502885-7">}</span><span class="p">,</span><span class="w">
+the error happened and <code class="inline">ExitCode</code> is the exit code from the command.</p><p><em>Example</em>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="k">catch</span><span class="w"> </span><span class="nc">os</span><span class="p">:</span><span class="nf">cmd</span><span class="p" data-group-id="3447906948-1">(</span><span class="s">&quot;echo hello &amp;&amp; exit 123&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3447906948-2">#{</span><span class="w"> </span><span class="ss">exception_on_failure</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">true</span><span class="w"> </span><span class="p" data-group-id="3447906948-2">}</span><span class="p" data-group-id="3447906948-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="3447906948-3">{</span><span class="ss">&#39;EXIT&#39;</span><span class="p">,</span><span class="p" data-group-id="3447906948-4">{</span><span class="p" data-group-id="3447906948-5">{</span><span class="ss">command_failed</span><span class="p">,</span><span class="s">&quot;hello\n&quot;</span><span class="p">,</span><span class="mi">123</span><span class="p" data-group-id="3447906948-5">}</span><span class="p">,</span><span class="w">
+         </span><span class="p" data-group-id="3447906948-6">[</span><span class="p" data-group-id="3447906948-7">{</span><span class="ss">os</span><span class="p">,</span><span class="ss">cmd</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="p" data-group-id="3447906948-8">[</span><span class="p" data-group-id="3447906948-9">{</span><span class="ss">file</span><span class="p">,</span><span class="s">&quot;os.erl&quot;</span><span class="p" data-group-id="3447906948-9">}</span><span class="p">,</span><span class="p" data-group-id="3447906948-10">{</span><span class="ss">line</span><span class="p">,</span><span class="mi">579</span><span class="p" data-group-id="3447906948-10">}</span><span class="p" data-group-id="3447906948-8">]</span><span class="p" data-group-id="3447906948-7">}</span><span class="p">,</span><span class="w">
 </span><span class="p">.</span><span class="p">.</span><span class="p">.</span></code></pre></li></ul><p>The command shell can be set using the
 <a href="kernel_app.html#os_cmd_shell">kernel configuration parameter</a>, by default the
 shell is detected upon system startup.</p>
@@ -656,7 +676,7 @@ shell is detected upon system startup.</p>
         <span class="note">(since OTP 24.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/os.erl#L119" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/os.erl#L119" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -688,7 +708,7 @@ contain characters with codepoints &gt; 255.</p>
       <h1 class="signature" translate="no">find_executable(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/os.erl#L408" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/os.erl#L408" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -718,7 +738,7 @@ on Unix and Windows).</p>
       <h1 class="signature" translate="no">find_executable(Name, Path)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/os.erl#L423" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/os.erl#L423" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -750,7 +770,7 @@ the program is not found.</p>
       <h1 class="signature" translate="no">getenv()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/os.erl#L335" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/os.erl#L335" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -782,7 +802,7 @@ contain characters with codepoints &gt; 255.</p><p>Consider using <a href="#env/
       <h1 class="signature" translate="no">getenv(VarName)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/os.erl#L133" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/os.erl#L133" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -815,7 +835,7 @@ environment variable is undefined.</p><p>If Unicode filename encoding is in effe
         <span class="note">(since OTP 18.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/os.erl#L351" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/os.erl#L351" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -848,7 +868,7 @@ the environment variable is undefined.</p><p>If Unicode filename encoding is in 
       <h1 class="signature" translate="no">getpid()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/os.erl#L149" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/os.erl#L149" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -880,7 +900,7 @@ is used.</li></ul>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/os.erl#L161" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/os.erl#L161" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -912,7 +932,7 @@ might not be traceable.</p>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/os.erl#L184" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/os.erl#L184" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -931,7 +951,7 @@ might not be traceable.</p>
 resolution timestamp.</p><p>This counter is read directly from the hardware or operating system with the
 same guarantees. This means that two consecutive calls to the function are not
 guaranteed to be monotonic, though it most likely will be. The performance
-counter will be converted to the resolution passed as an argument.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">T1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">os</span><span class="p">:</span><span class="nf">perf_counter</span><span class="p" data-group-id="2887204384-1">(</span><span class="mi">1000</span><span class="p" data-group-id="2887204384-1">)</span><span class="p">,</span><span class="k">receive</span><span class="w"> </span><span class="k">after</span><span class="w"> </span><span class="mi">10000</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="ss">ok</span><span class="w"> </span><span class="k">end</span><span class="p">,</span><span class="n">T2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">os</span><span class="p">:</span><span class="nf">perf_counter</span><span class="p" data-group-id="2887204384-2">(</span><span class="mi">1000</span><span class="p" data-group-id="2887204384-2">)</span><span class="p">.</span><span class="w">
+counter will be converted to the resolution passed as an argument.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="n">T1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">os</span><span class="p">:</span><span class="nf">perf_counter</span><span class="p" data-group-id="5687393881-1">(</span><span class="mi">1000</span><span class="p" data-group-id="5687393881-1">)</span><span class="p">,</span><span class="k">receive</span><span class="w"> </span><span class="k">after</span><span class="w"> </span><span class="mi">10000</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="ss">ok</span><span class="w"> </span><span class="k">end</span><span class="p">,</span><span class="n">T2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">os</span><span class="p">:</span><span class="nf">perf_counter</span><span class="p" data-group-id="5687393881-2">(</span><span class="mi">1000</span><span class="p" data-group-id="5687393881-2">)</span><span class="p">.</span><span class="w">
 </span><span class="mi">176525861</span><span class="gp unselectable">
 2&gt; </span><span class="n">T2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">T1</span><span class="p">.</span><span class="w">
 </span><span class="mi">10004</span></code></pre>
@@ -947,7 +967,7 @@ counter will be converted to the resolution passed as an argument.</p><pre><code
       <h1 class="signature" translate="no">putenv(VarName, Value)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/os.erl#L206" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/os.erl#L206" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -981,7 +1001,7 @@ character interfaces.</p>
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/os.erl#L318" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/os.erl#L318" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1019,7 +1039,7 @@ the Erlang runtime system.</p></li></ul>
         <span class="note">(since OTP 18.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/os.erl#L220" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/os.erl#L220" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1050,7 +1070,7 @@ in <code class="inline">native</code> <a href="../../apps/erts/erlang.html#t:tim
         <span class="note">(since OTP 18.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/os.erl#L238" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/os.erl#L238" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1080,7 +1100,7 @@ converted into the <code class="inline">Unit</code> passed as argument.</p><p>Ca
       <h1 class="signature" translate="no">timestamp()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/os.erl#L280" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/os.erl#L280" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1102,16 +1122,16 @@ together with the <code class="inline">MicroSecs</code> part of the return tuple
 allows you to log time stamps in high resolution and consistent with the time in
  the rest of the OS.</p><p>Example of code formatting a string in format &quot;DD Mon YYYY HH:MM:SS.mmmmmm&quot;,
 where DD is the day of month, Mon is the textual month name, YYYY is the year,
-HH:MM:SS is the time, and mmmmmm is the microseconds in six positions:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="1946133491-1">(</span><span class="ss">print_time</span><span class="p" data-group-id="1946133491-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="1946133491-2">(</span><span class="p" data-group-id="1946133491-3">[</span><span class="ss">format_utc_timestamp</span><span class="p">/</span><span class="mi">0</span><span class="p" data-group-id="1946133491-3">]</span><span class="p" data-group-id="1946133491-2">)</span><span class="p">.</span><span class="w">
-</span><span class="nf">format_utc_timestamp</span><span class="p" data-group-id="1946133491-4">(</span><span class="p" data-group-id="1946133491-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="n">TS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="1946133491-5">{</span><span class="p">_</span><span class="p">,</span><span class="p">_</span><span class="p">,</span><span class="n">Micro</span><span class="p" data-group-id="1946133491-5">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">os</span><span class="p">:</span><span class="nf">timestamp</span><span class="p" data-group-id="1946133491-6">(</span><span class="p" data-group-id="1946133491-6">)</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="1946133491-7">{</span><span class="p" data-group-id="1946133491-8">{</span><span class="n">Year</span><span class="p">,</span><span class="n">Month</span><span class="p">,</span><span class="n">Day</span><span class="p" data-group-id="1946133491-8">}</span><span class="p">,</span><span class="p" data-group-id="1946133491-9">{</span><span class="n">Hour</span><span class="p">,</span><span class="n">Minute</span><span class="p">,</span><span class="n">Second</span><span class="p" data-group-id="1946133491-9">}</span><span class="p" data-group-id="1946133491-7">}</span><span class="w"> </span><span class="o">=</span><span class="w">
-</span><span class="nc">calendar</span><span class="p">:</span><span class="nf">now_to_universal_time</span><span class="p" data-group-id="1946133491-10">(</span><span class="n">TS</span><span class="p" data-group-id="1946133491-10">)</span><span class="p">,</span><span class="w">
-    </span><span class="n">Mstr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element</span><span class="p" data-group-id="1946133491-11">(</span><span class="n">Month</span><span class="p">,</span><span class="p" data-group-id="1946133491-12">{</span><span class="s">&quot;Jan&quot;</span><span class="p">,</span><span class="s">&quot;Feb&quot;</span><span class="p">,</span><span class="s">&quot;Mar&quot;</span><span class="p">,</span><span class="s">&quot;Apr&quot;</span><span class="p">,</span><span class="s">&quot;May&quot;</span><span class="p">,</span><span class="s">&quot;Jun&quot;</span><span class="p">,</span><span class="s">&quot;Jul&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="s">&quot;Aug&quot;</span><span class="p">,</span><span class="s">&quot;Sep&quot;</span><span class="p">,</span><span class="s">&quot;Oct&quot;</span><span class="p">,</span><span class="s">&quot;Nov&quot;</span><span class="p">,</span><span class="s">&quot;Dec&quot;</span><span class="p" data-group-id="1946133491-12">}</span><span class="p" data-group-id="1946133491-11">)</span><span class="p">,</span><span class="w">
-    </span><span class="nc">io_lib</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="1946133491-13">(</span><span class="s">&quot;</span><span class="si">~2w</span><span class="s"> </span><span class="si">~s</span><span class="s"> </span><span class="si">~4w</span><span class="s"> </span><span class="si">~2w</span><span class="s">:</span><span class="si">~2..0w</span><span class="s">:</span><span class="si">~2..0w</span><span class="s">.</span><span class="si">~6..0w</span><span class="s">&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="1946133491-14">[</span><span class="n">Day</span><span class="p">,</span><span class="n">Mstr</span><span class="p">,</span><span class="n">Year</span><span class="p">,</span><span class="n">Hour</span><span class="p">,</span><span class="n">Minute</span><span class="p">,</span><span class="n">Second</span><span class="p">,</span><span class="n">Micro</span><span class="p" data-group-id="1946133491-14">]</span><span class="p" data-group-id="1946133491-13">)</span><span class="p">.</span></code></pre><p>This module can be used as follows:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="6901539284-1">(</span><span class="s">&quot;</span><span class="si">~s</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="p" data-group-id="6901539284-2">[</span><span class="nc">print_time</span><span class="p">:</span><span class="nf">format_utc_timestamp</span><span class="p" data-group-id="6901539284-3">(</span><span class="p" data-group-id="6901539284-3">)</span><span class="p" data-group-id="6901539284-2">]</span><span class="p" data-group-id="6901539284-1">)</span><span class="p">.</span><span class="w">
+HH:MM:SS is the time, and mmmmmm is the microseconds in six positions:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="8168664631-1">(</span><span class="ss">print_time</span><span class="p" data-group-id="8168664631-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="8168664631-2">(</span><span class="p" data-group-id="8168664631-3">[</span><span class="ss">format_utc_timestamp</span><span class="p">/</span><span class="mi">0</span><span class="p" data-group-id="8168664631-3">]</span><span class="p" data-group-id="8168664631-2">)</span><span class="p">.</span><span class="w">
+</span><span class="nf">format_utc_timestamp</span><span class="p" data-group-id="8168664631-4">(</span><span class="p" data-group-id="8168664631-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="n">TS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="8168664631-5">{</span><span class="p">_</span><span class="p">,</span><span class="p">_</span><span class="p">,</span><span class="n">Micro</span><span class="p" data-group-id="8168664631-5">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">os</span><span class="p">:</span><span class="nf">timestamp</span><span class="p" data-group-id="8168664631-6">(</span><span class="p" data-group-id="8168664631-6">)</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="8168664631-7">{</span><span class="p" data-group-id="8168664631-8">{</span><span class="n">Year</span><span class="p">,</span><span class="n">Month</span><span class="p">,</span><span class="n">Day</span><span class="p" data-group-id="8168664631-8">}</span><span class="p">,</span><span class="p" data-group-id="8168664631-9">{</span><span class="n">Hour</span><span class="p">,</span><span class="n">Minute</span><span class="p">,</span><span class="n">Second</span><span class="p" data-group-id="8168664631-9">}</span><span class="p" data-group-id="8168664631-7">}</span><span class="w"> </span><span class="o">=</span><span class="w">
+</span><span class="nc">calendar</span><span class="p">:</span><span class="nf">now_to_universal_time</span><span class="p" data-group-id="8168664631-10">(</span><span class="n">TS</span><span class="p" data-group-id="8168664631-10">)</span><span class="p">,</span><span class="w">
+    </span><span class="n">Mstr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element</span><span class="p" data-group-id="8168664631-11">(</span><span class="n">Month</span><span class="p">,</span><span class="p" data-group-id="8168664631-12">{</span><span class="s">&quot;Jan&quot;</span><span class="p">,</span><span class="s">&quot;Feb&quot;</span><span class="p">,</span><span class="s">&quot;Mar&quot;</span><span class="p">,</span><span class="s">&quot;Apr&quot;</span><span class="p">,</span><span class="s">&quot;May&quot;</span><span class="p">,</span><span class="s">&quot;Jun&quot;</span><span class="p">,</span><span class="s">&quot;Jul&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="s">&quot;Aug&quot;</span><span class="p">,</span><span class="s">&quot;Sep&quot;</span><span class="p">,</span><span class="s">&quot;Oct&quot;</span><span class="p">,</span><span class="s">&quot;Nov&quot;</span><span class="p">,</span><span class="s">&quot;Dec&quot;</span><span class="p" data-group-id="8168664631-12">}</span><span class="p" data-group-id="8168664631-11">)</span><span class="p">,</span><span class="w">
+    </span><span class="nc">io_lib</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="8168664631-13">(</span><span class="s">&quot;</span><span class="si">~2w</span><span class="s"> </span><span class="si">~s</span><span class="s"> </span><span class="si">~4w</span><span class="s"> </span><span class="si">~2w</span><span class="s">:</span><span class="si">~2..0w</span><span class="s">:</span><span class="si">~2..0w</span><span class="s">.</span><span class="si">~6..0w</span><span class="s">&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="8168664631-14">[</span><span class="n">Day</span><span class="p">,</span><span class="n">Mstr</span><span class="p">,</span><span class="n">Year</span><span class="p">,</span><span class="n">Hour</span><span class="p">,</span><span class="n">Minute</span><span class="p">,</span><span class="n">Second</span><span class="p">,</span><span class="n">Micro</span><span class="p" data-group-id="8168664631-14">]</span><span class="p" data-group-id="8168664631-13">)</span><span class="p">.</span></code></pre><p>This module can be used as follows:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="4685670829-1">(</span><span class="s">&quot;</span><span class="si">~s</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="p" data-group-id="4685670829-2">[</span><span class="nc">print_time</span><span class="p">:</span><span class="nf">format_utc_timestamp</span><span class="p" data-group-id="4685670829-3">(</span><span class="p" data-group-id="4685670829-3">)</span><span class="p" data-group-id="4685670829-2">]</span><span class="p" data-group-id="4685670829-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mi">29</span><span class="w"> </span><span class="n">Apr</span><span class="w"> </span><span class="mi">2009</span><span class="w">  </span><span class="mi">9</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mf">30.051711</span></code></pre><p>OS system time can also be retrieved by <a href="#system_time/0"><code class="inline">system_time/0</code></a> and <a href="#system_time/1"><code class="inline">system_time/1</code></a>.</p>
   </section>
 </section>
@@ -1125,7 +1145,7 @@ HH:MM:SS is the time, and mmmmmm is the microseconds in six positions:</p><pre><
       <h1 class="signature" translate="no">type()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/os.erl#L379" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/os.erl#L379" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1157,7 +1177,7 @@ inspect or build filenames in a portable way. Avoid matching on atom <code class
         <span class="note">(since OTP R16B03)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/os.erl#L293" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/os.erl#L293" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1187,7 +1207,7 @@ inspect or build filenames in a portable way. Avoid matching on atom <code class
       <h1 class="signature" translate="no">version()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/os.erl#L397" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/os.erl#L397" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1221,8 +1241,8 @@ as three numbers.</p><section role="note" class="admonition info"><h4 class="adm
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="kernel.epub" title="ePub version">
@@ -1234,7 +1254,7 @@ as three numbers.</p><section role="note" class="admonition info"><h4 class="adm
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

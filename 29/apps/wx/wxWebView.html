@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="wx v2.5.2-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/wx/wxWebView.html" />
     <title>wxWebView — wx v2.5.2-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-E2170433.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ wx
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of wx</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ wx
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L58" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L58" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -298,7 +316,7 @@ pages inside a zip archive. It supports paths of the form: <code class="inline">
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">enableContextMenu(This, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#enableContextMenu/2"><code class="inline">enableContextMenu(This, [])</code></a>.</p></div>
 
     </div>
 
@@ -318,7 +336,7 @@ pages inside a zip archive. It supports paths of the form: <code class="inline">
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">enableHistory(This, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#enableHistory/2"><code class="inline">enableHistory(This, [])</code></a>.</p></div>
 
     </div>
 
@@ -338,7 +356,7 @@ pages inside a zip archive. It supports paths of the form: <code class="inline">
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">find(This, Text, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#find/3"><code class="inline">find(This, Text, [])</code></a>.</p></div>
 
     </div>
 
@@ -529,7 +547,7 @@ view and select it.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">new(Parent, Id, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#new/3"><code class="inline">new(Parent, Id, [])</code></a>.</p></div>
 
     </div>
 
@@ -539,7 +557,7 @@ view and select it.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Factory function to create a new <a><code class="inline">wxWebView</code></a> using a <code class="inline">wxWebViewFactory</code> (not
+        <div class="summary-synopsis"><p>Factory function to create a new <a href="wxWebView.html"><code class="inline">wxWebView</code></a> using a <code class="inline">wxWebViewFactory</code> (not
 implemented in wx).</p></div>
 
     </div>
@@ -580,7 +598,7 @@ implemented in wx).</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">reload(This, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#reload/2"><code class="inline">reload(This, [])</code></a>.</p></div>
 
     </div>
 
@@ -620,7 +638,7 @@ implemented in wx).</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">setEditable(This, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#setEditable/2"><code class="inline">setEditable(This, [])</code></a>.</p></div>
 
     </div>
 
@@ -706,6 +724,7 @@ implemented in wx).</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:wxWebView/0">
 
@@ -717,7 +736,7 @@ implemented in wx).</p></div>
       <h1 class="signature" translate="no">wxWebView()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L229" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L229" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -746,6 +765,7 @@ implemented in wx).</p></div>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="canCopy/1">
 
@@ -757,7 +777,7 @@ implemented in wx).</p></div>
       <h1 class="signature" translate="no">canCopy(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L474" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L474" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -785,7 +805,7 @@ implemented in wx).</p></div>
       <h1 class="signature" translate="no">canCut(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L486" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L486" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -813,7 +833,7 @@ implemented in wx).</p></div>
       <h1 class="signature" translate="no">canGoBack(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L566" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L566" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -841,7 +861,7 @@ implemented in wx).</p></div>
       <h1 class="signature" translate="no">canGoForward(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L574" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L574" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -869,7 +889,7 @@ implemented in wx).</p></div>
       <h1 class="signature" translate="no">canPaste(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L498" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L498" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -897,7 +917,7 @@ implemented in wx).</p></div>
       <h1 class="signature" translate="no">canRedo(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L691" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L691" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -925,7 +945,7 @@ implemented in wx).</p></div>
       <h1 class="signature" translate="no">canSetZoomType(This, Type)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L765" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L765" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -954,7 +974,7 @@ through <a href="#setZoomType/2"><code class="inline">setZoomType/2</code></a>).
       <h1 class="signature" translate="no">canUndo(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L699" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L699" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -982,7 +1002,7 @@ through <a href="#setZoomType/2"><code class="inline">setZoomType/2</code></a>).
       <h1 class="signature" translate="no">clearHistory(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L586" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L586" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1010,7 +1030,7 @@ through <a href="#setZoomType/2"><code class="inline">setZoomType/2</code></a>).
       <h1 class="signature" translate="no">clearSelection(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L641" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L641" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1038,7 +1058,7 @@ through <a href="#setZoomType/2"><code class="inline">setZoomType/2</code></a>).
       <h1 class="signature" translate="no">copy(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L506" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L506" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1066,7 +1086,7 @@ through <a href="#setZoomType/2"><code class="inline">setZoomType/2</code></a>).
       <h1 class="signature" translate="no">cut(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L513" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L513" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1094,7 +1114,7 @@ through <a href="#setZoomType/2"><code class="inline">setZoomType/2</code></a>).
       <h1 class="signature" translate="no">deleteSelection(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L653" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L653" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1123,7 +1143,7 @@ SetEditable or the correct HTML attribute.</p>
       <h1 class="signature" translate="no">enableContextMenu(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L528" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L528" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1151,7 +1171,7 @@ SetEditable or the correct HTML attribute.</p>
       <h1 class="signature" translate="no">enableContextMenu/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L543" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L543" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1180,7 +1200,7 @@ re-enable it later.</p><p>Since: 2.9.5</p>
       <h1 class="signature" translate="no">enableHistory(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L594" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L594" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1208,7 +1228,7 @@ re-enable it later.</p><p>Since: 2.9.5</p>
       <h1 class="signature" translate="no">enableHistory/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L608" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L608" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1236,7 +1256,7 @@ re-enable it later.</p><p>Since: 2.9.5</p>
       <h1 class="signature" translate="no">find(This, Text)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L722" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L722" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1264,7 +1284,7 @@ re-enable it later.</p><p>Since: 2.9.5</p>
       <h1 class="signature" translate="no">find/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L746" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L746" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1300,7 +1320,7 @@ returns <code class="inline">wxNOT_FOUND</code> on the macOS WebKit backend.</p>
       <h1 class="signature" translate="no">getCurrentTitle(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L276" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L276" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1328,7 +1348,7 @@ returns <code class="inline">wxNOT_FOUND</code> on the macOS WebKit backend.</p>
       <h1 class="signature" translate="no">getCurrentURL(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L284" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L284" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1356,7 +1376,7 @@ returns <code class="inline">wxNOT_FOUND</code> on the macOS WebKit backend.</p>
       <h1 class="signature" translate="no">getPageSource(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L296" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L296" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1384,7 +1404,7 @@ returns <code class="inline">wxNOT_FOUND</code> on the macOS WebKit backend.</p>
       <h1 class="signature" translate="no">getPageText(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L304" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L304" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1412,7 +1432,7 @@ returns <code class="inline">wxNOT_FOUND</code> on the macOS WebKit backend.</p>
       <h1 class="signature" translate="no">getSelectedSource(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L660" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L660" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1440,7 +1460,7 @@ returns <code class="inline">wxNOT_FOUND</code> on the macOS WebKit backend.</p>
       <h1 class="signature" translate="no">getSelectedText(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L668" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L668" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1468,7 +1488,7 @@ returns <code class="inline">wxNOT_FOUND</code> on the macOS WebKit backend.</p>
       <h1 class="signature" translate="no">getZoom(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L781" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L781" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1496,7 +1516,7 @@ returns <code class="inline">wxNOT_FOUND</code> on the macOS WebKit backend.</p>
       <h1 class="signature" translate="no">getZoomFactor(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L834" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L834" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1524,7 +1544,7 @@ returns <code class="inline">wxNOT_FOUND</code> on the macOS WebKit backend.</p>
       <h1 class="signature" translate="no">getZoomType(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L794" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L794" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1552,7 +1572,7 @@ returns <code class="inline">wxNOT_FOUND</code> on the macOS WebKit backend.</p>
       <h1 class="signature" translate="no">goBack(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L623" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L623" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1580,7 +1600,7 @@ returns <code class="inline">wxNOT_FOUND</code> on the macOS WebKit backend.</p>
       <h1 class="signature" translate="no">goForward(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L634" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L634" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1608,7 +1628,7 @@ returns <code class="inline">wxNOT_FOUND</code> on the macOS WebKit backend.</p>
       <h1 class="signature" translate="no">hasSelection(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L676" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L676" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1636,7 +1656,7 @@ returns <code class="inline">wxNOT_FOUND</code> on the macOS WebKit backend.</p>
       <h1 class="signature" translate="no">isBackendAvailable(Backend)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L861" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L861" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1664,7 +1684,7 @@ returns <code class="inline">wxNOT_FOUND</code> on the macOS WebKit backend.</p>
       <h1 class="signature" translate="no">isBusy(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L312" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L312" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1692,7 +1712,7 @@ returns <code class="inline">wxNOT_FOUND</code> on the macOS WebKit backend.</p>
       <h1 class="signature" translate="no">isContextMenuEnabled(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L558" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L558" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1720,7 +1740,7 @@ returns <code class="inline">wxNOT_FOUND</code> on the macOS WebKit backend.</p>
       <h1 class="signature" translate="no">isEditable(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L320" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L320" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1748,7 +1768,7 @@ returns <code class="inline">wxNOT_FOUND</code> on the macOS WebKit backend.</p>
       <h1 class="signature" translate="no">loadURL(This, Url)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L333" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L333" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1777,7 +1797,7 @@ loading the URL was successful, register to receive navigation error events.</p>
       <h1 class="signature" translate="no">new(Parent, Id)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L241" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L241" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1805,7 +1825,7 @@ loading the URL was successful, register to receive navigation error events.</p>
       <h1 class="signature" translate="no">new/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L260" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L260" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1843,7 +1863,7 @@ implemented in wx).</p><p>Return: The created <a href="wxWebView.html"><code cla
       <h1 class="signature" translate="no">paste(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L520" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L520" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1871,7 +1891,7 @@ implemented in wx).</p><p>Return: The created <a href="wxWebView.html"><code cla
       <h1 class="signature" translate="no">print(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L342" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L342" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1899,7 +1919,7 @@ implemented in wx).</p><p>Return: The created <a href="wxWebView.html"><code cla
       <h1 class="signature" translate="no">redo(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L707" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L707" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1927,7 +1947,7 @@ implemented in wx).</p><p>Return: The created <a href="wxWebView.html"><code cla
       <h1 class="signature" translate="no">reload(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L350" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L350" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1955,7 +1975,7 @@ implemented in wx).</p><p>Return: The created <a href="wxWebView.html"><code cla
       <h1 class="signature" translate="no">reload/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L363" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L363" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1983,7 +2003,7 @@ implemented in wx).</p><p>Return: The created <a href="wxWebView.html"><code cla
       <h1 class="signature" translate="no">runScript(This, Javascript)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L407" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L407" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2029,7 +2049,7 @@ in which JSON conversion is done by the control itself.</p><p>Return: true if th
       <h1 class="signature" translate="no">selectAll(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L684" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L684" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2057,7 +2077,7 @@ in which JSON conversion is done by the control itself.</p><p>Return: true if th
       <h1 class="signature" translate="no">setEditable(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L418" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L418" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2085,7 +2105,7 @@ in which JSON conversion is done by the control itself.</p><p>Return: true if th
       <h1 class="signature" translate="no">setEditable/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L431" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L431" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2114,7 +2134,7 @@ set. The exact capabilities vary with the backend being used.</p>
       <h1 class="signature" translate="no">setPage(This, Html, BaseUrl)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L448" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L448" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2145,7 +2165,7 @@ backend.</p>
       <h1 class="signature" translate="no">setZoom(This, Zoom)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L807" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L807" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2173,7 +2193,7 @@ backend.</p>
       <h1 class="signature" translate="no">setZoomFactor(This, Zoom)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L849" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L849" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2202,7 +2222,7 @@ of <code class="inline">wxWEBVIEW_ZOOM_TYPE_TEXT</code>.</p><p>Since: 3.1.4</p>
       <h1 class="signature" translate="no">setZoomType(This, ZoomType)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L820" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L820" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2230,7 +2250,7 @@ of <code class="inline">wxWEBVIEW_ZOOM_TYPE_TEXT</code>.</p><p>Since: 3.1.4</p>
       <h1 class="signature" translate="no">stop(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L463" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L463" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2259,7 +2279,7 @@ errors uniform across ports.</p>
       <h1 class="signature" translate="no">undo(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxWebView.erl#L714" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxWebView.erl#L714" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2285,8 +2305,8 @@ errors uniform across ports.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="wx.epub" title="ePub version">
@@ -2298,7 +2318,7 @@ errors uniform across ports.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

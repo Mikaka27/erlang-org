@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="stdlib v7.1-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/filelib.html" />
     <title>filelib — stdlib v7.1-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-4F7E9F36.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ stdlib
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of stdlib</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ stdlib
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filelib.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filelib.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -216,7 +234,7 @@ to create them if necessary.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">find_file(Filename, Dir, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#find_file/3"><code class="inline">find_file(Filename, Dir, [])</code></a>.</p></div>
 
     </div>
 
@@ -237,7 +255,7 @@ directory path.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">find_source(Base, Dir)</code></a>, where <code class="inline">Dir</code> is
+        <div class="summary-synopsis"><p>Equivalent to <a href="#find_source/2"><code class="inline">find_source(Base, Dir)</code></a>, where <code class="inline">Dir</code> is
 <code class="inline">filename:dirname(FilePath)</code> and <code class="inline">Base</code> is <code class="inline">filename:basename(FilePath)</code>.</p></div>
 
     </div>
@@ -248,7 +266,7 @@ directory path.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">find_source(Filename, Dir, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#find_source/3"><code class="inline">find_source(Filename, Dir, [])</code></a>.</p></div>
 
     </div>
 
@@ -272,7 +290,7 @@ file relative to the object directory.</p></div>
         <div class="summary-synopsis"><p>Folds function <code class="inline">Fun</code> over all (regular) files <code class="inline">F</code> in directory <code class="inline">Dir</code> whose
 basename (for example, just <code class="inline">&quot;baz.erl&quot;</code> in <code class="inline">&quot;foo/bar/baz.erl&quot;</code>) matches the
 regular expression <code class="inline">RegExp</code> (for a description of the allowed regular
-expressions, see the <a><code class="inline">re</code></a> module).</p></div>
+expressions, see the <a href="re.html"><code class="inline">re</code></a> module).</p></div>
 
     </div>
 
@@ -344,7 +362,7 @@ against directory traversal attacks.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Same as <a><code class="inline">wildcard/1</code></a>, except that <code class="inline">Cwd</code> is used instead of the working
+        <div class="summary-synopsis"><p>Same as <a href="#wildcard/1"><code class="inline">wildcard/1</code></a>, except that <code class="inline">Cwd</code> is used instead of the working
 directory.</p></div>
 
     </div>
@@ -361,6 +379,7 @@ directory.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:dirname/0">
 
@@ -374,7 +393,7 @@ directory.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filelib.erl#L79" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filelib.erl#L79" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -404,7 +423,7 @@ directory.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filelib.erl#L82" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filelib.erl#L82" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -434,7 +453,7 @@ directory.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filelib.erl#L78" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filelib.erl#L78" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -464,7 +483,7 @@ directory.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filelib.erl#L81" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filelib.erl#L81" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -494,7 +513,7 @@ directory.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filelib.erl#L844" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filelib.erl#L844" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -524,7 +543,7 @@ directory.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filelib.erl#L874" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filelib.erl#L874" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -553,6 +572,7 @@ directory.</p></div>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="ensure_dir/1">
 
@@ -564,7 +584,7 @@ directory.</p></div>
       <h1 class="signature" translate="no">ensure_dir(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filelib.erl#L381" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filelib.erl#L381" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -597,7 +617,7 @@ directory.</p></div>
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filelib.erl#L401" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filelib.erl#L401" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -628,7 +648,7 @@ a directory, including the last segment.</p><p>Returns <code class="inline">ok</
       <h1 class="signature" translate="no">file_size(Filename)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filelib.erl#L265" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filelib.erl#L265" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -658,7 +678,7 @@ a directory, including the last segment.</p><p>Returns <code class="inline">ok</
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filelib.erl#L850" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filelib.erl#L850" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -688,7 +708,7 @@ a directory, including the last segment.</p><p>Returns <code class="inline">ok</
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filelib.erl#L867" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filelib.erl#L867" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -722,7 +742,7 @@ See also the Kernel application parameter
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filelib.erl#L884" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filelib.erl#L884" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -753,7 +773,7 @@ See also the Kernel application parameter
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filelib.erl#L891" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filelib.erl#L891" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -783,7 +803,7 @@ See also the Kernel application parameter
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filelib.erl#L911" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filelib.erl#L911" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -818,7 +838,7 @@ See also the Kernel application parameter
       <h1 class="signature" translate="no">fold_files(Dir, RegExp, Recursive, Fun, AccIn)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filelib.erl#L240" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filelib.erl#L240" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -862,7 +882,7 @@ in valid UTF-8).</p><p>For more information about raw filenames, see the <a href
       <h1 class="signature" translate="no">is_dir(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filelib.erl#L185" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filelib.erl#L185" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -890,7 +910,7 @@ in valid UTF-8).</p><p>For more information about raw filenames, see the <a href
       <h1 class="signature" translate="no">is_file(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filelib.erl#L196" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filelib.erl#L196" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -918,7 +938,7 @@ in valid UTF-8).</p><p>For more information about raw filenames, see the <a href
       <h1 class="signature" translate="no">is_regular(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filelib.erl#L207" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filelib.erl#L207" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -946,7 +966,7 @@ in valid UTF-8).</p><p>For more information about raw filenames, see the <a href
       <h1 class="signature" translate="no">last_modified(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filelib.erl#L254" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filelib.erl#L254" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -977,7 +997,7 @@ in valid UTF-8).</p><p>For more information about raw filenames, see the <a href
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filelib.erl#L999" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filelib.erl#L999" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -998,15 +1018,15 @@ in valid UTF-8).</p><p>For more information about raw filenames, see the <a href
 
 <p>Sanitizes the relative path by eliminating &quot;..&quot; and &quot;.&quot; components to protect
 against directory traversal attacks.</p><p>Either returns the sanitized path name, or the atom <code class="inline">unsafe</code> if the path is unsafe.
-The path is considered unsafe in the following circumstances:</p><ul><li>The path is not relative.</li><li>A &quot;..&quot; component would climb up above the root of the relative path.</li><li>A symbolic link in the path points above the root of the relative path.</li></ul><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="p" data-group-id="7203624270-1">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">Cwd</span><span class="p" data-group-id="7203624270-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">file</span><span class="p">:</span><span class="nf">get_cwd</span><span class="p" data-group-id="7203624270-2">(</span><span class="p" data-group-id="7203624270-2">)</span><span class="p">.</span><span class="w">
+The path is considered unsafe in the following circumstances:</p><ul><li>The path is not relative.</li><li>A &quot;..&quot; component would climb up above the root of the relative path.</li><li>A symbolic link in the path points above the root of the relative path.</li></ul><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="p" data-group-id="1478296502-1">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">Cwd</span><span class="p" data-group-id="1478296502-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">file</span><span class="p">:</span><span class="nf">get_cwd</span><span class="p" data-group-id="1478296502-2">(</span><span class="p" data-group-id="1478296502-2">)</span><span class="p">.</span><span class="w">
 </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="gp unselectable">
-2&gt; </span><span class="nc">filelib</span><span class="p">:</span><span class="nf">safe_relative_path</span><span class="p" data-group-id="7203624270-3">(</span><span class="s">&quot;dir/sub_dir/..&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Cwd</span><span class="p" data-group-id="7203624270-3">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">filelib</span><span class="p">:</span><span class="nf">safe_relative_path</span><span class="p" data-group-id="1478296502-3">(</span><span class="s">&quot;dir/sub_dir/..&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Cwd</span><span class="p" data-group-id="1478296502-3">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;dir&quot;</span><span class="gp unselectable">
-3&gt; </span><span class="nc">filelib</span><span class="p">:</span><span class="nf">safe_relative_path</span><span class="p" data-group-id="7203624270-4">(</span><span class="s">&quot;dir/..&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Cwd</span><span class="p" data-group-id="7203624270-4">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="7203624270-5">[</span><span class="p" data-group-id="7203624270-5">]</span><span class="gp unselectable">
-4&gt; </span><span class="nc">filelib</span><span class="p">:</span><span class="nf">safe_relative_path</span><span class="p" data-group-id="7203624270-6">(</span><span class="s">&quot;dir/../..&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Cwd</span><span class="p" data-group-id="7203624270-6">)</span><span class="p">.</span><span class="w">
+3&gt; </span><span class="nc">filelib</span><span class="p">:</span><span class="nf">safe_relative_path</span><span class="p" data-group-id="1478296502-4">(</span><span class="s">&quot;dir/..&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Cwd</span><span class="p" data-group-id="1478296502-4">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="1478296502-5">[</span><span class="p" data-group-id="1478296502-5">]</span><span class="gp unselectable">
+4&gt; </span><span class="nc">filelib</span><span class="p">:</span><span class="nf">safe_relative_path</span><span class="p" data-group-id="1478296502-6">(</span><span class="s">&quot;dir/../..&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Cwd</span><span class="p" data-group-id="1478296502-6">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">unsafe</span><span class="gp unselectable">
-5&gt; </span><span class="nc">filelib</span><span class="p">:</span><span class="nf">safe_relative_path</span><span class="p" data-group-id="7203624270-7">(</span><span class="s">&quot;/abs/path&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Cwd</span><span class="p" data-group-id="7203624270-7">)</span><span class="p">.</span><span class="w">
+5&gt; </span><span class="nc">filelib</span><span class="p">:</span><span class="nf">safe_relative_path</span><span class="p" data-group-id="1478296502-7">(</span><span class="s">&quot;/abs/path&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Cwd</span><span class="p" data-group-id="1478296502-7">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">unsafe</span></code></pre>
   </section>
 </section>
@@ -1020,7 +1040,7 @@ The path is considered unsafe in the following circumstances:</p><ul><li>The pat
       <h1 class="signature" translate="no">wildcard(Wildcard)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filelib.erl#L161" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filelib.erl#L161" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1060,7 +1080,7 @@ the following lines:</p><pre><code class="text">filelib:wildcard(&quot;lib/*/src
       <h1 class="signature" translate="no">wildcard(Wildcard, Cwd)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filelib.erl#L171" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filelib.erl#L171" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1088,8 +1108,8 @@ directory.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="stdlib.epub" title="ePub version">
@@ -1101,7 +1121,7 @@ directory.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

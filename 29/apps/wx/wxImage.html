@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="wx v2.5.2-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/wx/wxImage.html" />
     <title>wxImage — wx v2.5.2-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-E2170433.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ wx
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of wx</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ wx
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L62" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L62" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -193,7 +211,7 @@ the same size (see <code class="inline">wxGIFHandler::SaveAnimation</code> (not 
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">convertAlphaToMask(This, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#convertAlphaToMask/2"><code class="inline">convertAlphaToMask(This, [])</code></a>.</p></div>
 
     </div>
 
@@ -213,7 +231,7 @@ the same size (see <code class="inline">wxGIFHandler::SaveAnimation</code> (not 
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">convertAlphaToMask(This, Mr, Mg, Mb, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#convertAlphaToMask/5"><code class="inline">convertAlphaToMask(This, Mr, Mg, Mb, [])</code></a>.</p></div>
 
     </div>
 
@@ -274,7 +292,7 @@ colour as the mask colour.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">create(This, Sz, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#create/3"><code class="inline">create(This, Sz, [])</code></a>.</p></div>
 
     </div>
 
@@ -336,7 +354,7 @@ above function only in what argument(s) it accepts.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">findFirstUnusedColour(This, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#findFirstUnusedColour/2"><code class="inline">findFirstUnusedColour(This, [])</code></a>.</p></div>
 
     </div>
 
@@ -416,7 +434,7 @@ above function only in what argument(s) it accepts.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">getImageCount(Filename, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#getImageCount/2"><code class="inline">getImageCount(Filename, [])</code></a>.</p></div>
 
     </div>
 
@@ -610,7 +628,7 @@ colour.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">isTransparent(This, X, Y, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#isTransparent/4"><code class="inline">isTransparent(This, X, Y, [])</code></a>.</p></div>
 
     </div>
 
@@ -632,7 +650,7 @@ strictly less than <code class="inline">threshold</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">loadFile(This, Name, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#loadFile/3"><code class="inline">loadFile(This, Name, [])</code></a>.</p></div>
 
     </div>
 
@@ -662,7 +680,7 @@ strictly less than <code class="inline">threshold</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">mirror(This, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#mirror/2"><code class="inline">mirror(This, [])</code></a>.</p></div>
 
     </div>
 
@@ -682,7 +700,7 @@ strictly less than <code class="inline">threshold</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Creates an empty <a><code class="inline">wxImage</code></a> object without an alpha channel.</p></div>
+        <div class="summary-synopsis"><p>Creates an empty <a href="wxImage.html"><code class="inline">wxImage</code></a> object without an alpha channel.</p></div>
 
     </div>
 
@@ -692,7 +710,7 @@ strictly less than <code class="inline">threshold</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to: <a><code class="inline">new/2</code></a></p></div>
+        <div class="summary-synopsis"><p>Equivalent to: <a href="#new/2"><code class="inline">new/2</code></a></p></div>
 
     </div>
 
@@ -734,7 +752,7 @@ above function only in what argument(s) it accepts.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to: <a><code class="inline">isOk/1</code></a></p></div>
+        <div class="summary-synopsis"><p>Equivalent to: <a href="#isOk/1"><code class="inline">isOk/1</code></a></p></div>
 
     </div>
 
@@ -764,7 +782,7 @@ above function only in what argument(s) it accepts.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">rescale(This, Width, Height, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#rescale/4"><code class="inline">rescale(This, Width, Height, [])</code></a>.</p></div>
 
     </div>
 
@@ -785,7 +803,7 @@ image will have the given width and height.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">resize(This, Size, Pos, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#resize/4"><code class="inline">resize(This, Size, Pos, [])</code></a>.</p></div>
 
     </div>
 
@@ -806,7 +824,7 @@ the given colour or cropping as necessary.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">rotate90(This, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#rotate90/2"><code class="inline">rotate90(This, [])</code></a>.</p></div>
 
     </div>
 
@@ -826,7 +844,7 @@ the given colour or cropping as necessary.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">rotate(This, Angle, RotationCentre, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#rotate/4"><code class="inline">rotate(This, Angle, RotationCentre, [])</code></a>.</p></div>
 
     </div>
 
@@ -877,7 +895,7 @@ the given colour or cropping as necessary.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">scale(This, Width, Height, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#scale/4"><code class="inline">scale(This, Width, Height, [])</code></a>.</p></div>
 
     </div>
 
@@ -897,7 +915,7 @@ the given colour or cropping as necessary.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>This function is similar to <a><code class="inline">setData/4</code></a> and has similar restrictions.</p></div>
+        <div class="summary-synopsis"><p>This function is similar to <a href="#setData/4"><code class="inline">setData/4</code></a> and has similar restrictions.</p></div>
 
     </div>
 
@@ -938,7 +956,7 @@ above function only in what argument(s) it accepts.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">setMask(This, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#setMask/2"><code class="inline">setMask(This, [])</code></a>.</p></div>
 
     </div>
 
@@ -1019,7 +1037,7 @@ masked in the image.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">size(This, Size, Pos, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#size/4"><code class="inline">size(This, Size, Pos, [])</code></a>.</p></div>
 
     </div>
 
@@ -1046,6 +1064,7 @@ the given colour or cropping as necessary.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:wxImage/0">
 
@@ -1057,7 +1076,7 @@ the given colour or cropping as necessary.</p></div>
       <h1 class="signature" translate="no">wxImage()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L177" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L177" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1086,6 +1105,7 @@ the given colour or cropping as necessary.</p></div>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="blur/2">
 
@@ -1097,7 +1117,7 @@ the given colour or cropping as necessary.</p></div>
       <h1 class="signature" translate="no">blur(This, BlurRadius)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L308" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L308" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1125,7 +1145,7 @@ the given colour or cropping as necessary.</p></div>
       <h1 class="signature" translate="no">blurHorizontal(This, BlurRadius)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L326" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L326" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1153,7 +1173,7 @@ the given colour or cropping as necessary.</p></div>
       <h1 class="signature" translate="no">blurVertical(This, BlurRadius)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L344" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L344" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1181,7 +1201,7 @@ the given colour or cropping as necessary.</p></div>
       <h1 class="signature" translate="no">convertAlphaToMask(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L354" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L354" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1209,7 +1229,7 @@ the given colour or cropping as necessary.</p></div>
       <h1 class="signature" translate="no">convertAlphaToMask/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L371" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L371" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1239,7 +1259,7 @@ replaced with the mask colour and the alpha channel is removed. Otherwise nothin
       <h1 class="signature" translate="no">convertAlphaToMask(This, Mr, Mg, Mb)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L384" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L384" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1268,7 +1288,7 @@ replaced with the mask colour and the alpha channel is removed. Otherwise nothin
       <h1 class="signature" translate="no">convertAlphaToMask/5</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L402" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L402" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1304,7 +1324,7 @@ replaced with the mask colour and the alpha channel is removed. Otherwise nothin
       <h1 class="signature" translate="no">convertToGreyscale(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L418" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L418" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1332,7 +1352,7 @@ replaced with the mask colour and the alpha channel is removed. Otherwise nothin
       <h1 class="signature" translate="no">convertToGreyscale(This, Weight_r, Weight_g, Weight_b)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L432" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L432" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1367,7 +1387,7 @@ pixel equals (R <em> <code class="inline">weight_r</code>) + (G </em> <code clas
       <h1 class="signature" translate="no">convertToMono(This, R, G, B)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L446" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L446" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1397,7 +1417,7 @@ colour everywhere else.</p>
       <h1 class="signature" translate="no">copy(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L455" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L455" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1425,7 +1445,7 @@ colour everywhere else.</p>
       <h1 class="signature" translate="no">create(This, Sz)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L464" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L464" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1453,7 +1473,7 @@ colour everywhere else.</p>
       <h1 class="signature" translate="no">create/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L480" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L480" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1490,7 +1510,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">create/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L508" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L508" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1532,7 +1552,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">create(This, Width, Height, Data, Alpha)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L536" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L536" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1566,7 +1586,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">'Destroy'(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L545" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L545" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1594,7 +1614,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">destroy(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1623" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1623" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1622,7 +1642,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">findFirstUnusedColour(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L554" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L554" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1657,7 +1677,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">findFirstUnusedColour/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L580" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L580" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1697,7 +1717,7 @@ operation.</p>
       <h1 class="signature" translate="no">getAlpha(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L614" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L614" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1727,7 +1747,7 @@ RGB ones.</p>
       <h1 class="signature" translate="no">getAlpha(This, X, Y)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L622" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L622" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1755,7 +1775,7 @@ RGB ones.</p>
       <h1 class="signature" translate="no">getBlue(This, X, Y)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L631" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L631" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1783,7 +1803,7 @@ RGB ones.</p>
       <h1 class="signature" translate="no">getData(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L650" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L650" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1815,7 +1835,7 @@ second row following after it and so on.</p><p>You should not delete the returne
       <h1 class="signature" translate="no">getGreen(This, X, Y)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L658" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L658" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1843,7 +1863,7 @@ second row following after it and so on.</p><p>You should not delete the returne
       <h1 class="signature" translate="no">getHeight(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L733" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L733" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1871,7 +1891,7 @@ second row following after it and so on.</p><p>You should not delete the returne
       <h1 class="signature" translate="no">getImageCount(Filename)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L668" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L668" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1899,7 +1919,7 @@ second row following after it and so on.</p><p>You should not delete the returne
       <h1 class="signature" translate="no">getImageCount(Filename, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L717" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L717" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1932,7 +1952,7 @@ of frames in the animation).</p>
       <h1 class="signature" translate="no">getImageExtWildcard()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L601" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L601" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1964,7 +1984,7 @@ Example:</p>
       <h1 class="signature" translate="no">getMaskBlue(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L741" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L741" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1992,7 +2012,7 @@ Example:</p>
       <h1 class="signature" translate="no">getMaskGreen(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L749" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L749" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2020,7 +2040,7 @@ Example:</p>
       <h1 class="signature" translate="no">getMaskRed(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L757" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L757" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2048,7 +2068,7 @@ Example:</p>
       <h1 class="signature" translate="no">getOption(This, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L869" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L869" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2079,7 +2099,7 @@ can be a valid option value.</p><p>See:</p><ul><li><p><a href="#setOption/3"><co
       <h1 class="signature" translate="no">getOptionInt(This, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L987" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L987" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2158,7 +2178,7 @@ results in the form of either corrupted images or crashes.</p><p>Return: The val
       <h1 class="signature" translate="no">getOrFindMaskColour(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L771" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L771" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2191,7 +2211,7 @@ colour.</p><p>Returns true if the image currently has a mask.</p>
       <h1 class="signature" translate="no">getPalette(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L786" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L786" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2220,7 +2240,7 @@ the image file (usually 256 or less colour images in GIF or PNG format).</p>
       <h1 class="signature" translate="no">getRed(This, X, Y)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L794" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L794" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2248,7 +2268,7 @@ the image file (usually 256 or less colour images in GIF or PNG format).</p>
       <h1 class="signature" translate="no">getSubImage(This, Rect)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L803" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L803" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2279,7 +2299,7 @@ the image file (usually 256 or less colour images in GIF or PNG format).</p>
       <h1 class="signature" translate="no">getWidth(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L816" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L816" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2307,7 +2327,7 @@ the image file (usually 256 or less colour images in GIF or PNG format).</p>
       <h1 class="signature" translate="no">hasAlpha(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L831" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L831" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2335,7 +2355,7 @@ the image file (usually 256 or less colour images in GIF or PNG format).</p>
       <h1 class="signature" translate="no">hasMask(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L839" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L839" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2363,7 +2383,7 @@ the image file (usually 256 or less colour images in GIF or PNG format).</p>
       <h1 class="signature" translate="no">hasOption(This, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1010" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1010" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2391,7 +2411,7 @@ the image file (usually 256 or less colour images in GIF or PNG format).</p>
       <h1 class="signature" translate="no">initAlpha(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1026" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1026" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2421,7 +2441,7 @@ mask colour, all mask pixels will be completely transparent.</p>
       <h1 class="signature" translate="no">initStandardHandlers()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1041" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1041" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2450,7 +2470,7 @@ which is used by <a href="wxBitmap.html"><code class="inline">wxBitmap</code></a
       <h1 class="signature" translate="no">isOk(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1128" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1128" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2478,7 +2498,7 @@ which is used by <a href="wxBitmap.html"><code class="inline">wxBitmap</code></a
       <h1 class="signature" translate="no">isTransparent(This, X, Y)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1048" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1048" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2506,7 +2526,7 @@ which is used by <a href="wxBitmap.html"><code class="inline">wxBitmap</code></a
       <h1 class="signature" translate="no">isTransparent/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1060" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1060" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2541,7 +2561,7 @@ strictly less than <code class="inline">threshold</code>.</p>
       <h1 class="signature" translate="no">loadFile(This, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1073" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1073" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2569,7 +2589,7 @@ strictly less than <code class="inline">threshold</code>.</p>
       <h1 class="signature" translate="no">loadFile/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1087" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1087" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2601,7 +2621,7 @@ strictly less than <code class="inline">threshold</code>.</p>
       <h1 class="signature" translate="no">loadFile/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1106" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1106" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2634,7 +2654,7 @@ strictly less than <code class="inline">threshold</code>.</p>
       <h1 class="signature" translate="no">mirror(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1152" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1152" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2662,7 +2682,7 @@ strictly less than <code class="inline">threshold</code>.</p>
       <h1 class="signature" translate="no">mirror/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1164" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1164" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2690,7 +2710,7 @@ strictly less than <code class="inline">threshold</code>.</p>
       <h1 class="signature" translate="no">new()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L184" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L184" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2718,7 +2738,7 @@ strictly less than <code class="inline">threshold</code>.</p>
       <h1 class="signature" translate="no">new/1</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L195" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L195" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2747,7 +2767,7 @@ strictly less than <code class="inline">threshold</code>.</p>
       <h1 class="signature" translate="no">new/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L220" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L220" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2781,7 +2801,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">new/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L258" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L258" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2820,7 +2840,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">new(Width, Height, Data, Alpha)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L291" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L291" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2850,7 +2870,7 @@ it afterwards. For this, it has to be allocated with <code class="inline">malloc
       <h1 class="signature" translate="no">ok(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1121" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1121" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2878,7 +2898,7 @@ it afterwards. For this, it has to be allocated with <code class="inline">malloc
       <h1 class="signature" translate="no">removeHandler(Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1142" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1142" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2906,7 +2926,7 @@ it afterwards. For this, it has to be allocated with <code class="inline">malloc
       <h1 class="signature" translate="no">replace(This, R1, G1, B1, R2, G2, B2)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1176" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1176" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2942,7 +2962,7 @@ it afterwards. For this, it has to be allocated with <code class="inline">malloc
       <h1 class="signature" translate="no">rescale(This, Width, Height)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1185" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1185" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2971,7 +2991,7 @@ it afterwards. For this, it has to be allocated with <code class="inline">malloc
       <h1 class="signature" translate="no">rescale/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1202" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1202" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3006,7 +3026,7 @@ image itself.</p><p>See: <a href="#scale/4"><code class="inline">scale/4</code><
       <h1 class="signature" translate="no">resize(This, Size, Pos)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1215" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1215" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3038,7 +3058,7 @@ image itself.</p><p>See: <a href="#scale/4"><code class="inline">scale/4</code><
       <h1 class="signature" translate="no">resize/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1238" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1238" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3074,7 +3094,7 @@ and set a suitable mask colour for any newly exposed areas.</p><p>Return: The (m
       <h1 class="signature" translate="no">rotate90(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1296" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1296" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3102,7 +3122,7 @@ and set a suitable mask colour for any newly exposed areas.</p><p>Return: The (m
       <h1 class="signature" translate="no">rotate90/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1304" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1304" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3130,7 +3150,7 @@ and set a suitable mask colour for any newly exposed areas.</p><p>Return: The (m
       <h1 class="signature" translate="no">rotate(This, Angle, RotationCentre)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1253" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1253" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3162,7 +3182,7 @@ and set a suitable mask colour for any newly exposed areas.</p><p>Return: The (m
       <h1 class="signature" translate="no">rotate/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1271" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1271" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3198,7 +3218,7 @@ rotated image background. Else, black (rgb 0, 0, 0) will be used.</p><p>Returns 
       <h1 class="signature" translate="no">rotateHue(This, Angle)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1287" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1287" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3227,7 +3247,7 @@ rotated image background. Else, black (rgb 0, 0, 0) will be used.</p><p>Returns 
       <h1 class="signature" translate="no">saveFile(This, Name)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1322" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1322" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3257,7 +3277,7 @@ to files with non-standard extensions.</p>
       <h1 class="signature" translate="no">saveFile/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1335" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1335" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3288,7 +3308,7 @@ to files with non-standard extensions.</p>
       <h1 class="signature" translate="no">scale(This, Width, Height)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1353" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1353" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3317,7 +3337,7 @@ to files with non-standard extensions.</p>
       <h1 class="signature" translate="no">scale/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1384" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1384" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3358,7 +3378,7 @@ therefore remove the mask partially. Using the alpha channel will work.</p><p>Ex
       <h1 class="signature" translate="no">setAlpha(This, Alpha)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1445" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1445" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3390,7 +3410,7 @@ parameter is set to true - in this case the caller should do it.</p>
       <h1 class="signature" translate="no">setAlpha(This, X, Y, Alpha)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1458" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1458" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3420,7 +3440,7 @@ for this.</p>
       <h1 class="signature" translate="no">setData(This, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1477" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1477" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3451,7 +3471,7 @@ obtained through <a href="#getData/1"><code class="inline">getData/1</code></a>.
       <h1 class="signature" translate="no">setData(This, Data, New_width, New_height)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1488" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1488" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3485,7 +3505,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">setMask(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1497" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1497" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3513,7 +3533,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">setMask/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1509" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1509" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3541,7 +3561,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">setMaskColour(This, Red, Green, Blue)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1520" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1520" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3570,7 +3590,7 @@ above function only in what argument(s) it accepts.</p>
       <h1 class="signature" translate="no">setMaskFromImage(This, Mask, Mr, Mg, Mb)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1547" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1547" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3611,7 +3631,7 @@ intensive operation.</p>
       <h1 class="signature" translate="no">setOption/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1575" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1575" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3643,7 +3663,7 @@ between 0 and 100 (0 is terrible, 100 is very good).</p><p>The lists of the curr
       <h1 class="signature" translate="no">setPalette(This, Palette)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1595" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1595" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3672,7 +3692,7 @@ or in file save operations (none as yet).</p>
       <h1 class="signature" translate="no">setRGB(This, Rect, Red, Green, Blue)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1608" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1608" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3707,7 +3727,7 @@ to manipulate the data.</p>
       <h1 class="signature" translate="no">setRGB(This, X, Y, R, G, B)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1616" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1616" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3742,7 +3762,7 @@ to manipulate the data.</p>
       <h1 class="signature" translate="no">size(This, Size, Pos)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1397" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1397" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3774,7 +3794,7 @@ to manipulate the data.</p>
       <h1 class="signature" translate="no">size/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxImage.erl#L1421" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxImage.erl#L1421" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3809,8 +3829,8 @@ automatically if it isn't currently set).</p><p>Otherwise, the areas will be fil
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="wx.epub" title="ePub version">
@@ -3822,7 +3842,7 @@ automatically if it isn't currently set).</p><p>Otherwise, the areas will be fil
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

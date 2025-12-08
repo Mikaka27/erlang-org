@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="stdlib v7.1-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/gen_server.html" />
     <title>gen_server — stdlib v7.1-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-4F7E9F36.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ stdlib
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of stdlib</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ stdlib
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -185,8 +203,8 @@ in <code class="inline">gen_server</code> to be significantly delayed.</p></sect
 
       </div>
 
-        <div class="summary-synopsis"><p>Server start options for the <a><code class="inline">start</code></a> or
-<a><code class="inline">enter_loop</code></a> functions.</p></div>
+        <div class="summary-synopsis"><p>Server start options for the <a href="#start_link/4"><code class="inline">start</code></a> or
+<a href="#enter_loop/5"><code class="inline">enter_loop</code></a> functions.</p></div>
 
     </div>
 
@@ -226,7 +244,7 @@ in <code class="inline">gen_server</code> to be significantly delayed.</p></sect
 
       </div>
 
-        <div class="summary-synopsis"><p>An opaque request identifier. See <a><code class="inline">send_request/2</code></a> for details.</p></div>
+        <div class="summary-synopsis"><p>An opaque request identifier. See <a href="#send_request/2"><code class="inline">send_request/2</code></a> for details.</p></div>
 
     </div>
 
@@ -236,7 +254,7 @@ in <code class="inline">gen_server</code> to be significantly delayed.</p></sect
 
       </div>
 
-        <div class="summary-synopsis"><p>An opaque collection of request identifiers (<a><code class="inline">request_id/0</code></a>).</p></div>
+        <div class="summary-synopsis"><p>An opaque collection of request identifiers (<a href="#t:request_id/0"><code class="inline">request_id/0</code></a>).</p></div>
 
     </div>
 
@@ -266,7 +284,7 @@ in <code class="inline">gen_server</code> to be significantly delayed.</p></sect
 
       </div>
 
-        <div class="summary-synopsis"><p>Server specification: <a><code class="inline">pid/0</code></a> or registered <a><code class="inline">server_name/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Server specification: <a href="../../apps/erts/erlang.html#t:pid/0"><code class="inline">pid/0</code></a> or registered <a href="#t:server_name/0"><code class="inline">server_name/0</code></a>.</p></div>
 
     </div>
 
@@ -276,7 +294,7 @@ in <code class="inline">gen_server</code> to be significantly delayed.</p></sect
 
       </div>
 
-        <div class="summary-synopsis"><p>Return value from the <a><code class="inline">start_monitor/3,4</code></a> functions.</p></div>
+        <div class="summary-synopsis"><p>Return value from the <a href="#start_monitor/3"><code class="inline">start_monitor/3,4</code></a> functions.</p></div>
 
     </div>
 
@@ -286,7 +304,7 @@ in <code class="inline">gen_server</code> to be significantly delayed.</p></sect
 
       </div>
 
-        <div class="summary-synopsis"><p>Server start options for the <a><code class="inline">start</code> functions</a>.</p></div>
+        <div class="summary-synopsis"><p>Server start options for the <a href="#start_link/3"><code class="inline">start</code> functions</a>.</p></div>
 
     </div>
 
@@ -296,8 +314,8 @@ in <code class="inline">gen_server</code> to be significantly delayed.</p></sect
 
       </div>
 
-        <div class="summary-synopsis"><p>Return value from the <a><code class="inline">start/3,4</code></a> and
-<a><code class="inline">start_link/3,4</code></a> functions.</p></div>
+        <div class="summary-synopsis"><p>Return value from the <a href="#start/3"><code class="inline">start/3,4</code></a> and
+<a href="#start_link/3"><code class="inline">start_link/3,4</code></a> functions.</p></div>
 
     </div>
 
@@ -441,7 +459,7 @@ in <code class="inline">gen_server</code> to be significantly delayed.</p></sect
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">call(ServerRef, Request, 5000)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#call/3"><code class="inline">call(ServerRef, Request, 5000)</code></a>.</p></div>
 
     </div>
 
@@ -491,7 +509,7 @@ in <code class="inline">gen_server</code> to be significantly delayed.</p></sect
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">enter_loop(Mod, Options, State, self())</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#enter_loop/4"><code class="inline">enter_loop(Mod, Options, State, self())</code></a>.</p></div>
 
     </div>
 
@@ -531,7 +549,7 @@ in <code class="inline">gen_server</code> to be significantly delayed.</p></sect
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">multi_call(Nodes, Name, Request, infinity)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#multi_call/4"><code class="inline">multi_call(Nodes, Name, Request, infinity)</code></a>.</p></div>
 
     </div>
 
@@ -702,7 +720,7 @@ to a request identifier collection.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">stop(ServerRef, normal, infinity)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#stop/3"><code class="inline">stop(ServerRef, normal, infinity)</code></a>.</p></div>
 
     </div>
 
@@ -748,6 +766,7 @@ to a request identifier collection.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:action/0">
 
@@ -759,7 +778,7 @@ to a request identifier collection.</p></div>
       <h1 class="signature" translate="no">action()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L738" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L738" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -829,7 +848,7 @@ with <code class="inline">Continue</code> as the first argument.</p></li></ul>
       <h1 class="signature" translate="no">enter_loop_opt()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L921" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L921" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -865,7 +884,7 @@ the corresponding function in <a href="sys.html"><code class="inline">sys</code>
       <h1 class="signature" translate="no">format_status()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L602" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L602" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -894,7 +913,7 @@ the corresponding function in <a href="sys.html"><code class="inline">sys</code>
       <h1 class="signature" translate="no">from()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L756" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L756" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -927,7 +946,7 @@ that has called the <code class="inline">gen_server</code> using <a href="#call/
       <h1 class="signature" translate="no">reply_tag()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L759" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L759" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -955,7 +974,7 @@ that has called the <code class="inline">gen_server</code> using <a href="#call/
       <h1 class="signature" translate="no">request_id()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L762" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L762" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -983,7 +1002,7 @@ that has called the <code class="inline">gen_server</code> using <a href="#call/
       <h1 class="signature" translate="no">request_id_collection()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L770" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L770" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1014,7 +1033,7 @@ chosen by the user.  For more information see <a href="#reqids_new/0"><code clas
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L798" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L798" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1055,7 +1074,7 @@ recalculate the relative time until the deadline over and over again.</p></li></
       <h1 class="signature" translate="no">server_name()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L841" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L841" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1098,7 +1117,7 @@ equivalent to <code class="inline">{global, GlobalName}</code>.</p></li></ul>
       <h1 class="signature" translate="no">server_ref()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L870" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L870" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1138,7 +1157,7 @@ described for <a href="#t:server_name/0"><code class="inline">server_name/0</cod
       <h1 class="signature" translate="no">start_mon_ret()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L964" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L964" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1169,7 +1188,7 @@ and a <a href="../../apps/erts/erlang.html#monitor/2"><code class="inline">monit
       <h1 class="signature" translate="no">start_opt()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L900" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L900" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1208,7 +1227,7 @@ by <a href="#enter_loop/3"><code class="inline">enter_loop/3,4,5</code></a>.</p>
       <h1 class="signature" translate="no">start_ret()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L952" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L952" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1250,7 +1269,7 @@ for the <code class="inline">gen_server</code> process when it fails to initiali
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L675" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L675" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1281,6 +1300,7 @@ See <a href="../../apps/erts/erlang.html#start_timer/4"><code class="inline">erl
       </a>
       <span class="text">Callbacks</span>
     </h1>
+
     <div class="callbacks-list">
 <section class="detail" id="c:code_change/3">
 
@@ -1294,7 +1314,7 @@ See <a href="../../apps/erts/erlang.html#start_timer/4"><code class="inline">erl
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L531" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L531" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1340,7 +1360,7 @@ the callback call will crash with an <code class="inline">undef</code> error rea
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L658" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L658" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1363,15 +1383,15 @@ and shall return a map <code class="inline">NewStatus</code> with the same keys,
 but it may transform some values.</p><p>Two possible use cases for this callback is to remove
 sensitive information from the state to prevent it from being printed
 in log files, or to compact large irrelevant status items
-that would only clutter the logs.</p><p>Example:</p><pre><code class="makeup erlang" translate="no"><span class="nf">format_status</span><span class="p" data-group-id="9201251263-1">(</span><span class="n">Status</span><span class="p" data-group-id="9201251263-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-  </span><span class="nc">maps</span><span class="p">:</span><span class="nf">map</span><span class="p" data-group-id="9201251263-2">(</span><span class="w">
-    </span><span class="nf">fun</span><span class="p" data-group-id="9201251263-3">(</span><span class="ss">state</span><span class="p">,</span><span class="n">State</span><span class="p" data-group-id="9201251263-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-            </span><span class="nc">maps</span><span class="p">:</span><span class="nf">remove</span><span class="p" data-group-id="9201251263-4">(</span><span class="ss">private_key</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="9201251263-4">)</span><span class="p">;</span><span class="w">
-       </span><span class="p" data-group-id="9201251263-5">(</span><span class="ss">message</span><span class="p">,</span><span class="p" data-group-id="9201251263-6">{</span><span class="ss">password</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="n">Pass</span><span class="p" data-group-id="9201251263-6">}</span><span class="p" data-group-id="9201251263-5">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-            </span><span class="p" data-group-id="9201251263-7">{</span><span class="ss">password</span><span class="p">,</span><span class="w"> </span><span class="ss">removed</span><span class="p" data-group-id="9201251263-7">}</span><span class="p">;</span><span class="w">
-       </span><span class="p" data-group-id="9201251263-8">(</span><span class="p">_</span><span class="p">,</span><span class="n">Value</span><span class="p" data-group-id="9201251263-8">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+that would only clutter the logs.</p><p>Example:</p><pre><code class="makeup erlang" translate="no"><span class="nf">format_status</span><span class="p" data-group-id="9576892855-1">(</span><span class="n">Status</span><span class="p" data-group-id="9576892855-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+  </span><span class="nc">maps</span><span class="p">:</span><span class="nf">map</span><span class="p" data-group-id="9576892855-2">(</span><span class="w">
+    </span><span class="nf">fun</span><span class="p" data-group-id="9576892855-3">(</span><span class="ss">state</span><span class="p">,</span><span class="n">State</span><span class="p" data-group-id="9576892855-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+            </span><span class="nc">maps</span><span class="p">:</span><span class="nf">remove</span><span class="p" data-group-id="9576892855-4">(</span><span class="ss">private_key</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="9576892855-4">)</span><span class="p">;</span><span class="w">
+       </span><span class="p" data-group-id="9576892855-5">(</span><span class="ss">message</span><span class="p">,</span><span class="p" data-group-id="9576892855-6">{</span><span class="ss">password</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="n">Pass</span><span class="p" data-group-id="9576892855-6">}</span><span class="p" data-group-id="9576892855-5">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+            </span><span class="p" data-group-id="9576892855-7">{</span><span class="ss">password</span><span class="p">,</span><span class="w"> </span><span class="ss">removed</span><span class="p" data-group-id="9576892855-7">}</span><span class="p">;</span><span class="w">
+       </span><span class="p" data-group-id="9576892855-8">(</span><span class="p">_</span><span class="p">,</span><span class="n">Value</span><span class="p" data-group-id="9576892855-8">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
             </span><span class="n">Value</span><span class="w">
-    </span><span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="n">Status</span><span class="p" data-group-id="9201251263-2">)</span><span class="p">.</span></code></pre><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>This callback is optional, so callback modules need not export it. The
+    </span><span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="n">Status</span><span class="p" data-group-id="9576892855-2">)</span><span class="p">.</span></code></pre><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>This callback is optional, so callback modules need not export it. The
 <code class="inline">gen_server</code> module provides a default implementation
 of this function that returns the callback module state.</p><p>If this callback is exported but fails,
 to hide possibly sensitive data,
@@ -1393,7 +1413,7 @@ the default function will instead return the fact that
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L584" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L584" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1454,7 +1474,7 @@ of this function that returns the callback module state.</p></section>
       <h1 class="signature" translate="no">handle_call(Request, From, State)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L366" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L366" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1503,7 +1523,7 @@ and then terminate.</p><p><code class="inline">{stop,_,Reply,_}</code> will crea
       <h1 class="signature" translate="no">handle_cast(Request, State)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L385" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L385" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1541,7 +1561,7 @@ see <a href="#c:handle_call/3"><code class="inline">Module:handle_call/3</code><
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L439" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L439" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1584,7 +1604,7 @@ with <code class="inline">undef</code> error.</p></section>
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L411" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L411" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1622,7 +1642,7 @@ drops it and returns <code class="inline">{noreply, State}</code>.</p></section>
       <h1 class="signature" translate="no">init(Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L315" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L315" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1664,7 +1684,7 @@ with reason <code class="inline">normal</code>.</p></li></ul><p>See function <a 
         <span class="note">(optional)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L492" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L492" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1713,6 +1733,7 @@ with no cleanup.</p></section>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="abcast/2">
 
@@ -1724,7 +1745,7 @@ with no cleanup.</p></section>
       <h1 class="signature" translate="no">abcast(Name, Request)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1870" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1870" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1754,7 +1775,7 @@ including the calling node itself.</p>
       <h1 class="signature" translate="no">abcast(Nodes, Name, Request)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1893" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1893" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1788,7 +1809,7 @@ see <a href="#multi_call/2"><code class="inline">multi_call/2,3,4</code></a>.</p
       <h1 class="signature" translate="no">call(ServerRef, Request)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1216" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1216" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1816,7 +1837,7 @@ see <a href="#multi_call/2"><code class="inline">multi_call/2,3,4</code></a>.</p
       <h1 class="signature" translate="no">call(ServerRef, Request, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1296" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1296" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1873,7 +1894,7 @@ it did not trap.</p></li></ul>
       <h1 class="signature" translate="no">cast(ServerRef, Request)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1809" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1809" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1908,7 +1929,7 @@ to handle the request.</p>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1642" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1642" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1952,7 +1973,7 @@ this function returns an <code class="inline">error</code> return with the exit 
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1707" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1707" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2018,7 +2039,7 @@ this function, it will always return <code class="inline">no_reply</code>.</p>
       <h1 class="signature" translate="no">enter_loop(Module, Options, State)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L2115" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L2115" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2046,7 +2067,7 @@ this function, it will always return <code class="inline">no_reply</code>.</p>
       <h1 class="signature" translate="no">enter_loop/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L2144" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L2144" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2082,7 +2103,7 @@ this function, it will always return <code class="inline">no_reply</code>.</p>
       <h1 class="signature" translate="no">enter_loop(Module, Options, State, ServerName, Action)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L2206" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L2206" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2140,7 +2161,7 @@ according to <code class="inline">ServerName</code>.</p>
       <h1 class="signature" translate="no">multi_call(Name, Request)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1928" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1928" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2171,7 +2192,7 @@ including the calling node itself.</p>
       <h1 class="signature" translate="no">multi_call(Nodes, Name, Request)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1943" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1943" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2200,7 +2221,7 @@ including the calling node itself.</p>
       <h1 class="signature" translate="no">multi_call(Nodes, Name, Request, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L2005" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L2005" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2253,7 +2274,7 @@ the terminated middleman process.</p>
         <span class="note">(since OTP 24.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1531" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1531" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2302,7 +2323,7 @@ while <a href="#wait_response/2"><code class="inline">wait_response/2</code></a>
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1607" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1607" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2377,7 +2398,7 @@ and then return <code class="inline">timeout</code>.</p>
       <h1 class="signature" translate="no">reply(Client, Reply)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1850" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1850" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2412,7 +2433,7 @@ as the return value of <code class="inline">call/2,3</code> or <code class="inli
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1763" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1763" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2445,7 +2466,7 @@ the resulting request identifier collection.</p>
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1736" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1736" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2483,7 +2504,7 @@ request identifiers in a collection.</p>
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1744" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1744" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2513,7 +2534,7 @@ request identifiers in a collection.</p>
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1781" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1781" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2546,7 +2567,7 @@ in <a href="#t:request_id_collection/0"><code class="inline">ReqIdCollection</co
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1345" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1345" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2593,7 +2614,7 @@ handle the request.</p><p>See the type <a href="#t:server_ref/0"><code class="in
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1376" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1376" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2634,7 +2655,7 @@ but slightly more efficient.</p>
       <h1 class="signature" translate="no">start(Module, Args, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L984" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L984" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2663,7 +2684,7 @@ registered with any <a href="#t:server_name/0">name service</a>.</p>
       <h1 class="signature" translate="no">start(ServerName, Module, Args, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1007" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1007" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2694,7 +2715,7 @@ and thus has no supervisor.</p><p>Other than that see <a href="#start_link/4"><c
       <h1 class="signature" translate="no">start_link(Module, Args, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1026" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1026" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2723,7 +2744,7 @@ not registered with any <a href="#t:server_name/0">name service</a>.</p>
       <h1 class="signature" translate="no">start_link(ServerName, Module, Args, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1096" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1096" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2784,7 +2805,7 @@ with reason <code class="inline">normal</code>.</p>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1116" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1116" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2815,7 +2836,7 @@ is not registered with any <a href="#t:server_name/0">name service</a>.</p>
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1147" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1147" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2856,7 +2877,7 @@ and removed from the message queue.</p>
         <span class="note">(since OTP 18.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1166" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1166" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2886,7 +2907,7 @@ and removed from the message queue.</p>
         <span class="note">(since OTP 18.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1198" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1198" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2927,7 +2948,7 @@ if the connection fails to the remote <code class="inline">Node</code> where the
         <span class="note">(since OTP 23.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1415" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1415" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2973,7 +2994,7 @@ while <a href="#wait_response/2"><code class="inline">wait_response/2</code></a>
         <span class="note">(since OTP 25.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/gen_server.erl#L1489" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/gen_server.erl#L1489" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -3044,8 +3065,8 @@ and then return <code class="inline">timeout</code>.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="stdlib.epub" title="ePub version">
@@ -3057,7 +3078,7 @@ and then return <code class="inline">timeout</code>.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

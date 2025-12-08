@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="stdlib v7.1-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/io_lib.html" />
     <title>io_lib — stdlib v7.1-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-4F7E9F36.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ stdlib
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of stdlib</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ stdlib
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L63" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L63" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -123,7 +141,7 @@ used for flattening deep lists.</p>
 
       </div>
 
-        <div class="summary-synopsis"><p>An possibly deep list containing only <a><code class="inline">char/0</code></a>s.</p></div>
+        <div class="summary-synopsis"><p>An possibly deep list containing only <a href="../../apps/erts/erlang.html#t:char/0"><code class="inline">char/0</code></a>s.</p></div>
 
     </div>
 
@@ -141,7 +159,7 @@ used for flattening deep lists.</p>
 
       </div>
 
-        <div class="summary-synopsis"><p>A continuation as returned by <a><code class="inline">fread/3</code></a>.</p></div>
+        <div class="summary-synopsis"><p>A continuation as returned by <a href="#fread/3"><code class="inline">fread/3</code></a>.</p></div>
 
     </div>
 
@@ -199,7 +217,7 @@ used for flattening deep lists.</p>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">bfwrite(Format, Data, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#bfwrite/3"><code class="inline">bfwrite(Format, Data, [])</code></a>.</p></div>
 
     </div>
 
@@ -209,7 +227,7 @@ used for flattening deep lists.</p>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">bfwrite(Format, Data, Options)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#bfwrite/3"><code class="inline">bfwrite(Format, Data, Options)</code></a>.</p></div>
 
     </div>
 
@@ -219,7 +237,7 @@ used for flattening deep lists.</p>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">bfwrite(Format, Data, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#bfwrite/3"><code class="inline">bfwrite(Format, Data, [])</code></a>.</p></div>
 
     </div>
 
@@ -229,7 +247,7 @@ used for flattening deep lists.</p>
 
       </div>
 
-        <div class="summary-synopsis"><p>Binary variant of <a><code class="inline">fwrite/3</code></a></p></div>
+        <div class="summary-synopsis"><p>Binary variant of <a href="#fwrite/3"><code class="inline">fwrite/3</code></a></p></div>
 
     </div>
 
@@ -239,7 +257,7 @@ used for flattening deep lists.</p>
 
       </div>
 
-        <div class="summary-synopsis"><p>For details, see <a><code class="inline">scan_format/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For details, see <a href="#scan_format/2"><code class="inline">scan_format/2</code></a>.</p></div>
 
     </div>
 
@@ -249,7 +267,7 @@ used for flattening deep lists.</p>
 
       </div>
 
-        <div class="summary-synopsis"><p>Behaves as <a><code class="inline">write/2</code></a> but returns a UTF-8 encoded binary string.</p></div>
+        <div class="summary-synopsis"><p>Behaves as <a href="#write/2"><code class="inline">write/2</code></a> but returns a UTF-8 encoded binary string.</p></div>
 
     </div>
 
@@ -302,7 +320,7 @@ Latin-1 range, otherwise <code class="inline">false</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">fwrite(Format, Data)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#fwrite/2"><code class="inline">fwrite(Format, Data)</code></a>.</p></div>
 
     </div>
 
@@ -312,7 +330,7 @@ Latin-1 range, otherwise <code class="inline">false</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">fwrite(Format, Data, Options)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#fwrite/3"><code class="inline">fwrite(Format, Data, Options)</code></a>.</p></div>
 
     </div>
 
@@ -355,7 +373,7 @@ the functions must be <code class="inline">[]</code>.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Returns a character list that represents <code class="inline">Data</code> formatted in accordance with
-<code class="inline">Format</code> in the same way as <a><code class="inline">fwrite/2</code></a> and <a><code class="inline">format/2</code></a>, but takes an extra
+<code class="inline">Format</code> in the same way as <a href="#fwrite/2"><code class="inline">fwrite/2</code></a> and <a href="#format/2"><code class="inline">format/2</code></a>, but takes an extra
 argument, a list of options.</p></div>
 
     </div>
@@ -397,7 +415,7 @@ otherwise <code class="inline">false</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">print(Term, 1, 80, -1)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#print/4"><code class="inline">print(Term, 1, 80, -1)</code></a>.</p></div>
 
     </div>
 
@@ -463,7 +481,7 @@ to</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>For details, see <a><code class="inline">scan_format/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>For details, see <a href="#scan_format/2"><code class="inline">scan_format/2</code></a>.</p></div>
 
     </div>
 
@@ -473,7 +491,7 @@ to</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">write(Term, -1)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#write/2"><code class="inline">write(Term, -1)</code></a>.</p></div>
 
     </div>
 
@@ -585,6 +603,7 @@ characters are escaped.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:chars/0">
 
@@ -596,7 +615,7 @@ characters are escaped.</p></div>
       <h1 class="signature" translate="no">chars()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L122" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L122" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -624,7 +643,7 @@ characters are escaped.</p></div>
       <h1 class="signature" translate="no">chars_limit()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L198" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L198" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -652,7 +671,7 @@ characters are escaped.</p></div>
       <h1 class="signature" translate="no">continuation()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L127" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L127" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -682,7 +701,7 @@ characters are escaped.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L124" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L124" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -710,7 +729,7 @@ characters are escaped.</p></div>
       <h1 class="signature" translate="no">format_spec()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L159" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L159" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -749,7 +768,7 @@ present, or <code class="inline">reversed</code> or <code class="inline">CmpFun<
       <h1 class="signature" translate="no">fread_error()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L132" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L132" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -777,7 +796,7 @@ present, or <code class="inline">reversed</code> or <code class="inline">CmpFun<
       <h1 class="signature" translate="no">fread_item()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L142" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L142" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -805,7 +824,7 @@ present, or <code class="inline">reversed</code> or <code class="inline">CmpFun<
       <h1 class="signature" translate="no">latin1_string()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L123" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L123" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -834,6 +853,7 @@ present, or <code class="inline">reversed</code> or <code class="inline">CmpFun<
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="bformat/2">
 
@@ -847,7 +867,7 @@ present, or <code class="inline">reversed</code> or <code class="inline">CmpFun<
         <span class="note">(since OTP 28.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L366" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L366" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -877,7 +897,7 @@ present, or <code class="inline">reversed</code> or <code class="inline">CmpFun<
         <span class="note">(since OTP 28.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L383" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L383" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -913,7 +933,7 @@ present, or <code class="inline">reversed</code> or <code class="inline">CmpFun<
         <span class="note">(since OTP 28.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L230" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L230" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -943,7 +963,7 @@ present, or <code class="inline">reversed</code> or <code class="inline">CmpFun<
         <span class="note">(since OTP 28.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L246" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L246" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -979,7 +999,7 @@ present, or <code class="inline">reversed</code> or <code class="inline">CmpFun<
         <span class="note">(since OTP 18.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L433" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L433" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1009,7 +1029,7 @@ present, or <code class="inline">reversed</code> or <code class="inline">CmpFun<
         <span class="note">(since OTP 28.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L631" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L631" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1049,7 +1069,7 @@ present, or <code class="inline">reversed</code> or <code class="inline">CmpFun<
         <span class="note">(since OTP 28.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L988" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L988" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1081,7 +1101,7 @@ present, or <code class="inline">reversed</code> or <code class="inline">CmpFun<
       <h1 class="signature" translate="no">char_list(Term)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L1219" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L1219" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1110,7 +1130,7 @@ otherwise <code class="inline">false</code>.</p>
       <h1 class="signature" translate="no">deep_char_list(Term)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L1254" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L1254" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1141,7 +1161,7 @@ range, otherwise <code class="inline">false</code>.</p>
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L1234" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L1234" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1170,7 +1190,7 @@ Latin-1 range, otherwise <code class="inline">false</code>.</p>
       <h1 class="signature" translate="no">format(Format, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L334" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L334" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1200,7 +1220,7 @@ Latin-1 range, otherwise <code class="inline">false</code>.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L351" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L351" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1234,7 +1254,7 @@ Latin-1 range, otherwise <code class="inline">false</code>.</p>
       <h1 class="signature" translate="no">fread(Format, String)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L286" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L286" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1266,8 +1286,8 @@ characters not used.</p></li><li><p><strong><code class="inline">{more, RestForm
 input is needed to complete the original format string. <code class="inline">RestFormat</code> is the
 remaining format string, <code class="inline">Nchars</code> is the number of characters scanned, and
 <code class="inline">InputStack</code> is the reversed list of inputs matched up to that point.</p></li><li><p><strong><code class="inline">{error, What}</code></strong> - The read operation failed and parameter <code class="inline">What</code> gives a
-hint about the error.</p></li></ul><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">3&gt; </span><span class="nc">io_lib</span><span class="p">:</span><span class="nf">fread</span><span class="p" data-group-id="6085518051-1">(</span><span class="s">&quot;~f~f~f&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;15.6 17.3e-6 24.5&quot;</span><span class="p" data-group-id="6085518051-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="6085518051-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="6085518051-3">[</span><span class="mf">15.6</span><span class="p">,</span><span class="mf">1.73e-5</span><span class="p">,</span><span class="mf">24.5</span><span class="p" data-group-id="6085518051-3">]</span><span class="p">,</span><span class="p" data-group-id="6085518051-4">[</span><span class="p" data-group-id="6085518051-4">]</span><span class="p" data-group-id="6085518051-2">}</span></code></pre>
+hint about the error.</p></li></ul><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">3&gt; </span><span class="nc">io_lib</span><span class="p">:</span><span class="nf">fread</span><span class="p" data-group-id="2788344825-1">(</span><span class="s">&quot;~f~f~f&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;15.6 17.3e-6 24.5&quot;</span><span class="p" data-group-id="2788344825-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="2788344825-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="2788344825-3">[</span><span class="mf">15.6</span><span class="p">,</span><span class="mf">1.73e-5</span><span class="p">,</span><span class="mf">24.5</span><span class="p" data-group-id="2788344825-3">]</span><span class="p">,</span><span class="p" data-group-id="2788344825-4">[</span><span class="p" data-group-id="2788344825-4">]</span><span class="p" data-group-id="2788344825-2">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="fread/3">
@@ -1280,7 +1300,7 @@ hint about the error.</p></li></ul><p><em>Example:</em></p><pre><code class="mak
       <h1 class="signature" translate="no">fread(Continuation, CharSpec, Format)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L326" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L326" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1327,7 +1347,7 @@ available.</p></li></ul>
       <h1 class="signature" translate="no">fwrite(Format, Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L195" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L195" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1364,7 +1384,7 @@ Unicode data is allowed.</p>
         <span class="note">(since OTP 21.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L220" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L220" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1403,7 +1423,7 @@ number of characters returned.</li></ul>
       <h1 class="signature" translate="no">indentation(String, StartIndent)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L499" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L499" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1433,7 +1453,7 @@ number of characters returned.</li></ul>
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L1207" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L1207" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1462,7 +1482,7 @@ otherwise <code class="inline">false</code>.</p>
       <h1 class="signature" translate="no">nl()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L1363" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L1363" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1490,7 +1510,7 @@ otherwise <code class="inline">false</code>.</p>
       <h1 class="signature" translate="no">print(Term)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L471" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L471" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1518,7 +1538,7 @@ otherwise <code class="inline">false</code>.</p>
       <h1 class="signature" translate="no">print(Term, Column, LineLength, Depth)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L491" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L491" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1555,7 +1575,7 @@ longer than one line into many lines and indents each line sensibly.</p><p>Also 
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L1286" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L1286" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1584,7 +1604,7 @@ otherwise <code class="inline">false</code>.</p>
       <h1 class="signature" translate="no">printable_list(Term)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L1322" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L1322" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1617,7 +1637,7 @@ to the Erlang VM; see <a href="io.html#printable_range/0"><code class="inline">i
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L1340" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L1340" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1648,7 +1668,7 @@ otherwise <code class="inline">false</code>.</p>
         <span class="note">(since OTP 18.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L410" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L410" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1685,7 +1705,7 @@ formatting to text in, for example, a logger.</p>
         <span class="note">(since OTP 18.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L425" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L425" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1717,7 +1737,7 @@ formatting to text in, for example, a logger.</p>
       <h1 class="signature" translate="no">write(Term)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L545" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L545" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1745,7 +1765,7 @@ formatting to text in, for example, a logger.</p>
       <h1 class="signature" translate="no">write(Term, DepthOrOptions)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L594" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L594" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1776,11 +1796,11 @@ depth of the structures written.</p><p>When the specified depth is reached, ever
 &quot;<code class="inline">...</code>&quot;.</p><p><code class="inline">Depth</code> defaults to -1, which means no limitation. Option <code class="inline">CharsLimit</code> puts a
 soft limit on the number of characters returned. When the number of characters is
 reached, remaining structures are replaced by &quot;<code class="inline">...</code>&quot;. <code class="inline">CharsLimit</code> defaults to -1,
-which means no limit on the number of characters returned.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">lists</span><span class="p">:</span><span class="nf">flatten</span><span class="p" data-group-id="8131023318-1">(</span><span class="nc">io_lib</span><span class="p">:</span><span class="nf">write</span><span class="p" data-group-id="8131023318-2">(</span><span class="p" data-group-id="8131023318-3">{</span><span class="mi">1</span><span class="p">,</span><span class="p" data-group-id="8131023318-4">[</span><span class="mi">2</span><span class="p" data-group-id="8131023318-4">]</span><span class="p">,</span><span class="p" data-group-id="8131023318-5">[</span><span class="mi">3</span><span class="p" data-group-id="8131023318-5">]</span><span class="p">,</span><span class="p" data-group-id="8131023318-6">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="8131023318-6">]</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p" data-group-id="8131023318-3">}</span><span class="p" data-group-id="8131023318-2">)</span><span class="p" data-group-id="8131023318-1">)</span><span class="p">.</span><span class="w">
+which means no limit on the number of characters returned.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">lists</span><span class="p">:</span><span class="nf">flatten</span><span class="p" data-group-id="6650790773-1">(</span><span class="nc">io_lib</span><span class="p">:</span><span class="nf">write</span><span class="p" data-group-id="6650790773-2">(</span><span class="p" data-group-id="6650790773-3">{</span><span class="mi">1</span><span class="p">,</span><span class="p" data-group-id="6650790773-4">[</span><span class="mi">2</span><span class="p" data-group-id="6650790773-4">]</span><span class="p">,</span><span class="p" data-group-id="6650790773-5">[</span><span class="mi">3</span><span class="p" data-group-id="6650790773-5">]</span><span class="p">,</span><span class="p" data-group-id="6650790773-6">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="6650790773-6">]</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p" data-group-id="6650790773-3">}</span><span class="p" data-group-id="6650790773-2">)</span><span class="p" data-group-id="6650790773-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;{1,[2],[3],[4,5],6,7,8,9}&quot;</span><span class="gp unselectable">
-2&gt; </span><span class="nc">lists</span><span class="p">:</span><span class="nf">flatten</span><span class="p" data-group-id="8131023318-7">(</span><span class="nc">io_lib</span><span class="p">:</span><span class="nf">write</span><span class="p" data-group-id="8131023318-8">(</span><span class="p" data-group-id="8131023318-9">{</span><span class="mi">1</span><span class="p">,</span><span class="p" data-group-id="8131023318-10">[</span><span class="mi">2</span><span class="p" data-group-id="8131023318-10">]</span><span class="p">,</span><span class="p" data-group-id="8131023318-11">[</span><span class="mi">3</span><span class="p" data-group-id="8131023318-11">]</span><span class="p">,</span><span class="p" data-group-id="8131023318-12">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="8131023318-12">]</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p" data-group-id="8131023318-9">}</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="8131023318-8">)</span><span class="p" data-group-id="8131023318-7">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">lists</span><span class="p">:</span><span class="nf">flatten</span><span class="p" data-group-id="6650790773-7">(</span><span class="nc">io_lib</span><span class="p">:</span><span class="nf">write</span><span class="p" data-group-id="6650790773-8">(</span><span class="p" data-group-id="6650790773-9">{</span><span class="mi">1</span><span class="p">,</span><span class="p" data-group-id="6650790773-10">[</span><span class="mi">2</span><span class="p" data-group-id="6650790773-10">]</span><span class="p">,</span><span class="p" data-group-id="6650790773-11">[</span><span class="mi">3</span><span class="p" data-group-id="6650790773-11">]</span><span class="p">,</span><span class="p" data-group-id="6650790773-12">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="6650790773-12">]</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p" data-group-id="6650790773-9">}</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p" data-group-id="6650790773-8">)</span><span class="p" data-group-id="6650790773-7">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;{1,[2],[3],[...],...}&quot;</span><span class="gp unselectable">
-3&gt; </span><span class="nc">lists</span><span class="p">:</span><span class="nf">flatten</span><span class="p" data-group-id="8131023318-13">(</span><span class="nc">io_lib</span><span class="p">:</span><span class="nf">write</span><span class="p" data-group-id="8131023318-14">(</span><span class="p" data-group-id="8131023318-15">{</span><span class="p" data-group-id="8131023318-16">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="8131023318-16">]</span><span class="p">,</span><span class="p" data-group-id="8131023318-17">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="8131023318-17">]</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p" data-group-id="8131023318-15">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8131023318-18">[</span><span class="p" data-group-id="8131023318-19">{</span><span class="ss">chars_limit</span><span class="p">,</span><span class="mi">20</span><span class="p" data-group-id="8131023318-19">}</span><span class="p" data-group-id="8131023318-18">]</span><span class="p" data-group-id="8131023318-14">)</span><span class="p" data-group-id="8131023318-13">)</span><span class="p">.</span><span class="w">
+3&gt; </span><span class="nc">lists</span><span class="p">:</span><span class="nf">flatten</span><span class="p" data-group-id="6650790773-13">(</span><span class="nc">io_lib</span><span class="p">:</span><span class="nf">write</span><span class="p" data-group-id="6650790773-14">(</span><span class="p" data-group-id="6650790773-15">{</span><span class="p" data-group-id="6650790773-16">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p" data-group-id="6650790773-16">]</span><span class="p">,</span><span class="p" data-group-id="6650790773-17">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p" data-group-id="6650790773-17">]</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p" data-group-id="6650790773-15">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6650790773-18">[</span><span class="p" data-group-id="6650790773-19">{</span><span class="ss">chars_limit</span><span class="p">,</span><span class="mi">20</span><span class="p" data-group-id="6650790773-19">}</span><span class="p" data-group-id="6650790773-18">]</span><span class="p" data-group-id="6650790773-14">)</span><span class="p" data-group-id="6650790773-13">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;{[1,2|...],[4|...],...}&quot;</span></code></pre>
   </section>
 </section>
@@ -1794,7 +1814,7 @@ which means no limit on the number of characters returned.</p><p><em>Example:</e
       <h1 class="signature" translate="no">write_atom(Atom)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L900" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L900" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1824,7 +1844,7 @@ which means no limit on the number of characters returned.</p><p><em>Example:</e
         <span class="note">(since OTP 20.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L911" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L911" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1853,7 +1873,7 @@ characters are escaped.</p>
       <h1 class="signature" translate="no">write_char(Char)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L1163" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L1163" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1884,7 +1904,7 @@ Unicode character set.</p>
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L1191" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L1191" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1915,7 +1935,7 @@ Unicode character set. Non-Latin-1 characters are escaped.</p>
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L1180" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L1180" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1946,7 +1966,7 @@ Latin-1 character set.</p>
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L1090" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L1090" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1974,7 +1994,7 @@ Latin-1 character set.</p>
       <h1 class="signature" translate="no">write_string(String)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L972" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L972" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2004,7 +2024,7 @@ Latin-1 character set.</p>
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/io_lib.erl#L1107" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/io_lib.erl#L1107" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2031,8 +2051,8 @@ characters are escaped.</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="stdlib.epub" title="ePub version">
@@ -2044,7 +2064,7 @@ characters are escaped.</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

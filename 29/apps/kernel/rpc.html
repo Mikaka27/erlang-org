@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="kernel v10.4.2-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/kernel/rpc.html" />
     <title>rpc — kernel v10.4.2-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-4B8F4164.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ kernel
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of kernel</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ kernel
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -136,7 +154,7 @@ delayed.</p></section>
 
       </div>
 
-        <div class="summary-synopsis"><p>Opaque value returned by <a><code class="inline">async_call/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Opaque value returned by <a href="#async_call/4"><code class="inline">async_call/4</code></a>.</p></div>
 
     </div>
 
@@ -152,7 +170,7 @@ delayed.</p></section>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">abcast([node()|nodes()], Name, Msg)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#abcast/3"><code class="inline">abcast([node()|nodes()], Name, Msg)</code></a>.</p></div>
 
     </div>
 
@@ -187,7 +205,7 @@ the answer.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>The same as calling
-<a><code class="inline">rpc:block_call(Node, Module, Function, Args, infinity)</code></a>.</p></div>
+<a href="#block_call/5"><code class="inline">rpc:block_call(Node, Module, Function, Args, infinity)</code></a>.</p></div>
 
     </div>
 
@@ -198,8 +216,8 @@ the answer.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>The same as calling
-<a><code class="inline">rpc:call(Node, Module, Function, Args, Timeout)</code></a> with the exception
-that it also blocks other <a><code class="inline">rpc:block_call/5</code></a> operations from executing
+<a href="#call/5"><code class="inline">rpc:call(Node, Module, Function, Args, Timeout)</code></a> with the exception
+that it also blocks other <a href="#block_call/5"><code class="inline">rpc:block_call/5</code></a> operations from executing
 concurrently on the node <code class="inline">Node</code>.</p></div>
 
     </div>
@@ -210,10 +228,10 @@ concurrently on the node <code class="inline">Node</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Evaluates <a><code class="inline">apply(Module, Function, Args)</code></a> on node <code class="inline">Node</code> and
+        <div class="summary-synopsis"><p>Evaluates <a href="../../apps/erts/erlang.html#apply/3"><code class="inline">apply(Module, Function, Args)</code></a> on node <code class="inline">Node</code> and
 returns the corresponding value <code class="inline">Res</code>, or <code class="inline">{badrpc, Reason}</code> if the call fails.
 The same as calling
-<a><code class="inline">rpc:call(Node, Module, Function, Args, infinity)</code></a>.</p></div>
+<a href="#call/5"><code class="inline">rpc:call(Node, Module, Function, Args, infinity)</code></a>.</p></div>
 
     </div>
 
@@ -223,7 +241,7 @@ The same as calling
 
       </div>
 
-        <div class="summary-synopsis"><p>Evaluates <a><code class="inline">apply(Module, Function, Args)</code></a> on node <code class="inline">Node</code> and
+        <div class="summary-synopsis"><p>Evaluates <a href="../../apps/erts/erlang.html#apply/3"><code class="inline">apply(Module, Function, Args)</code></a> on node <code class="inline">Node</code> and
 returns the corresponding value <code class="inline">Res</code>, or <code class="inline">{badrpc, Reason}</code> if the call fails.
 <code class="inline">Timeout</code> is a time-out value in milliseconds. If the call times out, <code class="inline">Reason</code>
 is <code class="inline">timeout</code>.</p></div>
@@ -236,9 +254,9 @@ is <code class="inline">timeout</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Evaluates <a><code class="inline">apply(Module, Function, Args)</code></a> on node <code class="inline">Node</code>. No
+        <div class="summary-synopsis"><p>Evaluates <a href="../../apps/erts/erlang.html#apply/3"><code class="inline">apply(Module, Function, Args)</code></a> on node <code class="inline">Node</code>. No
 response is delivered and the calling process is not suspended until the
-evaluation is complete, as is the case with <a><code class="inline">call/4,5</code></a>.</p></div>
+evaluation is complete, as is the case with <a href="#call/4"><code class="inline">call/4,5</code></a>.</p></div>
 
     </div>
 
@@ -249,7 +267,7 @@ evaluation is complete, as is the case with <a><code class="inline">call/4,5</co
       </div>
 
         <div class="summary-synopsis"><p>Equivalent to
-<a><code class="inline">eval_everywhere([node()|nodes()], Module, Function, Args)</code></a>.</p></div>
+<a href="#eval_everywhere/4"><code class="inline">eval_everywhere([node()|nodes()], Module, Function, Args)</code></a>.</p></div>
 
     </div>
 
@@ -259,7 +277,7 @@ evaluation is complete, as is the case with <a><code class="inline">call/4,5</co
 
       </div>
 
-        <div class="summary-synopsis"><p>Evaluates <a><code class="inline">apply(Module, Function, Args)</code></a> on the specified nodes.
+        <div class="summary-synopsis"><p>Evaluates <a href="../../apps/erts/erlang.html#apply/3"><code class="inline">apply(Module, Function, Args)</code></a> on the specified nodes.
 No answers are collected.</p></div>
 
     </div>
@@ -271,7 +289,7 @@ No answers are collected.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Equivalent to
-<a><code class="inline">multi_server_call([node()|nodes()], Name, Msg)</code></a>.</p></div>
+<a href="#multi_server_call/3"><code class="inline">multi_server_call([node()|nodes()], Name, Msg)</code></a>.</p></div>
 
     </div>
 
@@ -297,7 +315,7 @@ following</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Equivalent to
-<a><code class="inline">multicall([node()|nodes()], Module, Function, Args, infinity)</code></a>.</p></div>
+<a href="#multicall/5"><code class="inline">multicall([node()|nodes()], Module, Function, Args, infinity)</code></a>.</p></div>
 
     </div>
 
@@ -308,7 +326,7 @@ following</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Equivalent to
-<a><code class="inline">multicall(Nodes, Module, Function, Args, infinity)</code></a>.</p></div>
+<a href="#multicall/5"><code class="inline">multicall(Nodes, Module, Function, Args, infinity)</code></a>.</p></div>
 
     </div>
 
@@ -333,7 +351,7 @@ same time and are collected one by one as they come back.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">nb_yield(Key, 0)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#nb_yield/2"><code class="inline">nb_yield(Key, 0)</code></a>.</p></div>
 
     </div>
 
@@ -343,7 +361,7 @@ same time and are collected one by one as they come back.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Non-blocking version of <a><code class="inline">yield/1</code></a>. It returns the tuple <code class="inline">{value, Val}</code> when the
+        <div class="summary-synopsis"><p>Non-blocking version of <a href="#yield/1"><code class="inline">yield/1</code></a>. It returns the tuple <code class="inline">{value, Val}</code> when the
 computation is finished, or <code class="inline">timeout</code> when <code class="inline">Timeout</code> milliseconds has elapsed.</p></div>
 
     </div>
@@ -355,7 +373,7 @@ computation is finished, or <code class="inline">timeout</code> when <code class
       </div>
 
         <div class="summary-synopsis"><p>Evaluates, for every tuple in <code class="inline">FuncCalls</code>,
-<a><code class="inline">apply(Module, Function, Args)</code></a> on some node in the network.
+<a href="../../apps/erts/erlang.html#apply/3"><code class="inline">apply(Module, Function, Args)</code></a> on some node in the network.
 Returns the list of return values, in the same order as in <code class="inline">FuncCalls</code>.</p></div>
 
     </div>
@@ -366,7 +384,7 @@ Returns the list of return values, in the same order as in <code class="inline">
 
       </div>
 
-        <div class="summary-synopsis"><p>Location transparent version of the BIF <a><code class="inline">erlang:process_info/1</code></a> in ERTS.</p></div>
+        <div class="summary-synopsis"><p>Location transparent version of the BIF <a href="../../apps/erts/erlang.html#process_info/1"><code class="inline">erlang:process_info/1</code></a> in ERTS.</p></div>
 
     </div>
 
@@ -376,7 +394,7 @@ Returns the list of return values, in the same order as in <code class="inline">
 
       </div>
 
-        <div class="summary-synopsis"><p>Location transparent version of the BIF <a><code class="inline">erlang:process_info/2</code></a> in ERTS.</p></div>
+        <div class="summary-synopsis"><p>Location transparent version of the BIF <a href="../../apps/erts/erlang.html#process_info/2"><code class="inline">erlang:process_info/2</code></a> in ERTS.</p></div>
 
     </div>
 
@@ -386,7 +404,7 @@ Returns the list of return values, in the same order as in <code class="inline">
 
       </div>
 
-        <div class="summary-synopsis"><p>Evaluates <a><code class="inline">apply(Module, Function, [Elem|ExtraArgs])</code></a> for every
+        <div class="summary-synopsis"><p>Evaluates <a href="../../apps/erts/erlang.html#apply/3"><code class="inline">apply(Module, Function, [Elem|ExtraArgs])</code></a> for every
 element <code class="inline">Elem</code> in <code class="inline">List1</code>, in parallel. Returns the list of return values, in
 the same order as in <code class="inline">List1</code>.</p></div>
 
@@ -398,7 +416,7 @@ the same order as in <code class="inline">List1</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">sbcast([node()|nodes()], Name, Msg)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#sbcast/3"><code class="inline">sbcast([node()|nodes()], Name, Msg)</code></a>.</p></div>
 
     </div>
 
@@ -434,7 +452,7 @@ itself hangs.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Returns the promised answer from a previous <a><code class="inline">async_call/4</code></a>. If the answer is
+        <div class="summary-synopsis"><p>Returns the promised answer from a previous <a href="#async_call/4"><code class="inline">async_call/4</code></a>. If the answer is
 available, it is returned immediately. Otherwise, the calling process is
 suspended until the answer arrives from <code class="inline">Node</code>.</p></div>
 
@@ -452,6 +470,7 @@ suspended until the answer arrives from <code class="inline">Node</code>.</p></d
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:key/0">
 
@@ -463,7 +482,7 @@ suspended until the answer arrives from <code class="inline">Node</code>.</p></d
       <h1 class="signature" translate="no">key()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L982" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L982" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -492,6 +511,7 @@ suspended until the answer arrives from <code class="inline">Node</code>.</p></d
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="abcast/2">
 
@@ -503,7 +523,7 @@ suspended until the answer arrives from <code class="inline">Node</code>.</p></d
       <h1 class="signature" translate="no">abcast(Name, Msg)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L675" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L675" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -531,7 +551,7 @@ suspended until the answer arrives from <code class="inline">Node</code>.</p></d
       <h1 class="signature" translate="no">abcast(Nodes, Name, Msg)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L687" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L687" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -560,7 +580,7 @@ the specified nodes.</p>
       <h1 class="signature" translate="no">async_call(Node, Module, Function, Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L1020" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L1020" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -606,7 +626,7 @@ process.</p></section>
       <h1 class="signature" translate="no">block_call(Node, Module, Function, Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L507" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L507" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -642,7 +662,7 @@ process.</p></section>
       <h1 class="signature" translate="no">block_call(Node, Module, Function, Args, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L531" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L531" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -682,7 +702,7 @@ operations, so use it with care.</p></section>
       <h1 class="signature" translate="no">call(Node, Module, Function, Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L441" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L441" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -720,7 +740,7 @@ The same as calling
       <h1 class="signature" translate="no">call(Node, Module, Function, Args, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L492" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L492" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -765,7 +785,7 @@ server, or a freshly spawned process.</p></section>
       <h1 class="signature" translate="no">cast(Node, Module, Function, Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L660" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L660" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -798,7 +818,7 @@ process.</p></section>
       <h1 class="signature" translate="no">eval_everywhere(Module, Function, Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L744" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L744" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -828,7 +848,7 @@ process.</p></section>
       <h1 class="signature" translate="no">eval_everywhere(Nodes, Module, Function, Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L757" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L757" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -859,7 +879,7 @@ No answers are collected.</p>
       <h1 class="signature" translate="no">multi_server_call(Name, Msg)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L930" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L930" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -893,7 +913,7 @@ No answers are collected.</p>
       <h1 class="signature" translate="no">multi_server_call(Nodes, Name, Msg)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L952" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L952" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -932,7 +952,7 @@ following:</p><ul><li>A list of the nodes that do not exist</li><li>A list of th
       <h1 class="signature" translate="no">multicall(Module, Function, Args)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L798" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L798" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -967,7 +987,7 @@ following:</p><ul><li>A list of the nodes that do not exist</li><li>A list of th
       <h1 class="signature" translate="no">multicall/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L824" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L824" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1012,7 +1032,7 @@ following:</p><ul><li>A list of the nodes that do not exist</li><li>A list of th
       <h1 class="signature" translate="no">multicall(Nodes, Module, Function, Args, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L878" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L878" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1046,10 +1066,10 @@ specified nodes and collects the answers. It returns <code class="inline">{ResL,
 return values, or <code class="inline">{badrpc, Reason}</code> for failing calls. <code class="inline">Timeout</code> is a time
 (integer) in milliseconds, or <code class="inline">infinity</code>.</p><p>The following example is useful when new object code is to be loaded on all
 nodes in the network, and indicates some side effects that RPCs can produce:</p><pre><code class="makeup erlang" translate="no"><span class="c1">%% Find object code for module Mod</span><span class="w">
-</span><span class="p" data-group-id="6018004191-1">{</span><span class="n">Mod</span><span class="p">,</span><span class="w"> </span><span class="n">Bin</span><span class="p">,</span><span class="w"> </span><span class="n">File</span><span class="p" data-group-id="6018004191-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">code</span><span class="p">:</span><span class="nf">get_object_code</span><span class="p" data-group-id="6018004191-2">(</span><span class="n">Mod</span><span class="p" data-group-id="6018004191-2">)</span><span class="p">,</span><span class="w">
+</span><span class="p" data-group-id="8410403770-1">{</span><span class="n">Mod</span><span class="p">,</span><span class="w"> </span><span class="n">Bin</span><span class="p">,</span><span class="w"> </span><span class="n">File</span><span class="p" data-group-id="8410403770-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">code</span><span class="p">:</span><span class="nf">get_object_code</span><span class="p" data-group-id="8410403770-2">(</span><span class="n">Mod</span><span class="p" data-group-id="8410403770-2">)</span><span class="p">,</span><span class="w">
 
 </span><span class="c1">%% and load it on all nodes including this one</span><span class="w">
-</span><span class="p" data-group-id="6018004191-3">{</span><span class="n">ResL</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="p" data-group-id="6018004191-3">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">rpc</span><span class="p">:</span><span class="nf">multicall</span><span class="p" data-group-id="6018004191-4">(</span><span class="ss">code</span><span class="p">,</span><span class="w"> </span><span class="ss">load_binary</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6018004191-5">[</span><span class="n">Mod</span><span class="p">,</span><span class="w"> </span><span class="n">File</span><span class="p">,</span><span class="w"> </span><span class="n">Bin</span><span class="p" data-group-id="6018004191-5">]</span><span class="p" data-group-id="6018004191-4">)</span><span class="p">,</span><span class="w">
+</span><span class="p" data-group-id="8410403770-3">{</span><span class="n">ResL</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="p" data-group-id="8410403770-3">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">rpc</span><span class="p">:</span><span class="nf">multicall</span><span class="p" data-group-id="8410403770-4">(</span><span class="ss">code</span><span class="p">,</span><span class="w"> </span><span class="ss">load_binary</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8410403770-5">[</span><span class="n">Mod</span><span class="p">,</span><span class="w"> </span><span class="n">File</span><span class="p">,</span><span class="w"> </span><span class="n">Bin</span><span class="p" data-group-id="8410403770-5">]</span><span class="p" data-group-id="8410403770-4">)</span><span class="p">,</span><span class="w">
 
 </span><span class="c1">%% and then maybe check the ResL list.</span></code></pre><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>If you want the ability to distinguish between results, you may want to
 consider using the <a href="erpc.html#multicall/4"><code class="inline">erpc:multicall()</code></a> function from the
@@ -1068,7 +1088,7 @@ server, or a freshly spawned process.</p></section>
       <h1 class="signature" translate="no">nb_yield(Key)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L1082" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L1082" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1097,7 +1117,7 @@ server, or a freshly spawned process.</p></section>
       <h1 class="signature" translate="no">nb_yield(Key, Timeout)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L1064" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L1064" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1131,7 +1151,7 @@ made otherwise it will only return <code class="inline">timeout</code>.</p></sec
       <h1 class="signature" translate="no">parallel_eval(FuncCalls)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L1101" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L1101" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1167,7 +1187,7 @@ Returns the list of return values, in the same order as in <code class="inline">
       <h1 class="signature" translate="no">pinfo(Pid)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L1150" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L1150" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1195,7 +1215,7 @@ Returns the list of return values, in the same order as in <code class="inline">
       <h1 class="signature" translate="no">pinfo/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L1166" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L1166" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1226,7 +1246,7 @@ Returns the list of return values, in the same order as in <code class="inline">
       <h1 class="signature" translate="no">pmap(FuncSpec, ExtraArgs, List1)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L1129" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L1129" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1263,7 +1283,7 @@ the same order as in <code class="inline">List1</code>.</p>
       <h1 class="signature" translate="no">sbcast(Name, Msg)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L707" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L707" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1292,7 +1312,7 @@ the same order as in <code class="inline">List1</code>.</p>
       <h1 class="signature" translate="no">sbcast(Nodes, Name, Msg)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L731" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L731" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1331,7 +1351,7 @@ received by all servers after this message.</p>
       <h1 class="signature" translate="no">server_call(Node, Name, ReplyWrapper, Msg)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L627" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L627" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1372,7 +1392,7 @@ itself hangs.</p><p>The function returns the answer <code class="inline">Reply</
       <h1 class="signature" translate="no">yield(Key)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/rpc.erl#L1045" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/rpc.erl#L1045" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1401,8 +1421,8 @@ made otherwise it will never return.</p></section><p>See the note in <a href="#c
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="kernel.epub" title="ePub version">
@@ -1414,7 +1434,7 @@ made otherwise it will never return.</p></section><p>See the note in <a href="#c
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

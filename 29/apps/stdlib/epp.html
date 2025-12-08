@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="stdlib v7.1-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/epp.html" />
     <title>epp — stdlib v7.1-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-4F7E9F36.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ stdlib
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of stdlib</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ stdlib
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/epp.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/epp.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -102,7 +120,7 @@ of the first two lines of the source file. The first string matching the regular
 expression <code class="inline">coding\s*[:=]\s*([-a-zA-Z0-9])+</code> selects the encoding. If the
 matching string is not a valid encoding, it is ignored. The valid encodings are
 <code class="inline">Latin-1</code> and <code class="inline">UTF-8</code>, where the case of the characters can be chosen freely.</p><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="c1">%% coding: utf-8</span></code></pre><pre><code class="makeup erlang" translate="no"><span class="c1">%% For this file we have chosen encoding = Latin-1</span></code></pre><pre><code class="makeup erlang" translate="no"><span class="c1">%% -*- coding: latin-1 -*-</span></code></pre><h2 id="module-error-information" class="section-heading"><a href="#module-error-information" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Error Information</span></h2><p><code class="inline">ErrorInfo</code> is the standard <code class="inline">ErrorInfo</code> structure that is returned from all I/O
-modules. The format is as follows:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="1391023563-1">{</span><span class="n">ErrorLine</span><span class="p">,</span><span class="w"> </span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">ErrorDescriptor</span><span class="p" data-group-id="1391023563-1">}</span></code></pre><p>A string describing the error is obtained with the following call:</p><pre><code class="makeup erlang" translate="no"><span class="n">Module</span><span class="p">:</span><span class="nf">format_error</span><span class="p" data-group-id="3422703733-1">(</span><span class="n">ErrorDescriptor</span><span class="p" data-group-id="3422703733-1">)</span></code></pre><h2 id="module-see-also" class="section-heading"><a href="#module-see-also" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">See Also</span></h2><p><a href="erl_parse.html"><code class="inline">erl_parse</code></a></p>
+modules. The format is as follows:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="8833565293-1">{</span><span class="n">ErrorLine</span><span class="p">,</span><span class="w"> </span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">ErrorDescriptor</span><span class="p" data-group-id="8833565293-1">}</span></code></pre><p>A string describing the error is obtained with the following call:</p><pre><code class="makeup erlang" translate="no"><span class="n">Module</span><span class="p">:</span><span class="nf">format_error</span><span class="p" data-group-id="4156097660-1">(</span><span class="n">ErrorDescriptor</span><span class="p" data-group-id="4156097660-1">)</span></code></pre><h2 id="module-see-also" class="section-heading"><a href="#module-see-also" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">See Also</span></h2><p><a href="erl_parse.html"><code class="inline">erl_parse</code></a></p>
     </section>
 
 </div>
@@ -186,9 +204,9 @@ modules. The format is as follows:</p><pre><code class="makeup erlang" translate
       </div>
 
         <div class="summary-synopsis"><p>Returns a string representation of an encoding. The string is recognized by
-<a><code class="inline">read_encoding/1,2</code></a>,
-<a><code class="inline">read_encoding_from_binary/1,2</code></a>, and
-<a><code class="inline">set_encoding/1,2</code></a> as a valid encoding.</p></div>
+<a href="#read_encoding/1"><code class="inline">read_encoding/1,2</code></a>,
+<a href="#read_encoding_from_binary/1"><code class="inline">read_encoding_from_binary/1,2</code></a>, and
+<a href="#set_encoding/1"><code class="inline">set_encoding/1,2</code></a> as a valid encoding.</p></div>
 
     </div>
 
@@ -200,7 +218,7 @@ modules. The format is as follows:</p><pre><code class="makeup erlang" translate
 
         <div class="summary-synopsis"><p>Takes an <code class="inline">ErrorDescriptor</code> and returns a string that describes the error or
 warning. This function is usually called implicitly when processing an
-<code class="inline">ErrorInfo</code> structure (see section <a>Error Information</a>).</p></div>
+<code class="inline">ErrorInfo</code> structure (see section <a href="epp.html#module-error-information">Error Information</a>).</p></div>
 
     </div>
 
@@ -275,7 +293,7 @@ to an implicit attribute <code class="inline">-file(File,1).</code>, where <code
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">read_encoding/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#read_encoding/2"><code class="inline">read_encoding/2</code></a>.</p></div>
 
     </div>
 
@@ -285,7 +303,7 @@ to an implicit attribute <code class="inline">-file(File,1).</code>, where <code
 
       </div>
 
-        <div class="summary-synopsis"><p>Read the <a>encoding</a> from a file. Returns the read encoding, or
+        <div class="summary-synopsis"><p>Read the <a href="epp.html#encoding">encoding</a> from a file. Returns the read encoding, or
 <code class="inline">none</code> if no valid encoding is found.</p></div>
 
     </div>
@@ -296,7 +314,7 @@ to an implicit attribute <code class="inline">-file(File,1).</code>, where <code
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">read_encoding_from_binary/2</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#read_encoding_from_binary/2"><code class="inline">read_encoding_from_binary/2</code></a>.</p></div>
 
     </div>
 
@@ -306,7 +324,7 @@ to an implicit attribute <code class="inline">-file(File,1).</code>, where <code
 
       </div>
 
-        <div class="summary-synopsis"><p>Read the <a>encoding</a> from a binary. Returns the read encoding,
+        <div class="summary-synopsis"><p>Read the <a href="epp.html#encoding">encoding</a> from a binary. Returns the read encoding,
 or <code class="inline">none</code> if no valid encoding is found.</p></div>
 
     </div>
@@ -343,7 +361,7 @@ the list as tuples <code class="inline">{error, ErrorInfo}</code>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Reads the <a>encoding</a> from an I/O device and sets the encoding
+        <div class="summary-synopsis"><p>Reads the <a href="epp.html#encoding">encoding</a> from an I/O device and sets the encoding
 of the device accordingly. The position of the I/O device referenced by <code class="inline">File</code>
 is not affected. If no valid encoding can be read from the I/O device, the
 encoding of the I/O device is set to the default encoding.</p></div>
@@ -356,10 +374,10 @@ encoding of the I/O device is set to the default encoding.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Reads the <a>encoding</a> from an I/O device and sets the encoding
+        <div class="summary-synopsis"><p>Reads the <a href="epp.html#encoding">encoding</a> from an I/O device and sets the encoding
 of the device accordingly. The position of the I/O device referenced by <code class="inline">File</code>
 is not affected. If no valid encoding can be read from the I/O device, the
-encoding of the I/O device is set to the <a>encoding</a> specified
+encoding of the I/O device is set to the <a href="epp.html#encoding">encoding</a> specified
 by <code class="inline">Default</code>.</p></div>
 
     </div>
@@ -376,6 +394,7 @@ by <code class="inline">Default</code>.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:epp_handle/0">
 
@@ -389,7 +408,7 @@ by <code class="inline">Default</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/epp.erl#L91" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/epp.erl#L91" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -419,7 +438,7 @@ by <code class="inline">Default</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/epp.erl#L89" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/epp.erl#L89" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -447,7 +466,7 @@ by <code class="inline">Default</code>.</p></div>
       <h1 class="signature" translate="no">source_encoding()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/epp.erl#L92" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/epp.erl#L92" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -477,7 +496,7 @@ by <code class="inline">Default</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/epp.erl#L109" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/epp.erl#L109" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -506,6 +525,7 @@ by <code class="inline">Default</code>.</p></div>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="close/1">
 
@@ -517,7 +537,7 @@ by <code class="inline">Default</code>.</p></div>
       <h1 class="signature" translate="no">close(Epp)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/epp.erl#L237" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/epp.erl#L237" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -547,7 +567,7 @@ by <code class="inline">Default</code>.</p></div>
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/epp.erl#L508" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/epp.erl#L508" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -577,7 +597,7 @@ by <code class="inline">Default</code>.</p></div>
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/epp.erl#L521" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/epp.erl#L521" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -610,7 +630,7 @@ by <code class="inline">Default</code>.</p></div>
         <span class="note">(since OTP R14B03)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/epp.erl#L302" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/epp.erl#L302" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -642,7 +662,7 @@ warning. This function is usually called implicitly when processing an
         <span class="note">(since OTP 17.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/epp.erl#L213" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/epp.erl#L213" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -692,7 +712,7 @@ scanner, see <a href="erl_scan.html#compiler_interal"><code class="inline">{comp
       <h1 class="signature" translate="no">open(FileName, IncludePath)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/epp.erl#L158" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/epp.erl#L158" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -725,7 +745,7 @@ scanner, see <a href="erl_scan.html#compiler_interal"><code class="inline">{comp
       <h1 class="signature" translate="no">open(FileName, IncludePath, PredefMacros)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/epp.erl#L173" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/epp.erl#L173" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -760,7 +780,7 @@ scanner, see <a href="erl_scan.html#compiler_interal"><code class="inline">{comp
       <h1 class="signature" translate="no">parse_erl_form(Epp)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/epp.erl#L278" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/epp.erl#L278" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -799,7 +819,7 @@ to an implicit attribute <code class="inline">-file(File,1).</code>, where <code
         <span class="note">(since OTP 17.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/epp.erl#L467" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/epp.erl#L467" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -851,7 +871,7 @@ scanner, see <a href="erl_scan.html#compiler_interal"><code class="inline">{comp
       <h1 class="signature" translate="no">parse_file(FileName, IncludePath, PredefMacros)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/epp.erl#L425" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/epp.erl#L425" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -890,7 +910,7 @@ scanner, see <a href="erl_scan.html#compiler_interal"><code class="inline">{comp
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/epp.erl#L529" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/epp.erl#L529" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -920,7 +940,7 @@ scanner, see <a href="erl_scan.html#compiler_interal"><code class="inline">{comp
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/epp.erl#L546" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/epp.erl#L546" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -957,7 +977,7 @@ to occur in a comment.</p>
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/epp.erl#L603" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/epp.erl#L603" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -987,7 +1007,7 @@ to occur in a comment.</p>
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/epp.erl#L621" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/epp.erl#L621" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1024,7 +1044,7 @@ to occur in a comment.</p>
         <span class="note">(since OTP R13B03)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/epp.erl#L261" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/epp.erl#L261" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1063,7 +1083,7 @@ name.</p>
         <span class="note">(since OTP 24.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/epp.erl#L388" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/epp.erl#L388" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1108,7 +1128,7 @@ the list as tuples <code class="inline">{error, ErrorInfo}</code>.</p>
         <span class="note">(since OTP R16B)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/epp.erl#L569" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/epp.erl#L569" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1141,7 +1161,7 @@ encoding of the I/O device is set to the default encoding.</p><p>Returns the rea
         <span class="note">(since OTP 17.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/epp.erl#L586" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/epp.erl#L586" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1172,8 +1192,8 @@ by <code class="inline">Default</code>.</p><p>Returns the read encoding, or <cod
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="stdlib.epub" title="ePub version">
@@ -1185,7 +1205,7 @@ by <code class="inline">Default</code>.</p><p>Returns the read encoding, or <cod
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

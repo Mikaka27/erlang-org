@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="kernel v10.4.2-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/kernel/trace.html" />
     <title>trace — kernel v10.4.2-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-4B8F4164.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ kernel
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of kernel</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ kernel
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/trace.erl#L23" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/trace.erl#L23" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -108,23 +126,23 @@ dynamically. Each session has its own tracer that will receive all trace
 messages. Several sessions can exist at the same time without interfering with
 each other. When a trace session is destroyed, all its trace settings are
 automatically cleaned up.</p><p><em>Example</em>:</p><pre><code class="makeup erlang" translate="no"><span class="c1">%% Create a tracer process that will receive the trace events</span><span class="gp unselectable">
-1&gt; </span><span class="n">Tracer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">spawn</span><span class="p" data-group-id="0070279379-1">(</span><span class="k">fun</span><span class="w"> </span><span class="n">F</span><span class="p" data-group-id="0070279379-2">(</span><span class="p" data-group-id="0070279379-2">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="k">receive</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="0070279379-3">(</span><span class="s">&quot;</span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="p" data-group-id="0070279379-4">[</span><span class="n">M</span><span class="p" data-group-id="0070279379-4">]</span><span class="p" data-group-id="0070279379-3">)</span><span class="p">,</span><span class="w"> </span><span class="n">F</span><span class="p" data-group-id="0070279379-5">(</span><span class="p" data-group-id="0070279379-5">)</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="0070279379-1">)</span><span class="p">.</span><span class="w">
+1&gt; </span><span class="n">Tracer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">spawn</span><span class="p" data-group-id="7120889381-1">(</span><span class="k">fun</span><span class="w"> </span><span class="n">F</span><span class="p" data-group-id="7120889381-2">(</span><span class="p" data-group-id="7120889381-2">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="k">receive</span><span class="w"> </span><span class="n">M</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="7120889381-3">(</span><span class="s">&quot;</span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="p" data-group-id="7120889381-4">[</span><span class="n">M</span><span class="p" data-group-id="7120889381-4">]</span><span class="p" data-group-id="7120889381-3">)</span><span class="p">,</span><span class="w"> </span><span class="n">F</span><span class="p" data-group-id="7120889381-5">(</span><span class="p" data-group-id="7120889381-5">)</span><span class="w"> </span><span class="k">end</span><span class="w"> </span><span class="k">end</span><span class="p" data-group-id="7120889381-1">)</span><span class="p">.</span><span class="w">
 </span><span class="o">&lt;</span><span class="mf">0.91</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="w">
 </span><span class="c1">%% Create a session using the Tracer</span><span class="gp unselectable">
-2&gt; </span><span class="n">Session</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">trace</span><span class="p">:</span><span class="nf">session_create</span><span class="p" data-group-id="0070279379-6">(</span><span class="ss">my_session</span><span class="p">,</span><span class="w"> </span><span class="n">Tracer</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0070279379-7">[</span><span class="p" data-group-id="0070279379-7">]</span><span class="p" data-group-id="0070279379-6">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="0070279379-8">{</span><span class="p">#</span><span class="n">Ref</span><span class="o">&lt;</span><span class="mf">0.1543805153</span><span class="p">.</span><span class="mf">1548353537.92331</span><span class="o">&gt;</span><span class="p">,</span><span class="p" data-group-id="0070279379-9">{</span><span class="ss">my_session</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="0070279379-9">}</span><span class="p" data-group-id="0070279379-8">}</span><span class="w">
+2&gt; </span><span class="n">Session</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">trace</span><span class="p">:</span><span class="nf">session_create</span><span class="p" data-group-id="7120889381-6">(</span><span class="ss">my_session</span><span class="p">,</span><span class="w"> </span><span class="n">Tracer</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7120889381-7">[</span><span class="p" data-group-id="7120889381-7">]</span><span class="p" data-group-id="7120889381-6">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="7120889381-8">{</span><span class="p">#</span><span class="n">Ref</span><span class="o">&lt;</span><span class="mf">0.1543805153</span><span class="p">.</span><span class="mf">1548353537.92331</span><span class="o">&gt;</span><span class="p">,</span><span class="p" data-group-id="7120889381-9">{</span><span class="ss">my_session</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p" data-group-id="7120889381-9">}</span><span class="p" data-group-id="7120889381-8">}</span><span class="w">
 </span><span class="c1">%% Setup call tracing on self()</span><span class="gp unselectable">
-3&gt; </span><span class="nc">trace</span><span class="p">:</span><span class="nf">process</span><span class="p" data-group-id="0070279379-10">(</span><span class="n">Session</span><span class="p">,</span><span class="w"> </span><span class="nf">self</span><span class="p" data-group-id="0070279379-11">(</span><span class="p" data-group-id="0070279379-11">)</span><span class="p">,</span><span class="w"> </span><span class="ss">true</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0070279379-12">[</span><span class="ss">call</span><span class="p" data-group-id="0070279379-12">]</span><span class="p" data-group-id="0070279379-10">)</span><span class="p">.</span><span class="w">
+3&gt; </span><span class="nc">trace</span><span class="p">:</span><span class="nf">process</span><span class="p" data-group-id="7120889381-10">(</span><span class="n">Session</span><span class="p">,</span><span class="w"> </span><span class="nf">self</span><span class="p" data-group-id="7120889381-11">(</span><span class="p" data-group-id="7120889381-11">)</span><span class="p">,</span><span class="w"> </span><span class="ss">true</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7120889381-12">[</span><span class="ss">call</span><span class="p" data-group-id="7120889381-12">]</span><span class="p" data-group-id="7120889381-10">)</span><span class="p">.</span><span class="w">
 </span><span class="mi">1</span><span class="w">
 </span><span class="c1">%% Setup call tracing on lists:seq/2</span><span class="gp unselectable">
-4&gt; </span><span class="nc">trace</span><span class="p">:</span><span class="nf">function</span><span class="p" data-group-id="0070279379-13">(</span><span class="n">Session</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0070279379-14">{</span><span class="ss">lists</span><span class="p">,</span><span class="ss">seq</span><span class="p">,</span><span class="mi">2</span><span class="p" data-group-id="0070279379-14">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0070279379-15">[</span><span class="p" data-group-id="0070279379-15">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0070279379-16">[</span><span class="p" data-group-id="0070279379-16">]</span><span class="p" data-group-id="0070279379-13">)</span><span class="p">.</span><span class="w">
+4&gt; </span><span class="nc">trace</span><span class="p">:</span><span class="nf">function</span><span class="p" data-group-id="7120889381-13">(</span><span class="n">Session</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7120889381-14">{</span><span class="ss">lists</span><span class="p">,</span><span class="ss">seq</span><span class="p">,</span><span class="mi">2</span><span class="p" data-group-id="7120889381-14">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7120889381-15">[</span><span class="p" data-group-id="7120889381-15">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7120889381-16">[</span><span class="p" data-group-id="7120889381-16">]</span><span class="p" data-group-id="7120889381-13">)</span><span class="p">.</span><span class="w">
 </span><span class="mi">1</span><span class="w">
 </span><span class="c1">%% Call the traced function</span><span class="gp unselectable">
-5&gt; </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="0070279379-17">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p" data-group-id="0070279379-17">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="0070279379-18">{</span><span class="nb">trace</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.89</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">,</span><span class="ss">call</span><span class="p">,</span><span class="p" data-group-id="0070279379-19">{</span><span class="ss">lists</span><span class="p">,</span><span class="ss">seq</span><span class="p">,</span><span class="p" data-group-id="0070279379-20">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="0070279379-20">]</span><span class="p" data-group-id="0070279379-19">}</span><span class="p" data-group-id="0070279379-18">}</span><span class="w"> </span><span class="c1">% The trace message</span><span class="w">
-</span><span class="p" data-group-id="0070279379-21">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="0070279379-21">]</span><span class="w"> </span><span class="c1">% The return value</span><span class="w">
+5&gt; </span><span class="nc">lists</span><span class="p">:</span><span class="nf">seq</span><span class="p" data-group-id="7120889381-17">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p" data-group-id="7120889381-17">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="7120889381-18">{</span><span class="nb">trace</span><span class="p">,</span><span class="o">&lt;</span><span class="mf">0.89</span><span class="p">.</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">,</span><span class="ss">call</span><span class="p">,</span><span class="p" data-group-id="7120889381-19">{</span><span class="ss">lists</span><span class="p">,</span><span class="ss">seq</span><span class="p">,</span><span class="p" data-group-id="7120889381-20">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="7120889381-20">]</span><span class="p" data-group-id="7120889381-19">}</span><span class="p" data-group-id="7120889381-18">}</span><span class="w"> </span><span class="c1">% The trace message</span><span class="w">
+</span><span class="p" data-group-id="7120889381-21">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p" data-group-id="7120889381-21">]</span><span class="w"> </span><span class="c1">% The return value</span><span class="w">
 </span><span class="c1">%% Cleanup the trace session</span><span class="gp unselectable">
-6&gt; </span><span class="nc">trace</span><span class="p">:</span><span class="nf">session_destroy</span><span class="p" data-group-id="0070279379-22">(</span><span class="n">Session</span><span class="p" data-group-id="0070279379-22">)</span><span class="p">.</span><span class="w">
+6&gt; </span><span class="nc">trace</span><span class="p">:</span><span class="nf">session_destroy</span><span class="p" data-group-id="7120889381-22">(</span><span class="n">Session</span><span class="p" data-group-id="7120889381-22">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">ok</span></code></pre><h2 id="module-node-local-tracing-only" class="section-heading"><a href="#module-node-local-tracing-only" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Node Local Tracing Only</span></h2><p>The functions in this module only operates on the local node. That is, both the
 traced processes/ports as well as the tracer process/port/module must all reside
 on the same local node as the call is made. To trace remote nodes use <a href="../../apps/runtime_tools/dbg.html"><code class="inline">dbg</code></a> or
@@ -190,7 +208,7 @@ never the calling process.</p></section>
 
       </div>
 
-        <div class="summary-synopsis"><p>A weak session handle as returned by <a><code class="inline">session_info/1</code></a>. A weak session handle can
+        <div class="summary-synopsis"><p>A weak session handle as returned by <a href="#session_info/1"><code class="inline">session_info/1</code></a>. A weak session handle can
 be used like a full session handle, but it will not prevent the session from
 being destroyed when the last strong handle is garbage collected.</p></div>
 
@@ -288,8 +306,8 @@ being destroyed when the last strong handle is garbage collected.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">erlang:trace_delivered(Tracee)</code></a>
-except that it is run within the given <a><code class="inline">session/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="../../apps/erts/erlang.html#trace_delivered/1"><code class="inline">erlang:trace_delivered(Tracee)</code></a>
+except that it is run within the given <a href="#t:session/0"><code class="inline">session/0</code></a>.</p></div>
 
     </div>
 
@@ -406,6 +424,7 @@ functions.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:match_variable/0">
 
@@ -421,7 +440,7 @@ functions.</p></div>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/trace.erl#L195" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/trace.erl#L195" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -451,7 +470,7 @@ functions.</p></div>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/trace.erl#L156" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/trace.erl#L156" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -481,7 +500,7 @@ functions.</p></div>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/trace.erl#L158" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/trace.erl#L158" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -511,7 +530,7 @@ functions.</p></div>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/trace.erl#L165" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/trace.erl#L165" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -545,7 +564,7 @@ being destroyed when the last strong handle is garbage collected.</p>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/trace.erl#L237" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/trace.erl#L237" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -578,7 +597,7 @@ being destroyed when the last strong handle is garbage collected.</p>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/trace.erl#L245" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/trace.erl#L245" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -611,7 +630,7 @@ being destroyed when the last strong handle is garbage collected.</p>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/trace.erl#L189" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/trace.erl#L189" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -643,7 +662,7 @@ being destroyed when the last strong handle is garbage collected.</p>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/trace.erl#L167" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/trace.erl#L167" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -679,7 +698,7 @@ being destroyed when the last strong handle is garbage collected.</p>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/trace.erl#L206" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/trace.erl#L206" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -720,7 +739,7 @@ being destroyed when the last strong handle is garbage collected.</p>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/trace.erl#L227" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/trace.erl#L227" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -759,7 +778,7 @@ being destroyed when the last strong handle is garbage collected.</p>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/trace.erl#L218" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/trace.erl#L218" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -796,7 +815,7 @@ being destroyed when the last strong handle is garbage collected.</p>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/trace.erl#L196" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/trace.erl#L196" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -828,7 +847,7 @@ being destroyed when the last strong handle is garbage collected.</p>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/trace.erl#L199" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/trace.erl#L199" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -860,7 +879,7 @@ being destroyed when the last strong handle is garbage collected.</p>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/trace.erl#L192" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/trace.erl#L192" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -889,6 +908,7 @@ being destroyed when the last strong handle is garbage collected.</p>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="delivered/2">
 
@@ -902,7 +922,7 @@ being destroyed when the last strong handle is garbage collected.</p>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/trace.erl#L1264" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/trace.erl#L1264" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -933,7 +953,7 @@ except that it is run within the given <a href="#t:session/0"><code class="inlin
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/trace.erl#L948" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/trace.erl#L948" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1031,7 +1051,7 @@ when starting the runtime system.</p></li></ul>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/trace.erl#L1252" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/trace.erl#L1252" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1117,7 +1137,7 @@ a non-existing function, <code class="inline">Value</code> is <code class="inlin
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/trace.erl#L775" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/trace.erl#L775" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1199,7 +1219,7 @@ existing ports. If <code class="inline">Ports</code> is <code class="inline">new
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/trace.erl#L620" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/trace.erl#L620" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1386,7 +1406,7 @@ processes running. If <code class="inline">Procs</code> is <code class="inline">
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/trace.erl#L1134" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/trace.erl#L1134" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1418,9 +1438,9 @@ accessed with the guard function <a href="../../apps/erts/erlang.html#self/0"><c
 <a href="../../apps/erts/match_spec.html">Match Specifications in Erlang</a> in the User's Guide
 for the ERTS application.</p></li><li><p><strong><code class="inline">true</code></strong> - Enable tracing for all received messages (to <code class="inline">'receive'</code> traced
 processes). Any match specification is removed. <em>This is the default</em>.</p></li><li><p><strong><code class="inline">false</code></strong> - Disable tracing for all received messages. Any match
-specification is removed.</p></li></ul><p>Argument <code class="inline">FlagList</code> must be <code class="inline">[]</code> for receive tracing.</p><p>The return value is always <code class="inline">1</code>.</p><p><em>Examples:</em></p><p>Only trace messages from a specific process <code class="inline">Pid</code>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nc">trace</span><span class="p">:</span><span class="nf">recv</span><span class="p" data-group-id="4904920679-1">(</span><span class="n">Session</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4904920679-2">[</span><span class="p" data-group-id="4904920679-3">{</span><span class="p" data-group-id="4904920679-4">[</span><span class="ss">&#39;_&#39;</span><span class="p">,</span><span class="n">Pid</span><span class="p">,</span><span class="w"> </span><span class="ss">&#39;_&#39;</span><span class="p" data-group-id="4904920679-4">]</span><span class="p">,</span><span class="p" data-group-id="4904920679-5">[</span><span class="p" data-group-id="4904920679-5">]</span><span class="p">,</span><span class="p" data-group-id="4904920679-6">[</span><span class="p" data-group-id="4904920679-6">]</span><span class="p" data-group-id="4904920679-3">}</span><span class="p" data-group-id="4904920679-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4904920679-7">[</span><span class="p" data-group-id="4904920679-7">]</span><span class="p" data-group-id="4904920679-1">)</span><span class="p">.</span><span class="w">
-</span><span class="mi">1</span></code></pre><p>Only trace messages matching <code class="inline">{reply, _}</code>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nc">trace</span><span class="p">:</span><span class="nf">recv</span><span class="p" data-group-id="4747484123-1">(</span><span class="n">Session</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4747484123-2">[</span><span class="p" data-group-id="4747484123-3">{</span><span class="p" data-group-id="4747484123-4">[</span><span class="ss">&#39;_&#39;</span><span class="p">,</span><span class="ss">&#39;_&#39;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4747484123-5">{</span><span class="ss">reply</span><span class="p">,</span><span class="ss">&#39;_&#39;</span><span class="p" data-group-id="4747484123-5">}</span><span class="p" data-group-id="4747484123-4">]</span><span class="p">,</span><span class="p" data-group-id="4747484123-6">[</span><span class="p" data-group-id="4747484123-6">]</span><span class="p">,</span><span class="p" data-group-id="4747484123-7">[</span><span class="p" data-group-id="4747484123-7">]</span><span class="p" data-group-id="4747484123-3">}</span><span class="p" data-group-id="4747484123-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4747484123-8">[</span><span class="p" data-group-id="4747484123-8">]</span><span class="p" data-group-id="4747484123-1">)</span><span class="p">.</span><span class="w">
-</span><span class="mi">1</span></code></pre><p>Only trace messages from other nodes:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nc">trace</span><span class="p">:</span><span class="nf">recv</span><span class="p" data-group-id="6256287831-1">(</span><span class="n">Session</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6256287831-2">[</span><span class="p" data-group-id="6256287831-3">{</span><span class="p" data-group-id="6256287831-4">[</span><span class="ss">&#39;$1&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">&#39;_&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">&#39;_&#39;</span><span class="p" data-group-id="6256287831-4">]</span><span class="p">,</span><span class="p" data-group-id="6256287831-5">[</span><span class="p" data-group-id="6256287831-6">{</span><span class="ss">&#39;=/=&#39;</span><span class="p">,</span><span class="ss">&#39;$1&#39;</span><span class="p">,</span><span class="p" data-group-id="6256287831-7">{</span><span class="nb">node</span><span class="p" data-group-id="6256287831-7">}</span><span class="p" data-group-id="6256287831-6">}</span><span class="p" data-group-id="6256287831-5">]</span><span class="p">,</span><span class="p" data-group-id="6256287831-8">[</span><span class="p" data-group-id="6256287831-8">]</span><span class="p" data-group-id="6256287831-3">}</span><span class="p" data-group-id="6256287831-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6256287831-9">[</span><span class="p" data-group-id="6256287831-9">]</span><span class="p" data-group-id="6256287831-1">)</span><span class="p">.</span><span class="w">
+specification is removed.</p></li></ul><p>Argument <code class="inline">FlagList</code> must be <code class="inline">[]</code> for receive tracing.</p><p>The return value is always <code class="inline">1</code>.</p><p><em>Examples:</em></p><p>Only trace messages from a specific process <code class="inline">Pid</code>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nc">trace</span><span class="p">:</span><span class="nf">recv</span><span class="p" data-group-id="0513084876-1">(</span><span class="n">Session</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0513084876-2">[</span><span class="p" data-group-id="0513084876-3">{</span><span class="p" data-group-id="0513084876-4">[</span><span class="ss">&#39;_&#39;</span><span class="p">,</span><span class="n">Pid</span><span class="p">,</span><span class="w"> </span><span class="ss">&#39;_&#39;</span><span class="p" data-group-id="0513084876-4">]</span><span class="p">,</span><span class="p" data-group-id="0513084876-5">[</span><span class="p" data-group-id="0513084876-5">]</span><span class="p">,</span><span class="p" data-group-id="0513084876-6">[</span><span class="p" data-group-id="0513084876-6">]</span><span class="p" data-group-id="0513084876-3">}</span><span class="p" data-group-id="0513084876-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0513084876-7">[</span><span class="p" data-group-id="0513084876-7">]</span><span class="p" data-group-id="0513084876-1">)</span><span class="p">.</span><span class="w">
+</span><span class="mi">1</span></code></pre><p>Only trace messages matching <code class="inline">{reply, _}</code>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nc">trace</span><span class="p">:</span><span class="nf">recv</span><span class="p" data-group-id="8549625037-1">(</span><span class="n">Session</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8549625037-2">[</span><span class="p" data-group-id="8549625037-3">{</span><span class="p" data-group-id="8549625037-4">[</span><span class="ss">&#39;_&#39;</span><span class="p">,</span><span class="ss">&#39;_&#39;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8549625037-5">{</span><span class="ss">reply</span><span class="p">,</span><span class="ss">&#39;_&#39;</span><span class="p" data-group-id="8549625037-5">}</span><span class="p" data-group-id="8549625037-4">]</span><span class="p">,</span><span class="p" data-group-id="8549625037-6">[</span><span class="p" data-group-id="8549625037-6">]</span><span class="p">,</span><span class="p" data-group-id="8549625037-7">[</span><span class="p" data-group-id="8549625037-7">]</span><span class="p" data-group-id="8549625037-3">}</span><span class="p" data-group-id="8549625037-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8549625037-8">[</span><span class="p" data-group-id="8549625037-8">]</span><span class="p" data-group-id="8549625037-1">)</span><span class="p">.</span><span class="w">
+</span><span class="mi">1</span></code></pre><p>Only trace messages from other nodes:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nc">trace</span><span class="p">:</span><span class="nf">recv</span><span class="p" data-group-id="3147131082-1">(</span><span class="n">Session</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3147131082-2">[</span><span class="p" data-group-id="3147131082-3">{</span><span class="p" data-group-id="3147131082-4">[</span><span class="ss">&#39;$1&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">&#39;_&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">&#39;_&#39;</span><span class="p" data-group-id="3147131082-4">]</span><span class="p">,</span><span class="p" data-group-id="3147131082-5">[</span><span class="p" data-group-id="3147131082-6">{</span><span class="ss">&#39;=/=&#39;</span><span class="p">,</span><span class="ss">&#39;$1&#39;</span><span class="p">,</span><span class="p" data-group-id="3147131082-7">{</span><span class="nb">node</span><span class="p" data-group-id="3147131082-7">}</span><span class="p" data-group-id="3147131082-6">}</span><span class="p" data-group-id="3147131082-5">]</span><span class="p">,</span><span class="p" data-group-id="3147131082-8">[</span><span class="p" data-group-id="3147131082-8">]</span><span class="p" data-group-id="3147131082-3">}</span><span class="p" data-group-id="3147131082-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3147131082-9">[</span><span class="p" data-group-id="3147131082-9">]</span><span class="p" data-group-id="3147131082-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mi">1</span></code></pre><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>A match specification for <code class="inline">'receive'</code> trace can use all guard and body
 functions except <code class="inline">caller</code>, <code class="inline">is_seq_trace</code>, <code class="inline">get_seq_token</code>, <code class="inline">set_seq_token</code>,
 <code class="inline">enable_trace</code>, <code class="inline">disable_trace</code>, <code class="inline">trace</code>, <code class="inline">silent</code>, and <code class="inline">process_dump</code>.</p></section><p>Fails by raising an error exception with an error reason of:</p><ul><li><p><strong><code class="inline">badarg</code></strong> - If an argument is invalid.</p></li><li><p><strong><code class="inline">system_limit</code></strong> - If a match specification passed as argument has excessive
@@ -1442,7 +1462,7 @@ when starting the runtime system.</p></li></ul>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/trace.erl#L1043" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/trace.erl#L1043" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1471,10 +1491,10 @@ accessed with the guard function <a href="../../apps/erts/erlang.html#self/0"><c
 <a href="../../apps/erts/match_spec.html">Match Specifications in Erlang</a> in the User's Guide
 for the ERTS application.</p></li><li><p><strong><code class="inline">true</code></strong> - Enable tracing for all sent messages (from <code class="inline">send</code> traced
 processes). Any match specification is removed.</p></li><li><p><strong><code class="inline">false</code></strong> - Disable tracing for all sent messages. Any match specification
-is removed.</p></li></ul><p>Argument <code class="inline">FlagList</code> must be <code class="inline">[]</code>.</p><p>The return value is always <code class="inline">1</code>.</p><p><em>Examples:</em></p><p>Only trace messages to a specific process <code class="inline">Pid</code>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nc">trace</span><span class="p">:</span><span class="nf">send</span><span class="p" data-group-id="2201211610-1">(</span><span class="n">Session</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2201211610-2">[</span><span class="p" data-group-id="2201211610-3">{</span><span class="p" data-group-id="2201211610-4">[</span><span class="n">Pid</span><span class="p">,</span><span class="w"> </span><span class="ss">&#39;_&#39;</span><span class="p" data-group-id="2201211610-4">]</span><span class="p">,</span><span class="p" data-group-id="2201211610-5">[</span><span class="p" data-group-id="2201211610-5">]</span><span class="p">,</span><span class="p" data-group-id="2201211610-6">[</span><span class="p" data-group-id="2201211610-6">]</span><span class="p" data-group-id="2201211610-3">}</span><span class="p" data-group-id="2201211610-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2201211610-7">[</span><span class="p" data-group-id="2201211610-7">]</span><span class="p" data-group-id="2201211610-1">)</span><span class="p">.</span><span class="w">
-</span><span class="mi">1</span></code></pre><p>Only trace messages matching <code class="inline">{reply, _}</code>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nc">trace</span><span class="p">:</span><span class="nf">send</span><span class="p" data-group-id="0295178677-1">(</span><span class="n">Session</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0295178677-2">[</span><span class="p" data-group-id="0295178677-3">{</span><span class="p" data-group-id="0295178677-4">[</span><span class="ss">&#39;_&#39;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0295178677-5">{</span><span class="ss">reply</span><span class="p">,</span><span class="ss">&#39;_&#39;</span><span class="p" data-group-id="0295178677-5">}</span><span class="p" data-group-id="0295178677-4">]</span><span class="p">,</span><span class="p" data-group-id="0295178677-6">[</span><span class="p" data-group-id="0295178677-6">]</span><span class="p">,</span><span class="p" data-group-id="0295178677-7">[</span><span class="p" data-group-id="0295178677-7">]</span><span class="p" data-group-id="0295178677-3">}</span><span class="p" data-group-id="0295178677-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0295178677-8">[</span><span class="p" data-group-id="0295178677-8">]</span><span class="p" data-group-id="0295178677-1">)</span><span class="p">.</span><span class="w">
-</span><span class="mi">1</span></code></pre><p>Only trace messages sent to the sender itself:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nc">trace</span><span class="p">:</span><span class="nf">send</span><span class="p" data-group-id="2169481116-1">(</span><span class="n">Session</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2169481116-2">[</span><span class="p" data-group-id="2169481116-3">{</span><span class="p" data-group-id="2169481116-4">[</span><span class="ss">&#39;$1&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">&#39;_&#39;</span><span class="p" data-group-id="2169481116-4">]</span><span class="p">,</span><span class="p" data-group-id="2169481116-5">[</span><span class="p" data-group-id="2169481116-6">{</span><span class="ss">&#39;=:=&#39;</span><span class="p">,</span><span class="ss">&#39;$1&#39;</span><span class="p">,</span><span class="p" data-group-id="2169481116-7">{</span><span class="ss">self</span><span class="p" data-group-id="2169481116-7">}</span><span class="p" data-group-id="2169481116-6">}</span><span class="p" data-group-id="2169481116-5">]</span><span class="p">,</span><span class="p" data-group-id="2169481116-8">[</span><span class="p" data-group-id="2169481116-8">]</span><span class="p" data-group-id="2169481116-3">}</span><span class="p" data-group-id="2169481116-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2169481116-9">[</span><span class="p" data-group-id="2169481116-9">]</span><span class="p" data-group-id="2169481116-1">)</span><span class="p">.</span><span class="w">
-</span><span class="mi">1</span></code></pre><p>Only trace messages sent to other nodes:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nc">trace</span><span class="p">:</span><span class="nf">send</span><span class="p" data-group-id="6218046503-1">(</span><span class="n">Session</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6218046503-2">[</span><span class="p" data-group-id="6218046503-3">{</span><span class="p" data-group-id="6218046503-4">[</span><span class="ss">&#39;$1&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">&#39;_&#39;</span><span class="p" data-group-id="6218046503-4">]</span><span class="p">,</span><span class="p" data-group-id="6218046503-5">[</span><span class="p" data-group-id="6218046503-6">{</span><span class="ss">&#39;=/=&#39;</span><span class="p">,</span><span class="p" data-group-id="6218046503-7">{</span><span class="nb">node</span><span class="p">,</span><span class="ss">&#39;$1&#39;</span><span class="p" data-group-id="6218046503-7">}</span><span class="p">,</span><span class="p" data-group-id="6218046503-8">{</span><span class="nb">node</span><span class="p" data-group-id="6218046503-8">}</span><span class="p" data-group-id="6218046503-6">}</span><span class="p" data-group-id="6218046503-5">]</span><span class="p">,</span><span class="p" data-group-id="6218046503-9">[</span><span class="p" data-group-id="6218046503-9">]</span><span class="p" data-group-id="6218046503-3">}</span><span class="p" data-group-id="6218046503-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6218046503-10">[</span><span class="p" data-group-id="6218046503-10">]</span><span class="p" data-group-id="6218046503-1">)</span><span class="p">.</span><span class="w">
+is removed.</p></li></ul><p>Argument <code class="inline">FlagList</code> must be <code class="inline">[]</code>.</p><p>The return value is always <code class="inline">1</code>.</p><p><em>Examples:</em></p><p>Only trace messages to a specific process <code class="inline">Pid</code>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nc">trace</span><span class="p">:</span><span class="nf">send</span><span class="p" data-group-id="0100442365-1">(</span><span class="n">Session</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0100442365-2">[</span><span class="p" data-group-id="0100442365-3">{</span><span class="p" data-group-id="0100442365-4">[</span><span class="n">Pid</span><span class="p">,</span><span class="w"> </span><span class="ss">&#39;_&#39;</span><span class="p" data-group-id="0100442365-4">]</span><span class="p">,</span><span class="p" data-group-id="0100442365-5">[</span><span class="p" data-group-id="0100442365-5">]</span><span class="p">,</span><span class="p" data-group-id="0100442365-6">[</span><span class="p" data-group-id="0100442365-6">]</span><span class="p" data-group-id="0100442365-3">}</span><span class="p" data-group-id="0100442365-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0100442365-7">[</span><span class="p" data-group-id="0100442365-7">]</span><span class="p" data-group-id="0100442365-1">)</span><span class="p">.</span><span class="w">
+</span><span class="mi">1</span></code></pre><p>Only trace messages matching <code class="inline">{reply, _}</code>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nc">trace</span><span class="p">:</span><span class="nf">send</span><span class="p" data-group-id="8229295787-1">(</span><span class="n">Session</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8229295787-2">[</span><span class="p" data-group-id="8229295787-3">{</span><span class="p" data-group-id="8229295787-4">[</span><span class="ss">&#39;_&#39;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8229295787-5">{</span><span class="ss">reply</span><span class="p">,</span><span class="ss">&#39;_&#39;</span><span class="p" data-group-id="8229295787-5">}</span><span class="p" data-group-id="8229295787-4">]</span><span class="p">,</span><span class="p" data-group-id="8229295787-6">[</span><span class="p" data-group-id="8229295787-6">]</span><span class="p">,</span><span class="p" data-group-id="8229295787-7">[</span><span class="p" data-group-id="8229295787-7">]</span><span class="p" data-group-id="8229295787-3">}</span><span class="p" data-group-id="8229295787-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8229295787-8">[</span><span class="p" data-group-id="8229295787-8">]</span><span class="p" data-group-id="8229295787-1">)</span><span class="p">.</span><span class="w">
+</span><span class="mi">1</span></code></pre><p>Only trace messages sent to the sender itself:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nc">trace</span><span class="p">:</span><span class="nf">send</span><span class="p" data-group-id="0342332934-1">(</span><span class="n">Session</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0342332934-2">[</span><span class="p" data-group-id="0342332934-3">{</span><span class="p" data-group-id="0342332934-4">[</span><span class="ss">&#39;$1&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">&#39;_&#39;</span><span class="p" data-group-id="0342332934-4">]</span><span class="p">,</span><span class="p" data-group-id="0342332934-5">[</span><span class="p" data-group-id="0342332934-6">{</span><span class="ss">&#39;=:=&#39;</span><span class="p">,</span><span class="ss">&#39;$1&#39;</span><span class="p">,</span><span class="p" data-group-id="0342332934-7">{</span><span class="ss">self</span><span class="p" data-group-id="0342332934-7">}</span><span class="p" data-group-id="0342332934-6">}</span><span class="p" data-group-id="0342332934-5">]</span><span class="p">,</span><span class="p" data-group-id="0342332934-8">[</span><span class="p" data-group-id="0342332934-8">]</span><span class="p" data-group-id="0342332934-3">}</span><span class="p" data-group-id="0342332934-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0342332934-9">[</span><span class="p" data-group-id="0342332934-9">]</span><span class="p" data-group-id="0342332934-1">)</span><span class="p">.</span><span class="w">
+</span><span class="mi">1</span></code></pre><p>Only trace messages sent to other nodes:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="nc">trace</span><span class="p">:</span><span class="nf">send</span><span class="p" data-group-id="0244532597-1">(</span><span class="n">Session</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0244532597-2">[</span><span class="p" data-group-id="0244532597-3">{</span><span class="p" data-group-id="0244532597-4">[</span><span class="ss">&#39;$1&#39;</span><span class="p">,</span><span class="w"> </span><span class="ss">&#39;_&#39;</span><span class="p" data-group-id="0244532597-4">]</span><span class="p">,</span><span class="p" data-group-id="0244532597-5">[</span><span class="p" data-group-id="0244532597-6">{</span><span class="ss">&#39;=/=&#39;</span><span class="p">,</span><span class="p" data-group-id="0244532597-7">{</span><span class="nb">node</span><span class="p">,</span><span class="ss">&#39;$1&#39;</span><span class="p" data-group-id="0244532597-7">}</span><span class="p">,</span><span class="p" data-group-id="0244532597-8">{</span><span class="nb">node</span><span class="p" data-group-id="0244532597-8">}</span><span class="p" data-group-id="0244532597-6">}</span><span class="p" data-group-id="0244532597-5">]</span><span class="p">,</span><span class="p" data-group-id="0244532597-9">[</span><span class="p" data-group-id="0244532597-9">]</span><span class="p" data-group-id="0244532597-3">}</span><span class="p" data-group-id="0244532597-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0244532597-10">[</span><span class="p" data-group-id="0244532597-10">]</span><span class="p" data-group-id="0244532597-1">)</span><span class="p">.</span><span class="w">
 </span><span class="mi">1</span></code></pre><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>A match specification for <code class="inline">send</code> trace can use all guard and body functions
 except <code class="inline">caller</code>.</p></section><p>Fails by raising an error exception with an error reason of:</p><ul><li><p><strong><code class="inline">badarg</code></strong> - If an argument is invalid.</p></li><li><p><strong><code class="inline">system_limit</code></strong> - If a match specification passed as argument has excessive
 nesting which causes scheduler stack exhaustion for the scheduler that the
@@ -1495,7 +1515,7 @@ when starting the runtime system.</p></li></ul>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/trace.erl#L1430" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/trace.erl#L1430" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1534,7 +1554,7 @@ destroyed and cleaned up as if <a href="#session_destroy/1"><code class="inline"
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/trace.erl#L1451" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/trace.erl#L1451" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1567,7 +1587,7 @@ collector.</p>
         <span class="note">(since OTP 27.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/trace.erl#L1475" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/trace.erl#L1475" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1606,7 +1626,7 @@ process/port/function does not exists.</p>
         <span class="note">(since OTP 28.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/kernel/src/trace.erl#L1398" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/kernel/src/trace.erl#L1398" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1705,8 +1725,8 @@ tight.</p></section><p>Failures:</p><ul><li><strong><code class="inline">badarg<
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="kernel.epub" title="ePub version">
@@ -1718,7 +1738,7 @@ tight.</p></section><p>Failures:</p><ul><li><strong><code class="inline">badarg<
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

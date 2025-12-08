@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="common_test v1.29-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/common_test/ct_property_test.html" />
     <title>ct_property_test — common_test v1.29-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-3DCB9B8F.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ common_test
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of common_test</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ common_test
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_property_test.erl#L23" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_property_test.erl#L23" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -103,30 +121,30 @@ The tests are collected in the <code class="inline">test</code> directory of the
 directory has a subdirectory <code class="inline">property_test</code>, where everything needed for the
 property tests are collected. The usual Erlang application directory structure
 is assumed.</p><p>A typical <code class="inline">Common Test</code> test suite using <code class="inline">ct_property_test</code> is organized as
-follows:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="6759038309-1">(</span><span class="ss">my_prop_test_SUITE</span><span class="p" data-group-id="6759038309-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p">-</span><span class="na">compile</span><span class="p" data-group-id="6759038309-2">(</span><span class="ss">export_all</span><span class="p" data-group-id="6759038309-2">)</span><span class="p">.</span><span class="w">
+follows:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="1611008125-1">(</span><span class="ss">my_prop_test_SUITE</span><span class="p" data-group-id="1611008125-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">compile</span><span class="p" data-group-id="1611008125-2">(</span><span class="ss">export_all</span><span class="p" data-group-id="1611008125-2">)</span><span class="p">.</span><span class="w">
 </span><span class="w">
-</span><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="6759038309-3">(</span><span class="s">&quot;common_test/include/ct.hrl&quot;</span><span class="p" data-group-id="6759038309-3">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="1611008125-3">(</span><span class="s">&quot;common_test/include/ct.hrl&quot;</span><span class="p" data-group-id="1611008125-3">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">all</span><span class="p" data-group-id="6759038309-4">(</span><span class="p" data-group-id="6759038309-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="6759038309-5">[</span><span class="ss">prop_ftp_case</span><span class="p" data-group-id="6759038309-5">]</span><span class="p">.</span><span class="w">
+</span><span class="nf">all</span><span class="p" data-group-id="1611008125-4">(</span><span class="p" data-group-id="1611008125-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="1611008125-5">[</span><span class="ss">prop_ftp_case</span><span class="p" data-group-id="1611008125-5">]</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">init_per_suite</span><span class="p" data-group-id="6759038309-6">(</span><span class="n">Config</span><span class="p" data-group-id="6759038309-6">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="nc">ct_property_test</span><span class="p">:</span><span class="nf">init_per_suite</span><span class="p" data-group-id="6759038309-7">(</span><span class="n">Config</span><span class="p" data-group-id="6759038309-7">)</span><span class="p">.</span><span class="w">
+</span><span class="nf">init_per_suite</span><span class="p" data-group-id="1611008125-6">(</span><span class="n">Config</span><span class="p" data-group-id="1611008125-6">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="nc">ct_property_test</span><span class="p">:</span><span class="nf">init_per_suite</span><span class="p" data-group-id="1611008125-7">(</span><span class="n">Config</span><span class="p" data-group-id="1611008125-7">)</span><span class="p">.</span><span class="w">
 
 </span><span class="c1">%%%---- test case</span><span class="w">
-</span><span class="nf">prop_ftp_case</span><span class="p" data-group-id="6759038309-8">(</span><span class="n">Config</span><span class="p" data-group-id="6759038309-8">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="nc">ct_property_test</span><span class="p">:</span><span class="nf">quickcheck</span><span class="p" data-group-id="6759038309-9">(</span><span class="w">
-      </span><span class="nc">ftp_simple_client_server</span><span class="p">:</span><span class="nf">prop_ftp</span><span class="p" data-group-id="6759038309-10">(</span><span class="p" data-group-id="6759038309-10">)</span><span class="p">,</span><span class="w">
+</span><span class="nf">prop_ftp_case</span><span class="p" data-group-id="1611008125-8">(</span><span class="n">Config</span><span class="p" data-group-id="1611008125-8">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="nc">ct_property_test</span><span class="p">:</span><span class="nf">quickcheck</span><span class="p" data-group-id="1611008125-9">(</span><span class="w">
+      </span><span class="nc">ftp_simple_client_server</span><span class="p">:</span><span class="nf">prop_ftp</span><span class="p" data-group-id="1611008125-10">(</span><span class="p" data-group-id="1611008125-10">)</span><span class="p">,</span><span class="w">
       </span><span class="n">Config</span><span class="w">
-     </span><span class="p" data-group-id="6759038309-9">)</span><span class="p">.</span></code></pre><p>and the the property test module (in this example
+     </span><span class="p" data-group-id="1611008125-9">)</span><span class="p">.</span></code></pre><p>and the the property test module (in this example
 <code class="inline">ftp_simple_client_server.erl</code>) as almost a usual property testing module (More
-examples are in <a href="ct_property_test_chapter.html">the User's Guide</a>):</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="5974082794-1">(</span><span class="ss">ftp_simple_client_server</span><span class="p" data-group-id="5974082794-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="5974082794-2">(</span><span class="p" data-group-id="5974082794-3">[</span><span class="ss">prop_ftp</span><span class="p">/</span><span class="mi">0</span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p" data-group-id="5974082794-3">]</span><span class="p" data-group-id="5974082794-2">)</span><span class="p">.</span><span class="w">
+examples are in <a href="ct_property_test_chapter.html">the User's Guide</a>):</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="7828131802-1">(</span><span class="ss">ftp_simple_client_server</span><span class="p" data-group-id="7828131802-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="7828131802-2">(</span><span class="p" data-group-id="7828131802-3">[</span><span class="ss">prop_ftp</span><span class="p">/</span><span class="mi">0</span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p" data-group-id="7828131802-3">]</span><span class="p" data-group-id="7828131802-2">)</span><span class="p">.</span><span class="w">
 </span><span class="w">
-</span><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="5974082794-4">(</span><span class="s">&quot;common_test/include/ct_property_test.hrl&quot;</span><span class="p" data-group-id="5974082794-4">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="7828131802-4">(</span><span class="s">&quot;common_test/include/ct_property_test.hrl&quot;</span><span class="p" data-group-id="7828131802-4">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">prop_ftp</span><span class="p" data-group-id="5974082794-5">(</span><span class="p" data-group-id="5974082794-5">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="o">?</span><span class="n">FORALL</span><span class="p" data-group-id="5974082794-6">(</span><span class="w"> </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p">.</span></code></pre>
+</span><span class="nf">prop_ftp</span><span class="p" data-group-id="7828131802-5">(</span><span class="p" data-group-id="7828131802-5">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="o">?</span><span class="n">FORALL</span><span class="p" data-group-id="7828131802-6">(</span><span class="w"> </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p">.</span></code></pre>
     </section>
 
 </div>
@@ -290,7 +308,7 @@ without Module, Arguments and other details.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">present_result(Module, Cmds, Triple, Config, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#present_result/5"><code class="inline">present_result(Module, Cmds, Triple, Config, [])</code></a>.</p></div>
 
     </div>
 
@@ -339,6 +357,7 @@ this module (<code class="inline">ct_property_test</code>).</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:arguments/0">
 
@@ -354,7 +373,7 @@ this module (<code class="inline">ct_property_test</code>).</p></div>
         <span class="note">(since OTP 17.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_property_test.erl#L98" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_property_test.erl#L98" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -386,7 +405,7 @@ this module (<code class="inline">ct_property_test</code>).</p></div>
         <span class="note">(since OTP 17.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_property_test.erl#L106" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_property_test.erl#L106" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -418,7 +437,7 @@ this module (<code class="inline">ct_property_test</code>).</p></div>
         <span class="note">(since OTP 17.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_property_test.erl#L107" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_property_test.erl#L107" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -450,7 +469,7 @@ this module (<code class="inline">ct_property_test</code>).</p></div>
         <span class="note">(since OTP 17.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_property_test.erl#L103" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_property_test.erl#L103" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -482,7 +501,7 @@ this module (<code class="inline">ct_property_test</code>).</p></div>
         <span class="note">(since OTP 17.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_property_test.erl#L99" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_property_test.erl#L99" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -514,7 +533,7 @@ this module (<code class="inline">ct_property_test</code>).</p></div>
         <span class="note">(since OTP 17.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_property_test.erl#L109" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_property_test.erl#L109" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -546,7 +565,7 @@ this module (<code class="inline">ct_property_test</code>).</p></div>
         <span class="note">(since OTP 17.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_property_test.erl#L105" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_property_test.erl#L105" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -578,7 +597,7 @@ this module (<code class="inline">ct_property_test</code>).</p></div>
         <span class="note">(since OTP 17.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_property_test.erl#L108" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_property_test.erl#L108" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -610,7 +629,7 @@ this module (<code class="inline">ct_property_test</code>).</p></div>
         <span class="note">(since OTP 17.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_property_test.erl#L104" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_property_test.erl#L104" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -642,7 +661,7 @@ this module (<code class="inline">ct_property_test</code>).</p></div>
         <span class="note">(since OTP 17.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_property_test.erl#L110" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_property_test.erl#L110" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -674,7 +693,7 @@ this module (<code class="inline">ct_property_test</code>).</p></div>
         <span class="note">(since OTP 17.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_property_test.erl#L101" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_property_test.erl#L101" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -706,7 +725,7 @@ this module (<code class="inline">ct_property_test</code>).</p></div>
         <span class="note">(since OTP 17.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_property_test.erl#L102" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_property_test.erl#L102" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -738,7 +757,7 @@ this module (<code class="inline">ct_property_test</code>).</p></div>
         <span class="note">(since OTP 17.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_property_test.erl#L100" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_property_test.erl#L100" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -767,6 +786,7 @@ this module (<code class="inline">ct_property_test</code>).</p></div>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="cmnd_names/1">
 
@@ -780,7 +800,7 @@ this module (<code class="inline">ct_property_test</code>).</p></div>
         <span class="note">(since OTP 27.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_property_test.erl#L398" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_property_test.erl#L398" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -812,7 +832,7 @@ without Module, Arguments and other details.</p><p>For more information see: <a 
         <span class="note">(since OTP 17.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_property_test.erl#L169" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_property_test.erl#L169" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -844,7 +864,7 @@ All found Erlang files in that directory are compiled with one of the macros
 <code class="inline">'EQC'</code>, <code class="inline">'PROPER'</code> or <code class="inline">'TRIQ'</code> set, depending on which tool that is first
 found. This could make parts of the Erlang property tests code to be included or
 excluded with the macro directives <code class="inline">-ifdef(Macro).</code> or <code class="inline">-ifndef(Macro).</code>.</p><p>The file(s) in the <code class="inline">property_test</code> subdirectory could, or should, include the
-ct_property_test include file:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="8936181802-1">(</span><span class="s">&quot;common_test/include/ct_property_test.hrl&quot;</span><span class="p" data-group-id="8936181802-1">)</span><span class="p">.</span></code></pre><p>This included file will:</p><ul><li>Include the correct tool's include file</li><li>Set the macro <code class="inline">'MOD_eqc'</code> to the correct module name for the selected tool.
+ct_property_test include file:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="4029913744-1">(</span><span class="s">&quot;common_test/include/ct_property_test.hrl&quot;</span><span class="p" data-group-id="4029913744-1">)</span><span class="p">.</span></code></pre><p>This included file will:</p><ul><li>Include the correct tool's include file</li><li>Set the macro <code class="inline">'MOD_eqc'</code> to the correct module name for the selected tool.
 That is, the macro <code class="inline">'MOD_eqc'</code> is set to either <code class="inline">eqc</code>, <code class="inline">proper</code> or <code class="inline">triq</code>.</li></ul>
   </section>
 </section>
@@ -860,7 +880,7 @@ That is, the macro <code class="inline">'MOD_eqc'</code> is set to either <code 
         <span class="note">(since OTP 27.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_property_test.erl#L410" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_property_test.erl#L410" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -891,7 +911,7 @@ That is, the macro <code class="inline">'MOD_eqc'</code> is set to either <code 
         <span class="note">(since OTP 22.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_property_test.erl#L252" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_property_test.erl#L252" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -929,7 +949,7 @@ That is, the macro <code class="inline">'MOD_eqc'</code> is set to either <code 
         <span class="note">(since OTP 22.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_property_test.erl#L335" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_property_test.erl#L335" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -955,8 +975,8 @@ That is, the macro <code class="inline">'MOD_eqc'</code> is set to either <code 
 
 <p>Presents the result of <em>stateful (statem) property testing</em> using the aggregate
 function in PropEr, QuickCheck or other similar property testing tool.</p><p>It is assumed to be called inside the property called by <a href="#quickcheck/2"><code class="inline">quickcheck/2</code></a>:</p><pre><code class="makeup erlang" translate="no"><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="w">
-</span><span class="n">RunResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">run_parallel_commands</span><span class="p" data-group-id="9925465861-1">(</span><span class="o">?</span><span class="n">MODULE</span><span class="p">,</span><span class="w"> </span><span class="n">Cmds</span><span class="p" data-group-id="9925465861-1">)</span><span class="p">,</span><span class="w">
-</span><span class="nc">ct_property_test</span><span class="p">:</span><span class="nf">present_result</span><span class="p" data-group-id="9925465861-2">(</span><span class="o">?</span><span class="n">MODULE</span><span class="p">,</span><span class="w"> </span><span class="n">Cmds</span><span class="p">,</span><span class="w"> </span><span class="n">RunResult</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="9925465861-2">)</span><span class="w">
+</span><span class="n">RunResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">run_parallel_commands</span><span class="p" data-group-id="8915034470-1">(</span><span class="o">?</span><span class="n">MODULE</span><span class="p">,</span><span class="w"> </span><span class="n">Cmds</span><span class="p" data-group-id="8915034470-1">)</span><span class="p">,</span><span class="w">
+</span><span class="nc">ct_property_test</span><span class="p">:</span><span class="nf">present_result</span><span class="p" data-group-id="8915034470-2">(</span><span class="o">?</span><span class="n">MODULE</span><span class="p">,</span><span class="w"> </span><span class="n">Cmds</span><span class="p">,</span><span class="w"> </span><span class="n">RunResult</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="8915034470-2">)</span><span class="w">
 </span><span class="p">.</span><span class="p">.</span><span class="p">.</span></code></pre><p>See the <a href="ct_property_test_chapter.html#stateful1">User's Guide</a> for an example of
 the usage and of the default printout.</p><p>The <code class="inline">StatisticsSpec</code> is a list of the tuples:</p><ul><li><code class="inline">{Title::string(), CollectFun::fun/1}</code></li><li><code class="inline">{Title::string(), FrequencyFun::/0, CollectFun::fun/1}</code></li></ul><p>Each tuple will produce one table in the order of their places in the list.</p><ul><li><p><code class="inline">Title</code> will be the title of one result table</p></li><li><p><code class="inline">CollectFun</code> is called with one argument: the <code class="inline">Cmds</code>. It should return a list
 of the values to be counted. The following pre-defined functions exist:</p><ul><li><a href="#cmnd_names/1"><code class="inline">ct_property_test:cmnd_names/1</code></a> returns a list of commands (function calls)
@@ -966,15 +986,15 @@ lists</li><li><a href="#sequential_parallel/1"><code class="inline">ct_property_
 about sequential and parallel parts from <code class="inline">Tool:parallel_commands/1,2</code></li></ul></li><li><p><code class="inline">FrequencyFun/0</code> returns a fun/1 which is supposed to take a list of items as
 input, and return an iolist which will be printed as the table. Per default,
 the number of each item is counted and the percentage is printed for each. The
-list [a,b,a,a,c] could for example return</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="9501001797-1">[</span><span class="s">&quot;a 60%\n&quot;</span><span class="p">,</span><span class="s">&quot;b 20%\n&quot;</span><span class="p">,</span><span class="s">&quot;c 20%\n&quot;</span><span class="p" data-group-id="9501001797-1">]</span></code></pre><p>which will be printed by the <code class="inline">print_fun</code>. The default <code class="inline">print_fun</code> will print
+list [a,b,a,a,c] could for example return</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="5476057869-1">[</span><span class="s">&quot;a 60%\n&quot;</span><span class="p">,</span><span class="s">&quot;b 20%\n&quot;</span><span class="p">,</span><span class="s">&quot;c 20%\n&quot;</span><span class="p" data-group-id="5476057869-1">]</span></code></pre><p>which will be printed by the <code class="inline">print_fun</code>. The default <code class="inline">print_fun</code> will print
 it as:</p><pre><code class="text">a 60%
 b 20%
-c 20%</code></pre></li></ul><p>The default <code class="inline">StatisticsSpec</code> is:</p><ul><li><p>For sequential commands:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="0751300043-1">[</span><span class="p" data-group-id="0751300043-2">{</span><span class="s">&quot;Function calls&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">fun</span><span class="w"> </span><span class="ss">cmnd_names</span><span class="p">/</span><span class="mi">1</span><span class="p" data-group-id="0751300043-2">}</span><span class="p">,</span><span class="w">
- </span><span class="p" data-group-id="0751300043-3">{</span><span class="s">&quot;Length of command sequences&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">fun</span><span class="w"> </span><span class="ss">print_frequency_ranges</span><span class="p">/</span><span class="mi">0</span><span class="p">,</span><span class="w">
-                                                  </span><span class="k">fun</span><span class="w"> </span><span class="ss">num_calls</span><span class="p">/</span><span class="mi">1</span><span class="p" data-group-id="0751300043-3">}</span><span class="p" data-group-id="0751300043-1">]</span></code></pre></li><li><p>For parallel commands:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="0871833669-1">[</span><span class="p" data-group-id="0871833669-2">{</span><span class="s">&quot;Distribution sequential/parallel&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">fun</span><span class="w"> </span><span class="ss">sequential_parallel</span><span class="p">/</span><span class="mi">1</span><span class="p" data-group-id="0871833669-2">}</span><span class="p">,</span><span class="w">
- </span><span class="p" data-group-id="0871833669-3">{</span><span class="s">&quot;Function calls&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">fun</span><span class="w"> </span><span class="ss">cmnd_names</span><span class="p">/</span><span class="mi">1</span><span class="p" data-group-id="0871833669-3">}</span><span class="p">,</span><span class="w">
- </span><span class="p" data-group-id="0871833669-4">{</span><span class="s">&quot;Length of command sequences&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">fun</span><span class="w"> </span><span class="ss">print_frequency_ranges</span><span class="p">/</span><span class="mi">0</span><span class="p">,</span><span class="w">
-                                                  </span><span class="k">fun</span><span class="w"> </span><span class="ss">num_calls</span><span class="p">/</span><span class="mi">1</span><span class="p" data-group-id="0871833669-4">}</span><span class="p" data-group-id="0871833669-1">]</span></code></pre></li></ul>
+c 20%</code></pre></li></ul><p>The default <code class="inline">StatisticsSpec</code> is:</p><ul><li><p>For sequential commands:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="6764749135-1">[</span><span class="p" data-group-id="6764749135-2">{</span><span class="s">&quot;Function calls&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">fun</span><span class="w"> </span><span class="ss">cmnd_names</span><span class="p">/</span><span class="mi">1</span><span class="p" data-group-id="6764749135-2">}</span><span class="p">,</span><span class="w">
+ </span><span class="p" data-group-id="6764749135-3">{</span><span class="s">&quot;Length of command sequences&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">fun</span><span class="w"> </span><span class="ss">print_frequency_ranges</span><span class="p">/</span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                                  </span><span class="k">fun</span><span class="w"> </span><span class="ss">num_calls</span><span class="p">/</span><span class="mi">1</span><span class="p" data-group-id="6764749135-3">}</span><span class="p" data-group-id="6764749135-1">]</span></code></pre></li><li><p>For parallel commands:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="8945900956-1">[</span><span class="p" data-group-id="8945900956-2">{</span><span class="s">&quot;Distribution sequential/parallel&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">fun</span><span class="w"> </span><span class="ss">sequential_parallel</span><span class="p">/</span><span class="mi">1</span><span class="p" data-group-id="8945900956-2">}</span><span class="p">,</span><span class="w">
+ </span><span class="p" data-group-id="8945900956-3">{</span><span class="s">&quot;Function calls&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">fun</span><span class="w"> </span><span class="ss">cmnd_names</span><span class="p">/</span><span class="mi">1</span><span class="p" data-group-id="8945900956-3">}</span><span class="p">,</span><span class="w">
+ </span><span class="p" data-group-id="8945900956-4">{</span><span class="s">&quot;Length of command sequences&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">fun</span><span class="w"> </span><span class="ss">print_frequency_ranges</span><span class="p">/</span><span class="mi">0</span><span class="p">,</span><span class="w">
+                                                  </span><span class="k">fun</span><span class="w"> </span><span class="ss">num_calls</span><span class="p">/</span><span class="mi">1</span><span class="p" data-group-id="8945900956-4">}</span><span class="p" data-group-id="8945900956-1">]</span></code></pre></li></ul>
   </section>
 </section>
 <section class="detail" id="quickcheck/2">
@@ -989,7 +1009,7 @@ c 20%</code></pre></li></ul><p>The default <code class="inline">StatisticsSpec</
         <span class="note">(since OTP 17.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_property_test.erl#L233" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_property_test.erl#L233" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1022,7 +1042,7 @@ this module (<code class="inline">ct_property_test</code>).</p><p>The result is 
         <span class="note">(since OTP 27.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/common_test/src/ct_property_test.erl#L422" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/common_test/src/ct_property_test.erl#L422" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1049,8 +1069,8 @@ this module (<code class="inline">ct_property_test</code>).</p><p>The result is 
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="common_test.epub" title="ePub version">
@@ -1062,7 +1082,7 @@ this module (<code class="inline">ct_property_test</code>).</p><p>The result is 
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

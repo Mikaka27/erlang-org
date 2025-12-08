@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="Erlang System Documentation v29.0-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/system/code_loading.html" />
     <title>Compilation and Code Loading — Erlang System Documentation v29.0-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-1026E94C.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ Erlang System Documentation
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of Erlang System Documentation</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -84,7 +102,7 @@ Erlang System Documentation
     <h1>Compilation and Code Loading</h1>
 
 
-      <a href="https://github.com/erlang/otp/blob/master/system/doc/reference_manual/code_loading.md#L1" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/system/doc/reference_manual/code_loading.md#L1" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -97,8 +115,8 @@ system-dependent. This section describes compilation and code loading in
 Erlang/OTP with references to relevant parts of the documentation.</p><h2 id="compilation" class="section-heading"><a href="#compilation" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Compilation</span></h2><p>Erlang programs must be <em>compiled</em> to object code. The compiler can generate a
 new file that contains the object code. The current abstract machine, which runs
 the object code, is called BEAM, therefore the object files get the suffix
-<code class="inline">.beam</code>. The compiler can also generate a binary which can be loaded directly.</p><p>The compiler is located in the module <a href="../apps/compiler/compile.html"><code class="inline">compile</code></a> in Compiler.</p><pre><code class="makeup erlang" translate="no"><span class="nc">compile</span><span class="p">:</span><span class="nf">file</span><span class="p" data-group-id="3303410019-1">(</span><span class="n">Module</span><span class="p" data-group-id="3303410019-1">)</span><span class="w">
-</span><span class="nc">compile</span><span class="p">:</span><span class="nf">file</span><span class="p" data-group-id="3303410019-2">(</span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">Options</span><span class="p" data-group-id="3303410019-2">)</span></code></pre><p>The Erlang shell understands the command <code class="inline">c(Module)</code>, which both compiles and
+<code class="inline">.beam</code>. The compiler can also generate a binary which can be loaded directly.</p><p>The compiler is located in the module <a href="../apps/compiler/compile.html"><code class="inline">compile</code></a> in Compiler.</p><pre><code class="makeup erlang" translate="no"><span class="nc">compile</span><span class="p">:</span><span class="nf">file</span><span class="p" data-group-id="0007798088-1">(</span><span class="n">Module</span><span class="p" data-group-id="0007798088-1">)</span><span class="w">
+</span><span class="nc">compile</span><span class="p">:</span><span class="nf">file</span><span class="p" data-group-id="0007798088-2">(</span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">Options</span><span class="p" data-group-id="0007798088-2">)</span></code></pre><p>The Erlang shell understands the command <code class="inline">c(Module)</code>, which both compiles and
 loads <code class="inline">Module</code>.</p><p>There is also a module <code class="inline">make</code>, which provides a set of functions similar to the
 UNIX type Make functions, see module <a href="../apps/tools/make.html"><code class="inline">make</code></a> in Tools.</p><p>The compiler can also be accessed from the OS prompt using the
 <a href="../apps/erts/erl_cmd.html">erl</a> executable in ERTS.</p><pre><code class="makeup erlang" translate="no"><span class="c1">% erl -compile Module1...ModuleN</span><span class="w">
@@ -119,21 +137,21 @@ qualified function calls always refer to current code. Old code can still be
 evaluated because of processes lingering in the old code.</p><p>If a third instance of the module is loaded, the code server removes (purges)
 the old code and any processes lingering in it is terminated. Then the third
 instance becomes 'current' and the previously current code becomes 'old'.</p><p>To change from old code to current code, a process must make a fully qualified
-function call.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="8111004991-1">(</span><span class="ss">m</span><span class="p" data-group-id="8111004991-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="8111004991-2">(</span><span class="p" data-group-id="8111004991-3">[</span><span class="ss">loop</span><span class="p">/</span><span class="mi">0</span><span class="p" data-group-id="8111004991-3">]</span><span class="p" data-group-id="8111004991-2">)</span><span class="p">.</span><span class="w">
+function call.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="8463626204-1">(</span><span class="ss">m</span><span class="p" data-group-id="8463626204-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="8463626204-2">(</span><span class="p" data-group-id="8463626204-3">[</span><span class="ss">loop</span><span class="p">/</span><span class="mi">0</span><span class="p" data-group-id="8463626204-3">]</span><span class="p" data-group-id="8463626204-2">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">loop</span><span class="p" data-group-id="8111004991-4">(</span><span class="p" data-group-id="8111004991-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+</span><span class="nf">loop</span><span class="p" data-group-id="8463626204-4">(</span><span class="p" data-group-id="8463626204-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
     </span><span class="k">receive</span><span class="w">
         </span><span class="ss">code_switch</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-            </span><span class="nc">m</span><span class="p">:</span><span class="nf">loop</span><span class="p" data-group-id="8111004991-5">(</span><span class="p" data-group-id="8111004991-5">)</span><span class="p">;</span><span class="w">
+            </span><span class="nc">m</span><span class="p">:</span><span class="nf">loop</span><span class="p" data-group-id="8463626204-5">(</span><span class="p" data-group-id="8463626204-5">)</span><span class="p">;</span><span class="w">
         </span><span class="n">Msg</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
             </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="w">
-            </span><span class="nf">loop</span><span class="p" data-group-id="8111004991-6">(</span><span class="p" data-group-id="8111004991-6">)</span><span class="w">
+            </span><span class="nf">loop</span><span class="p" data-group-id="8463626204-6">(</span><span class="p" data-group-id="8463626204-6">)</span><span class="w">
     </span><span class="k">end</span><span class="p">.</span></code></pre><p>To make the process change code, send the message <code class="inline">code_switch</code> to it. The
 process then makes a fully qualified call to <code class="inline">m:loop()</code> and changes to current
 code. Notice that <code class="inline">m:loop/0</code> must be exported.</p><p>For code replacement of funs to work, use the syntax
 <code class="inline">fun Module:FunctionName/Arity</code>.</p><p><a href="" id="on_load"></a></p><h2 id="running-a-function-when-a-module-is-loaded" class="section-heading"><a href="#running-a-function-when-a-module-is-loaded" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Running a Function When a Module is Loaded</span></h2><p>The <code class="inline">-on_load()</code> directive names a function that is to be run automatically when
-a module is loaded.</p><p>Its syntax is as follows:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">on_load</span><span class="p" data-group-id="4419414310-1">(</span><span class="n">Name</span><span class="o">/</span><span class="mi">0</span><span class="p" data-group-id="4419414310-1">)</span><span class="p">.</span></code></pre><p>It is not necessary to export the function. It is called in a freshly spawned
+a module is loaded.</p><p>Its syntax is as follows:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">on_load</span><span class="p" data-group-id="3164736822-1">(</span><span class="n">Name</span><span class="o">/</span><span class="mi">0</span><span class="p" data-group-id="3164736822-1">)</span><span class="p">.</span></code></pre><p>It is not necessary to export the function. It is called in a freshly spawned
 process (which terminates as soon as the function returns).</p><p>The function must return <code class="inline">ok</code> if the module is to become the new current code
 for the module and become callable.</p><p>Returning any other value or generating an exception causes the new code to be
 unloaded. If the return value is not an atom, a warning error report is sent to
@@ -146,13 +164,13 @@ function have finished.</p><section role="note" class="admonition info"><h4 clas
 code would become old, essentially leaving the system without any working and
 reachable instance of the module.</p></section><p>In embedded mode, first all modules are loaded. Then all <code class="inline">on_load</code> functions are
 called. The system is terminated unless all of the <code class="inline">on_load</code> functions return
-<code class="inline">ok</code>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="5259747412-1">(</span><span class="ss">m</span><span class="p" data-group-id="5259747412-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p">-</span><span class="na">on_load</span><span class="p" data-group-id="5259747412-2">(</span><span class="ss">load_my_nifs</span><span class="p">/</span><span class="mi">0</span><span class="p" data-group-id="5259747412-2">)</span><span class="p">.</span><span class="w">
+<code class="inline">ok</code>.</p><p><em>Example:</em></p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="1664516893-1">(</span><span class="ss">m</span><span class="p" data-group-id="1664516893-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">on_load</span><span class="p" data-group-id="1664516893-2">(</span><span class="ss">load_my_nifs</span><span class="p">/</span><span class="mi">0</span><span class="p" data-group-id="1664516893-2">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">load_my_nifs</span><span class="p" data-group-id="5259747412-3">(</span><span class="p" data-group-id="5259747412-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+</span><span class="nf">load_my_nifs</span><span class="p" data-group-id="1664516893-3">(</span><span class="p" data-group-id="1664516893-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
     </span><span class="n">NifPath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p">,</span><span class="w">    </span><span class="c1">%Set up the path to the NIF library.</span><span class="w">
     </span><span class="n">Info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p">,</span><span class="w">       </span><span class="c1">%Initialize the Info term</span><span class="w">
-    </span><span class="nc">erlang</span><span class="p">:</span><span class="nf">load_nif</span><span class="p" data-group-id="5259747412-4">(</span><span class="n">NifPath</span><span class="p">,</span><span class="w"> </span><span class="n">Info</span><span class="p" data-group-id="5259747412-4">)</span><span class="p">.</span></code></pre><p>If the call to <a href="../apps/erts/erlang.html#load_nif/2"><code class="inline">erlang:load_nif/2</code></a> fails, the module is unloaded and a warning
+    </span><span class="nc">erlang</span><span class="p">:</span><span class="nf">load_nif</span><span class="p" data-group-id="1664516893-4">(</span><span class="n">NifPath</span><span class="p">,</span><span class="w"> </span><span class="n">Info</span><span class="p" data-group-id="1664516893-4">)</span><span class="p">.</span></code></pre><p>If the call to <a href="../apps/erts/erlang.html#load_nif/2"><code class="inline">erlang:load_nif/2</code></a> fails, the module is unloaded and a warning
 report is sent to the error loader.</p>
 
 </div>
@@ -187,8 +205,8 @@ Ports and Port Drivers
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="Erlang System Documentation.epub" title="ePub version">
@@ -200,7 +218,7 @@ Ports and Port Drivers
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

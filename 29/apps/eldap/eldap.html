@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="eldap v1.2.16-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/eldap/eldap.html" />
     <title>eldap — eldap v1.2.16-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-C4F9BDCA.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ eldap
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of eldap</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ eldap
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L29" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L29" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -142,7 +160,7 @@ eldap
       </div>
 
         <div class="summary-synopsis"><p>How to handle aliases during a search.
-See <a><code class="inline">neverDerefAliases/0</code></a>, <a><code class="inline">derefInSearching/0</code></a>, <a><code class="inline">derefFindingBaseObj/0</code></a>, <a><code class="inline">derefAlways/0</code></a></p></div>
+See <a href="#neverDerefAliases/0"><code class="inline">neverDerefAliases/0</code></a>, <a href="#derefInSearching/0"><code class="inline">derefInSearching/0</code></a>, <a href="#derefFindingBaseObj/0"><code class="inline">derefFindingBaseObj/0</code></a>, <a href="#derefAlways/0"><code class="inline">derefAlways/0</code></a></p></div>
 
     </div>
 
@@ -173,7 +191,7 @@ See <a><code class="inline">neverDerefAliases/0</code></a>, <a><code class="inli
       </div>
 
         <div class="summary-synopsis"><p>Entry modification operations.
-See <a><code class="inline">mod_add/2</code></a>, <a><code class="inline">mod_delete/2</code></a>, <a><code class="inline">mod_replace/2</code></a></p></div>
+See <a href="#mod_add/2"><code class="inline">mod_add/2</code></a>, <a href="#mod_delete/2"><code class="inline">mod_delete/2</code></a>, <a href="#mod_replace/2"><code class="inline">mod_replace/2</code></a></p></div>
 
     </div>
 
@@ -195,7 +213,7 @@ The contents of <code class="inline">Address</code> is server dependent.</p></di
       </div>
 
         <div class="summary-synopsis"><p>Scope of a search.
-See <a><code class="inline">baseObject/0</code></a>, <a><code class="inline">singleLevel/0</code></a>, <a><code class="inline">wholeSubtree/0</code></a></p></div>
+See <a href="#baseObject/0"><code class="inline">baseObject/0</code></a>, <a href="#singleLevel/0"><code class="inline">singleLevel/0</code></a>, <a href="#wholeSubtree/0"><code class="inline">wholeSubtree/0</code></a></p></div>
 
     </div>
 
@@ -412,7 +430,7 @@ TCP or TLS (SSL), used by the LDAP connection.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Modify the password of a user. See <a><code class="inline">modify_password/4</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Modify the password of a user. See <a href="#modify_password/4"><code class="inline">modify_password/4</code></a>.</p></div>
 
     </div>
 
@@ -598,6 +616,7 @@ TCP or TLS (SSL), used by the LDAP connection.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:attribute/0">
 
@@ -613,7 +632,7 @@ TCP or TLS (SSL), used by the LDAP connection.</p></div>
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L71" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L71" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -645,7 +664,7 @@ TCP or TLS (SSL), used by the LDAP connection.</p></div>
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L53" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L53" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -675,7 +694,7 @@ TCP or TLS (SSL), used by the LDAP connection.</p></div>
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L89" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L89" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -708,7 +727,7 @@ See <a href="#neverDerefAliases/0"><code class="inline">neverDerefAliases/0</cod
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L100" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L100" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -744,7 +763,7 @@ See <a href="#neverDerefAliases/0"><code class="inline">neverDerefAliases/0</cod
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L68" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L68" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -776,7 +795,7 @@ See <a href="#neverDerefAliases/0"><code class="inline">neverDerefAliases/0</cod
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L77" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L77" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -809,7 +828,7 @@ See <a href="#mod_add/2"><code class="inline">mod_add/2</code></a>, <a href="#mo
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L106" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L106" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -840,7 +859,7 @@ The contents of <code class="inline">Address</code> is server dependent.</p>
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L83" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L83" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -873,7 +892,7 @@ See <a href="#baseObject/0"><code class="inline">baseObject/0</code></a>, <a hre
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L58" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L58" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -909,6 +928,7 @@ See <a href="#baseObject/0"><code class="inline">baseObject/0</code></a>, <a hre
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="add/3">
 
@@ -922,7 +942,7 @@ See <a href="#baseObject/0"><code class="inline">baseObject/0</code></a>, <a hre
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L460" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L460" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -943,13 +963,13 @@ See <a href="#baseObject/0"><code class="inline">baseObject/0</code></a>, <a hre
 
       </div>
 
-<p>Add an entry. The entry must not exist.</p><pre><code class="makeup erlang" translate="no"><span class="w">  </span><span class="nf">add</span><span class="p" data-group-id="7400029830-1">(</span><span class="n">Handle</span><span class="p">,</span><span class="w">
+<p>Add an entry. The entry must not exist.</p><pre><code class="makeup erlang" translate="no"><span class="w">  </span><span class="nf">add</span><span class="p" data-group-id="3735971717-1">(</span><span class="n">Handle</span><span class="p">,</span><span class="w">
       </span><span class="s">&quot;cn=Bill Valentine, ou=people, o=Example Org, dc=example, dc=com&quot;</span><span class="p">,</span><span class="w">
-       </span><span class="p" data-group-id="7400029830-2">[</span><span class="p" data-group-id="7400029830-3">{</span><span class="s">&quot;objectclass&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7400029830-4">[</span><span class="s">&quot;person&quot;</span><span class="p" data-group-id="7400029830-4">]</span><span class="p" data-group-id="7400029830-3">}</span><span class="p">,</span><span class="w">
-        </span><span class="p" data-group-id="7400029830-5">{</span><span class="s">&quot;cn&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7400029830-6">[</span><span class="s">&quot;Bill Valentine&quot;</span><span class="p" data-group-id="7400029830-6">]</span><span class="p" data-group-id="7400029830-5">}</span><span class="p">,</span><span class="w">
-        </span><span class="p" data-group-id="7400029830-7">{</span><span class="s">&quot;sn&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7400029830-8">[</span><span class="s">&quot;Valentine&quot;</span><span class="p" data-group-id="7400029830-8">]</span><span class="p" data-group-id="7400029830-7">}</span><span class="p">,</span><span class="w">
-        </span><span class="p" data-group-id="7400029830-9">{</span><span class="s">&quot;telephoneNumber&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7400029830-10">[</span><span class="s">&quot;545 555 00&quot;</span><span class="p" data-group-id="7400029830-10">]</span><span class="p" data-group-id="7400029830-9">}</span><span class="p" data-group-id="7400029830-2">]</span><span class="w">
-     </span><span class="p" data-group-id="7400029830-1">)</span></code></pre>
+       </span><span class="p" data-group-id="3735971717-2">[</span><span class="p" data-group-id="3735971717-3">{</span><span class="s">&quot;objectclass&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3735971717-4">[</span><span class="s">&quot;person&quot;</span><span class="p" data-group-id="3735971717-4">]</span><span class="p" data-group-id="3735971717-3">}</span><span class="p">,</span><span class="w">
+        </span><span class="p" data-group-id="3735971717-5">{</span><span class="s">&quot;cn&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3735971717-6">[</span><span class="s">&quot;Bill Valentine&quot;</span><span class="p" data-group-id="3735971717-6">]</span><span class="p" data-group-id="3735971717-5">}</span><span class="p">,</span><span class="w">
+        </span><span class="p" data-group-id="3735971717-7">{</span><span class="s">&quot;sn&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3735971717-8">[</span><span class="s">&quot;Valentine&quot;</span><span class="p" data-group-id="3735971717-8">]</span><span class="p" data-group-id="3735971717-7">}</span><span class="p">,</span><span class="w">
+        </span><span class="p" data-group-id="3735971717-9">{</span><span class="s">&quot;telephoneNumber&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3735971717-10">[</span><span class="s">&quot;545 555 00&quot;</span><span class="p" data-group-id="3735971717-10">]</span><span class="p" data-group-id="3735971717-9">}</span><span class="p" data-group-id="3735971717-2">]</span><span class="w">
+     </span><span class="p" data-group-id="3735971717-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="and/1">
@@ -964,7 +984,7 @@ See <a href="#baseObject/0"><code class="inline">baseObject/0</code></a>, <a hre
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L793" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L793" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -994,7 +1014,7 @@ See <a href="#baseObject/0"><code class="inline">baseObject/0</code></a>, <a hre
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L845" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L845" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1024,7 +1044,7 @@ See <a href="#baseObject/0"><code class="inline">baseObject/0</code></a>, <a hre
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L743" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L743" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1054,7 +1074,7 @@ See <a href="#baseObject/0"><code class="inline">baseObject/0</code></a>, <a hre
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L372" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L372" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1085,7 +1105,7 @@ with <a href="../../apps/kernel/gen_tcp.html#close/1"><code class="inline">gen_t
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L501" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L501" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1120,7 +1140,7 @@ with <a href="../../apps/kernel/gen_tcp.html#close/1"><code class="inline">gen_t
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L783" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L783" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1150,7 +1170,7 @@ with <a href="../../apps/kernel/gen_tcp.html#close/1"><code class="inline">gen_t
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L777" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L777" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1180,7 +1200,7 @@ with <a href="../../apps/kernel/gen_tcp.html#close/1"><code class="inline">gen_t
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L771" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L771" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1210,7 +1230,7 @@ with <a href="../../apps/kernel/gen_tcp.html#close/1"><code class="inline">gen_t
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L820" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L820" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1240,7 +1260,7 @@ with <a href="../../apps/kernel/gen_tcp.html#close/1"><code class="inline">gen_t
         <span class="note">(since OTP 17.4)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L907" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L907" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1261,7 +1281,7 @@ with <a href="../../apps/kernel/gen_tcp.html#close/1"><code class="inline">gen_t
 
       </div>
 
-<p>Creates an extensible match filter. For example,</p><pre><code class="makeup erlang" translate="no"><span class="w">  </span><span class="nc">eldap</span><span class="p">:</span><span class="nf">extensibleMatch</span><span class="p" data-group-id="8130268689-1">(</span><span class="s">&quot;Bar&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8130268689-2">[</span><span class="p" data-group-id="8130268689-3">{</span><span class="ss">type</span><span class="p">,</span><span class="s">&quot;sn&quot;</span><span class="p" data-group-id="8130268689-3">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8130268689-4">{</span><span class="ss">matchingRule</span><span class="p">,</span><span class="s">&quot;caseExactMatch&quot;</span><span class="p" data-group-id="8130268689-4">}</span><span class="p" data-group-id="8130268689-2">]</span><span class="p" data-group-id="8130268689-1">)</span><span class="p">)</span></code></pre><p>creates a filter which performs a <code class="inline">caseExactMatch</code> on the attribute <code class="inline">sn</code> and
+<p>Creates an extensible match filter. For example,</p><pre><code class="makeup erlang" translate="no"><span class="w">  </span><span class="nc">eldap</span><span class="p">:</span><span class="nf">extensibleMatch</span><span class="p" data-group-id="8898997126-1">(</span><span class="s">&quot;Bar&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8898997126-2">[</span><span class="p" data-group-id="8898997126-3">{</span><span class="ss">type</span><span class="p">,</span><span class="s">&quot;sn&quot;</span><span class="p" data-group-id="8898997126-3">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8898997126-4">{</span><span class="ss">matchingRule</span><span class="p">,</span><span class="s">&quot;caseExactMatch&quot;</span><span class="p" data-group-id="8898997126-4">}</span><span class="p" data-group-id="8898997126-2">]</span><span class="p" data-group-id="8898997126-1">)</span><span class="p">)</span></code></pre><p>creates a filter which performs a <code class="inline">caseExactMatch</code> on the attribute <code class="inline">sn</code> and
 matches with the value <code class="inline">&quot;Bar&quot;</code>. The default value of <code class="inline">dnAttributes</code> is <code class="inline">false</code>.</p>
   </section>
 </section>
@@ -1277,7 +1297,7 @@ matches with the value <code class="inline">&quot;Bar&quot;</code>. The default 
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L828" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L828" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1307,7 +1327,7 @@ matches with the value <code class="inline">&quot;Bar&quot;</code>. The default 
         <span class="note">(since OTP 25.3.1)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L396" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L396" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1338,7 +1358,7 @@ TCP or TLS (SSL), used by the LDAP connection.</p>
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L836" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L836" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1368,7 +1388,7 @@ TCP or TLS (SSL), used by the LDAP connection.</p>
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L556" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L556" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1398,7 +1418,7 @@ TCP or TLS (SSL), used by the LDAP connection.</p>
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L565" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L565" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1428,7 +1448,7 @@ TCP or TLS (SSL), used by the LDAP connection.</p>
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L574" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L574" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1458,7 +1478,7 @@ TCP or TLS (SSL), used by the LDAP connection.</p>
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L536" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L536" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1479,9 +1499,9 @@ TCP or TLS (SSL), used by the LDAP connection.</p>
 
       </div>
 
-<p>Modify an entry.</p><pre><code class="makeup erlang" translate="no"><span class="w">  </span><span class="nf">modify</span><span class="p" data-group-id="3281853653-1">(</span><span class="n">Handle</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;cn=Bill Valentine, ou=people, o=Example Org, dc=example, dc=com&quot;</span><span class="p">,</span><span class="w">
-         </span><span class="p" data-group-id="3281853653-2">[</span><span class="nc">eldap</span><span class="p">:</span><span class="nf">mod_replace</span><span class="p" data-group-id="3281853653-3">(</span><span class="s">&quot;telephoneNumber&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3281853653-4">[</span><span class="s">&quot;555 555 00&quot;</span><span class="p" data-group-id="3281853653-4">]</span><span class="p" data-group-id="3281853653-3">)</span><span class="p">,</span><span class="w">
-	  </span><span class="nc">eldap</span><span class="p">:</span><span class="nf">mod_add</span><span class="p" data-group-id="3281853653-5">(</span><span class="s">&quot;description&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3281853653-6">[</span><span class="s">&quot;LDAP Hacker&quot;</span><span class="p" data-group-id="3281853653-6">]</span><span class="p" data-group-id="3281853653-5">)</span><span class="w"> </span><span class="p" data-group-id="3281853653-2">]</span><span class="p" data-group-id="3281853653-1">)</span></code></pre>
+<p>Modify an entry.</p><pre><code class="makeup erlang" translate="no"><span class="w">  </span><span class="nf">modify</span><span class="p" data-group-id="0890113863-1">(</span><span class="n">Handle</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;cn=Bill Valentine, ou=people, o=Example Org, dc=example, dc=com&quot;</span><span class="p">,</span><span class="w">
+         </span><span class="p" data-group-id="0890113863-2">[</span><span class="nc">eldap</span><span class="p">:</span><span class="nf">mod_replace</span><span class="p" data-group-id="0890113863-3">(</span><span class="s">&quot;telephoneNumber&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0890113863-4">[</span><span class="s">&quot;555 555 00&quot;</span><span class="p" data-group-id="0890113863-4">]</span><span class="p" data-group-id="0890113863-3">)</span><span class="p">,</span><span class="w">
+	  </span><span class="nc">eldap</span><span class="p">:</span><span class="nf">mod_add</span><span class="p" data-group-id="0890113863-5">(</span><span class="s">&quot;description&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0890113863-6">[</span><span class="s">&quot;LDAP Hacker&quot;</span><span class="p" data-group-id="0890113863-6">]</span><span class="p" data-group-id="0890113863-5">)</span><span class="w"> </span><span class="p" data-group-id="0890113863-2">]</span><span class="p" data-group-id="0890113863-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="modify_dn/5">
@@ -1496,7 +1516,7 @@ TCP or TLS (SSL), used by the LDAP connection.</p>
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L617" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L617" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1538,7 +1558,7 @@ parent, <code class="inline">NewSupDN</code> shall be &quot;&quot;.</p><pre><cod
         <span class="note">(since OTP 18.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L317" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L317" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1574,7 +1594,7 @@ parent, <code class="inline">NewSupDN</code> shall be &quot;&quot;.</p><pre><cod
         <span class="note">(since OTP 18.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L339" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L339" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1615,7 +1635,7 @@ password. If not required, use <a href="#modify_password/3"><code class="inline"
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L765" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L765" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1645,7 +1665,7 @@ password. If not required, use <a href="#modify_password/3"><code class="inline"
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L807" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L807" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1675,7 +1695,7 @@ password. If not required, use <a href="#modify_password/3"><code class="inline"
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L208" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L208" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1710,7 +1730,7 @@ password. If not required, use <a href="#modify_password/3"><code class="inline"
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L236" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L236" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1754,7 +1774,7 @@ password. If not required, use <a href="#modify_password/3"><code class="inline"
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L800" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L800" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1784,7 +1804,7 @@ password. If not required, use <a href="#modify_password/3"><code class="inline"
         <span class="note">(since OTP 24.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L1967" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L1967" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1801,8 +1821,8 @@ password. If not required, use <a href="#modify_password/3"><code class="inline"
       </div>
 
 <p>Paged results is an extension to the LDAP protocol specified by RFC2696</p><p>This function creates a control with the specified page size for use in
-<code class="inline">search/3</code>, for example:</p><pre><code class="makeup erlang" translate="no"><span class="n">Control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">eldap</span><span class="p">:</span><span class="nf">paged_result_control</span><span class="p" data-group-id="7041762714-1">(</span><span class="mi">50</span><span class="p" data-group-id="7041762714-1">)</span><span class="p">,</span><span class="w">
-</span><span class="p" data-group-id="7041762714-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">SearchResults</span><span class="p" data-group-id="7041762714-2">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">search</span><span class="p" data-group-id="7041762714-3">(</span><span class="n">Handle</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7041762714-4">[</span><span class="p" data-group-id="7041762714-5">{</span><span class="ss">base</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;dc=example, dc=com&quot;</span><span class="p" data-group-id="7041762714-5">}</span><span class="p" data-group-id="7041762714-4">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7041762714-6">[</span><span class="n">Control</span><span class="p" data-group-id="7041762714-6">]</span><span class="p" data-group-id="7041762714-3">)</span><span class="p">,</span></code></pre>
+<code class="inline">search/3</code>, for example:</p><pre><code class="makeup erlang" translate="no"><span class="n">Control</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">eldap</span><span class="p">:</span><span class="nf">paged_result_control</span><span class="p" data-group-id="1798651944-1">(</span><span class="mi">50</span><span class="p" data-group-id="1798651944-1">)</span><span class="p">,</span><span class="w">
+</span><span class="p" data-group-id="1798651944-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">SearchResults</span><span class="p" data-group-id="1798651944-2">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">search</span><span class="p" data-group-id="1798651944-3">(</span><span class="n">Handle</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1798651944-4">[</span><span class="p" data-group-id="1798651944-5">{</span><span class="ss">base</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;dc=example, dc=com&quot;</span><span class="p" data-group-id="1798651944-5">}</span><span class="p" data-group-id="1798651944-4">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1798651944-6">[</span><span class="n">Control</span><span class="p" data-group-id="1798651944-6">]</span><span class="p" data-group-id="1798651944-3">)</span><span class="p">,</span></code></pre>
   </section>
 </section>
 <section class="detail" id="paged_result_control/2">
@@ -1817,7 +1837,7 @@ password. If not required, use <a href="#modify_password/3"><code class="inline"
         <span class="note">(since OTP 24.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L1995" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L1995" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1835,12 +1855,12 @@ password. If not required, use <a href="#modify_password/3"><code class="inline"
 
 <p>Paged results is an extension to the LDAP protocol specified by RFC2696</p><p>This function creates a control with the specified page size and cookie for use
 in <code class="inline">search/3</code> to retrieve the next results page.</p><p>For example:</p><pre><code class="makeup erlang" translate="no"><span class="n">PageSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
-</span><span class="n">Control1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">eldap</span><span class="p">:</span><span class="nf">paged_result_control</span><span class="p" data-group-id="6407460335-1">(</span><span class="n">PageSize</span><span class="p" data-group-id="6407460335-1">)</span><span class="p">,</span><span class="w">
-</span><span class="p" data-group-id="6407460335-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">SearchResults1</span><span class="p" data-group-id="6407460335-2">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">search</span><span class="p" data-group-id="6407460335-3">(</span><span class="n">Handle</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6407460335-4">[</span><span class="p" data-group-id="6407460335-5">{</span><span class="ss">base</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;dc=example, dc=com&quot;</span><span class="p" data-group-id="6407460335-5">}</span><span class="p" data-group-id="6407460335-4">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6407460335-6">[</span><span class="n">Control1</span><span class="p" data-group-id="6407460335-6">]</span><span class="p" data-group-id="6407460335-3">)</span><span class="p">,</span><span class="w">
+</span><span class="n">Control1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">eldap</span><span class="p">:</span><span class="nf">paged_result_control</span><span class="p" data-group-id="1071338659-1">(</span><span class="n">PageSize</span><span class="p" data-group-id="1071338659-1">)</span><span class="p">,</span><span class="w">
+</span><span class="p" data-group-id="1071338659-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">SearchResults1</span><span class="p" data-group-id="1071338659-2">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">search</span><span class="p" data-group-id="1071338659-3">(</span><span class="n">Handle</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1071338659-4">[</span><span class="p" data-group-id="1071338659-5">{</span><span class="ss">base</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;dc=example, dc=com&quot;</span><span class="p" data-group-id="1071338659-5">}</span><span class="p" data-group-id="1071338659-4">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1071338659-6">[</span><span class="n">Control1</span><span class="p" data-group-id="1071338659-6">]</span><span class="p" data-group-id="1071338659-3">)</span><span class="p">,</span><span class="w">
 </span><span class="c1">%% retrieve the returned cookie from the search results</span><span class="w">
-</span><span class="p" data-group-id="6407460335-7">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">Cookie1</span><span class="p" data-group-id="6407460335-7">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">eldap</span><span class="p">:</span><span class="nf">paged_result_cookie</span><span class="p" data-group-id="6407460335-8">(</span><span class="n">SearchResults1</span><span class="p" data-group-id="6407460335-8">)</span><span class="p">,</span><span class="w">
-</span><span class="n">Control2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">eldap</span><span class="p">:</span><span class="nf">paged_result_control</span><span class="p" data-group-id="6407460335-9">(</span><span class="n">PageSize</span><span class="p">,</span><span class="w"> </span><span class="n">Cookie1</span><span class="p" data-group-id="6407460335-9">)</span><span class="p">,</span><span class="w">
-</span><span class="p" data-group-id="6407460335-10">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">SearchResults2</span><span class="p" data-group-id="6407460335-10">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">eldap</span><span class="p">:</span><span class="nf">search</span><span class="p" data-group-id="6407460335-11">(</span><span class="n">Handle</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6407460335-12">[</span><span class="p" data-group-id="6407460335-13">{</span><span class="ss">base</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;dc=example,dc=com&quot;</span><span class="p" data-group-id="6407460335-13">}</span><span class="p" data-group-id="6407460335-12">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6407460335-14">[</span><span class="n">Control2</span><span class="p" data-group-id="6407460335-14">]</span><span class="p" data-group-id="6407460335-11">)</span><span class="p">,</span><span class="w">
+</span><span class="p" data-group-id="1071338659-7">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">Cookie1</span><span class="p" data-group-id="1071338659-7">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">eldap</span><span class="p">:</span><span class="nf">paged_result_cookie</span><span class="p" data-group-id="1071338659-8">(</span><span class="n">SearchResults1</span><span class="p" data-group-id="1071338659-8">)</span><span class="p">,</span><span class="w">
+</span><span class="n">Control2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">eldap</span><span class="p">:</span><span class="nf">paged_result_control</span><span class="p" data-group-id="1071338659-9">(</span><span class="n">PageSize</span><span class="p">,</span><span class="w"> </span><span class="n">Cookie1</span><span class="p" data-group-id="1071338659-9">)</span><span class="p">,</span><span class="w">
+</span><span class="p" data-group-id="1071338659-10">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">SearchResults2</span><span class="p" data-group-id="1071338659-10">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">eldap</span><span class="p">:</span><span class="nf">search</span><span class="p" data-group-id="1071338659-11">(</span><span class="n">Handle</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1071338659-12">[</span><span class="p" data-group-id="1071338659-13">{</span><span class="ss">base</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;dc=example,dc=com&quot;</span><span class="p" data-group-id="1071338659-13">}</span><span class="p" data-group-id="1071338659-12">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1071338659-14">[</span><span class="n">Control2</span><span class="p" data-group-id="1071338659-14">]</span><span class="p" data-group-id="1071338659-11">)</span><span class="p">,</span><span class="w">
 </span><span class="c1">%% etc</span></code></pre>
   </section>
 </section>
@@ -1856,7 +1876,7 @@ in <code class="inline">search/3</code> to retrieve the next results page.</p><p
         <span class="note">(since OTP 24.3)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L2031" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L2031" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1896,7 +1916,7 @@ represent the last in the series.</p>
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L859" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L859" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1926,7 +1946,7 @@ represent the last in the series.</p>
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L693" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L693" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1960,8 +1980,8 @@ represent the last in the series.</p>
 
 <p>Search the directory with the supplied the SearchOptions.</p><p>The base and filter
 options must be supplied. Default values: scope is <a href="#wholeSubtree/0"><code class="inline">wholeSubtree/0</code></a>, deref is
-<a href="#derefAlways/0"><code class="inline">derefAlways/0</code></a>, types_only is <code class="inline">false</code> and timeout is <code class="inline">0</code> (meaning infinity).</p><pre><code class="makeup erlang" translate="no"><span class="w">  </span><span class="n">Filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">eldap</span><span class="p">:</span><span class="nf">substrings</span><span class="p" data-group-id="2231730633-1">(</span><span class="s">&quot;cn&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2231730633-2">[</span><span class="p" data-group-id="2231730633-3">{</span><span class="ss">any</span><span class="p">,</span><span class="s">&quot;V&quot;</span><span class="p" data-group-id="2231730633-3">}</span><span class="p" data-group-id="2231730633-2">]</span><span class="p" data-group-id="2231730633-1">)</span><span class="p">,</span><span class="w">
-  </span><span class="nf">search</span><span class="p" data-group-id="2231730633-4">(</span><span class="n">Handle</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2231730633-5">[</span><span class="p" data-group-id="2231730633-6">{</span><span class="ss">base</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;dc=example, dc=com&quot;</span><span class="p" data-group-id="2231730633-6">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2231730633-7">{</span><span class="ss">filter</span><span class="p">,</span><span class="w"> </span><span class="n">Filter</span><span class="p" data-group-id="2231730633-7">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2231730633-8">{</span><span class="ss">attributes</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2231730633-9">[</span><span class="s">&quot;cn&quot;</span><span class="p" data-group-id="2231730633-9">]</span><span class="p" data-group-id="2231730633-8">}</span><span class="p" data-group-id="2231730633-5">]</span><span class="p" data-group-id="2231730633-4">)</span><span class="p">,</span></code></pre><p>The <code class="inline">timeout</code> option in the <code class="inline">SearchOptions</code> is for the ldap server, while the
+<a href="#derefAlways/0"><code class="inline">derefAlways/0</code></a>, types_only is <code class="inline">false</code> and timeout is <code class="inline">0</code> (meaning infinity).</p><pre><code class="makeup erlang" translate="no"><span class="w">  </span><span class="n">Filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">eldap</span><span class="p">:</span><span class="nf">substrings</span><span class="p" data-group-id="9283326842-1">(</span><span class="s">&quot;cn&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9283326842-2">[</span><span class="p" data-group-id="9283326842-3">{</span><span class="ss">any</span><span class="p">,</span><span class="s">&quot;V&quot;</span><span class="p" data-group-id="9283326842-3">}</span><span class="p" data-group-id="9283326842-2">]</span><span class="p" data-group-id="9283326842-1">)</span><span class="p">,</span><span class="w">
+  </span><span class="nf">search</span><span class="p" data-group-id="9283326842-4">(</span><span class="n">Handle</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9283326842-5">[</span><span class="p" data-group-id="9283326842-6">{</span><span class="ss">base</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;dc=example, dc=com&quot;</span><span class="p" data-group-id="9283326842-6">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9283326842-7">{</span><span class="ss">filter</span><span class="p">,</span><span class="w"> </span><span class="n">Filter</span><span class="p" data-group-id="9283326842-7">}</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9283326842-8">{</span><span class="ss">attributes</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9283326842-9">[</span><span class="s">&quot;cn&quot;</span><span class="p" data-group-id="9283326842-9">]</span><span class="p" data-group-id="9283326842-8">}</span><span class="p" data-group-id="9283326842-5">]</span><span class="p" data-group-id="9283326842-4">)</span><span class="p">,</span></code></pre><p>The <code class="inline">timeout</code> option in the <code class="inline">SearchOptions</code> is for the ldap server, while the
 timeout in <a href="#open/2">eldap:open/2</a> is used for each individual request in the
 search operation.</p>
   </section>
@@ -1978,7 +1998,7 @@ search operation.</p>
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L419" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L419" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2014,7 +2034,7 @@ search operation.</p>
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L749" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L749" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2044,7 +2064,7 @@ search operation.</p>
         <span class="note">(since OTP R16B03)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L253" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L253" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2079,7 +2099,7 @@ search operation.</p>
         <span class="note">(since OTP R16B03)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L289" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L289" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2124,7 +2144,7 @@ upgrade (phase 1).</p>
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L885" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L885" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2157,7 +2177,7 @@ upgrade (phase 1).</p>
         <span class="note">(since OTP R15B01)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/eldap/src/eldap.erl#L755" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/eldap/src/eldap.erl#L755" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2183,8 +2203,8 @@ upgrade (phase 1).</p>
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="eldap.epub" title="ePub version">
@@ -2196,7 +2216,7 @@ upgrade (phase 1).</p>
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

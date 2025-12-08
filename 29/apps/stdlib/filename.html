@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="stdlib v7.1-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/filename.html" />
     <title>filename — stdlib v7.1-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-4F7E9F36.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ stdlib
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of stdlib</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ stdlib
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filename.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filename.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -185,7 +203,7 @@ systems that allow links.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Same as <a><code class="inline">absname/1</code></a>, except that the directory to which the filename is to be
+        <div class="summary-synopsis"><p>Same as <a href="#absname/1"><code class="inline">absname/1</code></a>, except that the directory to which the filename is to be
 made relative is specified in argument <code class="inline">Dir</code>.</p></div>
 
     </div>
@@ -206,8 +224,8 @@ made relative is specified in argument <code class="inline">Dir</code>.</p></div
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a>basedir(PathType, Application, #{})</a>
-or <a>basedir(PathsType, Application, #{})</a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#basedir/3">basedir(PathType, Application, #{})</a>
+or <a href="#basedir/3">basedir(PathsType, Application, #{})</a>.</p></div>
 
     </div>
 
@@ -293,7 +311,7 @@ preceding elements, if any, are removed from the result.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Joins two filename components with directory separators. Equivalent to
-<a><code class="inline">join([Name1, Name2])</code></a>.</p></div>
+<a href="#join/1"><code class="inline">join([Name1, Name2])</code></a>.</p></div>
 
     </div>
 
@@ -305,7 +323,7 @@ preceding elements, if any, are removed from the result.</p></div>
 
         <div class="summary-synopsis"><p>Converts <code class="inline">Path</code> to a form accepted by the command shell and native applications
 on the current platform. On Windows, forward slashes are converted to backward
-slashes. On all platforms, the name is normalized as done by <a><code class="inline">join/1</code></a>.</p></div>
+slashes. On all platforms, the name is normalized as done by <a href="#join/1"><code class="inline">join/1</code></a>.</p></div>
 
     </div>
 
@@ -361,6 +379,7 @@ slashes. On all platforms, the name is normalized as done by <a><code class="inl
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:basedir_opts/0">
 
@@ -374,7 +393,7 @@ slashes. On all platforms, the name is normalized as done by <a><code class="inl
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filename.erl#L1125" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filename.erl#L1125" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -407,7 +426,7 @@ slashes. On all platforms, the name is normalized as done by <a><code class="inl
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filename.erl#L1121" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filename.erl#L1121" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -437,7 +456,7 @@ slashes. On all platforms, the name is normalized as done by <a><code class="inl
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filename.erl#L1123" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filename.erl#L1123" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -466,6 +485,7 @@ slashes. On all platforms, the name is normalized as done by <a><code class="inl
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="absname/1">
 
@@ -477,7 +497,7 @@ slashes. On all platforms, the name is normalized as done by <a><code class="inl
       <h1 class="signature" translate="no">absname(Filename)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filename.erl#L181" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filename.erl#L181" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -494,20 +514,20 @@ slashes. On all platforms, the name is normalized as done by <a><code class="inl
 
 <p>Converts a relative <code class="inline">Filename</code> and returns an absolute name. No attempt is made
 to create the shortest absolute name, as this can give incorrect results on file
-systems that allow links.</p><p><em>Unix examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nf">pwd</span><span class="p" data-group-id="2092975581-1">(</span><span class="p" data-group-id="2092975581-1">)</span><span class="p">.</span><span class="w">
+systems that allow links.</p><p><em>Unix examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nf">pwd</span><span class="p" data-group-id="0680118704-1">(</span><span class="p" data-group-id="0680118704-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;/usr/local&quot;</span><span class="gp unselectable">
-2&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">absname</span><span class="p" data-group-id="2092975581-2">(</span><span class="s">&quot;foo&quot;</span><span class="p" data-group-id="2092975581-2">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">absname</span><span class="p" data-group-id="0680118704-2">(</span><span class="s">&quot;foo&quot;</span><span class="p" data-group-id="0680118704-2">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;/usr/local/foo&quot;</span><span class="gp unselectable">
-3&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">absname</span><span class="p" data-group-id="2092975581-3">(</span><span class="s">&quot;../x&quot;</span><span class="p" data-group-id="2092975581-3">)</span><span class="p">.</span><span class="w">
+3&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">absname</span><span class="p" data-group-id="0680118704-3">(</span><span class="s">&quot;../x&quot;</span><span class="p" data-group-id="0680118704-3">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;/usr/local/../x&quot;</span><span class="gp unselectable">
-4&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">absname</span><span class="p" data-group-id="2092975581-4">(</span><span class="s">&quot;/&quot;</span><span class="p" data-group-id="2092975581-4">)</span><span class="p">.</span><span class="w">
-</span><span class="s">&quot;/&quot;</span></code></pre><p><em>Windows examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nf">pwd</span><span class="p" data-group-id="4487494567-1">(</span><span class="p" data-group-id="4487494567-1">)</span><span class="p">.</span><span class="w">
+4&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">absname</span><span class="p" data-group-id="0680118704-4">(</span><span class="s">&quot;/&quot;</span><span class="p" data-group-id="0680118704-4">)</span><span class="p">.</span><span class="w">
+</span><span class="s">&quot;/&quot;</span></code></pre><p><em>Windows examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nf">pwd</span><span class="p" data-group-id="5109384819-1">(</span><span class="p" data-group-id="5109384819-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;D:/usr/local&quot;</span><span class="gp unselectable">
-2&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">absname</span><span class="p" data-group-id="4487494567-2">(</span><span class="s">&quot;foo&quot;</span><span class="p" data-group-id="4487494567-2">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">absname</span><span class="p" data-group-id="5109384819-2">(</span><span class="s">&quot;foo&quot;</span><span class="p" data-group-id="5109384819-2">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;D:/usr/local/foo&quot;</span><span class="gp unselectable">
-3&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">absname</span><span class="p" data-group-id="4487494567-3">(</span><span class="s">&quot;../x&quot;</span><span class="p" data-group-id="4487494567-3">)</span><span class="p">.</span><span class="w">
+3&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">absname</span><span class="p" data-group-id="5109384819-3">(</span><span class="s">&quot;../x&quot;</span><span class="p" data-group-id="5109384819-3">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;D:/usr/local/../x&quot;</span><span class="gp unselectable">
-4&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">absname</span><span class="p" data-group-id="4487494567-4">(</span><span class="s">&quot;/&quot;</span><span class="p" data-group-id="4487494567-4">)</span><span class="p">.</span><span class="w">
+4&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">absname</span><span class="p" data-group-id="5109384819-4">(</span><span class="s">&quot;/&quot;</span><span class="p" data-group-id="5109384819-4">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;D:/&quot;</span></code></pre>
   </section>
 </section>
@@ -521,7 +541,7 @@ systems that allow links.</p><p><em>Unix examples:</em></p><pre><code class="mak
       <h1 class="signature" translate="no">absname(Filename, Dir)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filename.erl#L192" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filename.erl#L192" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -551,7 +571,7 @@ made relative is specified in argument <code class="inline">Dir</code>.</p>
       <h1 class="signature" translate="no">absname_join(Dir, Filename)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filename.erl#L255" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filename.erl#L255" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -585,7 +605,7 @@ result - minimizing its length.</p>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filename.erl#L1141" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filename.erl#L1141" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -619,7 +639,7 @@ or <a href="#basedir/3">basedir(PathsType, Application, #{})</a>.</p>
         <span class="note">(since OTP 19.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filename.erl#L1332" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filename.erl#L1332" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -646,58 +666,58 @@ or <a href="#basedir/3">basedir(PathsType, Application, #{})</a>.</p>
 <p>Returns a suitable path, or paths, for a given type.</p><p>If <code class="inline">os</code> is not set in <code class="inline">Opts</code> the function will default to the native option, that
 is <code class="inline">'linux'</code>, <code class="inline">'darwin'</code> or <code class="inline">'windows'</code>, as understood by <a href="../../apps/kernel/os.html#type/0"><code class="inline">os:type/0</code></a>.
 Anything not recognized as <code class="inline">'darwin'</code> or <code class="inline">'windows'</code> is interpreted as <code class="inline">'linux'</code>.</p><p>The options <code class="inline">'author'</code> and <code class="inline">'version'</code> are only used with <code class="inline">'windows'</code> option
-mode.</p><ul><li><p><code class="inline" id="user_cache">user_cache</code></p><p>The path location is intended for transient data files on a local machine.</p><p>On Linux: Respects the os environment variable <code class="inline">XDG_CACHE_HOME</code>.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="8055089957-1">(</span><span class="ss">user_cache</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8055089957-2">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">linux</span><span class="p" data-group-id="8055089957-2">}</span><span class="p" data-group-id="8055089957-1">)</span><span class="p">.</span><span class="w">
-</span><span class="s">&quot;/home/otptest/.cache/my_application&quot;</span></code></pre><p>On Darwin:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="6866428704-1">(</span><span class="ss">user_cache</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6866428704-2">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">darwin</span><span class="p" data-group-id="6866428704-2">}</span><span class="p" data-group-id="6866428704-1">)</span><span class="p">.</span><span class="w">
-</span><span class="s">&quot;/home/otptest/Library/Caches/my_application&quot;</span></code></pre><p>On Windows:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="4979832456-1">(</span><span class="ss">user_cache</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;My App&quot;</span><span class="p" data-group-id="4979832456-1">)</span><span class="p">.</span><span class="w">
+mode.</p><ul><li><p><code class="inline" id="user_cache">user_cache</code></p><p>The path location is intended for transient data files on a local machine.</p><p>On Linux: Respects the os environment variable <code class="inline">XDG_CACHE_HOME</code>.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="3752339347-1">(</span><span class="ss">user_cache</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3752339347-2">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">linux</span><span class="p" data-group-id="3752339347-2">}</span><span class="p" data-group-id="3752339347-1">)</span><span class="p">.</span><span class="w">
+</span><span class="s">&quot;/home/otptest/.cache/my_application&quot;</span></code></pre><p>On Darwin:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="0093458719-1">(</span><span class="ss">user_cache</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0093458719-2">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">darwin</span><span class="p" data-group-id="0093458719-2">}</span><span class="p" data-group-id="0093458719-1">)</span><span class="p">.</span><span class="w">
+</span><span class="s">&quot;/home/otptest/Library/Caches/my_application&quot;</span></code></pre><p>On Windows:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="3945946568-1">(</span><span class="ss">user_cache</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;My App&quot;</span><span class="p" data-group-id="3945946568-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;c:/Users/otptest/AppData/Local/My App/Cache&quot;</span><span class="gp unselectable">
-2&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="4979832456-2">(</span><span class="ss">user_cache</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;My App&quot;</span><span class="p" data-group-id="4979832456-2">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="3945946568-2">(</span><span class="ss">user_cache</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;My App&quot;</span><span class="p" data-group-id="3945946568-2">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;c:/Users/otptest/AppData/Local/My App/Cache&quot;</span><span class="gp unselectable">
-3&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="4979832456-3">(</span><span class="ss">user_cache</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;My App&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4979832456-4">#{</span><span class="ss">author</span><span class="p">=&gt;</span><span class="s">&quot;Erlang&quot;</span><span class="p" data-group-id="4979832456-4">}</span><span class="p" data-group-id="4979832456-3">)</span><span class="p">.</span><span class="w">
+3&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="3945946568-3">(</span><span class="ss">user_cache</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;My App&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3945946568-4">#{</span><span class="ss">author</span><span class="p">=&gt;</span><span class="s">&quot;Erlang&quot;</span><span class="p" data-group-id="3945946568-4">}</span><span class="p" data-group-id="3945946568-3">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;c:/Users/otptest/AppData/Local/Erlang/My App/Cache&quot;</span><span class="gp unselectable">
-4&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="4979832456-5">(</span><span class="ss">user_cache</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;My App&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4979832456-6">#{</span><span class="ss">version</span><span class="p">=&gt;</span><span class="s">&quot;1.2&quot;</span><span class="p" data-group-id="4979832456-6">}</span><span class="p" data-group-id="4979832456-5">)</span><span class="p">.</span><span class="w">
+4&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="3945946568-5">(</span><span class="ss">user_cache</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;My App&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3945946568-6">#{</span><span class="ss">version</span><span class="p">=&gt;</span><span class="s">&quot;1.2&quot;</span><span class="p" data-group-id="3945946568-6">}</span><span class="p" data-group-id="3945946568-5">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;c:/Users/otptest/AppData/Local/My App/1.2/Cache&quot;</span><span class="gp unselectable">
-5&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="4979832456-7">(</span><span class="ss">user_cache</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;My App&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4979832456-8">#{</span><span class="ss">author</span><span class="p">=&gt;</span><span class="s">&quot;Erlang&quot;</span><span class="p">,</span><span class="ss">version</span><span class="p">=&gt;</span><span class="s">&quot;1.2&quot;</span><span class="p" data-group-id="4979832456-8">}</span><span class="p" data-group-id="4979832456-7">)</span><span class="p">.</span><span class="w">
-</span><span class="s">&quot;c:/Users/otptest/AppData/Local/Erlang/My App/1.2/Cache&quot;</span></code></pre></li><li><p><code class="inline" id="user_config">user_config</code></p><p>The path location is intended for persistent configuration files.</p><p>On Linux: Respects the os environment variable <code class="inline">XDG_CONFIG_HOME</code>.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">2&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="8829399939-1">(</span><span class="ss">user_config</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8829399939-2">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">linux</span><span class="p" data-group-id="8829399939-2">}</span><span class="p" data-group-id="8829399939-1">)</span><span class="p">.</span><span class="w">
-</span><span class="s">&quot;/home/otptest/.config/my_application&quot;</span></code></pre><p>On Darwin:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">2&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="3159352086-1">(</span><span class="ss">user_config</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3159352086-2">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">darwin</span><span class="p" data-group-id="3159352086-2">}</span><span class="p" data-group-id="3159352086-1">)</span><span class="p">.</span><span class="w">
-</span><span class="s">&quot;/home/otptest/Library/Application Support/my_application&quot;</span></code></pre><p>On Windows:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="0347006605-1">(</span><span class="ss">user_config</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;My App&quot;</span><span class="p" data-group-id="0347006605-1">)</span><span class="p">.</span><span class="w">
+5&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="3945946568-7">(</span><span class="ss">user_cache</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;My App&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3945946568-8">#{</span><span class="ss">author</span><span class="p">=&gt;</span><span class="s">&quot;Erlang&quot;</span><span class="p">,</span><span class="ss">version</span><span class="p">=&gt;</span><span class="s">&quot;1.2&quot;</span><span class="p" data-group-id="3945946568-8">}</span><span class="p" data-group-id="3945946568-7">)</span><span class="p">.</span><span class="w">
+</span><span class="s">&quot;c:/Users/otptest/AppData/Local/Erlang/My App/1.2/Cache&quot;</span></code></pre></li><li><p><code class="inline" id="user_config">user_config</code></p><p>The path location is intended for persistent configuration files.</p><p>On Linux: Respects the os environment variable <code class="inline">XDG_CONFIG_HOME</code>.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">2&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="1489070804-1">(</span><span class="ss">user_config</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1489070804-2">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">linux</span><span class="p" data-group-id="1489070804-2">}</span><span class="p" data-group-id="1489070804-1">)</span><span class="p">.</span><span class="w">
+</span><span class="s">&quot;/home/otptest/.config/my_application&quot;</span></code></pre><p>On Darwin:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">2&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="0567541995-1">(</span><span class="ss">user_config</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0567541995-2">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">darwin</span><span class="p" data-group-id="0567541995-2">}</span><span class="p" data-group-id="0567541995-1">)</span><span class="p">.</span><span class="w">
+</span><span class="s">&quot;/home/otptest/Library/Application Support/my_application&quot;</span></code></pre><p>On Windows:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="7713240277-1">(</span><span class="ss">user_config</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;My App&quot;</span><span class="p" data-group-id="7713240277-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;c:/Users/otptest/AppData/Roaming/My App&quot;</span><span class="gp unselectable">
-2&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="0347006605-2">(</span><span class="ss">user_config</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;My App&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0347006605-3">#{</span><span class="ss">author</span><span class="p">=&gt;</span><span class="s">&quot;Erlang&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">version</span><span class="p">=&gt;</span><span class="s">&quot;1.2&quot;</span><span class="p" data-group-id="0347006605-3">}</span><span class="p" data-group-id="0347006605-2">)</span><span class="p">.</span><span class="w">
-</span><span class="s">&quot;c:/Users/otptest/AppData/Roaming/Erlang/My App/1.2&quot;</span></code></pre></li><li><p><code class="inline" id="user_data">user_data</code></p><p>The path location is intended for persistent data files.</p><p>On Linux: Respects the os environment variable <code class="inline">XDG_DATA_HOME</code>.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">3&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="6325873699-1">(</span><span class="ss">user_data</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6325873699-2">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">linux</span><span class="p" data-group-id="6325873699-2">}</span><span class="p" data-group-id="6325873699-1">)</span><span class="p">.</span><span class="w">
-</span><span class="s">&quot;/home/otptest/.local/my_application&quot;</span></code></pre><p>On Darwin:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">3&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="0690142190-1">(</span><span class="ss">user_data</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0690142190-2">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">darwin</span><span class="p" data-group-id="0690142190-2">}</span><span class="p" data-group-id="0690142190-1">)</span><span class="p">.</span><span class="w">
-</span><span class="s">&quot;/home/otptest/Library/Application Support/my_application&quot;</span></code></pre><p>On Windows:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">8&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="8774442524-1">(</span><span class="ss">user_data</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;My App&quot;</span><span class="p" data-group-id="8774442524-1">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="7713240277-2">(</span><span class="ss">user_config</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;My App&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7713240277-3">#{</span><span class="ss">author</span><span class="p">=&gt;</span><span class="s">&quot;Erlang&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">version</span><span class="p">=&gt;</span><span class="s">&quot;1.2&quot;</span><span class="p" data-group-id="7713240277-3">}</span><span class="p" data-group-id="7713240277-2">)</span><span class="p">.</span><span class="w">
+</span><span class="s">&quot;c:/Users/otptest/AppData/Roaming/Erlang/My App/1.2&quot;</span></code></pre></li><li><p><code class="inline" id="user_data">user_data</code></p><p>The path location is intended for persistent data files.</p><p>On Linux: Respects the os environment variable <code class="inline">XDG_DATA_HOME</code>.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">3&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="8345519232-1">(</span><span class="ss">user_data</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8345519232-2">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">linux</span><span class="p" data-group-id="8345519232-2">}</span><span class="p" data-group-id="8345519232-1">)</span><span class="p">.</span><span class="w">
+</span><span class="s">&quot;/home/otptest/.local/my_application&quot;</span></code></pre><p>On Darwin:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">3&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="0800536028-1">(</span><span class="ss">user_data</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0800536028-2">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">darwin</span><span class="p" data-group-id="0800536028-2">}</span><span class="p" data-group-id="0800536028-1">)</span><span class="p">.</span><span class="w">
+</span><span class="s">&quot;/home/otptest/Library/Application Support/my_application&quot;</span></code></pre><p>On Windows:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">8&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="0018083633-1">(</span><span class="ss">user_data</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;My App&quot;</span><span class="p" data-group-id="0018083633-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;c:/Users/otptest/AppData/Local/My App&quot;</span><span class="gp unselectable">
-9&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="8774442524-2">(</span><span class="ss">user_data</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;My App&quot;</span><span class="p">,</span><span class="p" data-group-id="8774442524-3">#{</span><span class="ss">author</span><span class="p">=&gt;</span><span class="s">&quot;Erlang&quot;</span><span class="p">,</span><span class="ss">version</span><span class="p">=&gt;</span><span class="s">&quot;1.2&quot;</span><span class="p" data-group-id="8774442524-3">}</span><span class="p" data-group-id="8774442524-2">)</span><span class="p">.</span><span class="w">
-</span><span class="s">&quot;c:/Users/otptest/AppData/Local/Erlang/My App/1.2&quot;</span></code></pre></li><li><p><code class="inline" id="user_log">user_log</code></p><p>The path location is intended for transient log files on a local machine.</p><p>On Linux: Respects the os environment variable <code class="inline">XDG_CACHE_HOME</code>.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">4&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="5358823933-1">(</span><span class="ss">user_log</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5358823933-2">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">linux</span><span class="p" data-group-id="5358823933-2">}</span><span class="p" data-group-id="5358823933-1">)</span><span class="p">.</span><span class="w">
-</span><span class="s">&quot;/home/otptest/.cache/my_application/log&quot;</span></code></pre><p>On Darwin:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">4&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="8802021775-1">(</span><span class="ss">user_log</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8802021775-2">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">darwin</span><span class="p" data-group-id="8802021775-2">}</span><span class="p" data-group-id="8802021775-1">)</span><span class="p">.</span><span class="w">
-</span><span class="s">&quot;/home/otptest/Library/Logs/my_application&quot;</span></code></pre><p>On Windows:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">12&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="0124882850-1">(</span><span class="ss">user_log</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;My App&quot;</span><span class="p" data-group-id="0124882850-1">)</span><span class="p">.</span><span class="w">
+9&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="0018083633-2">(</span><span class="ss">user_data</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;My App&quot;</span><span class="p">,</span><span class="p" data-group-id="0018083633-3">#{</span><span class="ss">author</span><span class="p">=&gt;</span><span class="s">&quot;Erlang&quot;</span><span class="p">,</span><span class="ss">version</span><span class="p">=&gt;</span><span class="s">&quot;1.2&quot;</span><span class="p" data-group-id="0018083633-3">}</span><span class="p" data-group-id="0018083633-2">)</span><span class="p">.</span><span class="w">
+</span><span class="s">&quot;c:/Users/otptest/AppData/Local/Erlang/My App/1.2&quot;</span></code></pre></li><li><p><code class="inline" id="user_log">user_log</code></p><p>The path location is intended for transient log files on a local machine.</p><p>On Linux: Respects the os environment variable <code class="inline">XDG_CACHE_HOME</code>.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">4&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="3515237535-1">(</span><span class="ss">user_log</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3515237535-2">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">linux</span><span class="p" data-group-id="3515237535-2">}</span><span class="p" data-group-id="3515237535-1">)</span><span class="p">.</span><span class="w">
+</span><span class="s">&quot;/home/otptest/.cache/my_application/log&quot;</span></code></pre><p>On Darwin:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">4&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="8194827741-1">(</span><span class="ss">user_log</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8194827741-2">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">darwin</span><span class="p" data-group-id="8194827741-2">}</span><span class="p" data-group-id="8194827741-1">)</span><span class="p">.</span><span class="w">
+</span><span class="s">&quot;/home/otptest/Library/Logs/my_application&quot;</span></code></pre><p>On Windows:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">12&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="5965182211-1">(</span><span class="ss">user_log</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;My App&quot;</span><span class="p" data-group-id="5965182211-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;c:/Users/otptest/AppData/Local/My App/Logs&quot;</span><span class="gp unselectable">
-13&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="0124882850-2">(</span><span class="ss">user_log</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;My App&quot;</span><span class="p">,</span><span class="p" data-group-id="0124882850-3">#{</span><span class="ss">author</span><span class="p">=&gt;</span><span class="s">&quot;Erlang&quot;</span><span class="p">,</span><span class="ss">version</span><span class="p">=&gt;</span><span class="s">&quot;1.2&quot;</span><span class="p" data-group-id="0124882850-3">}</span><span class="p" data-group-id="0124882850-2">)</span><span class="p">.</span><span class="w">
-</span><span class="s">&quot;c:/Users/otptest/AppData/Local/Erlang/My App/1.2/Logs&quot;</span></code></pre></li><li><p><code class="inline" id="site_config">site_config</code></p><p>On Linux: Respects the os environment variable <code class="inline">XDG_CONFIG_DIRS</code>.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">5&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="2959015919-1">(</span><span class="ss">site_config</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2959015919-2">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">linux</span><span class="p" data-group-id="2959015919-2">}</span><span class="p" data-group-id="2959015919-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="2959015919-3">[</span><span class="s">&quot;/usr/local/share/my_application&quot;</span><span class="p">,</span><span class="w">
- </span><span class="s">&quot;/usr/share/my_application&quot;</span><span class="p" data-group-id="2959015919-3">]</span><span class="gp unselectable">
-6&gt; </span><span class="nc">os</span><span class="p">:</span><span class="nf">getenv</span><span class="p" data-group-id="2959015919-4">(</span><span class="s">&quot;XDG_CONFIG_DIRS&quot;</span><span class="p" data-group-id="2959015919-4">)</span><span class="p">.</span><span class="w">
+13&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="5965182211-2">(</span><span class="ss">user_log</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;My App&quot;</span><span class="p">,</span><span class="p" data-group-id="5965182211-3">#{</span><span class="ss">author</span><span class="p">=&gt;</span><span class="s">&quot;Erlang&quot;</span><span class="p">,</span><span class="ss">version</span><span class="p">=&gt;</span><span class="s">&quot;1.2&quot;</span><span class="p" data-group-id="5965182211-3">}</span><span class="p" data-group-id="5965182211-2">)</span><span class="p">.</span><span class="w">
+</span><span class="s">&quot;c:/Users/otptest/AppData/Local/Erlang/My App/1.2/Logs&quot;</span></code></pre></li><li><p><code class="inline" id="site_config">site_config</code></p><p>On Linux: Respects the os environment variable <code class="inline">XDG_CONFIG_DIRS</code>.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">5&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="2926012672-1">(</span><span class="ss">site_config</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2926012672-2">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">linux</span><span class="p" data-group-id="2926012672-2">}</span><span class="p" data-group-id="2926012672-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="2926012672-3">[</span><span class="s">&quot;/usr/local/share/my_application&quot;</span><span class="p">,</span><span class="w">
+ </span><span class="s">&quot;/usr/share/my_application&quot;</span><span class="p" data-group-id="2926012672-3">]</span><span class="gp unselectable">
+6&gt; </span><span class="nc">os</span><span class="p">:</span><span class="nf">getenv</span><span class="p" data-group-id="2926012672-4">(</span><span class="s">&quot;XDG_CONFIG_DIRS&quot;</span><span class="p" data-group-id="2926012672-4">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;/etc/xdg/xdg-ubuntu:/usr/share/upstart/xdg:/etc/xdg&quot;</span><span class="gp unselectable">
-7&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="2959015919-5">(</span><span class="ss">site_config</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2959015919-6">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">linux</span><span class="p" data-group-id="2959015919-6">}</span><span class="p" data-group-id="2959015919-5">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="2959015919-7">[</span><span class="s">&quot;/etc/xdg/xdg-ubuntu/my_application&quot;</span><span class="p">,</span><span class="w">
+7&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="2926012672-5">(</span><span class="ss">site_config</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2926012672-6">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">linux</span><span class="p" data-group-id="2926012672-6">}</span><span class="p" data-group-id="2926012672-5">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="2926012672-7">[</span><span class="s">&quot;/etc/xdg/xdg-ubuntu/my_application&quot;</span><span class="p">,</span><span class="w">
  </span><span class="s">&quot;/usr/share/upstart/xdg/my_application&quot;</span><span class="p">,</span><span class="w">
- </span><span class="s">&quot;/etc/xdg/my_application&quot;</span><span class="p" data-group-id="2959015919-7">]</span><span class="gp unselectable">
-8&gt; </span><span class="nc">os</span><span class="p">:</span><span class="nf">unsetenv</span><span class="p" data-group-id="2959015919-8">(</span><span class="s">&quot;XDG_CONFIG_DIRS&quot;</span><span class="p" data-group-id="2959015919-8">)</span><span class="p">.</span><span class="w">
+ </span><span class="s">&quot;/etc/xdg/my_application&quot;</span><span class="p" data-group-id="2926012672-7">]</span><span class="gp unselectable">
+8&gt; </span><span class="nc">os</span><span class="p">:</span><span class="nf">unsetenv</span><span class="p" data-group-id="2926012672-8">(</span><span class="s">&quot;XDG_CONFIG_DIRS&quot;</span><span class="p" data-group-id="2926012672-8">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">true</span><span class="gp unselectable">
-9&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="2959015919-9">(</span><span class="ss">site_config</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2959015919-10">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">linux</span><span class="p" data-group-id="2959015919-10">}</span><span class="p" data-group-id="2959015919-9">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="2959015919-11">[</span><span class="s">&quot;/etc/xdg/my_application&quot;</span><span class="p" data-group-id="2959015919-11">]</span></code></pre><p>On Darwin:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">5&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="7712063245-1">(</span><span class="ss">site_config</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7712063245-2">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">darwin</span><span class="p" data-group-id="7712063245-2">}</span><span class="p" data-group-id="7712063245-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="7712063245-3">[</span><span class="s">&quot;/Library/Application Support/my_application&quot;</span><span class="p" data-group-id="7712063245-3">]</span></code></pre></li><li><p><code class="inline" id="site_data">site_data</code></p><p>On Linux: Respects the os environment variable <code class="inline">XDG_DATA_DIRS</code>.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">10&gt; </span><span class="nc">os</span><span class="p">:</span><span class="nf">getenv</span><span class="p" data-group-id="1859672722-1">(</span><span class="s">&quot;XDG_DATA_DIRS&quot;</span><span class="p" data-group-id="1859672722-1">)</span><span class="p">.</span><span class="w">
+9&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="2926012672-9">(</span><span class="ss">site_config</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2926012672-10">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">linux</span><span class="p" data-group-id="2926012672-10">}</span><span class="p" data-group-id="2926012672-9">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="2926012672-11">[</span><span class="s">&quot;/etc/xdg/my_application&quot;</span><span class="p" data-group-id="2926012672-11">]</span></code></pre><p>On Darwin:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">5&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="6498813260-1">(</span><span class="ss">site_config</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6498813260-2">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">darwin</span><span class="p" data-group-id="6498813260-2">}</span><span class="p" data-group-id="6498813260-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="6498813260-3">[</span><span class="s">&quot;/Library/Application Support/my_application&quot;</span><span class="p" data-group-id="6498813260-3">]</span></code></pre></li><li><p><code class="inline" id="site_data">site_data</code></p><p>On Linux: Respects the os environment variable <code class="inline">XDG_DATA_DIRS</code>.</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">10&gt; </span><span class="nc">os</span><span class="p">:</span><span class="nf">getenv</span><span class="p" data-group-id="0959947824-1">(</span><span class="s">&quot;XDG_DATA_DIRS&quot;</span><span class="p" data-group-id="0959947824-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/&quot;</span><span class="gp unselectable">
-11&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="1859672722-2">(</span><span class="ss">site_data</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1859672722-3">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">linux</span><span class="p" data-group-id="1859672722-3">}</span><span class="p" data-group-id="1859672722-2">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="1859672722-4">[</span><span class="s">&quot;/usr/share/ubuntu/my_application&quot;</span><span class="p">,</span><span class="w">
+11&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="0959947824-2">(</span><span class="ss">site_data</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0959947824-3">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">linux</span><span class="p" data-group-id="0959947824-3">}</span><span class="p" data-group-id="0959947824-2">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="0959947824-4">[</span><span class="s">&quot;/usr/share/ubuntu/my_application&quot;</span><span class="p">,</span><span class="w">
  </span><span class="s">&quot;/usr/share/gnome/my_application&quot;</span><span class="p">,</span><span class="w">
  </span><span class="s">&quot;/usr/local/share/my_application&quot;</span><span class="p">,</span><span class="w">
- </span><span class="s">&quot;/usr/share/my_application&quot;</span><span class="p" data-group-id="1859672722-4">]</span><span class="gp unselectable">
-12&gt; </span><span class="nc">os</span><span class="p">:</span><span class="nf">unsetenv</span><span class="p" data-group-id="1859672722-5">(</span><span class="s">&quot;XDG_DATA_DIRS&quot;</span><span class="p" data-group-id="1859672722-5">)</span><span class="p">.</span><span class="w">
+ </span><span class="s">&quot;/usr/share/my_application&quot;</span><span class="p" data-group-id="0959947824-4">]</span><span class="gp unselectable">
+12&gt; </span><span class="nc">os</span><span class="p">:</span><span class="nf">unsetenv</span><span class="p" data-group-id="0959947824-5">(</span><span class="s">&quot;XDG_DATA_DIRS&quot;</span><span class="p" data-group-id="0959947824-5">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">true</span><span class="gp unselectable">
-13&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="1859672722-6">(</span><span class="ss">site_data</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1859672722-7">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">linux</span><span class="p" data-group-id="1859672722-7">}</span><span class="p" data-group-id="1859672722-6">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="1859672722-8">[</span><span class="s">&quot;/usr/local/share/my_application&quot;</span><span class="p">,</span><span class="w">
- </span><span class="s">&quot;/usr/share/my_application&quot;</span><span class="p" data-group-id="1859672722-8">]</span></code></pre><p>On Darwin:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">5&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="8445654241-1">(</span><span class="ss">site_data</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8445654241-2">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">darwin</span><span class="p" data-group-id="8445654241-2">}</span><span class="p" data-group-id="8445654241-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="8445654241-3">[</span><span class="s">&quot;/Library/Application Support/my_application&quot;</span><span class="p" data-group-id="8445654241-3">]</span></code></pre></li></ul>
+13&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="0959947824-6">(</span><span class="ss">site_data</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0959947824-7">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">linux</span><span class="p" data-group-id="0959947824-7">}</span><span class="p" data-group-id="0959947824-6">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="0959947824-8">[</span><span class="s">&quot;/usr/local/share/my_application&quot;</span><span class="p">,</span><span class="w">
+ </span><span class="s">&quot;/usr/share/my_application&quot;</span><span class="p" data-group-id="0959947824-8">]</span></code></pre><p>On Darwin:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">5&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basedir</span><span class="p" data-group-id="1441746484-1">(</span><span class="ss">site_data</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;my_application&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="1441746484-2">#{</span><span class="ss">os</span><span class="p">=&gt;</span><span class="ss">darwin</span><span class="p" data-group-id="1441746484-2">}</span><span class="p" data-group-id="1441746484-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="1441746484-3">[</span><span class="s">&quot;/Library/Application Support/my_application&quot;</span><span class="p" data-group-id="1441746484-3">]</span></code></pre></li></ul>
   </section>
 </section>
 <section class="detail" id="basename/1">
@@ -710,7 +730,7 @@ mode.</p><ul><li><p><code class="inline" id="user_cache">user_cache</code></p><p
       <h1 class="signature" translate="no">basename(Filename)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filename.erl#L284" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filename.erl#L284" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -726,12 +746,12 @@ mode.</p><ul><li><p><code class="inline" id="user_cache">user_cache</code></p><p
       </div>
 
 <p>Returns the last component of <code class="inline">Filename</code>, or <code class="inline">Filename</code> itself if it does not
-contain any directory separators.</p><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">5&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basename</span><span class="p" data-group-id="0817646114-1">(</span><span class="s">&quot;foo&quot;</span><span class="p" data-group-id="0817646114-1">)</span><span class="p">.</span><span class="w">
+contain any directory separators.</p><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">5&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basename</span><span class="p" data-group-id="3884737519-1">(</span><span class="s">&quot;foo&quot;</span><span class="p" data-group-id="3884737519-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;foo&quot;</span><span class="gp unselectable">
-6&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basename</span><span class="p" data-group-id="0817646114-2">(</span><span class="s">&quot;/usr/foo&quot;</span><span class="p" data-group-id="0817646114-2">)</span><span class="p">.</span><span class="w">
+6&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basename</span><span class="p" data-group-id="3884737519-2">(</span><span class="s">&quot;/usr/foo&quot;</span><span class="p" data-group-id="3884737519-2">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;foo&quot;</span><span class="gp unselectable">
-7&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basename</span><span class="p" data-group-id="0817646114-3">(</span><span class="s">&quot;/&quot;</span><span class="p" data-group-id="0817646114-3">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="0817646114-4">[</span><span class="p" data-group-id="0817646114-4">]</span></code></pre>
+7&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basename</span><span class="p" data-group-id="3884737519-3">(</span><span class="s">&quot;/&quot;</span><span class="p" data-group-id="3884737519-3">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="3884737519-4">[</span><span class="p" data-group-id="3884737519-4">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="basename/2">
@@ -744,7 +764,7 @@ contain any directory separators.</p><p><em>Examples:</em></p><pre><code class="
       <h1 class="signature" translate="no">basename(Filename, Ext)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filename.erl#L372" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filename.erl#L372" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -762,15 +782,15 @@ contain any directory separators.</p><p><em>Examples:</em></p><pre><code class="
 
 <p>Returns the last component of <code class="inline">Filename</code> with extension <code class="inline">Ext</code> stripped.</p><p>This function is to be used to remove a (possible) specific extension.
 To remove an existing extension when you are unsure which one it is, use
-<a href="#rootname/1"><code class="inline">rootname(basename(Filename))</code></a>.</p><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">8&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basename</span><span class="p" data-group-id="8973400824-1">(</span><span class="s">&quot;~/src/kalle.erl&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.erl&quot;</span><span class="p" data-group-id="8973400824-1">)</span><span class="p">.</span><span class="w">
+<a href="#rootname/1"><code class="inline">rootname(basename(Filename))</code></a>.</p><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">8&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basename</span><span class="p" data-group-id="8157104258-1">(</span><span class="s">&quot;~/src/kalle.erl&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.erl&quot;</span><span class="p" data-group-id="8157104258-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;kalle&quot;</span><span class="gp unselectable">
-9&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basename</span><span class="p" data-group-id="8973400824-2">(</span><span class="s">&quot;~/src/kalle.beam&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.erl&quot;</span><span class="p" data-group-id="8973400824-2">)</span><span class="p">.</span><span class="w">
+9&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basename</span><span class="p" data-group-id="8157104258-2">(</span><span class="s">&quot;~/src/kalle.beam&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.erl&quot;</span><span class="p" data-group-id="8157104258-2">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;kalle.beam&quot;</span><span class="gp unselectable">
-10&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basename</span><span class="p" data-group-id="8973400824-3">(</span><span class="s">&quot;~/src/kalle.old.erl&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.erl&quot;</span><span class="p" data-group-id="8973400824-3">)</span><span class="p">.</span><span class="w">
+10&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">basename</span><span class="p" data-group-id="8157104258-3">(</span><span class="s">&quot;~/src/kalle.old.erl&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.erl&quot;</span><span class="p" data-group-id="8157104258-3">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;kalle.old&quot;</span><span class="gp unselectable">
-11&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">rootname</span><span class="p" data-group-id="8973400824-4">(</span><span class="nc">filename</span><span class="p">:</span><span class="nf">basename</span><span class="p" data-group-id="8973400824-5">(</span><span class="s">&quot;~/src/kalle.erl&quot;</span><span class="p" data-group-id="8973400824-5">)</span><span class="p" data-group-id="8973400824-4">)</span><span class="p">.</span><span class="w">
+11&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">rootname</span><span class="p" data-group-id="8157104258-4">(</span><span class="nc">filename</span><span class="p">:</span><span class="nf">basename</span><span class="p" data-group-id="8157104258-5">(</span><span class="s">&quot;~/src/kalle.erl&quot;</span><span class="p" data-group-id="8157104258-5">)</span><span class="p" data-group-id="8157104258-4">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;kalle&quot;</span><span class="gp unselectable">
-12&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">rootname</span><span class="p" data-group-id="8973400824-6">(</span><span class="nc">filename</span><span class="p">:</span><span class="nf">basename</span><span class="p" data-group-id="8973400824-7">(</span><span class="s">&quot;~/src/kalle.beam&quot;</span><span class="p" data-group-id="8973400824-7">)</span><span class="p" data-group-id="8973400824-6">)</span><span class="p">.</span><span class="w">
+12&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">rootname</span><span class="p" data-group-id="8157104258-6">(</span><span class="nc">filename</span><span class="p">:</span><span class="nf">basename</span><span class="p" data-group-id="8157104258-7">(</span><span class="s">&quot;~/src/kalle.beam&quot;</span><span class="p" data-group-id="8157104258-7">)</span><span class="p" data-group-id="8157104258-6">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;kalle&quot;</span></code></pre>
   </section>
 </section>
@@ -784,7 +804,7 @@ To remove an existing extension when you are unsure which one it is, use
       <h1 class="signature" translate="no">dirname(Filename)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filename.erl#L438" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filename.erl#L438" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -799,10 +819,10 @@ To remove an existing extension when you are unsure which one it is, use
 
       </div>
 
-<p>Returns the directory part of <code class="inline">Filename</code>.</p><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">13&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">dirname</span><span class="p" data-group-id="6728387229-1">(</span><span class="s">&quot;/usr/src/kalle.erl&quot;</span><span class="p" data-group-id="6728387229-1">)</span><span class="p">.</span><span class="w">
+<p>Returns the directory part of <code class="inline">Filename</code>.</p><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">13&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">dirname</span><span class="p" data-group-id="1818034406-1">(</span><span class="s">&quot;/usr/src/kalle.erl&quot;</span><span class="p" data-group-id="1818034406-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;/usr/src&quot;</span><span class="gp unselectable">
-14&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">dirname</span><span class="p" data-group-id="6728387229-2">(</span><span class="s">&quot;kalle.erl&quot;</span><span class="p" data-group-id="6728387229-2">)</span><span class="p">.</span><span class="w">
-</span><span class="s">&quot;.&quot;</span></code></pre><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">5&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">dirname</span><span class="p" data-group-id="1784102980-1">(</span><span class="s">&quot;\\usr\\src/kalle.erl&quot;</span><span class="p" data-group-id="1784102980-1">)</span><span class="p">.</span><span class="w"> </span><span class="c1">% Windows</span><span class="w">
+14&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">dirname</span><span class="p" data-group-id="1818034406-2">(</span><span class="s">&quot;kalle.erl&quot;</span><span class="p" data-group-id="1818034406-2">)</span><span class="p">.</span><span class="w">
+</span><span class="s">&quot;.&quot;</span></code></pre><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">5&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">dirname</span><span class="p" data-group-id="2600137021-1">(</span><span class="s">&quot;\\usr\\src/kalle.erl&quot;</span><span class="p" data-group-id="2600137021-1">)</span><span class="p">.</span><span class="w"> </span><span class="c1">% Windows</span><span class="w">
 </span><span class="s">&quot;/usr/src&quot;</span></code></pre>
   </section>
 </section>
@@ -816,7 +836,7 @@ To remove an existing extension when you are unsure which one it is, use
       <h1 class="signature" translate="no">extension(Filename)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filename.erl#L543" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filename.erl#L543" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -832,10 +852,10 @@ To remove an existing extension when you are unsure which one it is, use
       </div>
 
 <p>Returns the file extension of <code class="inline">Filename</code>, including the period. Returns an empty
-string if no extension exists.</p><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">15&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">extension</span><span class="p" data-group-id="7219399416-1">(</span><span class="s">&quot;foo.erl&quot;</span><span class="p" data-group-id="7219399416-1">)</span><span class="p">.</span><span class="w">
+string if no extension exists.</p><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">15&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">extension</span><span class="p" data-group-id="0448284346-1">(</span><span class="s">&quot;foo.erl&quot;</span><span class="p" data-group-id="0448284346-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;.erl&quot;</span><span class="gp unselectable">
-16&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">extension</span><span class="p" data-group-id="7219399416-2">(</span><span class="s">&quot;beam.src/kalle&quot;</span><span class="p" data-group-id="7219399416-2">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="7219399416-3">[</span><span class="p" data-group-id="7219399416-3">]</span></code></pre>
+16&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">extension</span><span class="p" data-group-id="0448284346-2">(</span><span class="s">&quot;beam.src/kalle&quot;</span><span class="p" data-group-id="0448284346-2">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="0448284346-3">[</span><span class="p" data-group-id="0448284346-3">]</span></code></pre>
   </section>
 </section>
 <section class="detail" id="flatten/1">
@@ -848,7 +868,7 @@ string if no extension exists.</p><p><em>Examples:</em></p><pre><code class="mak
       <h1 class="signature" translate="no">flatten(Filename)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filename.erl#L1093" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filename.erl#L1093" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -877,7 +897,7 @@ the corresponding flat string filename.</p>
       <h1 class="signature" translate="no">join(Components)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filename.erl#L620" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filename.erl#L620" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -895,10 +915,10 @@ the corresponding flat string filename.</p>
 <p>Joins a list of filename <code class="inline">Components</code> with directory separators. If one of the
 elements of <code class="inline">Components</code> includes an absolute path, such as <code class="inline">&quot;/xxx&quot;</code>, the
 preceding elements, if any, are removed from the result.</p><p>The result is &quot;normalized&quot;:</p><ul><li>Redundant directory separators are removed.</li><li>In Windows, all directory separators are forward slashes and the drive letter
-is in lower case.</li></ul><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">17&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">join</span><span class="p" data-group-id="1989720376-1">(</span><span class="p" data-group-id="1989720376-2">[</span><span class="s">&quot;/usr&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;local&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bin&quot;</span><span class="p" data-group-id="1989720376-2">]</span><span class="p" data-group-id="1989720376-1">)</span><span class="p">.</span><span class="w">
+is in lower case.</li></ul><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">17&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">join</span><span class="p" data-group-id="4357433229-1">(</span><span class="p" data-group-id="4357433229-2">[</span><span class="s">&quot;/usr&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;local&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;bin&quot;</span><span class="p" data-group-id="4357433229-2">]</span><span class="p" data-group-id="4357433229-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;/usr/local/bin&quot;</span><span class="gp unselectable">
-18&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">join</span><span class="p" data-group-id="1989720376-3">(</span><span class="p" data-group-id="1989720376-4">[</span><span class="s">&quot;a/b///c/&quot;</span><span class="p" data-group-id="1989720376-4">]</span><span class="p" data-group-id="1989720376-3">)</span><span class="p">.</span><span class="w">
-</span><span class="s">&quot;a/b/c&quot;</span></code></pre><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">6&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">join</span><span class="p" data-group-id="1540820006-1">(</span><span class="p" data-group-id="1540820006-2">[</span><span class="s">&quot;B:a\\b///c/&quot;</span><span class="p" data-group-id="1540820006-2">]</span><span class="p" data-group-id="1540820006-1">)</span><span class="p">.</span><span class="w"> </span><span class="c1">% Windows</span><span class="w">
+18&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">join</span><span class="p" data-group-id="4357433229-3">(</span><span class="p" data-group-id="4357433229-4">[</span><span class="s">&quot;a/b///c/&quot;</span><span class="p" data-group-id="4357433229-4">]</span><span class="p" data-group-id="4357433229-3">)</span><span class="p">.</span><span class="w">
+</span><span class="s">&quot;a/b/c&quot;</span></code></pre><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">6&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">join</span><span class="p" data-group-id="8048970909-1">(</span><span class="p" data-group-id="8048970909-2">[</span><span class="s">&quot;B:a\\b///c/&quot;</span><span class="p" data-group-id="8048970909-2">]</span><span class="p" data-group-id="8048970909-1">)</span><span class="p">.</span><span class="w"> </span><span class="c1">% Windows</span><span class="w">
 </span><span class="s">&quot;b:a/b/c&quot;</span></code></pre>
   </section>
 </section>
@@ -912,7 +932,7 @@ is in lower case.</li></ul><p><em>Examples:</em></p><pre><code class="makeup erl
       <h1 class="signature" translate="no">join(Name1, Name2)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filename.erl#L638" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filename.erl#L638" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -941,7 +961,7 @@ is in lower case.</li></ul><p><em>Examples:</em></p><pre><code class="makeup erl
       <h1 class="signature" translate="no">nativename(Path)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filename.erl#L1058" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filename.erl#L1058" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -958,8 +978,8 @@ is in lower case.</li></ul><p><em>Examples:</em></p><pre><code class="makeup erl
 
 <p>Converts <code class="inline">Path</code> to a form accepted by the command shell and native applications
 on the current platform. On Windows, forward slashes are converted to backward
-slashes. On all platforms, the name is normalized as done by <a href="#join/1"><code class="inline">join/1</code></a>.</p><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">19&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">nativename</span><span class="p" data-group-id="6031105346-1">(</span><span class="s">&quot;/usr/local/bin/&quot;</span><span class="p" data-group-id="6031105346-1">)</span><span class="p">.</span><span class="w"> </span><span class="c1">% Unix</span><span class="w">
-</span><span class="s">&quot;/usr/local/bin&quot;</span></code></pre><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">7&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">nativename</span><span class="p" data-group-id="1559813719-1">(</span><span class="s">&quot;/usr/local/bin/&quot;</span><span class="p" data-group-id="1559813719-1">)</span><span class="p">.</span><span class="w"> </span><span class="c1">% Windows</span><span class="w">
+slashes. On all platforms, the name is normalized as done by <a href="#join/1"><code class="inline">join/1</code></a>.</p><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">19&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">nativename</span><span class="p" data-group-id="8517482123-1">(</span><span class="s">&quot;/usr/local/bin/&quot;</span><span class="p" data-group-id="8517482123-1">)</span><span class="p">.</span><span class="w"> </span><span class="c1">% Unix</span><span class="w">
+</span><span class="s">&quot;/usr/local/bin&quot;</span></code></pre><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">7&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">nativename</span><span class="p" data-group-id="0232066007-1">(</span><span class="s">&quot;/usr/local/bin/&quot;</span><span class="p" data-group-id="0232066007-1">)</span><span class="p">.</span><span class="w"> </span><span class="c1">% Windows</span><span class="w">
 </span><span class="s">&quot;\\usr\\local\\bin&quot;</span></code></pre>
   </section>
 </section>
@@ -973,7 +993,7 @@ slashes. On all platforms, the name is normalized as done by <a href="#join/1"><
       <h1 class="signature" translate="no">pathtype(Path)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filename.erl#L784" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filename.erl#L784" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1004,7 +1024,7 @@ working volume.</p><p>Windows example: <code class="inline">D:bar.erl, /bar/foo.
       <h1 class="signature" translate="no">rootname(Filename)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filename.erl#L852" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filename.erl#L852" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1019,9 +1039,9 @@ working volume.</p><p>Windows example: <code class="inline">D:bar.erl, /bar/foo.
 
       </div>
 
-<p>Removes the filename extension.</p><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">rootname</span><span class="p" data-group-id="3894988364-1">(</span><span class="s">&quot;/beam.src/kalle&quot;</span><span class="p" data-group-id="3894988364-1">)</span><span class="p">.</span><span class="w">
+<p>Removes the filename extension.</p><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">rootname</span><span class="p" data-group-id="3750940845-1">(</span><span class="s">&quot;/beam.src/kalle&quot;</span><span class="p" data-group-id="3750940845-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;/beam.src/kalle&quot;</span><span class="gp unselectable">
-2&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">rootname</span><span class="p" data-group-id="3894988364-2">(</span><span class="s">&quot;/beam.src/foo.erl&quot;</span><span class="p" data-group-id="3894988364-2">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">rootname</span><span class="p" data-group-id="3750940845-2">(</span><span class="s">&quot;/beam.src/foo.erl&quot;</span><span class="p" data-group-id="3750940845-2">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;/beam.src/foo&quot;</span></code></pre>
   </section>
 </section>
@@ -1035,7 +1055,7 @@ working volume.</p><p>Windows example: <code class="inline">D:bar.erl, /bar/foo.
       <h1 class="signature" translate="no">rootname(Filename, Ext)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filename.erl#L895" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filename.erl#L895" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1051,9 +1071,9 @@ working volume.</p><p>Windows example: <code class="inline">D:bar.erl, /bar/foo.
 
       </div>
 
-<p>Removes the filename extension <code class="inline">Ext</code> from <code class="inline">Filename</code>.</p><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">rootname</span><span class="p" data-group-id="1562278629-1">(</span><span class="s">&quot;/beam.src/foo.erl&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.erl&quot;</span><span class="p" data-group-id="1562278629-1">)</span><span class="p">.</span><span class="w">
+<p>Removes the filename extension <code class="inline">Ext</code> from <code class="inline">Filename</code>.</p><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">rootname</span><span class="p" data-group-id="0397696873-1">(</span><span class="s">&quot;/beam.src/foo.erl&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.erl&quot;</span><span class="p" data-group-id="0397696873-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;/beam.src/foo&quot;</span><span class="gp unselectable">
-2&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">rootname</span><span class="p" data-group-id="1562278629-2">(</span><span class="s">&quot;/beam.src/foo.beam&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.erl&quot;</span><span class="p" data-group-id="1562278629-2">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">rootname</span><span class="p" data-group-id="0397696873-2">(</span><span class="s">&quot;/beam.src/foo.beam&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;.erl&quot;</span><span class="p" data-group-id="0397696873-2">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;/beam.src/foo.beam&quot;</span></code></pre>
   </section>
 </section>
@@ -1067,7 +1087,7 @@ working volume.</p><p>Windows example: <code class="inline">D:bar.erl, /bar/foo.
       <h1 class="signature" translate="no">split(Filename)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/filename.erl#L941" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/filename.erl#L941" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1082,12 +1102,12 @@ working volume.</p><p>Windows example: <code class="inline">D:bar.erl, /bar/foo.
 
       </div>
 
-<p>Returns a list whose elements are the path components of <code class="inline">Filename</code>.</p><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">24&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">split</span><span class="p" data-group-id="3450092390-1">(</span><span class="s">&quot;/usr/local/bin&quot;</span><span class="p" data-group-id="3450092390-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="3450092390-2">[</span><span class="s">&quot;/&quot;</span><span class="p">,</span><span class="s">&quot;usr&quot;</span><span class="p">,</span><span class="s">&quot;local&quot;</span><span class="p">,</span><span class="s">&quot;bin&quot;</span><span class="p" data-group-id="3450092390-2">]</span><span class="gp unselectable">
-25&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">split</span><span class="p" data-group-id="3450092390-3">(</span><span class="s">&quot;foo/bar&quot;</span><span class="p" data-group-id="3450092390-3">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="3450092390-4">[</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="s">&quot;bar&quot;</span><span class="p" data-group-id="3450092390-4">]</span><span class="gp unselectable">
-26&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">split</span><span class="p" data-group-id="3450092390-5">(</span><span class="s">&quot;a:\\msdev\\include&quot;</span><span class="p" data-group-id="3450092390-5">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="3450092390-6">[</span><span class="s">&quot;a:/&quot;</span><span class="p">,</span><span class="s">&quot;msdev&quot;</span><span class="p">,</span><span class="s">&quot;include&quot;</span><span class="p" data-group-id="3450092390-6">]</span></code></pre>
+<p>Returns a list whose elements are the path components of <code class="inline">Filename</code>.</p><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">24&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">split</span><span class="p" data-group-id="5071386828-1">(</span><span class="s">&quot;/usr/local/bin&quot;</span><span class="p" data-group-id="5071386828-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="5071386828-2">[</span><span class="s">&quot;/&quot;</span><span class="p">,</span><span class="s">&quot;usr&quot;</span><span class="p">,</span><span class="s">&quot;local&quot;</span><span class="p">,</span><span class="s">&quot;bin&quot;</span><span class="p" data-group-id="5071386828-2">]</span><span class="gp unselectable">
+25&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">split</span><span class="p" data-group-id="5071386828-3">(</span><span class="s">&quot;foo/bar&quot;</span><span class="p" data-group-id="5071386828-3">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="5071386828-4">[</span><span class="s">&quot;foo&quot;</span><span class="p">,</span><span class="s">&quot;bar&quot;</span><span class="p" data-group-id="5071386828-4">]</span><span class="gp unselectable">
+26&gt; </span><span class="nc">filename</span><span class="p">:</span><span class="nf">split</span><span class="p" data-group-id="5071386828-5">(</span><span class="s">&quot;a:\\msdev\\include&quot;</span><span class="p" data-group-id="5071386828-5">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="5071386828-6">[</span><span class="s">&quot;a:/&quot;</span><span class="p">,</span><span class="s">&quot;msdev&quot;</span><span class="p">,</span><span class="s">&quot;include&quot;</span><span class="p" data-group-id="5071386828-6">]</span></code></pre>
   </section>
 </section>
 
@@ -1098,8 +1118,8 @@ working volume.</p><p>Windows example: <code class="inline">D:bar.erl, /bar/foo.
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="stdlib.epub" title="ePub version">
@@ -1111,7 +1131,7 @@ working volume.</p><p>Windows example: <code class="inline">D:bar.erl, /bar/foo.
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

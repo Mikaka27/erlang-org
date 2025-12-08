@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="wx v2.5.2-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/wx/wxDialog.html" />
     <title>wxDialog — wx v2.5.2-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-E2170433.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ wx
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of wx</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ wx
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxDialog.erl#L58" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxDialog.erl#L58" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -160,7 +178,7 @@ have an effect.</p></li></ul><p>See:</p><ul><li><p><a href="https://docs.wxwidge
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">create(This, Parent, Id, Title, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#create/5"><code class="inline">create(This, Parent, Id, Title, [])</code></a>.</p></div>
 
     </div>
 
@@ -190,7 +208,7 @@ have an effect.</p></li></ul><p>See:</p><ul><li><p><a href="https://docs.wxwidge
 
       </div>
 
-        <div class="summary-synopsis"><p>Creates a <a><code class="inline">wxStdDialogButtonSizer</code></a> with standard buttons.</p></div>
+        <div class="summary-synopsis"><p>Creates a <a href="wxStdDialogButtonSizer.html"><code class="inline">wxStdDialogButtonSizer</code></a> with standard buttons.</p></div>
 
     </div>
 
@@ -210,7 +228,7 @@ have an effect.</p></li></ul><p>See:</p><ul><li><p><a href="https://docs.wxwidge
 
       </div>
 
-        <div class="summary-synopsis"><p>Ends a modal dialog, passing a value to be returned from the <a><code class="inline">showModal/1</code></a> invocation.</p></div>
+        <div class="summary-synopsis"><p>Ends a modal dialog, passing a value to be returned from the <a href="#showModal/1"><code class="inline">showModal/1</code></a> invocation.</p></div>
 
     </div>
 
@@ -260,7 +278,7 @@ have an effect.</p></li></ul><p>See:</p><ul><li><p><a href="https://docs.wxwidge
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">new(Parent, Id, Title, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#new/4"><code class="inline">new(Parent, Id, Title, [])</code></a>.</p></div>
 
     </div>
 
@@ -300,7 +318,7 @@ have an effect.</p></li></ul><p>See:</p><ul><li><p><a href="https://docs.wxwidge
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">show(This, [])</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#show/2"><code class="inline">show(This, [])</code></a>.</p></div>
 
     </div>
 
@@ -336,6 +354,7 @@ have an effect.</p></li></ul><p>See:</p><ul><li><p><a href="https://docs.wxwidge
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:wxDialog/0">
 
@@ -347,7 +366,7 @@ have an effect.</p></li></ul><p>See:</p><ul><li><p><a href="https://docs.wxwidge
       <h1 class="signature" translate="no">wxDialog()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxDialog.erl#L211" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxDialog.erl#L211" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -376,6 +395,7 @@ have an effect.</p></li></ul><p>See:</p><ul><li><p><a href="https://docs.wxwidge
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="create/4">
 
@@ -387,7 +407,7 @@ have an effect.</p></li></ul><p>See:</p><ul><li><p><a href="https://docs.wxwidge
       <h1 class="signature" translate="no">create(This, Parent, Id, Title)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxDialog.erl#L259" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxDialog.erl#L259" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -420,7 +440,7 @@ have an effect.</p></li></ul><p>See:</p><ul><li><p><a href="https://docs.wxwidge
       <h1 class="signature" translate="no">create/5</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxDialog.erl#L273" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxDialog.erl#L273" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -457,7 +477,7 @@ have an effect.</p></li></ul><p>See:</p><ul><li><p><a href="https://docs.wxwidge
       <h1 class="signature" translate="no">createButtonSizer(This, Flags)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxDialog.erl#L301" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxDialog.erl#L301" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -489,7 +509,7 @@ value is valid before using it.</p>
       <h1 class="signature" translate="no">createStdDialogButtonSizer(This, Flags)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxDialog.erl#L317" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxDialog.erl#L317" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -519,7 +539,7 @@ wxCLOSE, wxHELP, wxNO_DEFAULT.</p><p>The sizer lays out the buttons in a manner 
       <h1 class="signature" translate="no">destroy(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxDialog.erl#L477" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxDialog.erl#L477" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -547,7 +567,7 @@ wxCLOSE, wxHELP, wxNO_DEFAULT.</p><p>The sizer lays out the buttons in a manner 
       <h1 class="signature" translate="no">endModal(This, RetCode)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxDialog.erl#L335" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxDialog.erl#L335" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -575,7 +595,7 @@ wxCLOSE, wxHELP, wxNO_DEFAULT.</p><p>The sizer lays out the buttons in a manner 
       <h1 class="signature" translate="no">getAffirmativeId(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxDialog.erl#L347" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxDialog.erl#L347" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -603,7 +623,7 @@ wxCLOSE, wxHELP, wxNO_DEFAULT.</p><p>The sizer lays out the buttons in a manner 
       <h1 class="signature" translate="no">getReturnCode(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxDialog.erl#L367" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxDialog.erl#L367" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -632,7 +652,7 @@ to the application.</p><p>See:</p><ul><li><p><a href="#setReturnCode/2"><code cl
       <h1 class="signature" translate="no">isModal(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxDialog.erl#L375" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxDialog.erl#L375" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -660,7 +680,7 @@ to the application.</p><p>See:</p><ul><li><p><a href="#setReturnCode/2"><code cl
       <h1 class="signature" translate="no">new()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxDialog.erl#L221" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxDialog.erl#L221" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -688,7 +708,7 @@ to the application.</p><p>See:</p><ul><li><p><a href="#setReturnCode/2"><code cl
       <h1 class="signature" translate="no">new(Parent, Id, Title)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxDialog.erl#L229" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxDialog.erl#L229" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -717,7 +737,7 @@ to the application.</p><p>See:</p><ul><li><p><a href="#setReturnCode/2"><code cl
       <h1 class="signature" translate="no">new/4</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxDialog.erl#L243" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxDialog.erl#L243" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -753,7 +773,7 @@ to the application.</p><p>See:</p><ul><li><p><a href="#setReturnCode/2"><code cl
       <h1 class="signature" translate="no">setAffirmativeId(This, Id)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxDialog.erl#L395" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxDialog.erl#L395" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -783,7 +803,7 @@ OK button in the PocketPC title bar, an event with this id is generated.</p><p>B
       <h1 class="signature" translate="no">setReturnCode(This, RetCode)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxDialog.erl#L415" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxDialog.erl#L415" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -812,7 +832,7 @@ application. The function <a href="#endModal/2"><code class="inline">endModal/2<
       <h1 class="signature" translate="no">show(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxDialog.erl#L424" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxDialog.erl#L424" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -840,7 +860,7 @@ application. The function <a href="#endModal/2"><code class="inline">endModal/2<
       <h1 class="signature" translate="no">show/2</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxDialog.erl#L436" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxDialog.erl#L436" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -868,7 +888,7 @@ application. The function <a href="#endModal/2"><code class="inline">endModal/2<
       <h1 class="signature" translate="no">showModal(This)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/wx/src/gen/wxDialog.erl#L470" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/wx/src/gen/wxDialog.erl#L470" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -899,8 +919,8 @@ destroyed when the dialog is dismissed. This also results in a call to <code cla
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="wx.epub" title="ePub version">
@@ -912,7 +932,7 @@ destroyed when the dialog is dismissed. This also results in a call to <code cla
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

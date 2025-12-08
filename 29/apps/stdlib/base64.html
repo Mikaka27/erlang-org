@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="stdlib v7.1-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/base64.html" />
     <title>base64 — stdlib v7.1-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-4F7E9F36.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ stdlib
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of stdlib</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ stdlib
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/base64.erl#L24" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/base64.erl#L24" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -121,7 +139,7 @@ stdlib
       </div>
 
         <div class="summary-synopsis"><p>Base 64 Encoding alphabet, see
-<a>RFC 4648</a>.</p></div>
+<a href="https://datatracker.ietf.org/doc/html/rfc4648">RFC 4648</a>.</p></div>
 
     </div>
 
@@ -141,11 +159,11 @@ stdlib
 
       </div>
 
-        <div class="summary-synopsis"><p>Selector for the Base 64 Encoding alphabet used for <a>encoding</a> and
-<a>decoding</a>. See
-<a>RFC 4648</a> Sections
-<a>4</a> and
-<a>5</a>.</p></div>
+        <div class="summary-synopsis"><p>Selector for the Base 64 Encoding alphabet used for <a href="#encode/2">encoding</a> and
+<a href="#decode/2">decoding</a>. See
+<a href="https://datatracker.ietf.org/doc/html/rfc4648">RFC 4648</a> Sections
+<a href="https://datatracker.ietf.org/doc/html/rfc4648#section-4">4</a> and
+<a href="https://datatracker.ietf.org/doc/html/rfc4648#section-5">5</a>.</p></div>
 
     </div>
 
@@ -201,7 +219,7 @@ stdlib
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">decode(Base64, #{})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#decode/2"><code class="inline">decode(Base64, #{})</code></a>.</p></div>
 
     </div>
 
@@ -212,7 +230,7 @@ stdlib
       </div>
 
         <div class="summary-synopsis"><p>Decodes a base64 string encoded using the standard alphabet according to
-<a>RFC 4648 Section 4</a> to
+<a href="https://datatracker.ietf.org/doc/html/rfc4648#section-4">RFC 4648 Section 4</a> to
 plain ASCII.</p></div>
 
     </div>
@@ -223,7 +241,7 @@ plain ASCII.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">decode(Base64)</code></a>, but returns a <a><code class="inline">byte_string/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#decode/1"><code class="inline">decode(Base64)</code></a>, but returns a <a href="#t:byte_string/0"><code class="inline">byte_string/0</code></a>.</p></div>
 
     </div>
 
@@ -233,7 +251,7 @@ plain ASCII.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">decode(Base64, Options)</code></a>, but returns a <a><code class="inline">byte_string/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#decode/2"><code class="inline">decode(Base64, Options)</code></a>, but returns a <a href="#t:byte_string/0"><code class="inline">byte_string/0</code></a>.</p></div>
 
     </div>
 
@@ -243,7 +261,7 @@ plain ASCII.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">encode(Data, #{})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#encode/2"><code class="inline">encode(Data, #{})</code></a>.</p></div>
 
     </div>
 
@@ -264,7 +282,7 @@ plain ASCII.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">encode(Data)</code></a>, but returns a <a><code class="inline">byte_string/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#encode/1"><code class="inline">encode(Data)</code></a>, but returns a <a href="#t:byte_string/0"><code class="inline">byte_string/0</code></a>.</p></div>
 
     </div>
 
@@ -274,7 +292,7 @@ plain ASCII.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">encode(Data, Options)</code></a>, but returns a <a><code class="inline">byte_string/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#encode/2"><code class="inline">encode(Data, Options)</code></a>, but returns a <a href="#t:byte_string/0"><code class="inline">byte_string/0</code></a>.</p></div>
 
     </div>
 
@@ -284,7 +302,7 @@ plain ASCII.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">mime_decode_to_string(Base64, #{})</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#mime_decode_to_string/2"><code class="inline">mime_decode_to_string(Base64, #{})</code></a>.</p></div>
 
     </div>
 
@@ -295,7 +313,7 @@ plain ASCII.</p></div>
       </div>
 
         <div class="summary-synopsis"><p>Decodes a base64 &quot;mime&quot; string encoded using the standard alphabet according to
-<a>RFC 4648 Section 4</a> to
+<a href="https://datatracker.ietf.org/doc/html/rfc4648#section-4">RFC 4648 Section 4</a> to
 plain ASCII.</p></div>
 
     </div>
@@ -306,8 +324,8 @@ plain ASCII.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">mime_decode(Base64)</code></a>,
-but returns a <a><code class="inline">byte_string/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#mime_decode/1"><code class="inline">mime_decode(Base64)</code></a>,
+but returns a <a href="#t:byte_string/0"><code class="inline">byte_string/0</code></a>.</p></div>
 
     </div>
 
@@ -317,8 +335,8 @@ but returns a <a><code class="inline">byte_string/0</code></a>.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">mime_decode(Base64, Options)</code></a>,
-but returns a <a><code class="inline">byte_string/0</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#mime_decode/2"><code class="inline">mime_decode(Base64, Options)</code></a>,
+but returns a <a href="#t:byte_string/0"><code class="inline">byte_string/0</code></a>.</p></div>
 
     </div>
 
@@ -334,6 +352,7 @@ but returns a <a><code class="inline">byte_string/0</code></a>.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:base64_alphabet/0">
 
@@ -347,7 +366,7 @@ but returns a <a><code class="inline">byte_string/0</code></a>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/base64.erl#L43" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/base64.erl#L43" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -378,7 +397,7 @@ but returns a <a><code class="inline">byte_string/0</code></a>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/base64.erl#L116" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/base64.erl#L116" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -408,7 +427,7 @@ but returns a <a><code class="inline">byte_string/0</code></a>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/base64.erl#L54" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/base64.erl#L54" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -442,7 +461,7 @@ but returns a <a><code class="inline">byte_string/0</code></a>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/base64.erl#L114" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/base64.erl#L114" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -472,7 +491,7 @@ but returns a <a><code class="inline">byte_string/0</code></a>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/base64.erl#L120" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/base64.erl#L120" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -502,7 +521,7 @@ but returns a <a><code class="inline">byte_string/0</code></a>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/base64.erl#L84" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/base64.erl#L84" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -542,7 +561,7 @@ the end.</p></li></ul>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/base64.erl#L109" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/base64.erl#L109" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -576,6 +595,7 @@ encoded string.</p></li><li><p><strong><code class="inline">false</code></strong
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="decode/1">
 
@@ -587,7 +607,7 @@ encoded string.</p></li><li><p><strong><code class="inline">false</code></strong
       <h1 class="signature" translate="no">decode(Base64)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/base64.erl#L269" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/base64.erl#L269" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -617,7 +637,7 @@ encoded string.</p></li><li><p><strong><code class="inline">false</code></strong
         <span class="note">(since OTP 26.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/base64.erl#L302" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/base64.erl#L302" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -639,16 +659,16 @@ encoded string.</p></li><li><p><strong><code class="inline">false</code></strong
 <p>Decodes a base64 string encoded using the standard alphabet according to
 <a href="https://datatracker.ietf.org/doc/html/rfc4648#section-4">RFC 4648 Section 4</a> to
 plain ASCII.</p><p>The function will strips away any whitespace characters and check for the
-the correct number of <code class="inline">=</code> padding characters at the end of the encoded string.</p><p>See <a href="#t:decode_options/0"><code class="inline">decode_options/0</code></a> for details on which options can be passed.</p><p><em>Example</em>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">base64</span><span class="p">:</span><span class="nf">decode</span><span class="p" data-group-id="7168056986-1">(</span><span class="s">&quot;AQIDBA==&quot;</span><span class="p" data-group-id="7168056986-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="7168056986-2">&lt;&lt;</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="7168056986-2">&gt;&gt;</span><span class="gp unselectable">
-2&gt; </span><span class="nc">base64</span><span class="p">:</span><span class="nf">decode</span><span class="p" data-group-id="7168056986-3">(</span><span class="s">&quot;AQ ID BA==&quot;</span><span class="p" data-group-id="7168056986-3">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="7168056986-4">&lt;&lt;</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="7168056986-4">&gt;&gt;</span><span class="gp unselectable">
-3&gt; </span><span class="nc">base64</span><span class="p">:</span><span class="nf">decode</span><span class="p" data-group-id="7168056986-5">(</span><span class="s">&quot;AQIDBA=&quot;</span><span class="p" data-group-id="7168056986-5">)</span><span class="p">.</span><span class="w">
+the correct number of <code class="inline">=</code> padding characters at the end of the encoded string.</p><p>See <a href="#t:decode_options/0"><code class="inline">decode_options/0</code></a> for details on which options can be passed.</p><p><em>Example</em>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">base64</span><span class="p">:</span><span class="nf">decode</span><span class="p" data-group-id="5481472486-1">(</span><span class="s">&quot;AQIDBA==&quot;</span><span class="p" data-group-id="5481472486-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="5481472486-2">&lt;&lt;</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="5481472486-2">&gt;&gt;</span><span class="gp unselectable">
+2&gt; </span><span class="nc">base64</span><span class="p">:</span><span class="nf">decode</span><span class="p" data-group-id="5481472486-3">(</span><span class="s">&quot;AQ ID BA==&quot;</span><span class="p" data-group-id="5481472486-3">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="5481472486-4">&lt;&lt;</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="5481472486-4">&gt;&gt;</span><span class="gp unselectable">
+3&gt; </span><span class="nc">base64</span><span class="p">:</span><span class="nf">decode</span><span class="p" data-group-id="5481472486-5">(</span><span class="s">&quot;AQIDBA=&quot;</span><span class="p" data-group-id="5481472486-5">)</span><span class="p">.</span><span class="w">
 </span><span class="gt">** exception error: missing_padding
      in function  base64:decode_list/7 (base64.erl, line 734)
         *** data to decode is missing final = padding characters, if this is intended, use the `padding =&gt; false` option</span><span class="gp unselectable">
-4&gt; </span><span class="nc">base64</span><span class="p">:</span><span class="nf">decode</span><span class="p" data-group-id="7168056986-6">(</span><span class="s">&quot;AQIDBA=&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7168056986-7">#{</span><span class="w"> </span><span class="ss">padding</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">false</span><span class="w"> </span><span class="p" data-group-id="7168056986-7">}</span><span class="p" data-group-id="7168056986-6">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="7168056986-8">&lt;&lt;</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="7168056986-8">&gt;&gt;</span></code></pre>
+4&gt; </span><span class="nc">base64</span><span class="p">:</span><span class="nf">decode</span><span class="p" data-group-id="5481472486-6">(</span><span class="s">&quot;AQIDBA=&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5481472486-7">#{</span><span class="w"> </span><span class="ss">padding</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">false</span><span class="w"> </span><span class="p" data-group-id="5481472486-7">}</span><span class="p" data-group-id="5481472486-6">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="5481472486-8">&lt;&lt;</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="5481472486-8">&gt;&gt;</span></code></pre>
   </section>
 </section>
 <section class="detail" id="decode_to_string/1">
@@ -661,7 +681,7 @@ the correct number of <code class="inline">=</code> padding characters at the en
       <h1 class="signature" translate="no">decode_to_string(Base64)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/base64.erl#L354" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/base64.erl#L354" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -692,7 +712,7 @@ the correct number of <code class="inline">=</code> padding characters at the en
         <span class="note">(since OTP 26.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/base64.erl#L364" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/base64.erl#L364" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -724,7 +744,7 @@ the correct number of <code class="inline">=</code> padding characters at the en
       <h1 class="signature" translate="no">encode(Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/base64.erl#L150" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/base64.erl#L150" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -754,7 +774,7 @@ the correct number of <code class="inline">=</code> padding characters at the en
         <span class="note">(since OTP 26.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/base64.erl#L165" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/base64.erl#L165" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -787,7 +807,7 @@ the correct number of <code class="inline">=</code> padding characters at the en
       <h1 class="signature" translate="no">encode_to_string(Data)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/base64.erl#L129" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/base64.erl#L129" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -818,7 +838,7 @@ the correct number of <code class="inline">=</code> padding characters at the en
         <span class="note">(since OTP 26.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/base64.erl#L141" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/base64.erl#L141" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -850,7 +870,7 @@ the correct number of <code class="inline">=</code> padding characters at the en
       <h1 class="signature" translate="no">mime_decode(Base64)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/base64.erl#L312" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/base64.erl#L312" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -880,7 +900,7 @@ the correct number of <code class="inline">=</code> padding characters at the en
         <span class="note">(since OTP 26.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/base64.erl#L340" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/base64.erl#L340" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -902,10 +922,10 @@ the correct number of <code class="inline">=</code> padding characters at the en
 <p>Decodes a base64 &quot;mime&quot; string encoded using the standard alphabet according to
 <a href="https://datatracker.ietf.org/doc/html/rfc4648#section-4">RFC 4648 Section 4</a> to
 plain ASCII.</p><p>The function will strips away any illegal characters. It does <em>not</em> check for the
-the correct number of <code class="inline">=</code> padding characters at the end of the encoded string.</p><p>See <a href="#t:decode_options/0"><code class="inline">decode_options/0</code></a> for details on which options can be passed.</p><p><em>Example</em>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">base64</span><span class="p">:</span><span class="nf">mime_decode</span><span class="p" data-group-id="0429704401-1">(</span><span class="s">&quot;AQIDBA==&quot;</span><span class="p" data-group-id="0429704401-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="0429704401-2">&lt;&lt;</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="0429704401-2">&gt;&gt;</span><span class="gp unselectable">
-2&gt; </span><span class="nc">base64</span><span class="p">:</span><span class="nf">mime_decode</span><span class="p" data-group-id="0429704401-3">(</span><span class="s">&quot;AQIDB=A=&quot;</span><span class="p" data-group-id="0429704401-3">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="0429704401-4">&lt;&lt;</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="0429704401-4">&gt;&gt;</span></code></pre>
+the correct number of <code class="inline">=</code> padding characters at the end of the encoded string.</p><p>See <a href="#t:decode_options/0"><code class="inline">decode_options/0</code></a> for details on which options can be passed.</p><p><em>Example</em>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">base64</span><span class="p">:</span><span class="nf">mime_decode</span><span class="p" data-group-id="4998856009-1">(</span><span class="s">&quot;AQIDBA==&quot;</span><span class="p" data-group-id="4998856009-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4998856009-2">&lt;&lt;</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="4998856009-2">&gt;&gt;</span><span class="gp unselectable">
+2&gt; </span><span class="nc">base64</span><span class="p">:</span><span class="nf">mime_decode</span><span class="p" data-group-id="4998856009-3">(</span><span class="s">&quot;AQIDB=A=&quot;</span><span class="p" data-group-id="4998856009-3">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4998856009-4">&lt;&lt;</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="4998856009-4">&gt;&gt;</span></code></pre>
   </section>
 </section>
 <section class="detail" id="mime_decode_to_string/1">
@@ -918,7 +938,7 @@ the correct number of <code class="inline">=</code> padding characters at the en
       <h1 class="signature" translate="no">mime_decode_to_string(Base64)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/base64.erl#L377" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/base64.erl#L377" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -952,7 +972,7 @@ but returns a <a href="#t:byte_string/0"><code class="inline">byte_string/0</cod
         <span class="note">(since OTP 26.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/base64.erl#L390" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/base64.erl#L390" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -983,8 +1003,8 @@ but returns a <a href="#t:byte_string/0"><code class="inline">byte_string/0</cod
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="stdlib.epub" title="ePub version">
@@ -996,7 +1016,7 @@ but returns a <a href="#t:byte_string/0"><code class="inline">byte_string/0</cod
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

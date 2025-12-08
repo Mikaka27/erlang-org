@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="stdlib v7.1-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/beam_lib.html" />
     <title>beam_lib — stdlib v7.1-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-4F7E9F36.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ stdlib
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of stdlib</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ stdlib
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L22" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L22" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -107,8 +125,8 @@ follows:</p><ul><li><code class="inline">atoms (&quot;Atom&quot;)</code></li><li
 Tools such as Debugger and Xref require the debug information to be included.</p><section role="note" class="admonition warning"><h4 class="admonition-title warning">Warning</h4><p>Source code can be reconstructed from the debug information. To prevent this,
 use encrypted debug information (see below).</p></section><p>The debug information can also be removed from BEAM files using <a href="#strip/1"><code class="inline">strip/1</code></a>,
 <a href="#strip_files/1"><code class="inline">strip_files/1</code></a>, and/or <a href="#strip_release/1"><code class="inline">strip_release/1</code></a>.</p><h2 id="module-reconstruct-source-code" class="section-heading"><a href="#module-reconstruct-source-code" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Reconstruct Source Code</span></h2><p>The following example shows how to reconstruct Erlang source code from the debug
-information in a BEAM file <code class="inline">Beam</code>:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="5031597168-1">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="5031597168-2">{</span><span class="p">_</span><span class="p">,</span><span class="p" data-group-id="5031597168-3">[</span><span class="p" data-group-id="5031597168-4">{</span><span class="ss">abstract_code</span><span class="p">,</span><span class="p" data-group-id="5031597168-5">{</span><span class="p">_</span><span class="p">,</span><span class="n">AC</span><span class="p" data-group-id="5031597168-5">}</span><span class="p" data-group-id="5031597168-4">}</span><span class="p" data-group-id="5031597168-3">]</span><span class="p" data-group-id="5031597168-2">}</span><span class="p" data-group-id="5031597168-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">beam_lib</span><span class="p">:</span><span class="nf">chunks</span><span class="p" data-group-id="5031597168-6">(</span><span class="n">Beam</span><span class="p">,</span><span class="p" data-group-id="5031597168-7">[</span><span class="ss">abstract_code</span><span class="p" data-group-id="5031597168-7">]</span><span class="p" data-group-id="5031597168-6">)</span><span class="p">.</span><span class="w">
-</span><span class="nc">io</span><span class="p">:</span><span class="nf">fwrite</span><span class="p" data-group-id="5031597168-8">(</span><span class="s">&quot;</span><span class="si">~s</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5031597168-9">[</span><span class="nc">erl_prettypr</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="5031597168-10">(</span><span class="nc">erl_syntax</span><span class="p">:</span><span class="nf">form_list</span><span class="p" data-group-id="5031597168-11">(</span><span class="n">AC</span><span class="p" data-group-id="5031597168-11">)</span><span class="p" data-group-id="5031597168-10">)</span><span class="p" data-group-id="5031597168-9">]</span><span class="p" data-group-id="5031597168-8">)</span><span class="p">.</span></code></pre><h2 id="module-encrypted-debug-information" class="section-heading"><a href="#module-encrypted-debug-information" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Encrypted Debug Information</span></h2><p>The debug information can be encrypted to keep the source code secret, but still
+information in a BEAM file <code class="inline">Beam</code>:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="5373472314-1">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="5373472314-2">{</span><span class="p">_</span><span class="p">,</span><span class="p" data-group-id="5373472314-3">[</span><span class="p" data-group-id="5373472314-4">{</span><span class="ss">abstract_code</span><span class="p">,</span><span class="p" data-group-id="5373472314-5">{</span><span class="p">_</span><span class="p">,</span><span class="n">AC</span><span class="p" data-group-id="5373472314-5">}</span><span class="p" data-group-id="5373472314-4">}</span><span class="p" data-group-id="5373472314-3">]</span><span class="p" data-group-id="5373472314-2">}</span><span class="p" data-group-id="5373472314-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">beam_lib</span><span class="p">:</span><span class="nf">chunks</span><span class="p" data-group-id="5373472314-6">(</span><span class="n">Beam</span><span class="p">,</span><span class="p" data-group-id="5373472314-7">[</span><span class="ss">abstract_code</span><span class="p" data-group-id="5373472314-7">]</span><span class="p" data-group-id="5373472314-6">)</span><span class="p">.</span><span class="w">
+</span><span class="nc">io</span><span class="p">:</span><span class="nf">fwrite</span><span class="p" data-group-id="5373472314-8">(</span><span class="s">&quot;</span><span class="si">~s</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5373472314-9">[</span><span class="nc">erl_prettypr</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="5373472314-10">(</span><span class="nc">erl_syntax</span><span class="p">:</span><span class="nf">form_list</span><span class="p" data-group-id="5373472314-11">(</span><span class="n">AC</span><span class="p" data-group-id="5373472314-11">)</span><span class="p" data-group-id="5373472314-10">)</span><span class="p" data-group-id="5373472314-9">]</span><span class="p" data-group-id="5373472314-8">)</span><span class="p">.</span></code></pre><h2 id="module-encrypted-debug-information" class="section-heading"><a href="#module-encrypted-debug-information" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Encrypted Debug Information</span></h2><p>The debug information can be encrypted to keep the source code secret, but still
 be able to use tools such as Debugger or Xref.</p><p>To use encrypted debug information, a key must be provided to the compiler and
 <code class="inline">beam_lib</code>. The key is specified as a string. It is recommended that the string
 contains at least 32 characters and that both upper and lower case letters as
@@ -128,13 +146,13 @@ In this case, Compiler option <code class="inline">encrypt_debug_info</code> can
 <a href="../../apps/erts/init.html#home">user's home directory</a> and then
 <a href="filename.html#user_config"><code class="inline">filename:basedir(user_config, &quot;erlang&quot;)</code></a>. If the
 file is found and contains a key, <code class="inline">beam_lib</code> implicitly creates a crypto key fun
-and registers it.</p><p>File <code class="inline">.erlang.crypt</code> is to contain a single list of tuples:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="4260855547-1">{</span><span class="ss">debug_info</span><span class="p">,</span><span class="w"> </span><span class="n">Mode</span><span class="p">,</span><span class="w"> </span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="p" data-group-id="4260855547-1">}</span></code></pre><p><code class="inline">Mode</code> is the type of crypto algorithm; currently, the only allowed value is
+and registers it.</p><p>File <code class="inline">.erlang.crypt</code> is to contain a single list of tuples:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="9982708972-1">{</span><span class="ss">debug_info</span><span class="p">,</span><span class="w"> </span><span class="n">Mode</span><span class="p">,</span><span class="w"> </span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="p" data-group-id="9982708972-1">}</span></code></pre><p><code class="inline">Mode</code> is the type of crypto algorithm; currently, the only allowed value is
 <code class="inline">des3_cbc</code>. <code class="inline">Module</code> is either an atom, in which case <code class="inline">Key</code> is only used for the
 module <code class="inline">Module</code>, or <code class="inline">[]</code>, in which case <code class="inline">Key</code> is used for all modules. <code class="inline">Key</code> is
 the non-empty key string.</p><p><code class="inline">Key</code> in the first tuple where both <code class="inline">Mode</code> and <code class="inline">Module</code> match is used.</p><p>The following is an example of an <code class="inline">.erlang.crypt</code> file that returns the same key
-for all modules:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="8450665734-1">[</span><span class="p" data-group-id="8450665734-2">{</span><span class="ss">debug_info</span><span class="p">,</span><span class="w"> </span><span class="ss">des3_cbc</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8450665734-3">[</span><span class="p" data-group-id="8450665734-3">]</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%&gt;7}|pc/DM6Cga*68$Mw]L#&amp;_Gejr]G^&quot;</span><span class="p" data-group-id="8450665734-2">}</span><span class="p" data-group-id="8450665734-1">]</span><span class="p">.</span></code></pre><p>The following is a slightly more complicated example of an <code class="inline">.erlang.crypt</code>
-providing one key for module <code class="inline">t</code> and another key for all other modules:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="7089193050-1">[</span><span class="p" data-group-id="7089193050-2">{</span><span class="ss">debug_info</span><span class="p">,</span><span class="w"> </span><span class="ss">des3_cbc</span><span class="p">,</span><span class="w"> </span><span class="ss">t</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;My KEY&quot;</span><span class="p" data-group-id="7089193050-2">}</span><span class="p">,</span><span class="w">
- </span><span class="p" data-group-id="7089193050-3">{</span><span class="ss">debug_info</span><span class="p">,</span><span class="w"> </span><span class="ss">des3_cbc</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7089193050-4">[</span><span class="p" data-group-id="7089193050-4">]</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%&gt;7}|pc/DM6Cga*68$Mw]L#&amp;_Gejr]G^&quot;</span><span class="p" data-group-id="7089193050-3">}</span><span class="p" data-group-id="7089193050-1">]</span><span class="p">.</span></code></pre><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>Do not use any of the keys in these examples. Use your own keys.</p></section>
+for all modules:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="0004034252-1">[</span><span class="p" data-group-id="0004034252-2">{</span><span class="ss">debug_info</span><span class="p">,</span><span class="w"> </span><span class="ss">des3_cbc</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0004034252-3">[</span><span class="p" data-group-id="0004034252-3">]</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%&gt;7}|pc/DM6Cga*68$Mw]L#&amp;_Gejr]G^&quot;</span><span class="p" data-group-id="0004034252-2">}</span><span class="p" data-group-id="0004034252-1">]</span><span class="p">.</span></code></pre><p>The following is a slightly more complicated example of an <code class="inline">.erlang.crypt</code>
+providing one key for module <code class="inline">t</code> and another key for all other modules:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="7066975358-1">[</span><span class="p" data-group-id="7066975358-2">{</span><span class="ss">debug_info</span><span class="p">,</span><span class="w"> </span><span class="ss">des3_cbc</span><span class="p">,</span><span class="w"> </span><span class="ss">t</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;My KEY&quot;</span><span class="p" data-group-id="7066975358-2">}</span><span class="p">,</span><span class="w">
+ </span><span class="p" data-group-id="7066975358-3">{</span><span class="ss">debug_info</span><span class="p">,</span><span class="w"> </span><span class="ss">des3_cbc</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7066975358-4">[</span><span class="p" data-group-id="7066975358-4">]</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;%&gt;7}|pc/DM6Cga*68$Mw]L#&amp;_Gejr]G^&quot;</span><span class="p" data-group-id="7066975358-3">}</span><span class="p" data-group-id="7066975358-1">]</span><span class="p">.</span></code></pre><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>Do not use any of the keys in these examples. Use your own keys.</p></section>
     </section>
 
 </div>
@@ -196,7 +214,7 @@ or a binary containing the BEAM module.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>The list of attributes is sorted on <code class="inline">Attribute</code> (in <a><code class="inline">attrib_entry/0</code></a>) and each
+        <div class="summary-synopsis"><p>The list of attributes is sorted on <code class="inline">Attribute</code> (in <a href="#t:attrib_entry/0"><code class="inline">attrib_entry/0</code></a>) and each
 attribute name occurs once in the list. The attribute values occur in the same
 order as in the file. The lists of functions are also sorted.</p></div>
 
@@ -284,7 +302,7 @@ order as in the file. The lists of functions are also sorted.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p><a>EEP-48 documentation format</a></p></div>
+        <div class="summary-synopsis"><p><a href="../../apps/kernel/eep48_chapter.html#the-docs-format">EEP-48 documentation format</a></p></div>
 
     </div>
 
@@ -399,7 +417,7 @@ of chunk data is determined by the order of the list of chunks references.</p></
       </div>
 
         <div class="summary-synopsis"><p>Unregisters the crypto key fun and terminates the process holding it, started by
-<a><code class="inline">crypto_key_fun/1</code></a>.</p></div>
+<a href="#crypto_key_fun/1"><code class="inline">crypto_key_fun/1</code></a>.</p></div>
 
     </div>
 
@@ -441,7 +459,7 @@ the function.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Compares the BEAM files in two directories as <a><code class="inline">cmp_dirs/2</code></a>, but the names of
+        <div class="summary-synopsis"><p>Compares the BEAM files in two directories as <a href="#cmp_dirs/2"><code class="inline">cmp_dirs/2</code></a>, but the names of
 files that exist in only one directory or are different are presented on
 standard output.</p></div>
 
@@ -455,7 +473,7 @@ standard output.</p></div>
 
         <div class="summary-synopsis"><p>For a specified error returned by any function in this module, this function
 returns a descriptive string of the error in English. For file errors, function
-<a><code class="inline">file:format_error(Posix)</code></a> is to be called.</p></div>
+<a href="../../apps/kernel/file.html#format_error/1"><code class="inline">file:format_error(Posix)</code></a> is to be called.</p></div>
 
     </div>
 
@@ -568,6 +586,7 @@ release.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:abst_code/0">
 
@@ -581,7 +600,7 @@ release.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L226" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L226" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -612,7 +631,7 @@ computed from the <code class="inline">debug_info</code> chunk.</p>
       <h1 class="signature" translate="no">attrib_entry()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L246" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L246" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -640,7 +659,7 @@ computed from the <code class="inline">debug_info</code> chunk.</p>
       <h1 class="signature" translate="no">beam()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L198" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L198" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -669,7 +688,7 @@ or a binary containing the BEAM module.</p>
       <h1 class="signature" translate="no">chnk_rsn()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L285" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L285" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -703,7 +722,7 @@ or a binary containing the BEAM module.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L260" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L260" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -747,7 +766,7 @@ order as in the file. The lists of functions are also sorted.</p>
       <h1 class="signature" translate="no">chunkid()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L234" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L234" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -777,7 +796,7 @@ order as in the file. The lists of functions are also sorted.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L237" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L237" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -809,7 +828,7 @@ order as in the file. The lists of functions are also sorted.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L244" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L244" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -839,7 +858,7 @@ order as in the file. The lists of functions are also sorted.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L290" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L290" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -871,7 +890,7 @@ order as in the file. The lists of functions are also sorted.</p>
       <h1 class="signature" translate="no">compinfo_entry()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L247" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L247" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -901,7 +920,7 @@ order as in the file. The lists of functions are also sorted.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L632" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L632" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -931,7 +950,7 @@ order as in the file. The lists of functions are also sorted.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L629" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L629" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -961,7 +980,7 @@ order as in the file. The lists of functions are also sorted.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L227" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L227" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -991,7 +1010,7 @@ order as in the file. The lists of functions are also sorted.</p>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L214" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L214" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1029,7 +1048,7 @@ moment. <code class="inline">no_debug_info</code> means that chunk <code class="
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L251" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L251" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1065,7 +1084,7 @@ moment. <code class="inline">no_debug_info</code> means that chunk <code class="
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L216" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L216" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1095,7 +1114,7 @@ moment. <code class="inline">no_debug_info</code> means that chunk <code class="
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L228" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L228" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1125,7 +1144,7 @@ moment. <code class="inline">no_debug_info</code> means that chunk <code class="
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L276" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L276" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1163,7 +1182,7 @@ moment. <code class="inline">no_debug_info</code> means that chunk <code class="
       <h1 class="signature" translate="no">label()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L229" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L229" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1191,7 +1210,7 @@ moment. <code class="inline">no_debug_info</code> means that chunk <code class="
       <h1 class="signature" translate="no">labeled_entry()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L248" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L248" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1221,7 +1240,7 @@ moment. <code class="inline">no_debug_info</code> means that chunk <code class="
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L253" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L253" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1251,7 +1270,7 @@ moment. <code class="inline">no_debug_info</code> means that chunk <code class="
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L628" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L628" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1280,6 +1299,7 @@ moment. <code class="inline">no_debug_info</code> means that chunk <code class="
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="all_chunks/1">
 
@@ -1293,7 +1313,7 @@ moment. <code class="inline">no_debug_info</code> means that chunk <code class="
         <span class="note">(since OTP 18.2)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L366" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L366" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1323,7 +1343,7 @@ moment. <code class="inline">no_debug_info</code> means that chunk <code class="
         <span class="note">(since OTP 18.2)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L706" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L706" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1351,7 +1371,7 @@ moment. <code class="inline">no_debug_info</code> means that chunk <code class="
       <h1 class="signature" translate="no">chunks(Beam, ChunkRefs)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L335" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L335" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1381,7 +1401,7 @@ of chunk data is determined by the order of the list of chunks references.</p>
       <h1 class="signature" translate="no">chunks(Beam, ChunkRefs, Options)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L357" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L357" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1421,7 +1441,7 @@ tuple.</p>
       <h1 class="signature" translate="no">clear_crypto_key_fun()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L688" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L688" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1452,7 +1472,7 @@ tuple.</p>
       <h1 class="signature" translate="no">cmp(Beam1, Beam2)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L381" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L381" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1483,7 +1503,7 @@ returned. Otherwise an error message is returned.</p>
       <h1 class="signature" translate="no">cmp_dirs(Dir1, Dir2)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L403" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L403" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1522,7 +1542,7 @@ exists in directory <code class="inline">Dir1</code> (<code class="inline">Dir2<
       <h1 class="signature" translate="no">crypto_key_fun(CryptoKeyFun)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L674" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L674" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1541,11 +1561,11 @@ exists in directory <code class="inline">Dir1</code> (<code class="inline">Dir2<
 <p>Registers an unary fun that is called if <code class="inline">beam_lib</code> must read an <code class="inline">debug_info</code>
 chunk that has been encrypted. The fun is held in a process that is started by
 the function.</p><p>If a fun is already registered when attempting to register a fun,
-<code class="inline">{error, exists}</code> is returned.</p><p>The fun must handle the following arguments:</p><pre><code class="makeup erlang" translate="no"><span class="n">CryptoKeyFun</span><span class="p" data-group-id="1526510848-1">(</span><span class="ss">init</span><span class="p" data-group-id="1526510848-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="ss">ok</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p" data-group-id="1526510848-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">NewCryptoKeyFun</span><span class="p" data-group-id="1526510848-2">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p" data-group-id="1526510848-3">{</span><span class="ss">error</span><span class="p">,</span><span class="w"> </span><span class="n">Term</span><span class="p" data-group-id="1526510848-3">}</span></code></pre><p>Called when the fun is registered, in the process that holds the fun. Here the
+<code class="inline">{error, exists}</code> is returned.</p><p>The fun must handle the following arguments:</p><pre><code class="makeup erlang" translate="no"><span class="n">CryptoKeyFun</span><span class="p" data-group-id="8843586922-1">(</span><span class="ss">init</span><span class="p" data-group-id="8843586922-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="ss">ok</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p" data-group-id="8843586922-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">NewCryptoKeyFun</span><span class="p" data-group-id="8843586922-2">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p" data-group-id="8843586922-3">{</span><span class="ss">error</span><span class="p">,</span><span class="w"> </span><span class="n">Term</span><span class="p" data-group-id="8843586922-3">}</span></code></pre><p>Called when the fun is registered, in the process that holds the fun. Here the
 crypto key fun can do any necessary initializations. If <code class="inline">{ok, NewCryptoKeyFun}</code>
 is returned, <code class="inline">NewCryptoKeyFun</code> is registered instead of <code class="inline">CryptoKeyFun</code>. If
 <code class="inline">{error, Term}</code> is returned, the registration is aborted and
-<a href="#crypto_key_fun/1"><code class="inline">crypto_key_fun/1</code></a> also returns <code class="inline">{error, Term}</code>.</p><pre><code class="makeup erlang" translate="no"><span class="n">CryptoKeyFun</span><span class="p" data-group-id="2594561787-1">(</span><span class="p" data-group-id="2594561787-2">{</span><span class="ss">debug_info</span><span class="p">,</span><span class="w"> </span><span class="n">Mode</span><span class="p">,</span><span class="w"> </span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">Filename</span><span class="p" data-group-id="2594561787-2">}</span><span class="p" data-group-id="2594561787-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">Key</span></code></pre><p>Called when the key is needed for module <code class="inline">Module</code> in the file named <code class="inline">Filename</code>.
+<a href="#crypto_key_fun/1"><code class="inline">crypto_key_fun/1</code></a> also returns <code class="inline">{error, Term}</code>.</p><pre><code class="makeup erlang" translate="no"><span class="n">CryptoKeyFun</span><span class="p" data-group-id="1308073801-1">(</span><span class="p" data-group-id="1308073801-2">{</span><span class="ss">debug_info</span><span class="p">,</span><span class="w"> </span><span class="n">Mode</span><span class="p">,</span><span class="w"> </span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">Filename</span><span class="p" data-group-id="1308073801-2">}</span><span class="p" data-group-id="1308073801-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">Key</span></code></pre><p>Called when the key is needed for module <code class="inline">Module</code> in the file named <code class="inline">Filename</code>.
 <code class="inline">Mode</code> is the type of crypto algorithm; currently, the only possible value is
 <code class="inline">des3_cbc</code>. The call is to fail (raise an exception) if no key is available.</p><pre><code class="text">CryptoKeyFun(clear) -&gt; term()</code></pre><p>Called before the fun is unregistered. Here any cleaning up can be done. The
 return value is not important, but is passed back to the caller of
@@ -1562,7 +1582,7 @@ return value is not important, but is passed back to the caller of
       <h1 class="signature" translate="no">diff_dirs(Dir1, Dir2)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L416" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L416" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1596,7 +1616,7 @@ standard output.</p>
       <h1 class="signature" translate="no">format_error(Reason)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L580" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L580" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1626,7 +1646,7 @@ returns a descriptive string of the error in English. For file errors, function
       <h1 class="signature" translate="no">info(Beam)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L322" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L322" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1665,7 +1685,7 @@ file, or the binary from which the information was extracted.</p></li><li><p><st
       <h1 class="signature" translate="no">md5(Beam)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L563" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L563" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1695,7 +1715,7 @@ and other attributes are not included).</p>
       <h1 class="signature" translate="no">strip(Beam1)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L430" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L430" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1727,7 +1747,7 @@ removed.</p>
         <span class="note">(since OTP 22.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L446" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L446" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1757,7 +1777,7 @@ in <code class="inline">AdditionalChunks</code>.</p><p>In particular, the debug 
       <h1 class="signature" translate="no">strip_files(Files)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L462" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L462" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1790,7 +1810,7 @@ the same order as in <code class="inline">Files</code>.</p>
         <span class="note">(since OTP 22.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L480" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L480" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1822,7 +1842,7 @@ in the same order as in <code class="inline">Files</code>.</p>
       <h1 class="signature" translate="no">strip_release(Dir)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L497" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L497" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1857,7 +1877,7 @@ release can be stripped with the call <code class="inline">beam_lib:strip_releas
         <span class="note">(since OTP 22.0)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L515" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L515" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1892,7 +1912,7 @@ release can be stripped with the call <code class="inline">beam_lib:strip_releas
       <h1 class="signature" translate="no">version(Beam)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/src/beam_lib.erl#L545" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/src/beam_lib.erl#L545" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1912,14 +1932,14 @@ release can be stripped with the call <code class="inline">beam_lib:strip_releas
 <code class="inline">-vsn(Vsn)</code>.</p><p>If this attribute is not specified, the version defaults to the
 checksum of the module. Notice that if version <code class="inline">Vsn</code> is not a list, it is made
 into one, that is <code class="inline">{ok,{Module,[Vsn]}}</code> is returned. If there are many <code class="inline">-vsn</code>
-module attributes, the result is the concatenated list of versions.</p><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">beam_lib</span><span class="p">:</span><span class="nf">version</span><span class="p" data-group-id="0446243497-1">(</span><span class="ss">a</span><span class="p" data-group-id="0446243497-1">)</span><span class="p">.</span><span class="w"> </span><span class="c1">% -vsn(1).</span><span class="w">
-</span><span class="p" data-group-id="0446243497-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="0446243497-3">{</span><span class="ss">a</span><span class="p">,</span><span class="p" data-group-id="0446243497-4">[</span><span class="mi">1</span><span class="p" data-group-id="0446243497-4">]</span><span class="p" data-group-id="0446243497-3">}</span><span class="p" data-group-id="0446243497-2">}</span><span class="gp unselectable">
-2&gt; </span><span class="nc">beam_lib</span><span class="p">:</span><span class="nf">version</span><span class="p" data-group-id="0446243497-5">(</span><span class="ss">b</span><span class="p" data-group-id="0446243497-5">)</span><span class="p">.</span><span class="w"> </span><span class="c1">% -vsn([1]).</span><span class="w">
-</span><span class="p" data-group-id="0446243497-6">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="0446243497-7">{</span><span class="ss">b</span><span class="p">,</span><span class="p" data-group-id="0446243497-8">[</span><span class="mi">1</span><span class="p" data-group-id="0446243497-8">]</span><span class="p" data-group-id="0446243497-7">}</span><span class="p" data-group-id="0446243497-6">}</span><span class="gp unselectable">
-3&gt; </span><span class="nc">beam_lib</span><span class="p">:</span><span class="nf">version</span><span class="p" data-group-id="0446243497-9">(</span><span class="ss">c</span><span class="p" data-group-id="0446243497-9">)</span><span class="p">.</span><span class="w"> </span><span class="c1">% -vsn([1]). -vsn(2).</span><span class="w">
-</span><span class="p" data-group-id="0446243497-10">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="0446243497-11">{</span><span class="ss">c</span><span class="p">,</span><span class="p" data-group-id="0446243497-12">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p" data-group-id="0446243497-12">]</span><span class="p" data-group-id="0446243497-11">}</span><span class="p" data-group-id="0446243497-10">}</span><span class="gp unselectable">
-4&gt; </span><span class="nc">beam_lib</span><span class="p">:</span><span class="nf">version</span><span class="p" data-group-id="0446243497-13">(</span><span class="ss">d</span><span class="p" data-group-id="0446243497-13">)</span><span class="p">.</span><span class="w"> </span><span class="c1">% no -vsn attribute</span><span class="w">
-</span><span class="p" data-group-id="0446243497-14">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="0446243497-15">{</span><span class="ss">d</span><span class="p">,</span><span class="p" data-group-id="0446243497-16">[</span><span class="mi">275613208176997377698094100858909383631</span><span class="p" data-group-id="0446243497-16">]</span><span class="p" data-group-id="0446243497-15">}</span><span class="p" data-group-id="0446243497-14">}</span></code></pre>
+module attributes, the result is the concatenated list of versions.</p><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">beam_lib</span><span class="p">:</span><span class="nf">version</span><span class="p" data-group-id="8276528351-1">(</span><span class="ss">a</span><span class="p" data-group-id="8276528351-1">)</span><span class="p">.</span><span class="w"> </span><span class="c1">% -vsn(1).</span><span class="w">
+</span><span class="p" data-group-id="8276528351-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="8276528351-3">{</span><span class="ss">a</span><span class="p">,</span><span class="p" data-group-id="8276528351-4">[</span><span class="mi">1</span><span class="p" data-group-id="8276528351-4">]</span><span class="p" data-group-id="8276528351-3">}</span><span class="p" data-group-id="8276528351-2">}</span><span class="gp unselectable">
+2&gt; </span><span class="nc">beam_lib</span><span class="p">:</span><span class="nf">version</span><span class="p" data-group-id="8276528351-5">(</span><span class="ss">b</span><span class="p" data-group-id="8276528351-5">)</span><span class="p">.</span><span class="w"> </span><span class="c1">% -vsn([1]).</span><span class="w">
+</span><span class="p" data-group-id="8276528351-6">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="8276528351-7">{</span><span class="ss">b</span><span class="p">,</span><span class="p" data-group-id="8276528351-8">[</span><span class="mi">1</span><span class="p" data-group-id="8276528351-8">]</span><span class="p" data-group-id="8276528351-7">}</span><span class="p" data-group-id="8276528351-6">}</span><span class="gp unselectable">
+3&gt; </span><span class="nc">beam_lib</span><span class="p">:</span><span class="nf">version</span><span class="p" data-group-id="8276528351-9">(</span><span class="ss">c</span><span class="p" data-group-id="8276528351-9">)</span><span class="p">.</span><span class="w"> </span><span class="c1">% -vsn([1]). -vsn(2).</span><span class="w">
+</span><span class="p" data-group-id="8276528351-10">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="8276528351-11">{</span><span class="ss">c</span><span class="p">,</span><span class="p" data-group-id="8276528351-12">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p" data-group-id="8276528351-12">]</span><span class="p" data-group-id="8276528351-11">}</span><span class="p" data-group-id="8276528351-10">}</span><span class="gp unselectable">
+4&gt; </span><span class="nc">beam_lib</span><span class="p">:</span><span class="nf">version</span><span class="p" data-group-id="8276528351-13">(</span><span class="ss">d</span><span class="p" data-group-id="8276528351-13">)</span><span class="p">.</span><span class="w"> </span><span class="c1">% no -vsn attribute</span><span class="w">
+</span><span class="p" data-group-id="8276528351-14">{</span><span class="ss">ok</span><span class="p">,</span><span class="p" data-group-id="8276528351-15">{</span><span class="ss">d</span><span class="p">,</span><span class="p" data-group-id="8276528351-16">[</span><span class="mi">275613208176997377698094100858909383631</span><span class="p" data-group-id="8276528351-16">]</span><span class="p" data-group-id="8276528351-15">}</span><span class="p" data-group-id="8276528351-14">}</span></code></pre>
   </section>
 </section>
 
@@ -1930,8 +1950,8 @@ module attributes, the result is the concatenated list of versions.</p><p><em>Ex
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="stdlib.epub" title="ePub version">
@@ -1943,7 +1963,7 @@ module attributes, the result is the concatenated list of versions.</p><p><em>Ex
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

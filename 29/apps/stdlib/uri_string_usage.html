@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="stdlib v7.1-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/uri_string_usage.html" />
     <title>Uniform Resource Identifiers — stdlib v7.1-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-4F7E9F36.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ stdlib
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of stdlib</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -84,7 +102,7 @@ stdlib
     <h1>Uniform Resource Identifiers</h1>
 
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/stdlib/doc/guides/uri_string_usage.md#L1" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/stdlib/doc/guides/uri_string_usage.md#L1" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -143,19 +161,19 @@ special or <a href="unicode_usage.html#what-unicode-is">Unicode</a> characters. 
 to explain this by an example.</p><p>Let's say that we would like to create the following URI and send it over the
 network: <code class="inline">http://cities/örebro?foo bar</code>. This is not a valid URI as it contains
 characters that are not allowed in a URI such as &quot;ö&quot; and the space. We can
-verify this by parsing the URI:</p><pre><code class="makeup erlang" translate="no"><span class="w">  </span><span class="mi">1</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">parse</span><span class="p" data-group-id="5747666630-1">(</span><span class="s">&quot;http://cities/örebro?foo bar&quot;</span><span class="p" data-group-id="5747666630-1">)</span><span class="p">.</span><span class="w">
-  </span><span class="p" data-group-id="5747666630-2">{</span><span class="ss">error</span><span class="p">,</span><span class="ss">invalid_uri</span><span class="p">,</span><span class="s">&quot;:&quot;</span><span class="p" data-group-id="5747666630-2">}</span></code></pre><p>The URI parser tries all possible combinations to interpret the input and fails
+verify this by parsing the URI:</p><pre><code class="makeup erlang" translate="no"><span class="w">  </span><span class="mi">1</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">parse</span><span class="p" data-group-id="3996496597-1">(</span><span class="s">&quot;http://cities/örebro?foo bar&quot;</span><span class="p" data-group-id="3996496597-1">)</span><span class="p">.</span><span class="w">
+  </span><span class="p" data-group-id="3996496597-2">{</span><span class="ss">error</span><span class="p">,</span><span class="ss">invalid_uri</span><span class="p">,</span><span class="s">&quot;:&quot;</span><span class="p" data-group-id="3996496597-2">}</span></code></pre><p>The URI parser tries all possible combinations to interpret the input and fails
 at the last attempt when it encounters the colon character <code class="inline">&quot;:&quot;</code>. Note, that the
 inital fault occurs when the parser attempts to interpret the character <code class="inline">&quot;ö&quot;</code>
 and after a failure back-tracks to the point where it has another possible
 parsing alternative.</p><p>The proper way to solve this problem is to use <a href="uri_string.html#recompose/1"><code class="inline">uri_string:recompose/1</code></a> with a
-<a href="uri_string.html#t:uri_map/0"><code class="inline">uri_map()</code></a> as input:</p><pre><code class="makeup erlang" translate="no"><span class="w">  </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">recompose</span><span class="p" data-group-id="8784070900-1">(</span><span class="p" data-group-id="8784070900-2">#{</span><span class="ss">scheme</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;http&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">host</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;cities&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">path</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;/örebro&quot;</span><span class="p">,</span><span class="w">
-  </span><span class="k">query</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;foo bar&quot;</span><span class="p" data-group-id="8784070900-2">}</span><span class="p" data-group-id="8784070900-1">)</span><span class="p">.</span><span class="w">
+<a href="uri_string.html#t:uri_map/0"><code class="inline">uri_map()</code></a> as input:</p><pre><code class="makeup erlang" translate="no"><span class="w">  </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">recompose</span><span class="p" data-group-id="5573016982-1">(</span><span class="p" data-group-id="5573016982-2">#{</span><span class="ss">scheme</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;http&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">host</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;cities&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">path</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;/örebro&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="k">query</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;foo bar&quot;</span><span class="p" data-group-id="5573016982-2">}</span><span class="p" data-group-id="5573016982-1">)</span><span class="p">.</span><span class="w">
   </span><span class="s">&quot;http://cities/%C3%B6rebro?foo%20bar&quot;</span></code></pre><p>The result is a valid URI where all the special characters are encoded as
 defined by the standard. Applying <a href="uri_string.html#parse/1"><code class="inline">uri_string:parse/1</code></a> and
-<a href="uri_string.html#percent_decode/1"><code class="inline">uri_string:percent_decode/1</code></a> on the URI returns the original input:</p><pre><code class="makeup erlang" translate="no"><span class="w">  </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">percent_decode</span><span class="p" data-group-id="3931070937-1">(</span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">parse</span><span class="p" data-group-id="3931070937-2">(</span><span class="s">&quot;http://cities/%C3%B6rebro?foo%20bar&quot;</span><span class="p" data-group-id="3931070937-2">)</span><span class="p" data-group-id="3931070937-1">)</span><span class="p">.</span><span class="w">
-  </span><span class="p" data-group-id="3931070937-3">#{</span><span class="ss">host</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;cities&quot;</span><span class="p">,</span><span class="ss">path</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;/örebro&quot;</span><span class="p">,</span><span class="k">query</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;foo bar&quot;</span><span class="p">,</span><span class="w">
-  </span><span class="ss">scheme</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;http&quot;</span><span class="p" data-group-id="3931070937-3">}</span></code></pre><p>This symmetric property is heavily used in our property test suite.</p><h2 id="percent-encoding" class="section-heading"><a href="#percent-encoding" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Percent-encoding</span></h2><p>As you have seen in the previous chapter, a standard URI can only contain a
+<a href="uri_string.html#percent_decode/1"><code class="inline">uri_string:percent_decode/1</code></a> on the URI returns the original input:</p><pre><code class="makeup erlang" translate="no"><span class="w">  </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">percent_decode</span><span class="p" data-group-id="0278844561-1">(</span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">parse</span><span class="p" data-group-id="0278844561-2">(</span><span class="s">&quot;http://cities/%C3%B6rebro?foo%20bar&quot;</span><span class="p" data-group-id="0278844561-2">)</span><span class="p" data-group-id="0278844561-1">)</span><span class="p">.</span><span class="w">
+  </span><span class="p" data-group-id="0278844561-3">#{</span><span class="ss">host</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;cities&quot;</span><span class="p">,</span><span class="ss">path</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;/örebro&quot;</span><span class="p">,</span><span class="k">query</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;foo bar&quot;</span><span class="p">,</span><span class="w">
+  </span><span class="ss">scheme</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;http&quot;</span><span class="p" data-group-id="0278844561-3">}</span></code></pre><p>This symmetric property is heavily used in our property test suite.</p><h2 id="percent-encoding" class="section-heading"><a href="#percent-encoding" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Percent-encoding</span></h2><p>As you have seen in the previous chapter, a standard URI can only contain a
 strict subset of the US ASCII character set, moreover the allowed set of
 characters is not the same in the different URI components. Percent-encoding is
 a mechanism to represent a data octet in a component when that octet's
@@ -172,27 +190,27 @@ characters will be percent-encoded. In order to make it easier to answer this
 question the library provides a utility function,
 <a href="uri_string.html#allowed_characters/0"><code class="inline">uri_string:allowed_characters/0</code></a>, that
 lists the allowed set of characters in each major URI component, and also in the
-most important standard character sets.</p><pre><code class="makeup erlang" translate="no"><span class="w">    </span><span class="mi">1</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">allowed_characters</span><span class="p" data-group-id="2325958869-1">(</span><span class="p" data-group-id="2325958869-1">)</span><span class="p">.</span><span class="w">
-    </span><span class="p" data-group-id="2325958869-2">[</span><span class="p" data-group-id="2325958869-3">{</span><span class="ss">scheme</span><span class="p">,</span><span class="w">
-     </span><span class="s">&quot;+-.0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&quot;</span><span class="p" data-group-id="2325958869-3">}</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="2325958869-4">{</span><span class="ss">userinfo</span><span class="p">,</span><span class="w">
-     </span><span class="s">&quot;!$%&amp;&#39;()*+,-.0123456789:;=ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~&quot;</span><span class="p" data-group-id="2325958869-4">}</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="2325958869-5">{</span><span class="ss">host</span><span class="p">,</span><span class="w">
-     </span><span class="s">&quot;!$&amp;&#39;()*+,-.0123456789:;=ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~&quot;</span><span class="p" data-group-id="2325958869-5">}</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="2325958869-6">{</span><span class="ss">ipv4</span><span class="p">,</span><span class="s">&quot;.0123456789&quot;</span><span class="p" data-group-id="2325958869-6">}</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="2325958869-7">{</span><span class="ss">ipv6</span><span class="p">,</span><span class="s">&quot;.0123456789:ABCDEFabcdef&quot;</span><span class="p" data-group-id="2325958869-7">}</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="2325958869-8">{</span><span class="ss">regname</span><span class="p">,</span><span class="w">
-     </span><span class="s">&quot;!$%&amp;&#39;()*+,-.0123456789;=ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~&quot;</span><span class="p" data-group-id="2325958869-8">}</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="2325958869-9">{</span><span class="ss">path</span><span class="p">,</span><span class="w">
-     </span><span class="s">&quot;!$%&amp;&#39;()*+,-./0123456789:;=@ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~&quot;</span><span class="p" data-group-id="2325958869-9">}</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="2325958869-10">{</span><span class="k">query</span><span class="p">,</span><span class="w">
-     </span><span class="s">&quot;!$%&amp;&#39;()*+,-./0123456789:;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~&quot;</span><span class="p" data-group-id="2325958869-10">}</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="2325958869-11">{</span><span class="ss">fragment</span><span class="p">,</span><span class="w">
-     </span><span class="s">&quot;!$%&amp;&#39;()*+,-./0123456789:;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~&quot;</span><span class="p" data-group-id="2325958869-11">}</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="2325958869-12">{</span><span class="ss">reserved</span><span class="p">,</span><span class="s">&quot;!#$&amp;&#39;()*+,/:;=?@[]&quot;</span><span class="p" data-group-id="2325958869-12">}</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="2325958869-13">{</span><span class="ss">unreserved</span><span class="p">,</span><span class="w">
-     </span><span class="s">&quot;-.0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~&quot;</span><span class="p" data-group-id="2325958869-13">}</span><span class="p" data-group-id="2325958869-2">]</span></code></pre><p>If a URI component has a character that is not allowed, it will be
-percent-encoded when the URI is produced:</p><pre><code class="makeup erlang" translate="no"><span class="w">    </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">recompose</span><span class="p" data-group-id="1609595133-1">(</span><span class="p" data-group-id="1609595133-2">#{</span><span class="ss">scheme</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;https&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">host</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;local#host&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">path</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p" data-group-id="1609595133-2">}</span><span class="p" data-group-id="1609595133-1">)</span><span class="p">.</span><span class="w">
+most important standard character sets.</p><pre><code class="makeup erlang" translate="no"><span class="w">    </span><span class="mi">1</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">allowed_characters</span><span class="p" data-group-id="4572430194-1">(</span><span class="p" data-group-id="4572430194-1">)</span><span class="p">.</span><span class="w">
+    </span><span class="p" data-group-id="4572430194-2">[</span><span class="p" data-group-id="4572430194-3">{</span><span class="ss">scheme</span><span class="p">,</span><span class="w">
+     </span><span class="s">&quot;+-.0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&quot;</span><span class="p" data-group-id="4572430194-3">}</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="4572430194-4">{</span><span class="ss">userinfo</span><span class="p">,</span><span class="w">
+     </span><span class="s">&quot;!$%&amp;&#39;()*+,-.0123456789:;=ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~&quot;</span><span class="p" data-group-id="4572430194-4">}</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="4572430194-5">{</span><span class="ss">host</span><span class="p">,</span><span class="w">
+     </span><span class="s">&quot;!$&amp;&#39;()*+,-.0123456789:;=ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~&quot;</span><span class="p" data-group-id="4572430194-5">}</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="4572430194-6">{</span><span class="ss">ipv4</span><span class="p">,</span><span class="s">&quot;.0123456789&quot;</span><span class="p" data-group-id="4572430194-6">}</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="4572430194-7">{</span><span class="ss">ipv6</span><span class="p">,</span><span class="s">&quot;.0123456789:ABCDEFabcdef&quot;</span><span class="p" data-group-id="4572430194-7">}</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="4572430194-8">{</span><span class="ss">regname</span><span class="p">,</span><span class="w">
+     </span><span class="s">&quot;!$%&amp;&#39;()*+,-.0123456789;=ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~&quot;</span><span class="p" data-group-id="4572430194-8">}</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="4572430194-9">{</span><span class="ss">path</span><span class="p">,</span><span class="w">
+     </span><span class="s">&quot;!$%&amp;&#39;()*+,-./0123456789:;=@ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~&quot;</span><span class="p" data-group-id="4572430194-9">}</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="4572430194-10">{</span><span class="k">query</span><span class="p">,</span><span class="w">
+     </span><span class="s">&quot;!$%&amp;&#39;()*+,-./0123456789:;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~&quot;</span><span class="p" data-group-id="4572430194-10">}</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="4572430194-11">{</span><span class="ss">fragment</span><span class="p">,</span><span class="w">
+     </span><span class="s">&quot;!$%&amp;&#39;()*+,-./0123456789:;=?@ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~&quot;</span><span class="p" data-group-id="4572430194-11">}</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="4572430194-12">{</span><span class="ss">reserved</span><span class="p">,</span><span class="s">&quot;!#$&amp;&#39;()*+,/:;=?@[]&quot;</span><span class="p" data-group-id="4572430194-12">}</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="4572430194-13">{</span><span class="ss">unreserved</span><span class="p">,</span><span class="w">
+     </span><span class="s">&quot;-.0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz~&quot;</span><span class="p" data-group-id="4572430194-13">}</span><span class="p" data-group-id="4572430194-2">]</span></code></pre><p>If a URI component has a character that is not allowed, it will be
+percent-encoded when the URI is produced:</p><pre><code class="makeup erlang" translate="no"><span class="w">    </span><span class="mi">2</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">recompose</span><span class="p" data-group-id="5752742341-1">(</span><span class="p" data-group-id="5752742341-2">#{</span><span class="ss">scheme</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;https&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">host</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;local#host&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">path</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p" data-group-id="5752742341-2">}</span><span class="p" data-group-id="5752742341-1">)</span><span class="p">.</span><span class="w">
     </span><span class="s">&quot;https://local%23host&quot;</span></code></pre><p>Consuming a URI containing percent-encoded triplets can take many steps. The
 following example shows how to handle an input URI that is not normalized and
 contains multiple percent-encoded triplets. First, the input
@@ -204,32 +222,32 @@ its components without doing any decoding:</p><pre><code class="text">    3&gt; 
 You can try to normalize the input with <a href="uri_string.html#normalize/1"><code class="inline">uri_string:normalize/1</code></a>. The normalize
 operation decodes those percent-encoded triplets that correspond to a character
 in the unreserved set. Normalization is a safe, idempotent operation that
-converts a URI into its canonical form:</p><pre><code class="makeup erlang" translate="no"><span class="w">    </span><span class="mi">4</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">normalize</span><span class="p" data-group-id="3736669763-1">(</span><span class="s">&quot;http://%6C%6Fcal%23host/%F6re%26bro%20&quot;</span><span class="p" data-group-id="3736669763-1">)</span><span class="p">.</span><span class="w">
+converts a URI into its canonical form:</p><pre><code class="makeup erlang" translate="no"><span class="w">    </span><span class="mi">4</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">normalize</span><span class="p" data-group-id="4500234525-1">(</span><span class="s">&quot;http://%6C%6Fcal%23host/%F6re%26bro%20&quot;</span><span class="p" data-group-id="4500234525-1">)</span><span class="p">.</span><span class="w">
     </span><span class="s">&quot;http://local%23host/%F6re%26bro%20&quot;</span><span class="w">
-    </span><span class="mi">5</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">normalize</span><span class="p" data-group-id="3736669763-2">(</span><span class="s">&quot;http://%6C%6Fcal%23host/%F6re%26bro%20&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="3736669763-3">[</span><span class="ss">return_map</span><span class="p" data-group-id="3736669763-3">]</span><span class="p" data-group-id="3736669763-2">)</span><span class="p">.</span><span class="w">
-    </span><span class="p" data-group-id="3736669763-4">#{</span><span class="ss">host</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;local%23host&quot;</span><span class="p">,</span><span class="ss">path</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;/%F6re%26bro%20&quot;</span><span class="p">,</span><span class="w">
-      </span><span class="ss">scheme</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;http&quot;</span><span class="p" data-group-id="3736669763-4">}</span></code></pre><p>There are still a few percent-encoded triplets left in the output. At this
+    </span><span class="mi">5</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">normalize</span><span class="p" data-group-id="4500234525-2">(</span><span class="s">&quot;http://%6C%6Fcal%23host/%F6re%26bro%20&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4500234525-3">[</span><span class="ss">return_map</span><span class="p" data-group-id="4500234525-3">]</span><span class="p" data-group-id="4500234525-2">)</span><span class="p">.</span><span class="w">
+    </span><span class="p" data-group-id="4500234525-4">#{</span><span class="ss">host</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;local%23host&quot;</span><span class="p">,</span><span class="ss">path</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;/%F6re%26bro%20&quot;</span><span class="p">,</span><span class="w">
+      </span><span class="ss">scheme</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;http&quot;</span><span class="p" data-group-id="4500234525-4">}</span></code></pre><p>There are still a few percent-encoded triplets left in the output. At this
 point, when the URI is already parsed, it is safe to apply application specific
 decoding on the remaining character triplets. Erlang/OTP provides a function,
 <a href="uri_string.html#percent_decode/1"><code class="inline">uri_string:percent_decode/1</code></a> for raw percent decoding that you can use on the
-host and path components, or on the whole map:</p><pre><code class="makeup erlang" translate="no"><span class="w">    </span><span class="mi">6</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">percent_decode</span><span class="p" data-group-id="2828213752-1">(</span><span class="s">&quot;local%23host&quot;</span><span class="p" data-group-id="2828213752-1">)</span><span class="p">.</span><span class="w">
+host and path components, or on the whole map:</p><pre><code class="makeup erlang" translate="no"><span class="w">    </span><span class="mi">6</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">percent_decode</span><span class="p" data-group-id="2605325752-1">(</span><span class="s">&quot;local%23host&quot;</span><span class="p" data-group-id="2605325752-1">)</span><span class="p">.</span><span class="w">
     </span><span class="s">&quot;local#host&quot;</span><span class="w">
-    </span><span class="mi">7</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">percent_decode</span><span class="p" data-group-id="2828213752-2">(</span><span class="s">&quot;/%F6re%26bro%20&quot;</span><span class="p" data-group-id="2828213752-2">)</span><span class="p">.</span><span class="w">
-    </span><span class="p" data-group-id="2828213752-3">{</span><span class="ss">error</span><span class="p">,</span><span class="ss">invalid_utf8</span><span class="p">,</span><span class="p" data-group-id="2828213752-4">&lt;&lt;</span><span class="s">&quot;/öre&amp;bro &quot;</span><span class="p" data-group-id="2828213752-4">&gt;&gt;</span><span class="p" data-group-id="2828213752-3">}</span><span class="w">
-    </span><span class="mi">8</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">percent_decode</span><span class="p" data-group-id="2828213752-5">(</span><span class="p" data-group-id="2828213752-6">#{</span><span class="ss">host</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;local%23host&quot;</span><span class="p">,</span><span class="ss">path</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;/%F6re%26bro%20&quot;</span><span class="p">,</span><span class="w">
-    </span><span class="ss">scheme</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;http&quot;</span><span class="p" data-group-id="2828213752-6">}</span><span class="p" data-group-id="2828213752-5">)</span><span class="p">.</span><span class="w">
-    </span><span class="p" data-group-id="2828213752-7">{</span><span class="ss">error</span><span class="p">,</span><span class="p" data-group-id="2828213752-8">{</span><span class="ss">invalid</span><span class="p">,</span><span class="p" data-group-id="2828213752-9">{</span><span class="ss">path</span><span class="p">,</span><span class="p" data-group-id="2828213752-10">{</span><span class="ss">invalid_utf8</span><span class="p">,</span><span class="p" data-group-id="2828213752-11">&lt;&lt;</span><span class="s">&quot;/öre&amp;bro &quot;</span><span class="p" data-group-id="2828213752-11">&gt;&gt;</span><span class="p" data-group-id="2828213752-10">}</span><span class="p" data-group-id="2828213752-9">}</span><span class="p" data-group-id="2828213752-8">}</span><span class="p" data-group-id="2828213752-7">}</span></code></pre><p>The <code class="inline">host</code> was successfully decoded but the path contains at least one character
+    </span><span class="mi">7</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">percent_decode</span><span class="p" data-group-id="2605325752-2">(</span><span class="s">&quot;/%F6re%26bro%20&quot;</span><span class="p" data-group-id="2605325752-2">)</span><span class="p">.</span><span class="w">
+    </span><span class="p" data-group-id="2605325752-3">{</span><span class="ss">error</span><span class="p">,</span><span class="ss">invalid_utf8</span><span class="p">,</span><span class="p" data-group-id="2605325752-4">&lt;&lt;</span><span class="s">&quot;/öre&amp;bro &quot;</span><span class="p" data-group-id="2605325752-4">&gt;&gt;</span><span class="p" data-group-id="2605325752-3">}</span><span class="w">
+    </span><span class="mi">8</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">percent_decode</span><span class="p" data-group-id="2605325752-5">(</span><span class="p" data-group-id="2605325752-6">#{</span><span class="ss">host</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;local%23host&quot;</span><span class="p">,</span><span class="ss">path</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;/%F6re%26bro%20&quot;</span><span class="p">,</span><span class="w">
+    </span><span class="ss">scheme</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;http&quot;</span><span class="p" data-group-id="2605325752-6">}</span><span class="p" data-group-id="2605325752-5">)</span><span class="p">.</span><span class="w">
+    </span><span class="p" data-group-id="2605325752-7">{</span><span class="ss">error</span><span class="p">,</span><span class="p" data-group-id="2605325752-8">{</span><span class="ss">invalid</span><span class="p">,</span><span class="p" data-group-id="2605325752-9">{</span><span class="ss">path</span><span class="p">,</span><span class="p" data-group-id="2605325752-10">{</span><span class="ss">invalid_utf8</span><span class="p">,</span><span class="p" data-group-id="2605325752-11">&lt;&lt;</span><span class="s">&quot;/öre&amp;bro &quot;</span><span class="p" data-group-id="2605325752-11">&gt;&gt;</span><span class="p" data-group-id="2605325752-10">}</span><span class="p" data-group-id="2605325752-9">}</span><span class="p" data-group-id="2605325752-8">}</span><span class="p" data-group-id="2605325752-7">}</span></code></pre><p>The <code class="inline">host</code> was successfully decoded but the path contains at least one character
 with non-UTF-8 encoding. In order to be able to decode this, you have to make
 assumptions about the encoding used in these triplets. The most obvious choice
 is <em>latin-1</em>, so you can try <a href="uri_string.html#transcode/2"><code class="inline">uri_string:transcode/2</code></a>, to transcode the path to
-UTF-8 and run the percent-decode operation on the transcoded string:</p><pre><code class="makeup erlang" translate="no"><span class="w">    </span><span class="mi">9</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">transcode</span><span class="p" data-group-id="9166900295-1">(</span><span class="s">&quot;/%F6re%26bro%20&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9166900295-2">[</span><span class="p" data-group-id="9166900295-3">{</span><span class="ss">in_encoding</span><span class="p">,</span><span class="w"> </span><span class="ss">latin1</span><span class="p" data-group-id="9166900295-3">}</span><span class="p" data-group-id="9166900295-2">]</span><span class="p" data-group-id="9166900295-1">)</span><span class="p">.</span><span class="w">
+UTF-8 and run the percent-decode operation on the transcoded string:</p><pre><code class="makeup erlang" translate="no"><span class="w">    </span><span class="mi">9</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">transcode</span><span class="p" data-group-id="9457699385-1">(</span><span class="s">&quot;/%F6re%26bro%20&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9457699385-2">[</span><span class="p" data-group-id="9457699385-3">{</span><span class="ss">in_encoding</span><span class="p">,</span><span class="w"> </span><span class="ss">latin1</span><span class="p" data-group-id="9457699385-3">}</span><span class="p" data-group-id="9457699385-2">]</span><span class="p" data-group-id="9457699385-1">)</span><span class="p">.</span><span class="w">
     </span><span class="s">&quot;/%C3%B6re%26bro%20&quot;</span><span class="w">
-    </span><span class="mi">10</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">percent_decode</span><span class="p" data-group-id="9166900295-4">(</span><span class="s">&quot;/%C3%B6re%26bro%20&quot;</span><span class="p" data-group-id="9166900295-4">)</span><span class="p">.</span><span class="w">
+    </span><span class="mi">10</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">percent_decode</span><span class="p" data-group-id="9457699385-4">(</span><span class="s">&quot;/%C3%B6re%26bro%20&quot;</span><span class="p" data-group-id="9457699385-4">)</span><span class="p">.</span><span class="w">
     </span><span class="s">&quot;/öre&amp;bro &quot;</span></code></pre><p>It is important to emphasize that it is not safe to apply
-<a href="uri_string.html#percent_decode/1"><code class="inline">uri_string:percent_decode/1</code></a> directly on an input URI:</p><pre><code class="makeup erlang" translate="no"><span class="w">    </span><span class="mi">11</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">percent_decode</span><span class="p" data-group-id="6529708335-1">(</span><span class="s">&quot;http://%6C%6Fcal%23host/%C3%B6re%26bro%20&quot;</span><span class="p" data-group-id="6529708335-1">)</span><span class="p">.</span><span class="w">
+<a href="uri_string.html#percent_decode/1"><code class="inline">uri_string:percent_decode/1</code></a> directly on an input URI:</p><pre><code class="makeup erlang" translate="no"><span class="w">    </span><span class="mi">11</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">percent_decode</span><span class="p" data-group-id="7882737186-1">(</span><span class="s">&quot;http://%6C%6Fcal%23host/%C3%B6re%26bro%20&quot;</span><span class="p" data-group-id="7882737186-1">)</span><span class="p">.</span><span class="w">
     </span><span class="s">&quot;http://local#host/öre&amp;bro &quot;</span><span class="w">
-    </span><span class="mi">12</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">parse</span><span class="p" data-group-id="6529708335-2">(</span><span class="s">&quot;http://local#host/öre&amp;bro &quot;</span><span class="p" data-group-id="6529708335-2">)</span><span class="p">.</span><span class="w">
-    </span><span class="p" data-group-id="6529708335-3">{</span><span class="ss">error</span><span class="p">,</span><span class="ss">invalid_uri</span><span class="p">,</span><span class="s">&quot;:&quot;</span><span class="p" data-group-id="6529708335-3">}</span></code></pre><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>Percent-encoding is implemented in <a href="uri_string.html#recompose/1"><code class="inline">uri_string:recompose/1</code></a> and it happens
+    </span><span class="mi">12</span><span class="o">&gt;</span><span class="w"> </span><span class="nc">uri_string</span><span class="p">:</span><span class="nf">parse</span><span class="p" data-group-id="7882737186-2">(</span><span class="s">&quot;http://local#host/öre&amp;bro &quot;</span><span class="p" data-group-id="7882737186-2">)</span><span class="p">.</span><span class="w">
+    </span><span class="p" data-group-id="7882737186-3">{</span><span class="ss">error</span><span class="p">,</span><span class="ss">invalid_uri</span><span class="p">,</span><span class="s">&quot;:&quot;</span><span class="p" data-group-id="7882737186-3">}</span></code></pre><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>Percent-encoding is implemented in <a href="uri_string.html#recompose/1"><code class="inline">uri_string:recompose/1</code></a> and it happens
 when converting a <a href="uri_string.html#t:uri_map/0"><code class="inline">uri_map()</code></a> into a
 <a href="uri_string.html#t:uri_string/0"><code class="inline">uri_string()</code></a>. Applying any percent-encoding
 directly on an input URI would not be safe just as in the case of
@@ -296,8 +314,8 @@ PCRE2 Migration
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
             <a href="stdlib.epub" title="ePub version">
@@ -309,7 +327,7 @@ PCRE2 Migration
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 

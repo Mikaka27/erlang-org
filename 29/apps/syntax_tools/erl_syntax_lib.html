@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="ExDoc v0.38.1">
+    <meta name="generator" content="ExDoc v0.39.2">
     <meta name="project" content="syntax_tools v4.0.2-rc0">
 
 
@@ -13,11 +13,11 @@
 <link rel="canonical" href="https://www.erlang.org/doc/apps/syntax_tools/erl_syntax_lib.html" />
     <title>erl_syntax_lib — syntax_tools v4.0.2-rc0</title>
 
-    <link rel="stylesheet" href="dist/html-erlang-ZK43ZOAC.css" />
+    <link rel="stylesheet" href="dist/html-erlang-TPJSOIRZ.css" />
 
     <script defer src="dist/sidebar_items-3A7226A9.js"></script>
     <script defer src="docs_config.js"></script>
-    <script defer src="dist/html-DPJLHKSM.js"></script>
+    <script defer src="dist/html-XBCM4BHM.js"></script>
 
   </head>
   <body>
@@ -61,16 +61,34 @@ syntax_tools
         <form class="search-bar" action="search.html">
           <label class="search-label">
             <span class="sr-only">Search documentation of syntax_tools</span>
-            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+            <div class="search-input-wrapper">
+              <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+              <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+                <i class="ri-close-line ri-lg" title="Cancel search"></i>
+              </button>
+            </div>
           </label>
-          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
-            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
-          </button>
-          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
-            <i class="ri-close-line ri-lg" title="Cancel search"></i>
-          </button>
         </form>
         <div class="autocomplete">
+        </div>
+        <div class="engine-selector" data-multiple="false">
+          <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
+            <i class="ri-search-2-line" aria-hidden="true"></i>
+            <span class="engine-name">Default</span>
+            <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
+          </button>
+          <div class="engine-dropdown" hidden role="menu">
+
+              <button type="button"
+                      class="engine-option"
+                      data-engine-url="search.html?q="
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span class="name">Default</span>
+                <span class="help">In-browser search</span>
+              </button>
+
+          </div>
         </div>
         <button class="icon-settings display-settings">
           <i class="ri-settings-3-line"></i>
@@ -87,7 +105,7 @@ syntax_tools
 
     </h1>
 
-      <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L37" title="View Source" class="icon-action" rel="help">
+      <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L37" title="View Source" class="icon-action" rel="help">
         <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         <span class="sr-only">View Source</span>
       </a>
@@ -232,7 +250,7 @@ defined in the module <a href="erl_syntax.html"><code class="inline">erl_syntax<
 
       </div>
 
-        <div class="summary-synopsis"><p>An abstract syntax tree. See the <a><code class="inline">erl_syntax</code></a> module for details.</p></div>
+        <div class="summary-synopsis"><p>An abstract syntax tree. See the <a href="erl_syntax.html"><code class="inline">erl_syntax</code></a> module for details.</p></div>
 
     </div>
 
@@ -467,7 +485,7 @@ import attribute.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Like <a><code class="inline">lists:foldl/3</code></a>, but over a list of lists.</p></div>
+        <div class="summary-synopsis"><p>Like <a href="../../apps/stdlib/lists.html#foldl/3"><code class="inline">lists:foldl/3</code></a>, but over a list of lists.</p></div>
 
     </div>
 
@@ -498,7 +516,7 @@ normally.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">limit(Tree, Depth, Text)</code></a> using the text <code class="inline">&quot;...&quot;</code> as
+        <div class="summary-synopsis"><p>Equivalent to <a href="#limit/3"><code class="inline">limit(Tree, Depth, Text)</code></a> using the text <code class="inline">&quot;...&quot;</code> as
 default replacement.</p></div>
 
     </div>
@@ -559,7 +577,7 @@ default replacement.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Like <a><code class="inline">lists:mapfoldl/3</code></a>, but over a list of lists.</p></div>
+        <div class="summary-synopsis"><p>Like <a href="../../apps/stdlib/lists.html#mapfoldl/3"><code class="inline">lists:mapfoldl/3</code></a>, but over a list of lists.</p></div>
 
     </div>
 
@@ -589,7 +607,7 @@ default replacement.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Like <a><code class="inline">new_variable_name/1</code></a>, but generates a list of <code class="inline">N</code>
+        <div class="summary-synopsis"><p>Like <a href="#new_variable_name/1"><code class="inline">new_variable_name/1</code></a>, but generates a list of <code class="inline">N</code>
 new names.</p></div>
 
     </div>
@@ -600,7 +618,7 @@ new names.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Like <a><code class="inline">new_variable_name/2</code></a>, but generates a list of <code class="inline">N</code>
+        <div class="summary-synopsis"><p>Like <a href="#new_variable_name/2"><code class="inline">new_variable_name/2</code></a>, but generates a list of <code class="inline">N</code>
 new names.</p></div>
 
     </div>
@@ -621,7 +639,7 @@ new names.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">to_comment(Tree, &quot;% &quot;)</code></a>.</p></div>
+        <div class="summary-synopsis"><p>Equivalent to <a href="#to_comment/2"><code class="inline">to_comment(Tree, &quot;% &quot;)</code></a>.</p></div>
 
     </div>
 
@@ -631,7 +649,7 @@ new names.</p></div>
 
       </div>
 
-        <div class="summary-synopsis"><p>Equivalent to <a><code class="inline">to_comment(Tree, Prefix, F)</code></a> for a default
+        <div class="summary-synopsis"><p>Equivalent to <a href="#to_comment/3"><code class="inline">to_comment(Tree, Prefix, F)</code></a> for a default
 formatting function <code class="inline">F</code>.</p></div>
 
     </div>
@@ -668,6 +686,7 @@ formatting function <code class="inline">F</code>.</p></div>
       </a>
       <span class="text">Types</span>
     </h1>
+
     <div class="types-list">
 <section class="detail" id="t:appFunName/0">
 
@@ -681,7 +700,7 @@ formatting function <code class="inline">F</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1855" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1855" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -711,7 +730,7 @@ formatting function <code class="inline">F</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1603" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1603" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -741,7 +760,7 @@ formatting function <code class="inline">F</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1172" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1172" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -771,7 +790,7 @@ formatting function <code class="inline">F</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1173" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1173" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -801,7 +820,7 @@ formatting function <code class="inline">F</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1605" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1605" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -831,7 +850,7 @@ formatting function <code class="inline">F</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1394" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1394" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -861,7 +880,7 @@ formatting function <code class="inline">F</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1395" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1395" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -891,7 +910,7 @@ formatting function <code class="inline">F</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1655" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1655" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -919,7 +938,7 @@ formatting function <code class="inline">F</code>.</p></div>
       <h1 class="signature" translate="no">info_pair()</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1008" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1008" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -949,7 +968,7 @@ formatting function <code class="inline">F</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1006" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1006" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -979,7 +998,7 @@ formatting function <code class="inline">F</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1934" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1934" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1009,7 +1028,7 @@ formatting function <code class="inline">F</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L430" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L430" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1039,7 +1058,7 @@ formatting function <code class="inline">F</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L269" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L269" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1069,7 +1088,7 @@ formatting function <code class="inline">F</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1933" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1933" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1099,7 +1118,7 @@ formatting function <code class="inline">F</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L67" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L67" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1129,7 +1148,7 @@ formatting function <code class="inline">F</code>.</p></div>
         <span class="note">(not exported)</span>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1890" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1890" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1158,6 +1177,7 @@ formatting function <code class="inline">F</code>.</p></div>
       </a>
       <span class="text">Functions</span>
     </h1>
+
     <div class="functions-list">
 <section class="detail" id="analyze_application/1">
 
@@ -1169,7 +1189,7 @@ formatting function <code class="inline">F</code>.</p></div>
       <h1 class="signature" translate="no">analyze_application(Node)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1872" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1872" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1200,7 +1220,7 @@ application expression.</p><p><em>See also: </em><a href="#analyze_function_name
       <h1 class="signature" translate="no">analyze_attribute(Node)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1313" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1313" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1234,7 +1254,7 @@ module attribute.</p><p><em>See also: </em><a href="#analyze_export_attribute/1"
       <h1 class="signature" translate="no">analyze_export_attribute(Node)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1410" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1410" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1264,7 +1284,7 @@ export attribute.</p><p><em>See also: </em><a href="#analyze_attribute/1"><code 
       <h1 class="signature" translate="no">analyze_file_attribute(Node)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1785" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1785" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1294,7 +1314,7 @@ export attribute.</p><p><em>See also: </em><a href="#analyze_attribute/1"><code 
       <h1 class="signature" translate="no">analyze_form(Node)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1264" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1264" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1328,7 +1348,7 @@ value is a tuple <code class="inline">{Type, Info}</code> where <code class="inl
       <h1 class="signature" translate="no">analyze_forms(Forms)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1120" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1120" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1394,7 +1414,7 @@ encountered.</p><p><em>See also: </em><a href="#analyze_export_attribute/1"><cod
       <h1 class="signature" translate="no">analyze_function(Node)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1817" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1817" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1424,7 +1444,7 @@ function definition.</p>
       <h1 class="signature" translate="no">analyze_function_name(Node)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1446" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1446" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1456,7 +1476,7 @@ function name.</p>
       <h1 class="signature" translate="no">analyze_implicit_fun(Node)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1846" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1846" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1486,7 +1506,7 @@ implicit fun.</p><p><em>See also: </em><a href="#analyze_function_name/1"><code 
       <h1 class="signature" translate="no">analyze_import_attribute(Node)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1501" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1501" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1519,7 +1539,7 @@ import attribute.</p><p><em>See also: </em><a href="#analyze_attribute/1"><code 
       <h1 class="signature" translate="no">analyze_module_attribute(Node)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1367" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1367" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1551,7 +1571,7 @@ module attribute.</p><p><em>See also: </em><a href="#analyze_attribute/1"><code 
       <h1 class="signature" translate="no">analyze_record_attribute(Node)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1626" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1626" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1587,7 +1607,7 @@ record declaration attribute.</p><p><em>See also: </em><a href="#analyze_attribu
       <h1 class="signature" translate="no">analyze_record_expr(Node)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1686" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1686" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1624,7 +1644,7 @@ that is not well-formed.</p><p><em>See also: </em><a href="#analyze_record_attri
       <h1 class="signature" translate="no">analyze_record_field(Node)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1751" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1751" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1656,7 +1676,7 @@ record field specifier.</p><p><em>See also: </em><a href="#analyze_record_attrib
       <h1 class="signature" translate="no">analyze_type_application(Node)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1908" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1908" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1689,7 +1709,7 @@ application &quot;<code class="inline">M:N(T_1, ..., T_A)</code>&quot;.</p><p>Th
       <h1 class="signature" translate="no">analyze_type_name(Node)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1530" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1530" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1719,7 +1739,7 @@ type name.</p>
       <h1 class="signature" translate="no">analyze_wild_attribute(Node)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1577" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1577" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1750,7 +1770,7 @@ wild attribute.</p><p><em>See also: </em><a href="#analyze_attribute/1"><code cl
       <h1 class="signature" translate="no">annotate_bindings(Tree)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L467" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L467" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1781,7 +1801,7 @@ exist.</p><p><em>See also: </em><a href="#annotate_bindings/2"><code class="inli
       <h1 class="signature" translate="no">annotate_bindings(Tree, Env)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L450" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L450" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1811,7 +1831,7 @@ representing variable names.</p><p><em>See also: </em><a href="../../apps/stdlib
       <h1 class="signature" translate="no">fold(F, S, Tree)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L126" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L126" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1840,7 +1860,7 @@ post-order traversal.</p><p><em>See also: </em><a href="#fold_subtrees/3"><code 
       <h1 class="signature" translate="no">fold_subtrees(F, S, Tree)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L157" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L157" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1870,7 +1890,7 @@ root node of <code class="inline">Tree</code>.</p><p><em>See also: </em><a href=
       <h1 class="signature" translate="no">foldl_listlist/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L169" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L169" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1898,7 +1918,7 @@ root node of <code class="inline">Tree</code>.</p><p><em>See also: </em><a href=
       <h1 class="signature" translate="no">function_name_expansions(Fs)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1954" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1954" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1933,7 +1953,7 @@ values for <code class="inline">Name</code>, depending on the given list.</p><p>
       <h1 class="signature" translate="no">is_fail_expr(E)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L974" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L974" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1967,7 +1987,7 @@ are calls to <a href="../../apps/erts/erlang.html#exit/1"><code class="inline">e
       <h1 class="signature" translate="no">limit(Tree, Depth)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L2060" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L2060" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -1996,7 +2016,7 @@ default replacement.</p><p><em>See also: </em><a href="#limit/3"><code class="in
       <h1 class="signature" translate="no">limit(Tree, Depth, Node)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L2090" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L2090" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2033,7 +2053,7 @@ similar visual formatting.</p><p><em>See also: </em><a href="#limit/2"><code cla
       <h1 class="signature" translate="no">map(F, Tree)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L80" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L80" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2062,7 +2082,7 @@ node. The order of traversal is bottom-up.</p><p><em>See also: </em><a href="#ma
       <h1 class="signature" translate="no">map_subtrees(F, Tree)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L103" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L103" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2091,7 +2111,7 @@ node.</p><p><em>See also: </em><a href="#map/2"><code class="inline">map/2</code
       <h1 class="signature" translate="no">mapfold(F, S, Tree)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L194" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L194" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2124,7 +2144,7 @@ final result is the result of the last application.</p><p><em>See also: </em><a 
       <h1 class="signature" translate="no">mapfold_subtrees(F, S, Tree)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L233" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L233" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2155,7 +2175,7 @@ include the root node of <code class="inline">Tree</code>.</p><p><em>See also: <
       <h1 class="signature" translate="no">mapfoldl_listlist/3</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L253" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L253" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2185,7 +2205,7 @@ list of lists.</p>
       <h1 class="signature" translate="no">new_variable_name(S)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L336" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L336" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2215,7 +2235,7 @@ for <code class="inline">N</code>.</p><p><em>See also: </em><a href="#new_variab
       <h1 class="signature" translate="no">new_variable_name(F, S)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L356" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L356" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2249,7 +2269,7 @@ first called.</p><p><em>See also: </em><a href="../../apps/stdlib/rand.html">//s
       <h1 class="signature" translate="no">new_variable_names(N, S)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L407" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L407" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2278,7 +2298,7 @@ new names.</p><p><em>See also: </em><a href="#new_variable_name/1"><code class="
       <h1 class="signature" translate="no">new_variable_names(N, F, S)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L419" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L419" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2307,7 +2327,7 @@ new names.</p><p><em>See also: </em><a href="#new_variable_name/2"><code class="
       <h1 class="signature" translate="no">strip_comments(Tree)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L1982" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L1982" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2338,7 +2358,7 @@ indentation).</p>
       <h1 class="signature" translate="no">to_comment(Tree)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L2001" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L2001" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2366,7 +2386,7 @@ indentation).</p>
       <h1 class="signature" translate="no">to_comment(Tree, Prefix)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L2014" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L2014" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2395,7 +2415,7 @@ formatting function <code class="inline">F</code>.</p><p>The default <code class
       <h1 class="signature" translate="no">to_comment(Tree, Prefix, F)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L2048" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L2048" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2429,7 +2449,7 @@ work is needed.</p></section><p><em>See also: </em><a href="#to_comment/1"><code
       <h1 class="signature" translate="no">variables(Tree)</h1>
 
 
-        <a href="https://github.com/erlang/otp/blob/master/lib/syntax_tools/src/erl_syntax_lib.erl#L281" class="icon-action" rel="help" aria-label="View Source">
+        <a href="https://github.com/Mikaka27/otp/blob/michal/docs/detect-missing-target-in-links2/lib/syntax_tools/src/erl_syntax_lib.erl#L281" class="icon-action" rel="help" aria-label="View Source">
           <i class="ri-code-s-slash-line" aria-hidden="true"></i>
         </a>
 
@@ -2456,8 +2476,8 @@ names are not included.</p><p><em>See also: </em><a href="../../apps/stdlib/sets
       <p>
 
         <span class="line">
-          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
-            Search HexDocs
+          <button class="a-main footer-button display-quick-switch" title="Go to package docs">
+            Go to package docs
           </button>
 
         </span>
@@ -2465,7 +2485,7 @@ names are not included.</p><p><em>See also: </em><a href="../../apps/stdlib/sets
 
       <p class="built-using">
         Built using
-        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.1) for the
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.39.2) for the
 
           <a href="https://erlang.org" title="Erlang" target="_blank" translate="no">Erlang programming language</a>
 
