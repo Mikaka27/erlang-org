@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/inets/inets_services.html" />
     <title>Inets — inets v9.4.2</title>
 
@@ -74,18 +73,18 @@ inets
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -120,7 +119,7 @@ starting services dynamically, new children are added to the supervision tree,
 unless the service is started with the standalone option. In this case the
 service is linked to the calling process and all OTP application features, such
 as soft upgrade, are lost.</p><p>Services to be configured for startup at application startup are to be put into
-the Erlang node configuration file on the following form:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="0132920104-1">[</span><span class="p" data-group-id="0132920104-2">{</span><span class="ss">inets</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0132920104-3">[</span><span class="p" data-group-id="0132920104-4">{</span><span class="ss">services</span><span class="p">,</span><span class="w"> </span><span class="n">ListofConfiguredServices</span><span class="p" data-group-id="0132920104-4">}</span><span class="p" data-group-id="0132920104-3">]</span><span class="p" data-group-id="0132920104-2">}</span><span class="p" data-group-id="0132920104-1">]</span><span class="p">.</span></code></pre><p>For details of what to put in the list of configured services, see the
+the Erlang node configuration file on the following form:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="6592092513-1">[</span><span class="p" data-group-id="6592092513-2">{</span><span class="ss">inets</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6592092513-3">[</span><span class="p" data-group-id="6592092513-4">{</span><span class="ss">services</span><span class="p">,</span><span class="w"> </span><span class="n">ListofConfiguredServices</span><span class="p" data-group-id="6592092513-4">}</span><span class="p" data-group-id="6592092513-3">]</span><span class="p" data-group-id="6592092513-2">}</span><span class="p" data-group-id="6592092513-1">]</span><span class="p">.</span></code></pre><p>For details of what to put in the list of configured services, see the
 documentation for the services to be configured.</p>
 
 </div>

@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/common_test/basics_chapter.html" />
     <title>Common Test Basics — common_test v1.29</title>
 
@@ -74,18 +73,18 @@ common_test
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -176,15 +175,15 @@ the next test case.</li></ul><p>A test case failure is specified as a runtime er
 the reason for termination is. If you use Erlang pattern matching effectively,
 you can take advantage of this property. The result is concise and readable test
 case functions that look much more like scripts than actual programs. A simple
-example:</p><pre><code class="makeup erlang" translate="no"><span class="nf">session</span><span class="p" data-group-id="4294320828-1">(</span><span class="p">_</span><span class="n">Config</span><span class="p" data-group-id="4294320828-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="p" data-group-id="4294320828-2">{</span><span class="ss">started</span><span class="p">,</span><span class="n">ServerId</span><span class="p" data-group-id="4294320828-2">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">my_server</span><span class="p">:</span><span class="nf">start</span><span class="p" data-group-id="4294320828-3">(</span><span class="p" data-group-id="4294320828-3">)</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="4294320828-4">{</span><span class="ss">clients</span><span class="p">,</span><span class="p" data-group-id="4294320828-5">[</span><span class="p" data-group-id="4294320828-5">]</span><span class="p" data-group-id="4294320828-4">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">my_server</span><span class="p">:</span><span class="nf">get_clients</span><span class="p" data-group-id="4294320828-6">(</span><span class="n">ServerId</span><span class="p" data-group-id="4294320828-6">)</span><span class="p">,</span><span class="w">
-    </span><span class="n">MyId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">self</span><span class="p" data-group-id="4294320828-7">(</span><span class="p" data-group-id="4294320828-7">)</span><span class="p">,</span><span class="w">
-    </span><span class="ss">connected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">my_server</span><span class="p">:</span><span class="nf">connect</span><span class="p" data-group-id="4294320828-8">(</span><span class="n">ServerId</span><span class="p">,</span><span class="w"> </span><span class="n">MyId</span><span class="p" data-group-id="4294320828-8">)</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="4294320828-9">{</span><span class="ss">clients</span><span class="p">,</span><span class="p" data-group-id="4294320828-10">[</span><span class="n">MyId</span><span class="p" data-group-id="4294320828-10">]</span><span class="p" data-group-id="4294320828-9">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">my_server</span><span class="p">:</span><span class="nf">get_clients</span><span class="p" data-group-id="4294320828-11">(</span><span class="n">ServerId</span><span class="p" data-group-id="4294320828-11">)</span><span class="p">,</span><span class="w">
-    </span><span class="ss">disconnected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">my_server</span><span class="p">:</span><span class="nf">disconnect</span><span class="p" data-group-id="4294320828-12">(</span><span class="n">ServerId</span><span class="p">,</span><span class="w"> </span><span class="n">MyId</span><span class="p" data-group-id="4294320828-12">)</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="4294320828-13">{</span><span class="ss">clients</span><span class="p">,</span><span class="p" data-group-id="4294320828-14">[</span><span class="p" data-group-id="4294320828-14">]</span><span class="p" data-group-id="4294320828-13">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">my_server</span><span class="p">:</span><span class="nf">get_clients</span><span class="p" data-group-id="4294320828-15">(</span><span class="n">ServerId</span><span class="p" data-group-id="4294320828-15">)</span><span class="p">,</span><span class="w">
-    </span><span class="ss">stopped</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">my_server</span><span class="p">:</span><span class="nf">stop</span><span class="p" data-group-id="4294320828-16">(</span><span class="n">ServerId</span><span class="p" data-group-id="4294320828-16">)</span><span class="p">.</span></code></pre><p>As a test suite runs, all information (including output to <code class="inline">stdout</code>) is recorded
+example:</p><pre><code class="makeup erlang" translate="no"><span class="nf">session</span><span class="p" data-group-id="6918678676-1">(</span><span class="p">_</span><span class="n">Config</span><span class="p" data-group-id="6918678676-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="p" data-group-id="6918678676-2">{</span><span class="ss">started</span><span class="p">,</span><span class="n">ServerId</span><span class="p" data-group-id="6918678676-2">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">my_server</span><span class="p">:</span><span class="nf">start</span><span class="p" data-group-id="6918678676-3">(</span><span class="p" data-group-id="6918678676-3">)</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="6918678676-4">{</span><span class="ss">clients</span><span class="p">,</span><span class="p" data-group-id="6918678676-5">[</span><span class="p" data-group-id="6918678676-5">]</span><span class="p" data-group-id="6918678676-4">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">my_server</span><span class="p">:</span><span class="nf">get_clients</span><span class="p" data-group-id="6918678676-6">(</span><span class="n">ServerId</span><span class="p" data-group-id="6918678676-6">)</span><span class="p">,</span><span class="w">
+    </span><span class="n">MyId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">self</span><span class="p" data-group-id="6918678676-7">(</span><span class="p" data-group-id="6918678676-7">)</span><span class="p">,</span><span class="w">
+    </span><span class="ss">connected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">my_server</span><span class="p">:</span><span class="nf">connect</span><span class="p" data-group-id="6918678676-8">(</span><span class="n">ServerId</span><span class="p">,</span><span class="w"> </span><span class="n">MyId</span><span class="p" data-group-id="6918678676-8">)</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="6918678676-9">{</span><span class="ss">clients</span><span class="p">,</span><span class="p" data-group-id="6918678676-10">[</span><span class="n">MyId</span><span class="p" data-group-id="6918678676-10">]</span><span class="p" data-group-id="6918678676-9">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">my_server</span><span class="p">:</span><span class="nf">get_clients</span><span class="p" data-group-id="6918678676-11">(</span><span class="n">ServerId</span><span class="p" data-group-id="6918678676-11">)</span><span class="p">,</span><span class="w">
+    </span><span class="ss">disconnected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">my_server</span><span class="p">:</span><span class="nf">disconnect</span><span class="p" data-group-id="6918678676-12">(</span><span class="n">ServerId</span><span class="p">,</span><span class="w"> </span><span class="n">MyId</span><span class="p" data-group-id="6918678676-12">)</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="6918678676-13">{</span><span class="ss">clients</span><span class="p">,</span><span class="p" data-group-id="6918678676-14">[</span><span class="p" data-group-id="6918678676-14">]</span><span class="p" data-group-id="6918678676-13">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">my_server</span><span class="p">:</span><span class="nf">get_clients</span><span class="p" data-group-id="6918678676-15">(</span><span class="n">ServerId</span><span class="p" data-group-id="6918678676-15">)</span><span class="p">,</span><span class="w">
+    </span><span class="ss">stopped</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">my_server</span><span class="p">:</span><span class="nf">stop</span><span class="p" data-group-id="6918678676-16">(</span><span class="n">ServerId</span><span class="p" data-group-id="6918678676-16">)</span><span class="p">.</span></code></pre><p>As a test suite runs, all information (including output to <code class="inline">stdout</code>) is recorded
 in many different log files. A minimum of information is displayed in the user
 console (only start and stop information, plus a note for each failed test
 case).</p><p>The result from each test case is recorded in a dedicated HTML log file, created

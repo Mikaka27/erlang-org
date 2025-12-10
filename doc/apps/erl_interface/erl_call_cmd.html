@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/erl_interface/erl_call_cmd.html" />
     <title>erl_call — erl_interface v5.6.1</title>
 
@@ -74,18 +73,18 @@ erl_interface
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -228,8 +227,8 @@ start() -&gt;
  {&lt;madonna@chivas.du.etx.ericsson.se,38,0&gt;,
                   []}]</code></pre><p>To forward standard output without printing the result term (<em>again, the input
 ends with EOF (Control-D)</em>):</p><pre><code class="makeup erlang" translate="no"><span class="ss">erl_call</span><span class="w"> </span><span class="o">-</span><span class="ss">s</span><span class="w"> </span><span class="o">-</span><span class="ss">e</span><span class="w"> </span><span class="o">-</span><span class="ss">sname</span><span class="w"> </span><span class="ss">madonna</span><span class="w"> </span><span class="o">-</span><span class="ss">fetch_stdout</span><span class="w"> </span><span class="o">-</span><span class="ss">no_result_term</span><span class="w">
-</span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="4190680485-1">(</span><span class="s">&quot;Number of schedulers: </span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4190680485-2">[</span><span class="nc">erlang</span><span class="p">:</span><span class="nf">system_info</span><span class="p" data-group-id="4190680485-3">(</span><span class="ss">schedulers</span><span class="p" data-group-id="4190680485-3">)</span><span class="p" data-group-id="4190680485-2">]</span><span class="p" data-group-id="4190680485-1">)</span><span class="p">,</span><span class="w">
-</span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="4190680485-4">(</span><span class="s">&quot;Number of logical cores: </span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4190680485-5">[</span><span class="nc">erlang</span><span class="p">:</span><span class="nf">system_info</span><span class="p" data-group-id="4190680485-6">(</span><span class="ss">logical_processors_available</span><span class="p" data-group-id="4190680485-6">)</span><span class="p" data-group-id="4190680485-5">]</span><span class="p" data-group-id="4190680485-4">)</span><span class="p">.</span><span class="w">
+</span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="4409485190-1">(</span><span class="s">&quot;Number of schedulers: </span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4409485190-2">[</span><span class="nc">erlang</span><span class="p">:</span><span class="nf">system_info</span><span class="p" data-group-id="4409485190-3">(</span><span class="ss">schedulers</span><span class="p" data-group-id="4409485190-3">)</span><span class="p" data-group-id="4409485190-2">]</span><span class="p" data-group-id="4409485190-1">)</span><span class="p">,</span><span class="w">
+</span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="4409485190-4">(</span><span class="s">&quot;Number of logical cores: </span><span class="si">~p</span><span class="si">~n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4409485190-5">[</span><span class="nc">erlang</span><span class="p">:</span><span class="nf">system_info</span><span class="p" data-group-id="4409485190-6">(</span><span class="ss">logical_processors_available</span><span class="p" data-group-id="4409485190-6">)</span><span class="p" data-group-id="4409485190-5">]</span><span class="p" data-group-id="4409485190-4">)</span><span class="p">.</span><span class="w">
 </span><span class="err">^</span><span class="n">D</span><span class="w">
 </span><span class="n">Number</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nc">schedulers</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
 </span><span class="n">Number</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="ss">logical</span><span class="w"> </span><span class="nc">cores</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span></code></pre>

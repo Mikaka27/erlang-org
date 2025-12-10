@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/diameter/diameter_codec.html" />
     <title>diameter_codec — diameter v2.5.2</title>
 
@@ -74,18 +73,18 @@ diameter
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -125,7 +124,7 @@ consequence of configuration passed to <a href="diameter.html#start_service/2"><
 results may differ from those returned by the functions documented here,
 depending on configuration.</p></section><p>The <a href="diameter_codec.html#header">header()</a> and
 <a href="diameter_codec.html#packet">packet()</a> records below are defined in diameter.hrl,
-which can be included as follows.</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="9889982453-1">(</span><span class="s">&quot;diameter/include/diameter.hrl&quot;</span><span class="p" data-group-id="9889982453-1">)</span><span class="p">.</span></code></pre><p>Application-specific records are defined in the hrl files resulting from
+which can be included as follows.</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">include_lib</span><span class="p" data-group-id="5137478718-1">(</span><span class="s">&quot;diameter/include/diameter.hrl&quot;</span><span class="p" data-group-id="5137478718-1">)</span><span class="p">.</span></code></pre><p>Application-specific records are defined in the hrl files resulting from
 dictionary file compilation.</p><h2 id="module-data-types" class="section-heading"><a href="#module-data-types" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">DATA TYPES</span></h2><ul><li><p><strong><code class="inline" id="integers">uint8()  = 0..255</code></strong></p></li><li><p><strong><code class="inline">uint24() = 0..16777215</code></strong></p></li><li><p><strong><code class="inline">uint32() = 0..4294967295</code></strong> - 8-bit, 24-bit and 32-bit integers occurring
 in Diameter and AVP headers.</p></li><li><p><strong><code class="inline" id="avp">avp() = #diameter_avp{}</code></strong> - The application-neutral
 representation of an AVP. Primarily intended for use by relay applications

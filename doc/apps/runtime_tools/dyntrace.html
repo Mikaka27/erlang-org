@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/runtime_tools/dyntrace.html" />
     <title>dyntrace — runtime_tools v2.3</title>
 
@@ -74,18 +73,18 @@ runtime_tools
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -845,14 +844,14 @@ or dynamic tracing is not enabled.</p>
 <p>Restores the previous state of user tags and their spreading as it was before a
 call to <a href="#spread_tag/1"><code class="inline">spread_tag/1</code></a>.</p><p>Note that the restoring is not limited to the same process; one can
 utilize this to turn off spreding in one process and restore it in a
-newly created process that is is actually going to send messages:</p><pre><code class="makeup erlang" translate="no"><span class="nf">f</span><span class="p" data-group-id="8520491022-1">(</span><span class="p" data-group-id="8520491022-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="n">TagData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">dyntrace</span><span class="p">:</span><span class="nf">spread_tag</span><span class="p" data-group-id="8520491022-2">(</span><span class="ss">false</span><span class="p" data-group-id="8520491022-2">)</span><span class="p">,</span><span class="w">
-    </span><span class="nf">spawn</span><span class="p" data-group-id="8520491022-3">(</span><span class="nf">fun</span><span class="p" data-group-id="8520491022-4">(</span><span class="p" data-group-id="8520491022-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-             </span><span class="nc">dyntrace</span><span class="p">:</span><span class="nf">restore_tag</span><span class="p" data-group-id="8520491022-5">(</span><span class="n">TagData</span><span class="p" data-group-id="8520491022-5">)</span><span class="p">,</span><span class="w">
-             </span><span class="nf">do_something</span><span class="p" data-group-id="8520491022-6">(</span><span class="p" data-group-id="8520491022-6">)</span><span class="w">
-          </span><span class="k">end</span><span class="p" data-group-id="8520491022-3">)</span><span class="p">,</span><span class="w">
-    </span><span class="nf">do_something_else</span><span class="p" data-group-id="8520491022-7">(</span><span class="p" data-group-id="8520491022-7">)</span><span class="p">,</span><span class="w">
-    </span><span class="nc">dyntrace</span><span class="p">:</span><span class="nf">restore_tag</span><span class="p" data-group-id="8520491022-8">(</span><span class="n">TagData</span><span class="p" data-group-id="8520491022-8">)</span><span class="p">.</span></code></pre><p>Correctly handling user tags and their spreading might take some effort, as
+newly created process that is is actually going to send messages:</p><pre><code class="makeup erlang" translate="no"><span class="nf">f</span><span class="p" data-group-id="4228591587-1">(</span><span class="p" data-group-id="4228591587-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="n">TagData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">dyntrace</span><span class="p">:</span><span class="nf">spread_tag</span><span class="p" data-group-id="4228591587-2">(</span><span class="ss">false</span><span class="p" data-group-id="4228591587-2">)</span><span class="p">,</span><span class="w">
+    </span><span class="nf">spawn</span><span class="p" data-group-id="4228591587-3">(</span><span class="nf">fun</span><span class="p" data-group-id="4228591587-4">(</span><span class="p" data-group-id="4228591587-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+             </span><span class="nc">dyntrace</span><span class="p">:</span><span class="nf">restore_tag</span><span class="p" data-group-id="4228591587-5">(</span><span class="n">TagData</span><span class="p" data-group-id="4228591587-5">)</span><span class="p">,</span><span class="w">
+             </span><span class="nf">do_something</span><span class="p" data-group-id="4228591587-6">(</span><span class="p" data-group-id="4228591587-6">)</span><span class="w">
+          </span><span class="k">end</span><span class="p" data-group-id="4228591587-3">)</span><span class="p">,</span><span class="w">
+    </span><span class="nf">do_something_else</span><span class="p" data-group-id="4228591587-7">(</span><span class="p" data-group-id="4228591587-7">)</span><span class="p">,</span><span class="w">
+    </span><span class="nc">dyntrace</span><span class="p">:</span><span class="nf">restore_tag</span><span class="p" data-group-id="4228591587-8">(</span><span class="n">TagData</span><span class="p" data-group-id="4228591587-8">)</span><span class="p">.</span></code></pre><p>Correctly handling user tags and their spreading might take some effort, as
 Erlang programs tend to send and receive messages so that sometimes the user tag
 gets lost due to various things, like double receives or communication with a
 port (ports do not handle user tags, in the same way as they do not handle
@@ -899,12 +898,12 @@ TagData returned from this call contains all previous information so the state
 later call to <a href="#restore_tag/1"><code class="inline">restore_tag/1</code></a>.</p><p>The <a href="../../apps/kernel/file.html"><code class="inline">file</code></a> module already spreads tags, so there is no need to manually call
 this function to get user tags spread to the <code class="inline">efile</code> driver through that module.</p><p>The most use of this function would be if one, for example, uses the <a href="../../apps/stdlib/io.html"><code class="inline">io</code></a> module
 to communicate with an I/O-server for a regular file, such as in the following
-example:</p><pre><code class="makeup erlang" translate="no"><span class="nf">f</span><span class="p" data-group-id="6161841863-1">(</span><span class="p" data-group-id="6161841863-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-   </span><span class="p" data-group-id="6161841863-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">F</span><span class="p" data-group-id="6161841863-2">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">file</span><span class="p">:</span><span class="nf">open</span><span class="p" data-group-id="6161841863-3">(</span><span class="s">&quot;test.tst&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6161841863-4">[</span><span class="ss">write</span><span class="p" data-group-id="6161841863-4">]</span><span class="p" data-group-id="6161841863-3">)</span><span class="p">,</span><span class="w">
-   </span><span class="n">Saved</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">dyntrace</span><span class="p">:</span><span class="nf">spread_tag</span><span class="p" data-group-id="6161841863-5">(</span><span class="ss">true</span><span class="p" data-group-id="6161841863-5">)</span><span class="p">,</span><span class="w">
-   </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="6161841863-6">(</span><span class="n">F</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hello world!&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6161841863-7">[</span><span class="p" data-group-id="6161841863-7">]</span><span class="p" data-group-id="6161841863-6">)</span><span class="p">,</span><span class="w">
-   </span><span class="nc">dyntrace</span><span class="p">:</span><span class="nf">restore_tag</span><span class="p" data-group-id="6161841863-8">(</span><span class="n">Saved</span><span class="p" data-group-id="6161841863-8">)</span><span class="p">,</span><span class="w">
-   </span><span class="nc">file</span><span class="p">:</span><span class="nf">close</span><span class="p" data-group-id="6161841863-9">(</span><span class="n">F</span><span class="p" data-group-id="6161841863-9">)</span><span class="p">.</span></code></pre><p>In this example, any user tag set in the calling process will be spread to the
+example:</p><pre><code class="makeup erlang" translate="no"><span class="nf">f</span><span class="p" data-group-id="4094467426-1">(</span><span class="p" data-group-id="4094467426-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+   </span><span class="p" data-group-id="4094467426-2">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">F</span><span class="p" data-group-id="4094467426-2">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">file</span><span class="p">:</span><span class="nf">open</span><span class="p" data-group-id="4094467426-3">(</span><span class="s">&quot;test.tst&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4094467426-4">[</span><span class="ss">write</span><span class="p" data-group-id="4094467426-4">]</span><span class="p" data-group-id="4094467426-3">)</span><span class="p">,</span><span class="w">
+   </span><span class="n">Saved</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">dyntrace</span><span class="p">:</span><span class="nf">spread_tag</span><span class="p" data-group-id="4094467426-5">(</span><span class="ss">true</span><span class="p" data-group-id="4094467426-5">)</span><span class="p">,</span><span class="w">
+   </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="4094467426-6">(</span><span class="n">F</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hello world!&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4094467426-7">[</span><span class="p" data-group-id="4094467426-7">]</span><span class="p" data-group-id="4094467426-6">)</span><span class="p">,</span><span class="w">
+   </span><span class="nc">dyntrace</span><span class="p">:</span><span class="nf">restore_tag</span><span class="p" data-group-id="4094467426-8">(</span><span class="n">Saved</span><span class="p" data-group-id="4094467426-8">)</span><span class="p">,</span><span class="w">
+   </span><span class="nc">file</span><span class="p">:</span><span class="nf">close</span><span class="p" data-group-id="4094467426-9">(</span><span class="n">F</span><span class="p" data-group-id="4094467426-9">)</span><span class="p">.</span></code></pre><p>In this example, any user tag set in the calling process will be spread to the
 I/O-server when the <a href="../../apps/stdlib/io.html#format/3"><code class="inline">io:format/3</code></a> call is done.</p>
   </section>
 </section>

@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/proc_lib.html" />
     <title>proc_lib — stdlib v7.1</title>
 
@@ -74,18 +73,18 @@ stdlib
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -967,21 +966,21 @@ process exits, or when the start function time-out (if used) has passed, see
 failed. When doing so the start function can return before the failing process
 has exited, which may block VM resources required for a new start attempt to
 succeed. Use <a href="#init_fail/3"><code class="inline">init_fail/2,3</code></a> for that purpose.</p></section><p>The following example illustrates how this function and <a href="#start_link/3"><code class="inline">proc_lib:start_link/3</code></a>
-are used:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="5021439586-1">(</span><span class="ss">my_proc</span><span class="p" data-group-id="5021439586-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="5021439586-2">(</span><span class="p" data-group-id="5021439586-3">[</span><span class="ss">start_link</span><span class="p">/</span><span class="mi">0</span><span class="p" data-group-id="5021439586-3">]</span><span class="p" data-group-id="5021439586-2">)</span><span class="p">.</span><span class="w">
-</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="5021439586-4">(</span><span class="p" data-group-id="5021439586-5">[</span><span class="ss">init</span><span class="p">/</span><span class="mi">1</span><span class="p" data-group-id="5021439586-5">]</span><span class="p" data-group-id="5021439586-4">)</span><span class="p">.</span><span class="w">
+are used:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="0120321291-1">(</span><span class="ss">my_proc</span><span class="p" data-group-id="0120321291-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="0120321291-2">(</span><span class="p" data-group-id="0120321291-3">[</span><span class="ss">start_link</span><span class="p">/</span><span class="mi">0</span><span class="p" data-group-id="0120321291-3">]</span><span class="p" data-group-id="0120321291-2">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="0120321291-4">(</span><span class="p" data-group-id="0120321291-5">[</span><span class="ss">init</span><span class="p">/</span><span class="mi">1</span><span class="p" data-group-id="0120321291-5">]</span><span class="p" data-group-id="0120321291-4">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">start_link</span><span class="p" data-group-id="5021439586-6">(</span><span class="p" data-group-id="5021439586-6">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="nc">proc_lib</span><span class="p">:</span><span class="nf">start_link</span><span class="p" data-group-id="5021439586-7">(</span><span class="ss">my_proc</span><span class="p">,</span><span class="w"> </span><span class="ss">init</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5021439586-8">[</span><span class="nf">self</span><span class="p" data-group-id="5021439586-9">(</span><span class="p" data-group-id="5021439586-9">)</span><span class="p" data-group-id="5021439586-8">]</span><span class="p" data-group-id="5021439586-7">)</span><span class="p">.</span><span class="w">
+</span><span class="nf">start_link</span><span class="p" data-group-id="0120321291-6">(</span><span class="p" data-group-id="0120321291-6">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="nc">proc_lib</span><span class="p">:</span><span class="nf">start_link</span><span class="p" data-group-id="0120321291-7">(</span><span class="ss">my_proc</span><span class="p">,</span><span class="w"> </span><span class="ss">init</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0120321291-8">[</span><span class="nf">self</span><span class="p" data-group-id="0120321291-9">(</span><span class="p" data-group-id="0120321291-9">)</span><span class="p" data-group-id="0120321291-8">]</span><span class="p" data-group-id="0120321291-7">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">init</span><span class="p" data-group-id="5021439586-10">(</span><span class="n">Parent</span><span class="p" data-group-id="5021439586-10">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="k">case</span><span class="w"> </span><span class="nf">do_initialization</span><span class="p" data-group-id="5021439586-11">(</span><span class="p" data-group-id="5021439586-11">)</span><span class="w"> </span><span class="k">of</span><span class="w">
+</span><span class="nf">init</span><span class="p" data-group-id="0120321291-10">(</span><span class="n">Parent</span><span class="p" data-group-id="0120321291-10">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="k">case</span><span class="w"> </span><span class="nf">do_initialization</span><span class="p" data-group-id="0120321291-11">(</span><span class="p" data-group-id="0120321291-11">)</span><span class="w"> </span><span class="k">of</span><span class="w">
         </span><span class="ss">ok</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-            </span><span class="nc">proc_lib</span><span class="p">:</span><span class="nf">init_ack</span><span class="p" data-group-id="5021439586-12">(</span><span class="n">Parent</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5021439586-13">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="nf">self</span><span class="p" data-group-id="5021439586-14">(</span><span class="p" data-group-id="5021439586-14">)</span><span class="p" data-group-id="5021439586-13">}</span><span class="p" data-group-id="5021439586-12">)</span><span class="p">;</span><span class="w">
-        </span><span class="p" data-group-id="5021439586-15">{</span><span class="ss">error</span><span class="p">,</span><span class="w"> </span><span class="n">Reason</span><span class="p" data-group-id="5021439586-15">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-            </span><span class="nf">exit</span><span class="p" data-group-id="5021439586-16">(</span><span class="n">Reason</span><span class="p" data-group-id="5021439586-16">)</span><span class="w">
+            </span><span class="nc">proc_lib</span><span class="p">:</span><span class="nf">init_ack</span><span class="p" data-group-id="0120321291-12">(</span><span class="n">Parent</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0120321291-13">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="nf">self</span><span class="p" data-group-id="0120321291-14">(</span><span class="p" data-group-id="0120321291-14">)</span><span class="p" data-group-id="0120321291-13">}</span><span class="p" data-group-id="0120321291-12">)</span><span class="p">;</span><span class="w">
+        </span><span class="p" data-group-id="0120321291-15">{</span><span class="ss">error</span><span class="p">,</span><span class="w"> </span><span class="n">Reason</span><span class="p" data-group-id="0120321291-15">}</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+            </span><span class="nf">exit</span><span class="p" data-group-id="0120321291-16">(</span><span class="n">Reason</span><span class="p" data-group-id="0120321291-16">)</span><span class="w">
     </span><span class="k">end</span><span class="p">,</span><span class="w">
-    </span><span class="nf">loop</span><span class="p" data-group-id="5021439586-17">(</span><span class="p" data-group-id="5021439586-17">)</span><span class="p">.</span><span class="w">
+    </span><span class="nf">loop</span><span class="p" data-group-id="0120321291-17">(</span><span class="p" data-group-id="0120321291-17">)</span><span class="p">.</span><span class="w">
 
 </span><span class="p">.</span><span class="p">.</span><span class="p">.</span></code></pre>
   </section>
@@ -1054,21 +1053,21 @@ will be handled by this module. See <a href="proc_lib.html">Description</a>.</p>
 started process, the start function returns an error tuple when the started
 process exits, or when the start function time-out (if used) has passed, see
 <a href="#start/3"><code class="inline">start/3,4,5</code></a>.</p><p>The following example illustrates how this function and <a href="#start_link/3"><code class="inline">proc_lib:start_link/3</code></a>
-can be used:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="7981319664-1">(</span><span class="ss">my_proc</span><span class="p" data-group-id="7981319664-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="7981319664-2">(</span><span class="p" data-group-id="7981319664-3">[</span><span class="ss">start_link</span><span class="p">/</span><span class="mi">0</span><span class="p" data-group-id="7981319664-3">]</span><span class="p" data-group-id="7981319664-2">)</span><span class="p">.</span><span class="w">
-</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="7981319664-4">(</span><span class="p" data-group-id="7981319664-5">[</span><span class="ss">init</span><span class="p">/</span><span class="mi">1</span><span class="p" data-group-id="7981319664-5">]</span><span class="p" data-group-id="7981319664-4">)</span><span class="p">.</span><span class="w">
+can be used:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">module</span><span class="p" data-group-id="0010133206-1">(</span><span class="ss">my_proc</span><span class="p" data-group-id="0010133206-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="0010133206-2">(</span><span class="p" data-group-id="0010133206-3">[</span><span class="ss">start_link</span><span class="p">/</span><span class="mi">0</span><span class="p" data-group-id="0010133206-3">]</span><span class="p" data-group-id="0010133206-2">)</span><span class="p">.</span><span class="w">
+</span><span class="p">-</span><span class="na">export</span><span class="p" data-group-id="0010133206-4">(</span><span class="p" data-group-id="0010133206-5">[</span><span class="ss">init</span><span class="p">/</span><span class="mi">1</span><span class="p" data-group-id="0010133206-5">]</span><span class="p" data-group-id="0010133206-4">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">start_link</span><span class="p" data-group-id="7981319664-6">(</span><span class="p" data-group-id="7981319664-6">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="nc">proc_lib</span><span class="p">:</span><span class="nf">start_link</span><span class="p" data-group-id="7981319664-7">(</span><span class="ss">my_proc</span><span class="p">,</span><span class="w"> </span><span class="ss">init</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7981319664-8">[</span><span class="nf">self</span><span class="p" data-group-id="7981319664-9">(</span><span class="p" data-group-id="7981319664-9">)</span><span class="p" data-group-id="7981319664-8">]</span><span class="p" data-group-id="7981319664-7">)</span><span class="p">.</span><span class="w">
+</span><span class="nf">start_link</span><span class="p" data-group-id="0010133206-6">(</span><span class="p" data-group-id="0010133206-6">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="nc">proc_lib</span><span class="p">:</span><span class="nf">start_link</span><span class="p" data-group-id="0010133206-7">(</span><span class="ss">my_proc</span><span class="p">,</span><span class="w"> </span><span class="ss">init</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0010133206-8">[</span><span class="nf">self</span><span class="p" data-group-id="0010133206-9">(</span><span class="p" data-group-id="0010133206-9">)</span><span class="p" data-group-id="0010133206-8">]</span><span class="p" data-group-id="0010133206-7">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">init</span><span class="p" data-group-id="7981319664-10">(</span><span class="n">Parent</span><span class="p" data-group-id="7981319664-10">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="k">case</span><span class="w"> </span><span class="nf">do_initialization</span><span class="p" data-group-id="7981319664-11">(</span><span class="p" data-group-id="7981319664-11">)</span><span class="w"> </span><span class="k">of</span><span class="w">
+</span><span class="nf">init</span><span class="p" data-group-id="0010133206-10">(</span><span class="n">Parent</span><span class="p" data-group-id="0010133206-10">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="k">case</span><span class="w"> </span><span class="nf">do_initialization</span><span class="p" data-group-id="0010133206-11">(</span><span class="p" data-group-id="0010133206-11">)</span><span class="w"> </span><span class="k">of</span><span class="w">
         </span><span class="ss">ok</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-            </span><span class="nc">proc_lib</span><span class="p">:</span><span class="nf">init_ack</span><span class="p" data-group-id="7981319664-12">(</span><span class="n">Parent</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7981319664-13">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="nf">self</span><span class="p" data-group-id="7981319664-14">(</span><span class="p" data-group-id="7981319664-14">)</span><span class="p" data-group-id="7981319664-13">}</span><span class="p" data-group-id="7981319664-12">)</span><span class="p">;</span><span class="w">
-        </span><span class="p" data-group-id="7981319664-15">{</span><span class="ss">error</span><span class="p">,</span><span class="w"> </span><span class="n">Reason</span><span class="p" data-group-id="7981319664-15">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Error</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-            </span><span class="nc">proc_lib</span><span class="p">:</span><span class="nf">init_fail</span><span class="p" data-group-id="7981319664-16">(</span><span class="n">Parent</span><span class="p">,</span><span class="w"> </span><span class="n">Error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7981319664-17">{</span><span class="nb">exit</span><span class="p">,</span><span class="w"> </span><span class="ss">normal</span><span class="p" data-group-id="7981319664-17">}</span><span class="p" data-group-id="7981319664-16">)</span><span class="w">
+            </span><span class="nc">proc_lib</span><span class="p">:</span><span class="nf">init_ack</span><span class="p" data-group-id="0010133206-12">(</span><span class="n">Parent</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0010133206-13">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="nf">self</span><span class="p" data-group-id="0010133206-14">(</span><span class="p" data-group-id="0010133206-14">)</span><span class="p" data-group-id="0010133206-13">}</span><span class="p" data-group-id="0010133206-12">)</span><span class="p">;</span><span class="w">
+        </span><span class="p" data-group-id="0010133206-15">{</span><span class="ss">error</span><span class="p">,</span><span class="w"> </span><span class="n">Reason</span><span class="p" data-group-id="0010133206-15">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Error</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+            </span><span class="nc">proc_lib</span><span class="p">:</span><span class="nf">init_fail</span><span class="p" data-group-id="0010133206-16">(</span><span class="n">Parent</span><span class="p">,</span><span class="w"> </span><span class="n">Error</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0010133206-17">{</span><span class="nb">exit</span><span class="p">,</span><span class="w"> </span><span class="ss">normal</span><span class="p" data-group-id="0010133206-17">}</span><span class="p" data-group-id="0010133206-16">)</span><span class="w">
     </span><span class="k">end</span><span class="p">,</span><span class="w">
-    </span><span class="nf">loop</span><span class="p" data-group-id="7981319664-18">(</span><span class="p" data-group-id="7981319664-18">)</span><span class="p">.</span><span class="w">
+    </span><span class="nf">loop</span><span class="p" data-group-id="0010133206-18">(</span><span class="p" data-group-id="0010133206-18">)</span><span class="p">.</span><span class="w">
 
 </span><span class="p">.</span><span class="p">.</span><span class="p">.</span></code></pre>
   </section>

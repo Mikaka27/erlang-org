@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/system/drivers.html" />
     <title>Drivers — Erlang System Documentation v28.2</title>
 
@@ -74,18 +73,18 @@ Erlang System Documentation
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -115,15 +114,15 @@ been opened to the same driver, only code for one port at the same time can be
 running.</p><p>A driver can be configured to have one lock for each port instead.</p><p>If a driver is used in a functional way (that is, holds no state, but only does
 some heavy calculation and returns a result), several ports with registered
 names can be opened beforehand, and the port to be used can be chosen based on
-the scheduler ID as follows:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">define</span><span class="p" data-group-id="5976223740-1">(</span><span class="n">PORT_NAMES</span><span class="p" data-group-id="5976223740-2">(</span><span class="p" data-group-id="5976223740-2">)</span><span class="p">,</span><span class="w">
-	</span><span class="p" data-group-id="5976223740-3">{</span><span class="ss">some_driver_01</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_02</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_03</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_04</span><span class="p">,</span><span class="w">
+the scheduler ID as follows:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">define</span><span class="p" data-group-id="5650817844-1">(</span><span class="n">PORT_NAMES</span><span class="p" data-group-id="5650817844-2">(</span><span class="p" data-group-id="5650817844-2">)</span><span class="p">,</span><span class="w">
+	</span><span class="p" data-group-id="5650817844-3">{</span><span class="ss">some_driver_01</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_02</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_03</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_04</span><span class="p">,</span><span class="w">
 	 </span><span class="ss">some_driver_05</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_06</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_07</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_08</span><span class="p">,</span><span class="w">
 	 </span><span class="ss">some_driver_09</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_10</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_11</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_12</span><span class="p">,</span><span class="w">
-	 </span><span class="ss">some_driver_13</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_14</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_15</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_16</span><span class="p" data-group-id="5976223740-3">}</span><span class="p" data-group-id="5976223740-1">)</span><span class="p">.</span><span class="w">
+	 </span><span class="ss">some_driver_13</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_14</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_15</span><span class="p">,</span><span class="w"> </span><span class="ss">some_driver_16</span><span class="p" data-group-id="5650817844-3">}</span><span class="p" data-group-id="5650817844-1">)</span><span class="p">.</span><span class="w">
 
-</span><span class="nf">client_port</span><span class="p" data-group-id="5976223740-4">(</span><span class="p" data-group-id="5976223740-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-    </span><span class="nf">element</span><span class="p" data-group-id="5976223740-5">(</span><span class="nc">erlang</span><span class="p">:</span><span class="nf">system_info</span><span class="p" data-group-id="5976223740-6">(</span><span class="ss">scheduler_id</span><span class="p" data-group-id="5976223740-6">)</span><span class="w"> </span><span class="ow">rem</span><span class="w"> </span><span class="nf">tuple_size</span><span class="p" data-group-id="5976223740-7">(</span><span class="o">?</span><span class="n">PORT_NAMES</span><span class="p" data-group-id="5976223740-8">(</span><span class="p" data-group-id="5976223740-8">)</span><span class="p" data-group-id="5976223740-7">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-	    </span><span class="o">?</span><span class="n">PORT_NAMES</span><span class="p" data-group-id="5976223740-9">(</span><span class="p" data-group-id="5976223740-9">)</span><span class="p" data-group-id="5976223740-5">)</span><span class="p">.</span></code></pre><p>As long as there are no more than 16 schedulers, there will never be any lock
+</span><span class="nf">client_port</span><span class="p" data-group-id="5650817844-4">(</span><span class="p" data-group-id="5650817844-4">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+    </span><span class="nf">element</span><span class="p" data-group-id="5650817844-5">(</span><span class="nc">erlang</span><span class="p">:</span><span class="nf">system_info</span><span class="p" data-group-id="5650817844-6">(</span><span class="ss">scheduler_id</span><span class="p" data-group-id="5650817844-6">)</span><span class="w"> </span><span class="ow">rem</span><span class="w"> </span><span class="nf">tuple_size</span><span class="p" data-group-id="5650817844-7">(</span><span class="o">?</span><span class="n">PORT_NAMES</span><span class="p" data-group-id="5650817844-8">(</span><span class="p" data-group-id="5650817844-8">)</span><span class="p" data-group-id="5650817844-7">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+	    </span><span class="o">?</span><span class="n">PORT_NAMES</span><span class="p" data-group-id="5650817844-9">(</span><span class="p" data-group-id="5650817844-9">)</span><span class="p" data-group-id="5650817844-5">)</span><span class="p">.</span></code></pre><p>As long as there are no more than 16 schedulers, there will never be any lock
 contention on the port lock for the driver.</p><h2 id="avoiding-copying-binaries-when-calling-a-driver" class="section-heading"><a href="#avoiding-copying-binaries-when-calling-a-driver" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Avoiding Copying Binaries When Calling a Driver</span></h2><p>There are basically two ways to avoid copying a binary that is sent to a driver:</p><ul><li><p>If the <code class="inline">Data</code> argument for <a href="../apps/erts/erlang.html#port_control/3"><code class="inline">port_control/3</code></a> is a
 binary, the driver will be passed a pointer to the contents of the binary and
 the binary will not be copied. If the <code class="inline">Data</code> argument is an iolist (list of

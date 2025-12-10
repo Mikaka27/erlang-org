@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/gen_event.html" />
     <title>gen_event — stdlib v7.1</title>
 
@@ -74,18 +73,18 @@ stdlib
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -1285,15 +1284,15 @@ and shall return a map <code class="inline">NewStatus</code> with the same keys,
 but it may transform some values.</p><p>Two possible use cases for this callback is to remove
 sensitive information from the state to prevent it from being printed
 in log files, or to compact large irrelevant status items
-that would only clutter the logs.</p><p><em>Example</em>:</p><pre><code class="makeup erlang" translate="no"><span class="nf">format_status</span><span class="p" data-group-id="5859688755-1">(</span><span class="n">Status</span><span class="p" data-group-id="5859688755-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-  </span><span class="nc">maps</span><span class="p">:</span><span class="nf">map</span><span class="p" data-group-id="5859688755-2">(</span><span class="w">
-    </span><span class="nf">fun</span><span class="p" data-group-id="5859688755-3">(</span><span class="ss">state</span><span class="p">,</span><span class="n">State</span><span class="p" data-group-id="5859688755-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-            </span><span class="nc">maps</span><span class="p">:</span><span class="nf">remove</span><span class="p" data-group-id="5859688755-4">(</span><span class="ss">private_key</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="5859688755-4">)</span><span class="p">;</span><span class="w">
-       </span><span class="p" data-group-id="5859688755-5">(</span><span class="ss">message</span><span class="p">,</span><span class="p" data-group-id="5859688755-6">{</span><span class="ss">password</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="n">Pass</span><span class="p" data-group-id="5859688755-6">}</span><span class="p" data-group-id="5859688755-5">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-            </span><span class="p" data-group-id="5859688755-7">{</span><span class="ss">password</span><span class="p">,</span><span class="w"> </span><span class="ss">removed</span><span class="p" data-group-id="5859688755-7">}</span><span class="p">;</span><span class="w">
-       </span><span class="p" data-group-id="5859688755-8">(</span><span class="p">_</span><span class="p">,</span><span class="n">Value</span><span class="p" data-group-id="5859688755-8">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+that would only clutter the logs.</p><p><em>Example</em>:</p><pre><code class="makeup erlang" translate="no"><span class="nf">format_status</span><span class="p" data-group-id="3080760426-1">(</span><span class="n">Status</span><span class="p" data-group-id="3080760426-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+  </span><span class="nc">maps</span><span class="p">:</span><span class="nf">map</span><span class="p" data-group-id="3080760426-2">(</span><span class="w">
+    </span><span class="nf">fun</span><span class="p" data-group-id="3080760426-3">(</span><span class="ss">state</span><span class="p">,</span><span class="n">State</span><span class="p" data-group-id="3080760426-3">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+            </span><span class="nc">maps</span><span class="p">:</span><span class="nf">remove</span><span class="p" data-group-id="3080760426-4">(</span><span class="ss">private_key</span><span class="p">,</span><span class="w"> </span><span class="n">State</span><span class="p" data-group-id="3080760426-4">)</span><span class="p">;</span><span class="w">
+       </span><span class="p" data-group-id="3080760426-5">(</span><span class="ss">message</span><span class="p">,</span><span class="p" data-group-id="3080760426-6">{</span><span class="ss">password</span><span class="p">,</span><span class="w"> </span><span class="p">_</span><span class="n">Pass</span><span class="p" data-group-id="3080760426-6">}</span><span class="p" data-group-id="3080760426-5">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+            </span><span class="p" data-group-id="3080760426-7">{</span><span class="ss">password</span><span class="p">,</span><span class="w"> </span><span class="ss">removed</span><span class="p" data-group-id="3080760426-7">}</span><span class="p">;</span><span class="w">
+       </span><span class="p" data-group-id="3080760426-8">(</span><span class="p">_</span><span class="p">,</span><span class="n">Value</span><span class="p" data-group-id="3080760426-8">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
             </span><span class="n">Value</span><span class="w">
-    </span><span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="n">Status</span><span class="p" data-group-id="5859688755-2">)</span><span class="p">.</span></code></pre><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>This callback is optional, so event handler modules need not export it.
+    </span><span class="k">end</span><span class="p">,</span><span class="w"> </span><span class="n">Status</span><span class="p" data-group-id="3080760426-2">)</span><span class="p">.</span></code></pre><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>This callback is optional, so event handler modules need not export it.
 If a handler does not export this function, the <code class="inline">gen_event</code> module
 uses the handler state directly for the purposes described below.</p><p>If this callback is exported but fails, to hide possibly sensitive data,
 the default function will instead return the fact that

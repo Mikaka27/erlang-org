@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/tools/cover.html" />
     <title>cover — tools v4.1.3</title>
 
@@ -74,18 +73,18 @@ tools
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -1543,7 +1542,7 @@ call is equivalent to <a href="#analyse/3"><code class="inline">analyse('_', Arg
 call is equivalent to <a href="#analyse/3"><code class="inline">analyse('_', coverage, Arg)</code></a>.</p><p>Otherwise <code class="inline">Arg</code> is assumed to be a module name, and this call is equivalent
 to <a href="#analyse/3"><code class="inline">analyse(Arg, coverage, function)</code></a>.</p><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>To analyze a module whose name overlaps with one the values in
 <a href="#t:analysis/0"><code class="inline">analysis()</code></a> or <a href="#t:level/0"><code class="inline">level()</code></a>, the module
-name has to be in a list. For example, to analyze a module named <code class="inline">calls</code>:</p><pre><code class="makeup erlang" translate="no"><span class="nc">cover</span><span class="p">:</span><span class="nf">analyse</span><span class="p" data-group-id="2853169680-1">(</span><span class="p" data-group-id="2853169680-2">[</span><span class="ss">calls</span><span class="p" data-group-id="2853169680-2">]</span><span class="p" data-group-id="2853169680-1">)</span><span class="p">.</span></code></pre></section>
+name has to be in a list. For example, to analyze a module named <code class="inline">calls</code>:</p><pre><code class="makeup erlang" translate="no"><span class="nc">cover</span><span class="p">:</span><span class="nf">analyse</span><span class="p" data-group-id="2966515635-1">(</span><span class="p" data-group-id="2966515635-2">[</span><span class="ss">calls</span><span class="p" data-group-id="2966515635-2">]</span><span class="p" data-group-id="2966515635-1">)</span><span class="p">.</span></code></pre></section>
   </section>
 </section>
 <section class="detail" id="analyse/2">
@@ -1585,7 +1584,7 @@ call is equivalent to <a href="#analyse/3"><code class="inline">analyse('_', Arg
 <a href="#analyse/3"><code class="inline">analyse(Arg1, Arg2, function)</code></a>.</p><p>If <code class="inline">Arg2</code> is one of the values in <a href="#t:level/0"><code class="inline">level()</code></a>, <code class="inline">Arg1</code> is
 assumed to be a module and this call is equivalent to <a href="#analyse/3"><code class="inline">analyse(Arg1, coverage, Arg2)</code></a>.</p><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>To analyze a module whose name overlaps with one of the values in
 <a href="#t:analysis/0"><code class="inline">analysis()</code></a>, the module name needs to be in a
-list. For example, to analyze a module named <code class="inline">calls</code>:</p><pre><code class="makeup erlang" translate="no"><span class="nc">cover</span><span class="p">:</span><span class="nf">analyse</span><span class="p" data-group-id="7751385918-1">(</span><span class="p" data-group-id="7751385918-2">[</span><span class="ss">calls</span><span class="p" data-group-id="7751385918-2">]</span><span class="p">,</span><span class="w"> </span><span class="ss">function</span><span class="p" data-group-id="7751385918-1">)</span><span class="p">.</span></code></pre></section>
+list. For example, to analyze a module named <code class="inline">calls</code>:</p><pre><code class="makeup erlang" translate="no"><span class="nc">cover</span><span class="p">:</span><span class="nf">analyse</span><span class="p" data-group-id="1054389436-1">(</span><span class="p" data-group-id="1054389436-2">[</span><span class="ss">calls</span><span class="p" data-group-id="1054389436-2">]</span><span class="p">,</span><span class="w"> </span><span class="ss">function</span><span class="p" data-group-id="1054389436-1">)</span><span class="p">.</span></code></pre></section>
   </section>
 </section>
 <section class="detail" id="analyse/3">
@@ -1694,7 +1693,7 @@ modules.</p><p>If a given module is not cover-compiled, this is indicated by the
 options, this call is equivalent to <a href="#analyse_to_file/2"><code class="inline">analyse_to_file('_', Arg)</code></a>.</p><p>Otherwise <code class="inline">Arg</code> is assumed to be a module, and this call is equivalent to
 <a href="#analyse_to_file/2"><code class="inline">analyse_to_file(Arg, [])</code></a>.</p><section role="note" class="admonition info"><h4 class="admonition-title info">Note</h4><p>To analyze a module of the name <code class="inline">html</code> (which overlaps with an option
 in <a href="#t:analyse_option/0"><code class="inline">analyse_option()</code></a>), it is necessary to
-use <a href="#analyse_to_file/2"><code class="inline">cover:analyse_to_file/2</code></a>:</p><pre><code class="makeup erlang" translate="no"><span class="nc">cover</span><span class="p">:</span><span class="nf">analyse_to_file</span><span class="p" data-group-id="6139631509-1">(</span><span class="p" data-group-id="6139631509-2">[</span><span class="ss">html</span><span class="p" data-group-id="6139631509-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6139631509-3">[</span><span class="p" data-group-id="6139631509-3">]</span><span class="p" data-group-id="6139631509-1">)</span><span class="p">.</span></code></pre></section>
+use <a href="#analyse_to_file/2"><code class="inline">cover:analyse_to_file/2</code></a>:</p><pre><code class="makeup erlang" translate="no"><span class="nc">cover</span><span class="p">:</span><span class="nf">analyse_to_file</span><span class="p" data-group-id="6395441685-1">(</span><span class="p" data-group-id="6395441685-2">[</span><span class="ss">html</span><span class="p" data-group-id="6395441685-2">]</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6395441685-3">[</span><span class="p" data-group-id="6395441685-3">]</span><span class="p" data-group-id="6395441685-1">)</span><span class="p">.</span></code></pre></section>
   </section>
 </section>
 <section class="detail" id="analyse_to_file/2">

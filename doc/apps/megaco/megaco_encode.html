@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/megaco/megaco_encode.html" />
     <title>Internal form and its encodings — megaco v4.8.1</title>
 
@@ -74,18 +73,18 @@ megaco
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -131,75 +130,75 @@ and no optional white spaces, and the term pretty for a well indented text
 format using long keywords and an indentation style like the text examples in
 the Megaco/H.248 specification).</p><p>Here follows an example of a text message to give a feeling of the difference
 between the pretty and compact versions of text messages. First the pretty, well
-indented version with long keywords:</p><pre><code class="makeup c" translate="no"><span class="w">   </span><span class="no">MEGACO</span><span class="o">/</span><span class="mi">1</span><span class="w"> </span><span class="p" data-group-id="4255368783-1">[</span><span class="mf">124.124</span><span class="p">.</span><span class="mf">124.222</span><span class="p" data-group-id="4255368783-1">]</span><span class="w">
-   </span><span class="no">Transaction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9998</span><span class="w"> </span><span class="p" data-group-id="4255368783-2">{</span><span class="w">
-           </span><span class="no">Context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p" data-group-id="4255368783-3">{</span><span class="w">
-                   </span><span class="no">ServiceChange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">ROOT</span><span class="w"> </span><span class="p" data-group-id="4255368783-4">{</span><span class="w">
-                           </span><span class="no">Services</span><span class="w"> </span><span class="p" data-group-id="4255368783-5">{</span><span class="w">
+indented version with long keywords:</p><pre><code class="makeup c" translate="no"><span class="w">   </span><span class="no">MEGACO</span><span class="o">/</span><span class="mi">1</span><span class="w"> </span><span class="p" data-group-id="5855063243-1">[</span><span class="mf">124.124</span><span class="p">.</span><span class="mf">124.222</span><span class="p" data-group-id="5855063243-1">]</span><span class="w">
+   </span><span class="no">Transaction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9998</span><span class="w"> </span><span class="p" data-group-id="5855063243-2">{</span><span class="w">
+           </span><span class="no">Context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p" data-group-id="5855063243-3">{</span><span class="w">
+                   </span><span class="no">ServiceChange</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">ROOT</span><span class="w"> </span><span class="p" data-group-id="5855063243-4">{</span><span class="w">
+                           </span><span class="no">Services</span><span class="w"> </span><span class="p" data-group-id="5855063243-5">{</span><span class="w">
                                    </span><span class="no">Method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Restart</span><span class="p">,</span><span class="w">
                                    </span><span class="no">ServiceChangeAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">55555</span><span class="p">,</span><span class="w">
                                    </span><span class="no">Profile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">ResGW</span><span class="o">/</span><span class="mi">1</span><span class="p">,</span><span class="w">
                                    </span><span class="no">Reason</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;901 Cold Boot&quot;</span><span class="w">
-                           </span><span class="p" data-group-id="4255368783-5">}</span><span class="w">
-                   </span><span class="p" data-group-id="4255368783-4">}</span><span class="w">
-           </span><span class="p" data-group-id="4255368783-3">}</span><span class="w">
-   </span><span class="p" data-group-id="4255368783-2">}</span></code></pre><p>Then the compact version without indentation and with short keywords:</p><pre><code class="text">
+                           </span><span class="p" data-group-id="5855063243-5">}</span><span class="w">
+                   </span><span class="p" data-group-id="5855063243-4">}</span><span class="w">
+           </span><span class="p" data-group-id="5855063243-3">}</span><span class="w">
+   </span><span class="p" data-group-id="5855063243-2">}</span></code></pre><p>Then the compact version without indentation and with short keywords:</p><pre><code class="text">
    !/1 [124.124.124.222]
    T=9998{C=-{SC=ROOT{SV{MT=RS,AD=55555,PF=ResGW/1,RE=&quot;901 Cold Boot&quot;}}}}</code></pre><p>And the programmers view of the same message. First a list of ActionRequest
 records are constructed and then it is sent with one of the send functions in
-the API:</p><pre><code class="makeup erlang" translate="no"><span class="w">  </span><span class="n">Prof</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">#</span><span class="ss">&#39;ServiceChangeProfile&#39;</span><span class="p" data-group-id="3943453213-1">{</span><span class="ss">profileName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;resgw&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="3943453213-1">}</span><span class="p">,</span><span class="w">
-  </span><span class="n">Parm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">#</span><span class="ss">&#39;ServiceChangeParm&#39;</span><span class="p" data-group-id="3943453213-2">{</span><span class="ss">serviceChangeMethod</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="ss">restart</span><span class="p">,</span><span class="w">
-                              </span><span class="ss">serviceChangeAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="3943453213-3">{</span><span class="ss">portNumber</span><span class="p">,</span><span class="w"> </span><span class="mi">55555</span><span class="p" data-group-id="3943453213-3">}</span><span class="p">,</span><span class="w">
+the API:</p><pre><code class="makeup erlang" translate="no"><span class="w">  </span><span class="n">Prof</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">#</span><span class="ss">&#39;ServiceChangeProfile&#39;</span><span class="p" data-group-id="2065481368-1">{</span><span class="ss">profileName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;resgw&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="2065481368-1">}</span><span class="p">,</span><span class="w">
+  </span><span class="n">Parm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">#</span><span class="ss">&#39;ServiceChangeParm&#39;</span><span class="p" data-group-id="2065481368-2">{</span><span class="ss">serviceChangeMethod</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="ss">restart</span><span class="p">,</span><span class="w">
+                              </span><span class="ss">serviceChangeAddress</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="2065481368-3">{</span><span class="ss">portNumber</span><span class="p">,</span><span class="w"> </span><span class="mi">55555</span><span class="p" data-group-id="2065481368-3">}</span><span class="p">,</span><span class="w">
                               </span><span class="ss">serviceChangeReason</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;901 Cold Boot&quot;</span><span class="p">,</span><span class="w">
-                              </span><span class="ss">serviceChangeProfile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Prof</span><span class="p" data-group-id="3943453213-2">}</span><span class="p">,</span><span class="w">
-  </span><span class="n">Req</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">#</span><span class="ss">&#39;ServiceChangeRequest&#39;</span><span class="p" data-group-id="3943453213-4">{</span><span class="ss">terminationID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="3943453213-5">[</span><span class="o">?</span><span class="ss">megaco_root_termination_id</span><span class="p" data-group-id="3943453213-5">]</span><span class="p">,</span><span class="w">
-                                </span><span class="ss">serviceChangeParms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parm</span><span class="p" data-group-id="3943453213-4">}</span><span class="p">,</span><span class="w">
-  </span><span class="n">Actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="3943453213-6">[</span><span class="o">#</span><span class="ss">&#39;ActionRequest&#39;</span><span class="p" data-group-id="3943453213-7">{</span><span class="ss">contextId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span><span class="ss">megaco_null_context_id</span><span class="p">,</span><span class="w">
-                              </span><span class="ss">commandRequests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="3943453213-8">{</span><span class="ss">serviceChangeReq</span><span class="p">,</span><span class="w"> </span><span class="n">Req</span><span class="p" data-group-id="3943453213-8">}</span><span class="p" data-group-id="3943453213-7">}</span><span class="p" data-group-id="3943453213-6">]</span><span class="p">,</span><span class="w">
-  </span><span class="nc">megaco</span><span class="p">:</span><span class="nf">call</span><span class="p" data-group-id="3943453213-9">(</span><span class="n">ConnHandle</span><span class="p">,</span><span class="w"> </span><span class="n">Actions</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="3943453213-9">)</span><span class="p">.</span></code></pre><p>And finally a print-out of the entire internal form:</p><pre><code class="makeup erlang" translate="no"><span class="w">  </span><span class="p" data-group-id="4072503645-1">{</span><span class="ss">&#39;MegacoMessage&#39;</span><span class="p">,</span><span class="w">
+                              </span><span class="ss">serviceChangeProfile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Prof</span><span class="p" data-group-id="2065481368-2">}</span><span class="p">,</span><span class="w">
+  </span><span class="n">Req</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">#</span><span class="ss">&#39;ServiceChangeRequest&#39;</span><span class="p" data-group-id="2065481368-4">{</span><span class="ss">terminationID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="2065481368-5">[</span><span class="o">?</span><span class="ss">megaco_root_termination_id</span><span class="p" data-group-id="2065481368-5">]</span><span class="p">,</span><span class="w">
+                                </span><span class="ss">serviceChangeParms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Parm</span><span class="p" data-group-id="2065481368-4">}</span><span class="p">,</span><span class="w">
+  </span><span class="n">Actions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="2065481368-6">[</span><span class="o">#</span><span class="ss">&#39;ActionRequest&#39;</span><span class="p" data-group-id="2065481368-7">{</span><span class="ss">contextId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span><span class="ss">megaco_null_context_id</span><span class="p">,</span><span class="w">
+                              </span><span class="ss">commandRequests</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="2065481368-8">{</span><span class="ss">serviceChangeReq</span><span class="p">,</span><span class="w"> </span><span class="n">Req</span><span class="p" data-group-id="2065481368-8">}</span><span class="p" data-group-id="2065481368-7">}</span><span class="p" data-group-id="2065481368-6">]</span><span class="p">,</span><span class="w">
+  </span><span class="nc">megaco</span><span class="p">:</span><span class="nf">call</span><span class="p" data-group-id="2065481368-9">(</span><span class="n">ConnHandle</span><span class="p">,</span><span class="w"> </span><span class="n">Actions</span><span class="p">,</span><span class="w"> </span><span class="n">Config</span><span class="p" data-group-id="2065481368-9">)</span><span class="p">.</span></code></pre><p>And finally a print-out of the entire internal form:</p><pre><code class="makeup erlang" translate="no"><span class="w">  </span><span class="p" data-group-id="2551352452-1">{</span><span class="ss">&#39;MegacoMessage&#39;</span><span class="p">,</span><span class="w">
    </span><span class="ss">asn1_NOVALUE</span><span class="p">,</span><span class="w">
-   </span><span class="p" data-group-id="4072503645-2">{</span><span class="ss">&#39;Message&#39;</span><span class="p">,</span><span class="w">
+   </span><span class="p" data-group-id="2551352452-2">{</span><span class="ss">&#39;Message&#39;</span><span class="p">,</span><span class="w">
     </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="4072503645-3">{</span><span class="ss">ip4Address</span><span class="p">,</span><span class="p" data-group-id="4072503645-4">{</span><span class="ss">&#39;IP4Address&#39;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4072503645-5">[</span><span class="mi">124</span><span class="p">,</span><span class="mi">124</span><span class="p">,</span><span class="mi">124</span><span class="p">,</span><span class="mi">222</span><span class="p" data-group-id="4072503645-5">]</span><span class="p">,</span><span class="w"> </span><span class="ss">asn1_NOVALUE</span><span class="p" data-group-id="4072503645-4">}</span><span class="p" data-group-id="4072503645-3">}</span><span class="p">,</span><span class="w">
-    </span><span class="p" data-group-id="4072503645-6">{</span><span class="ss">transactions</span><span class="p">,</span><span class="w">
-     </span><span class="p" data-group-id="4072503645-7">[</span><span class="w">
-      </span><span class="p" data-group-id="4072503645-8">{</span><span class="ss">transactionRequest</span><span class="p">,</span><span class="w">
-       </span><span class="p" data-group-id="4072503645-9">{</span><span class="ss">&#39;TransactionRequest&#39;</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="2551352452-3">{</span><span class="ss">ip4Address</span><span class="p">,</span><span class="p" data-group-id="2551352452-4">{</span><span class="ss">&#39;IP4Address&#39;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2551352452-5">[</span><span class="mi">124</span><span class="p">,</span><span class="mi">124</span><span class="p">,</span><span class="mi">124</span><span class="p">,</span><span class="mi">222</span><span class="p" data-group-id="2551352452-5">]</span><span class="p">,</span><span class="w"> </span><span class="ss">asn1_NOVALUE</span><span class="p" data-group-id="2551352452-4">}</span><span class="p" data-group-id="2551352452-3">}</span><span class="p">,</span><span class="w">
+    </span><span class="p" data-group-id="2551352452-6">{</span><span class="ss">transactions</span><span class="p">,</span><span class="w">
+     </span><span class="p" data-group-id="2551352452-7">[</span><span class="w">
+      </span><span class="p" data-group-id="2551352452-8">{</span><span class="ss">transactionRequest</span><span class="p">,</span><span class="w">
+       </span><span class="p" data-group-id="2551352452-9">{</span><span class="ss">&#39;TransactionRequest&#39;</span><span class="p">,</span><span class="w">
          </span><span class="mi">9998</span><span class="p">,</span><span class="w">
-         </span><span class="p" data-group-id="4072503645-10">[</span><span class="p" data-group-id="4072503645-11">{</span><span class="ss">&#39;ActionRequest&#39;</span><span class="p">,</span><span class="w">
+         </span><span class="p" data-group-id="2551352452-10">[</span><span class="p" data-group-id="2551352452-11">{</span><span class="ss">&#39;ActionRequest&#39;</span><span class="p">,</span><span class="w">
            </span><span class="mi">0</span><span class="p">,</span><span class="w">
            </span><span class="ss">asn1_NOVALUE</span><span class="p">,</span><span class="w">
            </span><span class="ss">asn1_NOVALUE</span><span class="p">,</span><span class="w">
-           </span><span class="p" data-group-id="4072503645-12">[</span><span class="w">
-            </span><span class="p" data-group-id="4072503645-13">{</span><span class="ss">&#39;CommandRequest&#39;</span><span class="p">,</span><span class="w">
-             </span><span class="p" data-group-id="4072503645-14">{</span><span class="ss">serviceChangeReq</span><span class="p">,</span><span class="w">
-              </span><span class="p" data-group-id="4072503645-15">{</span><span class="ss">&#39;ServiceChangeRequest&#39;</span><span class="p">,</span><span class="w">
-               </span><span class="p" data-group-id="4072503645-16">[</span><span class="w">
-                </span><span class="p" data-group-id="4072503645-17">{</span><span class="ss">megaco_term_id</span><span class="p">,</span><span class="w"> </span><span class="ss">false</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4072503645-18">[</span><span class="s">&quot;root&quot;</span><span class="p" data-group-id="4072503645-18">]</span><span class="p" data-group-id="4072503645-17">}</span><span class="p" data-group-id="4072503645-16">]</span><span class="p">,</span><span class="w">
-                </span><span class="p" data-group-id="4072503645-19">{</span><span class="ss">&#39;ServiceChangeParm&#39;</span><span class="p">,</span><span class="w">
+           </span><span class="p" data-group-id="2551352452-12">[</span><span class="w">
+            </span><span class="p" data-group-id="2551352452-13">{</span><span class="ss">&#39;CommandRequest&#39;</span><span class="p">,</span><span class="w">
+             </span><span class="p" data-group-id="2551352452-14">{</span><span class="ss">serviceChangeReq</span><span class="p">,</span><span class="w">
+              </span><span class="p" data-group-id="2551352452-15">{</span><span class="ss">&#39;ServiceChangeRequest&#39;</span><span class="p">,</span><span class="w">
+               </span><span class="p" data-group-id="2551352452-16">[</span><span class="w">
+                </span><span class="p" data-group-id="2551352452-17">{</span><span class="ss">megaco_term_id</span><span class="p">,</span><span class="w"> </span><span class="ss">false</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2551352452-18">[</span><span class="s">&quot;root&quot;</span><span class="p" data-group-id="2551352452-18">]</span><span class="p" data-group-id="2551352452-17">}</span><span class="p" data-group-id="2551352452-16">]</span><span class="p">,</span><span class="w">
+                </span><span class="p" data-group-id="2551352452-19">{</span><span class="ss">&#39;ServiceChangeParm&#39;</span><span class="p">,</span><span class="w">
                  </span><span class="ss">restart</span><span class="p">,</span><span class="w">
-                 </span><span class="p" data-group-id="4072503645-20">{</span><span class="ss">portNumber</span><span class="p">,</span><span class="w"> </span><span class="mi">55555</span><span class="p" data-group-id="4072503645-20">}</span><span class="p">,</span><span class="w">
+                 </span><span class="p" data-group-id="2551352452-20">{</span><span class="ss">portNumber</span><span class="p">,</span><span class="w"> </span><span class="mi">55555</span><span class="p" data-group-id="2551352452-20">}</span><span class="p">,</span><span class="w">
                  </span><span class="ss">asn1_NOVALUE</span><span class="p">,</span><span class="w">
-                 </span><span class="p" data-group-id="4072503645-21">{</span><span class="ss">&#39;ServiceChangeProfile&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;resgw&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="4072503645-21">}</span><span class="p">,</span><span class="w">
+                 </span><span class="p" data-group-id="2551352452-21">{</span><span class="ss">&#39;ServiceChangeProfile&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;resgw&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="2551352452-21">}</span><span class="p">,</span><span class="w">
                  </span><span class="s">&quot;901 MG Cold Boot&quot;</span><span class="p">,</span><span class="w">
                  </span><span class="ss">asn1_NOVALUE</span><span class="p">,</span><span class="w">
                  </span><span class="ss">asn1_NOVALUE</span><span class="p">,</span><span class="w">
                  </span><span class="ss">asn1_NOVALUE</span><span class="w">
-                </span><span class="p" data-group-id="4072503645-19">}</span><span class="w">
-              </span><span class="p" data-group-id="4072503645-15">}</span><span class="w">
-             </span><span class="p" data-group-id="4072503645-14">}</span><span class="p">,</span><span class="w">
+                </span><span class="p" data-group-id="2551352452-19">}</span><span class="w">
+              </span><span class="p" data-group-id="2551352452-15">}</span><span class="w">
+             </span><span class="p" data-group-id="2551352452-14">}</span><span class="p">,</span><span class="w">
              </span><span class="ss">asn1_NOVALUE</span><span class="p">,</span><span class="w">
              </span><span class="ss">asn1_NOVALUE</span><span class="w">
-            </span><span class="p" data-group-id="4072503645-13">}</span><span class="w">
-           </span><span class="p" data-group-id="4072503645-12">]</span><span class="w">
-          </span><span class="p" data-group-id="4072503645-11">}</span><span class="w">
-         </span><span class="p" data-group-id="4072503645-10">]</span><span class="w">
-       </span><span class="p" data-group-id="4072503645-9">}</span><span class="w">
-      </span><span class="p" data-group-id="4072503645-8">}</span><span class="w">
-     </span><span class="p" data-group-id="4072503645-7">]</span><span class="w">
-    </span><span class="p" data-group-id="4072503645-6">}</span><span class="w">
-   </span><span class="p" data-group-id="4072503645-2">}</span><span class="w">
-  </span><span class="p" data-group-id="4072503645-1">}</span></code></pre><p>The following encoding modules are provided:</p><ul><li>megaco_pretty_text_encoder - encodes messages into pretty text format, decodes
+            </span><span class="p" data-group-id="2551352452-13">}</span><span class="w">
+           </span><span class="p" data-group-id="2551352452-12">]</span><span class="w">
+          </span><span class="p" data-group-id="2551352452-11">}</span><span class="w">
+         </span><span class="p" data-group-id="2551352452-10">]</span><span class="w">
+       </span><span class="p" data-group-id="2551352452-9">}</span><span class="w">
+      </span><span class="p" data-group-id="2551352452-8">}</span><span class="w">
+     </span><span class="p" data-group-id="2551352452-7">]</span><span class="w">
+    </span><span class="p" data-group-id="2551352452-6">}</span><span class="w">
+   </span><span class="p" data-group-id="2551352452-2">}</span><span class="w">
+  </span><span class="p" data-group-id="2551352452-1">}</span></code></pre><p>The following encoding modules are provided:</p><ul><li>megaco_pretty_text_encoder - encodes messages into pretty text format, decodes
 both pretty as well as compact text.</li><li>megaco_compact_text_encoder - encodes messages into compact text format,
 decodes both pretty as well as compact text.</li><li>megaco_binary_encoder - encode/decode ASN.1 BER messages. This encoder
 implements the fastest of the BER encoders/decoders. Recommended binary codec.</li><li>megaco_ber_encoder - encode/decode ASN.1 BER messages.</li><li>megaco_per_encoder - encode/decode ASN.1 PER messages. N.B. that this format

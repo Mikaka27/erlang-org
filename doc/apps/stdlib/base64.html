@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/base64.html" />
     <title>base64 — stdlib v7.1</title>
 
@@ -74,18 +73,18 @@ stdlib
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -659,16 +658,16 @@ encoded string.</p></li><li><p><strong><code class="inline">false</code></strong
 <p>Decodes a base64 string encoded using the standard alphabet according to
 <a href="https://datatracker.ietf.org/doc/html/rfc4648#section-4">RFC 4648 Section 4</a> to
 plain ASCII.</p><p>The function will strips away any whitespace characters and check for the
-the correct number of <code class="inline">=</code> padding characters at the end of the encoded string.</p><p>See <a href="#t:decode_options/0"><code class="inline">decode_options/0</code></a> for details on which options can be passed.</p><p><em>Example</em>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">base64</span><span class="p">:</span><span class="nf">decode</span><span class="p" data-group-id="4337023645-1">(</span><span class="s">&quot;AQIDBA==&quot;</span><span class="p" data-group-id="4337023645-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="4337023645-2">&lt;&lt;</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="4337023645-2">&gt;&gt;</span><span class="gp unselectable">
-2&gt; </span><span class="nc">base64</span><span class="p">:</span><span class="nf">decode</span><span class="p" data-group-id="4337023645-3">(</span><span class="s">&quot;AQ ID BA==&quot;</span><span class="p" data-group-id="4337023645-3">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="4337023645-4">&lt;&lt;</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="4337023645-4">&gt;&gt;</span><span class="gp unselectable">
-3&gt; </span><span class="nc">base64</span><span class="p">:</span><span class="nf">decode</span><span class="p" data-group-id="4337023645-5">(</span><span class="s">&quot;AQIDBA=&quot;</span><span class="p" data-group-id="4337023645-5">)</span><span class="p">.</span><span class="w">
+the correct number of <code class="inline">=</code> padding characters at the end of the encoded string.</p><p>See <a href="#t:decode_options/0"><code class="inline">decode_options/0</code></a> for details on which options can be passed.</p><p><em>Example</em>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">base64</span><span class="p">:</span><span class="nf">decode</span><span class="p" data-group-id="4167407061-1">(</span><span class="s">&quot;AQIDBA==&quot;</span><span class="p" data-group-id="4167407061-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4167407061-2">&lt;&lt;</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="4167407061-2">&gt;&gt;</span><span class="gp unselectable">
+2&gt; </span><span class="nc">base64</span><span class="p">:</span><span class="nf">decode</span><span class="p" data-group-id="4167407061-3">(</span><span class="s">&quot;AQ ID BA==&quot;</span><span class="p" data-group-id="4167407061-3">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4167407061-4">&lt;&lt;</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="4167407061-4">&gt;&gt;</span><span class="gp unselectable">
+3&gt; </span><span class="nc">base64</span><span class="p">:</span><span class="nf">decode</span><span class="p" data-group-id="4167407061-5">(</span><span class="s">&quot;AQIDBA=&quot;</span><span class="p" data-group-id="4167407061-5">)</span><span class="p">.</span><span class="w">
 </span><span class="gt">** exception error: missing_padding
      in function  base64:decode_list/7 (base64.erl, line 734)
         *** data to decode is missing final = padding characters, if this is intended, use the `padding =&gt; false` option</span><span class="gp unselectable">
-4&gt; </span><span class="nc">base64</span><span class="p">:</span><span class="nf">decode</span><span class="p" data-group-id="4337023645-6">(</span><span class="s">&quot;AQIDBA=&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4337023645-7">#{</span><span class="w"> </span><span class="ss">padding</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">false</span><span class="w"> </span><span class="p" data-group-id="4337023645-7">}</span><span class="p" data-group-id="4337023645-6">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="4337023645-8">&lt;&lt;</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="4337023645-8">&gt;&gt;</span></code></pre>
+4&gt; </span><span class="nc">base64</span><span class="p">:</span><span class="nf">decode</span><span class="p" data-group-id="4167407061-6">(</span><span class="s">&quot;AQIDBA=&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="4167407061-7">#{</span><span class="w"> </span><span class="ss">padding</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ss">false</span><span class="w"> </span><span class="p" data-group-id="4167407061-7">}</span><span class="p" data-group-id="4167407061-6">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="4167407061-8">&lt;&lt;</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="4167407061-8">&gt;&gt;</span></code></pre>
   </section>
 </section>
 <section class="detail" id="decode_to_string/1">
@@ -922,10 +921,10 @@ the correct number of <code class="inline">=</code> padding characters at the en
 <p>Decodes a base64 &quot;mime&quot; string encoded using the standard alphabet according to
 <a href="https://datatracker.ietf.org/doc/html/rfc4648#section-4">RFC 4648 Section 4</a> to
 plain ASCII.</p><p>The function will strips away any illegal characters. It does <em>not</em> check for the
-the correct number of <code class="inline">=</code> padding characters at the end of the encoded string.</p><p>See <a href="#t:decode_options/0"><code class="inline">decode_options/0</code></a> for details on which options can be passed.</p><p><em>Example</em>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">base64</span><span class="p">:</span><span class="nf">mime_decode</span><span class="p" data-group-id="6119503981-1">(</span><span class="s">&quot;AQIDBA==&quot;</span><span class="p" data-group-id="6119503981-1">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="6119503981-2">&lt;&lt;</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="6119503981-2">&gt;&gt;</span><span class="gp unselectable">
-2&gt; </span><span class="nc">base64</span><span class="p">:</span><span class="nf">mime_decode</span><span class="p" data-group-id="6119503981-3">(</span><span class="s">&quot;AQIDB=A=&quot;</span><span class="p" data-group-id="6119503981-3">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="6119503981-4">&lt;&lt;</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="6119503981-4">&gt;&gt;</span></code></pre>
+the correct number of <code class="inline">=</code> padding characters at the end of the encoded string.</p><p>See <a href="#t:decode_options/0"><code class="inline">decode_options/0</code></a> for details on which options can be passed.</p><p><em>Example</em>:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">base64</span><span class="p">:</span><span class="nf">mime_decode</span><span class="p" data-group-id="5059601145-1">(</span><span class="s">&quot;AQIDBA==&quot;</span><span class="p" data-group-id="5059601145-1">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="5059601145-2">&lt;&lt;</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="5059601145-2">&gt;&gt;</span><span class="gp unselectable">
+2&gt; </span><span class="nc">base64</span><span class="p">:</span><span class="nf">mime_decode</span><span class="p" data-group-id="5059601145-3">(</span><span class="s">&quot;AQIDB=A=&quot;</span><span class="p" data-group-id="5059601145-3">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="5059601145-4">&lt;&lt;</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p" data-group-id="5059601145-4">&gt;&gt;</span></code></pre>
   </section>
 </section>
 <section class="detail" id="mime_decode_to_string/1">

@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/common_test/unix_telnet.html" />
     <title>unix_telnet — common_test v1.29</title>
 
@@ -74,18 +73,18 @@ common_test
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -115,14 +114,14 @@ common_test
 
     <section id="moduledoc">
 <p>Callback module for <a href="ct_telnet.html"><code class="inline">ct_telnet</code></a>, for connecting to a Telnet server on a UNIX
-host.</p><p>It requires the following entry in the configuration file:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="0088904441-1">{</span><span class="ss">unix</span><span class="p">,</span><span class="p" data-group-id="0088904441-2">[</span><span class="p" data-group-id="0088904441-3">{</span><span class="ss">telnet</span><span class="p">,</span><span class="n">HostNameOrIpAddress</span><span class="p" data-group-id="0088904441-3">}</span><span class="p">,</span><span class="w">
-       </span><span class="p" data-group-id="0088904441-4">{</span><span class="ss">port</span><span class="p">,</span><span class="n">PortNum</span><span class="p" data-group-id="0088904441-4">}</span><span class="p">,</span><span class="w">                 </span><span class="c1">% optional</span><span class="w">
-       </span><span class="p" data-group-id="0088904441-5">{</span><span class="ss">username</span><span class="p">,</span><span class="n">UserName</span><span class="p" data-group-id="0088904441-5">}</span><span class="p">,</span><span class="w">
-       </span><span class="p" data-group-id="0088904441-6">{</span><span class="ss">password</span><span class="p">,</span><span class="n">Password</span><span class="p" data-group-id="0088904441-6">}</span><span class="p">,</span><span class="w">
-       </span><span class="p" data-group-id="0088904441-7">{</span><span class="ss">keep_alive</span><span class="p">,</span><span class="n">Bool</span><span class="p" data-group-id="0088904441-7">}</span><span class="p" data-group-id="0088904441-2">]</span><span class="p" data-group-id="0088904441-1">}</span><span class="p">.</span><span class="w">            </span><span class="c1">% optional</span></code></pre><p>To communicate through Telnet to the host specified by <code class="inline">HostNameOrIpAddress</code>,
+host.</p><p>It requires the following entry in the configuration file:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="8814201302-1">{</span><span class="ss">unix</span><span class="p">,</span><span class="p" data-group-id="8814201302-2">[</span><span class="p" data-group-id="8814201302-3">{</span><span class="ss">telnet</span><span class="p">,</span><span class="n">HostNameOrIpAddress</span><span class="p" data-group-id="8814201302-3">}</span><span class="p">,</span><span class="w">
+       </span><span class="p" data-group-id="8814201302-4">{</span><span class="ss">port</span><span class="p">,</span><span class="n">PortNum</span><span class="p" data-group-id="8814201302-4">}</span><span class="p">,</span><span class="w">                 </span><span class="c1">% optional</span><span class="w">
+       </span><span class="p" data-group-id="8814201302-5">{</span><span class="ss">username</span><span class="p">,</span><span class="n">UserName</span><span class="p" data-group-id="8814201302-5">}</span><span class="p">,</span><span class="w">
+       </span><span class="p" data-group-id="8814201302-6">{</span><span class="ss">password</span><span class="p">,</span><span class="n">Password</span><span class="p" data-group-id="8814201302-6">}</span><span class="p">,</span><span class="w">
+       </span><span class="p" data-group-id="8814201302-7">{</span><span class="ss">keep_alive</span><span class="p">,</span><span class="n">Bool</span><span class="p" data-group-id="8814201302-7">}</span><span class="p" data-group-id="8814201302-2">]</span><span class="p" data-group-id="8814201302-1">}</span><span class="p">.</span><span class="w">            </span><span class="c1">% optional</span></code></pre><p>To communicate through Telnet to the host specified by <code class="inline">HostNameOrIpAddress</code>,
 use the interface functions in <a href="ct_telnet.html"><code class="inline">ct_telnet</code></a>, for example, <code class="inline">open(Name)</code> and
 <code class="inline">cmd(Name,Cmd)</code>.</p><p><code class="inline">Name</code> is the name you allocated to the Unix host in your <code class="inline">require</code> statement,
-for example:</p><pre><code class="makeup erlang" translate="no"><span class="nf">suite</span><span class="p" data-group-id="2147148873-1">(</span><span class="p" data-group-id="2147148873-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="2147148873-2">[</span><span class="p" data-group-id="2147148873-3">{</span><span class="ss">require</span><span class="p">,</span><span class="n">Name</span><span class="p">,</span><span class="p" data-group-id="2147148873-4">{</span><span class="ss">unix</span><span class="p">,</span><span class="p" data-group-id="2147148873-5">[</span><span class="ss">telnet</span><span class="p" data-group-id="2147148873-5">]</span><span class="p" data-group-id="2147148873-4">}</span><span class="p" data-group-id="2147148873-3">}</span><span class="p" data-group-id="2147148873-2">]</span><span class="p">.</span></code></pre><p>or</p><pre><code class="makeup erlang" translate="no"><span class="nc">ct</span><span class="p">:</span><span class="nf">require</span><span class="p" data-group-id="1640621463-1">(</span><span class="n">Name</span><span class="p">,</span><span class="p" data-group-id="1640621463-2">{</span><span class="ss">unix</span><span class="p">,</span><span class="p" data-group-id="1640621463-3">[</span><span class="ss">telnet</span><span class="p" data-group-id="1640621463-3">]</span><span class="p" data-group-id="1640621463-2">}</span><span class="p" data-group-id="1640621463-1">)</span><span class="p">.</span></code></pre><p>The &quot;keep alive&quot; activity (that is, that <code class="inline">Common Test</code> sends NOP to the server
+for example:</p><pre><code class="makeup erlang" translate="no"><span class="nf">suite</span><span class="p" data-group-id="0056915128-1">(</span><span class="p" data-group-id="0056915128-1">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="p" data-group-id="0056915128-2">[</span><span class="p" data-group-id="0056915128-3">{</span><span class="ss">require</span><span class="p">,</span><span class="n">Name</span><span class="p">,</span><span class="p" data-group-id="0056915128-4">{</span><span class="ss">unix</span><span class="p">,</span><span class="p" data-group-id="0056915128-5">[</span><span class="ss">telnet</span><span class="p" data-group-id="0056915128-5">]</span><span class="p" data-group-id="0056915128-4">}</span><span class="p" data-group-id="0056915128-3">}</span><span class="p" data-group-id="0056915128-2">]</span><span class="p">.</span></code></pre><p>or</p><pre><code class="makeup erlang" translate="no"><span class="nc">ct</span><span class="p">:</span><span class="nf">require</span><span class="p" data-group-id="0931202550-1">(</span><span class="n">Name</span><span class="p">,</span><span class="p" data-group-id="0931202550-2">{</span><span class="ss">unix</span><span class="p">,</span><span class="p" data-group-id="0931202550-3">[</span><span class="ss">telnet</span><span class="p" data-group-id="0931202550-3">]</span><span class="p" data-group-id="0931202550-2">}</span><span class="p" data-group-id="0931202550-1">)</span><span class="p">.</span></code></pre><p>The &quot;keep alive&quot; activity (that is, that <code class="inline">Common Test</code> sends NOP to the server
 every 10 seconds if the connection is idle) can be enabled or disabled for one
 particular connection as described here. It can be disabled for all connections
 using <code class="inline">telnet_settings</code> (see <a href="ct_telnet.html"><code class="inline">ct_telnet</code></a>).</p><p>The <code class="inline">{port,PortNum}</code> tuple is optional and if omitted, default Telnet port 23 is

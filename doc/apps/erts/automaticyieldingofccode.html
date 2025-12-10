@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/erts/automaticyieldingofccode.html" />
     <title>Automatic Yielding of C Code — erts v16.1.2</title>
 
@@ -74,18 +73,18 @@ erts
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -156,9 +155,9 @@ the function is transformed by YCF (see <code class="inline">maps_values_1_helpe
 function is used, the convention is to &quot;comment out&quot; the source for the
 function by surrounding it with the following <code class="inline">#ifdef</code> (this way, one
 will not get warnings about unused functions):</p><pre><code class="makeup erlang" translate="no"><span class="p">#</span><span class="ss">ifdef</span><span class="w"> </span><span class="n">INCLUDE_YCF_TRANSFORMED_ONLY_FUNCTIONS</span><span class="w">
-</span><span class="ss">void</span><span class="w"> </span><span class="nf">my_fun</span><span class="p" data-group-id="5581114684-1">(</span><span class="p" data-group-id="5581114684-1">)</span><span class="w"> </span><span class="p" data-group-id="5581114684-2">{</span><span class="w">
+</span><span class="ss">void</span><span class="w"> </span><span class="nf">my_fun</span><span class="p" data-group-id="8972569654-1">(</span><span class="p" data-group-id="8972569654-1">)</span><span class="w"> </span><span class="p" data-group-id="8972569654-2">{</span><span class="w">
     </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="5581114684-2">}</span><span class="w">
+</span><span class="p" data-group-id="8972569654-2">}</span><span class="w">
 </span><span class="p">#</span><span class="ss">endif</span><span class="w"> </span><span class="o">/</span><span class="o">*</span><span class="w"> </span><span class="n">INCLUDE_YCF_TRANSFORMED_ONLY_FUNCTIONS</span><span class="w"> </span><span class="o">*</span><span class="o">/</span></code></pre><p>While editing the function one can define
 <code class="inline">INCLUDE_YCF_TRANSFORMED_ONLY_FUNCTIONS</code> so that one can see errors
 and warnings in the non-transformed source.</p><h3 id="where-to-place-ycf-transformed-functions" class="section-heading"><a href="#where-to-place-ycf-transformed-functions" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Where to Place YCF Transformed Functions</span></h3><p>The convention is to place the non-transformed source for the functions

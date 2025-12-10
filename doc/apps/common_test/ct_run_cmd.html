@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/common_test/ct_run_cmd.html" />
     <title>ct_run — common_test v1.29</title>
 
@@ -74,18 +73,18 @@ common_test
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -206,10 +205,10 @@ test result, <code class="inline">1</code> indicates one or more failed or auto-
   [-ct_hooks_order test | config]
   [-exit_status ignore_config]</code></pre><h2 id="refresh-html-index-files" class="section-heading"><a href="#refresh-html-index-files" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Refresh HTML Index Files</span></h2><pre><code class="text"> ct_run -refresh_logs [-logdir LogDir] [-basic_html]
   [-keep_logs all | NLogs]</code></pre><h2 id="run-common-test-in-interactive-mode" class="section-heading"><a href="#run-common-test-in-interactive-mode" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Run Common Test in Interactive Mode</span></h2><pre><code class="makeup erlang" translate="no"><span class="w"> </span><span class="ss">ct_run</span><span class="w"> </span><span class="o">-</span><span class="ss">shell</span><span class="w">
-  </span><span class="p" data-group-id="6623141837-1">[</span><span class="o">-</span><span class="ss">config</span><span class="w"> </span><span class="n">ConfigFile1</span><span class="w"> </span><span class="n">ConfigFile2</span><span class="w"> </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="w"> </span><span class="n">ConfigFileN</span><span class="p" data-group-id="6623141837-1">]</span><span class="w">
-  </span><span class="p" data-group-id="6623141837-2">[</span><span class="o">-</span><span class="ss">userconfig</span><span class="w"> </span><span class="n">CallbackModule1</span><span class="w"> </span><span class="n">ConfigString1</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">CallbackModule2</span><span class="w">
-   </span><span class="n">ConfigString2</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="p">.</span><span class="p">.</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">CallbackModuleN</span><span class="w"> </span><span class="n">ConfigStringN</span><span class="p" data-group-id="6623141837-2">]</span><span class="w">
-  </span><span class="p" data-group-id="6623141837-3">[</span><span class="o">-</span><span class="ss">decrypt_key</span><span class="w"> </span><span class="n">Key</span><span class="p" data-group-id="6623141837-3">]</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p" data-group-id="6623141837-4">[</span><span class="o">-</span><span class="ss">decrypt_file</span><span class="w"> </span><span class="n">KeyFile</span><span class="p" data-group-id="6623141837-4">]</span></code></pre><h2 id="start-a-common-test-master-node" class="section-heading"><a href="#start-a-common-test-master-node" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Start a Common Test Master Node</span></h2><pre><code class="text"> ct_run -ctmaster</code></pre><h2 id="see-also" class="section-heading"><a href="#see-also" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">See Also</span></h2><p>For information about the start flags, see section
+  </span><span class="p" data-group-id="4474130040-1">[</span><span class="o">-</span><span class="ss">config</span><span class="w"> </span><span class="n">ConfigFile1</span><span class="w"> </span><span class="n">ConfigFile2</span><span class="w"> </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="w"> </span><span class="n">ConfigFileN</span><span class="p" data-group-id="4474130040-1">]</span><span class="w">
+  </span><span class="p" data-group-id="4474130040-2">[</span><span class="o">-</span><span class="ss">userconfig</span><span class="w"> </span><span class="n">CallbackModule1</span><span class="w"> </span><span class="n">ConfigString1</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">CallbackModule2</span><span class="w">
+   </span><span class="n">ConfigString2</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="p">.</span><span class="p">.</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">CallbackModuleN</span><span class="w"> </span><span class="n">ConfigStringN</span><span class="p" data-group-id="4474130040-2">]</span><span class="w">
+  </span><span class="p" data-group-id="4474130040-3">[</span><span class="o">-</span><span class="ss">decrypt_key</span><span class="w"> </span><span class="n">Key</span><span class="p" data-group-id="4474130040-3">]</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p" data-group-id="4474130040-4">[</span><span class="o">-</span><span class="ss">decrypt_file</span><span class="w"> </span><span class="n">KeyFile</span><span class="p" data-group-id="4474130040-4">]</span></code></pre><h2 id="start-a-common-test-master-node" class="section-heading"><a href="#start-a-common-test-master-node" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Start a Common Test Master Node</span></h2><pre><code class="text"> ct_run -ctmaster</code></pre><h2 id="see-also" class="section-heading"><a href="#see-also" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">See Also</span></h2><p>For information about the start flags, see section
 <a href="run_test_chapter.html">Running Tests and Analyzing Results</a> in the User's Guide.</p>
 
 </div>

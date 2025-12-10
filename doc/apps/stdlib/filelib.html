@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/filelib.html" />
     <title>filelib — stdlib v7.1</title>
 
@@ -74,18 +73,18 @@ stdlib
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -1018,15 +1017,15 @@ in valid UTF-8).</p><p>For more information about raw filenames, see the <a href
 
 <p>Sanitizes the relative path by eliminating &quot;..&quot; and &quot;.&quot; components to protect
 against directory traversal attacks.</p><p>Either returns the sanitized path name, or the atom <code class="inline">unsafe</code> if the path is unsafe.
-The path is considered unsafe in the following circumstances:</p><ul><li>The path is not relative.</li><li>A &quot;..&quot; component would climb up above the root of the relative path.</li><li>A symbolic link in the path points above the root of the relative path.</li></ul><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="p" data-group-id="1430022652-1">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">Cwd</span><span class="p" data-group-id="1430022652-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">file</span><span class="p">:</span><span class="nf">get_cwd</span><span class="p" data-group-id="1430022652-2">(</span><span class="p" data-group-id="1430022652-2">)</span><span class="p">.</span><span class="w">
+The path is considered unsafe in the following circumstances:</p><ul><li>The path is not relative.</li><li>A &quot;..&quot; component would climb up above the root of the relative path.</li><li>A symbolic link in the path points above the root of the relative path.</li></ul><p><em>Examples:</em></p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="p" data-group-id="5103090622-1">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">Cwd</span><span class="p" data-group-id="5103090622-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">file</span><span class="p">:</span><span class="nf">get_cwd</span><span class="p" data-group-id="5103090622-2">(</span><span class="p" data-group-id="5103090622-2">)</span><span class="p">.</span><span class="w">
 </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="gp unselectable">
-2&gt; </span><span class="nc">filelib</span><span class="p">:</span><span class="nf">safe_relative_path</span><span class="p" data-group-id="1430022652-3">(</span><span class="s">&quot;dir/sub_dir/..&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Cwd</span><span class="p" data-group-id="1430022652-3">)</span><span class="p">.</span><span class="w">
+2&gt; </span><span class="nc">filelib</span><span class="p">:</span><span class="nf">safe_relative_path</span><span class="p" data-group-id="5103090622-3">(</span><span class="s">&quot;dir/sub_dir/..&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Cwd</span><span class="p" data-group-id="5103090622-3">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;dir&quot;</span><span class="gp unselectable">
-3&gt; </span><span class="nc">filelib</span><span class="p">:</span><span class="nf">safe_relative_path</span><span class="p" data-group-id="1430022652-4">(</span><span class="s">&quot;dir/..&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Cwd</span><span class="p" data-group-id="1430022652-4">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="1430022652-5">[</span><span class="p" data-group-id="1430022652-5">]</span><span class="gp unselectable">
-4&gt; </span><span class="nc">filelib</span><span class="p">:</span><span class="nf">safe_relative_path</span><span class="p" data-group-id="1430022652-6">(</span><span class="s">&quot;dir/../..&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Cwd</span><span class="p" data-group-id="1430022652-6">)</span><span class="p">.</span><span class="w">
+3&gt; </span><span class="nc">filelib</span><span class="p">:</span><span class="nf">safe_relative_path</span><span class="p" data-group-id="5103090622-4">(</span><span class="s">&quot;dir/..&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Cwd</span><span class="p" data-group-id="5103090622-4">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="5103090622-5">[</span><span class="p" data-group-id="5103090622-5">]</span><span class="gp unselectable">
+4&gt; </span><span class="nc">filelib</span><span class="p">:</span><span class="nf">safe_relative_path</span><span class="p" data-group-id="5103090622-6">(</span><span class="s">&quot;dir/../..&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Cwd</span><span class="p" data-group-id="5103090622-6">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">unsafe</span><span class="gp unselectable">
-5&gt; </span><span class="nc">filelib</span><span class="p">:</span><span class="nf">safe_relative_path</span><span class="p" data-group-id="1430022652-7">(</span><span class="s">&quot;/abs/path&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Cwd</span><span class="p" data-group-id="1430022652-7">)</span><span class="p">.</span><span class="w">
+5&gt; </span><span class="nc">filelib</span><span class="p">:</span><span class="nf">safe_relative_path</span><span class="p" data-group-id="5103090622-7">(</span><span class="s">&quot;/abs/path&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Cwd</span><span class="p" data-group-id="5103090622-7">)</span><span class="p">.</span><span class="w">
 </span><span class="ss">unsafe</span></code></pre>
   </section>
 </section>

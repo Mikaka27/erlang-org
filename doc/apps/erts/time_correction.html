@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/erts/time_correction.html" />
     <title>Time and Time Correction in Erlang — erts v16.1.2</title>
 
@@ -74,18 +73,18 @@ erts
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -387,9 +386,9 @@ runtime system instance corresponding to creation time.</p></section><h4>Determi
 the event occurs.</p></section><section role="note" class="admonition tip"><h4 class="admonition-title tip">Do</h4><p>Determine the order of events by saving a tuple containing
 <a href="erlang.html#monotonic_time/0">monotonic time</a> and a
 <a href="erlang.html#unique_integer/1">strictly monotonically increasing integer</a> as
-follows:</p><pre><code class="makeup erlang" translate="no"><span class="n">Time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">erlang</span><span class="p">:</span><span class="nf">monotonic_time</span><span class="p" data-group-id="5183435578-1">(</span><span class="p" data-group-id="5183435578-1">)</span><span class="p">,</span><span class="w">
-</span><span class="n">UMI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">erlang</span><span class="p">:</span><span class="nf">unique_integer</span><span class="p" data-group-id="5183435578-2">(</span><span class="p" data-group-id="5183435578-3">[</span><span class="ss">monotonic</span><span class="p" data-group-id="5183435578-3">]</span><span class="p" data-group-id="5183435578-2">)</span><span class="p">,</span><span class="w">
-</span><span class="n">EventTag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="5183435578-4">{</span><span class="n">Time</span><span class="p">,</span><span class="w"> </span><span class="n">UMI</span><span class="p" data-group-id="5183435578-4">}</span></code></pre><p>These tuples are strictly monotonically ordered on the current runtime system
+follows:</p><pre><code class="makeup erlang" translate="no"><span class="n">Time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">erlang</span><span class="p">:</span><span class="nf">monotonic_time</span><span class="p" data-group-id="4190887543-1">(</span><span class="p" data-group-id="4190887543-1">)</span><span class="p">,</span><span class="w">
+</span><span class="n">UMI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">erlang</span><span class="p">:</span><span class="nf">unique_integer</span><span class="p" data-group-id="4190887543-2">(</span><span class="p" data-group-id="4190887543-3">[</span><span class="ss">monotonic</span><span class="p" data-group-id="4190887543-3">]</span><span class="p" data-group-id="4190887543-2">)</span><span class="p">,</span><span class="w">
+</span><span class="n">EventTag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="4190887543-4">{</span><span class="n">Time</span><span class="p">,</span><span class="w"> </span><span class="n">UMI</span><span class="p" data-group-id="4190887543-4">}</span></code></pre><p>These tuples are strictly monotonically ordered on the current runtime system
 instance according to creation time. It is important that the monotonic time
 is in the first element (the most significant element when comparing
 two-tuples). Using the monotonic time in the tuples, you can calculate time

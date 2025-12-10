@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/debugger/int.html" />
     <title>int — debugger v6.0.3</title>
 
@@ -74,18 +73,18 @@ debugger
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -667,7 +666,7 @@ interpreted modules.</p><p>See <a href="#auto_attach/2"><code class="inline">aut
 <p>Sets when and how to attach automatically to a process executing code
 in interpreted modules.</p><p>By default when the interpreter is started, automatic attach is disabled.</p><p>If <code class="inline">Flags</code> is an empty list, automatic attach is disabled.</p><p>Otherwise <code class="inline">Flags</code> should be a list containing  at least one of the following
 flags:</p><ul><li><code class="inline">init</code> - Attach when a process for the first time calls an interpreted
-function.</li><li><code class="inline">break</code> - Attach whenever a process reaches a breakpoint.</li><li><code class="inline">exit</code> - Attach when a process terminates.</li></ul><p>When the specified event occurs, the function <code class="inline">Function</code> is called as:</p><pre><code class="makeup erlang" translate="no"><span class="nf">spawn</span><span class="p" data-group-id="8385696449-1">(</span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8385696449-2">[</span><span class="n">Pid</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="n">Args</span><span class="p" data-group-id="8385696449-2">]</span><span class="p" data-group-id="8385696449-1">)</span></code></pre><p><code class="inline">Pid</code> is the pid of the process executing interpreted code.</p>
+function.</li><li><code class="inline">break</code> - Attach whenever a process reaches a breakpoint.</li><li><code class="inline">exit</code> - Attach when a process terminates.</li></ul><p>When the specified event occurs, the function <code class="inline">Function</code> is called as:</p><pre><code class="makeup erlang" translate="no"><span class="nf">spawn</span><span class="p" data-group-id="0559936263-1">(</span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0559936263-2">[</span><span class="n">Pid</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="n">Args</span><span class="p" data-group-id="0559936263-2">]</span><span class="p" data-group-id="0559936263-1">)</span></code></pre><p><code class="inline">Pid</code> is the pid of the process executing interpreted code.</p>
   </section>
 </section>
 <section class="detail" id="break/2">

@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/xmerl/xmerl_xsd.html" />
     <title>xmerl_xsd — xmerl v2.1.7</title>
 
@@ -74,18 +73,18 @@ xmerl
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -794,9 +793,9 @@ of the schema information and therefore if one shall validate
 several times towards the same schema it reduces time consumption.</p><p>The result, <code class="inline">ValidElement</code>, is the valid element that conforms to the
 post-schema-validation infoset. When the validator finds an error it tries to
 continue and reports a list of all errors found. In those cases an unexpected
-error is found it may cause a single error reason.</p><p>Usage example:</p><pre><code class="makeup erlang" translate="no"><span class="mi">1</span><span class="o">&gt;</span><span class="p" data-group-id="4621756492-1">{</span><span class="n">E</span><span class="p">,</span><span class="p">_</span><span class="p" data-group-id="4621756492-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">xmerl_scan</span><span class="p">:</span><span class="nf">file</span><span class="p" data-group-id="4621756492-2">(</span><span class="s">&quot;my_XML_document.xml&quot;</span><span class="p" data-group-id="4621756492-2">)</span><span class="p">.</span><span class="w">
-</span><span class="mi">2</span><span class="o">&gt;</span><span class="p" data-group-id="4621756492-3">{</span><span class="ss">ok</span><span class="p">,</span><span class="n">S</span><span class="p" data-group-id="4621756492-3">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">xmerl_xsd</span><span class="p">:</span><span class="nf">process_schema</span><span class="p" data-group-id="4621756492-4">(</span><span class="s">&quot;my_XML_Schema.xsd&quot;</span><span class="p" data-group-id="4621756492-4">)</span><span class="p">.</span><span class="w">
-</span><span class="mi">3</span><span class="o">&gt;</span><span class="p" data-group-id="4621756492-5">{</span><span class="n">E2</span><span class="p">,</span><span class="p">_</span><span class="p" data-group-id="4621756492-5">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">xmerl_xsd</span><span class="p">:</span><span class="nf">validate</span><span class="p" data-group-id="4621756492-6">(</span><span class="n">E</span><span class="p">,</span><span class="n">S</span><span class="p" data-group-id="4621756492-6">)</span><span class="p">.</span></code></pre><p>Observe that E2 may differ from E if for instance there are default values
+error is found it may cause a single error reason.</p><p>Usage example:</p><pre><code class="makeup erlang" translate="no"><span class="mi">1</span><span class="o">&gt;</span><span class="p" data-group-id="2102997180-1">{</span><span class="n">E</span><span class="p">,</span><span class="p">_</span><span class="p" data-group-id="2102997180-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">xmerl_scan</span><span class="p">:</span><span class="nf">file</span><span class="p" data-group-id="2102997180-2">(</span><span class="s">&quot;my_XML_document.xml&quot;</span><span class="p" data-group-id="2102997180-2">)</span><span class="p">.</span><span class="w">
+</span><span class="mi">2</span><span class="o">&gt;</span><span class="p" data-group-id="2102997180-3">{</span><span class="ss">ok</span><span class="p">,</span><span class="n">S</span><span class="p" data-group-id="2102997180-3">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">xmerl_xsd</span><span class="p">:</span><span class="nf">process_schema</span><span class="p" data-group-id="2102997180-4">(</span><span class="s">&quot;my_XML_Schema.xsd&quot;</span><span class="p" data-group-id="2102997180-4">)</span><span class="p">.</span><span class="w">
+</span><span class="mi">3</span><span class="o">&gt;</span><span class="p" data-group-id="2102997180-5">{</span><span class="n">E2</span><span class="p">,</span><span class="p">_</span><span class="p" data-group-id="2102997180-5">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">xmerl_xsd</span><span class="p">:</span><span class="nf">validate</span><span class="p" data-group-id="2102997180-6">(</span><span class="n">E</span><span class="p">,</span><span class="n">S</span><span class="p" data-group-id="2102997180-6">)</span><span class="p">.</span></code></pre><p>Observe that E2 may differ from E if for instance there are default values
 defined in <code class="inline">my_XML_Schema.xsd</code>.</p>
   </section>
 </section>

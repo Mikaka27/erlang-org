@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/stdlib/shell_default.html" />
     <title>shell_default — stdlib v7.1</title>
 
@@ -74,18 +73,18 @@ stdlib
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -115,10 +114,10 @@ stdlib
 
     <section id="moduledoc">
 <p>Customizing the Erlang environment.</p><p>The functions in this module are called when no module name is specified in a
-shell command.</p><p>Consider the following shell dialog:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">lists</span><span class="p">:</span><span class="nf">reverse</span><span class="p" data-group-id="8950363627-1">(</span><span class="s">&quot;abc&quot;</span><span class="p" data-group-id="8950363627-1">)</span><span class="p">.</span><span class="w">
+shell command.</p><p>Consider the following shell dialog:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">1&gt; </span><span class="nc">lists</span><span class="p">:</span><span class="nf">reverse</span><span class="p" data-group-id="9794057323-1">(</span><span class="s">&quot;abc&quot;</span><span class="p" data-group-id="9794057323-1">)</span><span class="p">.</span><span class="w">
 </span><span class="s">&quot;cba&quot;</span><span class="gp unselectable">
-2&gt; </span><span class="nf">c</span><span class="p" data-group-id="8950363627-2">(</span><span class="ss">foo</span><span class="p" data-group-id="8950363627-2">)</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="8950363627-3">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="ss">foo</span><span class="p" data-group-id="8950363627-3">}</span></code></pre><p>In command one, module <a href="lists.html"><code class="inline">lists</code></a> is called. In command two, no module name is
+2&gt; </span><span class="nf">c</span><span class="p" data-group-id="9794057323-2">(</span><span class="ss">foo</span><span class="p" data-group-id="9794057323-2">)</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="9794057323-3">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="ss">foo</span><span class="p" data-group-id="9794057323-3">}</span></code></pre><p>In command one, module <a href="lists.html"><code class="inline">lists</code></a> is called. In command two, no module name is
 specified. The shell searches module <code class="inline">user_default</code> followed by module
 <code class="inline">shell_default</code> for function <code class="inline">c/1</code>.</p><p><code class="inline">shell_default</code> is intended for &quot;system wide&quot; customizations to the shell.
 <code class="inline">user_default</code> is intended for &quot;local&quot; or individual user customizations.</p><h2 id="module-hint" class="section-heading"><a href="#module-hint" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Hint</span></h2><p>To add your own commands to the shell, create a module called <code class="inline">user_default</code> and

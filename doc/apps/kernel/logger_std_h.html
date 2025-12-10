@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/kernel/logger_std_h.html" />
     <title>logger_std_h — kernel v10.4.2</title>
 
@@ -74,18 +73,18 @@ kernel
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -171,9 +170,9 @@ perform a file sync.</p><p>Defaults to <code class="inline">5000</code> millisec
 protection behaviour. The same parameters are used both in the standard handler
 and the disk_log handler, and are documented in the
 <a href="logger_chapter.html#overload_protection"><code class="inline">User's Guide</code></a>.</p><p>Notice that if changing the configuration of the handler in runtime, the <code class="inline">type</code>,
-<code class="inline">file</code>, or <code class="inline">modes</code> parameters must not be modified.</p><p>Example of adding a standard handler:</p><pre><code class="makeup erlang" translate="no"><span class="nc">logger</span><span class="p">:</span><span class="nf">add_handler</span><span class="p" data-group-id="7459796792-1">(</span><span class="ss">my_standard_h</span><span class="p">,</span><span class="w"> </span><span class="ss">logger_std_h</span><span class="p">,</span><span class="w">
-                   </span><span class="p" data-group-id="7459796792-2">#{</span><span class="ss">config</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="7459796792-3">#{</span><span class="ss">file</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;./system_info.log&quot;</span><span class="p">,</span><span class="w">
-                                 </span><span class="ss">filesync_repeat_interval</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">1000</span><span class="p" data-group-id="7459796792-3">}</span><span class="p" data-group-id="7459796792-2">}</span><span class="p" data-group-id="7459796792-1">)</span><span class="p">.</span></code></pre><p>To set the default handler, that starts initially with the Kernel application,
+<code class="inline">file</code>, or <code class="inline">modes</code> parameters must not be modified.</p><p>Example of adding a standard handler:</p><pre><code class="makeup erlang" translate="no"><span class="nc">logger</span><span class="p">:</span><span class="nf">add_handler</span><span class="p" data-group-id="7908225151-1">(</span><span class="ss">my_standard_h</span><span class="p">,</span><span class="w"> </span><span class="ss">logger_std_h</span><span class="p">,</span><span class="w">
+                   </span><span class="p" data-group-id="7908225151-2">#{</span><span class="ss">config</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="7908225151-3">#{</span><span class="ss">file</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;./system_info.log&quot;</span><span class="p">,</span><span class="w">
+                                 </span><span class="ss">filesync_repeat_interval</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="mi">1000</span><span class="p" data-group-id="7908225151-3">}</span><span class="p" data-group-id="7908225151-2">}</span><span class="p" data-group-id="7908225151-1">)</span><span class="p">.</span></code></pre><p>To set the default handler, that starts initially with the Kernel application,
 to log to file instead of <a href="../../apps/stdlib/io.html#t:standard_io/0"><code class="inline">standard_io</code></a>, change the
 Kernel default logger configuration. Example:</p><pre><code class="text">erl -kernel logger '[{handler,default,logger_std_h,
                       #{config =&gt; #{file =&gt; &quot;./log.log&quot;}}}]'</code></pre><p>An example of how to replace the standard handler with a disk_log handler at

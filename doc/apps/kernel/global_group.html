@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/kernel/global_group.html" />
     <title>global_group — kernel v10.4.2</title>
 
@@ -74,18 +73,18 @@ kernel
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -118,7 +117,7 @@ kernel
 groups</em>. Each global group has its own global namespace, see <a href="global.html"><code class="inline">global</code></a>.</p><p>The main advantage of dividing systems into global groups is that the background
 load decreases while the number of nodes to be updated is reduced when
 manipulating globally registered names.</p><p>The Kernel configuration parameter <a href="kernel_app.html#global_groups"><code class="inline">global_groups</code></a>
-defines the global groups:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="8911101603-1">{</span><span class="ss">global_groups</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="8911101603-2">[</span><span class="n">GroupTuple</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">group_tuple</span><span class="p" data-group-id="8911101603-3">(</span><span class="p" data-group-id="8911101603-3">)</span><span class="p" data-group-id="8911101603-2">]</span><span class="p" data-group-id="8911101603-1">}</span></code></pre><p>For the processes and nodes to run smoothly using the global group
+defines the global groups:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="7992064871-1">{</span><span class="ss">global_groups</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="7992064871-2">[</span><span class="n">GroupTuple</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">group_tuple</span><span class="p" data-group-id="7992064871-3">(</span><span class="p" data-group-id="7992064871-3">)</span><span class="p" data-group-id="7992064871-2">]</span><span class="p" data-group-id="7992064871-1">}</span></code></pre><p>For the processes and nodes to run smoothly using the global group
 functionality, the following criteria must be met:</p><ul><li>An instance of the global group server, <code class="inline">global_group</code>, must be running on
 each node. The processes are automatically started and synchronized when a
 node is started.</li><li>All involved nodes must agree on the global group definition, otherwise the

@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/tools/cprof.html" />
     <title>cprof — tools v4.1.3</title>
 
@@ -74,18 +73,18 @@ tools
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -578,7 +577,7 @@ The result from those calls are returned in a list.</p>
 
       </div>
 
-<p>Collects and analyses all call counters for module <code class="inline">Module</code>.</p><p>This function returns:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="5479048712-1">{</span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">ModuleCount</span><span class="p">,</span><span class="w"> </span><span class="n">FuncAnalysisList</span><span class="p" data-group-id="5479048712-1">}</span></code></pre><p>where <code class="inline">FuncAnalysisList</code> is a list of tuples, one for each function:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="2827863445-1">{</span><span class="p" data-group-id="2827863445-2">{</span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">FunctionName</span><span class="p">,</span><span class="w"> </span><span class="n">Arity</span><span class="p" data-group-id="2827863445-2">}</span><span class="p">,</span><span class="w"> </span><span class="n">FuncCallCount</span><span class="p" data-group-id="2827863445-1">}</span></code></pre><p>If call counters are still running while <code class="inline">analyse/0,1,2</code> is executing, the result
+<p>Collects and analyses all call counters for module <code class="inline">Module</code>.</p><p>This function returns:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="0342373631-1">{</span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">ModuleCount</span><span class="p">,</span><span class="w"> </span><span class="n">FuncAnalysisList</span><span class="p" data-group-id="0342373631-1">}</span></code></pre><p>where <code class="inline">FuncAnalysisList</code> is a list of tuples, one for each function:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="8301157432-1">{</span><span class="p" data-group-id="8301157432-2">{</span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">FunctionName</span><span class="p">,</span><span class="w"> </span><span class="n">Arity</span><span class="p" data-group-id="8301157432-2">}</span><span class="p">,</span><span class="w"> </span><span class="n">FuncCallCount</span><span class="p" data-group-id="8301157432-1">}</span></code></pre><p>If call counters are still running while <code class="inline">analyse/0,1,2</code> is executing, the result
 could be inconsistent. This happens if the process executing <code class="inline">analyse/0,1,2</code>
 is scheduled out so some other process can increment the counters that are
 being analysed. Calling <a href="#pause/0"><code class="inline">pause()</code></a> before analysing takes care of

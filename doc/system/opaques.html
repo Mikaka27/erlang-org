@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/system/opaques.html" />
     <title>Opaques — Erlang System Documentation v28.2</title>
 
@@ -74,18 +73,18 @@ Erlang System Documentation
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -117,16 +116,16 @@ the rest is up to convention.</p><section role="note" class="admonition info"><h
 same way as nominals. Outside of the defining module, Dialyzer checks
 opaques for opacity violations.</p></section><p>This document explains what Erlang opacity is (and the trade-offs involved) via
 the example of the <a href="../apps/stdlib/sets.html#t:set/0"><code class="inline">sets:set()</code></a> data type. This type <em>was</em>
-defined in the <code class="inline">sets</code> module like this:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">opaque</span><span class="w"> </span><span class="nf">set</span><span class="p" data-group-id="3350312180-1">(</span><span class="n">Element</span><span class="p" data-group-id="3350312180-1">)</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="o">#</span><span class="ss">set</span><span class="p" data-group-id="3350312180-2">{</span><span class="ss">segs</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">segs</span><span class="p" data-group-id="3350312180-3">(</span><span class="n">Element</span><span class="p" data-group-id="3350312180-3">)</span><span class="p" data-group-id="3350312180-2">}</span><span class="p">.</span></code></pre><p>OTP 24 changed the definition to the following in
-<a href="https://github.com/erlang/otp/commit/e66941e8d7c47b973dff94c0308ea85a6be1958e">this commit</a>.</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">opaque</span><span class="w"> </span><span class="nf">set</span><span class="p" data-group-id="6693340938-1">(</span><span class="n">Element</span><span class="p" data-group-id="6693340938-1">)</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="o">#</span><span class="ss">set</span><span class="p" data-group-id="6693340938-2">{</span><span class="ss">segs</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">segs</span><span class="p" data-group-id="6693340938-3">(</span><span class="n">Element</span><span class="p" data-group-id="6693340938-3">)</span><span class="p" data-group-id="6693340938-2">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p" data-group-id="6693340938-4">#{</span><span class="n">Element</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="o">?</span><span class="n">VALUE</span><span class="p" data-group-id="6693340938-4">}</span><span class="p">.</span></code></pre><p>And this change was safer and more backwards-compatible than if the type had
+defined in the <code class="inline">sets</code> module like this:</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">opaque</span><span class="w"> </span><span class="nf">set</span><span class="p" data-group-id="8330552135-1">(</span><span class="n">Element</span><span class="p" data-group-id="8330552135-1">)</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="o">#</span><span class="ss">set</span><span class="p" data-group-id="8330552135-2">{</span><span class="ss">segs</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">segs</span><span class="p" data-group-id="8330552135-3">(</span><span class="n">Element</span><span class="p" data-group-id="8330552135-3">)</span><span class="p" data-group-id="8330552135-2">}</span><span class="p">.</span></code></pre><p>OTP 24 changed the definition to the following in
+<a href="https://github.com/erlang/otp/commit/e66941e8d7c47b973dff94c0308ea85a6be1958e">this commit</a>.</p><pre><code class="makeup erlang" translate="no"><span class="p">-</span><span class="na">opaque</span><span class="w"> </span><span class="nf">set</span><span class="p" data-group-id="4090395409-1">(</span><span class="n">Element</span><span class="p" data-group-id="4090395409-1">)</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="o">#</span><span class="ss">set</span><span class="p" data-group-id="4090395409-2">{</span><span class="ss">segs</span><span class="w"> </span><span class="p">:</span><span class="p">:</span><span class="w"> </span><span class="nf">segs</span><span class="p" data-group-id="4090395409-3">(</span><span class="n">Element</span><span class="p" data-group-id="4090395409-3">)</span><span class="p" data-group-id="4090395409-2">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p" data-group-id="4090395409-4">#{</span><span class="n">Element</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="o">?</span><span class="n">VALUE</span><span class="p" data-group-id="4090395409-4">}</span><span class="p">.</span></code></pre><p>And this change was safer and more backwards-compatible than if the type had
 been defined with <code class="inline">-type</code> instead of <code class="inline">-opaque</code>. Here is why: when a module
 defines an <code class="inline">-opaque</code>, the contract is that only the defining module should rely
 on the definition of the type: no other modules should rely on the definition.</p><p>This means that code that pattern-matched on <code class="inline">set</code> as a record/tuple technically
 broke the contract, and opted in to being potentially broken when the definition
 of <code class="inline">set()</code> changed. Before OTP 24, this code printed <code class="inline">ok</code>. In OTP 24 it may
-error:</p><pre><code class="makeup erlang" translate="no"><span class="k">case</span><span class="w"> </span><span class="nc">sets</span><span class="p">:</span><span class="nf">new</span><span class="p" data-group-id="3564342826-1">(</span><span class="p" data-group-id="3564342826-1">)</span><span class="w"> </span><span class="k">of</span><span class="w">
-    </span><span class="n">Set</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="nf">is_tuple</span><span class="p" data-group-id="3564342826-2">(</span><span class="n">Set</span><span class="p" data-group-id="3564342826-2">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
-        </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="3564342826-3">(</span><span class="s">&quot;ok&quot;</span><span class="p" data-group-id="3564342826-3">)</span><span class="w">
+error:</p><pre><code class="makeup erlang" translate="no"><span class="k">case</span><span class="w"> </span><span class="nc">sets</span><span class="p">:</span><span class="nf">new</span><span class="p" data-group-id="4615372170-1">(</span><span class="p" data-group-id="4615372170-1">)</span><span class="w"> </span><span class="k">of</span><span class="w">
+    </span><span class="n">Set</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="nf">is_tuple</span><span class="p" data-group-id="4615372170-2">(</span><span class="n">Set</span><span class="p" data-group-id="4615372170-2">)</span><span class="w"> </span><span class="p">-&gt;</span><span class="w">
+        </span><span class="nc">io</span><span class="p">:</span><span class="nf">format</span><span class="p" data-group-id="4615372170-3">(</span><span class="s">&quot;ok&quot;</span><span class="p" data-group-id="4615372170-3">)</span><span class="w">
 </span><span class="k">end</span><span class="p">.</span></code></pre><p><strong>When working with an opaque defined in another module, here are some
 recommendations:</strong></p><ul><li>Don't examine the underlying type using pattern-matching, guards, or functions
 that reveal the type, such as <a href="../apps/erts/erlang.html#tuple_size/1"><code class="inline">tuple_size/1</code></a> . One exception

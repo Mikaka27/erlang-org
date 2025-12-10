@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/megaco/megaco_examples.html" />
     <title>Implementation examples — megaco v4.8.1</title>
 
@@ -74,18 +73,18 @@ megaco
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -132,10 +131,10 @@ may be started on the same Erlang node with:</p><pre><code class="text">      cd
       erl -pa ../../../megaco/ebin -s megaco_filter -s megaco
       megaco_simple_mg:start().</code></pre><p>or simply 'gmake mg'.</p><p>If you &quot;only&quot; want to start a single MG which tries to connect an MG on a host
 named &quot;baidarka&quot;, you may use one of these functions (instead of the
-megaco_simple_mg:start/0 above):</p><pre><code class="makeup erlang" translate="no"><span class="w">      </span><span class="nc">megaco_simple_mg</span><span class="p">:</span><span class="nf">start_tcp_text</span><span class="p" data-group-id="2762002756-1">(</span><span class="s">&quot;baidarka&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2762002756-2">[</span><span class="p" data-group-id="2762002756-2">]</span><span class="p" data-group-id="2762002756-1">)</span><span class="p">.</span><span class="w">
-      </span><span class="nc">megaco_simple_mg</span><span class="p">:</span><span class="nf">start_tcp_binary</span><span class="p" data-group-id="2762002756-3">(</span><span class="s">&quot;baidarka&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2762002756-4">[</span><span class="p" data-group-id="2762002756-4">]</span><span class="p" data-group-id="2762002756-3">)</span><span class="p">.</span><span class="w">
-      </span><span class="nc">megaco_simple_mg</span><span class="p">:</span><span class="nf">start_udp_text</span><span class="p" data-group-id="2762002756-5">(</span><span class="s">&quot;baidarka&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2762002756-6">[</span><span class="p" data-group-id="2762002756-6">]</span><span class="p" data-group-id="2762002756-5">)</span><span class="p">.</span><span class="w">
-      </span><span class="nc">megaco_simple_mg</span><span class="p">:</span><span class="nf">start_udp_binary</span><span class="p" data-group-id="2762002756-7">(</span><span class="s">&quot;baidarka&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="2762002756-8">[</span><span class="p" data-group-id="2762002756-8">]</span><span class="p" data-group-id="2762002756-7">)</span><span class="p">.</span></code></pre><p>The -s megaco_filter option to erl implies, the event tracing mechanism to be
+megaco_simple_mg:start/0 above):</p><pre><code class="makeup erlang" translate="no"><span class="w">      </span><span class="nc">megaco_simple_mg</span><span class="p">:</span><span class="nf">start_tcp_text</span><span class="p" data-group-id="9108998278-1">(</span><span class="s">&quot;baidarka&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9108998278-2">[</span><span class="p" data-group-id="9108998278-2">]</span><span class="p" data-group-id="9108998278-1">)</span><span class="p">.</span><span class="w">
+      </span><span class="nc">megaco_simple_mg</span><span class="p">:</span><span class="nf">start_tcp_binary</span><span class="p" data-group-id="9108998278-3">(</span><span class="s">&quot;baidarka&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9108998278-4">[</span><span class="p" data-group-id="9108998278-4">]</span><span class="p" data-group-id="9108998278-3">)</span><span class="p">.</span><span class="w">
+      </span><span class="nc">megaco_simple_mg</span><span class="p">:</span><span class="nf">start_udp_text</span><span class="p" data-group-id="9108998278-5">(</span><span class="s">&quot;baidarka&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9108998278-6">[</span><span class="p" data-group-id="9108998278-6">]</span><span class="p" data-group-id="9108998278-5">)</span><span class="p">.</span><span class="w">
+      </span><span class="nc">megaco_simple_mg</span><span class="p">:</span><span class="nf">start_udp_binary</span><span class="p" data-group-id="9108998278-7">(</span><span class="s">&quot;baidarka&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="9108998278-8">[</span><span class="p" data-group-id="9108998278-8">]</span><span class="p" data-group-id="9108998278-7">)</span><span class="p">.</span></code></pre><p>The -s megaco_filter option to erl implies, the event tracing mechanism to be
 enabled and an interactive sequence chart tool to be started. This may be quite
 useful in order to visualize how your MG interacts with the Megaco/H.248
 protocol stack.</p><p>The event traces may alternatively be directed to a file for later analyze. By

@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/system/errors.html" />
     <title>Errors and Error Handling — Erlang System Documentation v28.2</title>
 
@@ -74,18 +73,18 @@ Erlang System Documentation
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -138,14 +137,14 @@ in <a href="expressions.html">Expressions</a>.</p><table><thead><tr><th style="t
 <a href="errors.html#exit_reasons">Exit Reason</a>), and a stack trace (which aids in finding
 the code location of the exception).</p><p>The stack trace can be bound to a variable from within a <code class="inline">try</code> expression for
 any exception class, or as part of the exit reason when a run-time error is
-caught by a <code class="inline">catch</code>. Example:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="p" data-group-id="0990332792-1">{</span><span class="ss">&#39;EXIT&#39;</span><span class="p">,</span><span class="p" data-group-id="0990332792-2">{</span><span class="ss">test</span><span class="p">,</span><span class="n">Stacktrace</span><span class="p" data-group-id="0990332792-2">}</span><span class="p" data-group-id="0990332792-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="0990332792-3">(</span><span class="k">catch</span><span class="w"> </span><span class="nf">error</span><span class="p" data-group-id="0990332792-4">(</span><span class="ss">test</span><span class="p" data-group-id="0990332792-4">)</span><span class="p" data-group-id="0990332792-3">)</span><span class="p">,</span><span class="w"> </span><span class="n">Stacktrace</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="0990332792-5">[</span><span class="p" data-group-id="0990332792-6">{</span><span class="ss">shell</span><span class="p">,</span><span class="ss">apply_fun</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="p" data-group-id="0990332792-7">[</span><span class="p" data-group-id="0990332792-7">]</span><span class="p" data-group-id="0990332792-6">}</span><span class="p">,</span><span class="w">
- </span><span class="p" data-group-id="0990332792-8">{</span><span class="ss">erl_eval</span><span class="p">,</span><span class="ss">do_apply</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="p" data-group-id="0990332792-9">[</span><span class="p" data-group-id="0990332792-9">]</span><span class="p" data-group-id="0990332792-8">}</span><span class="p">,</span><span class="w">
- </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p" data-group-id="0990332792-5">]</span><span class="gp unselectable">
-&gt; </span><span class="k">try</span><span class="w"> </span><span class="nf">throw</span><span class="p" data-group-id="0990332792-10">(</span><span class="ss">test</span><span class="p" data-group-id="0990332792-10">)</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="n">Class</span><span class="p">:</span><span class="n">Reason</span><span class="p">:</span><span class="n">Stacktrace</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">Stacktrace</span><span class="w"> </span><span class="k">end</span><span class="p">.</span><span class="w">
-</span><span class="p" data-group-id="0990332792-11">[</span><span class="p" data-group-id="0990332792-12">{</span><span class="ss">shell</span><span class="p">,</span><span class="ss">apply_fun</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="p" data-group-id="0990332792-13">[</span><span class="p" data-group-id="0990332792-13">]</span><span class="p" data-group-id="0990332792-12">}</span><span class="p">,</span><span class="w">
- </span><span class="p" data-group-id="0990332792-14">{</span><span class="ss">erl_eval</span><span class="p">,</span><span class="ss">do_apply</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="p" data-group-id="0990332792-15">[</span><span class="p" data-group-id="0990332792-15">]</span><span class="p" data-group-id="0990332792-14">}</span><span class="p">,</span><span class="w">
- </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p" data-group-id="0990332792-11">]</span></code></pre><p><a href="" id="stacktrace"></a></p><h3 id="the-call-stack-back-trace-stacktrace" class="section-heading"><a href="#the-call-stack-back-trace-stacktrace" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">The call-stack back trace (stacktrace)</span></h3><p>The stack back-trace (<a href="../apps/erts/erlang.html#t:stacktrace/0"><em>stacktrace</em></a>) is a list that
+caught by a <code class="inline">catch</code>. Example:</p><pre><code class="makeup erlang" translate="no"><span class="gp unselectable">&gt; </span><span class="p" data-group-id="3722605073-1">{</span><span class="ss">&#39;EXIT&#39;</span><span class="p">,</span><span class="p" data-group-id="3722605073-2">{</span><span class="ss">test</span><span class="p">,</span><span class="n">Stacktrace</span><span class="p" data-group-id="3722605073-2">}</span><span class="p" data-group-id="3722605073-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p" data-group-id="3722605073-3">(</span><span class="k">catch</span><span class="w"> </span><span class="nf">error</span><span class="p" data-group-id="3722605073-4">(</span><span class="ss">test</span><span class="p" data-group-id="3722605073-4">)</span><span class="p" data-group-id="3722605073-3">)</span><span class="p">,</span><span class="w"> </span><span class="n">Stacktrace</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="3722605073-5">[</span><span class="p" data-group-id="3722605073-6">{</span><span class="ss">shell</span><span class="p">,</span><span class="ss">apply_fun</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="p" data-group-id="3722605073-7">[</span><span class="p" data-group-id="3722605073-7">]</span><span class="p" data-group-id="3722605073-6">}</span><span class="p">,</span><span class="w">
+ </span><span class="p" data-group-id="3722605073-8">{</span><span class="ss">erl_eval</span><span class="p">,</span><span class="ss">do_apply</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="p" data-group-id="3722605073-9">[</span><span class="p" data-group-id="3722605073-9">]</span><span class="p" data-group-id="3722605073-8">}</span><span class="p">,</span><span class="w">
+ </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p" data-group-id="3722605073-5">]</span><span class="gp unselectable">
+&gt; </span><span class="k">try</span><span class="w"> </span><span class="nf">throw</span><span class="p" data-group-id="3722605073-10">(</span><span class="ss">test</span><span class="p" data-group-id="3722605073-10">)</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="n">Class</span><span class="p">:</span><span class="n">Reason</span><span class="p">:</span><span class="n">Stacktrace</span><span class="w"> </span><span class="p">-&gt;</span><span class="w"> </span><span class="n">Stacktrace</span><span class="w"> </span><span class="k">end</span><span class="p">.</span><span class="w">
+</span><span class="p" data-group-id="3722605073-11">[</span><span class="p" data-group-id="3722605073-12">{</span><span class="ss">shell</span><span class="p">,</span><span class="ss">apply_fun</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="p" data-group-id="3722605073-13">[</span><span class="p" data-group-id="3722605073-13">]</span><span class="p" data-group-id="3722605073-12">}</span><span class="p">,</span><span class="w">
+ </span><span class="p" data-group-id="3722605073-14">{</span><span class="ss">erl_eval</span><span class="p">,</span><span class="ss">do_apply</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="p" data-group-id="3722605073-15">[</span><span class="p" data-group-id="3722605073-15">]</span><span class="p" data-group-id="3722605073-14">}</span><span class="p">,</span><span class="w">
+ </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p" data-group-id="3722605073-11">]</span></code></pre><p><a href="" id="stacktrace"></a></p><h3 id="the-call-stack-back-trace-stacktrace" class="section-heading"><a href="#the-call-stack-back-trace-stacktrace" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">The call-stack back trace (stacktrace)</span></h3><p>The stack back-trace (<a href="../apps/erts/erlang.html#t:stacktrace/0"><em>stacktrace</em></a>) is a list that
 contains <code class="inline">{Module, Function, Arity, ExtraInfo}</code> and/or <code class="inline">{Fun, Arity, ExtraInfo}</code>
 tuples. The field <code class="inline">Arity</code> in the tuple can be the argument list of that function
 call instead of an arity integer, depending on the exception.</p><p><code class="inline">ExtraInfo</code> is a (possibly empty) list of two-element tuples in any order that

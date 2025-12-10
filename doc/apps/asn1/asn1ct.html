@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/asn1/asn1ct.html" />
     <title>asn1ct — asn1 v5.4.2</title>
 
@@ -74,18 +73,18 @@ asn1
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -482,9 +481,9 @@ functions as well as the general runtime support work as expected.</p><section r
 mostly work for old specifications based on the 1997 standard for ASN.1, but
 not for most modern-style applications. Another limitation is that the <code class="inline">test</code>
 functions may not work if options that change code generations strategies such
-as the options <code class="inline">macro_name_prefix</code> and <code class="inline">record_name_prefix</code> have been used.</p></section><ul><li><a href="#test/1"><code class="inline">test/1</code></a> iterates over all types in <code class="inline">Module</code>.</li><li><a href="#test/2"><code class="inline">test/2</code></a> tests type <code class="inline">Type</code> with a random value.</li><li><a href="#test/3"><code class="inline">test/3</code></a> tests type <code class="inline">Type</code> with <code class="inline">Value</code>.</li></ul><p>Schematically, the following occurs for each type in the module:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="6113918251-1">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="p" data-group-id="6113918251-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">asn1ct</span><span class="p">:</span><span class="nf">value</span><span class="p" data-group-id="6113918251-2">(</span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p" data-group-id="6113918251-2">)</span><span class="p">,</span><span class="w">
-</span><span class="p" data-group-id="6113918251-3">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">Bytes</span><span class="p" data-group-id="6113918251-3">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Module</span><span class="p">:</span><span class="nf">encode</span><span class="p" data-group-id="6113918251-4">(</span><span class="n">Type</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="p" data-group-id="6113918251-4">)</span><span class="p">,</span><span class="w">
-</span><span class="p" data-group-id="6113918251-5">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="p" data-group-id="6113918251-5">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Module</span><span class="p">:</span><span class="nf">decode</span><span class="p" data-group-id="6113918251-6">(</span><span class="n">Type</span><span class="p">,</span><span class="w"> </span><span class="n">Bytes</span><span class="p" data-group-id="6113918251-6">)</span><span class="p">.</span></code></pre><p>The <code class="inline">test</code> functions use the <code class="inline">*.asn1db</code> files for all included modules. If they
+as the options <code class="inline">macro_name_prefix</code> and <code class="inline">record_name_prefix</code> have been used.</p></section><ul><li><a href="#test/1"><code class="inline">test/1</code></a> iterates over all types in <code class="inline">Module</code>.</li><li><a href="#test/2"><code class="inline">test/2</code></a> tests type <code class="inline">Type</code> with a random value.</li><li><a href="#test/3"><code class="inline">test/3</code></a> tests type <code class="inline">Type</code> with <code class="inline">Value</code>.</li></ul><p>Schematically, the following occurs for each type in the module:</p><pre><code class="makeup erlang" translate="no"><span class="p" data-group-id="6745753647-1">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="p" data-group-id="6745753647-1">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">asn1ct</span><span class="p">:</span><span class="nf">value</span><span class="p" data-group-id="6745753647-2">(</span><span class="n">Module</span><span class="p">,</span><span class="w"> </span><span class="n">Type</span><span class="p" data-group-id="6745753647-2">)</span><span class="p">,</span><span class="w">
+</span><span class="p" data-group-id="6745753647-3">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">Bytes</span><span class="p" data-group-id="6745753647-3">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Module</span><span class="p">:</span><span class="nf">encode</span><span class="p" data-group-id="6745753647-4">(</span><span class="n">Type</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="p" data-group-id="6745753647-4">)</span><span class="p">,</span><span class="w">
+</span><span class="p" data-group-id="6745753647-5">{</span><span class="ss">ok</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="p" data-group-id="6745753647-5">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Module</span><span class="p">:</span><span class="nf">decode</span><span class="p" data-group-id="6745753647-6">(</span><span class="n">Type</span><span class="p">,</span><span class="w"> </span><span class="n">Bytes</span><span class="p" data-group-id="6745753647-6">)</span><span class="p">.</span></code></pre><p>The <code class="inline">test</code> functions use the <code class="inline">*.asn1db</code> files for all included modules. If they
 are located in a different directory than the current working directory, use the
 <code class="inline">include</code> option to add paths. This is only needed when automatically generating
 values. For static values using <code class="inline">Value</code> no options are needed.</p>

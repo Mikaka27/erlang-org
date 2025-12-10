@@ -9,7 +9,6 @@
 
 
 <meta name="major-vsn" content="29">
-<meta name="exdoc:full-text-search-url" content="/doc/search.html?v=29&q=">
 <link rel="canonical" href="https://www.erlang.org/doc/apps/erts/persistent_term.html" />
     <title>persistent_term — erts v16.1.2</title>
 
@@ -74,18 +73,18 @@ erts
         <div class="engine-selector" data-multiple="false">
           <button type="button" class="engine-button" aria-label="Select search engine" aria-haspopup="true" aria-expanded="false">
             <i class="ri-search-2-line" aria-hidden="true"></i>
-            <span class="engine-name">Default</span>
+            <span class="engine-name">Search erlang documentation</span>
             <i class="ri-arrow-down-s-line" aria-hidden="true"></i>
           </button>
           <div class="engine-dropdown" hidden role="menu">
 
               <button type="button"
                       class="engine-option"
-                      data-engine-url="search.html?q="
+                      data-engine-url="/doc/search.html?v=29&q="
                       role="menuitemradio"
                       aria-checked="true">
-                <span class="name">Default</span>
-                <span class="help">In-browser search</span>
+                <span class="name">Search erlang documentation</span>
+                <span class="help">Search erlang documentation</span>
               </button>
 
           </div>
@@ -168,9 +167,9 @@ term. Therefore, terms that are to be updated at the same time should be
 collected into a larger term, for example, a map or a tuple.</p><h2 id="module-example" class="section-heading"><a href="#module-example" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Example</span></h2><p>The following example shows how lock contention for ETS tables can be minimized
 by having one ETS table for each scheduler. The table identifiers for the ETS
 tables are stored as a single persistent term:</p><pre><code class="makeup erlang" translate="no"><span class="w">    </span><span class="c1">%% There is one ETS table for each scheduler.</span><span class="w">
-    </span><span class="n">Sid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">erlang</span><span class="p">:</span><span class="nf">system_info</span><span class="p" data-group-id="9342592945-1">(</span><span class="ss">scheduler_id</span><span class="p" data-group-id="9342592945-1">)</span><span class="p">,</span><span class="w">
-    </span><span class="n">Tid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element</span><span class="p" data-group-id="9342592945-2">(</span><span class="n">Sid</span><span class="p">,</span><span class="w"> </span><span class="nc">persistent_term</span><span class="p">:</span><span class="nf">get</span><span class="p" data-group-id="9342592945-3">(</span><span class="o">?</span><span class="n">MODULE</span><span class="p" data-group-id="9342592945-3">)</span><span class="p" data-group-id="9342592945-2">)</span><span class="p">,</span><span class="w">
-    </span><span class="nc">ets</span><span class="p">:</span><span class="nf">update_counter</span><span class="p" data-group-id="9342592945-4">(</span><span class="n">Tid</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="9342592945-4">)</span><span class="p">.</span></code></pre>
+    </span><span class="n">Sid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">erlang</span><span class="p">:</span><span class="nf">system_info</span><span class="p" data-group-id="2982506618-1">(</span><span class="ss">scheduler_id</span><span class="p" data-group-id="2982506618-1">)</span><span class="p">,</span><span class="w">
+    </span><span class="n">Tid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element</span><span class="p" data-group-id="2982506618-2">(</span><span class="n">Sid</span><span class="p">,</span><span class="w"> </span><span class="nc">persistent_term</span><span class="p">:</span><span class="nf">get</span><span class="p" data-group-id="2982506618-3">(</span><span class="o">?</span><span class="n">MODULE</span><span class="p" data-group-id="2982506618-3">)</span><span class="p" data-group-id="2982506618-2">)</span><span class="p">,</span><span class="w">
+    </span><span class="nc">ets</span><span class="p">:</span><span class="nf">update_counter</span><span class="p" data-group-id="2982506618-4">(</span><span class="n">Tid</span><span class="p">,</span><span class="w"> </span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="2982506618-4">)</span><span class="p">.</span></code></pre>
     </section>
 
 </div>
